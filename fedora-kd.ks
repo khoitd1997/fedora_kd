@@ -107,6 +107,12 @@ cat >> /usr/share/glib-2.0/schemas/99_my_custom_settings.gschema.override << FOE
 [org.gnome.desktop.interface]
 gtk-theme='Adwaita-dark'
 
+[org.cinnamon.desktop.background]
+picture-uri='file:///usr/share/backgrounds/f29/default/f29.xml'
+
+[org.gnome.desktop.background]
+picture-uri='file:///usr/share/user_file/TCP118v1_by_Tiziano_Consonni.jpg'
+
 [x.dm.slick-greeter]
 background='/usr/share/backgrounds/default.png'
 background-color='#2ceb26'
