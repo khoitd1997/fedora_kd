@@ -106,17 +106,22 @@ adobe-source-code-pro-fonts
 cat >> /usr/share/glib-2.0/schemas/99_my_custom_settings.gschema.override << FOE
 [org.gnome.desktop.interface]
 gtk-theme='Adwaita-dark'
+
+[x.dm.slick-greeter]
+background='/usr/share/backgrounds/default.png'
+background-color='#2ceb26'
+logo='/usr/share/pixmaps/system-logo-white.png'
+draw-user-backgrounds=false
+draw-grid=true
+enable-hidpi='auto'
+font-name='Noto Sans 30'
+icon-theme-name='Mint-Y-Aqua'
+show-hostname=true
+theme-name='Mint-Y-Dark-Aqua'
+
 FOE
 
 glib-compile-schemas /usr/share/glib-2.0/schemas/
-
-# dnf config-manager --set-enabled fedora-modular updates-modular google-chrome rpmfusion-nonfree-nvidia-driver
-# dnf install https://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm https://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm -y
-
-# dnf install google-chrome-stable xorg-x11-drv-nvidia akmod-nvidia nautilus-dropbox VirtualBox akmod-VirtualBox -y
-# dnf install bat -y
-
-# dnf update -y
 
 # flatpak_package=" com.spotify.Client com.discordapp.Discord \
 # com.slack.Slack "
@@ -124,12 +129,6 @@ glib-compile-schemas /usr/share/glib-2.0/schemas/
 # for flatpak in ${flatpak_package} ; do
 # 	sudo flatpak install flathub ${flatpak} -y 
 # done
-
-# # vscode
-# rpm --import https://packages.microsoft.com/keys/microsoft.asc
-# sh -c 'echo -e "[code]\nname=Visual Studio Code\nbaseurl=https://packages.microsoft.com/yumrepos/vscode\nenabled=1\ngpgcheck=1\ngpgkey=https://packages.microsoft.com/keys/microsoft.asc" > /etc/yum.repos.d/vscode.repo'
-# dnf check-update
-# dnf install code -y
 
 # code --install-extension ms-vscode.cpptools
 %end
