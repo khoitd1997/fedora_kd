@@ -8,7 +8,7 @@ import json
 
 currDir = os.path.realpath(os.path.join(
     os.getcwd(), os.path.dirname(__file__)))
-with open(os.path.join(currDir, 'app_list.json'), 'r+') as f:
+with open(os.path.join(currDir, 'app_list.json'), 'r') as f:
     apps = json.load(f)
 
 for app in apps["apps"]:

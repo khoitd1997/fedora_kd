@@ -62,15 +62,10 @@ fi
 done
 print_message "Installation Done, configuring\n"
 
-# open editor so that it creates a setting file, then we can overwite it
-code&
-sleep 2
-pkill code
-
 # copy Visual Studdio Code setting file and keybinding file
-vscode_config_dir="~/.config/Code/User"
-cp -vf ${currDir}/settings.json ${vscode_config_dir}/settings.json
-cp -vf ${currDir}/keybindings.json ${vscode_config_dir}/keybindings.json
+vscode_config_dir="${HOME}/.config/Code/User"
+cp -vf ${currDir}/settings.json ${vscode_config_dir}/
+cp -vf ${currDir}/keybindings.json ${vscode_config_dir}/
 
 print_message "Installing Source Code Pro font"
 git clone https://github.com/adobe-fonts/source-code-pro.git --branch release ~/source-code-pro

@@ -15,6 +15,8 @@ set -o nounset
 print_message "Starting Misc Installation of Fedora Machine\n"
 sudo passwd -l root
 sudo systemctl enable firewalld
+sudo setenforce 1
+sudo dnf update --allowerasing -y
 
 # adjust clock to local
 sudo timedatectl set-timezone America/Los_Angeles
@@ -31,8 +33,6 @@ sudo usermod -a -G mock ${USER}
 
 # setup GNOME keyring git credential helper
 git config --global credential.helper /usr/libexec/git-core/git-credential-libsecret
-git config --global user.email "khoidinhtrinh@gmail.com"
-git config --global user.name "khoitd1997"
 
 # increase notification maximum for vscode
 echo fs.inotify.max_user_watches=524288 | sudo tee -a /etc/sysctl.conf
@@ -55,6 +55,7 @@ sleep 2
 rm -f ~/.config/autostart/xpad.desktop # don't start xpad on startup
 pkill xpad
 
+mkdir -p ~/.local/share/applications
 python3 ${currDir}/launcher_app/add_launcher_app.py
 
 mkdir -p ~/temp
