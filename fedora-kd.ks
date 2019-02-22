@@ -14,11 +14,11 @@ fedora-repos-modular
 # external
 code
 google-chrome-stable
-xorg-x11-drv-nvidia
-akmod-nvidia
+# xorg-x11-drv-nvidia
+# akmod-nvidia
 nautilus-dropbox
-VirtualBox
-akmod-VirtualBox
+# VirtualBox
+# akmod-VirtualBox
 
 # groups
 # @development-tools
@@ -53,11 +53,16 @@ bat
 # hub 
 git
 nano 
-# dnf-automatic 
+dnf-automatic 
 # openconnect 
 # tmux 
 # glibc-devel.i686 
 # libnsl
+
+# packaging tools
+# fedora-packager
+mock
+# fedora-review
 
 # # gui apps
 # xclip
@@ -87,6 +92,16 @@ synapse
 # flatpak
 flatpak
 
+# latex
+# texlive-scheme-basic 
+# texlive-collection-latexextra 
+# texlive-collection-latexrecommended 
+# texlive-collection-xetex
+
+# golang
+# golang
+# golint
+
 # arm toolchain
 # openocd
 # qemu
@@ -108,15 +123,17 @@ adobe-source-code-pro-fonts
 
 cat >> /etc/profile.d/first_login_setup.sh << 'EOF'
 #!/bin/bash
+# set -e
 
 if [ ! -f ~/first_login_setup_done ]; then
     cd /usr/share/user_file/
-    
-    bash misc/misc_setup.sh
-    bash look/look_setup.sh
-    bash vscode/vscode_setup.sh
-    bash zsh/zsh_setup.sh
-    bash flatpak/flatpak_setup.sh
+    mkdir -p ~/first_login_log
+
+    bash look/look_setup.sh 2>&1 | tee -a ~/first_login_log/look_log.log
+    bash vscode/vscode_setup.sh | tee -a ~/first_login_log/vscode_log.log
+    bash zsh/zsh_setup.sh | tee -a ~/first_login_log/zsh_log.log
+    bash flatpak/flatpak_setup.sh | tee -a ~/first_login_log/flatpak_log.log
+    bash misc/misc_setup.sh 2>&1 | tee -a ~/first_login_log/misc_log.log
     
     touch ~/first_login_setup_done
 fi
