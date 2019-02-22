@@ -1,0 +1,126 @@
+{
+    "workbench.iconTheme": "Monokai Pro (Filter Spectrum) Icons",
+    "gitlens.advanced.messages": {
+        "suppressCommitHasNoPreviousCommitWarning": false,
+        "suppressCommitNotFoundWarning": false,
+        "suppressFileNotUnderSourceControlWarning": false,
+        "suppressGitVersionWarning": false,
+        "suppressLineUncommittedWarning": false,
+        "suppressNoRepositoryWarning": false,
+        "suppressResultsExplorerNotice": false,
+        "suppressShowKeyBindingsNotice": true,
+        "suppressUpdateNotice": false,
+        "suppressWelcomeNotice": true
+    },
+    "files.associations": {
+        "*.cu": "c",
+        "*.tdd": "makefile",
+        "*.cfg": "tcl",
+        "*.svd": "xml",
+        "*.hpp": "cpp"
+    },
+    "workbench.startupEditor": "newUntitledFile",
+    "window.zoomLevel": 2,
+    "python.formatting.provider": "autopep8",
+    "gitlens.keymap": "chorded",
+    "editor.wordWrap": "on",
+    "workbench.colorTheme": "Monokai Pro (Filter Spectrum)",
+    "material-icon-theme.showUpdateMessage": false,
+    "pasteImage.path": "${currentFileDir}/image",
+    "editor.quickSuggestionsDelay": 2,
+    "[markdown]": {
+        "editor.wordWrap": "on",
+        "editor.quickSuggestions": true,
+    },
+    "html.autoClosingTags": false,
+    "markdown.preview.doubleClickToSwitchToEditor": false,
+    "editor.tokenColorCustomizations": {
+        "textMateRules": [
+            {
+                "scope": "log.error",
+                "settings": {
+                    "foreground": "#af1f1f",
+                    "fontStyle": "bold"
+                }
+            },
+            {
+                "scope": "log.warning",
+                "settings": {
+                    "foreground": "#f4ad42",
+                    "fontStyle": ""
+                }
+            },
+            {
+                "scope": "log.info",
+                "settings": {
+                    "foreground": "#42f4e5",
+                    "fontStyle": ""
+                }
+            }
+        ]
+    },
+    "C_Cpp.clang_format_fallbackStyle": "LLVM",
+    "C_Cpp.loggingLevel": "Information",
+    "git.enableSmartCommit": true,
+    "editor.foldingStrategy": "indentation",
+    "git.autofetch": true,
+    "logFileHighlighter.customPatterns": [
+        {
+            "pattern": "\\[(.*?)\\]",
+            "foreground": "#98f442"
+        }
+    ],
+    "doxdocgen.generic.authorTag": "@author Khoi Trinh",
+    "editor.detectIndentation": false,
+    "go.formatTool": "gofmt",
+    "editor.formatOnSave": true,
+    "workbench.editor.enablePreview": false,
+    "workbench.editor.enablePreviewFromQuickOpen": false,
+    "editor.formatOnPaste": true,
+    "go.autocompleteUnimportedPackages": true,
+    "window.titleBarStyle": "native",
+    "editor.fontFamily": "source code pro",
+    "todo-tree.defaultHighlight": {
+        "type": "text",
+        "foreground": "black",
+        "background": "#6F6F70",
+    },
+    "vsicons.dontShowNewVersionMessage": true,
+    "window.newWindowDimensions": "inherit",
+    "window.restoreFullscreen": true,
+    "workbench.activityBar.visible": false,
+    "editor.cursorStyle": "line-thin",
+    "editor.hover.delay": 50,
+    "editor.cursorBlinking": "phase",
+    "search.showLineNumbers": true,
+    "extensions.ignoreRecommendations": true,
+    "window.menuBarVisibility": "hidden",
+    "workbench.statusBar.feedback.visible": false,
+    "gitlens.mode.statusBar.enabled": false,
+    "gitlens.statusBar.enabled": false,
+    "C_Cpp.default.cppStandard": "c++11",
+    "C_Cpp.default.cStandard": "c99",
+    "vim.useCtrlKeys": false,
+    "multiCommand.commands": [
+        {
+            "command": "multiCommand.openFileAndCloseSideBar",
+            "sequence": [
+                "workbench.action.toggleSidebarVisibility",
+                "list.select"
+            ]
+        },
+    ],
+    "vim.insertModeKeyBindings": [
+        {
+            "before": [
+                "j",
+                "k"
+            ],
+            "after": [
+                "<Esc>"
+            ]
+        }
+    ],
+    "editor.hover.sticky": false,
+    "terminal.integrated.fontFamily": "source code pro",
+}

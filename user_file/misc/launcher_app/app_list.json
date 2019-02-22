@@ -1,0 +1,31 @@
+{
+    "apps": [
+        {
+            "name": "flameshot",
+            "command": "flameshot gui",
+            "comment": "Screenshot utils",
+            "launchInTerminal": "false",
+            "iconPath": "flameshot",
+            "type": "Application",
+            "startup": false
+        },
+        {
+            "name": "Redshift",
+            "command": "redshift-gtk",
+            "comment": "Color temperature adjustment tool",
+            "launchInTerminal": "false",
+            "iconPath": "redshift",
+            "type": "Application",
+            "startup": true
+        },
+        {
+            "name": "Synapse",
+            "command": "synapse",
+            "comment": "Search Utils",
+            "launchInTerminal": "false",
+            "iconPath": "synapse",
+            "type": "Application",
+            "startup": true
+        }
+    ]
+}

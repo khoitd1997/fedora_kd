@@ -1,0 +1,203 @@
+// Place your key bindings in this file to overwrite the defaults
+[
+    {
+        "key": "ctrl+;",
+        "command": "editor.action.goToDeclaration",
+        "when": "editorHasDefinitionProvider && editorTextFocus && !isInEmbeddedEditor"
+    },
+    {
+        "key": "enter",
+        "command": "multiCommand.openFileAndCloseSideBar",
+        "when": "explorerViewletVisible && filesExplorerFocus"
+    },
+    {
+        "key": "f12",
+        "command": "-editor.action.goToDeclaration",
+        "when": "editorHasDefinitionProvider && editorTextFocus && !isInEmbeddedEditor"
+    },
+    {
+        "key": "ctrl+'",
+        "command": "editor.action.previewDeclaration",
+        "when": "editorHasDefinitionProvider && editorTextFocus && !inReferenceSearchEditor && !isInEmbeddedEditor"
+    },
+    {
+        "key": "ctrl+shift+f10",
+        "command": "-editor.action.previewDeclaration",
+        "when": "editorHasDefinitionProvider && editorTextFocus && !inReferenceSearchEditor && !isInEmbeddedEditor"
+    },
+    {
+        "key": "ctrl+r",
+        "command": "editor.action.showHover",
+        "when": "editorTextFocus"
+    },
+    {
+        "key": "ctrl+k ctrl+i",
+        "command": "-editor.action.showHover",
+        "when": "editorTextFocus"
+    },
+    {
+        "key": "shift+alt+down",
+        "command": "editor.action.copyLinesDownAction",
+        "when": "editorTextFocus && !editorReadonly"
+    },
+    {
+        "key": "ctrl+shift+alt+down",
+        "command": "-editor.action.copyLinesDownAction",
+        "when": "editorTextFocus && !editorReadonly"
+    },
+    {
+        "key": "shift+alt+up",
+        "command": "-editor.action.insertCursorAbove",
+        "when": "editorTextFocus"
+    },
+    {
+        "key": "shift+alt+up",
+        "command": "editor.action.copyLinesUpAction",
+        "when": "editorTextFocus && !editorReadonly"
+    },
+    {
+        "key": "ctrl+shift+alt+up",
+        "command": "-editor.action.copyLinesUpAction",
+        "when": "editorTextFocus && !editorReadonly"
+    },
+    {
+        "key": "ctrl+j",
+        "command": "extension.jumpy-word",
+        "when": "editorTextFocus"
+    },
+    {
+        "key": "Escape",
+        "command": "extension.jumpy-exit",
+        "when": "editorTextFocus && jumpy.isJumpyMode"
+    },
+    {
+        "key": "ctrl+alt+-",
+        "command": "-workbench.action.navigateBack"
+    },
+    {
+        "key": "ctrl+shift+-",
+        "command": "-workbench.action.navigateForward"
+    },
+    {
+        "key": "ctrl+shift+=",
+        "command": "-workbench.action.zoomIn"
+    },
+    {
+        "key": "ctrl+-",
+        "command": "cursorHome",
+        "when": "textInputFocus"
+    },
+    {
+        "key": "home",
+        "command": "-cursorHome",
+        "when": "textInputFocus"
+    },
+    {
+        "key": "ctrl+=",
+        "command": "cursorEnd",
+        "when": "textInputFocus"
+    },
+    {
+        "key": "end",
+        "command": "-cursorEnd",
+        "when": "textInputFocus"
+    },
+    {
+        "key": "ctrl+j",
+        "command": "-workbench.action.togglePanel"
+    },
+    {
+        "key": "ctrl+shift+-",
+        "command": "workbench.action.zoomOut"
+    },
+    {
+        "key": "ctrl+-",
+        "command": "-workbench.action.zoomOut"
+    },
+    {
+        "key": "ctrl+shift+=",
+        "command": "workbench.action.zoomIn"
+    },
+    {
+        "key": "ctrl+=",
+        "command": "-workbench.action.zoomIn"
+    },
+    {
+        "key": "ctrl+shift+g g",
+        "command": "-workbench.view.scm",
+        "when": "gitlens:enabled && config.gitlens.keymap == 'chorded'"
+    },
+    {
+        "key": "ctrl+alt+g",
+        "command": "workbench.view.scm"
+    },
+    {
+        "key": "ctrl+shift+g",
+        "command": "-workbench.view.scm"
+    },
+    {
+        "key": "ctrl+alt+f",
+        "command": "workbench.files.action.focusFilesExplorer"
+    },
+    {
+        "key": "ctrl+alt+e",
+        "command": "workbench.view.extensions"
+    },
+    {
+        "key": "ctrl+shift+x",
+        "command": "-workbench.view.extensions"
+    },
+    {
+        "key": "ctrl+alt+c",
+        "command": "-copyFilePath",
+        "when": "!editorFocus"
+    },
+    {
+        "key": "ctrl+l alt+c",
+        "command": "-latex-workshop.clean",
+        "when": "editorTextFocus && latex-workshop:altkeymap"
+    },
+    {
+        "key": "ctrl+alt+c",
+        "command": "-latex-workshop.clean",
+        "when": "editorTextFocus && !latex-workshop:altkeymap"
+    },
+    {
+        "key": "ctrl+alt+c",
+        "command": "-search.action.copyPath",
+        "when": "fileMatchOrFolderMatchFocus"
+    },
+    {
+        "key": "ctrl+alt+c",
+        "command": "git.commit"
+    },
+    {
+        "key": "ctrl+r",
+        "command": "-workbench.action.openRecent"
+    },
+    {
+        "key": "ctrl+r",
+        "command": "-workbench.action.quickOpenNavigateNextInRecentFilesPicker",
+        "when": "inQuickOpen && inRecentFilesPicker"
+    },
+    {
+        "key": "ctrl+k",
+        "command": "-extension.vim_ctrl+k",
+        "when": "editorTextFocus && vim.active && vim.use<C-k> && !inDebugRepl"
+    },
+    {
+        "key": "j",
+        "command": "selectNextSuggestion",
+        "when": "suggestWidgetMultipleSuggestions && suggestWidgetVisible && textInputFocus"
+    },
+    {
+        "key": "k",
+        "command": "selectPrevSuggestion",
+        "when": "suggestWidgetMultipleSuggestions && suggestWidgetVisible && textInputFocus"
+    },
+    {
+        "key": "k",
+        "command": "list.focusUp",
+        "when": "listFocus"
+    },
+]
