@@ -43,6 +43,8 @@ echo fs.inotify.max_user_watches=524288 | sudo tee -a /etc/sysctl.conf
 mkdir -p ~/.config/synapse/
 cp ${currDir}/synapse_config.json ~/.config/synapse/config.json
 
+cp -R ${currDir}/nemo/*.nemo_action ~/.local/share/nemo/actions
+
 # setup launcher shortcut
 print_message "Setting up application launcher\n"
 printf '\n[redshift]\n allowed=true\n system=false\n users=\n\n' | sudo tee -a /etc/geoclue/geoclue.conf

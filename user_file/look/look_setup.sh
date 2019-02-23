@@ -57,6 +57,11 @@ dconf write /org/nemo/desktop/home-icon-visible "false"
 dconf write /org/nemo/desktop/trash-icon-visible "false"
 dconf write /org/cinnamon/desktop/session/idle-delay "uint32 0"
 
+# nemo
+dconf write /org/nemo/preferences/never-queue-file-ops "true"
+dconf write /org/nemo/preferences/show-open-in-terminal-toolbar "true"
+dconf write /org/nemo/preferences/show-new-folder-icon-toolbar "true"
+
 # customize gnome terminal
 dconf reset -f /org/gnome/terminal/
 gnome-terminal& # launch terminal to make sure a profile folder is created
