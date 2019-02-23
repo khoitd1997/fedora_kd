@@ -123,6 +123,9 @@ zsh-syntax-highlighting
 # misc
 adobe-source-code-pro-fonts
 
+# plymouth
+plymouth-plugin-script
+
 %end
 
 %post --log=/root/ks-post.log
