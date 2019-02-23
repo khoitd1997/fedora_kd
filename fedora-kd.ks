@@ -1,7 +1,7 @@
 %include fedora-kickstarts/fedora-live-cinnamon.ks
 %include fedora-repo-kd.ks
 
-part / --size=12288
+part / --size=7588
 
 timezone US/Pacific
 
