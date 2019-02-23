@@ -159,6 +159,12 @@ FOE
 
 glib-compile-schemas /usr/share/glib-2.0/schemas/
 
+cat >> /etc/plymouth/plymouthd.conf << FOE
+
+ShowDelay=0
+
+FOE
+
 %end
 
 # %post --nochroot --log=/mnt/sysimage/root/ks-post-no-root.log
