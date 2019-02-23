@@ -1,0 +1,32 @@
+[Default Applications]
+text/html=google-chrome.desktop
+x-scheme-handler/http=google-chrome.desktop
+x-scheme-handler/https=google-chrome.desktop
+x-scheme-handler/about=google-chrome.desktop
+x-scheme-handler/unknown=google-chrome.desktop
+application/nemo-action=code.desktop
+text/x-svsrc=code.desktop
+text/x-go=code.desktop
+application/x-java-keystore=code.desktop
+text/x-c++src=code.desktop
+text/x-c++hdr=code.desktop
+text/x-chdr=code.desktop
+text/x-csrc=code.desktop
+application/x-shellscript=code.desktop
+text/markdown=code.desktop
+application/json=code.desktop
+text/plain=code.desktop
+
+[Added Associations]
+application/nemo-action=code.desktop;
+text/x-svsrc=code.desktop;
+text/x-go=code.desktop;
+application/x-java-keystore=code.desktop;
+text/x-c++src=code.desktop;
+text/x-c++hdr=code.desktop;
+text/x-chdr=code.desktop;
+text/x-csrc=code.desktop;
+application/x-shellscript=code.desktop;
+text/markdown=code.desktop;
+application/json=code.desktop;
+text/plain=code.desktop;

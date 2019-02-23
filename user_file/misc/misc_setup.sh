@@ -43,6 +43,8 @@ echo fs.inotify.max_user_watches=524288 | sudo tee -a /etc/sysctl.conf
 mkdir -p ~/.config/synapse/
 cp ${currDir}/synapse_config.json ~/.config/synapse/config.json
 
+cp ${currDir}/mimeapps.list ~/.config
+
 cp -R ${currDir}/nemo/*.nemo_action ~/.local/share/nemo/actions
 
 # setup launcher shortcut
