@@ -88,6 +88,7 @@ synapse
 # liveusb-creator
 # bleachbit
 # gimp
+# vlc
 
 # flatpak
 flatpak
@@ -109,6 +110,12 @@ flatpak
 # arm-none-eabi-gcc-cs 
 # arm-none-eabi-gcc-cs-c++
 
+# rpm fusion
+rpmfusion-free-release
+rpmfusion-free-release-tainted
+rpmfusion-nonfree-release
+rpmfusion-nonfree-release-tainted
+
 # zsh
 zsh 
 zsh-syntax-highlighting
@@ -126,15 +133,7 @@ cat >> /etc/profile.d/first_login_setup.sh << 'EOF'
 # set -e
 
 if [ ! -f ~/first_login_setup_done ]; then
-    cd /usr/share/user_file/
-    mkdir -p ~/first_login_log
-
-    bash look/look_setup.sh 2>&1 | tee -a ~/first_login_log/look_log.log
-    bash vscode/vscode_setup.sh | tee -a ~/first_login_log/vscode_log.log
-    bash zsh/zsh_setup.sh | tee -a ~/first_login_log/zsh_log.log
-    bash flatpak/flatpak_setup.sh | tee -a ~/first_login_log/flatpak_log.log
-    bash misc/misc_setup.sh 2>&1 | tee -a ~/first_login_log/misc_log.log
-    
+    gnome-terminal  -e "bash -c '/usr/share/user_file/first_login_setup.sh'"     
     touch ~/first_login_setup_done
 fi
 EOF
