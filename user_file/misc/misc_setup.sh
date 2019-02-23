@@ -15,7 +15,6 @@ set -o nounset
 print_message "Starting Misc Installation of Fedora Machine\n"
 sudo passwd -l root
 sudo systemctl enable firewalld
-sudo setenforce 1
 sudo dnf update --allowerasing -y
 
 # adjust clock to local
