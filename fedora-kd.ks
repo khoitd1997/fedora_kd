@@ -158,11 +158,22 @@ FOE
 
 glib-compile-schemas /usr/share/glib-2.0/schemas/
 
-cat >> /etc/plymouth/plymouthd.conf << FOE
+mkdir -vp /usr/share/plymouth/themes/boot
+cat >> /usr/share/plymouth/themes/boot/boot.plymouth << FOE
+[Plymouth Theme]
+Name=boot
+Description=Infinite loop rainbow
+ModuleName=script
 
-ShowDelay=0
-
+[script]
+ImageDir=/usr/share/user_file/plymouth
+ScriptFile=/usr/share/user_file/plymouth/animation.script
 FOE
+
+cat >> /etc/plymouth/plymouthd.conf << FOE
+ShowDelay=0
+FOE
+/usr/sbin/plymouth-set-default-theme boot -R
 
 %end
 
