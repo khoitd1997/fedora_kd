@@ -166,5 +166,7 @@ FOE
 
 %end
 
-# %post --nochroot --log=/mnt/sysimage/root/ks-post-no-root.log
-# %end
+%post --nochroot --log=/mnt/sysimage/root/ks-post-no-root.log
+cp -vr /builddir/fedora-kickstarts/user_file /mnt/sysimage/usr/share/
+chmod -R a+r+x /mnt/sysimage/usr/share/user_file
+%end
