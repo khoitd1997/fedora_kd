@@ -122,8 +122,7 @@ zsh-syntax-highlighting
 
 # misc
 adobe-source-code-pro-fonts
-
-# plymouth
+arc-theme
 plymouth-plugin-script
 
 %end

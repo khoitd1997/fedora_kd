@@ -13,9 +13,9 @@ set -o nounset
 dconf write /org/cinnamon/desktop/background/picture-uri "'file:///usr/share/user_file/resource/TCP118v1_by_Tiziano_Consonni.jpg'"
 
 # theme
-dconf write /org/cinnamon/desktop/interface/gtk-theme "'Mint-Y-Dark'"
-dconf write /org/cinnamon/desktop/wm/preferences/theme "'Mint-Y-Dark'"
-dconf write /org/cinnamon/theme/name "'Mint-Y-Dark'"
+dconf write /org/cinnamon/desktop/interface/gtk-theme "'Arc-Dark-solid'"
+dconf write /org/cinnamon/desktop/wm/preferences/theme "'Arc-Dark'"
+dconf write /org/cinnamon/theme/name "'Arc-Dark-solid'"
 dconf write /org/cinnamon/settings-daemon/plugins/power/sleep-display-ac "10800"
 dconf write /org/cinnamon/settings-daemon/plugins/power/idle-dim-battery "false"
 dconf write /org/cinnamon/cinnamon-session/quit-delay-toggle "true"
