@@ -13,8 +13,10 @@ zsh_plugin="https://github.com/zsh-users/zsh-completions.git \
 print_message "Starting zsh installation\n"
 
 # oh-my-zsh stuffs
-cd ~
-sh -c "$(wget https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh -O -)"&
+curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh -o ~/omz.sh
+sed -i '/env zsh/d' ~/omz.sh
+sh ~/omz.sh
+rm -rf ~/omz.sh
 
 cp ${currDir}/.zshrc ~/.zshrc
 

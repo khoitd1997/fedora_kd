@@ -1,7 +1,7 @@
 %include fedora-kickstarts/fedora-live-cinnamon.ks
 %include fedora-repo-kd.ks
 
-part / --size=8088
+part / --size=10088
 
 timezone US/Pacific
 
@@ -47,9 +47,9 @@ bat
 # the_silver_searcher
 # neofetch 
 # task 
-# autojump
-# fd-find
-# fzf
+autojump
+fd-find
+fzf
 # hub 
 git
 nano 
@@ -94,13 +94,13 @@ konsole
 # flatpak
 flatpak
 
-# latex
+# # latex
 # texlive-scheme-basic 
 # texlive-collection-latexextra 
 # texlive-collection-latexrecommended 
 # texlive-collection-xetex
 
-# golang
+# # go
 # golang
 # golint
 
@@ -128,13 +128,18 @@ plymouth-plugin-script
 
 %end
 
-%post --log=/root/ks-post.log
+%post --log=/root/ks-post.log --erroronfail
 
 
 cat >> /etc/profile.d/first_login_setup.sh << 'EOF'
 #!/bin/bash
 # set -e
+if [ ! -f ~/first_login_setup_done ]; then
+if [ ! -f ~/first_login_setup_in_progress ]; then
 bash /usr/share/user_file/setup_wrapper.sh&
+fi
+fi
+
 EOF
 chmod a+x /etc/profile.d/first_login_setup.sh
 
@@ -172,6 +177,16 @@ ShowDelay=0
 FOE
 /usr/sbin/plymouth-set-default-theme boot -R
 
+systemctl enable firewalld
+
+sed -i '/upgrade_type/s/default/security/' /etc/dnf/automatic.conf 
+sed -i '/apply_updates/s/no/yes/' /etc/dnf/automatic.conf
+systemctl enable --now dnf-automatic-install.timer
+
+passwd -l root
+rm -vf /usr/share/applications/flameshot.desktop
+
+sed -ie 's:SHELL=/bin/bash:SHELL=/bin/zsh:g' /etc/default/useradd
 %end
 
 %post --nochroot --log=/mnt/sysimage/root/ks-post-no-root.log
