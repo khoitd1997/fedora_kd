@@ -67,12 +67,4 @@ vscode_config_dir="${HOME}/.config/Code/User"
 cp -vf ${currDir}/settings.json ${vscode_config_dir}/
 cp -vf ${currDir}/keybindings.json ${vscode_config_dir}/
 
-print_message "Installing Source Code Pro font"
-git clone https://github.com/adobe-fonts/source-code-pro.git --branch release ~/source-code-pro
-
-mkdir -p ~/.fonts
-cp ~/source-code-pro/OTF/*.otf ~/.fonts
-fc-cache -f -v ~/.fonts/
-rm -rf ~/source-code-pro
-
 print_message "Visual Studio Code Configurations done\n"
