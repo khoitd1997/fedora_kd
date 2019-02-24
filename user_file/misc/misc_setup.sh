@@ -39,28 +39,28 @@ echo fs.inotify.max_user_watches=524288 | sudo tee -a /etc/sysctl.conf
 # Dev tools installations start here
 # TODO: Handle go and python
 
-mkdir -p ~/.config/synapse/
-cp ${currDir}/synapse_config.json ~/.config/synapse/config.json
+mkdir -vp ~/.config/synapse/
+cp -v ${currDir}/synapse_config.json ~/.config/synapse/config.json
 
-cp ${currDir}/mimeapps.list ~/.config
+cp -v ${currDir}/mimeapps.list ~/.config
 
-cp -R ${currDir}/nemo/*.nemo_action ~/.local/share/nemo/actions
+cp -vR ${currDir}/nemo/*.nemo_action ~/.local/share/nemo/actions
 
 # setup launcher shortcut
 print_message "Setting up application launcher\n"
 printf '\n[redshift]\n allowed=true\n system=false\n users=\n\n' | sudo tee -a /etc/geoclue/geoclue.conf
 
-sudo rm -f /usr/share/applications/flameshot.desktop # remove default flameshot launcher
+sudo rm -vf /usr/share/applications/flameshot.desktop # remove default flameshot launcher
 
 # xpad stuffs
 xpad& # launch it to create initial files
 sleep 2
-rm -f ~/.config/autostart/xpad.desktop # don't start xpad on startup
+rm -vf ~/.config/autostart/xpad.desktop # don't start xpad on startup
 pkill xpad
 
-mkdir -p ~/.local/share/applications
+mkdir -vp ~/.local/share/applications
 python3 ${currDir}/launcher_app/add_launcher_app.py
 
-mkdir -p ~/temp
+mkdir -vp ~/temp
 
 print_message "Misc installation setup done\n"

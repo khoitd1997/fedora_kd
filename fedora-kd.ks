@@ -1,7 +1,7 @@
 %include fedora-kickstarts/fedora-live-cinnamon.ks
 %include fedora-repo-kd.ks
 
-part / --size=7588
+part / --size=8088
 
 timezone US/Pacific
 
@@ -89,6 +89,7 @@ synapse
 # bleachbit
 # gimp
 # vlc
+konsole
 
 # flatpak
 flatpak
@@ -133,11 +134,7 @@ plymouth-plugin-script
 cat >> /etc/profile.d/first_login_setup.sh << 'EOF'
 #!/bin/bash
 # set -e
-
-if [ ! -f ~/first_login_setup_done ]; then
-    gnome-terminal  -e "bash -c '/usr/share/user_file/first_login_setup.sh'"     
-    touch ~/first_login_setup_done
-fi
+bash /usr/share/user_file/setup_wrapper.sh&
 EOF
 chmod a+x /etc/profile.d/first_login_setup.sh
 
