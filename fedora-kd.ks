@@ -2,8 +2,11 @@
 %include fedora-repo-kd.ks
 
 part / --size=10088
+lang en_US.UTF-8
+keyboard us
 
 timezone US/Pacific
+# user --iscrypted --name=test --password=jksdfjlasdj --groups=wheel,dialout,mock
 
 %packages
 
@@ -28,7 +31,7 @@ nautilus-dropbox
 # modular
 bat
 
-# cli
+# # cli
 # doxygen
 # cmake
 # valgrind
@@ -91,7 +94,7 @@ synapse
 # vlc
 konsole
 
-# flatpak
+# # flatpak
 flatpak
 
 # # latex
@@ -104,7 +107,7 @@ flatpak
 # golang
 # golint
 
-# arm toolchain
+# # arm toolchain
 # openocd
 # qemu
 # arm-none-eabi-newlib
@@ -129,6 +132,27 @@ plymouth-plugin-script
 %end
 
 %post --log=/root/ks-post.log --erroronfail
+
+# annaconda customizations
+cat >> /etc/sysconfig/anaconda << FOE
+# [PasswordSpoke]
+# visited=1
+
+# [UserSpoke]
+# visited=1
+
+[DatetimeSpoke]
+visited=1
+
+[KeyboardSpoke]
+visited=1
+
+[WelcomeLanguageSpoke]
+visited=1
+
+[LangsupportSpoke]
+visited=1
+FOE
 
 
 cat >> /etc/profile.d/first_login_setup.sh << 'EOF'
