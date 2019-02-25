@@ -12,7 +12,8 @@ set -e
 set -o pipefail
 set -o nounset
 #----------------------------------------------------------------------------------------------------
-print_message "Starting Misc Installation of Fedora Machine\n"
+# some process may hog sudo at boot so check update while waiting
+dnf check-update 
 sudo dnf update -y
 
 # Add user to group
@@ -55,4 +56,4 @@ python3 ${currDir}/launcher_app/add_launcher_app.py
 
 mkdir -vp ~/temp
 
-print_message "Misc installation setup done\n"
+print_message "Misc setup done\n"

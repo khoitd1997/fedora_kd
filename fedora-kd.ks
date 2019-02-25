@@ -1,7 +1,7 @@
 %include fedora-kickstarts/fedora-live-cinnamon.ks
 %include fedora-repo-kd.ks
 
-part / --size=10088
+part / --size=12588
 lang en_US.UTF-8
 keyboard us
 
@@ -17,102 +17,102 @@ fedora-repos-modular
 # external
 code
 google-chrome-stable
-# xorg-x11-drv-nvidia
-# akmod-nvidia
+xorg-x11-drv-nvidia
+akmod-nvidia
 nautilus-dropbox
-# VirtualBox
-# akmod-VirtualBox
+VirtualBox
+akmod-VirtualBox
 
 # groups
-# @development-tools
-# @multimedia
-# @sound-and-video
+@development-tools
+@multimedia
+@sound-and-video
 
 # modular
 bat
 
-# # cli
-# doxygen
-# cmake
-# valgrind
-# gcc
-# clang
-# llvm 
-# htop
-# net-tools
-# minicom
-# screen
-# python3-pip 
-# curl
-# python3-setuptools
-# ranger
-# tldr
-# the_silver_searcher
-# neofetch 
-# task 
+# cli
+doxygen
+cmake
+valgrind
+gcc
+clang
+llvm 
+htop
+net-tools
+minicom
+screen
+python3-pip 
+curl
+python3-setuptools
+ranger
+tldr
+the_silver_searcher
+neofetch 
+task 
 autojump
 fd-find
 fzf
-# hub 
+hub 
 git
 nano 
 dnf-automatic 
-# openconnect 
-# tmux 
-# glibc-devel.i686 
-# libnsl
+openconnect 
+tmux 
+glibc-devel.i686 
+libnsl
 
 # packaging tools
-# fedora-packager
+fedora-packager
 mock
-# fedora-review
+fedora-review
 
-# # gui apps
-# xclip
-# evince
-# synaptic
+# gui apps
+xclip
+evince
+synaptic
 xpad
-# gparted
-# moserial
-# libncurses* 
-# meld
-# bustle
-# d-feet
-# graphviz
-# npm
+gparted
+moserial
+libncurses* 
+meld
+bustle
+d-feet
+graphviz
+npm
 flameshot
-# feh
+feh
 synapse
-# latexmk
-# baobab
-# kernel-devel
-# kernel-headers
-# pylint
-# liveusb-creator
-# bleachbit
-# gimp
-# vlc
+latexmk
+baobab
+kernel-devel
+kernel-headers
+pylint
+liveusb-creator
+bleachbit
+gimp
+vlc
 konsole
 
-# # flatpak
+# flatpak
 flatpak
 
-# # latex
-# texlive-scheme-basic 
-# texlive-collection-latexextra 
-# texlive-collection-latexrecommended 
-# texlive-collection-xetex
+# latex
+texlive-scheme-basic 
+texlive-collection-latexextra 
+texlive-collection-latexrecommended 
+texlive-collection-xetex
 
-# # go
-# golang
-# golint
+# go
+golang
+golint
 
-# # arm toolchain
-# openocd
-# qemu
-# arm-none-eabi-newlib
-# arm-none-eabi-gcc-cs 
-# arm-none-eabi-gcc-cs-c++
+# arm toolchain
+openocd
+qemu
+arm-none-eabi-newlib
+arm-none-eabi-gcc-cs 
+arm-none-eabi-gcc-cs-c++
 
 # rpm fusion
 rpmfusion-free-release

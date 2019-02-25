@@ -38,21 +38,19 @@ set -o pipefail
 set -o nounset
 #----------------------------------------------------------------------------------------------------
 
-print_message "Installing vscode\n"
-
 extension_all="${extension_general}${extension_theme}"
-# extension_all="${extension_all}${extension_python}"
-# extension_all="${extension_all}${extension_doxygen}"
-# extension_all="${extension_all}${extension_arm}"
+extension_all="${extension_all}${extension_python}"
+extension_all="${extension_all}${extension_doxygen}"
+extension_all="${extension_all}${extension_arm}"
 # extension_all="${extension_all}${extension_vhdl}"
-# extension_all="${extension_all}${extension_java}"
-# extension_all="${extension_all}${extension_md}"
-# extension_all="${extension_all}${extension_web}"
-# extension_all="${extension_all}${extension_latex}"
-# extension_all="${extension_all}${extension_golang}"
+extension_all="${extension_all}${extension_java}"
+extension_all="${extension_all}${extension_md}"
+extension_all="${extension_all}${extension_web}"
+extension_all="${extension_all}${extension_latex}"
+extension_all="${extension_all}${extension_golang}"
 extension_all="${extension_all}${extension_verilog}"
 
-print_message "Starting Package Installation\n"
+print_message "Starting Vscode Extension Installation\n"
 for ext in ${extension_all}
 do
 if ! code --install-extension "${ext}" ; then
@@ -60,7 +58,7 @@ print_error "Errrors while installing extensions\n"
 exit 1
 fi
 done
-print_message "Installation Done, configuring\n"
+print_message "Installation Done, Configuring\n"
 
 # copy Visual Studdio Code setting file and keybinding file
 vscode_config_dir="${HOME}/.config/Code/User"

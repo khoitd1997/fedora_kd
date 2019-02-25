@@ -70,3 +70,5 @@ dconf load /org/gnome/terminal/ < ${currDir}/gnome_terminal_backup.txt
 # pkill gnome-terminal
 
 python3 ${currDir}/cinnamon.py
+
+print_message "Look setup done\n"

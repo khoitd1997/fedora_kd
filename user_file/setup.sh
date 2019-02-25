@@ -22,4 +22,5 @@ print_section "Configuring Look"
 bash look/look_setup.sh 2>&1 | tee -a ~/first_login_log/look_log.log
 
 touch ~/first_login_setup_done
-print_message "First Login Setup Done\n"
+rm -f ~/first_login_setup_in_progress
+print_message "First Login Setup Done, You Should Restart Your Computer\n"
