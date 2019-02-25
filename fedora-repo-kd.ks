@@ -1,13 +1,9 @@
 %include fedora-kickstarts/fedora-repo-not-rawhide.ks
 
-# repo --name=fedora --metalink=https://mirrors.fedoraproject.org/metalink?repo=fedora-$releasever&arch=$basearch --install
-# # --mirrorlist=https://mirrors.fedoraproject.org/mirrorlist?repo=fedora-$releasever&arch=$basearch
-
-# repo --name=updates --metalink=https://mirrors.fedoraproject.org/metalink?repo=updates-released-f$releasever&arch=$basearch --install
-
 # third party
 repo --name=google-chrome --baseurl=http://dl.google.com/linux/chrome/rpm/stable/x86_64 --install
 
+# TODO: Think about whether to use vscode repo or flatpak
 repo --name=code --baseurl=https://packages.microsoft.com/yumrepos/vscode --install
 
 # rpm fusion
