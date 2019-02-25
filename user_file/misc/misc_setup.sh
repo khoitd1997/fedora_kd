@@ -13,7 +13,7 @@ set -o pipefail
 set -o nounset
 #----------------------------------------------------------------------------------------------------
 # some process may hog sudo at boot so check update while waiting
-dnf check-update 
+dnf check-update || true
 sudo dnf update -y
 
 # Add user to group

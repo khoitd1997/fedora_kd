@@ -67,7 +67,6 @@ dconf reset -f /org/gnome/terminal/
 gnome-terminal& # launch terminal to make sure a profile folder is created
 sleep 2
 dconf load /org/gnome/terminal/ < ${currDir}/gnome_terminal_backup.txt
-# pkill gnome-terminal
 
 python3 ${currDir}/cinnamon.py
 
