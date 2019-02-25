@@ -26,10 +26,20 @@ print_error()
     return 0
 }
 
+# got from https://unix.stackexchange.com/questions/267729/how-can-i-print-a-variable-with-padded-center-alignment
+print_section() {
+    termwidth="$(tput cols)"
+    printf "${cyan}"
+    padding="$(printf '%0.2s' --{1..500})"
+    printf '%*.*s %s %*.*s\n' 0 "$(((termwidth-2-${#1})/2))" "$padding" "$1" 0 "$(((termwidth-1-${#1})/2))" "$padding"
+    printf "${reset}"
+}
+
 # announce which section of scripts are we on
-print_section()
+print_section_old()
 {
-    printf "${cyan}\n${1}${reset}"
+    printf "${cyan}\n${1}"
+    printf "\n---------------------------------\n${reset}"
     return 0
 }
 
