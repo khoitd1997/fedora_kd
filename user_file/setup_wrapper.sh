@@ -19,7 +19,7 @@ cp -v konsole/konsolerc ~/.config
 cp -v konsole/konsole_profile.profile ~/.local/share/konsole
 
 sleep 10 # wait till the DE has fully appeared
-konsole --noclose -e "bash setup.sh"
+konsole --fullscreen --noclose -e "bash setup.sh"
 fi
 fi
 fi
