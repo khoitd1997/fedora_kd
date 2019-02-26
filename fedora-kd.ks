@@ -15,8 +15,6 @@ fedora-workstation-repositories
 fedora-repos-modular
 
 # external
-code
-google-chrome-stable
 xorg-x11-drv-nvidia
 akmod-nvidia
 nautilus-dropbox
@@ -206,6 +204,8 @@ systemctl enable firewalld
 sed -i '/upgrade_type/s/default/security/' /etc/dnf/automatic.conf 
 sed -i '/apply_updates/s/no/yes/' /etc/dnf/automatic.conf
 systemctl enable --now dnf-automatic-install.timer
+systemctl enable --now dnf-makecache.timer
+echo "\nkeepcache=True\n" >> /etc/dnf/dnf.conf
 
 passwd -l root
 rm -vf /usr/share/applications/flameshot.desktop
