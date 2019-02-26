@@ -14,7 +14,10 @@ set -o nounset
 #----------------------------------------------------------------------------------------------------
 # some process may hog sudo at boot so check update while waiting
 dnf check-update || true
+sudo dnf config-manager --set-enabled google-chrome -y
+dnf check-update || true
 sudo dnf update -y
+sudo dnf install google-chrome-stable -y
 
 # Add user to group
 sudo usermod -a -G dialout ${USER}
