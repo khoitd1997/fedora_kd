@@ -185,19 +185,34 @@
         "command": "-extension.vim_ctrl+k",
         "when": "editorTextFocus && vim.active && vim.use<C-k> && !inDebugRepl"
     },
-    // {
-    //     "key": "j",
-    //     "command": "selectNextSuggestion",
-    //     "when": "suggestWidgetMultipleSuggestions && suggestWidgetVisible && textInputFocus"
-    // },
-    // {
-    //     "key": "k",
-    //     "command": "selectPrevSuggestion",
-    //     "when": "suggestWidgetMultipleSuggestions && suggestWidgetVisible && textInputFocus"
-    // },
+    {
+        "key": "j",
+        "command": "selectNextSuggestion",
+        "when": "suggestWidgetMultipleSuggestions && suggestWidgetVisible && textInputFocus"
+    },
+    {
+        "key": "k",
+        "command": "selectPrevSuggestion",
+        "when": "suggestWidgetMultipleSuggestions && suggestWidgetVisible && textInputFocus"
+    },
     // {
     //     "key": "k",
     //     "command": "list.focusUp",
     //     "when": "listFocus"
     // },
+    {
+        "key": "alt+n",
+        "command": "notifications.clearAll",
+        "when": ""
+    },
+    {
+        "key": "alt+n",
+        "command": "-C_Cpp.Navigate",
+        "when": "editorTextFocus && editorLangId == 'cpp'"
+    },
+    {
+        "key": "alt+n",
+        "command": "-C_Cpp.Navigate",
+        "when": "editorTextFocus && editorLangId == 'c'"
+    },
 ]
