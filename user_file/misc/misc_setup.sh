@@ -13,6 +13,7 @@ set -o pipefail
 set -o nounset
 #----------------------------------------------------------------------------------------------------
 # some process may hog sudo at boot so check update while waiting
+print_message "Please enter sudo password if prompted\n"
 dnf check-update || true
 sudo dnf config-manager --set-enabled google-chrome -y
 dnf check-update || true
@@ -45,6 +46,7 @@ cp -vR ${currDir}/nemo/*.nemo_action ~/.local/share/nemo/actions
 
 # setup launcher shortcut
 print_message "Setting up application launcher\n"
+print_message "Please enter sudo password if prompted\n"
 printf '\n[redshift]\n allowed=true\n system=false\n users=\n\n' | sudo tee -a /etc/geoclue/geoclue.conf
 
 # xpad stuffs
