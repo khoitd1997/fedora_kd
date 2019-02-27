@@ -185,19 +185,19 @@
         "command": "-extension.vim_ctrl+k",
         "when": "editorTextFocus && vim.active && vim.use<C-k> && !inDebugRepl"
     },
-    {
-        "key": "j",
-        "command": "selectNextSuggestion",
-        "when": "suggestWidgetMultipleSuggestions && suggestWidgetVisible && textInputFocus"
-    },
-    {
-        "key": "k",
-        "command": "selectPrevSuggestion",
-        "when": "suggestWidgetMultipleSuggestions && suggestWidgetVisible && textInputFocus"
-    },
-    {
-        "key": "k",
-        "command": "list.focusUp",
-        "when": "listFocus"
-    },
+    // {
+    //     "key": "j",
+    //     "command": "selectNextSuggestion",
+    //     "when": "suggestWidgetMultipleSuggestions && suggestWidgetVisible && textInputFocus"
+    // },
+    // {
+    //     "key": "k",
+    //     "command": "selectPrevSuggestion",
+    //     "when": "suggestWidgetMultipleSuggestions && suggestWidgetVisible && textInputFocus"
+    // },
+    // {
+    //     "key": "k",
+    //     "command": "list.focusUp",
+    //     "when": "listFocus"
+    // },
 ]

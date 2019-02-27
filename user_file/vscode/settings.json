@@ -17,7 +17,8 @@
         "*.tdd": "makefile",
         "*.cfg": "tcl",
         "*.svd": "xml",
-        "*.hpp": "cpp"
+        "*.hpp": "cpp",
+        "*.ks": "shellscript"
     },
     "workbench.startupEditor": "newUntitledFile",
     "window.zoomLevel": 2,
@@ -89,7 +90,7 @@
     "window.newWindowDimensions": "inherit",
     "window.restoreFullscreen": true,
     "workbench.activityBar.visible": false,
-    "editor.cursorStyle": "line-thin",
+    "editor.cursorStyle": "line",
     "editor.hover.delay": 50,
     "editor.cursorBlinking": "phase",
     "search.showLineNumbers": true,
@@ -101,26 +102,28 @@
     "C_Cpp.default.cppStandard": "c++11",
     "C_Cpp.default.cStandard": "c99",
     "vim.useCtrlKeys": false,
-    "multiCommand.commands": [
-        {
-            "command": "multiCommand.openFileAndCloseSideBar",
-            "sequence": [
-                "workbench.action.toggleSidebarVisibility",
-                "list.select"
-            ]
-        },
-    ],
-    "vim.insertModeKeyBindings": [
-        {
-            "before": [
-                "j",
-                "k"
-            ],
-            "after": [
-                "<Esc>"
-            ]
-        }
-    ],
+    // "multiCommand.commands": [
+    //     {
+    //         "command": "multiCommand.openFileAndCloseSideBar",
+    //         "sequence": [
+    //             "workbench.action.toggleSidebarVisibility",
+    //             "list.select"
+    //         ]
+    //     },
+    // ],
+    // "vim.insertModeKeyBindings": [
+    //     {
+    //         "before": [
+    //             "j",
+    //             "k"
+    //         ],
+    //         "after": [
+    //             "<Esc>"
+    //         ]
+    //     }
+    // ],
     "editor.hover.sticky": false,
     "terminal.integrated.fontFamily": "source code pro",
+    "terminal.integrated.shell.windows": "C:\\Program Files\\Git\\bin\\bash.exe",
+    "terminal.integrated.shell.linux": "/bin/zsh",
 }
