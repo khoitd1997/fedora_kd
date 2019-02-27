@@ -1,6 +1,6 @@
 [Appearance]
-ColorScheme=Solarized
-Font=Source Code Pro,12,-1,5,57,0,0,0,0,0
+ColorScheme=WhiteOnBlack
+Font=Source Code Pro,13,-1,5,63,0,0,0,0,0
 
 [General]
 Name=Profile 4
