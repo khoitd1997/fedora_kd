@@ -27,7 +27,6 @@ sudo usermod -a -G mock ${USER}
 # adjust clock to local
 sudo timedatectl set-local-rtc 1 --adjust-system-clock 
 
-
 # setup GNOME keyring git credential helper
 git config --global credential.helper /usr/libexec/git-core/git-credential-libsecret
 
@@ -35,7 +34,7 @@ git config --global credential.helper /usr/libexec/git-core/git-credential-libse
 echo fs.inotify.max_user_watches=524288 | sudo tee -a /etc/sysctl.conf
 
 # Dev tools installations start here
-# TODO: Handle go and python
+pip3 install --user "${python_pip_package_list}"
 
 mkdir -vp ~/.config/synapse/
 cp -v ${currDir}/synapse_config.json ~/.config/synapse/config.json
