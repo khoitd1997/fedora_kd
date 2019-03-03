@@ -27,6 +27,10 @@ sudo usermod -a -G mock ${USER}
 # adjust clock to local
 sudo timedatectl set-local-rtc 1 --adjust-system-clock 
 
+
+sudo rm -f /etc/localtime
+sudo ln -s /usr/share/zoneinfo/US/Pacific /etc/localtime
+
 # setup GNOME keyring git credential helper
 git config --global credential.helper /usr/libexec/git-core/git-credential-libsecret
 
