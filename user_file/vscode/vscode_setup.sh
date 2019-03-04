@@ -9,7 +9,7 @@ PeterJausovec.vscode-docker oderwat.indent-rainbow rashwell.tcl \
 vector-of-bool.cmake-tools twxs.cmake eugenwiens.bitbake redhat.vscode-yaml \
 zhoufeng.pyqt-integration pnp.polacode Gruntfuggly.todo-tree \
 ibm.output-colorizer compulim.vscode-clock github.vscode-pull-request-github mitaki28.vscode-clang ryuta46.multi-command vscodevim.vim \
-laurenttreguier.rpm-spec "
+laurenttreguier.rpm-spec bungcip.better-toml "
 
 extension_theme=" zhuangtongfa.material-theme monokai.theme-monokai-pro-vscode "
 
