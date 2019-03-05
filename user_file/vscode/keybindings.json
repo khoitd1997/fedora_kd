@@ -215,4 +215,9 @@
         "command": "-C_Cpp.Navigate",
         "when": "editorTextFocus && editorLangId == 'c'"
     },
+    {
+        "key": "escape",
+        "command": "closeReferenceSearch",
+        "when": "referenceSearchVisible && !config.editor.stablePeek"
+    }
 ]
