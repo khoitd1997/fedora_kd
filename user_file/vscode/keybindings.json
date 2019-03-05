@@ -231,6 +231,11 @@
         "when": "listFocus && !inputFocus"
     },
     {
+        "key": "alt+k",
+        "command": "list.focusUp",
+        "when": "listFocus && !inputFocus"
+    },
+    {
         "key": "alt+j",
         "command": "workbench.action.interactivePlayground.arrowDown",
         "when": "interactivePlaygroundFocus && !editorTextFocus"
@@ -292,13 +297,18 @@
     },
     {
         "key": "alt+j",
-        "command": "workbench.action.quickOpenNavigatePreviousInRecentFilesPicker",
-        "when": "inRecentFilesPicker && inQuickOpen"
-    },
-    {
-        "key": "alt+j",
         "command": "workbench.action.quickOpenNavigateNext",
         "when": "inQuickOpen"
+    },
+    {
+        "key": "alt+k",
+        "command": "workbench.action.quickOpenNavigatePrevious",
+        "when": "inQuickOpen"
+    },
+    {
+        "key": "alt+k",
+        "command": "workbench.action.quickOpenNavigatePreviousInFilePicker",
+        "when": "inFilesPicker && inQuickOpen"
     },
     {
         "key": "ctrl+alt+o",

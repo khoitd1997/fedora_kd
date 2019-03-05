@@ -127,6 +127,24 @@
             "commands": [
                 ":nohl"
             ]
+        },
+        {
+            "before": [
+                "j"
+            ],
+            "after": [
+                "g",
+                "j"
+            ]
+        },
+        {
+            "before": [
+                "k"
+            ],
+            "after": [
+                "g",
+                "k"
+            ]
         }
     ],
     // "vim.substituteGlobalFlag": true,
