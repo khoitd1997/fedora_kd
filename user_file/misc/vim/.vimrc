@@ -14,9 +14,6 @@ set foldlevelstart=10
 nnoremap j gj
 nnoremap k gk
 
-let g:airline_theme='luna'
-"let g:airline_solarized_bg='dark'
-
 if has("autocmd")
   au VimEnter,InsertLeave * silent execute '!echo -ne "\e[2 q"' | redraw!
   au InsertEnter,InsertChange *
@@ -39,16 +36,13 @@ let g:syntastic_check_on_wq = 0
 
 call plug#begin('~/.vim/plugged')
 Plug 'tpope/vim-fugitive'
-Plug 'vim-airline/vim-airline'
-Plug 'vim-airline/vim-airline-themes'
 Plug 'scrooloose/syntastic'
-Plug 'altercation/vim-colors-solarized'
+Plug 'morhetz/gruvbox'
 
 call plug#end()
 
-let g:solarized_termcolors=256
 syntax enable
 set background=dark
-colorscheme solarized
+colorscheme gruvbox
 
 
