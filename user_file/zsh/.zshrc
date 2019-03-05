@@ -6,8 +6,7 @@
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
-# to know which specific one was loaded, run: echo $RANDOM_THEME
-# See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
+# to know which specific one was loaded, run: echo $RANDOM_THEME # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
 ZSH_THEME="miloshadzic"
 # ZSH_THEME="amuse"
 
@@ -76,7 +75,7 @@ source $ZSH/oh-my-zsh.sh
 
 # Preferred editor for local and remote sessions
 # if [[ -n $SSH_CONNECTION ]]; then
-#   export EDITOR='vim'
+   export EDITOR='vim'
 # else
 #   export EDITOR='mvim'
 # fi
@@ -121,3 +120,11 @@ setopt HIST_FIND_NO_DUPS
 setopt HIST_SAVE_NO_DUPS 
 setopt HIST_IGNORE_ALL_DUPS
 HISTSIZE=999999999
+
+verif=/home/kd/eecs112L/Lab3/Lab_Files/verif/
+
+# set editing-mode vi
+# bindkey -f  ~/.inputrc
+ 
+bindkey '\ej' history-search-backward
+bindkey '\ek' history-search-forward

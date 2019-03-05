@@ -110,17 +110,6 @@
             ]
         },
     ],
-    // "vim.insertModeKeyBindings": [
-    //     {
-    //         "before": [
-    //             "j",
-    //             "k"
-    //         ],
-    //         "after": [
-    //             "<Esc>"
-    //         ]
-    //     }
-    // ],
     "editor.hover.sticky": false,
     "terminal.integrated.fontFamily": "source code pro",
     "terminal.integrated.shell.windows": "C:\\Program Files\\Git\\bin\\bash.exe",
@@ -140,4 +129,6 @@
             ]
         }
     ],
+    // "vim.substituteGlobalFlag": true,
+    // "vim.leader": "<space>",
 }
