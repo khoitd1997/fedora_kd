@@ -127,4 +127,5 @@
     "terminal.integrated.shell.linux": "/bin/zsh",
     "keyboard.dispatch": "keyCode",
     "vim.cursorStylePerMode.normal": "block-outline",
+    "vim.camelCaseMotion.enable": true,
 }
