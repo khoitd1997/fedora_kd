@@ -47,6 +47,11 @@ cp -v ${currDir}/mimeapps.list ~/.config
 
 cp -vR ${currDir}/nemo/*.nemo_action ~/.local/share/nemo/actions
 
+# vim
+curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
+    https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+cp -v ${currDir}/vim/.vimrc ~/.vimrc
+
 # setup launcher shortcut
 print_message "Setting up application launcher\n"
 print_message "Please enter sudo password if prompted\n"
