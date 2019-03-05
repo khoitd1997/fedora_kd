@@ -191,15 +191,10 @@
         "when": "suggestWidgetMultipleSuggestions && suggestWidgetVisible && textInputFocus"
     },
     {
-        "key": "k",
+        "key": "alt+k",
         "command": "selectPrevSuggestion",
         "when": "suggestWidgetMultipleSuggestions && suggestWidgetVisible && textInputFocus"
     },
-    // {
-    //     "key": "k",
-    //     "command": "list.focusUp",
-    //     "when": "listFocus"
-    // },
     {
         "key": "alt+n",
         "command": "notifications.clearAll",
@@ -222,38 +217,8 @@
     },
     {
         "key": "alt+j",
-        "command": "settings.action.focusSettingsFromSearch",
-        "when": "inSettingsSearch && !suggestWidgetVisible"
-    },
-    {
-        "key": "down",
-        "command": "-settings.action.focusSettingsFromSearch",
-        "when": "inSettingsSearch && !suggestWidgetVisible"
-    },
-    {
-        "key": "alt+j",
-        "command": "settings.action.focusSettingsFile",
-        "when": "inSettingsSearch && !suggestWidgetVisible"
-    },
-    {
-        "key": "down",
-        "command": "-settings.action.focusSettingsFile",
-        "when": "inSettingsSearch && !suggestWidgetVisible"
-    },
-    {
-        "key": "alt+j",
         "command": "scrollLineDown",
-        "when": "textInputFocus"
-    },
-    {
-        "key": "ctrl+down",
-        "command": "-scrollLineDown",
-        "when": "textInputFocus"
-    },
-    {
-        "key": "alt+j",
-        "command": "outline.focusDownHighlighted",
-        "when": "outlineFiltered && outlineFocused"
+        "when": "textInputFocus && !suggestWidgetMultipleSuggestions && !suggestWidgetVisible"
     },
     {
         "key": "down",
@@ -266,16 +231,6 @@
         "when": "listFocus && !inputFocus"
     },
     {
-        "key": "down",
-        "command": "-list.focusDown",
-        "when": "listFocus && !inputFocus"
-    },
-    {
-        "key": "down",
-        "command": "-selectNextSuggestion",
-        "when": "suggestWidgetMultipleSuggestions && suggestWidgetVisible && textInputFocus"
-    },
-    {
         "key": "alt+j",
         "command": "workbench.action.interactivePlayground.arrowDown",
         "when": "interactivePlaygroundFocus && !editorTextFocus"
@@ -286,11 +241,6 @@
         "when": "interactivePlaygroundFocus && !editorTextFocus"
     },
     {
-        "key": "alt+j",
-        "command": "notifications.focusNextToast",
-        "when": "notificationFocus && notificationToastsVisible"
-    },
-    {
         "key": "down",
         "command": "-notifications.focusNextToast",
         "when": "notificationFocus && notificationToastsVisible"
@@ -298,7 +248,7 @@
     {
         "key": "alt+k",
         "command": "scrollLineUp",
-        "when": "textInputFocus"
+        "when": "textInputFocus && !suggestWidgetMultipleSuggestions && !suggestWidgetVisible"
     },
     {
         "key": "ctrl+up",
@@ -307,28 +257,8 @@
     },
     {
         "key": "down",
-        "command": "cursorDown",
-        "when": "textInputFocus"
-    },
-    {
-        "key": "down",
-        "command": "-cursorDown",
-        "when": "textInputFocus"
-    },
-    {
-        "key": "alt+j",
-        "command": "history.showNext",
-        "when": "historyNavigationEnabled && historyNavigationWidget"
-    },
-    {
-        "key": "down",
         "command": "-history.showNext",
         "when": "historyNavigationEnabled && historyNavigationWidget"
-    },
-    {
-        "key": "alt+j",
-        "command": "keybindings.editor.focusKeybindings",
-        "when": "inKeybindings && inKeybindingsSearch"
     },
     {
         "key": "down",
@@ -357,31 +287,18 @@
     },
     {
         "key": "alt+j",
-        "command": "workbench.action.quickOpenNavigateNextInRecentFilesPicker"
+        "command": "workbench.action.quickOpenNavigateNextInRecentFilesPicker",
+        "when": "inRecentFilesPicker && inQuickOpen"
     },
     {
         "key": "alt+j",
-        "command": "workbench.action.quickOpenNavigateNextInViewPicker"
+        "command": "workbench.action.quickOpenNavigatePreviousInRecentFilesPicker",
+        "when": "inRecentFilesPicker && inQuickOpen"
     },
     {
         "key": "alt+j",
-        "command": "workbench.action.quickOpenNavigateNext"
-    },
-    {
-        "key": "alt+j",
-        "command": "workbench.action.quickOpenNavigateNextInTerminalPicker"
-    },
-    {
-        "key": "alt+k",
-        "command": "workbench.action.quickOpenNavigatePrevious"
-    },
-    {
-        "key": "alt+k",
-        "command": "workbench.action.quickOpenNavigatePreviousInTerminalPicker"
-    },
-    {
-        "key": "alt+k",
-        "command": "workbench.action.quickOpenNavigatePreviousInViewPicker"
+        "command": "workbench.action.quickOpenNavigateNext",
+        "when": "inQuickOpen"
     },
     {
         "key": "ctrl+alt+o",

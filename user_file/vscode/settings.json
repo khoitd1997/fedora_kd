@@ -130,4 +130,14 @@
     "vim.camelCaseMotion.enable": true,
     "vim.hlsearch": true,
     "files.autoSave": "afterDelay",
+    "vim.normalModeKeyBindingsNonRecursive": [
+        {
+            "before": [
+                "<Esc>"
+            ],
+            "commands": [
+                ":nohl"
+            ]
+        }
+    ],
 }
