@@ -386,5 +386,10 @@
     {
         "key": "ctrl+alt+o",
         "command": "workbench.action.openRecent"
+    },
+    {
+        "key": "ctrl+d",
+        "command": "-extension.vim_ctrl+d",
+        "when": "editorTextFocus && vim.active && !inDebugRepl"
     }
 ]

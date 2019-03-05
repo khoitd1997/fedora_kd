@@ -128,4 +128,6 @@
     "keyboard.dispatch": "keyCode",
     "vim.cursorStylePerMode.normal": "block-outline",
     "vim.camelCaseMotion.enable": true,
+    "vim.hlsearch": true,
+    "files.autoSave": "afterDelay",
 }
