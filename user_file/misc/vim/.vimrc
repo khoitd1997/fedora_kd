@@ -52,6 +52,7 @@ Plug 'tpope/vim-fugitive'
 Plug 'scrooloose/syntastic'
 Plug 'morhetz/gruvbox'
 Plug 'enricobacis/vim-airline-clock'
+Plug 'justinmk/vim-sneak'
 call plug#end()
 
 syntax enable
