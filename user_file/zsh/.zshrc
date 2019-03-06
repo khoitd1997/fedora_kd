@@ -123,11 +123,10 @@ HISTSIZE=999999999
 
 verif=/home/kd/eecs112L/Lab3/Lab_Files/verif/
 
-# set editing-mode vi
-# bindkey -f  ~/.inputrc
- 
 bindkey '\ek' history-search-backward
 bindkey '\ej' history-search-forward
+
+export FZF_DEFAULT_OPTS='--bind alt-j:down,alt-k:up'
 
 # switching monitor mode custom command, will need adjustment when 
 # changing physical arrangements

@@ -21,6 +21,7 @@ set foldlevelstart=10
 
 nnoremap j gj
 nnoremap k gk
+nnoremap <ESC> :nohlsearch<CR>
 
 nmap <c-s> :w<CR>
 imap <c-s> <Esc>:w<CR>a
@@ -50,6 +51,7 @@ Plug 'vim-airline/vim-airline'
 Plug 'tpope/vim-fugitive'
 Plug 'scrooloose/syntastic'
 Plug 'morhetz/gruvbox'
+Plug 'enricobacis/vim-airline-clock'
 call plug#end()
 
 syntax enable
