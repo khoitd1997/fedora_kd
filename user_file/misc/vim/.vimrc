@@ -14,6 +14,9 @@ set foldlevelstart=10
 nnoremap j gj
 nnoremap k gk
 
+nmap <c-s> :w<CR>
+imap <c-s> <Esc>:w<CR>a
+
 if has("autocmd")
   au VimEnter,InsertLeave * silent execute '!echo -ne "\e[2 q"' | redraw!
   au InsertEnter,InsertChange *

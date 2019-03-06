@@ -128,3 +128,12 @@ verif=/home/kd/eecs112L/Lab3/Lab_Files/verif/
  
 bindkey '\ek' history-search-backward
 bindkey '\ej' history-search-forward
+
+# switching monitor mode custom command, will need adjustment when 
+# changing physical arrangements
+alias one-monitor="xrandr --output DVI-D-0 --auto --output HDMI-0 --off"
+alias multi-monitor="xrandr --output DVI-D-0 --auto --output HDMI-0 --auto && xrandr --output DVI-D-0 --auto --output HDMI-0 --left-of DVI-D-0"
+
+stty start undef
+stty stop undef
+setopt noflowcontrol
