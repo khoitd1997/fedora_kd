@@ -126,5 +126,5 @@ verif=/home/kd/eecs112L/Lab3/Lab_Files/verif/
 # set editing-mode vi
 # bindkey -f  ~/.inputrc
  
-bindkey '\ej' history-search-backward
-bindkey '\ek' history-search-forward
+bindkey '\ek' history-search-backward
+bindkey '\ej' history-search-forward
