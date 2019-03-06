@@ -1,6 +1,14 @@
 syntax on
-set number
+set number relativenumber
 set showcmd
+
+:augroup numbertoggle
+:  autocmd!
+:  autocmd BufEnter,FocusGained,InsertLeave * set relativenumber
+:  autocmd BufLeave,FocusLost,InsertEnter   * set norelativenumber
+:augroup END
+
+set ttimeoutlen=50
 
 set tabstop=4 
 set softtabstop=4
@@ -38,10 +46,10 @@ let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 
 call plug#begin('~/.vim/plugged')
+Plug 'vim-airline/vim-airline'
 Plug 'tpope/vim-fugitive'
 Plug 'scrooloose/syntastic'
 Plug 'morhetz/gruvbox'
-
 call plug#end()
 
 syntax enable

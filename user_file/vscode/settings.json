@@ -145,8 +145,35 @@
                 "g",
                 "k"
             ]
-        }
+        },
+        // {
+        //     "before": [
+        //         "h"
+        //     ],
+        //     "after": [
+        //         "g",
+        //         "k"
+        //     ]
+        // },
+        // {
+        //     "before": [
+        //         "l"
+        //     ],
+        //     "after": [
+        //         "g",
+        //         "k"
+        //     ]
+        // }
     ],
+    "editor.tabCompletion": "on",
+    "path-autocomplete.triggerOutsideStrings": true,
+    "editor.lineNumbers": "relative",
+    "vim.sneak": true,
+    "vim.iskeyword": ".",
     // "vim.substituteGlobalFlag": true,
     // "vim.leader": "<space>",
+    "vim.handleKeys": {
+        // "<C-d>": false,
+    },
+    "editor.wordSeparators": ".",
 }
