@@ -47,6 +47,8 @@ cp -v ${currDir}/mimeapps.list ~/.config
 
 cp -vR ${currDir}/nemo/*.nemo_action ~/.local/share/nemo/actions
 
+printf "file://$HOME/Dropbox/Class/" >>  ~/.config/gtk-3.0/bookmarks
+
 # vim
 curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
     https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
