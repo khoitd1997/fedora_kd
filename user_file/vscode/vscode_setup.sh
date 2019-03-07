@@ -9,7 +9,7 @@ extension_general="ms-vscode.cpptools  kevinkyang.auto-comment-blocks CoenraadS.
 		vector-of-bool.cmake-tools twxs.cmake eugenwiens.bitbake redhat.vscode-yaml \
 		zhoufeng.pyqt-integration pnp.polacode Gruntfuggly.todo-tree \
 		ibm.output-colorizer compulim.vscode-clock github.vscode-pull-request-github mitaki28.vscode-clang ryuta46.multi-command vscodevim.vim \
-		laurenttreguier.rpm-spec bungcip.better-toml bbenoist.qml ionutvmi.path-autocomplete tickleforce.scrolloff peterfh.linesinfostatusbar "
+		laurenttreguier.rpm-spec bungcip.better-toml bbenoist.qml ionutvmi.path-autocomplete tickleforce.scrolloff "
 
 extension_theme=" zhuangtongfa.material-theme monokai.theme-monokai-pro-vscode "
 
@@ -37,6 +37,7 @@ source ../utils.sh
 set -e
 set -o pipefail
 set -o nounset
+
 #----------------------------------------------------------------------------------------------------
 print_message "Adding Microsoft Vscode repo, please enter sudo password:\n"
 sudo rpm --import https://packages.microsoft.com/keys/microsoft.asc
