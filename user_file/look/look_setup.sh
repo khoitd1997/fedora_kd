@@ -51,6 +51,10 @@ dconf write /org/cinnamon/settings-daemon/peripherals/touchscreen/orientation-lo
 dconf write /org/cinnamon/settings-daemon/plugins/power/sleep-display-ac "0"
 dconf write /org/gnome/libgnomekbd/keyboard/options "['caps\tcaps:escape']"
 dconf write /org/cinnamon/desktop/keybindings/wm/show-desktop "['<Primary><Alt>d']"
+dconf write /org/cinnamon/desktop/keybindings/wm/switch-to-workspace-left "['<Control><Alt>Left', '<Primary><Alt>h']"
+dconf write /org/cinnamon/desktop/keybindings/wm/switch-to-workspace-right "['<Control><Alt>Right', '<Primary><Alt>l']"
+dconf write /org/cinnamon/desktop/keybindings/media-keys/screensaver "['XF86ScreenSaver']"
+
 
 dconf write /org/nemo/desktop/computer-icon-visible "false"
 dconf write /org/nemo/desktop/home-icon-visible "false"

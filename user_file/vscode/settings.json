@@ -129,7 +129,7 @@
     "vim.normalModeKeyBindingsNonRecursive": [
         {
             "before": [
-                "<Space>"
+                "<Esc>"
             ],
             "commands": [
                 ":nohl"
