@@ -67,8 +67,21 @@ colorscheme gruvbox
 
 let g:hardtime_default_on = 1
 
-nnoremap <C-J> <C-W><C-J>
-nnoremap <C-K> <C-W><C-K>
-nnoremap <C-L> <C-W><C-L>
-nnoremap <C-H> <C-W><C-H>
+execute "set <M-h>=\eh"
+execute "set <M-H>=\eH"
+execute "set <M-j>=\ej"
+execute "set <M-S-J>=\eJ"
+execute "set <M-k>=\ek"
+execute "set <M-K>=\eK"
+execute "set <M-l>=\el"
+execute "set <M-L>=\eL"
 
+nnoremap <M-j> :m .+1<CR>==
+nnoremap <M-k> :m .-2<CR>==
+inoremap <M-j> <Esc>:m .+1<CR>==gi
+inoremap <M-k> <Esc>:m .-2<CR>==gi
+
+nnoremap <M-J> <C-W><C-J>
+nnoremap <M-K> <C-W><C-K>
+nnoremap <M-L> <C-W><C-L>
+nnoremap <M-h> <C-W><C-H>

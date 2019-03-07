@@ -185,4 +185,12 @@
     "editor.wordSeparators": ".",
     "editor.smoothScrolling": true,
     "scrolloff.scrolloff": 25,
+    "scrolloff.alwaysCenter": true,
+    "terminal.integrated.commandsToSkipShell": [
+        "multiCommand.saveAndEnterCommand",
+        "workbench.action.openRecent",
+        "workbench.files.action.focusFilesExplorer",
+        "workbench.view.extensions",
+        "workbench.view.scm"
+    ]
 }
