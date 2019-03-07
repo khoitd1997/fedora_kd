@@ -10,7 +10,7 @@ set showcmd
 
 set ttimeoutlen=50
 
-set tabstop=4 
+set tabstop=4
 set softtabstop=4
 filetype indent on
 set wildmenu
@@ -21,20 +21,21 @@ set foldlevelstart=10
 
 nnoremap j gj
 nnoremap k gk
-nnoremap <ESC> :nohlsearch<CR>
+nnoremap <silent> <ESC><ESC> :nohlsearch<CR>
 
 nmap <c-s> :w<CR>
-imap <c-s> <Esc>:w<CR>a
+imap <c-s> <Esc>:w<CR>
+au BufWrite * :Autoformat
 
 if has("autocmd")
-  au VimEnter,InsertLeave * silent execute '!echo -ne "\e[2 q"' | redraw!
-  au InsertEnter,InsertChange *
-    \ if v:insertmode == 'i' |
-    \   silent execute '!echo -ne "\e[6 q"' | redraw! |
-    \ elseif v:insertmode == 'r' |
-    \   silent execute '!echo -ne "\e[4 q"' | redraw! |
-    \ endif
-  au VimLeave * silent execute '!echo -ne "\e[ q"' | redraw!
+		au VimEnter,InsertLeave * silent execute '!echo -ne "\e[2 q"' | redraw!
+		au InsertEnter,InsertChange *
+								\ if v:insertmode == 'i' |
+								\   silent execute '!echo -ne "\e[6 q"' | redraw! |
+								\ elseif v:insertmode == 'r' |
+								\   silent execute '!echo -ne "\e[4 q"' | redraw! |
+								\ endif
+		au VimLeave * silent execute '!echo -ne "\e[ q"' | redraw!
 endif
 
 set statusline+=%#warningmsg#
@@ -49,7 +50,10 @@ let g:syntastic_check_on_wq = 0
 call plug#begin('~/.vim/plugged')
 Plug 'vim-airline/vim-airline'
 Plug 'tpope/vim-fugitive'
-Plug 'scrooloose/syntastic'
+Plug 'takac/vim-hardtime'
+Plug 'tpope/vim-surround'
+Plug 'Chiel92/vim-autoformat'
+"Plug 'scrooloose/syntastic'
 Plug 'morhetz/gruvbox'
 Plug 'enricobacis/vim-airline-clock'
 Plug 'justinmk/vim-sneak'
@@ -59,4 +63,8 @@ syntax enable
 set background=dark
 colorscheme gruvbox
 
+nnoremap <C-J> <C-W><C-J>
+nnoremap <C-K> <C-W><C-K>
+nnoremap <C-L> <C-W><C-L>
+nnoremap <C-H> <C-W><C-H>
 

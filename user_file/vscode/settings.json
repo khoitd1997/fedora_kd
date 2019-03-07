@@ -109,6 +109,13 @@
                 "list.select"
             ]
         },
+        {
+            "command": "multiCommand.saveAndEnterCommand",
+            "sequence": [
+                "workbench.action.files.save",
+                "extension.vim_escape"
+            ]
+        },
     ],
     "editor.hover.sticky": false,
     "terminal.integrated.fontFamily": "source code pro",
@@ -122,7 +129,7 @@
     "vim.normalModeKeyBindingsNonRecursive": [
         {
             "before": [
-                "<Esc>"
+                "<Space>"
             ],
             "commands": [
                 ":nohl"
@@ -173,7 +180,9 @@
     // "vim.substituteGlobalFlag": true,
     // "vim.leader": "<space>",
     "vim.handleKeys": {
-        // "<C-d>": false,
+        // "<C-v>": true,
     },
     "editor.wordSeparators": ".",
+    "editor.smoothScrolling": true,
+    "scrolloff.scrolloff": 25,
 }
