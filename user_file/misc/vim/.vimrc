@@ -16,9 +16,6 @@ filetype indent on
 set wildmenu
 set showmatch
 
-set foldenable
-set foldlevelstart=10
-
 nnoremap j gj
 nnoremap k gk
 nnoremap <silent> <ESC><ESC> :nohlsearch<CR>
@@ -59,7 +56,12 @@ Plug 'Chiel92/vim-autoformat'
 Plug 'morhetz/gruvbox'
 Plug 'enricobacis/vim-airline-clock'
 Plug 'justinmk/vim-sneak'
+"Plug 'pseewald/vim-anyfold'
 call plug#end()
+
+"autocmd Filetype * AnyFoldActivate
+"filetype plugin indent on " required
+
 
 syntax enable
 set background=dark
@@ -85,3 +87,22 @@ nnoremap <M-J> <C-W><C-J>
 nnoremap <M-K> <C-W><C-K>
 nnoremap <M-L> <C-W><C-L>
 nnoremap <M-h> <C-W><C-H>
+
+set foldenable
+set foldmethod=syntax
+set foldnestmax=1
+"set nofoldenable
+set foldlevel=0
+function! NeatFoldText()
+		let line = ' ' . substitute(getline(v:foldstart), '^\s*"\?\s*\|\s*"\?\s*{{' . '{\d*\s*', '', 'g') . ' '
+		let lines_count = v:foldend - v:foldstart + 1
+		let lines_count_text = '| ' . printf("%10s", lines_count . ' lines') . ' |'
+		let foldchar = matchstr(&fillchars, 'fold:\zs.')
+		let foldtextstart = strpart('+' . repeat(foldchar, v:foldlevel*2) . line, 0, (winwidth(0)*2)/3)
+		let foldtextend = lines_count_text . repeat(foldchar, 8)
+		let foldtextlength = strlen(substitute(foldtextstart . foldtextend, '.', 'x', 'g')) + &foldcolumn
+		return foldtextstart . repeat("") . foldtextend
+endfunction
+
+set fillchars=fold:\ "fold stuffs
+set foldexpr=getline(v:lnum)
