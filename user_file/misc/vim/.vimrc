@@ -47,6 +47,8 @@ let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 
+set scrolloff=25
+
 call plug#begin('~/.vim/plugged')
 Plug 'vim-airline/vim-airline'
 Plug 'tpope/vim-fugitive'
@@ -62,6 +64,8 @@ call plug#end()
 syntax enable
 set background=dark
 colorscheme gruvbox
+
+let g:hardtime_default_on = 1
 
 nnoremap <C-J> <C-W><C-J>
 nnoremap <C-K> <C-W><C-K>
