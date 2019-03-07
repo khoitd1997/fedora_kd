@@ -13,6 +13,7 @@ set ttimeoutlen=50
 set tabstop=4
 set softtabstop=4
 filetype indent on
+filetype plugin on
 set wildmenu
 set showmatch
 
@@ -23,6 +24,13 @@ nnoremap <silent> <ESC><ESC> :nohlsearch<CR>
 nmap <c-s> :w<CR>
 imap <c-s> <Esc>:w<CR>
 au BufWrite * :Autoformat
+
+let g:NERDSpaceDelims = 1
+let g:NERDCommentEmptyLines = 1
+let g:NERDTrimTrailingWhitespace = 1
+
+nmap <C-_> <plug>NERDCommenterInvert
+vmap <C-_> <Plug>NERDCommenterInvert<CR>gv
 
 if has("autocmd")
 		au VimEnter,InsertLeave * silent execute '!echo -ne "\e[2 q"' | redraw!
@@ -39,8 +47,10 @@ set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
 
+let g:airline#extensions#whitespace#enabled = 0
+
 let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 1
+let g:syntastic_auto_loc_list = 0
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 
@@ -52,7 +62,8 @@ Plug 'tpope/vim-fugitive'
 Plug 'takac/vim-hardtime'
 Plug 'tpope/vim-surround'
 Plug 'Chiel92/vim-autoformat'
-"Plug 'scrooloose/syntastic'
+Plug 'scrooloose/syntastic'
+Plug 'scrooloose/nerdcommenter'
 Plug 'morhetz/gruvbox'
 Plug 'enricobacis/vim-airline-clock'
 Plug 'justinmk/vim-sneak'
@@ -92,7 +103,7 @@ set foldenable
 set foldmethod=syntax
 set foldnestmax=1
 "set nofoldenable
-set foldlevel=0
+set foldlevel=1
 function! NeatFoldText()
 		let line = ' ' . substitute(getline(v:foldstart), '^\s*"\?\s*\|\s*"\?\s*{{' . '{\d*\s*', '', 'g') . ' '
 		let lines_count = v:foldend - v:foldstart + 1
