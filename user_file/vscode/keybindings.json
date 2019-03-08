@@ -1094,11 +1094,6 @@
         "when": "referenceSearchVisible && !config.editor.stablePeek"
     },
     {
-        "key": "ctrl+j",
-        "command": "scrollLineDown",
-        "when": "textInputFocus && !suggestWidgetMultipleSuggestions && !suggestWidgetVisible"
-    },
-    {
         "key": "down",
         "command": "-outline.focusDownHighlighted",
         "when": "outlineFiltered && outlineFocused"
@@ -1127,11 +1122,6 @@
         "key": "down",
         "command": "-notifications.focusNextToast",
         "when": "notificationFocus && notificationToastsVisible"
-    },
-    {
-        "key": "ctrl+k",
-        "command": "scrollLineUp",
-        "when": "textInputFocus && !suggestWidgetMultipleSuggestions && !suggestWidgetVisible"
     },
     {
         "key": "ctrl+up",
@@ -1257,5 +1247,15 @@
         "key": "alt+k",
         "command": "editor.action.moveLinesUpAction",
         "when": "editorTextFocus && !editorReadonly"
+    },
+    {
+        "key": "ctrl+j",
+        "command": "cursorPageDown",
+        "when": "textInputFocus"
+    },
+    {
+        "key": "ctrl+k",
+        "command": "cursorPageUp",
+        "when": "textInputFocus"
     }
 ]

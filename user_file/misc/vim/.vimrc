@@ -104,6 +104,9 @@ nnoremap <M-h> <C-W><C-H>
 nnoremap <M-J> yyp
 nnoremap <M-K> yypk
 
+nnoremap <c-j> <c-d>
+nnoremap <c-k> <c-u>
+
 "folding settings
 set foldenable
 set foldmethod=syntax
