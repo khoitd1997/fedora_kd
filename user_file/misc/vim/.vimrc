@@ -68,6 +68,7 @@ Plug 'morhetz/gruvbox'
 Plug 'enricobacis/vim-airline-clock'
 Plug 'justinmk/vim-sneak'
 "Plug 'pseewald/vim-anyfold'
+" Plug 'djoshea/vim-autoread'
 call plug#end()
 
 "autocmd Filetype * AnyFoldActivate
@@ -94,26 +95,25 @@ nnoremap <M-k> :m .-2<CR>==
 inoremap <M-j> <Esc>:m .+1<CR>==gi
 inoremap <M-k> <Esc>:m .-2<CR>==gi
 
-nnoremap <M-J> <C-W><C-J>
-nnoremap <M-K> <C-W><C-K>
-nnoremap <M-L> <C-W><C-L>
+" nnoremap <M-J> <C-W><C-J>
+" nnoremap <M-K> <C-W><C-K>
+nnoremap <M-l> <C-W><C-L>
 nnoremap <M-h> <C-W><C-H>
+nnoremap <M-J> yyp
+nnoremap <M-K> yypk
 
 set foldenable
 set foldmethod=syntax
 set foldnestmax=1
 "set nofoldenable
 set foldlevel=1
-function! NeatFoldText()
-		let line = ' ' . substitute(getline(v:foldstart), '^\s*"\?\s*\|\s*"\?\s*{{' . '{\d*\s*', '', 'g') . ' '
-		let lines_count = v:foldend - v:foldstart + 1
-		let lines_count_text = '| ' . printf("%10s", lines_count . ' lines') . ' |'
-		let foldchar = matchstr(&fillchars, 'fold:\zs.')
-		let foldtextstart = strpart('+' . repeat(foldchar, v:foldlevel*2) . line, 0, (winwidth(0)*2)/3)
-		let foldtextend = lines_count_text . repeat(foldchar, 8)
-		let foldtextlength = strlen(substitute(foldtextstart . foldtextend, '.', 'x', 'g')) + &foldcolumn
-		return foldtextstart . repeat("") . foldtextend
-endfunction
 
 set fillchars=fold:\ "fold stuffs
 set foldexpr=getline(v:lnum)
+autocmd FileType vim,tex,md let b:autoformat_autoindent=0
+let g:autoformat_autoindent = 0
+set autoread
+set updatetime=200
+au CursorHold,CursorHoldI * checktime
+au FocusGained,BufEnter * :checktime
+
