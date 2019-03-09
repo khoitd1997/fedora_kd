@@ -126,3 +126,7 @@ set updatetime=200
 au CursorHold,CursorHoldI * checktime
 au FocusGained,BufEnter * :checktime
 
+nnoremap <c-z> :u<CR> 
+inoremap <c-z> <c-o>:u<CR>
+
+set clipboard=unnamedplus
