@@ -50,14 +50,12 @@ cp -vR ${currDir}/nemo/*.nemo_action ~/.local/share/nemo/actions
 printf "file://$HOME/Dropbox/Class/" >>  ~/.config/gtk-3.0/bookmarks
 
 # vim
+ln -vfs ${currDir}/vim/.vimrc ~/.vimrc
 curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
     https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-rm -f ~/.vimrc
-ln -vs -t ~ -d ${currDir}/vim/.vimrc ~/.vimrc
 
 # tmux
-rm -f ~/.tmux.conf 
-ln -sv ${currDir}/tmux/.tmux.conf ~/.tmux.conf 
+ln -sfv ${currDir}/tmux/.tmux.conf ~/.tmux.conf 
 
 # setup launcher shortcut
 print_message "Setting up application launcher\n"

@@ -22,8 +22,7 @@ rm -rf ~/omz.sh
 cd ${currDir}
 cd ..
 
-rm -f ~/.zshrc
-ln -vs ${currDir}/.zshrc ~/.zshrc
+ln -vfs ${currDir}/.zshrc ~/.zshrc
 
 # plugins
 cd ~/.oh-my-zsh/custom/plugins
