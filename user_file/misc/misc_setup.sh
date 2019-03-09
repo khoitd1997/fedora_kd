@@ -54,6 +54,9 @@ curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
     https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 stow -t ~ -d ${currDir} -S vim --verbose=3
 
+# tmux
+ln -sv ${currDir}/tmux/.tmux.conf ~/.tmux.conf 
+
 # setup launcher shortcut
 print_message "Setting up application launcher\n"
 print_message "Please enter sudo password if prompted\n"
