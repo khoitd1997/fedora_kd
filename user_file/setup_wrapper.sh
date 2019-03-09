@@ -15,8 +15,10 @@ touch ~/first_login_setup_in_progress
 
 # configuring konsole
 mkdir -p ~/.local/share/konsole
-cp -v konsole/konsolerc ~/.config
-cp -v konsole/konsole_profile.profile ~/.local/share/konsole
+rm -f ~/.config/konsolerc
+rm -f ~/.local/share/konsole/konsole_profile.profile
+ln -sv ${currDir}/konsole/konsolerc ~/.config
+ln -sv ${currDir}/konsole/konsole_profile.profile ~/.local/share/konsole
 
 sleep 10 # wait till the DE has fully appeared
 konsole --fullscreen --noclose -e "bash setup.sh"

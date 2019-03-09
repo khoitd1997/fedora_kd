@@ -30,6 +30,7 @@ akmod-VirtualBox
 bat
 
 # cli
+stow
 doxygen
 cmake
 valgrind

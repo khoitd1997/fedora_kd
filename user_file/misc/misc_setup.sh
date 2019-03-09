@@ -52,7 +52,7 @@ printf "file://$HOME/Dropbox/Class/" >>  ~/.config/gtk-3.0/bookmarks
 # vim
 curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
     https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-cp -v ${currDir}/vim/.vimrc ~/.vimrc
+stow -t ~ -d ${currDir} -S vim --verbose=3
 
 # setup launcher shortcut
 print_message "Setting up application launcher\n"

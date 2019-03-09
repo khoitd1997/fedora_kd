@@ -1188,11 +1188,6 @@
         "when": "editorTextFocus && vim.active && !inDebugRepl"
     },
     {
-        "key": "alt+j",
-        "command": "",
-        "when": "markdownPreviewFocus"
-    },
-    {
         "key": "ctrl+b",
         "command": "-markdown.extension.editing.toggleBold",
         "when": "editorTextFocus && !editorReadonly && editorLangId == 'markdown'"
@@ -1241,12 +1236,12 @@
     {
         "key": "alt+j",
         "command": "editor.action.moveLinesDownAction",
-        "when": "editorTextFocus && !editorReadonly"
+        "when": "editorTextFocus && !editorReadonly && !listFocus && inputFocus && !suggestWidgetMultipleSuggestions && !suggestWidgetVisible && !textInputFocus"
     },
     {
         "key": "alt+k",
         "command": "editor.action.moveLinesUpAction",
-        "when": "editorTextFocus && !editorReadonly"
+        "when": "editorTextFocus && !editorReadonly && !listFocus && inputFocus && !suggestWidgetMultipleSuggestions && !suggestWidgetVisible && !textInputFocus"
     },
     {
         "key": "ctrl+j",

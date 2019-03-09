@@ -18,7 +18,10 @@ sed -i '/env zsh/d' ~/omz.sh
 sh ~/omz.sh
 rm -rf ~/omz.sh
 
-cp ${currDir}/.zshrc ~/.zshrc
+
+cd ${currDir}
+cd ..
+stow -t ~ -d . -S zsh --verbose=3
 
 # plugins
 cd ~/.oh-my-zsh/custom/plugins
