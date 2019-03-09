@@ -30,7 +30,6 @@ akmod-VirtualBox
 bat
 
 # cli
-stow
 doxygen
 zeitgeist
 youtube-dl

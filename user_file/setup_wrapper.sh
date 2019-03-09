@@ -15,8 +15,7 @@ touch ~/first_login_setup_in_progress
 
 # configuring konsole
 mkdir -p ~/.local/share/konsole
-rm -f ~/.config/konsolerc
-rm -f ~/.local/share/konsole/konsole_profile.profile
+rm -f ~/.config/konsolerc ~/.local/share/konsole/konsole_profile.profile
 ln -sv ${currDir}/konsole/konsolerc ~/.config
 ln -sv ${currDir}/konsole/konsole_profile.profile ~/.local/share/konsole
 

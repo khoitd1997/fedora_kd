@@ -52,9 +52,11 @@ printf "file://$HOME/Dropbox/Class/" >>  ~/.config/gtk-3.0/bookmarks
 # vim
 curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
     https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-stow -t ~ -d ${currDir} -S vim --verbose=3
+rm -f ~/.vimrc
+ln -vs -t ~ -d ${currDir}/vim/.vimrc ~/.vimrc
 
 # tmux
+rm -f ~/.tmux.conf 
 ln -sv ${currDir}/tmux/.tmux.conf ~/.tmux.conf 
 
 # setup launcher shortcut

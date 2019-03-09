@@ -21,7 +21,9 @@ rm -rf ~/omz.sh
 
 cd ${currDir}
 cd ..
-stow -t ~ -d . -S zsh --verbose=3
+
+rm -f ~/.zshrc
+ln -vs ${currDir}/.zshrc ~/.zshrc
 
 # plugins
 cd ~/.oh-my-zsh/custom/plugins

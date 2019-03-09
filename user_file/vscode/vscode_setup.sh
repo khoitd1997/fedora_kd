@@ -69,6 +69,7 @@ print_message "Installation Done, Configuring\n"
 
 # copy Visual Studdio Code setting file and keybinding file
 vscode_config_dir="${HOME}/.config/Code/User"
+rm -f ${vscode_config_dir}/settings.json ${vscode_config_dir}/keybindings.json
 ln -sv ${currDir}/settings.json ${vscode_config_dir}/settings.json
 ln -sv ${currDir}/keybindings.json ${vscode_config_dir}/keybindings.json
 
