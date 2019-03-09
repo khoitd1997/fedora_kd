@@ -1236,12 +1236,12 @@
     {
         "key": "alt+j",
         "command": "editor.action.moveLinesDownAction",
-        "when": "editorTextFocus && !editorReadonly && !listFocus && inputFocus && !suggestWidgetMultipleSuggestions && !suggestWidgetVisible && !textInputFocus"
+        "when": "editorTextFocus && !editorReadonly && !suggestWidgetMultipleSuggestions && !suggestWidgetVisible"
     },
     {
         "key": "alt+k",
         "command": "editor.action.moveLinesUpAction",
-        "when": "editorTextFocus && !editorReadonly && !listFocus && inputFocus && !suggestWidgetMultipleSuggestions && !suggestWidgetVisible && !textInputFocus"
+        "when": "editorTextFocus && !editorReadonly && !suggestWidgetMultipleSuggestions && !suggestWidgetVisible"
     },
     {
         "key": "ctrl+j",
