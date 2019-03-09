@@ -18,7 +18,6 @@ sed -i '/env zsh/d' ~/omz.sh
 sh ~/omz.sh
 rm -rf ~/omz.sh
 
-
 cd ${currDir}
 cd ..
 
@@ -30,4 +29,4 @@ for plugin in ${zsh_plugin}; do
 git clone ${plugin}
 done
 
-print_message "zsh installation done, PLEASE LOG OUT FIRST\n"
+print_message "zsh installation done\n"
