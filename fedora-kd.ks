@@ -6,7 +6,7 @@ lang en_US.UTF-8
 keyboard us
 
 timezone US/Pacific
-# user --iscrypted --name=test --password=jksdfjlasdj --groups=wheel,dialout,mock
+# user --iscrypted --name=test --password=123456 --groups=wheel,dialout,mock
 
 %packages
 
@@ -32,6 +32,8 @@ bat
 # cli
 stow
 doxygen
+zeitgeist
+youtube-dl
 cmake
 valgrind
 gcc
