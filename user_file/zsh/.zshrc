@@ -62,7 +62,7 @@ COMPLETION_WAITING_DOTS="true"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git zsh-syntax-highlighting zsh-autosuggestions zsh-completions taskwarrior colored-man-pages colorize autojump)
+plugins=(git zsh-syntax-highlighting zsh-autosuggestions zsh-completions taskwarrior colored-man-pages colorize autojump vi-mode)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -94,8 +94,12 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-RPROMPT='[%D{%L:%M %p}]'
 
+# modify vi-mode plugin variable for custom mode indicator
+MODE_INDICATOR="%{$fg_bold[red]%} -- NORMAL -- %{$reset_color%}"
+RPROMPT='$(vi_mode_prompt_info)'
+
+bindkey -M vicmd "^R" fzf-history-widget
 
 TRAPALRM() {
     zle reset-prompt
@@ -125,6 +129,7 @@ verif=/home/kd/eecs112L/Lab3/Lab_Files/verif/
 
 bindkey '\ek' history-search-backward
 bindkey '\ej' history-search-forward
+
 
 export FZF_DEFAULT_OPTS='--bind alt-j:down,alt-k:up'
 
