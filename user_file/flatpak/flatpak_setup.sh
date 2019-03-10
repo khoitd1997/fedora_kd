@@ -4,7 +4,7 @@ cd ${currDir}
 source ../utils.sh
 
 flatpak_package=" com.spotify.Client com.discordapp.Discord \
-com.slack.Slack io.atom.Atom "
+com.slack.Slack "
 
 #flatpak
 flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
