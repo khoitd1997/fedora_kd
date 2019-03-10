@@ -105,7 +105,7 @@ call plug#end()
 "color scheme
 syntax enable
 set background=dark
-colorscheme gruvbox
+silent! colorscheme gruvbox
 
 "hard time mode
 let g:hardtime_default_on = 1
