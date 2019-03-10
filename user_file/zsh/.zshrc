@@ -115,25 +115,22 @@ else
 source /usr/share/fzf/shell/key-bindings.zsh
 fi
 
-source /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh 
+source /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 PATH=$PATH:${GOPATH//://bin:}/bin
 PATH=$PATH:${HOME}/.local/bin
 
-setopt HIST_IGNORE_DUPS 
+setopt HIST_IGNORE_DUPS
 setopt HIST_FIND_NO_DUPS
-setopt HIST_SAVE_NO_DUPS 
+setopt HIST_SAVE_NO_DUPS
 setopt HIST_IGNORE_ALL_DUPS
 HISTSIZE=999999999
-
-verif=/home/kd/eecs112L/Lab3/Lab_Files/verif/
 
 bindkey '\ek' history-search-backward
 bindkey '\ej' history-search-forward
 
-
 export FZF_DEFAULT_OPTS='--bind alt-j:down,alt-k:up'
 
-# switching monitor mode custom command, will need adjustment when 
+# switching monitor mode custom command, will need adjustment when
 # changing physical arrangements
 alias one-monitor="xrandr --output DVI-D-0 --auto --output HDMI-0 --off"
 alias multi-monitor="xrandr --output DVI-D-0 --auto --output HDMI-0 --auto && xrandr --output DVI-D-0 --auto --output HDMI-0 --left-of DVI-D-0"
