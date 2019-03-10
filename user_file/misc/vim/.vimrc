@@ -22,8 +22,11 @@ set wildmenu
 set showmatch
 
 "default to visual line movement for j and k
-nnoremap j gj
-nnoremap k gk
+nnoremap <expr> j v:count == 0 ? 'gj' : "\<Esc>".v:count.'j'
+nnoremap <expr> k v:count == 0 ? 'gk' : "\<Esc>".v:count.'k'
+
+let g:mapleader = "\<Space>"
+
 nnoremap <silent> <ESC><ESC> :nohlsearch<CR>
 
 "format and change to normal on ctrl-s save
@@ -88,9 +91,14 @@ let g:syntastic_auto_loc_list = 0
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 
+"easymotion stuffs
+map <leader><leader>W <Plug>(easymotion-b)
+map <leader><leader>E <Plug>(easymotion-ge)
+
 "vimplug plugins
 call plug#begin('~/.vim/plugged')
 Plug 'vim-airline/vim-airline'
+Plug 'easymotion/vim-easymotion'
 Plug 'tpope/vim-fugitive'
 Plug 'takac/vim-hardtime'
 Plug 'tpope/vim-surround'
