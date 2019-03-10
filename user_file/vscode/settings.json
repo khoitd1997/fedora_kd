@@ -24,7 +24,7 @@
     "window.zoomLevel": 2,
     "python.formatting.provider": "autopep8",
     "gitlens.keymap": "chorded",
-    "editor.wordWrap": "on",
+    "editor.wordWrap": "wordWrapColumn",
     "workbench.colorTheme": "Monokai Pro (Filter Spectrum)",
     "material-icon-theme.showUpdateMessage": false,
     "pasteImage.path": "${currentFileDir}/image",
@@ -153,24 +153,31 @@
                 "k"
             ]
         },
-        // {
-        //     "before": [
-        //         "h"
-        //     ],
-        //     "after": [
-        //         "g",
-        //         "k"
-        //     ]
-        // },
-        // {
-        //     "before": [
-        //         "l"
-        //     ],
-        //     "after": [
-        //         "g",
-        //         "k"
-        //     ]
-        // }
+        {
+            "before": [
+                "leader",
+                "leader",
+                "W"
+            ],
+            "after": [
+                "leader",
+                "leader",
+                "b"
+            ]
+        },
+        {
+            "before": [
+                "leader",
+                "leader",
+                "E"
+            ],
+            "after": [
+                "leader",
+                "leader",
+                "g",
+                "e"
+            ]
+        }
     ],
     "editor.tabCompletion": "on",
     "path-autocomplete.triggerOutsideStrings": true,
@@ -178,7 +185,7 @@
     "vim.sneak": true,
     "vim.iskeyword": "`~!@#$%^&*()-=+[{]}\\|;:'\",.<>/?",
     // "vim.substituteGlobalFlag": true,
-    // "vim.leader": "<space>",
+    "vim.leader": "<space>",
     "vim.handleKeys": {
         // "<C-v>": true,
     },
@@ -192,5 +199,15 @@
         "workbench.files.action.focusFilesExplorer",
         "workbench.view.extensions",
         "workbench.view.scm"
-    ]
+    ],
+    "rewrap.autoWrap.enabled": true,
+    "rewrap.wrappingColumn": 80,
+    "editor.wordWrapColumn": 100,
+    "vim.easymotion": true,
+    "vim.easymotionMarkerFontFamily": "source code pro",
+    "vim.easymotionMarkerWidthPerChar": 13,
+    "vim.easymotionMarkerHeight": 16,
+    "vim.easymotionMarkerForegroundColorTwoChar": "7bd88f",
+    "vim.easymotionMarkerBackgroundColor": "orange",
+    "workbench.editor.labelFormat": "short"
 }
