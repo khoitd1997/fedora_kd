@@ -41,7 +41,7 @@ echo fs.inotify.max_user_watches=524288 | sudo tee -a /etc/sysctl.conf
 pip3 install --user ${python_pip_package_list}
 
 mkdir -vp ~/.config/synapse/
-cp -v ${currDir}/synapse_config.json ~/.config/synapse/config.json
+ln -sfv ${currDir}/synapse_config.json ~/.config/synapse/config.json
 
 cp -v ${currDir}/mimeapps.list ~/.config
 
