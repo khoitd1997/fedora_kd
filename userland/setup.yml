@@ -1,0 +1,16 @@
+- hosts: localhost
+  # become: true
+  tasks:
+    # - include: misc.yml
+    # - include: look.yml
+    # - include: test/test.yml
+    - include: flatpak/flatpak.yml
+    # - name: dconf test
+    #   become_user: "{{ ansible_user_id }}"
+    # dconf:
+    #   state: present
+    #   key: /org/cinnamon/theme/name
+    #   value: "'Arc-Dark-solid'"
+    #   tags:
+    #     - look
+    #     - gnome

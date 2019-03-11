@@ -55,7 +55,6 @@ dconf write /org/cinnamon/desktop/keybindings/wm/switch-to-workspace-left "['<Co
 dconf write /org/cinnamon/desktop/keybindings/wm/switch-to-workspace-right "['<Control><Alt>Right', '<Primary><Alt>l']"
 dconf write /org/cinnamon/desktop/keybindings/media-keys/screensaver "['XF86ScreenSaver']"
 
-
 dconf write /org/nemo/desktop/computer-icon-visible "false"
 dconf write /org/nemo/desktop/home-icon-visible "false"
 dconf write /org/nemo/desktop/trash-icon-visible "false"

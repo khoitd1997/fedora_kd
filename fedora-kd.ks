@@ -94,6 +94,9 @@ gimp
 vlc
 konsole
 
+# ansible
+ansible
+
 # snap
 snapd
 
