@@ -194,6 +194,12 @@
     "scrolloff.scrolloff": 25,
     "scrolloff.alwaysCenter": true,
     "terminal.integrated.commandsToSkipShell": [
+        "workbench.action.openEditorAtIndex1",
+        "workbench.action.openEditorAtIndex2",
+        "workbench.action.openEditorAtIndex3",
+        "workbench.action.openEditorAtIndex4",
+        "workbench.action.openEditorAtIndex5",
+        "workbench.action.openEditorAtIndex6",
         "multiCommand.saveAndEnterCommand",
         "workbench.action.openRecent",
         "workbench.files.action.focusFilesExplorer",
@@ -209,5 +215,6 @@
     "vim.easymotionMarkerHeight": 16,
     "vim.easymotionMarkerForegroundColorTwoChar": "7bd88f",
     "vim.easymotionMarkerBackgroundColor": "orange",
-    "workbench.editor.labelFormat": "short"
+    "workbench.editor.labelFormat": "short",
+    "breadcrumbs.enabled": true
 }
