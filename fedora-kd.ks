@@ -94,6 +94,9 @@ gimp
 vlc
 konsole
 
+# snap
+snapd
+
 # flatpak
 flatpak
 
