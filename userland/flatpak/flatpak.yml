@@ -7,6 +7,6 @@
         name: com.spotify.Client
           com.discordapp.Discord
           com.slack.Slack
-    - tags:
+      tags:
         - flatpak
         - package
