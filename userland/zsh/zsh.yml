@@ -6,6 +6,8 @@
         - sed -i '/env zsh/d' ~/omz.sh
         - sh ~/omz.sh
         - rm -rf ~/omz.sh
+      tags:
+        - oh-my-zsh
 
     - name: configure zsh
       file:
@@ -31,6 +33,7 @@
             - https://github.com/zsh-users/zsh-autosuggestions.git
       tags:
         - zsh_plugin
+        - oh-my-zsh
 
   tags:
     - shell

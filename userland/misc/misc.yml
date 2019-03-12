@@ -4,6 +4,8 @@
           command: dnf update -y -q
           args:
             warn: false
+          tags:
+            - package
 
         - name: install packages
           dnf:
@@ -12,6 +14,8 @@
             state: present
             name:
               - google-chrome-stable
+          tags:
+            - package
 
         - name: configuring misc sudo system stuffs
           shell: "{{item}}"
@@ -29,10 +33,13 @@
             - printf '\n[redshift]\n allowed=true\n system=false\n users=\n\n' | tee -a /etc/geoclue/geoclue.conf
       become: true
 
-    - name: configure misc non-sudo system stuffs
+    - name: git
       command: "{{item}}"
       with_items:
         - git config --global credential.helper /usr/libexec/git-core/git-credential-libsecret
+      tags:
+        - git
+        - development
 
     - name: configure synapse
       command: "{{item}}"
@@ -41,6 +48,8 @@
         - ln -sfv {{ playbook_dir }}/misc/synapse_config.json ~/.config/synapse/config.json
       args:
         warn: false
+      tags:
+        - synapse
 
     - block:
         - name: copy nemo action files
@@ -56,6 +65,8 @@
           lineinfile:
             path: ~/.config/gtk-3.0/bookmarks
             line: "file:///home/{{ ansible_user_id }}/Dropbox/Class/"
+      tags:
+        - nemo
 
     - name: configure default app handler
       command: "{{item}}"
@@ -71,14 +82,19 @@
             - ln -vfs {{ playbook_dir }}/misc/vim/.vimrc ~/.vimrc
           args:
             warn: false
-
         - name: installing vim plugins
           shell: vim +'PlugInstall --sync' +qall &> /dev/null < /dev/tty
+      tags:
+        - vim
+        - development
 
     - name: tmux
       command: "{{item}}"
       with_items:
         - ln -sfv {{ playbook_dir }}/misc/tmux/.tmux.conf ~/.tmux.conf
+      tags:
+        - tmux
+        - development
 
     - block:
         - name: launch xpad
@@ -112,6 +128,8 @@
           - pylint
           - autopep8
         extra_args: --user
+      tags:
+        - pip
 
   tags:
     - misc
