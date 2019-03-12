@@ -163,11 +163,15 @@ FOE
 
 cat >> /etc/profile.d/first_login_setup.sh << 'EOF'
 #!/bin/bash
+# will clone the first login setup repo and run it
+
 # set -e
+if [ "${USER}" != "liveuser" ]; then
 if [ ! -f ~/first_login_setup_done ]; then
 if [ ! -f ~/first_login_setup_in_progress ]; then
 git clone https://github.com/khoitd1997/fedora_kd.git ~/fedora_kd
 bash ~/fedora_kd/userland/setup_wrapper.sh&
+fi
 fi
 fi
 
