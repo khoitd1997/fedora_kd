@@ -1,0 +1,175 @@
+- block:
+    - name: theme
+      dconf:
+        key: "{{ item.key }}"
+        value: "{{ item.value }}"
+      with_items:
+        - {
+            key: /org/cinnamon/desktop/interface/gtk-theme,
+            value: "'Arc-Dark-solid'",
+          }
+        - {
+            key: /org/cinnamon/desktop/wm/preferences/theme,
+            value: "'Arc-Dark'",
+          }
+        - { key: /org/cinnamon/theme/name, value: "'Arc-Dark-solid'" }
+        - {
+            key: /org/cinnamon/settings-daemon/plugins/power/sleep-display-ac,
+            value: "10800",
+          }
+        - {
+            key: /org/cinnamon/settings-daemon/plugins/power/idle-dim-battery,
+            value: "false",
+          }
+        - {
+            key: /org/cinnamon/cinnamon-session/quit-delay-toggle,
+            value: "true",
+          }
+        - { key: /org/cinnamon/enable-indicators, value: "true" }
+        - { key: /org/cinnamon/sounds/login-enabled, value: "false" }
+        - { key: /org/cinnamon/cinnamon-session/quit-time-delay, value: "20" }
+        - { key: /org/cinnamon/desktop/notifications/remove-old, value: "true" }
+      tags:
+        - theme
+
+    - name: panel
+      dconf:
+        key: "{{ item.key }}"
+        value: "{{ item.value }}"
+      with_items:
+        - { key: /org/cinnamon/panels-enabled, value: "['1:0:top']" }
+        - { key: /org/cinnamon/panels-height, value: "['1:25']" }
+      tags:
+        - panel
+
+    - name: misc
+      dconf:
+        key: "{{ item.key }}"
+        value: "{{ item.value }}"
+      with_items:
+        - {
+            key: /org/cinnamon/desktop/background/picture-uri,
+            value: "'file:///usr/share/user_file/resource/TCP118v1_by_Tiziano_Consonni.jpg'",
+          }
+        - {
+            key: /org/cinnamon/desktop/interface/text-scaling-factor,
+            value: "1.1000000000000003",
+          }
+        - { key: /org/cinnamon/alttab-switcher-style, value: "'icons+preview'" }
+        - { key: /org/cinnamon/panels-autohide, value: "['1:false']" }
+        - {
+            key: /org/cinnamon/settings-daemon/peripherals/touchscreen/orientation-lock,
+            value: "true",
+          }
+        - {
+            key: /org/cinnamon/settings-daemon/plugins/power/sleep-display-ac,
+            value: "0",
+          }
+      tags:
+        - misc
+
+    - name: effect
+      dconf:
+        key: "{{ item.key }}"
+        value: "{{ item.value }}"
+      with_items:
+        - { key: /org/cinnamon/desktop-effects, value: "false" }
+        - {
+            key: /org/cinnamon/desktop/interface/gtk-overlay-scrollbars,
+            value: "false",
+          }
+        - { key: /org/cinnamon/startup-animation, value: "false" }
+        - { key: /org/cinnamon/enable-vfade, value: "false" }
+      tags:
+        - effect
+
+    - name: sound
+      dconf:
+        key: "{{ item.key }}"
+        value: "{{ item.value }}"
+      with_items:
+        - { key: /org/cinnamon/sounds/switch-enabled, value: "false" }
+        - { key: /org/cinnamon/sounds/map-enabled, value: "false" }
+        - { key: /org/cinnamon/sounds/close-enabled, value: "false" }
+        - { key: /org/cinnamon/sounds/minimize-enabled, value: "false" }
+        - { key: /org/cinnamon/sounds/maximize-enabled, value: "false" }
+        - { key: /org/cinnamon/sounds/unmaximize-enabled, value: "false" }
+        - { key: /org/cinnamon/sounds/tile-enabled, value: "false" }
+        - { key: /org/cinnamon/sounds/notification-enabled, value: "false" }
+      tags:
+        - sound
+
+    - name: keyboard
+      dconf:
+        key: "{{ item.key }}"
+        value: "{{ item.value }}"
+      with_items:
+        - {
+            key: /org/gnome/libgnomekbd/keyboard/options,
+            value: "['caps\tcaps:escape']",
+          }
+        - {
+            key: /org/cinnamon/desktop/keybindings/wm/show-desktop,
+            value: "['<Primary><Alt>d']",
+          }
+        - {
+            key: /org/cinnamon/desktop/keybindings/wm/switch-to-workspace-left,
+            value: "['<Control><Alt>Left', '<Primary><Alt>h']",
+          }
+        - {
+            key: /org/cinnamon/desktop/keybindings/wm/switch-to-workspace-right,
+            value: "['<Control><Alt>Right', '<Primary><Alt>l']",
+          }
+        - {
+            key: /org/cinnamon/desktop/keybindings/media-keys/screensaver,
+            value: "['XF86ScreenSaver']",
+          }
+      tags:
+        - keyboard
+
+    - name: icons
+      dconf:
+        key: "{{ item.key }}"
+        value: "{{ item.value }}"
+      with_items:
+        - { key: /org/nemo/desktop/computer-icon-visible, value: "false" }
+        - { key: /org/nemo/desktop/home-icon-visible, value: "false" }
+        - { key: /org/nemo/desktop/trash-icon-visible, value: "false" }
+        - { key: /org/cinnamon/desktop/session/idle-delay, value: "uint32 0" }
+      tags:
+        - icons
+
+    - name: nemo options
+      dconf:
+        key: "{{ item.key }}"
+        value: "{{ item.value }}"
+      with_items:
+        - { key: /org/nemo/preferences/never-queue-file-ops, value: "true" }
+        - {
+            key: /org/nemo/preferences/show-open-in-terminal-toolbar,
+            value: "true",
+          }
+        - {
+            key: /org/nemo/preferences/show-new-folder-icon-toolbar,
+            value: "true",
+          }
+      tags:
+        - nemo
+
+    - name: gnome terminal
+      command: "{{item}}"
+      with_items:
+        - dconf reset -f /org/gnome/terminal/
+        - gnome-terminal
+        - sleep 2
+        - dconf load /org/gnome/terminal/ < {{ playbook_dir }}/look/gnome_terminal_backup.txt
+      become_user: "{{ ansible_user_id }}"
+
+    - name: cinnamon python scripts
+      command: python3 "{{ playbook_dir }}/look/cinnamon.py"
+
+  tags:
+    - look
+    - cinnamon
+
+  become_user: "{{ ansible_user_id }}"

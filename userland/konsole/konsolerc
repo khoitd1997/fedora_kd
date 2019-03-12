@@ -5,7 +5,8 @@ DefaultProfile=konsole_profile.profile
 Favorites=
 
 [MainWindow]
-Height 1080=1080
-State=AAAA/wAAAAD9AAAAAAAAB4AAAAQfAAAABAAAAAQAAAAIAAAACPwAAAAA
+Height 1080=1023
+State=AAAA/wAAAAD9AAAAAAAAB4AAAAPnAAAABAAAAAQAAAAIAAAACPwAAAAA
 ToolBarsMovable=Disabled
-Width 1920=1920
+Width 1920=1621
+Window-Maximized 1080x1920=true

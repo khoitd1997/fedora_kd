@@ -1,0 +1,34 @@
+- block:
+    - name: install oh-my-zsh
+      command: "{{item}}"
+      with_items:
+        - curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh -o ~/omz.sh
+        - sed -i '/env zsh/d' ~/omz.sh
+        - sh ~/omz.sh
+        - rm -rf ~/omz.sh
+
+    - name: configure zsh
+      file:
+        src: "{{ playbook_dir }}/zsh/.zshrc"
+        dest: "~/.zshrc"
+        state: link
+        follow: false
+        force: yes
+        owner: "{{ ansible_user_id }}"
+        group: "{{ ansible_user_id }}"
+        mode: "0644"
+      tags:
+        - conf
+
+    - name: install zsh plugins
+      command: chdir=~/.oh-my-zsh/custom/plugins git clone "{{item}}"
+      with_items:
+        - https://github.com/zsh-users/zsh-completions.git
+        - https://github.com/zsh-users/zsh-autosuggestions.git
+      tags:
+        - plugin
+
+  tags:
+    - shell
+    - zsh
+    - development
