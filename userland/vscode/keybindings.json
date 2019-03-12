@@ -1245,12 +1245,27 @@
     },
     {
         "key": "ctrl+j",
-        "command": "cursorPageDown",
+        "command": "-extension.vim_ctrl+j",
+        "when": "editorTextFocus && vim.active && vim.use<C-j> && !inDebugRepl"
+    },
+    {
+        "key": "ctrl+j",
+        "command": "scrollPageDown",
+        "when": "textInputFocus"
+    },
+    {
+        "key": "alt+pagedown",
+        "command": "-scrollPageDown",
         "when": "textInputFocus"
     },
     {
         "key": "ctrl+k",
-        "command": "cursorPageUp",
+        "command": "scrollPageUp",
+        "when": "textInputFocus"
+    },
+    {
+        "key": "alt+pageup",
+        "command": "-scrollPageUp",
         "when": "textInputFocus"
     }
 ]
