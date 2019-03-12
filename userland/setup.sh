@@ -1,6 +1,8 @@
+set -e
+
 currDir="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )"
 cd ${currDir}
-source utils.sh
+source ./utils.sh
 
 function cleanup {	
     rm -f ~/first_login_setup_in_progress	
@@ -17,4 +19,3 @@ fi
 ansible-playbook -v setup.yml --ask-become-pass
 
 touch ~/first_login_setup_done
-rm -f ~/first_login_setup_in_progress
