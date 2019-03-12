@@ -11,6 +11,10 @@ else
 vscode_config_dir="$APPDATA/Code/User"
 fi
 
+code&
+
+sleep 5
+
 # copy Visual Studdio Code setting file and keybinding file
 ln -sfv ${currDir}/settings.json ${vscode_config_dir}/settings.json
 ln -sfv ${currDir}/keybindings.json ${vscode_config_dir}/keybindings.json

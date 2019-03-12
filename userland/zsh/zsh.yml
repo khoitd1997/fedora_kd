@@ -18,15 +18,19 @@
         group: "{{ ansible_user_id }}"
         mode: "0644"
       tags:
-        - conf
+        - zsh_conf
 
-    - name: install zsh plugins
-      command: chdir=~/.oh-my-zsh/custom/plugins git clone "{{item}}"
-      with_items:
-        - https://github.com/zsh-users/zsh-completions.git
-        - https://github.com/zsh-users/zsh-autosuggestions.git
+    - block:
+        - name: removing existing zsh plugin
+          shell: rm -rf ~/.oh-my-zsh/custom/plugins/*
+
+        - name: cloning zsh plugins
+          command: chdir=~/.oh-my-zsh/custom/plugins git clone "{{item}}"
+          with_items:
+            - https://github.com/zsh-users/zsh-completions.git
+            - https://github.com/zsh-users/zsh-autosuggestions.git
       tags:
-        - plugin
+        - zsh_plugin
 
   tags:
     - shell
