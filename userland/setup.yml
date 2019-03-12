@@ -1,5 +1,4 @@
 - hosts: localhost
-  # become: true
   tasks:
     # - include: misc.yml
     # - include: zsh/zsh.yml

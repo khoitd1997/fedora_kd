@@ -156,14 +156,10 @@
       tags:
         - nemo
 
-    - name: gnome terminal
-      command: "{{item}}"
-      with_items:
-        - dconf reset -f /org/gnome/terminal/
-        - gnome-terminal
-        - sleep 2
-        - dconf load /org/gnome/terminal/ < {{ playbook_dir }}/look/gnome_terminal_backup.txt
-      become_user: "{{ ansible_user_id }}"
+    - name: terminal look
+      command: sh {{ playbook_dir }}/look/terminal_setup.sh
+      tags:
+        - terminal
 
     - name: cinnamon python scripts
       command: python3 "{{ playbook_dir }}/look/cinnamon.py"
