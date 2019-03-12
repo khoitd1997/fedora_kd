@@ -14,7 +14,7 @@
               - google-chrome-stable
 
         - name: configuring misc sudo system stuffs
-          command: "{{item}}"
+          shell: "{{item}}"
           with_items:
             - usermod -a -G dialout "{{ ansible_user_id }}"
             - usermod -a -G mock "{{ ansible_user_id }}"
@@ -24,7 +24,7 @@
             - echo fs.inotify.max_user_watches=524288 | tee -a /etc/sysctl.conf
 
         - name: geo clue
-          command: "{{item}}"
+          shell: "{{item}}"
           with_items:
             - printf '\n[redshift]\n allowed=true\n system=false\n users=\n\n' | tee -a /etc/geoclue/geoclue.conf
       become: true
