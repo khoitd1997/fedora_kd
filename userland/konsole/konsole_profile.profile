@@ -1,5 +1,5 @@
 [Appearance]
-ColorScheme=WhiteOnBlack
+ColorScheme=Breeze
 Font=Source Code Pro,13,-1,5,63,0,0,0,0,0
 
 [General]
