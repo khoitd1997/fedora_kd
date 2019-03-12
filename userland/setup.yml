@@ -1,8 +1,7 @@
 - hosts: localhost
   tasks:
-    # name: main insatlltion
     - include: misc/misc.yml
-    # - include: zsh/zsh.yml
-    # - include: vscode/vscode.yml
-    # - include: look/look.yml
-    # - include: flatpak/flatpak.yml
+    - include: zsh/zsh.yml
+    - include: vscode/vscode.yml
+    - include: look/look.yml
+    - include: flatpak/flatpak.yml
