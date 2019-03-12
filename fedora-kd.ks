@@ -167,7 +167,7 @@ cat >> /etc/profile.d/first_login_setup.sh << 'EOF'
 if [ ! -f ~/first_login_setup_done ]; then
 if [ ! -f ~/first_login_setup_in_progress ]; then
 git clone https://github.com/khoitd1997/fedora_kd.git ~/fedora_kd
-bash ~/fedora_kd/user_file/setup_wrapper.sh&
+bash ~/fedora_kd/userland/setup_wrapper.sh&
 fi
 fi
 

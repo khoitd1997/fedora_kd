@@ -20,8 +20,8 @@ ln -sfv ${currDir}/konsole/konsole_profile.profile ~/.local/share/konsole
 
 # sleep 10 # wait till the DE has fully appeared
 
-# konsole --fullscreen --noclose -e "ansible-playbook -v setup.yml --ask-become-pass"
-konsole --fullscreen --noclose -e "ansible-playbook -v setup.yml"
+konsole --fullscreen --noclose -e "ansible-playbook -v setup.yml --ask-become-pass"
+# konsole --fullscreen --noclose -e "ansible-playbook -v setup.yml"
 # fi
 # fi
 # fi

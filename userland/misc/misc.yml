@@ -1,0 +1,116 @@
+- block:
+    - block:
+        - name: update system
+          command: dnf update -y -q
+          args:
+            warn: false
+
+        - name: install packages
+          dnf:
+            enablerepo: google-chrome
+            update_cache: yes
+            state: present
+            name:
+              - google-chrome-stable
+
+        - name: configuring misc sudo system stuffs
+          command: "{{item}}"
+          with_items:
+            - usermod -a -G dialout "{{ ansible_user_id }}"
+            - usermod -a -G mock "{{ ansible_user_id }}"
+            - timedatectl set-local-rtc 1 --adjust-system-clock
+            - rm -f /etc/localtime
+            - ln -s /usr/share/zoneinfo/US/Pacific /etc/localtime
+            - echo fs.inotify.max_user_watches=524288 | tee -a /etc/sysctl.conf
+
+        - name: geo clue
+          command: "{{item}}"
+          with_items:
+            - printf '\n[redshift]\n allowed=true\n system=false\n users=\n\n' | tee -a /etc/geoclue/geoclue.conf
+      become: true
+
+    - name: configure misc non-sudo system stuffs
+      command: "{{item}}"
+      with_items:
+        - git config --global credential.helper /usr/libexec/git-core/git-credential-libsecret
+
+    - name: configure synapse
+      command: "{{item}}"
+      with_items:
+        - mkdir -vp ~/.config/synapse/
+        - ln -sfv {{ playbook_dir }}/misc/synapse_config.json ~/.config/synapse/config.json
+      args:
+        warn: false
+
+    - block:
+        - name: copy nemo action files
+          copy:
+            src: "{{ item }}"
+            dest: "~/.local/share/nemo/actions"
+            owner: "{{ ansible_user_id }}"
+            mode: 0644
+          with_fileglob:
+            - "{{ playbook_dir }}/misc/nemo/*.nemo_action"
+
+        - name: configuring nemo bookmarks
+          lineinfile:
+            path: ~/.config/gtk-3.0/bookmarks
+            line: "file:///home/{{ ansible_user_id }}/Dropbox/Class/"
+
+    - name: configure default app handler
+      command: "{{item}}"
+      with_items:
+        - cp -v {{ playbook_dir }}/misc/mimeapps.list ~/.config
+      args:
+        warn: false
+
+    - block:
+        - name: configuring vim
+          command: "{{item}}"
+          with_items:
+            - ln -vfs {{ playbook_dir }}/misc/vim/.vimrc ~/.vimrc
+          args:
+            warn: false
+
+        - name: installing vim plugins
+          shell: vim +'PlugInstall --sync' +qall &> /dev/null < /dev/tty
+
+    - name: tmux
+      command: "{{item}}"
+      with_items:
+        - ln -sfv {{ playbook_dir }}/misc/tmux/.tmux.conf ~/.tmux.conf
+
+    - block:
+        - name: launch xpad
+          shell: xpad 2>&1 &
+
+        - name: configure xpad
+          command: "{{item}}"
+          with_items:
+            - sleep 2
+            - pkill xpad
+            - rm -vf ~/.config/autostart/xpad.desktop
+
+    - name: launcher apps
+      command: "{{item}}"
+      with_items:
+        - mkdir -vp ~/.local/share/applications
+        - mkdir -vp ~/.config/autostart
+        - python3 "{{ playbook_dir }}"/misc/launcher_app/add_launcher_app.py
+      args:
+        warn: false
+
+    - name: other small stuffs
+      command: "{{item}}"
+      with_items:
+        - mkdir -vp ~/temp
+      args:
+        warn: false
+
+    - pip:
+        name:
+          - pylint
+          - autopep8
+
+  tags:
+    - misc

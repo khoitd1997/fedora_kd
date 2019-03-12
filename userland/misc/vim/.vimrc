@@ -95,6 +95,13 @@ let g:syntastic_check_on_wq = 0
 map <leader><leader>W <Plug>(easymotion-b)
 map <leader><leader>E <Plug>(easymotion-ge)
 
+"vim plug stuffs
+if empty(glob('~/.vim/autoload/plug.vim'))
+  silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
+    \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+  autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
+endif
+
 "vimplug plugins
 call plug#begin('~/.vim/plugged')
 Plug 'vim-airline/vim-airline'
