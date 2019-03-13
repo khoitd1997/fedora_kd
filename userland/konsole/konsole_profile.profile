@@ -9,7 +9,7 @@ UseFontLineChararacters=true
 CursorShape=1
 
 [General]
-Command=/bin/zsh
+Command=tmux
 DimWhenInactive=true
 Name=konsole_profile
 Parent=FALLBACK/
