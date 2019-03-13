@@ -16,6 +16,6 @@ empty_input_buffer
 read input	
 fi
 
-ansible-playbook -v setup.yml --ask-become-pass
+ansible-playbook setup.yml --ask-become-pass
 
 touch ~/first_login_setup_done

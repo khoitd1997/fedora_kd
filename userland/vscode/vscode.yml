@@ -1,6 +1,6 @@
 - block:
     - block:
-        - name: add vscode keys
+        - name: add vscode rpm keys
           command: "{{item}}"
           with_items:
             - rpm --import https://packages.microsoft.com/keys/microsoft.asc
@@ -8,7 +8,7 @@
           args:
             warn: false
 
-        - name: install vscode package
+        - name: install vscode rpm package
           dnf:
             name: code
             state: latest
@@ -16,7 +16,7 @@
       when: ansible_distribution == "Fedora"
 
     - block:
-        - name: add vscode keys
+        - name: add vscode deb keys
           shell: "{{item}}"
           with_items:
             - curl https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor > microsoft.gpg
@@ -25,7 +25,7 @@
           args:
             warn: false
 
-        - name: install vscode package
+        - name: install vscode deb package
           apt:
             name:
               - apt-transport-https
