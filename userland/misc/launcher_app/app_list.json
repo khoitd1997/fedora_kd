@@ -26,6 +26,15 @@
             "iconPath": "synapse",
             "type": "Application",
             "startup": true
+        },
+        {
+            "name": "Terminal",
+            "command": "konsole",
+            "comment": "terminal",
+            "launchInTerminal": "false",
+            "iconPath": "konsole",
+            "type": "Application",
+            "startup": false
         }
     ]
 }

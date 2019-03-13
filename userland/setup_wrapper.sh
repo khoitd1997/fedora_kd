@@ -19,6 +19,8 @@ touch ~/first_login_setup_in_progress
 mkdir -p ~/.local/share/konsole
 ln -sfv ${currDir}/konsole/konsolerc ~/.config
 ln -sfv ${currDir}/konsole/konsole_profile.profile ~/.local/share/konsole
+ln -sfv ${currDir}/konsole/Dracula.colorscheme ~/.local/share/konsole
+
 
 sleep 10 # wait till the DE has fully appeared
 

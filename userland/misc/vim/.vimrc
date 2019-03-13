@@ -41,7 +41,7 @@ let g:NERDTrimTrailingWhitespace = 1
 nmap <C-_> <plug>NERDCommenterInvert
 vmap <C-_> <Plug>NERDCommenterInvert<CR>gv
 
-"gnome terminal stuffs
+"terminal stuffs
 if has("autocmd")
 		au VimEnter,InsertLeave * silent execute '!echo -ne "\e[2 q"' | redraw!
 		au InsertEnter,InsertChange *

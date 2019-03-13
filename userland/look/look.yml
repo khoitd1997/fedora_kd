@@ -156,11 +156,6 @@
       tags:
         - nemo
 
-    - name: terminal look
-      command: sh {{ playbook_dir }}/look/terminal_setup.sh
-      tags:
-        - terminal
-
     - name: cinnamon python scripts
       command: python3 "{{ playbook_dir }}/look/cinnamon.py"
 
