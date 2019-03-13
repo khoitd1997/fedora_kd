@@ -135,6 +135,8 @@ adobe-source-code-pro-fonts
 arc-theme
 plymouth-plugin-script
 
+# delete list
+-gnome-terminal
 %end
 
 %post --log=/root/ks-post.log --erroronfail
