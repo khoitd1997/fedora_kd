@@ -17,21 +17,36 @@
           tags:
             - package
 
-        - name: configuring misc sudo system stuffs
+        - name: configure misc sudo system stuffs
           shell: "{{item}}"
           with_items:
             - usermod -a -G dialout "{{ ansible_user_id }}"
             - usermod -a -G mock "{{ ansible_user_id }}"
             - timedatectl set-local-rtc 1 --adjust-system-clock
-            - rm -f /etc/localtime
-            - ln -s /usr/share/zoneinfo/US/Pacific /etc/localtime
-            - echo fs.inotify.max_user_watches=524288 | tee -a /etc/sysctl.conf
 
-        - name: geo clue
-          shell: "{{item}}"
-          with_items:
-            - printf '\n[redshift]\n allowed=true\n system=false\n users=\n\n' | tee -a /etc/geoclue/geoclue.conf
+        - name: set inotify limit
+          lineinfile:
+            path: /etc/sysctl.conf
+            line: "fs.inotify.max_user_watches=524288"
+
+        - name: configure geo clue
+          blockinfile:
+            path: /etc/geoclue/geoclue.conf
+            marker: "# {mark} redshift geoclue permission"
+            block: |
+              [redshift]
+              allowed=true
+              system=false
+              users=
+          tags:
+            - geoclue
       become: true
+
+    - name: set timezone to America/Los_Angeles
+      timezone:
+        name: America/Los_Angeles
+      tags:
+        - timezone
 
     - name: git
       command: "{{item}}"
@@ -79,6 +94,8 @@
         - cp -v {{ playbook_dir }}/misc/mimeapps.list ~/.config
       args:
         warn: false
+      tags:
+        - handler
 
     - block:
         - name: configuring vim
@@ -97,6 +114,8 @@
       command: "{{item}}"
       with_items:
         - ln -sfv {{ playbook_dir }}/misc/tmux/.tmux.conf ~/.tmux.conf
+      args:
+        warn: false
       tags:
         - tmux
         - development
@@ -120,8 +139,10 @@
         - python3 "{{ playbook_dir }}"/misc/launcher_app/add_launcher_app.py
       args:
         warn: false
+      tags:
+        - launcher
 
-    - name: other small stuffs
+    - name: other small misc stuffs
       command: "{{item}}"
       with_items:
         - mkdir -vp ~/temp
