@@ -1,0 +1,10 @@
+clear lock
+keycode 66 = Escape NoSymbol Escape
+
+! free up right-Alt for remapping
+remove mod1 = Super_R
+
+! Right-Alt remapped to Super
+clear mod4
+keycode 108 = Super_R
+add mod4 = Super_R

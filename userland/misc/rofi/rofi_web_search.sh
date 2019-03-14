@@ -44,10 +44,10 @@ gen_list() {
 
 main() {
   # Pass the list to rofi
-  platform=$( (gen_list) | rofi -config ~/.config/rofi/rofi_config -dmenu -matching fuzzy -only-match -location 0 -p "Search > " )
-
   query=$( (echo ) | rofi -config ~/.config/rofi/rofi_config -dmenu -matching fuzzy -location 0 -p "Query > " )
+
   if [[ -n "$query" ]]; then
+    platform=$( (gen_list) | rofi -config ~/.config/rofi/rofi_config -dmenu -matching fuzzy -location 0 -p "Source > " )
     url=${URLS[$platform]}$query
     xdg-open "$url"
   fi

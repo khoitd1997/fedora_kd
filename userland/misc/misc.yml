@@ -197,6 +197,15 @@
       tags:
         - launcher
 
+    - name: change xmodmap
+      shell: "{{item}}"
+      with_items:
+        - xmodmap "{{ playbook_dir }}"/misc/xmodmap/.Xmodmap
+        - ln -sfv "{{ playbook_dir }}"/misc/xmodmap/.Xmodmap ~/.Xmodmap
+      tags:
+        - xmodmap
+        - keyboard
+
     - name: other small misc stuffs
       command: "{{item}}"
       with_items:
