@@ -91,7 +91,7 @@
     - name: configure default app handler
       command: "{{item}}"
       with_items:
-        - cp -v {{ playbook_dir }}/misc/mimeapps.list ~/.config
+        - ln -sfv {{ playbook_dir }}/misc/mimeapps.list ~/.config/mimeapps.list
       args:
         warn: false
       tags:
