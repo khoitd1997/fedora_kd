@@ -88,13 +88,55 @@
       tags:
         - nemo
 
-    - name: configure default app handler
+    - name: configure mint default app handler
       command: "{{item}}"
       with_items:
         - ln -sfv {{ playbook_dir }}/misc/mimeapps.list ~/.config/mimeapps.list
       args:
         warn: false
       tags:
+        - handler
+
+    - name: configure xdg open default app handler
+      command: xdg-mime default {{ item.app }}.desktop {{ item.type }}
+      with_items:
+        - { type: application/pdf, app: evince.desktop }
+        - { type: text/html, app: google-chrome.desktop }
+        - { type: x-scheme-handler/http, app: google-chrome.desktop }
+        - { type: x-scheme-handler/https, app: google-chrome.desktop }
+        - { type: x-scheme-handler/about, app: google-chrome.desktop }
+        - { type: x-scheme-handler/unknown, app: google-chrome.desktop }
+        - { type: application/nemo-action, app: code.desktop }
+        - { type: text/x-svsrc, app: code.desktop }
+        - { type: text/x-go, app: code.desktop }
+        - { type: application/x-java-keystore, app: code.desktop }
+        - { type: text/x-c++src, app: code.desktop }
+        - { type: text/x-c++hdr, app: code.desktop }
+        - { type: text/x-chdr, app: code.desktop }
+        - { type: text/x-csrc, app: code.desktop }
+        - { type: application/x-shellscript, app: code.desktop }
+        - { type: text/markdown, app: code.desktop }
+        - { type: application/json, app: code.desktop }
+        - { type: text/plain, app: code.desktop }
+        - { type: evince.desktop, app: application/pdf }
+        - { type: application/nemo-action, app: code.desktop }
+        - { type: text/x-svsrc, app: code.desktop }
+        - { type: text/x-go, app: code.desktop }
+        - { type: application/x-java-keystore, app: code.desktop }
+        - { type: text/x-c++src, app: code.desktop }
+        - { type: text/x-c++hdr, app: code.desktop }
+        - { type: text/x-chdr, app: code.desktop }
+        - { type: text/x-csrc, app: code.desktop }
+        - { type: application/x-shellscript, app: code.desktop }
+        - { type: text/markdown, app: code.desktop }
+        - { type: application/json, app: code.desktop }
+        - { type: text/plain, app: code.desktop }
+        - { type: inode/directory, app: nemo.desktop }
+
+      args:
+        warn: false
+      tags:
+        - xdg
         - handler
 
     - block:
@@ -115,6 +157,8 @@
       with_items:
         - mkdir -p ~/.config/rofi
         - ln -sfv {{ playbook_dir }}/misc/rofi/rofi_config ~/.config/rofi/rofi_config
+        - ln -sfv {{ playbook_dir }}/misc/rofi/rofi_web_search.sh ~/.config/rofi/rofi_web_search.sh
+        - ln -sfv {{ playbook_dir }}/misc/rofi/rofi_file_open.sh ~/.config/rofi/rofi_file_open.sh
       args:
         warn: false
       tags:

@@ -16,6 +16,7 @@ application/x-shellscript=code.desktop
 text/markdown=code.desktop
 application/json=code.desktop
 text/plain=code.desktop
+evince.desktop=application/pdf
 
 [Added Associations]
 application/nemo-action=code.desktop;
