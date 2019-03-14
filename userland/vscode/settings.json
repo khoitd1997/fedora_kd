@@ -18,7 +18,8 @@
         "*.cfg": "tcl",
         "*.svd": "xml",
         "*.hpp": "cpp",
-        "*.ks": "shellscript"
+        "*.ks": "shellscript",
+        "*.rasi": "css"
     },
     "workbench.startupEditor": "newUntitledFile",
     "window.zoomLevel": 2,

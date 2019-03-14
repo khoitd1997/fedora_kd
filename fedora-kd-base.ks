@@ -107,6 +107,10 @@ texlive-collection-latexextra
 texlive-collection-latexrecommended 
 texlive-collection-xetex
 
+# rofi
+rofi
+rofi-themes
+
 # go
 golang
 golint

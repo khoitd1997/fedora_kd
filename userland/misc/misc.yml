@@ -110,6 +110,17 @@
         - vim
         - development
 
+    - name: rofi
+      command: "{{item}}"
+      with_items:
+        - mkdir -p ~/.config/rofi
+        - ln -sfv {{ playbook_dir }}/misc/rofi/rofi_config ~/.config/rofi/rofi_config
+      args:
+        warn: false
+      tags:
+        - rofi
+        - development
+
     - name: tmux
       command: "{{item}}"
       with_items:
