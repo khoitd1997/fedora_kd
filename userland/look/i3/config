@@ -29,6 +29,10 @@ client.background       #1e1e20
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
 
+# disable scrolling to change workspace
+bindsym button4 nop
+bindsym button5 nop
+
 # rofi
 bindsym $mod+d exec rofi -show combi -config ~/.config/rofi/rofi_config
 bindsym $mod+f exec rofi -config ~/.config/rofi/rofi_config -show find -modi find:~/.config/rofi/rofi_file_open.sh
