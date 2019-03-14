@@ -22,10 +22,10 @@
         "*.rasi": "css"
     },
     "workbench.startupEditor": "newUntitledFile",
-    "window.zoomLevel": 2,
+    "window.zoomLevel": 0,
     "python.formatting.provider": "autopep8",
     "gitlens.keymap": "chorded",
-    "editor.wordWrap": "wordWrapColumn",
+    "editor.wordWrap": "bounded",
     "workbench.colorTheme": "Monokai Pro (Filter Spectrum)",
     "material-icon-theme.showUpdateMessage": false,
     "pasteImage.path": "${currentFileDir}/image",
@@ -82,6 +82,7 @@
     "go.autocompleteUnimportedPackages": true,
     "window.titleBarStyle": "native",
     "editor.fontFamily": "source code pro",
+    "editor.fontSize": "16",
     "todo-tree.defaultHighlight": {
         "type": "text",
         "foreground": "black",
