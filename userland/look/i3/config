@@ -29,6 +29,11 @@ client.background       #1e1e20
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
 
+# rofi
+bindsym $mod+d exec rofi -show combi -config ~/.config/rofi/rofi_config
+bindsym $mod+f exec rofi -config ~/.config/rofi/rofi_config -show find -modi find:~/.config/rofi/rofi_file_open.sh
+bindsym $mod+s exec ~/.config/rofi/rofi_web_search.sh
+
 # start a terminal
 bindsym $mod+Return exec konsole
 
@@ -69,11 +74,10 @@ bindsym $mod+Shift+Right move right
 bindsym $mod+shift+f fullscreen toggle
 
 # change container layout (stacked, tabbed, toggle split)
-bindsym $mod+s layout stacking
-bindsym $mod+w layout tabbed
-bindsym $mod+e layout toggle split
+bindsym $mod+shift+s layout stacking
+bindsym $mod+shift+w layout tabbed
+bindsym $mod+shift+t layout toggle split
 
-bindsym $mod+d exec rofi -show combi -config ~/.config/rofi/rofi_config
 
 # toggle tiling / floating
 bindsym $mod+Shift+space floating toggle
@@ -127,7 +131,7 @@ bindsym $mod+Shift+0 move container to workspace $ws10
 # keybindings for app
 bindsym $mod+b exec google-chrome-stable
 bindsym $mod+m exec code
-bindsym $mod+f exec nemo
+# bindsym $mod+f exec nemo
 
 # for_window [class="Google-chrome"] move to workspace $ws2
 # for_window [class="google-chrome"] move to workspace $ws2
