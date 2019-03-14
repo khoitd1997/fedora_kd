@@ -10,7 +10,7 @@ CursorShape=1
 
 [General]
 Command=tmux
-DimWhenInactive=true
+DimWhenInactive=false
 Name=konsole_profile
 Parent=FALLBACK/
 

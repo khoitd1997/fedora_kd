@@ -30,3 +30,4 @@ application/x-shellscript=code.desktop;
 text/markdown=code.desktop;
 application/json=code.desktop;
 text/plain=code.desktop;
+inode/directory=nemo.desktop

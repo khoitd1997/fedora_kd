@@ -135,6 +135,16 @@ adobe-source-code-pro-fonts
 arc-theme
 plymouth-plugin-script
 
+# i3
+i3
+i3status
+dmenu
+i3lock
+xbacklight
+conky
+volumeicon
+udiskie
+
 # delete list
 -gnome-terminal
 %end
