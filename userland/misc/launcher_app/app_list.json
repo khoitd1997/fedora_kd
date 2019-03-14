@@ -26,6 +26,24 @@
             "iconPath": "konsole",
             "type": "Application",
             "startup": false
+        },
+        {
+            "name": "Shutdown",
+            "command": "shutdown -h now",
+            "comment": "shut down",
+            "launchInTerminal": "true",
+            "iconPath": "shutdown",
+            "type": "Application",
+            "startup": false
+        },
+        {
+            "name": "Reboot",
+            "command": "reboot",
+            "comment": "reboot",
+            "launchInTerminal": "true",
+            "iconPath": "reboot",
+            "type": "Application",
+            "startup": false
         }
     ]
 }
