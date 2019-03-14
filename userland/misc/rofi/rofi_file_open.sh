@@ -1,8 +1,8 @@
 #!/usr/bin/env bash
 # source: https://github.com/carnager/rofi-scripts/blob/master/rofi-finder/finder.sh
 
-#PUT THIS FILE IN ~/.local/share/rofi/finder.sh
-#USE: rofi -show find -modi find:~/.local/share/rofi/finder.sh
+# modify to use fd and has home directory option
+# USE: rofi -show find -modi find:~/.local/share/rofi/finder.sh
 
 if [ ! -z "$@" ]
 then
