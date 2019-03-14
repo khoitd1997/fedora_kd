@@ -132,6 +132,7 @@ bindsym $mod+f exec nemo
 # for_window [class="Code"] move to workspace $ws1
 
 for_window [class="VirtualBox"] floating enable
+for_window [class="VirtualBox"] fullscreen enable
 
 
 # reload the configuration file

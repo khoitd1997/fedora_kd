@@ -1,4 +1,3 @@
-%include fedora-kickstarts/fedora-live-cinnamon.ks
 %include fedora-repo-kd.ks
 
 part / --size=12588
@@ -6,7 +5,6 @@ lang en_US.UTF-8
 keyboard us
 
 timezone US/Pacific
-# user --iscrypted --name=test --password=123456 --groups=wheel,dialout,mock
 
 %packages
 
@@ -68,16 +66,16 @@ mock
 fedora-review
 
 # gui apps
+firefox
 xclip
 evince
 synaptic
 xpad
 gparted
 moserial
-libncurses* 
+ncurses-devel
 meld
 bustle
-d-feet
 graphviz
 npm
 flameshot
@@ -135,22 +133,9 @@ adobe-source-code-pro-fonts
 arc-theme
 plymouth-plugin-script
 
-# i3
-i3
-i3status
-dmenu
-i3lock
-xbacklight
-conky
-volumeicon
-udiskie
-
-# delete list
--gnome-terminal
 %end
 
 %post --log=/root/ks-post.log --erroronfail
-
 # annaconda customizations
 cat >> /etc/sysconfig/anaconda << FOE
 # [PasswordSpoke]
@@ -190,23 +175,7 @@ fi
 EOF
 chmod a+x /etc/profile.d/first_login_setup.sh
 
-cat >> /usr/share/glib-2.0/schemas/99_my_custom_settings.gschema.override << FOE
-[x.dm.slick-greeter]
-background='/usr/share/user_file/resource/TCP118v1_by_Tiziano_Consonni.jpg'
-background-color='#2ceb26'
-logo='/usr/share/user_file/resource/login_logo.png'
-draw-user-backgrounds=false
-draw-grid=false
-enable-hidpi='auto'
-font-name='Noto Sans 11'
-icon-theme-name='Mint-Y-Aqua'
-show-hostname=true
-theme-name='Mint-Y-Dark-Aqua'
-show-clock=true
-FOE
-
-glib-compile-schemas /usr/share/glib-2.0/schemas/
-
+# plymouth theme
 mkdir -vp /usr/share/plymouth/themes/boot
 cat >> /usr/share/plymouth/themes/boot/boot.plymouth << FOE
 [Plymouth Theme]
