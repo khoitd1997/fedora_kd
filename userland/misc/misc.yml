@@ -61,15 +61,15 @@
         - git
         - development
 
-    - name: configure synapse
-      command: "{{item}}"
-      with_items:
-        - mkdir -vp ~/.config/synapse/
-        - ln -sfv {{ playbook_dir }}/misc/synapse_config.json ~/.config/synapse/config.json
-      args:
-        warn: false
-      tags:
-        - synapse
+    # - name: configure synapse
+    #   command: "{{item}}"
+    #   with_items:
+    #     - mkdir -vp ~/.config/synapse/
+    #     - ln -sfv {{ playbook_dir }}/misc/synapse_config.json ~/.config/synapse/config.json
+    #   args:
+    #     warn: false
+    #   tags:
+    #     - synapse
 
     - block:
         - name: copy nemo action files

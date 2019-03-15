@@ -80,7 +80,7 @@ graphviz
 npm
 flameshot
 feh
-synapse
+# synapse # replaced by rofi
 latexmk
 baobab
 kernel-devel
