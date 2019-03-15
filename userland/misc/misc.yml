@@ -90,6 +90,16 @@
         - cinnamon
         - nemo
 
+    - name: configure nautilus actions
+      command: ln -sfv {{ playbook_dir }}/misc/nautilus/{{item}} ~/.local/share/nautilus/scripts
+      with_items:
+        - code.sh
+        - terminal.sh
+      args:
+        warn: false
+      tags:
+        - nautilus
+
     - name: configure cinnamon default app handler
       command: "{{item}}"
       with_items:

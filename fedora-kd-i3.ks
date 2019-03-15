@@ -67,7 +67,7 @@ paper-icon-theme
 fedora-icon-theme
 
 # file manager
-dolphin
+nautilus
 
 # i3
 i3
@@ -114,7 +114,7 @@ cat >> /etc/profile.d/live_user_setup.sh << 'EOF'
 if [ "${USER}" == "liveuser" ]; then
 if [ ! -f ~/live_user_setup_in_progress ]; then
 touch ~/live_user_setup_in_progress
-/home/liveuser/live_user_setup.sh
+/home/liveuser/live_user_setup.sh &
 fi
 fi
 
@@ -143,6 +143,7 @@ rm -f /etc/xdg/autostart/org.mageia.dnfdragora-updater.desktop
 
 
 cat >> /home/liveuser/live_user_setup.sh << FOE
+#!/bin/bash
 sleep 8
 /usr/bin/liveinst 
 FOE

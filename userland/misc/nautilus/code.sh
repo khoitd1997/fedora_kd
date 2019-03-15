@@ -1,0 +1,3 @@
+#!/bin/bash
+
+code ${NAUTILUS_SCRIPT_SELECTED_FILE_PATHS}
