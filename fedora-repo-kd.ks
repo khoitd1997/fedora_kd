@@ -8,8 +8,6 @@ repo --name=rpmfusion-nonfree-updates --install --metalink=https://mirrors.rpmfu
 
 repo --name=rpmfusion-nonfree --install --metalink=https://mirrors.rpmfusion.org/metalink?repo=nonfree-fedora-$releasever&arch=$basearch
 
-repo --name=rpmfusion-nonfree-nvidia-driver --metalink=https://mirrors.rpmfusion.org/metalink?repo=nonfree-fedora-nvidia-driver-$releasever&arch=$basearch --install
-
 # modular
 repo --name=fedora-modular --metalink=https://mirrors.fedoraproject.org/metalink?repo=fedora-modular-$releasever&arch=$basearch
 repo --name=updates-modular --metalink=https://mirrors.fedoraproject.org/metalink?repo=updates-released-modular-f$releasever&arch=$basearch

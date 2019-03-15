@@ -13,8 +13,6 @@ fedora-workstation-repositories
 fedora-repos-modular
 
 # external
-xorg-x11-drv-nvidia
-akmod-nvidia
 nautilus-dropbox
 VirtualBox
 akmod-VirtualBox

@@ -1,7 +1,10 @@
 - block:
     - block:
-        - name: update system
-          command: dnf update -y -q
+        - name: update system and enable repo
+          command: "{{item}}"
+          with_items:
+            - dnf update -y -q
+            - dnf config-manager --set-enabled rpmfusion-nonfree-nvidia-driver google-chrome 
           args:
             warn: false
           tags:
@@ -9,11 +12,13 @@
 
         - name: install packages
           dnf:
-            enablerepo: google-chrome
+            enablerepo: google-chrome rpmfusion-nonfree-nvidia-driver
             update_cache: yes
             state: present
             name:
               - google-chrome-stable
+              - xorg-x11-drv-nvidia
+              - akmod-nvidia
           tags:
             - package
 
@@ -90,11 +95,14 @@
         - cinnamon
         - nemo
 
+    
+
     - name: configure nautilus actions
-      command: ln -sfv {{ playbook_dir }}/misc/nautilus/{{item}} ~/.local/share/nautilus/scripts
+      command: "{{item}}"
       with_items:
-        - code.sh
-        - terminal.sh
+        - mkdir -p ~/.local/share/nautilus/scripts
+        - ln -sfv {{ playbook_dir }}/misc/nautilus/code.sh ~/.local/share/nautilus/scripts
+        - ln -sfv {{ playbook_dir }}/misc/nautilus/terminal.sh ~/.local/share/nautilus/scripts
       args:
         warn: false
       tags:
@@ -216,14 +224,14 @@
       tags:
         - launcher
 
-    - name: change xmodmap
-      shell: "{{item}}"
-      with_items:
-        - xmodmap "{{ playbook_dir }}"/misc/xmodmap/.Xmodmap
-        - ln -sfv "{{ playbook_dir }}"/misc/xmodmap/.Xmodmap ~/.Xmodmap
-      tags:
-        - xmodmap
-        - keyboard
+    # - name: change xmodmap
+    #   shell: "{{item}}"
+    #   with_items:
+    #     - xmodmap "{{ playbook_dir }}"/misc/xmodmap/.Xmodmap
+    #     - ln -sfv "{{ playbook_dir }}"/misc/xmodmap/.Xmodmap ~/.Xmodmap
+    #   tags:
+    #     - xmodmap
+    #     - keyboard
 
     - name: other small misc stuffs
       command: "{{item}}"
