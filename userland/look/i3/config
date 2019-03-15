@@ -182,9 +182,10 @@ bindsym $mod+r mode "resize"
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
 bar {
-        font pango: Source Code Pro, Awesome 12
         status_command i3status -c ~/.config/i3/i3status.conf
-        tray_output none
+        i3bar_command i3bar
+        font pango: Source Code Pro, Awesome 12
+        tray_output primary
         tray_padding 2
         separator_symbol " | "
 

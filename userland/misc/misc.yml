@@ -209,6 +209,7 @@
         extra_args: --user
       tags:
         - pip
+        - base
 
   tags:
     - misc

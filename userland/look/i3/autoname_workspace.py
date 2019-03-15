@@ -146,7 +146,7 @@ WINDOW_ICONS = {
     'xfce4-terminal': fa.icons['terminal'],
     'xournal': fa.icons['file-alt'],
     'zenity': fa.icons['window-maximize'],
-    'code': fa.icons['windows'],
+    'code': fa.icons['code'],
 }
 
 # This icon is used for any application not in the list above

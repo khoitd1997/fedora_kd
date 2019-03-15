@@ -172,6 +172,14 @@
         - ln -sfv {{ playbook_dir }}/look/i3/config ~/.config/i3/config
         - ln -sfv {{ playbook_dir }}/look/i3/i3status.conf ~/.config/i3/i3status.conf
 
+    - pip:
+        name:
+          - i3ipc
+          - fontawesome
+        extra_args: --user
+      tags:
+        - pip
+
     - name: setup i3 auto tab name
       shell: "{{item}}"
       with_items:
