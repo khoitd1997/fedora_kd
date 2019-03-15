@@ -122,6 +122,16 @@
         - i3
         - handler
 
+    - name: configure gnome keyring
+      command: "{{item}}"
+      with_items:
+        - xdg-mime default dolphin.desktop inode/directory
+      args:
+        warn: false
+      tags:
+        - i3
+        - keyring
+
     - name: configure xdg open default app handler
       command: xdg-mime default {{ item.app }} {{ item.type }}
       with_items:

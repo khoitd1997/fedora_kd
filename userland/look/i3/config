@@ -208,6 +208,7 @@ exec_always --no-startup-id xmodmap -e "add mod4 = Super_R"
 
 exec_always --no-startup-id xmodmap -e "clear lock"
 exec_always --no-startup-id xmodmap -e "keycode 66 = Escape NoSymbol Escape"
+# exec_always --no-startup-id xmodmap -e "keysym Caps_Lock = Escape"
 
 focus_follows_mouse no
 

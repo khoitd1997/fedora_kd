@@ -48,6 +48,8 @@ tmux-powerline
 nomacs
 
 # security
+gnome-keyring
+libsecret
 setroubleshoot
 firewall-config
 
