@@ -33,7 +33,7 @@ then
   then
     while read -r line; do
       echo "$line"
-    done <<< $(fd .*"${QUERY#\?}".* / 2>&1 | grep -v 'Permission denied\|Input/output error')
+    done <<< $(fd .*"${QUERY#\?}".* ~ 2>&1 | grep -v 'Permission denied\|Input/output error')
 
   elif [[ "$@" == \~* ]]
   then

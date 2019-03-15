@@ -159,8 +159,6 @@
     - name: cinnamon python scripts
       command: python3 "{{ playbook_dir }}/look/cinnamon.py"
 
-  when: lookup('env', 'DESKTOP_SESSION') == "cinnamon"
-
   tags:
     - look
     - cinnamon
@@ -174,7 +172,6 @@
         - ln -sfv {{ playbook_dir }}/look/i3/config ~/.config/i3/config
         - ln -sfv {{ playbook_dir }}/look/i3/i3status.conf ~/.config/i3/i3status.conf
 
-  when: lookup('env', 'DESKTOP_SESSION') == "i3"
   tags:
     - look
     - i3
