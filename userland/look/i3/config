@@ -200,13 +200,14 @@ bar {
     }
 }
 
-# exec_always --no-startup-id xmodmap -e "clear lock"
-# exec_always --no-startup-id xmodmap -e "keycode 66 = Escape NoSymbol Escape"
-# exec_always --no-startup-id xmodmap -e "remove mod1 = Super_R"
-# exec_always --no-startup-id xmodmap -e "clear mod4"
-# exec_always --no-startup-id xmodmap -e "keycode 108 = Super_R"
-# exec_always --no-startup-id xmodmap -e "add mod4 = Super_R"
-exec_always --no-startup-id xmodmap ~/.Xmodmap
+exec_always --no-startup-id xmodmap -e "remove mod1 = Super_R"
+exec_always --no-startup-id xmodmap -e "clear mod4"
+exec_always --no-startup-id xmodmap -e "keycode 108 = Super_R"
+exec_always --no-startup-id xmodmap -e "add mod4 = Super_R"
+# exec_always --no-startup-id xmodmap ~/.Xmodmap
+
+exec_always --no-startup-id xmodmap -e "clear lock"
+exec_always --no-startup-id xmodmap -e "keycode 66 = Escape NoSymbol Escape"
 
 focus_follows_mouse no
 
@@ -222,4 +223,4 @@ exec feh --bg-scale /usr/share/user_file/TCP118v1_by_Tiziano_Consonni.jpg
 # only until multi screens issues are revoled
 exec xrandr --output DVI-D-0 --auto --output HDMI-0 --off
 
-exec_always python3  ~/.config/i3/autoname_workspace.py &
+exec_always python3 ~/.config/i3/autoname_workspace.py &
