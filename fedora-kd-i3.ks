@@ -11,19 +11,19 @@ parole
 slick-greeter
 
 # network
-# NetworkManager-adsl
-# NetworkManager-bluetooth
-# NetworkManager-iodine-gnome
-# NetworkManager-l2tp-gnome
-# NetworkManager-libreswan-gnome
-# NetworkManager-openconnect-gnome
-# NetworkManager-openvpn-gnome
-# NetworkManager-ppp
-# NetworkManager-pptp-gnome
-# NetworkManager-vpnc-gnome
-# NetworkManager-wifi
-# NetworkManager-wwan
-# nm-connection-editor
+NetworkManager-adsl
+NetworkManager-bluetooth
+NetworkManager-iodine-gnome
+NetworkManager-l2tp-gnome
+NetworkManager-libreswan-gnome
+NetworkManager-openconnect-gnome
+NetworkManager-openvpn-gnome
+NetworkManager-ppp
+NetworkManager-pptp-gnome
+NetworkManager-vpnc-gnome
+NetworkManager-wifi
+NetworkManager-wwan
+nm-connection-editor
 
 # misc
 dnfdragora-updater
@@ -37,7 +37,6 @@ initial-setup-gui
 redshift
 sane-backends-drivers-scanners
 simple-scan
-system-config-printer
 transmission
 
 # dev
@@ -66,14 +65,9 @@ gvfs-smb
 mint-y-icons
 paper-icon-theme
 fedora-icon-theme
-powerline
 
-# nemo
-nemo
-nemo-fileroller
-nemo-image-converter
-nemo-preview
-xdg-user-dirs-gtk
+# file manager
+dolphin
 
 # i3
 i3
@@ -84,6 +78,9 @@ xbacklight
 conky
 volumeicon
 udiskie
+
+# library deps
+python3-pypandoc # for i3 autoname
 
 %end
 
@@ -109,21 +106,20 @@ onscreen-keyboard=false
 
 EOF
 
-# cat >> /etc/profile.d/live_user_setup.sh << 'EOF'
-# #!/bin/bash
-# # launch live install when live user boots
+cat >> /etc/profile.d/live_user_setup.sh << 'EOF'
+#!/bin/bash
+# launch live install when live user boots
 
-# # set -e
-# if [ "${USER}" == "liveuser" ]; then
-# if [ ! -f ~/live_user_setup_in_progress ]; then
-# touch ~/live_user_setup_in_progress
-# sleep 4
-# /usr/bin/liveinst
-# fi
-# fi
+# set -e
+if [ "${USER}" == "liveuser" ]; then
+if [ ! -f ~/live_user_setup_in_progress ]; then
+touch ~/live_user_setup_in_progress
+/home/liveuser/live_user_setup.sh
+fi
+fi
 
-# EOF
-# chmod a+x /etc/profile.d/live_user_setup.sh
+EOF
+chmod a+x /etc/profile.d/live_user_setup.sh
 
 cat >> ~/.config/i3/config <<EOF
 exec feh --bg-scale /usr/share/user_file/TCP118v1_by_Tiziano_Consonni.jpg
@@ -145,13 +141,20 @@ sed -i 's/^#user-session=.*/user-session=i3/' /etc/lightdm/lightdm.conf
 # no updater applet in live environment
 rm -f /etc/xdg/autostart/org.mageia.dnfdragora-updater.desktop
 
-# show install when user logs in
-sed -i -e 's/NoDisplay=true/NoDisplay=false/' /usr/share/applications/liveinst.desktop
-mkdir -p /home/liveuser/.config/autostart
-cp /usr/share/applications/liveinst.desktop /home/liveuser/.config/autostart/
 
-# and mark it as executable
-chmod +x /home/liveuser/.config/autostart/liveinst.desktop
+cat >> /home/liveuser/live_user_setup.sh << FOE
+sleep 8
+/usr/bin/liveinst 
+FOE
+chmod a+x /home/liveuser/live_user_setup.sh
+
+# # show install when user logs in
+# sed -i -e 's/NoDisplay=true/NoDisplay=false/' /usr/share/applications/liveinst.desktop
+# mkdir -p /home/liveuser/.config/autostart
+# cp /usr/share/applications/liveinst.desktop /home/liveuser/.config/autostart/
+
+# # and mark it as executable
+# chmod +x /home/liveuser/.config/autostart/liveinst.desktop
 
 # this goes at the end after all other changes. 
 chown -R liveuser:liveuser /home/liveuser
