@@ -44,6 +44,15 @@
             "iconPath": "reboot",
             "type": "Application",
             "startup": false
+        },
+        {
+            "name": "Lock",
+            "command": "i3lock",
+            "comment": "lock screen",
+            "launchInTerminal": "false",
+            "iconPath": "lock",
+            "type": "Application",
+            "startup": false
         }
     ]
 }

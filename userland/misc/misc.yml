@@ -223,6 +223,7 @@
       args:
         warn: false
       tags:
+        - desktop-file
         - launcher
 
     # - name: change xmodmap
