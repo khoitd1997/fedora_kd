@@ -57,6 +57,7 @@ openconnect
 tmux 
 glibc-devel.i686 
 libnsl
+xdotool
 
 # packaging tools
 fedora-packager

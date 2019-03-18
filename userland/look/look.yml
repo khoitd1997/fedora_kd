@@ -121,8 +121,132 @@
             value: "['<Control><Alt>Right', '<Primary><Alt>l']",
           }
         - {
+            key: /org/cinnamon/desktop/keybindings/wm/switch-to-workspace-1,
+            value: "['<Super>1']",
+          }
+        - {
+            key: /org/cinnamon/desktop/keybindings/wm/switch-to-workspace-2,
+            value: "['<Super>2']",
+          }
+        - {
+            key: /org/cinnamon/desktop/keybindings/wm/switch-to-workspace-3,
+            value: "['<Super>3']",
+          }
+        - {
+            key: /org/cinnamon/desktop/keybindings/wm/switch-to-workspace-4,
+            value: "['<Super>4']",
+          }
+        - {
+            key: /org/cinnamon/desktop/keybindings/wm/switch-to-workspace-5,
+            value: "['<Super>5']",
+          }
+        - {
+            key: /org/cinnamon/desktop/keybindings/wm/switch-to-workspace-6,
+            value: "['<Super>6']",
+          }
+        - {
+            key: /org/cinnamon/desktop/keybindings/wm/switch-to-workspace-7,
+            value: "['<Super>7']",
+          }
+        - {
+            key: /org/cinnamon/desktop/keybindings/wm/switch-to-workspace-8,
+            value: "['<Super>8']",
+          }
+        - {
+            key: /org/cinnamon/desktop/keybindings/wm/switch-to-workspace-9,
+            value: "['<Super>9']",
+          }
+        - {
             key: /org/cinnamon/desktop/keybindings/media-keys/screensaver,
             value: "['XF86ScreenSaver']",
+          }
+        - {
+            key:/org/cinnamon/desktop/keybindings/custom-list,
+            value: "['custom0', 'custom1', 'custom2', 'custom3', 'custom4', 'custom5']",
+          }
+        - {
+            key: /org/cinnamon/desktop/keybindings/custom-keybindings/custom0/name,
+            value: "'rofi_general'",
+          }
+        - {
+            key: /org/cinnamon/desktop/keybindings/custom-keybindings/custom0/command,
+            value: "'rofi -show combi -config ~/.config/rofi/rofi_config'",
+          }
+        - {
+            key: /org/cinnamon/desktop/keybindings/custom-keybindings/custom0/binding,
+            value: "['<Super>r']",
+          }
+        - {
+            key: /org/cinnamon/desktop/keybindings/custom-keybindings/custom1/name,
+            value: "'rofi_file_search'",
+          }
+        - {
+            key: /org/cinnamon/desktop/keybindings/custom-keybindings/custom1/command,
+            value: "'rofi -config ~/.config/rofi/rofi_config -show find -modi find:~/.config/rofi/rofi_file_open.sh'",
+          }
+        - {
+            key: /org/cinnamon/desktop/keybindings/custom-keybindings/custom1/binding,
+            value: "['<Super>f']",
+          }
+        - {
+            key: /org/cinnamon/desktop/keybindings/custom-keybindings/custom2/name,
+            value: "'rofi_web_search'",
+          }
+        - {
+            key: /org/cinnamon/desktop/keybindings/custom-keybindings/custom2/command,
+            value: "'sh /home/kd/.config/rofi/rofi_web_search.sh'",
+          }
+        - {
+            key: /org/cinnamon/desktop/keybindings/wm/switch-windows-backward,
+            value: "['<Super>h']",
+          }
+        - {
+            key: /org/cinnamon/desktop/keybindings/wm/switch-windows,
+            value: "['<Alt>Tab', '<Super>l']",
+          }
+        - {
+            key: /org/cinnamon/desktop/keybindings/custom-keybindings/custom2/binding,
+            value: "['<Super>s']",
+          }
+        - {
+            key: /org/cinnamon/desktop/keybindings/custom-keybindings/custom3/name,
+            value: "'launch_chrome'",
+          }
+        - {
+            key: /org/cinnamon/desktop/keybindings/custom-keybindings/custom3/command,
+            value: "'google-chrome'",
+          }
+        - {
+            key: /org/cinnamon/desktop/keybindings/custom-keybindings/custom3/binding,
+            value: "['<Super>b']",
+          }
+        - {
+            key: /org/cinnamon/desktop/keybindings/custom-keybindings/custom4/name,
+            value: "'launch vscode'",
+          }
+        - {
+            key: /org/cinnamon/desktop/keybindings/custom-keybindings/custom4/command,
+            value: "'code'",
+          }
+        - {
+            key: /org/cinnamon/desktop/keybindings/custom-keybindings/custom4/binding,
+            value: "['<Super>m']",
+          }
+        - {
+            key: /org/cinnamon/desktop/keybindings/custom-keybindings/custom5/name,
+            value: "'kill_active_window'",
+          }
+        - {
+            key: /org/cinnamon/desktop/keybindings/custom-keybindings/custom5/command,
+            value: "'xdotool getwindowfocus windowkill'",
+          }
+        - {
+            key: /org/cinnamon/desktop/keybindings/custom-keybindings/custom5/binding,
+            value: "['<Super>q']",
+          }
+        - {
+            key: /org/cinnamon/desktop/keybindings/media-keys/terminal,
+            value: "['<Primary><Alt>t', '<Super>Return']",
           }
       tags:
         - keyboard
