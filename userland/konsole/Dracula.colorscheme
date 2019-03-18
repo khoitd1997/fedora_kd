@@ -21,76 +21,76 @@
 # SOFTWARE.
 
 [Background]
-Color=40,42,54
+Color=29,31,40
 
 [BackgroundFaint]
-Color=40,42,54
+Color=29,31,40
 
 [BackgroundIntense]
-Color=40,42,54
+Color=29,31,40
 
 [Color0]
-Color=189,147,249
+Color=40,42,54
 
 [Color0Faint]
-Color=189,147,249
+Color=40,42,54
 
 [Color0Intense]
-Color=189,147,249
+Color=40,42,54
 
 [Color1]
-Color=255,85,85
+Color=243,127,151
 
 [Color1Faint]
-Color=255,85,85
+Color=243,127,151
 
 [Color1Intense]
-Color=255,85,85
+Color=243,127,151
 
 [Color2]
-Color=80,250,123
+Color=90,222,205
 
 [Color2Faint]
-Color=80,250,123
+Color=90,222,205
 
 [Color2Intense]
-Color=80,250,123
+Color=90,222,205
 
 [Color3]
-Color=255,121,198
+Color=242,162,114
 
 [Color3Faint]
-Color=255,121,198
+Color=242,162,114
 
 [Color3Intense]
-Color=255,121,198
+Color=242,162,114
 
 [Color4]
-Color=139,233,253
+Color=136,151,244
 
 [Color4Faint]
-Color=139,233,253
+Color=136,151,244
 
 [Color4Intense]
-Color=139,233,253
+Color=136,151,244
 
 [Color5]
-Color=241,250,140
+Color=197,116,221
 
 [Color5Faint]
-Color=241,250,140
+Color=197,116,221
 
 [Color5Intense]
-Color=241,250,140
+Color=197,116,221
 
 [Color6]
-Color=98,114,164
+Color=121,230,243
 
 [Color6Faint]
-Color=98,114,164
+Color=121,230,243
 
 [Color6Intense]
-Color=98,114,164
+Color=121,230,243
 
 [Color7]
 Color=68,71,90
@@ -102,13 +102,13 @@ Color=68,71,90
 Color=68,71,90
 
 [Foreground]
-Color=248,248,242
+Color=253,253,253
 
 [ForegroundFaint]
-Color=248,248,242
+Color=253,253,253
 
 [ForegroundIntense]
-Color=248,248,242
+Color=253,253,253
 
 [General]
 Description=Dracula

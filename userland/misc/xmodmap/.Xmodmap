@@ -7,4 +7,4 @@ remove mod1 = Super_R
 ! Right-Alt remapped to Super
 clear mod4
 keycode 108 = Super_R
-add mod4 = Super_R
+add mod4 = Super_Rpointer = 1 2 3 5 4 6 7 8 9 10 11 12

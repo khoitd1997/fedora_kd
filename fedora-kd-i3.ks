@@ -34,7 +34,7 @@ gnome-calculator
 gstreamer1-plugins-ugly-free
 imsettings
 initial-setup-gui
-redshift
+redshift-gtk
 sane-backends-drivers-scanners
 simple-scan
 transmission
@@ -79,6 +79,7 @@ i3lock
 xbacklight
 conky
 volumeicon
+lxqt-powermanagement
 udiskie
 
 # library deps

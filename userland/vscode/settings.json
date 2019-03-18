@@ -25,6 +25,7 @@
     "window.zoomLevel": 0,
     "python.formatting.provider": "autopep8",
     "gitlens.keymap": "chorded",
+    "editor.minimap.enabled": false,
     "editor.wordWrap": "bounded",
     "workbench.colorTheme": "Monokai Pro (Filter Spectrum)",
     "material-icon-theme.showUpdateMessage": false,

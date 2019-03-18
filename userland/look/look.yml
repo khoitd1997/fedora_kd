@@ -188,3 +188,13 @@
   tags:
     - look
     - i3
+
+- block:
+    - name: configure awesome config files
+      shell: "{{item}}"
+      with_items:
+        - rm -rf ~/.config/awesome/
+        - ln -sfv {{ playbook_dir }}/look/awesome ~/.config/
+  tags:
+    - awesomewm
+    - look

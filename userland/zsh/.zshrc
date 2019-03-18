@@ -2,6 +2,7 @@
 
 # Path to your oh-my-zsh installation.
   export ZSH="${HOME}/.oh-my-zsh"
+  export QT_QPA_PLATFORMTHEME=qt5ct
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
@@ -138,3 +139,8 @@ alias multi-monitor="xrandr --output DVI-D-0 --auto --output HDMI-0 --auto && xr
 stty start undef
 stty stop undef
 setopt noflowcontrol
+
+if [ -n "$DESKTOP_SESSION" ];then
+    eval $(gnome-keyring-daemon --start)
+    export SSH_AUTH_SOCK
+fi

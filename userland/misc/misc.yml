@@ -4,7 +4,7 @@
           command: "{{item}}"
           with_items:
             - dnf update -y -q
-            - dnf config-manager --set-enabled rpmfusion-nonfree-nvidia-driver google-chrome 
+            - dnf config-manager --set-enabled rpmfusion-nonfree-nvidia-driver google-chrome
           args:
             warn: false
           tags:
@@ -95,8 +95,6 @@
         - cinnamon
         - nemo
 
-    
-
     - name: configure nautilus actions
       command: "{{item}}"
       with_items:
@@ -123,7 +121,7 @@
     - name: configure i3 default app handler
       command: "{{item}}"
       with_items:
-        - xdg-mime default dolphin.desktop inode/directory
+        - xdg-mime default nautilus.desktop inode/directory
       args:
         warn: false
       tags:
@@ -131,13 +129,16 @@
         - handler
 
     - name: configure gnome keyring
-      command: "{{item}}"
+      shell: "{{item}}"
       with_items:
-        - xdg-mime default dolphin.desktop inode/directory
+        - cp /etc/xdg/autostart/{gnome-keyring-secrets.desktop,gnome-keyring-ssh.desktop} ~/.config/autostart/
+        - sed -i '/^OnlyShowIn.*$/d' ~/.config/autostart/gnome-keyring-secrets.desktop
+        - sed -i '/^OnlyShowIn.*$/d' ~/.config/autostart/gnome-keyring-ssh.desktop
       args:
         warn: false
       tags:
         - i3
+        - awesomewm
         - keyring
 
     - name: configure xdg open default app handler
