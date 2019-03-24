@@ -161,8 +161,12 @@
             value: "['XF86ScreenSaver']",
           }
         - {
-            key:/org/cinnamon/desktop/keybindings/custom-list,
-            value: "['custom0', 'custom1', 'custom2', 'custom3', 'custom4', 'custom5']",
+            key: /org/cinnamon/desktop/keybindings/wm/close,
+            value: "['<Alt>F4', '<Super>q']",
+          }
+        - {
+            key: /org/cinnamon/desktop/keybindings/custom-list,
+            value: "['custom0', 'custom1', 'custom2', 'custom3', 'custom4']",
           }
         - {
             key: /org/cinnamon/desktop/keybindings/custom-keybindings/custom0/name,
@@ -182,7 +186,7 @@
           }
         - {
             key: /org/cinnamon/desktop/keybindings/custom-keybindings/custom1/command,
-            value: "'rofi -config ~/.config/rofi/rofi_config -show find -modi find:~/.config/rofi/rofi_file_open.sh'",
+            value: "'rofi -matching normal -config ~/.config/rofi/rofi_config -show find -modi find:~/.config/rofi/rofi_file_open.sh'",
           }
         - {
             key: /org/cinnamon/desktop/keybindings/custom-keybindings/custom1/binding,
@@ -231,18 +235,6 @@
         - {
             key: /org/cinnamon/desktop/keybindings/custom-keybindings/custom4/binding,
             value: "['<Super>m']",
-          }
-        - {
-            key: /org/cinnamon/desktop/keybindings/custom-keybindings/custom5/name,
-            value: "'kill_active_window'",
-          }
-        - {
-            key: /org/cinnamon/desktop/keybindings/custom-keybindings/custom5/command,
-            value: "'xdotool getwindowfocus windowkill'",
-          }
-        - {
-            key: /org/cinnamon/desktop/keybindings/custom-keybindings/custom5/binding,
-            value: "['<Super>q']",
           }
         - {
             key: /org/cinnamon/desktop/keybindings/media-keys/terminal,
