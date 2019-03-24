@@ -209,6 +209,7 @@ systemctl enable firewalld
 sed -i '/upgrade_type/s/default/security/' /etc/dnf/automatic.conf 
 sed -i '/apply_updates/s/no/yes/' /etc/dnf/automatic.conf
 systemctl enable --now dnf-automatic-install.timer
+systemctl enable --now dnf-automatic.timer
 systemctl enable --now dnf-makecache.timer
 echo "\nkeepcache=True\n" >> /etc/dnf/dnf.conf
 
