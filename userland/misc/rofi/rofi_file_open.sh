@@ -44,9 +44,5 @@ then
     fd .*"${QUERY#!}".* ~ 2>&1 | grep -v 'Permission denied\|Input/output error'
   fi
 else
-  echo "!!-- Type your search query to find files"
-  echo "!!-- To search in home directory ~<search_query>"
-  echo "!!-- To seach again type !<search_query>"
-  echo "!!-- To seach parent directories type ?<search_query>"
-  echo "!!-- You can print this help by typing !!"
+    fd . ~ # show every file in home path for user to choose
 fi

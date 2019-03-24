@@ -558,7 +558,7 @@ globalkeys =
         "f",
         function()
             awful.util.spawn(
-                "rofi -config ~/.config/rofi/rofi_config -show find -modi find:~/.config/rofi/rofi_file_open.sh"
+                "rofi -matching normal -config ~/.config/rofi/rofi_config -show find -modi find:~/.config/rofi/rofi_file_open.sh"
             )
         end,
         {description = "run file search rofi prompt", group = "launcher"}

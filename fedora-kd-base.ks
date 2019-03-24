@@ -65,6 +65,7 @@ mock
 fedora-review
 
 # gui apps
+autokey-gtk
 firefox
 xclip
 evince
