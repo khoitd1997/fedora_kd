@@ -471,7 +471,7 @@ globalkeys =
     ),
     awful.key(
         {modkey},
-        "c",
+        "b",
         function()
             awful.util.spawn("google-chrome")
         end,
