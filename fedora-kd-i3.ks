@@ -1,85 +1,14 @@
 %include fedora-kickstarts/fedora-live-base.ks
+%include fedora-kd-non-main-de.ks
 %include fedora-kd-base.ks
 
 %packages
-
-@networkmanager-submodules
-@libreoffice
-parole
-
-# greeter
-slick-greeter
-
-# network
-NetworkManager-adsl
-NetworkManager-bluetooth
-NetworkManager-iodine-gnome
-NetworkManager-l2tp-gnome
-NetworkManager-libreswan-gnome
-NetworkManager-openconnect-gnome
-NetworkManager-openvpn-gnome
-NetworkManager-ppp
-NetworkManager-pptp-gnome
-NetworkManager-vpnc-gnome
-NetworkManager-wifi
-NetworkManager-wwan
-nm-connection-editor
-
-# misc
-dnfdragora-updater
-alsa-plugins-pulseaudio
-firefox
-gnome-disk-utility
-gnome-calculator
-gstreamer1-plugins-ugly-free
-imsettings
-initial-setup-gui
-redshift-gtk
-sane-backends-drivers-scanners
-simple-scan
-transmission
-
-# dev
-vim-powerline
-tmux
-tmux-powerline
-
-# image
-nomacs
-
-# security
-gnome-keyring
-libsecret
-setroubleshoot
-firewall-config
-
-# media, connection
-hexchat
-pidgin
-
-# gvfs
-gvfs-archive
-gvfs-gphoto2
-gvfs-mtp
-gvfs-smb
-
-# themes
-mint-y-icons
-paper-icon-theme
-fedora-icon-theme
-
-# file manager
-nautilus
-
 # i3
 i3
 i3status
 dmenu
 xbacklight
 conky
-volumeicon
-lxqt-powermanagement
-udiskie
 
 # library deps
 python3-pypandoc # for i3 autoname
@@ -91,7 +20,6 @@ python3-pypandoc # for i3 autoname
 %post
 
 cat > /etc/lightdm/slick-greeter.conf <<EOF
-
 [Greeter]
 background='/usr/share/user_file/resource/TCP118v1_by_Tiziano_Consonni.jpg'
 background-color='#2ceb26'
@@ -105,7 +33,6 @@ show-hostname=true
 theme-name='Mint-Y-Dark-Aqua'
 show-clock=true
 onscreen-keyboard=false
-
 EOF
 
 cat >> /etc/profile.d/live_user_setup.sh << 'EOF'

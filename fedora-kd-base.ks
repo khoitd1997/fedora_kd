@@ -56,6 +56,7 @@ nano
 dnf-automatic 
 openconnect 
 tmux 
+libsecret
 glibc-devel.i686 
 libnsl
 xdotool
@@ -66,6 +67,7 @@ mock
 fedora-review
 
 # gui apps
+seahorse
 i3lock
 autokey-gtk
 firefox
