@@ -28,7 +28,6 @@
   "editor.minimap.enabled": false,
   "editor.wordWrap": "bounded",
   "workbench.colorTheme": "Monokai Pro (Filter Spectrum)",
-  "material-icon-theme.showUpdateMessage": false,
   "pasteImage.path": "${currentFileDir}/image",
   "editor.quickSuggestionsDelay": 2,
   "[markdown]": {
@@ -83,7 +82,7 @@
   "go.autocompleteUnimportedPackages": true,
   "window.titleBarStyle": "native",
   "editor.fontFamily": "source code pro",
-  "editor.fontSize": "16",
+  "editor.fontSize": 16,
   "todo-tree.defaultHighlight": {
     "type": "text",
     "foreground": "black",
@@ -182,8 +181,6 @@
     "workbench.view.extensions",
     "workbench.view.scm"
   ],
-  "rewrap.autoWrap.enabled": true,
-  "rewrap.wrappingColumn": 80,
   "editor.wordWrapColumn": 100,
   "vim.easymotion": true,
   "vim.easymotionMarkerFontFamily": "source code pro",
@@ -193,5 +190,6 @@
   "vim.easymotionMarkerBackgroundColor": "orange",
   "workbench.editor.labelFormat": "short",
   "breadcrumbs.enabled": true,
-  "latex-workshop.view.pdf.viewer": "tab"
+"latex-workshop.view.pdf.viewer": "tab",
+"workbench.editor.closeEmptyGroups": false
 }
