@@ -55,6 +55,15 @@
       "startup": false
     },
     {
+      "name": "autokey",
+      "command": "autokey-gtk",
+      "comment": "add keybindings",
+      "launchInTerminal": "false",
+      "iconPath": "autokey",
+      "type": "Application",
+      "startup": true
+    },
+    {
       "name": "calculator",
       "command": "qalculate-gtk",
       "comment": "a really good calculator",

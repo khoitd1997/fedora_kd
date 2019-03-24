@@ -4,7 +4,6 @@
 # Use "program &" to run it regardless
 # ---
 # NOTE: This script runs with every restart of AwesomeWM
-# TODO: run_once
 
 export QT_QPA_PLATFORMTHEME=qt5ct
 
@@ -30,6 +29,9 @@ run dropbox start -i
 run lxqt-powermanagement
 run volumeicon
 run redshift-gtk -l 34.052235:-118.243683
+run dnfdragora-updater
+run /usr/bin/seapplet
+run autokey-gtk
 
 # Keyboard layout
 # setxkbmap -layout "us,gr" -option "grp:alt_shift_toggle" &

@@ -203,6 +203,15 @@
         - tmux
         - development
 
+    - name: autokey
+      shell: "{{item}}"
+      with_items:
+        - ln -sfv {{ playbook_dir }}/misc/autokey/* ~/.config/autokey/data
+      args:
+        warn: false
+      tags:
+        - autokey
+
     - block:
         - name: launch xpad
           shell: xpad 2>&1 &
