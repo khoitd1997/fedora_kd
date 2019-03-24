@@ -47,6 +47,19 @@
               users=
           tags:
             - geoclue
+
+        - name: configure pam login
+          blockinfile:
+            path: /etc/pam.d/login
+            marker: "# {mark} auto start pam"
+            block: |
+              session    optional     pam_gnome_keyring.so auto_start
+              auth       optional     pam_gnome_keyring.so
+          tags:
+            - i3
+            - awesomewm
+            - keyring
+
       become: true
 
     - name: set timezone to America/Los_Angeles
@@ -130,18 +143,17 @@
         - i3
         - handler
 
-    - name: configure gnome keyring
+    - name: configure awesome applet
       shell: "{{item}}"
       with_items:
-        - cp /etc/xdg/autostart/{gnome-keyring-secrets.desktop,gnome-keyring-ssh.desktop} ~/.config/autostart/
-        - sed -i '/^OnlyShowIn.*$/d' ~/.config/autostart/gnome-keyring-secrets.desktop
-        - sed -i '/^OnlyShowIn.*$/d' ~/.config/autostart/gnome-keyring-ssh.desktop
+        - sed -i 's/^icon_theme=.*/icon_theme=Paper/g' ~/.config/lxqt/lxqt.conf
+        - ln -sfv ~/fedora_kd/userland/misc/applet/lxqt-powermanagement.conf  ~/.config/lxqt
       args:
         warn: false
       tags:
-        - i3
         - awesomewm
-        - keyring
+        - i3
+        - applet
 
     - name: configure xdg open default app handler
       command: xdg-mime default {{ item.app }} {{ item.type }}
