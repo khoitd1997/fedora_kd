@@ -79,23 +79,6 @@ python3-pypandoc # for i3 autoname
 %end
 
 %post
-
-cat > /etc/lightdm/slick-greeter.conf <<EOF
-[Greeter]
-background='/usr/share/user_file/resource/TCP118v1_by_Tiziano_Consonni.jpg'
-background-color='#2ceb26'
-logo='/usr/share/user_file/resource/login_logo.png'
-draw-user-backgrounds=false
-draw-grid=false
-enable-hidpi='auto'
-font-name='Noto Sans 11'
-icon-theme-name='Mint-Y-Aqua'
-show-hostname=true
-theme-name='Mint-Y-Dark-Aqua'
-show-clock=true
-onscreen-keyboard=false
-EOF
-
 cat >> /etc/profile.d/live_user_setup.sh << 'EOF'
 #!/bin/bash
 # launch live install when live user boots
