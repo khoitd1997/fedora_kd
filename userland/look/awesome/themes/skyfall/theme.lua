@@ -23,7 +23,7 @@ local screen_height = awful.screen.focused().geometry.height
 
 -- Set theme wallpaper.
 -- It won't change anything if you are using feh to set the wallpaper like I do.
-theme.wallpaper = os.getenv("HOME") .. "/.config/awesome/themes/" .. theme_name .. "/wall.png"
+theme.wallpaper = "/usr/share/user_file/resource/TCP118v1_by_Tiziano_Consonni.jpg"
 
 -- Set the theme font. This is the font that will be used by default in menus, bars, titlebars etc.
 -- theme.font          = "sans 11"

@@ -11,7 +11,7 @@ trap cleanup EXIT
 
 skip_tags=""
 function select_skip_tags {
-for de in cinnamon i3
+for de in cinnamon i3 awesomewm
 do
     if [ "${DESKTOP_SESSION}" != "${de}" ]; then
         if [ -z "$skip_tags" ]

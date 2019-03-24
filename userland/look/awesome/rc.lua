@@ -252,14 +252,14 @@ local function set_wallpaper(s)
         local wallpaper = beautiful.wallpaper
         -- If wallpaper is a function, call it with the screen
         if type(wallpaper) == "function" then
-            wallpaper = wallpaper(s)
+            wallpaper = (s)
         end
 
         -- Method 1: Built in function
         gears.wallpaper.maximized(wallpaper, s, true)
 
     -- Method 2: Set theme's wallpaper with feh
-    --awful.spawn.with_shell("feh --bg-fill " .. wallpaper)
+    -- awful.spawn.with_shell("feh --bg-fill " .. "/usr/share/user_file/TCP118v1_by_Tiziano_Consonni.jpg")
 
     -- Method 3: Set last wallpaper with feh
     -- awful.spawn.with_shell(os.getenv("HOME") .. "/.fehbg")
