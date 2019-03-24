@@ -922,7 +922,7 @@ awful.rules.rules = {
                 "dialog"
             }
         },
-        properties = {floating = true, ontop = false}
+        properties = {floating = false, ontop = false}
     },
     -- Centered clients
     {
@@ -939,6 +939,17 @@ awful.rules.rules = {
             }
         },
         properties = {},
+        callback = function(c)
+            awful.placement.centered(c, {honor_workarea = true})
+        end
+    },
+    {
+        rule_any = {
+            class = {
+                "code"
+            }
+        },
+        properties = {maximized_vertical = false, maximized_horizontal = false},
         callback = function(c)
             awful.placement.centered(c, {honor_workarea = true})
         end
@@ -964,7 +975,7 @@ awful.rules.rules = {
                 "google-chrome"
             }
         },
-        properties = {},
+        properties = {maximized_vertical = false, maximized_horizontal = false},
         callback = function(c)
             if not beautiful.titlebars_imitate_borders then
                 awful.titlebar.hide(c)
@@ -994,40 +1005,6 @@ awful.rules.rules = {
             class = {}
         },
         properties = {skip_taskbar = true}
-    },
-    -- Fixed terminal geometry
-    {
-        rule_any = {
-            class = {
-                "gnome-terminal",
-                "konsole",
-                "Termite",
-                "kitty",
-                "URxvt"
-            }
-        },
-        properties = {width = screen_width * 0.45, height = screen_height * 0.5}
-    },
-    -- Pavucontrol
-    {
-        rule_any = {
-            class = {
-                "Pavucontrol"
-            }
-        },
-        properties = {floating = true, width = screen_width * 0.45, height = screen_height * 0.8}
-    },
-    -- Galculator
-    {
-        rule_any = {
-            class = {
-                "Galculator"
-            }
-        },
-        except_any = {
-            type = {"dialog"}
-        },
-        properties = {floating = true, width = screen_width * 0.2, height = screen_height * 0.4}
     },
     -- File managers
     {
@@ -1087,56 +1064,6 @@ awful.rules.rules = {
             awful.placement.centered(c, {honor_workarea = true})
         end
     }
-
-    --     ---------------------------------------------
-    --     -- Start application on specific workspace --
-    --     ---------------------------------------------
-    --     -- Browsing
-    --     { rule_any = {
-    --         class = {
-    --             "Firefox",
-    --             "qutebrowser",
-    --             "Chrome",
-    --         },
-    --         except_any = {
-    --             role = { "GtkFileChooserDialog" },
-    --             type = { "dialog" }
-    --         },
-    --     }, properties = { screen = 1, tag = awful.screen.focused().tags[1] } },
-
-    --     -- Chatting
-    --     { rule_any = {
-    --         class = {
-    --             "google-chrome",
-    --             "discord",
-    --             "TelegramDesktop",
-    --             "Signal",
-    --         },
-    --     }, properties = { screen = 1, tag = awful.screen.focused().tags[3], floating = false } },
-
-    --     -- Editing
-    --     -- { rule_any = {
-    --     --     class = {
-    --     --       "Emacs",
-    --     --       "Subl3",
-    --     --       },
-    --     --  }, properties = { screen = 1, tag = awful.screen.focused().tags[4] } },
-
-    --     -- Photo editing
-    --     { rule_any = {
-    --         class = {
-    --             "Gimp",
-    --             "Inkscape",
-    --         },
-    --     }, properties = { screen = 1, tag = awful.screen.focused().tags[6] } },
-
-    -- -- Miscellaneous
-    -- { rule_any = {
-    --     class = {
-    --         "Deluge",
-    --         "VirtualBox Manager",
-    --     },
-    -- }, properties = { screen = 1, tag = awful.screen.focused().tags[10] } },
 }
 -- }}}
 
