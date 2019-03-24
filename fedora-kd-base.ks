@@ -27,6 +27,7 @@ bat
 
 # cli
 doxygen
+dnfdragora-updater
 zeitgeist
 youtube-dl
 cmake
@@ -65,6 +66,7 @@ mock
 fedora-review
 
 # gui apps
+i3lock
 autokey-gtk
 firefox
 xclip
@@ -80,6 +82,7 @@ graphviz
 npm
 flameshot
 feh
+qalculate-gtk
 # synapse # replaced by rofi
 latexmk
 baobab
@@ -102,6 +105,7 @@ snapd
 flatpak
 
 # latex
+texlive-latexindent
 texlive-scheme-basic 
 texlive-collection-latexextra 
 texlive-collection-latexrecommended 
@@ -136,6 +140,9 @@ zsh-syntax-highlighting
 adobe-source-code-pro-fonts
 arc-theme
 plymouth-plugin-script
+
+# removal
+-gnome-calculator
 
 %end
 
