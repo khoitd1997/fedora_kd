@@ -75,7 +75,6 @@ nautilus
 i3
 i3status
 dmenu
-i3lock
 xbacklight
 conky
 volumeicon
