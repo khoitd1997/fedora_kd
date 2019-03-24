@@ -28,6 +28,15 @@
       "startup": false
     },
     {
+      "name": "Log Out",
+      "command": "kill -9 -1",
+      "comment": "log out of current session",
+      "launchInTerminal": "true",
+      "iconPath": "logout",
+      "type": "Application",
+      "startup": false
+    },
+    {
       "name": "Shutdown",
       "command": "shutdown -h now",
       "comment": "shut down",
