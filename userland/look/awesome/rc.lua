@@ -32,18 +32,11 @@ require("awful.hotkeys_popup.keys")
 
 -- Basic (required)
 local helpers = require("helpers")
--- local keys = require("keys")
 local titlebars = require("titlebars")
 
 -- Extra features
 local bars = require("bar_themes." .. bar_theme_name)
--- local exit_screen = require("noodle.text_exit_screen")
--- local start_screen = require("noodle.start_screen")
 local tag_notifications = require("noodle.tag_notifications")
-
--- Third party
--- local radical = require("radical")
--- }}}
 
 -- {{{ Error handling
 -- Check if awesome encountered an error during startup and fell back to
@@ -91,7 +84,6 @@ browser = "firefox"
 filemanager = "nemo"
 tmux = terminal .. " -e tmux new "
 editor = "vim"
---editor = os.getenv("EDITOR") or "nano"
 editor_cmd = terminal .. " -e " .. editor .. " "
 
 -- Get screen geometry
@@ -121,8 +113,6 @@ awful.layout.layouts = {
 -- }}}
 
 -- {{{ Notifications
--- TODO: some options are not respected when the notification is created
--- through lib-notify. Naughty works as expected.
 
 -- Icon size
 naughty.config.defaults["icon_size"] = beautiful.notification_icon_size
@@ -719,10 +709,12 @@ for i = 1, 9 do
             {modkey},
             "#" .. i + 9,
             function()
-                local screen = awful.screen.focused()
-                local tag = screen.tags[i]
-                if tag then
-                    tag:view_only()
+                for s in screen do
+                    -- local screen = awful.screen.focused()
+                    local tag = s.tags[i]
+                    if tag then
+                        tag:view_only()
+                    end
                 end
             end,
             {description = "view tag #" .. i, group = "tag"}
