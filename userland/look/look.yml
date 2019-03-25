@@ -2,6 +2,8 @@
     - include: cinnamon/cinnamon.yml
     - include: i3/i3.yml
     - include: awesome/awesome.yml
+    - name: configure gnome terminal
+      shell: sh {{ playbook_dir }}/look/gnome-terminal/configure_gnome_terminal.sh
 
   tags:
     - look

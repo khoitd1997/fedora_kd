@@ -78,6 +78,9 @@ udiskie
 # library deps
 python3-pypandoc # for i3 autoname
 
+# removal
+-openbox
+
 %end
 
 %post

@@ -150,7 +150,6 @@ arc-theme
 plymouth-plugin-script
 
 # removal
--openbox
 -gnome-calculator
 
 %end
