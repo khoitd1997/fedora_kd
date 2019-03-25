@@ -38,7 +38,11 @@
         value: "{{ item.value }}"
       with_items:
         - { key: /org/cinnamon/panels-enabled, value: "['1:0:top']" }
-        - { key: /org/cinnamon/panels-height, value: "['1:25']" }
+        - { key: /org/cinnamon/panels-height, value: "['1:21']" }
+        - {
+            key: /org/cinnamon/theme/symbolic-relative-size,
+            value: "0.67000000000000004",
+          }
       tags:
         - panel
 
@@ -53,7 +57,7 @@
           }
         - {
             key: /org/cinnamon/desktop/interface/text-scaling-factor,
-            value: "1.1000000000000003",
+            value: "1.0000000000000003",
           }
         - { key: /org/cinnamon/alttab-switcher-style, value: "'icons+preview'" }
         - { key: /org/cinnamon/panels-autohide, value: "['1:false']" }
