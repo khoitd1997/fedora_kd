@@ -78,12 +78,12 @@ awful.screen.connect_for_each_screen(
         local time = wibox.widget.textclock("%H:%M")
         time.align = "center"
         time.valign = "center"
-        time.font = "Typicons 11"
+        time.font = beautiful.taglist_text_font
 
         local date = wibox.widget.textclock("%B %d")
         date.align = "center"
         date.valign = "center"
-        date.font = "Typicons 11"
+        date.font = beautiful.taglist_text_font
 
         update_interval = 60
         cpu_cores = [[bash -c '
@@ -110,11 +110,16 @@ awful.screen.connect_for_each_screen(
                 local load = stdout
                 local strload = ("%.5g"):format(load)
                 if load < cpu_cores then
-                    sysload.markup = '<span foreground="grey">' .. strload .. "</span>"
+                    -- '<span foreground="grey" font="Typicons 11">' .. strload .. "</span>"
+                    sysload.markup =
+                        '<span foreground="grey" font="' .. beautiful.taglist_text_font .. '">' .. strload .. "</span>"
                 elseif (load < 2 * cpu_cores) then
-                    sysload.markup = '<span foreground="orange">' .. strload .. "</span>"
+                    sysload.markup =
+                        '<span foreground="orange" font="' ..
+                        beautiful.taglist_text_font .. '">' .. strload .. "</span>"
                 else
-                    sysload.markup = '<span foreground="red">' .. strload .. "</span>"
+                    sysload.markup =
+                        '<span foreground="red" font="' .. beautiful.taglist_text_font .. '">' .. strload .. "</span>"
                 end
             end
         )

@@ -58,7 +58,7 @@ theme.bg_focus = theme.xcolor8
 theme.bg_urgent = theme.xcolor8
 theme.bg_minimize = theme.xcolor8
 theme.bg_systray = theme.xbackground
-theme.systray_icon_spacing = dpi(1)
+theme.systray_icon_spacing = dpi(5)
 
 theme.fg_normal = theme.xcolor8
 theme.fg_focus = theme.xcolor4
@@ -151,7 +151,8 @@ theme.separator_fg = theme.xcolor8
 -- (Bar items can be customized in bars.lua)
 theme.wibar_position = "bottom"
 theme.wibar_detached = false
-theme.wibar_height = math.max(screen_height * 0.013, dpi(25))
+-- theme.wibar_height = math.max(screen_height * 0.013, dpi(25))
+theme.wibar_height = screen_height * 0.017
 theme.wibar_fg = theme.xcolor7
 theme.wibar_bg = theme.xcolor0
 --theme.wibar_opacity = 0.7
@@ -288,7 +289,8 @@ for i = 1, ntags do
 end
 
 -- Noodle Text Taglist
-theme.taglist_text_font = "Typicons 11"
+-- theme.taglist_text_font = "Typicons 11"
+theme.taglist_text_font = "Source Code Pro Semibold 10"
 theme.taglist_text_empty = {"", "", "", "", "", "", "", "", "", ""}
 theme.taglist_text_occupied = {"", "", "", "", "", "", "", "", "", ""}
 theme.taglist_text_focused = {"", "", "", "", "", "", "", "", "", ""}
@@ -443,55 +445,6 @@ theme.layout_cornernw = layout_icon_path .. "cornernw.png"
 theme.layout_cornerne = layout_icon_path .. "cornerne.png"
 theme.layout_cornersw = layout_icon_path .. "cornersw.png"
 theme.layout_cornerse = layout_icon_path .. "cornerse.png"
-
--- Recolor layout icons
---theme = theme_assets.recolor_layout(theme, theme.xcolor1)
-
--- Desktop mode widget variables
--- Symbols     
--- theme.desktop_mode_color_floating = theme.xcolor4
--- theme.desktop_mode_color_tile = theme.xcolor3
--- theme.desktop_mode_color_max = theme.xcolor1
--- theme.desktop_mode_text_floating = "f"
--- theme.desktop_mode_text_tile = "t"
--- theme.desktop_mode_text_max = "m"
-
--- Minimal tasklist widget variables
-theme.minimal_tasklist_visible_clients_color = theme.xcolor4
-theme.minimal_tasklist_visible_clients_text = ""
-theme.minimal_tasklist_hidden_clients_color = theme.xcolor7
-theme.minimal_tasklist_hidden_clients_text = ""
-
--- Mpd song
-theme.mpd_song_title_color = theme.xcolor7
-theme.mpd_song_artist_color = theme.xcolor7
-theme.mpd_song_paused_color = theme.xcolor8
-
--- Volume bar
-theme.volume_bar_active_color = theme.xcolor6
-theme.volume_bar_active_background_color = theme.xcolor6 .. "33"
-theme.volume_bar_muted_color = theme.xcolor8
-theme.volume_bar_muted_background_color = theme.xcolor8 .. "33"
-
--- Temperature bar
-theme.temperature_bar_active_color = theme.xcolor1
-theme.temperature_bar_background_color = theme.xcolor1 .. "33"
-
--- Battery bar
-theme.battery_bar_active_color = theme.xcolor5
-theme.battery_bar_background_color = theme.xcolor5 .. "33"
-
--- CPU bar
-theme.cpu_bar_active_color = theme.xcolor2
-theme.cpu_bar_background_color = theme.xcolor2 .. "33"
-
--- RAM bar
-theme.ram_bar_active_color = theme.xcolor12
-theme.ram_bar_background_color = theme.xcolor12 .. "33"
-
--- Brightness bar
-theme.brightness_bar_active_color = theme.xcolor14
-theme.brightness_bar_background_color = theme.xcolor14 .. "33"
 
 -- Generate Awesome icon:
 theme.awesome_icon = theme_assets.awesome_icon(theme.menu_height, theme.bg_focus, theme.fg_focus)
