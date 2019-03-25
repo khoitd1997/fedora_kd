@@ -93,18 +93,18 @@ screen_height = awful.screen.focused().geometry.height
 -- Table of layouts to cover with awful.layout.inc, order matters.
 awful.layout.layouts = {
     -- I only ever use these 3
-    awful.layout.suit.tile,
+    awful.layout.suit.tile.right,
     awful.layout.suit.floating,
-    awful.layout.suit.max
-    --awful.layout.suit.spiral,
-    --awful.layout.suit.spiral.dwindle,
-    --awful.layout.suit.tile.top,
-    --awful.layout.suit.fair,
-    --awful.layout.suit.fair.horizontal,
-    --awful.layout.suit.tile.left,
-    --awful.layout.suit.tile.bottom,
+    awful.layout.suit.max,
+    awful.layout.suit.tile.left,
+    -- awful.layout.suit.spiral,
+    -- awful.layout.suit.spiral.dwindle,
+    awful.layout.suit.tile.top,
+    -- awful.layout.suit.fair,
+    -- awful.layout.suit.fair.horizontal,
+    awful.layout.suit.tile.bottom,
+    awful.layout.suit.corner.nw
     --awful.layout.suit.max.fullscreen,
-    --awful.layout.suit.corner.nw,
     --awful.layout.suit.magnifier,
     --awful.layout.suit.corner.ne,
     --awful.layout.suit.corner.sw,
@@ -257,12 +257,6 @@ local function set_wallpaper(s)
 
         -- Method 1: Built in function
         gears.wallpaper.maximized(wallpaper, s, true)
-
-    -- Method 2: Set theme's wallpaper with feh
-    -- awful.spawn.with_shell("feh --bg-fill " .. "/usr/share/user_file/TCP118v1_by_Tiziano_Consonni.jpg")
-
-    -- Method 3: Set last wallpaper with feh
-    -- awful.spawn.with_shell(os.getenv("HOME") .. "/.fehbg")
     end
 end
 
@@ -316,7 +310,7 @@ globalkeys =
         {modkey},
         "l",
         function()
-            awful.client.focus.byidx(1)
+            awful.client.focus.global_bydirection("right")
         end,
         {description = "focus next by index", group = "client"}
     ),
@@ -324,7 +318,7 @@ globalkeys =
         {modkey},
         "h",
         function()
-            awful.client.focus.byidx(-1)
+            awful.client.focus.global_bydirection("left")
         end,
         {description = "focus previous by index", group = "client"}
     ),
@@ -726,49 +720,7 @@ desktopbuttons =
         function()
             mymainmenu:toggle()
         end
-    ),
-    -- Middle button - Toggle start scren
-    awful.button(
-        {},
-        2,
-        function()
-            start_screen_show()
-            -- sidebar.visible = not sidebar.visible
-        end
-    ),
-    -- Scrolling - Switch tags
-    awful.button({}, 4, awful.tag.viewprev),
-    awful.button({}, 5, awful.tag.viewnext),
-    -- Side buttons - Control volume
-    awful.button(
-        {},
-        9,
-        function()
-            awful.spawn.with_shell("volume-control.sh up")
-        end
-    ),
-    awful.button(
-        {},
-        8,
-        function()
-            awful.spawn.with_shell("volume-control.sh down")
-        end
     )
-
-    -- Side buttons - Minimize and restore minimized client
-    -- awful.button({ }, 8, function()
-    --     if client.focus ~= nil then
-    --         client.focus.minimized = true
-    --     end
-    -- end),
-    -- awful.button({ }, 9, function()
-    --       local c = awful.client.restore()
-    --       -- Focus restored client
-    --       if c then
-    --           client.focus = c
-    --           c:raise()
-    --       end
-    -- end)
 )
 root.buttons(desktopbuttons)
 
@@ -899,7 +851,6 @@ awful.rules.rules = {
         rule_any = {
             class = {
                 "Gnome-terminal",
-                "qutebrowser",
                 "Sublime_text",
                 "Subl3",
                 "Firefox",
@@ -1043,14 +994,6 @@ client.connect_signal(
     end
 )
 
--- Enable sloppy focus, so that focus follows mouse.
---client.connect_signal("mouse::enter", function(c)
---    if awful.layout.get(c.screen) ~= awful.layout.suit.magnifier
---        and awful.client.focus.filter(c) then
---        client.focus = c
---    end
---end)
-
 -- Rounded corners
 if beautiful.border_radius ~= 0 then
     client.connect_signal(
@@ -1170,94 +1113,6 @@ client.connect_signal(
             end
             awful.ewmh.activate(c, context, hints)
         end
-    end
-)
-
--- Disconnect the client ability to request different size and position
--- client.disconnect_signal("request::geometry", awful.ewmh.client_geometry_requests)
-
--- Battery notifications
--- The signals are sent by a udev rule.
-
-local last_battery_notification_id
-awesome.connect_signal(
-    "charger_plugged",
-    function(c)
-        notification =
-            naughty.notify(
-            {
-                title = "Juice status:",
-                text = "Your battery is charging!",
-                icon = beautiful.battery_charging_icon,
-                timeout = 3,
-                replaces_id = last_battery_notification_id
-            }
-        )
-        last_battery_notification_id = notification.id
-    end
-)
-awesome.connect_signal(
-    "charger_unplugged",
-    function(c)
-        notification =
-            naughty.notify(
-            {
-                title = "Juice status:",
-                text = "Your battery is discharging!",
-                icon = beautiful.battery_icon,
-                timeout = 3,
-                replaces_id = last_battery_notification_id
-            }
-        )
-        last_battery_notification_id = notification.id
-    end
-)
-awesome.connect_signal(
-    "battery_full",
-    function(c)
-        notification =
-            naughty.notify(
-            {
-                title = "Juice status:",
-                text = "Full! Your tank is topped up!",
-                icon = beautiful.battery_icon,
-                timeout = 3,
-                replaces_id = last_battery_notification_id
-            }
-        )
-        last_battery_notification_id = notification.id
-    end
-)
-awesome.connect_signal(
-    "battery_low",
-    function(c)
-        notification =
-            naughty.notify(
-            {
-                title = "Juice status:",
-                text = "Low. Running out of juice soon!",
-                icon = beautiful.battery_icon,
-                timeout = 5,
-                replaces_id = last_battery_notification_id
-            }
-        )
-        last_battery_notification_id = notification.id
-    end
-)
-awesome.connect_signal(
-    "battery_critical",
-    function(c)
-        notification =
-            naughty.notify(
-            {
-                title = "Juice status:",
-                text = "Critical! Where is the cable?!",
-                icon = beautiful.battery_icon,
-                timeout = 0,
-                replaces_id = last_battery_notification_id
-            }
-        )
-        last_battery_notification_id = notification.id
     end
 )
 
