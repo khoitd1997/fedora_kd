@@ -181,67 +181,6 @@ myawesomemenu = {
     }
 }
 
-mymainmenu =
-    awful.menu(
-    {
-        items = {
-            {"awesome", myawesomemenu, beautiful.home_icon},
-            {"firefox", browser, beautiful.firefox_icon},
-            {"terminal", terminal, beautiful.terminal_icon},
-            {"files", filemanager, beautiful.files_icon},
-            {"search", "rofi -show combi", beautiful.search_icon},
-            {
-                "discord",
-                function()
-                    local matcher = function(c)
-                        return awful.rules.match(c, {class = "discord"})
-                    end
-                    awful.client.run_or_raise("discord", matcher)
-                end,
-                beautiful.discord_icon
-            },
-            {
-                "telegram",
-                function()
-                    local matcher = function(c)
-                        return awful.rules.match(c, {class = "TelegramDesktop"})
-                    end
-                    awful.client.run_or_raise("telegram", matcher)
-                end,
-                beautiful.telegram_icon
-            },
-            {
-                "mail",
-                function()
-                    local matcher = function(c)
-                        return awful.rules.match(c, {class = "Thunderbird"})
-                    end
-                    awful.client.run_or_raise("thunderbird", matcher)
-                end,
-                beautiful.mail_icon
-            },
-            {
-                "gimp",
-                function()
-                    local matcher = function(c)
-                        return awful.rules.match(c, {class = "Gimp"})
-                    end
-                    awful.client.run_or_raise("gimp", matcher)
-                end,
-                beautiful.gimp_icon
-            },
-            {"appearance", "lxappearance", beautiful.appearance_icon}
-        }
-    }
-)
-
-mylauncher =
-    awful.widget.launcher(
-    {
-        image = beautiful.awesome_icon,
-        menu = mymainmenu
-    }
-)
 -- Menubar configuration
 menubar.utils.terminal = terminal -- Set the terminal for applications that require it
 -- }}}
@@ -321,14 +260,6 @@ globalkeys =
             awful.client.focus.global_bydirection("left")
         end,
         {description = "focus previous by index", group = "client"}
-    ),
-    awful.key(
-        {modkey},
-        "w",
-        function()
-            mymainmenu:show()
-        end,
-        {description = "show main menu", group = "awesome"}
     ),
     -- Layout manipulation
     awful.key(
@@ -687,42 +618,6 @@ for i = 1, 9 do
         )
     )
 end
-
-desktopbuttons =
-    gears.table.join(
-    awful.button(
-        {},
-        1,
-        function()
-            mymainmenu:hide()
-            -- sidebar.visible = false
-            naughty.destroy_all_notifications()
-
-            local function double_tap()
-                uc = awful.client.urgent.get()
-                -- If there is no urgent client, go back to last tag
-                if uc == nil then
-                    awful.tag.history.restore()
-                else
-                    awful.client.urgent.jumpto()
-                end
-            end
-            helpers.single_double_tap(
-                function()
-                end,
-                double_tap
-            )
-        end
-    ),
-    awful.button(
-        {},
-        3,
-        function()
-            mymainmenu:toggle()
-        end
-    )
-)
-root.buttons(desktopbuttons)
 
 clientbuttons =
     gears.table.join(
