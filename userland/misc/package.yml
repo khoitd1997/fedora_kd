@@ -1,0 +1,25 @@
+- block:
+    - name: update system and enable repo
+      shell: "{{item}}"
+      with_items:
+        - dnf config-manager --set-enabled rpmfusion-nonfree-nvidia-driver google-chrome
+        # - dnf install https://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm https://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm -y -q
+        - dnf groupupdate core -y
+        - dnf update -y -q
+      args:
+        warn: false
+      tags:
+        - package
+
+    - name: install packages
+      dnf:
+        enablerepo: google-chrome rpmfusion-nonfree-nvidia-driver
+        update_cache: yes
+        state: present
+        name:
+          - google-chrome-stable
+          - xorg-x11-drv-nvidia
+          - akmod-nvidia
+      tags:
+        - package
+  become: true

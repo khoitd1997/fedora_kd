@@ -1,0 +1,51 @@
+- block:
+    - name: configure non main DE default app handler
+      command: "{{item}}"
+      with_items:
+        - xdg-mime default nautilus.desktop inode/directory
+      args:
+        warn: false
+      when: lookup('env', 'DESKTOP_SESSION') == "i3" or lookup('env', 'DESKTOP_SESSION') == "awesome"
+      tags:
+        - i3
+        - awesome
+
+    - name: configure cinnamon default app handler
+      command: "{{item}}"
+      with_items:
+        - ln -sfv {{ playbook_dir }}/misc/mimeapps.list ~/.config/mimeapps.list
+        - xdg-mime default code.desktop application/nemo-action
+        - xdg-mime default nemo.desktop inode/directory
+      args:
+        warn: false
+      when: lookup('env', 'DESKTOP_SESSION') == "cinnamon"
+      tags:
+        - cinnamon
+
+    - name: configure xdg open default app handler
+      command: xdg-mime default {{ item.app }} {{ item.type }}
+      with_items:
+        - { type: application/pdf, app: evince.desktop }
+        - { type: text/html, app: google-chrome.desktop }
+        - { type: x-scheme-handler/http, app: google-chrome.desktop }
+        - { type: x-scheme-handler/https, app: google-chrome.desktop }
+        - { type: x-scheme-handler/about, app: google-chrome.desktop }
+        - { type: x-scheme-handler/unknown, app: google-chrome.desktop }
+        - { type: text/x-svsrc, app: code.desktop }
+        - { type: text/x-go, app: code.desktop }
+        - { type: application/x-java-keystore, app: code.desktop }
+        - { type: text/x-c++src, app: code.desktop }
+        - { type: text/x-c++hdr, app: code.desktop }
+        - { type: text/x-chdr, app: code.desktop }
+        - { type: text/x-csrc, app: code.desktop }
+        - { type: application/x-shellscript, app: code.desktop }
+        - { type: text/markdown, app: code.desktop }
+        - { type: application/json, app: code.desktop }
+        - { type: text/plain, app: code.desktop }
+      args:
+        warn: false
+      tags:
+        - xdg
+
+  tags:
+    - handler

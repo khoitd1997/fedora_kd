@@ -1,0 +1,15 @@
+- block:
+    - name: configure awesome config files
+      shell: "{{item}}"
+      with_items:
+        - rm -rf ~/.config/awesome/
+        - ln -sfv {{ playbook_dir }}/look/awesome/data/awesome ~/.config/
+
+    - name: configure scroll direction
+      lineinfile:
+        path: ~/.Xmodmap
+        line: "pointer = 1 2 3 5 4 6 7 8 9 10 11 12"
+
+  when: lookup('env', 'DESKTOP_SESSION') == "awesome"
+  tags:
+    - awesome

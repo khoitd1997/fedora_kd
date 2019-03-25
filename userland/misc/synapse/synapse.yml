@@ -1,0 +1,10 @@
+- block:
+    - name: configure synapse
+      command: "{{item}}"
+      with_items:
+        - mkdir -vp ~/.config/synapse/
+        - ln -sfv {{ playbook_dir }}/misc/synapse/synapse_config.json ~/.config/synapse/config.json
+      args:
+        warn: false
+      tags:
+        - synapse

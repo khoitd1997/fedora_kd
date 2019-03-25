@@ -154,12 +154,6 @@ plymouth-plugin-script
 
 %post --log=/root/ks-post.log --erroronfail
 
-cat >> /etc/lightdm/lightdm.conf <<EOF
-
-[SeatDefaults]
-greeter-session=slick-greeter
-EOF
-
 cat > /etc/lightdm/slick-greeter.conf <<EOF
 
 [Greeter]

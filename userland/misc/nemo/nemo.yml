@@ -1,0 +1,18 @@
+- block:
+    - name: copy nemo action files
+      copy:
+        src: "{{ item }}"
+        dest: "~/.local/share/nemo/actions"
+        owner: "{{ ansible_user_id }}"
+        mode: 0644
+      with_fileglob:
+        - "{{ playbook_dir }}/misc/nemo/*.nemo_action"
+
+    - name: configuring nemo bookmarks
+      lineinfile:
+        path: ~/.config/gtk-3.0/bookmarks
+        line: "file:///home/{{ ansible_user_id }}/Dropbox/Class/"
+  when: lookup('env', 'DESKTOP_SESSION') == "cinnamon"
+  tags:
+    - cinnamon
+    - nemo

@@ -6,7 +6,6 @@
     - name: install flatpak packages
       flatpak:
         name: com.spotify.Client
-          com.discordapp.Discord
           com.slack.Slack
 
   tags:

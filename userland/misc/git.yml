@@ -1,0 +1,13 @@
+- block:
+    - name: git
+      command: "{{item}}"
+      with_items:
+        - git config --global credential.helper /usr/libexec/git-core/git-credential-libsecret
+        - git config --global user.name "khoitd1997"
+        - git config --global user.email "khoidinhtrinh@gmail.com"
+        - git config --global core.autocrlf input
+        - git config --global core.editor "vim"
+        - git config --global merge.tool meld
+      tags:
+        - git
+        - development

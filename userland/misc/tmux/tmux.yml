@@ -1,0 +1,10 @@
+- block:
+    - name: tmux
+      command: "{{item}}"
+      with_items:
+        - ln -sfv {{ playbook_dir }}/misc/tmux/.tmux.conf ~/.tmux.conf
+      args:
+        warn: false
+      tags:
+        - tmux
+        - development

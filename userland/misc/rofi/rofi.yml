@@ -1,0 +1,13 @@
+- block:
+    - name: rofi
+      command: "{{item}}"
+      with_items:
+        - mkdir -p ~/.config/rofi
+        - ln -sfv {{ playbook_dir }}/misc/rofi/rofi_config ~/.config/rofi/rofi_config
+        - ln -sfv {{ playbook_dir }}/misc/rofi/rofi_web_search.sh ~/.config/rofi/rofi_web_search.sh
+        - ln -sfv {{ playbook_dir }}/misc/rofi/rofi_file_open.sh ~/.config/rofi/rofi_file_open.sh
+      args:
+        warn: false
+      tags:
+        - rofi
+        - development

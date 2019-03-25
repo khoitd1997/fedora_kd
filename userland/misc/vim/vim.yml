@@ -1,0 +1,13 @@
+- block:
+    - name: configuring vim
+      command: "{{item}}"
+      with_items:
+        - ln -vfs {{ playbook_dir }}/misc/vim/.vimrc ~/.vimrc
+      args:
+        warn: false
+
+    - name: installing vim plugins
+      shell: vim +'PlugInstall --sync' +qall &> /dev/null < /dev/tty
+      tags:
+        - vim
+        - development

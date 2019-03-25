@@ -1,0 +1,11 @@
+- block:
+    - name: autokey
+      shell: "{{item}}"
+      with_items:
+        - autokey-gtk&
+        - sleep 5
+        - ln -sfv {{ playbook_dir }}/misc/autokey/data/* ~/.config/autokey/data
+      args:
+        warn: false
+  tags:
+    - autokey

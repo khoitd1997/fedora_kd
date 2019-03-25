@@ -1,0 +1,12 @@
+- block:
+    - name: launcher apps
+      command: "{{item}}"
+      with_items:
+        - mkdir -vp ~/.local/share/applications
+        - mkdir -vp ~/.config/autostart
+        - python3 "{{ playbook_dir }}"/misc/launcher_app/add_launcher_app.py
+      args:
+        warn: false
+      tags:
+        - desktop-file
+        - launcher

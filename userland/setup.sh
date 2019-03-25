@@ -11,7 +11,7 @@ trap cleanup EXIT
 
 skip_tags=""
 function select_skip_tags {
-for de in cinnamon i3 awesomewm
+for de in cinnamon i3 awesome
 do
     if [ "${DESKTOP_SESSION}" != "${de}" ]; then
         if [ -z "$skip_tags" ]
@@ -33,6 +33,7 @@ read input
 fi
 
 select_skip_tags
-ansible-playbook setup.yml --ask-become-pass --skip-tags "${skip_tags}"
+# ansible-playbook setup.yml --ask-become-pass --skip-tags "${skip_tags}"
+ansible-playbook setup.yml --ask-become-pass 
 
 touch ~/first_login_setup_done

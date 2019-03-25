@@ -34,15 +34,15 @@
       become: true
       when: ansible_distribution == "Ubuntu"
 
-    - name: configure vscode
-      command: sh "{{ playbook_dir }}/vscode/vscode_configure.sh"
-      tags:
-        - vscode_conf
-
     - name: install vscode extension
       command: sh "{{ playbook_dir }}/vscode/vscode_extension.sh"
       tags:
         - vscode_extension
+
+    - name: configure vscode
+      command: sh "{{ playbook_dir }}/vscode/vscode_configure.sh"
+      tags:
+        - vscode_conf
 
   tags:
     - vscode

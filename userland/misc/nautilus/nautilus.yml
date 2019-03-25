@@ -1,0 +1,10 @@
+- block:
+    - name: configure nautilus actions
+      shell: "{{item}}"
+      with_items:
+        - mkdir -p ~/.local/share/nautilus/scripts
+        - ln -sfv {{ playbook_dir }}/misc/nautilus/scripts/*.sh ~/.local/share/nautilus/scripts
+      args:
+        warn: false
+      tags:
+        - nautilus
