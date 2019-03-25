@@ -15,45 +15,6 @@ local tag_text = {}
 
 local cairo = require("lgi").cairo
 
--- Create textboxes and set their buttons
--- for i = 1, ntags do
---     table.insert(tag_text, wibox.widget.textbox())
---     tag_text[i]:buttons(
---         gears.table.join(
---             -- Left click - Tag back and forth
---             awful.button(
---                 {},
---                 1,
---                 function()
---                     local current_tag = s.selected_tag
---                     local clicked_tag = s.tags[i]
---                     if clicked_tag == current_tag then
---                         awful.tag.history.restore()
---                     else
---                         clicked_tag:view_only()
---                     end
---                     -- naughty.notify({ text = tostring(i) })
---                 end
---             ),
---             -- Right click - Move focused client to tag
---             awful.button(
---                 {},
---                 3,
---                 function()
---                     local clicked_tag = s.tags[i]
---                     if client.focus then
---                         client.focus:move_to_tag(clicked_tag)
---                     end
---                 end
---             )
---         )
---     )
---     tag_text[i].font = beautiful.taglist_text_font
---     -- So that glyphs of different width always take up the same space in the taglist
---     tag_text[i].forced_width = dpi(25)
---     tag_text[i].align = "center"
---     tag_text[i].valign = "center"
--- end
 
 for i = 1, ntags do
     table.insert(
@@ -158,7 +119,7 @@ function update_widget()
                     newImage.resize = true
                     newImage.forced_height = dpi(25)
                     newImage.forced_width = dpi(25)
-                    tag_text[i]:add(wibox.container.margin(newImage, 0, 0, dpi(6)))
+                    tag_text[i]:add(wibox.container.margin(newImage, 0, 0, beautiful.wibar_height * 0.05))
                 else
                     tag_text[i].children[layoutIndex].widget.image = icon
                     tag_text[i].children[layoutIndex].visible = true
@@ -168,14 +129,11 @@ function update_widget()
             currText.markup = helpers.colorize_text(tostring(i), beautiful.taglist_text_color_empty[i])
             currText.visible = true
         else
-            -- tag_text[i][1].opacity = 0.5
-            -- tag_text[i][1].markup =
             currText.markup = helpers.colorize_text(tostring(i), beautiful.taglist_text_color_empty[i])
             currText.visible = false
         end
 
         if s.tags[i] and s.tags[i].selected then
-            -- tag_text[i].opacity = 0.5
             currText.markup = helpers.colorize_text(tostring(i), beautiful.taglist_text_color_focused[i])
             currText.visible = true
         elseif s.tags[i] and s.tags[i].urgent then
