@@ -1,9 +1,6 @@
 - block:
     - name: configure awesome config files
-      shell: "{{item}}"
-      with_items:
-        - rm -rf ~/.config/awesome/*
-        - ln -sfv {{ playbook_dir }}/look/awesome/data/awesome/* ~/.config/awesome
+      shell: sh {{ playbook_dir }}/look/awesome/configure_awesome.sh
 
     - name: create xmodmap
       shell: touch ~/.Xmodmap
