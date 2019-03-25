@@ -138,9 +138,9 @@ stty start undef
 stty stop undef
 setopt noflowcontrol
 
-# if [ -n "$DESKTOP_SESSION" ];then
-#     eval $(gnome-keyring-daemon --start)
-#     export SSH_AUTH_SOCK
-# fi
+if [ -n "$DESKTOP_SESSION" ];then
+    eval $(gnome-keyring-daemon --start)
+    export SSH_AUTH_SOCK
+fi
 
 source /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
