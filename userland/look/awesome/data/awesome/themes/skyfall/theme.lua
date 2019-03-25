@@ -71,10 +71,10 @@ theme.useless_gap = dpi(0)
 theme.screen_margin = dpi(3)
 
 -- Borders
-theme.border_width = dpi(0)
+theme.border_width = dpi(2)
 theme.border_color = theme.xcolor0
 theme.border_normal = theme.xcolor0
-theme.border_focus = theme.xcolor0
+theme.border_focus = "#254C4C"
 -- Rounded corners
 theme.border_radius = dpi(6)
 
