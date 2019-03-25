@@ -15,7 +15,6 @@ local tag_text = {}
 
 local cairo = require("lgi").cairo
 
-
 for i = 1, ntags do
     table.insert(
         tag_text,
@@ -119,7 +118,7 @@ function update_widget()
                     newImage.resize = true
                     newImage.forced_height = dpi(25)
                     newImage.forced_width = dpi(25)
-                    tag_text[i]:add(wibox.container.margin(newImage, 0, 0, beautiful.wibar_height * 0.05))
+                    tag_text[i]:add(wibox.container.margin(newImage, 0, 0, beautiful.wibar_height * 0.1))
                 else
                     tag_text[i].children[layoutIndex].widget.image = icon
                     tag_text[i].children[layoutIndex].visible = true

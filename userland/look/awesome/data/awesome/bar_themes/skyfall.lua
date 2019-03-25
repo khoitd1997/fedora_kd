@@ -119,9 +119,12 @@ awful.screen.connect_for_each_screen(
             end
         )
 
+        local systray = wibox.widget.systray()
+        systray:set_base_size(beautiful.wibar_height * 0.96)
+        systray_whole = wibox.container.margin(systray, 0, 0, beautiful.wibar_height * 0.1)
         local window_buttons =
             wibox.widget {
-            wibox.widget.systray(),
+            systray_whole,
             sysload,
             date,
             time,
