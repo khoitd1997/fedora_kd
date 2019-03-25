@@ -1,14 +1,13 @@
 # If you come from bash you might have to change your $PATH.# export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
-  export ZSH="${HOME}/.oh-my-zsh"
-  export QT_QPA_PLATFORMTHEME=qt5ct
+export ZSH="${HOME}/.oh-my-zsh"
+export QT_QPA_PLATFORMTHEME=qt5ct
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
 ZSH_THEME="miloshadzic"
-# ZSH_THEME="amuse"
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
@@ -62,7 +61,7 @@ COMPLETION_WAITING_DOTS="true"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git zsh-syntax-highlighting zsh-autosuggestions zsh-completions taskwarrior colored-man-pages colorize autojump colored-man-pages)
+plugins=(git zsh-autosuggestions zsh-completions taskwarrior colored-man-pages colorize autojump colored-man-pages zsh-syntax-highlighting)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -75,7 +74,7 @@ source $ZSH/oh-my-zsh.sh
 
 # Preferred editor for local and remote sessions
 # if [[ -n $SSH_CONNECTION ]]; then
-   export EDITOR='vim'
+export EDITOR='vim'
 # else
 #   export EDITOR='mvim'
 # fi
@@ -115,7 +114,6 @@ else
 source /usr/share/fzf/shell/key-bindings.zsh
 fi
 
-source /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 PATH=$PATH:${GOPATH//://bin:}/bin
 PATH=$PATH:${HOME}/.local/bin
 
@@ -144,3 +142,5 @@ setopt noflowcontrol
 #     eval $(gnome-keyring-daemon --start)
 #     export SSH_AUTH_SOCK
 # fi
+
+source /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
