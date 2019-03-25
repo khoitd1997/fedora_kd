@@ -93,7 +93,7 @@
   "window.restoreFullscreen": true,
   "workbench.activityBar.visible": false,
   "editor.hover.delay": 50,
-  "editor.cursorBlinking": "phase",
+  "editor.cursorBlinking": "solid",
   "search.showLineNumbers": true,
   "extensions.ignoreRecommendations": true,
   "window.menuBarVisibility": "hidden",
@@ -191,5 +191,7 @@
   "workbench.editor.labelFormat": "short",
   "breadcrumbs.enabled": true,
 "latex-workshop.view.pdf.viewer": "tab",
-"workbench.editor.closeEmptyGroups": false
+"workbench.editor.closeEmptyGroups": false,
+"terminal.integrated.cursorStyle": "underline",
+"editor.cursorStyle": "underline"
 }
