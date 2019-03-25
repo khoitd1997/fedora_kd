@@ -58,6 +58,7 @@ theme.bg_focus = theme.xcolor8
 theme.bg_urgent = theme.xcolor8
 theme.bg_minimize = theme.xcolor8
 theme.bg_systray = theme.xbackground
+theme.systray_icon_spacing = dpi(1)
 
 theme.fg_normal = theme.xcolor8
 theme.fg_focus = theme.xcolor4
@@ -150,7 +151,7 @@ theme.separator_fg = theme.xcolor8
 -- (Bar items can be customized in bars.lua)
 theme.wibar_position = "bottom"
 theme.wibar_detached = false
-theme.wibar_height = math.max(screen_height * 0.0103, dpi(30))
+theme.wibar_height = math.max(screen_height * 0.013, dpi(25))
 theme.wibar_fg = theme.xcolor7
 theme.wibar_bg = theme.xcolor0
 --theme.wibar_opacity = 0.7
