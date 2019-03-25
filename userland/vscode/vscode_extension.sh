@@ -8,7 +8,7 @@ extension_general="ms-vscode.cpptools  kevinkyang.auto-comment-blocks CoenraadS.
 		zhoufeng.pyqt-integration pnp.polacode Gruntfuggly.todo-tree \
 		ibm.output-colorizer compulim.vscode-clock github.vscode-pull-request-github mitaki28.vscode-clang 
         ryuta46.multi-command vscodevim.vim \
-		laurenttreguier.rpm-spec bungcip.better-toml bbenoist.qml ionutvmi.path-autocomplete tickleforce.scrolloff hars.cppsnippets stkb.rewrap "
+		laurenttreguier.rpm-spec bungcip.better-toml bbenoist.qml ionutvmi.path-autocomplete tickleforce.scrolloff hars.cppsnippets esbenp.prettier-vscode "
 
 extension_theme=" zhuangtongfa.material-theme monokai.theme-monokai-pro-vscode "
 

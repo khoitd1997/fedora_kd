@@ -123,10 +123,14 @@ golint
 
 # arm toolchain
 openocd
-qemu
 arm-none-eabi-newlib
 arm-none-eabi-gcc-cs 
 arm-none-eabi-gcc-cs-c++
+
+# embedded linux stuffs
+@virtualization
+tigervnc
+qemu
 
 # rpm fusion
 rpmfusion-free-release
@@ -149,6 +153,30 @@ plymouth-plugin-script
 %end
 
 %post --log=/root/ks-post.log --erroronfail
+
+cat >> /etc/lightdm/lightdm.conf <<EOF
+
+[SeatDefaults]
+greeter-session=slick-greeter
+EOF
+
+cat > /etc/lightdm/slick-greeter.conf <<EOF
+
+[Greeter]
+draw-user-backgrounds=true
+background=/usr/share/user_file/resource/TCP118v1_by_Tiziano_Consonni.jpg
+background-color='#2ceb26'
+logo=/usr/share/user_file/resource/login_logo.png
+draw-grid=false
+enable-hidpi='auto'
+font-name='Noto Sans 11'
+icon-theme-name='Mint-Y-Aqua'
+show-hostname=true
+theme-name='Mint-Y-Dark-Aqua'
+show-clock=true
+onscreen-keyboard=false
+EOF
+
 # annaconda customizations
 cat >> /etc/sysconfig/anaconda << FOE
 # [PasswordSpoke]
@@ -207,6 +235,7 @@ FOE
 /usr/sbin/plymouth-set-default-theme boot -R
 
 systemctl enable firewalld
+systemctl enable libvirtd
 
 sed -i '/upgrade_type/s/default/security/' /etc/dnf/automatic.conf 
 sed -i '/apply_updates/s/no/yes/' /etc/dnf/automatic.conf
