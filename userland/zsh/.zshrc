@@ -129,7 +129,7 @@ bindkey '\ek' history-search-backward
 bindkey '\ej' history-search-forward
 
 export FZF_DEFAULT_OPTS='--bind alt-j:down,alt-k:up'
-export TERMINAL=konsole
+export TERMINAL=gnome-terminal
 
 # switching monitor mode custom command, will need adjustment when
 # changing physical arrangements
