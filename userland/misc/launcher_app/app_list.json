@@ -20,10 +20,10 @@
     },
     {
       "name": "Terminal",
-      "command": "konsole",
+      "command": "gnome-terminal",
       "comment": "terminal",
       "launchInTerminal": "false",
-      "iconPath": "konsole",
+      "iconPath": "terminal",
       "type": "Application",
       "startup": false
     },

@@ -26,6 +26,8 @@ akmod-VirtualBox
 bat
 
 # cli
+ripgrep
+gnome-terminal
 doxygen
 dnfdragora-updater
 zeitgeist

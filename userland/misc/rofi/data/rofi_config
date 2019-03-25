@@ -8,7 +8,7 @@ rofi.font:                           source code pro 14
 ! "Whether to load and show icons" Set from: Default
 rofi.show-icons:                     true
 ! "Terminal to use" Set from: Default
-rofi.terminal:                       konsole
+rofi.terminal:                       gnome-terminal
 
 ! "Theme to use to look for icons" Set from: Default
 ! rofi.drun-icon-theme:    

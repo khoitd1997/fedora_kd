@@ -10,7 +10,7 @@
 # Please see https://i3wm.org/docs/userguide.html for a complete reference!
 
 set $mod Mod4
-set $term konsole
+set $term gnome-terminal
 set $browser google-chrome-stable
 
 # Font for window titles. Will also be used by the bar unless a different font
@@ -39,7 +39,7 @@ bindsym $mod+f exec rofi -config ~/.config/rofi/rofi_config -show find -modi fin
 bindsym $mod+s exec ~/.config/rofi/rofi_web_search.sh
 
 # start a terminal
-bindsym $mod+Return exec konsole
+bindsym $mod+Return exec gnome-terminal
 
 # kill focused window
 bindsym $mod+q kill

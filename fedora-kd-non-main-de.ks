@@ -61,6 +61,8 @@ gvfs-mtp
 gvfs-smb
 
 # themes
+lxappearance
+qt5ct
 mint-y-icons
 paper-icon-theme
 fedora-icon-theme
