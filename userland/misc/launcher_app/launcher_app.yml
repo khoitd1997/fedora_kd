@@ -9,4 +9,6 @@
         warn: false
       tags:
         - desktop-file
-        - launcher
+
+  tags:
+    - launcher

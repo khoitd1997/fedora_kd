@@ -10,4 +10,6 @@
       tags:
         - awesome
         - i3
-        - applet
+
+  tags:
+    - applet

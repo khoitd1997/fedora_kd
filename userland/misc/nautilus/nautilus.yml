@@ -6,5 +6,5 @@
         - ln -sfv {{ playbook_dir }}/misc/nautilus/scripts/*.sh ~/.local/share/nautilus/scripts
       args:
         warn: false
-      tags:
-        - nautilus
+  tags:
+    - nautilus
