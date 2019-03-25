@@ -13,6 +13,7 @@ source utils.sh
 if [ "${USER}" != "liveuser" ]; then
 if [ ! -f ~/first_login_setup_done ]; then
 if [ ! -f ~/first_login_setup_in_progress ]; then
+
 touch ~/first_login_setup_in_progress
 
 # configuring konsole

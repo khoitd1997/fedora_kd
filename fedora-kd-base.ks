@@ -148,6 +148,7 @@ arc-theme
 plymouth-plugin-script
 
 # removal
+-openbox
 -gnome-calculator
 
 %end
@@ -201,7 +202,13 @@ cat >> /etc/profile.d/first_login_setup.sh << 'EOF'
 if [ "${USER}" != "liveuser" ]; then
 if [ ! -f ~/first_login_setup_done ]; then
 if [ ! -f ~/first_login_setup_in_progress ]; then
+
+if [ -d "~/fedora_kd" ]; then
+git -C ~/fedora_kd pull
+else
 git clone https://github.com/khoitd1997/fedora_kd.git ~/fedora_kd
+fi
+
 bash ~/fedora_kd/userland/setup_wrapper.sh&
 fi
 fi
