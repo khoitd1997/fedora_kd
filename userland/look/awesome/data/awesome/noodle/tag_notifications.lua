@@ -9,8 +9,8 @@ local dpi = xresources.apply_dpi
 local last_notification_id
 -- local screen_height = mouse.screen.geometry.height
 local function send_notification(notification_title, notification_text, notification_icon, notification_timeout)
-  notification = naughty.notify({
-      title = notification_title,
+    notification = naughty.notify({
+    title = notification_title,
       text = notification_text,
       icon = notification_icon,
       width = dpi(220),

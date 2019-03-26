@@ -1333,5 +1333,47 @@
   {
     "key": "ctrl+n",
     "command": "-workbench.action.files.newUntitledFile"
+  },
+  {
+    "key": "ctrl+shift+j",
+    "command": "-workbench.action.search.toggleQueryDetails",
+    "when": "searchViewletVisible"
+  },
+  {
+    "key": "ctrl+shift+j",
+    "command": "scrollLineDown",
+    "when": "textInputFocus"
+  },
+  {
+    "key": "ctrl+down",
+    "command": "-scrollLineDown",
+    "when": "textInputFocus"
+  },
+  {
+    "key": "ctrl+down",
+    "command": "-selectNextSuggestion",
+    "when": "suggestWidgetMultipleSuggestions && suggestWidgetVisible && textInputFocus"
+  },
+  {
+    "key": "ctrl+down",
+    "command": "-search.focus.nextInputBox",
+    "when": "inputBoxFocus && searchViewletVisible"
+  },
+  {
+    "key": "ctrl+shift+k",
+    "command": "scrollLineUp"
+  },
+  {
+    "key": "ctrl+down",
+    "command": "-problems.action.focusProblemsFromFilter",
+    "when": "problemsFilterFocus"
+  },
+  {
+    "key": "ctrl+up",
+    "command": "workbench.action.decreaseViewSize"
+  },
+  {
+    "key": "ctrl+down",
+    "command": "workbench.action.increaseViewSize"
   }
 ]
