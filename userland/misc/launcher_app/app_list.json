@@ -40,7 +40,7 @@
       "name": "Shutdown",
       "command": "shutdown -h now",
       "comment": "shut down",
-      "launchInTerminal": "true",
+      "launchInTerminal": "false",
       "iconPath": "shutdown",
       "type": "Application",
       "startup": false
