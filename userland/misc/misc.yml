@@ -12,6 +12,9 @@
           shell: "{{item}}"
           with_items:
             - hostname kd-$(dmidecode -s baseboard-manufacturer | awk '{print $1;}')
+            - hostnamectl set-hostname kd-$(dmidecode -s baseboard-manufacturer | awk '{print $1;}')
+          tags:
+            - hostname
 
         - name: configure misc sudo system stuffs
           shell: "{{item}}"
