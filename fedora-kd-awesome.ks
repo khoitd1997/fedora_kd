@@ -31,6 +31,9 @@ sed -i 's/^#user-session=.*/user-session=awesome/' /etc/lightdm/lightdm.conf
 # no updater applet in live environment
 rm -f /etc/xdg/autostart/org.mageia.dnfdragora-updater.desktop
 
+# X window fix for awesome
+xhost +SI:localuser:root
+
 # this goes at the end after all other changes. 
 chown -R liveuser:liveuser /home/liveuser
 restorecon -R /home/liveuser
