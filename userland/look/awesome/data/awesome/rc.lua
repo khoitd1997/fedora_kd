@@ -343,7 +343,7 @@ globalkeys =
         {modkey},
         "b",
         function()
-            awful.util.spawn("google-chrome")
+            awful.util.spawn("google-chrome-stable --password-store=gnome")
         end,
         {description = "open google chrome", group = "launcher"}
     ),
