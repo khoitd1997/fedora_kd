@@ -26,6 +26,8 @@ akmod-VirtualBox
 bat
 
 # cli
+moreutils
+jq
 ripgrep
 gnome-terminal
 doxygen

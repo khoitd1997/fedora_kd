@@ -5,6 +5,7 @@
         - autokey-gtk&
         - sleep 5
         - ln -sfv {{ playbook_dir }}/misc/autokey/data/* ~/.config/autokey/data
+        - jq '.configHotkey.enabled = false' ~/.config/autokey/autokey.json|sponge ~/.config/autokey/autokey.json # disable hot key
       args:
         warn: false
   tags:
