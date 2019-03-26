@@ -2,6 +2,8 @@
     - name: update system and enable repo
       shell: "{{item}}"
       with_items:
+        - dnf config-manager --add-repo https://download.virtualbox.org/virtualbox/rpm/fedora/virtualbox.repo
+        - dnf config-manager --set-enabled virtualbox
         - dnf config-manager --set-enabled rpmfusion-nonfree-nvidia-driver google-chrome
         - dnf config-manager --set-enabled rpmfusion-free-updates rpmfusion-free
         - dnf config-manager --set-enabled rpmfusion-nonfree rpmfusion-nonfree-updates
@@ -20,6 +22,7 @@
           - google-chrome-stable
           - xorg-x11-drv-nvidia
           - akmod-nvidia
+          - VirtualBox-6.0 # TODO: Recheck this in future
   tags:
     - package
   become: true

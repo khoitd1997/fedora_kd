@@ -13,8 +13,6 @@ fedora-repos-modular
 
 # external
 nautilus-dropbox
-VirtualBox
-akmod-VirtualBox
 
 # groups
 @development-tools
