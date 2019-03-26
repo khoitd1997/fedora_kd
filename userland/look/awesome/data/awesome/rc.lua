@@ -697,6 +697,8 @@ awful.rules.rules = {
             size_hints_honor = false,
             honor_workarea = true,
             honor_padding = true,
+            maximized_vertical = false,
+            maximized_horizontal = false,
             placement = awful.placement.no_overlap + awful.placement.no_offscreen
         }
     },

@@ -75,7 +75,7 @@ theme.screen_margin = dpi(3)
 theme.border_width = dpi(2)
 theme.border_color = theme.xcolor0
 theme.border_normal = theme.xcolor0
-theme.border_focus = "#254C4C"
+theme.border_focus = "#A86D0E"
 -- Rounded corners
 theme.border_radius = dpi(6)
 

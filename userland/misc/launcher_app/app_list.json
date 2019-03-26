@@ -73,7 +73,7 @@
       "startup": true
     },
     {
-      "name": "Google Chrome",
+      "name": "google-chrome",
       "command": "/usr/bin/google-chrome-stable --password-store=gnome",
       "comment": "chrome browser",
       "launchInTerminal": "false",
