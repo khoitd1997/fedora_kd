@@ -105,7 +105,7 @@ konsole
 ansible
 
 # snap
-snapd
+# snapd
 
 # flatpak
 flatpak

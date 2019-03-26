@@ -33,6 +33,11 @@ run dnfdragora-updater
 run /usr/bin/seapplet
 run autokey-gtk
 
+if [ -n "$DESKTOP_SESSION" ];then
+    eval $(gnome-keyring-daemon --start)
+    export SSH_AUTH_SOCK
+fi
+
 # Keyboard layout
 # setxkbmap -layout "us,gr" -option "grp:alt_shift_toggle" &
 # setxkbmap -layout "us,de" -option "grp:alt_shift_toggle" &
