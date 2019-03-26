@@ -103,6 +103,18 @@
       tags:
         - sound
 
+    - name: mouse
+      dconf:
+        key: "{{ item.key }}"
+        value: "{{ item.value }}"
+      with_items:
+        - {
+            key: /org/cinnamon/settings-daemon/peripherals/touchpad/natural-scroll,
+            value: "false",
+          }
+      tags:
+        - mouse
+
     - name: keyboard
       dconf:
         key: "{{ item.key }}"
@@ -222,7 +234,7 @@
           }
         - {
             key: /org/cinnamon/desktop/keybindings/custom-keybindings/custom3/command,
-            value: "'google-chrome'",
+            value: "'google-chrome-stable --password-store=gnome'",
           }
         - {
             key: /org/cinnamon/desktop/keybindings/custom-keybindings/custom3/binding,

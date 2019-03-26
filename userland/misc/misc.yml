@@ -1,6 +1,12 @@
 - block:
     - block:
         - include: package.yml
+
+        - name: configure google chrome
+          shell: "{{item}}"
+          with_items:
+            - rm -f /usr/share/applications/google-chrome* # remove default desktop file
+
         - name: configure misc sudo system stuffs
           shell: "{{item}}"
           with_items:
