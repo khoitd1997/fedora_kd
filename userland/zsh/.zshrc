@@ -133,6 +133,11 @@ export TERMINAL=gnome-terminal
 # changing physical arrangements
 alias one-monitor="xrandr --output DVI-D-0 --auto --output HDMI-0 --off"
 alias multi-monitor="xrandr --output DVI-D-0 --auto --output HDMI-0 --auto && xrandr --output DVI-D-0 --auto --output HDMI-0 --left-of DVI-D-0"
+total_monitor=$(xrandr -q | grep -w "connected" | wc -l)
+
+if [ "$total_monitor" -eq 2 ];then
+    xrandr --output HDMI-0 --left-of DVI-D-0
+fi
 
 stty start undef
 stty stop undef
