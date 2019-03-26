@@ -255,11 +255,35 @@ globalkeys =
     ),
     awful.key(
         {modkey},
+        "j",
+        function()
+            awful.client.focus.global_bydirection("down")
+        end,
+        {description = "focus down by index", group = "client"}
+    ),
+    awful.key(
+        {modkey},
+        "k",
+        function()
+            awful.client.focus.global_bydirection("up")
+        end,
+        {description = "focus up by index", group = "client"}
+    ),
+    awful.key(
+        {modkey},
         "h",
         function()
             awful.client.focus.global_bydirection("left")
         end,
         {description = "focus previous by index", group = "client"}
+    ),
+    awful.key(
+        {"Mod1"},
+        "Tab",
+        function()
+            awful.client.focus.byidx(1)
+        end,
+        {description = "cycle by index", group = "client"}
     ),
     -- Layout manipulation
     awful.key(
@@ -511,12 +535,20 @@ clientkeys =
         {description = "move to master", group = "client"}
     ),
     awful.key(
-        {modkey},
-        "o",
+        {modkey, "Shift"},
+        "Right",
+        function(c)
+            c:move_to_screen(c.screen.index - 1)
+        end,
+        {description = "move current program to right screen", group = "client"}
+    ),
+    awful.key(
+        {modkey, "Shift"},
+        "Left",
         function(c)
             c:move_to_screen()
         end,
-        {description = "move to screen", group = "client"}
+        {description = "move current program to left screen", group = "client"}
     ),
     awful.key(
         {modkey},
