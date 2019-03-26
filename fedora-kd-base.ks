@@ -206,18 +206,18 @@ cat >> /etc/profile.d/first_login_setup.sh << 'EOF'
 #!/bin/bash
 # will clone the first login setup repo and run it
 
-# set -e
 if [ "${USER}" != "liveuser" ]; then
-if [ ! -f ~/first_login_setup_done ]; then
-if [ ! -f ~/first_login_setup_in_progress ]; then
+if [ ! -f ~/.config/first_login_setup_done ]; then
+if [ ! -f ~/.config/first_login_setup_in_progress ]; then
 
-if [ -d "~/fedora_kd" ]; then
-git -C ~/fedora_kd pull
+if [ -d "~/hatter/fedora-kickstarts" ]; then
+git -C ~/hatter/fedora-kickstarts pull
 else
-git clone https://github.com/khoitd1997/fedora_kd.git ~/fedora_kd
+git clone https://github.com/khoitd1997/hatter.git ~/hatter
+git clone https://github.com/khoitd1997/fedora_kd.git ~/hatter/fedora-kickstarts 
 fi
 
-bash ~/fedora_kd/userland/setup_wrapper.sh&
+bash ~/hatter/fedora-kickstarts/userland/setup_wrapper.sh&
 fi
 fi
 fi

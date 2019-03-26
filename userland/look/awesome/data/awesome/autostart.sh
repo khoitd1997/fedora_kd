@@ -20,8 +20,10 @@ function run {
 # Enable numlock on login
 run numlockx
 
-# Battery notifications
-# run battery_daemon
+# right alt to win
+xmodmap -e "remove mod1 = Alt_R"
+xmodmap -e "keycode 108 = Super_R"
+setxkbmap -option caps:escape
 
 # Network manager tray icon
 run nm-applet
@@ -45,8 +47,4 @@ fi
 # setxkbmap -layout "us,de" -option "grp:alt_shift_toggle" &
 # setxkbmap -layout "us,gr,ru" -option "grp:alt_shift_toggle"
 
-# right alt to win
-xmodmap -e "remove mod1 = Alt_R"
-xmodmap -e "keycode 108 = Super_R"
-setxkbmap -option caps:escape
 
