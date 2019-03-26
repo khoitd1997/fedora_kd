@@ -133,7 +133,7 @@ bindsym $mod+Shift+9 move container to workspace $ws9
 bindsym $mod+Shift+0 move container to workspace $ws10
 
 # keybindings for app
-bindsym $mod+b exec google-chrome-stable
+bindsym $mod+b exec google-chrome-stable --password-store=gnome
 bindsym $mod+m exec code
 # bindsym $mod+f exec nemo
 

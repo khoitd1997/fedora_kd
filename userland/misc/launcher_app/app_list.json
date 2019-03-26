@@ -73,6 +73,15 @@
       "startup": true
     },
     {
+      "name": "Google Chrome",
+      "command": "/usr/bin/google-chrome-stable --password-store=gnome",
+      "comment": "chrome browser",
+      "launchInTerminal": "false",
+      "iconPath": "google-chrome",
+      "type": "Application",
+      "startup": false
+    },
+    {
       "name": "calculator",
       "command": "qalculate-gtk",
       "comment": "a really good calculator",

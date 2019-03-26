@@ -222,7 +222,7 @@
           }
         - {
             key: /org/cinnamon/desktop/keybindings/custom-keybindings/custom3/command,
-            value: "'google-chrome'",
+            value: "'google-chrome-stable --password-store=gnome'",
           }
         - {
             key: /org/cinnamon/desktop/keybindings/custom-keybindings/custom3/binding,
