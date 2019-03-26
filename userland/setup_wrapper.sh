@@ -1,7 +1,7 @@
 #!/bin/bash
 
 function cleanup {
-    rm -f ~/.config/first_login_setup_in_progress
+    rm -f ~/.first_login_setup_in_progress
 }
 trap cleanup EXIT
 currDir="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )"
@@ -11,10 +11,10 @@ source utils.sh
 
 
 if [ "${USER}" != "liveuser" ]; then
-if [ ! -f ~/.config/first_login_setup_done ]; then
-if [ ! -f ~/.config/first_login_setup_in_progress ]; then
+if [ ! -f ~/.first_login_setup_done ]; then
+if [ ! -f ~/.first_login_setup_in_progress ]; then
 
-touch ~/.config/first_login_setup_in_progress
+touch ~/.first_login_setup_in_progress
 
 # configuring konsole
 mkdir -p ~/.local/share/konsole

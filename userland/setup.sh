@@ -5,7 +5,7 @@ cd ${currDir}
 source ./utils.sh
 
 function cleanup {	
-    rm -f ~/first_login_setup_in_progress	
+    rm -f ~/.first_login_setup_in_progress	
 }	
 trap cleanup EXIT
 
@@ -19,4 +19,4 @@ fi
 
 ansible-playbook setup.yml --ask-become-pass 
 
-touch ~/first_login_setup_done
+touch ~/.first_login_setup_done

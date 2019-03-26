@@ -27,14 +27,14 @@ git submodule update
 
 ## File Organiztion
 
-- ``userland``: folder containing ansible scripts that would set up the os on first login. It sets up a variety of things from vscode to terminal
-- ``user_file``: folder containing files to be copied into the iso. It includes things like wallpaper, plymouth theme
-- ``fedora-kd``: main kickstart file, relies on base fedora kickstart files from the fedora project
-- ``fedora-repo-kd``: auxillary kickstart file that describes the necessary repos during and after build
+- `userland`: folder containing ansible scripts that would set up the os on first login. It sets up a variety of things from vscode to terminal
+- `user_file`: folder containing files to be copied into the iso. It includes things like wallpaper, plymouth theme
+- `fedora-kd`: main kickstart file, relies on base fedora kickstart files from the fedora project
+- `fedora-repo-kd`: auxillary kickstart file that describes the necessary repos during and after build
 
 ## How it works
 
-The ``fedora-kd`` file and the ``fedora-repo-kd`` is fed into a mock system to build the base iso. The iso should include personal packages on top of regular packages of the fedora cinnamon spin. The kickstart file also configures so that the first time a user logs in, it clone this repo to their home directory and start the ansible installation in the ``userland`` folder, the ansible script will configure things not easily done during the mock build, if the installation went well, the user should get a functioning system and the ansible script won't have to be run again. The scripts create files to mark progress such as ``~/first_login_setup_done`` and use them to check whether to build or not.
+The `fedora-kd` file and the `fedora-repo-kd` is fed into a mock system to build the base iso. The iso should include personal packages on top of regular packages of the fedora cinnamon spin. The kickstart file also configures so that the first time a user logs in, it clone this repo to their home directory and start the ansible installation in the `userland` folder, the ansible script will configure things not easily done during the mock build, if the installation went well, the user should get a functioning system and the ansible script won't have to be run again. The scripts create files to mark progress such as `~/.first_login_setup_done` and use them to check whether to build or not.
 
 The ansible script is mostly composed of tasks described by yml in their separate directory, however, scripts in other languages are occassionally used such as in the case of vscode to make sure that even when it's hard to run ansible(such as on windows), the installation can still be run manually, scripts are also used when it makes more sense to use them(such as when using python to manipulate json files)
 
