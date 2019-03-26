@@ -65,8 +65,6 @@ local taglist_buttons =
 
 awful.screen.connect_for_each_screen(
     function(s)
-        -- Create a custom text taglist
-
         local text_taglist = require("noodle.text_taglist")
         client.connect_signal(
             "manage",

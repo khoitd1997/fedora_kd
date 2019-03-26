@@ -80,11 +80,15 @@ local text_taglist =
 
 function update_widget()
     for i = 1, ntags do
-        local tag_clients
+        local tag_clients = {}
         local currText = tag_text[i].children[1]
 
-        if s.tags[i] then
-            tag_clients = s.tags[i]:clients()
+        for sc in screen do
+            if sc.tags[i] then
+                for key, cl in pairs(sc.tags[i]:clients()) do
+                    table.insert(tag_clients , cl)
+                end
+            end
         end
 
         gears.debug.print_warning("Total children " .. tostring(#(tag_text[i].children)))
