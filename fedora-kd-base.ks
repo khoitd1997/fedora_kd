@@ -193,6 +193,14 @@ visited=1
 visited=1
 FOE
 
+cat >> /etc/profile.d/screen_setup.sh << 'EOF'
+total_monitor=$(xrandr -q | grep -w "connected" | wc -l)
+
+if [ "$total_monitor" -eq 2 ];then
+    xrandr --output HDMI-0 --left-of DVI-D-0
+fi
+EOF
+chmod a+x /etc/profile.d/screen_setup.sh
 
 cat >> /etc/profile.d/first_login_setup.sh << 'EOF'
 #!/bin/bash

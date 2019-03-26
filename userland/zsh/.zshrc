@@ -1,5 +1,11 @@
 # If you come from bash you might have to change your $PATH.# export PATH=$HOME/bin:/usr/local/bin:$PATH
 
+# switching monitor mode custom command, will need adjustment when
+# changing physical arrangements
+alias one-monitor="xrandr --output DVI-D-0 --auto --output HDMI-0 --off"
+alias multi-monitor="xrandr --output DVI-D-0 --auto --output HDMI-0 --auto && xrandr --output DVI-D-0 --auto --output HDMI-0 --left-of DVI-D-0"
+
+
 # Path to your oh-my-zsh installation.
 export ZSH="${HOME}/.oh-my-zsh"
 export QT_QPA_PLATFORMTHEME=qt5ct
@@ -128,16 +134,6 @@ bindkey '\ej' history-search-forward
 
 export FZF_DEFAULT_OPTS='--bind alt-j:down,alt-k:up'
 export TERMINAL=gnome-terminal
-
-# switching monitor mode custom command, will need adjustment when
-# changing physical arrangements
-alias one-monitor="xrandr --output DVI-D-0 --auto --output HDMI-0 --off"
-alias multi-monitor="xrandr --output DVI-D-0 --auto --output HDMI-0 --auto && xrandr --output DVI-D-0 --auto --output HDMI-0 --left-of DVI-D-0"
-total_monitor=$(xrandr -q | grep -w "connected" | wc -l)
-
-if [ "$total_monitor" -eq 2 ];then
-    xrandr --output HDMI-0 --left-of DVI-D-0
-fi
 
 stty start undef
 stty stop undef
