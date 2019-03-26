@@ -2,6 +2,8 @@
 %include fedora-kd-non-main-de.ks
 %include fedora-kd-base.ks
 
+part / --size=12588
+
 %packages
 # i3
 i3

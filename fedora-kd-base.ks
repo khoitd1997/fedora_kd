@@ -1,6 +1,5 @@
 %include fedora-repo-kd.ks
 
-part / --size=12588
 lang en_US.UTF-8
 keyboard us
 

@@ -2,6 +2,7 @@
 %include fedora-kd-non-main-de.ks
 %include fedora-kd-base.ks
 
+part / --size=14000
 %packages
 awesome
 %end

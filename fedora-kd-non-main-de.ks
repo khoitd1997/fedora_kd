@@ -88,7 +88,6 @@ cat >> /etc/profile.d/live_user_setup.sh << 'EOF'
 #!/bin/bash
 # launch live install when live user boots
 
-# set -e
 if [ "${USER}" == "liveuser" ]; then
 if [ ! -f ~/live_user_setup_in_progress ]; then
 touch ~/live_user_setup_in_progress
@@ -98,4 +97,5 @@ fi
 
 EOF
 chmod a+x /etc/profile.d/live_user_setup.sh
+
 %end
