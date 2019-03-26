@@ -38,7 +38,6 @@ sed -i 's/^#user-session=.*/user-session=i3/' /etc/lightdm/lightdm.conf
 # no updater applet in live environment
 rm -f /etc/xdg/autostart/org.mageia.dnfdragora-updater.desktop
 
-
 cat >> /home/liveuser/live_user_setup.sh << FOE
 #!/bin/bash
 sleep 8
