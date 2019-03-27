@@ -5,7 +5,7 @@
         - lxqt-powermanagement&
         - sleep 3
         - sed -i 's/^icon_theme=.*/icon_theme=Paper/g' ~/.config/lxqt/lxqt.conf
-        - ln -sfv {{ playbook_dir }}/misc/applet/data/lxqt-powermanagement.conf  ~/.config/lxqt
+        - ln -sfv {{ playbook_dir }}/misc/applet/data/lxqt-powermanagement.conf  ~/.config/lxqt/lxqt-powermanagement.conf
       args:
         warn: false
       when: lookup('env', 'DESKTOP_SESSION') == "i3" or lookup('env', 'DESKTOP_SESSION') == "awesome"
