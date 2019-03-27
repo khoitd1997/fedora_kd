@@ -4,4 +4,14 @@
 part / --size=14000
 %packages
 awesome
+
+# themes
+lxappearance
+qt5ct
+
+# app indicators
+volumeicon
+lxqt-powermanagement
+udiskie
+
 %end

@@ -68,7 +68,10 @@ mock
 fedora-review
 
 # gui apps
+redshift-gtk
+gnome-disk-utility
 seahorse
+nautilus
 i3lock
 autokey-gtk
 firefox

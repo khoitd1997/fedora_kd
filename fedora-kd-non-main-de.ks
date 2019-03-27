@@ -27,11 +27,9 @@ nm-connection-editor
 dnfdragora-updater
 alsa-plugins-pulseaudio
 firefox
-gnome-disk-utility
 gstreamer1-plugins-ugly-free
 imsettings
 initial-setup-gui
-redshift-gtk
 sane-backends-drivers-scanners
 simple-scan
 transmission
@@ -66,9 +64,6 @@ qt5ct
 mint-y-icons
 paper-icon-theme
 fedora-icon-theme
-
-# file manager
-nautilus
 
 # app indicators
 volumeicon
