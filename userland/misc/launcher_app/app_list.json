@@ -74,7 +74,7 @@
     },
     {
       "name": "google-chrome",
-      "command": "/usr/bin/google-chrome-stable --password-store=gnome",
+      "command": "/usr/bin/google-chrome-stable --password-store=gnome %U",
       "comment": "chrome browser",
       "launchInTerminal": "false",
       "iconPath": "google-chrome",
