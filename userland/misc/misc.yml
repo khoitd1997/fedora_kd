@@ -83,6 +83,17 @@
 
     - include: autokey/autokey.yml
 
+    - name: configure .profile
+      blockinfile:
+        path: ~/.profile
+        marker: "# {mark} .profile config"
+        create: yes
+        block: |
+          eval $(gnome-keyring-daemon --start  --components=ssh,secrets)
+          export SSH_AUTH_SOCK
+      tags:
+        - profile
+
     - block:
         - name: launch xpad
           shell: xpad 2>&1 &
