@@ -196,23 +196,31 @@ visited=1
 visited=1
 FOE
 
+cat >> /etc/profile.d/screen_setup.sh << 'EOF'
+total_monitor=$(xrandr -q | grep -w "connected" | wc -l)
+
+if [ "$total_monitor" -eq 2 ];then
+    xrandr --output HDMI-0 --left-of DVI-D-0
+fi
+EOF
+chmod a+x /etc/profile.d/screen_setup.sh
 
 cat >> /etc/profile.d/first_login_setup.sh << 'EOF'
 #!/bin/bash
 # will clone the first login setup repo and run it
 
-# set -e
 if [ "${USER}" != "liveuser" ]; then
-if [ ! -f ~/first_login_setup_done ]; then
-if [ ! -f ~/first_login_setup_in_progress ]; then
+if [ ! -f ~/.first_login_setup_done ]; then
+if [ ! -f ~/.first_login_setup_in_progress ]; then
 
-if [ -d "~/fedora_kd" ]; then
-git -C ~/fedora_kd pull
+if [ -d "~/hatter/fedora-kickstarts" ]; then
+git -C ~/hatter/fedora-kickstarts pull
 else
-git clone https://github.com/khoitd1997/fedora_kd.git ~/fedora_kd
+git clone https://github.com/khoitd1997/hatter.git ~/hatter
+git clone https://github.com/khoitd1997/fedora_kd.git ~/hatter/fedora-kickstarts 
 fi
 
-bash ~/fedora_kd/userland/setup_wrapper.sh&
+bash ~/hatter/fedora-kickstarts/userland/setup_wrapper.sh&
 fi
 fi
 fi

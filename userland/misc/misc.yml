@@ -69,6 +69,8 @@
 
     - include: nautilus/nautilus.yml
 
+    - include: launcher_app/launcher_app.yml
+
     - include: handler.yml
 
     - include: applet/applet.yml
@@ -91,8 +93,6 @@
             - sleep 2
             - pkill xpad
             - rm -vf ~/.config/autostart/xpad.desktop
-
-    - include: launcher_app/launcher_app.yml
 
     # - include: xmodmap/xmodmap.yml
 
