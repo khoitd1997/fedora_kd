@@ -13,6 +13,8 @@ fedora-repos-modular
 
 # external
 nautilus-dropbox
+nautilus
+gnome-terminal-nautilus
 
 # groups
 @development-tools
@@ -71,7 +73,6 @@ fedora-review
 redshift-gtk
 gnome-disk-utility
 seahorse
-nautilus
 i3lock
 autokey-gtk
 firefox
