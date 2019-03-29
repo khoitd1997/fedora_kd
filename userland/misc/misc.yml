@@ -1,11 +1,7 @@
 - block:
     - block:
         - include: package.yml
-
-        - name: configure google chrome
-          shell: "{{item}}"
-          with_items:
-            - rm -f /usr/share/applications/google-chrome* # remove default desktop file
+        - include: google-chrome/google-chrome.yml
 
         # convention is kd-{manufacture_name}
         - name: set host name

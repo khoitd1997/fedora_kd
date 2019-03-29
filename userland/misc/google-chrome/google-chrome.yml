@@ -1,0 +1,13 @@
+- block:
+    - name: configure google chrome desktop file
+      shell: "{{item}}"
+      with_items:
+        - rm -f /usr/share/applications/google-chrome*
+      become: true
+    - name: add desktop file to local user
+      shell: "{{item}}"
+      with_items:
+        - cp {{ playbook_dir }}/misc/google-chrome/google-chrome.desktop ~/.local/share/applications/google-chrome.desktop
+      become_user: "{{ ansible_user_id }}"
+  tags:
+    - google-chrome
