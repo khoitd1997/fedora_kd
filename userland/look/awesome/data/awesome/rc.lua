@@ -18,7 +18,7 @@ beautiful.init(theme_dir .. theme_name .. "/theme.lua")
 -- Standard awesome library
 local gears = require("gears")
 local awful = require("awful")
-require("awful.autofocus")
+-- require("awful.autofocus") -- remember old tag won't work with this
 -- Widget and layout library
 local wibox = require("wibox")
 -- Default notification library
@@ -201,6 +201,17 @@ end
 
 -- Re-set wallpaper when a screen's geometry changes (e.g. different resolution)
 screen.connect_signal("property::geometry", set_wallpaper)
+
+last_focus_list = {}
+-- gears.debug.print_warning("Awesome Debug")
+for nameCount = 1, #(beautiful.tagnames) do
+    table.insert(last_focus_list, {
+        client= nil, 
+        screen= nil
+        }
+    )
+    -- gears.debug.print_warning("Adding client to last focus list")
+end
 
 awful.screen.connect_for_each_screen(
     function(s)
@@ -625,6 +636,22 @@ for i = 1, 9 do
                         tag:view_only()
                     end
                 end
+
+                local last_focus = last_focus_list[i]
+                if last_focus.screen then 
+                    -- gears.debug.print_warning("Changing focused screen")
+                    awful.screen.focus(last_focus.screen)
+                end
+
+                if last_focus.client then
+                    -- gears.debug.print_warning("Found last focus client whose name is " .. last_focus.client.name)
+                    -- awful.client.focus.global_bydirection("right")
+                    client.focus = last_focus.client
+                    last_focus.client:raise()
+                    local c = client.focus
+                    -- c:emit_signal("focus")
+                    -- gears.debug.print_warning("Current focus client is " .. c.name)
+                end
             end,
             {description = "view tag #" .. i, group = "tag"}
         ),
@@ -1011,6 +1038,9 @@ client.connect_signal(
     function(c)
         c.border_color = beautiful.border_focus
         c.opacity = 0
+        last_focus_list[c.first_tag.index].client = c
+        last_focus_list[c.first_tag.index].screen = c.screen
+        -- gears.debug.print_warning("Focus " .. tostring(last_focus_list[c.first_tag.index].client.name))
     end
 )
 client.connect_signal(
@@ -1018,6 +1048,7 @@ client.connect_signal(
     function(c)
         c.opacity = 1
         c.border_color = beautiful.border_normal
+        -- gears.debug.print_warning("Unfocus: " .. tostring(last_focus_list[c.first_tag.index].client.name))
     end
 )
 

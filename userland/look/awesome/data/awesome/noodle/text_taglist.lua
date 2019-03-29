@@ -91,7 +91,7 @@ function update_widget()
             end
         end
 
-        gears.debug.print_warning("Total children " .. tostring(#(tag_text[i].children)))
+        -- gears.debug.print_warning("Total children " .. tostring(#(tag_text[i].children)))
         while (#(tag_text[i].children) > 1) do
             local ret = tag_text[i]:remove(2)
         end
@@ -99,8 +99,8 @@ function update_widget()
         if tag_clients and #tag_clients > 0 then
             local layoutIndex = 2
             if (i == 3) then
-                gears.debug.print_warning("THis is 3")
-                gears.debug.print_warning("Total children after remove " .. tostring(#(tag_text[i].children)))
+                -- gears.debug.print_warning("THis is 3")
+                -- gears.debug.print_warning("Total children after remove " .. tostring(#(tag_text[i].children)))
             end
             for client_id = 1, #tag_clients do
                 currClient = tag_clients[client_id]
@@ -150,7 +150,6 @@ end
 client.connect_signal(
     "unmanage",
     function(c)
-        gears.debug.print_warning("Client is unmanaged")
         update_widget()
     end
 )
@@ -163,7 +162,6 @@ client.connect_signal(
 client.connect_signal(
     "untagged",
     function(c)
-        gears.debug.print_warning("Client is untagged")
         update_widget()
     end
 )
