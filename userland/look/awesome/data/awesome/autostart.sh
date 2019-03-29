@@ -17,9 +17,6 @@ function run {
 # Load terminal colorscheme and settings
 #xrdb ~/.Xresources
 
-# Enable numlock on login
-run numlockx
-
 # right alt to win
 xmodmap -e "remove mod1 = Alt_R"
 xmodmap -e "keycode 108 = Super_R"
