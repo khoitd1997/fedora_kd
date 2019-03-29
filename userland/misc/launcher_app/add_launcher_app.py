@@ -11,10 +11,9 @@ currDir = os.path.realpath(os.path.join(
 with open(os.path.join(currDir, 'app_list.json'), 'r') as f:
     apps = json.load(f)
 
-for app in apps["apps"]:
-    launchFilePath = os.path.join(
-        str(Path.home()), '.local/share/applications', app["name"] + ".desktop")
-    with open(launchFilePath, 'w+') as launchFile:
+
+def createBaseDesktopFile(app: dict, filePath: str) -> None:
+    with open(filePath, 'w+') as launchFile:
         launchFile.write("[Desktop Entry]\n")
         launchFile.write("Name = " + app["name"] + "\n")
         launchFile.write("Exec = " + app["command"] + "\n")
@@ -22,14 +21,33 @@ for app in apps["apps"]:
         launchFile.write("Terminal = " + app["launchInTerminal"] + "\n")
         launchFile.write("Icon = " + app["iconPath"] + "\n")
         launchFile.write("Type = " + app["type"] + "\n")
+        if "genericName" in app:
+            launchFile.write("GenericName = " + app["genericName"] + "\n")
+        if "mimeType" in app:
+            launchFile.write("MimeType = " + app["mimeType"] + "\n")
+        if "startupNotify" in app:
+            launchFile.write("StartupNotify = " + app["startupNotify"] + "\n")
+        if "categories" in app:
+            launchFile.write("Categories = " + app["categories"] + "\n")
+
+
+def createStartupFile(app: dict, filePath: str) -> None:
+    createBaseDesktopFile(app, filePath)
+
+    with open(filePath, 'a') as startupFile:
+        startupFile.write("X-GNOME-Autostart-enabled = true\n")
+
+
+for app in apps["apps"]:
+    dekstopFileName = app["name"]
+    if "desktopFileName" in app:
+        dekstopFileName = app["desktopFileName"]
+
+    launchFilePath = os.path.join(
+        str(Path.home()), '.local/share/applications', dekstopFileName + ".desktop")
+    createBaseDesktopFile(app, launchFilePath)
 
     if app["startup"]:
         startupFilePath = os.path.join(
-            str(Path.home()), '.config/autostart/', app["name"] + ".desktop")
-        with open(startupFilePath, 'w+') as startupFile:
-            startupFile.write("[Desktop Entry]\n")
-            startupFile.write("Name = " + app["name"] + "\n")
-            startupFile.write("Exec = " + app["command"] + "\n")
-            startupFile.write("Terminal = " + app["launchInTerminal"] + "\n")
-            startupFile.write("Type = " + app["type"] + "\n")
-            startupFile.write("X-GNOME-Autostart-enabled = true\n")
+            str(Path.home()), '.config/autostart/', dekstopFileName + ".desktop")
+        createStartupFile(app, startupFilePath)
