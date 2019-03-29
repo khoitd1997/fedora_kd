@@ -173,6 +173,30 @@
             value: "['<Super>9']",
           }
         - {
+            key: /org/cinnamon/desktop/keybindings/wm/move-to-workspace-1,
+            value: "['<Shift><Super>exclam']",
+          }
+        - {
+            key: /org/cinnamon/desktop/keybindings/wm/move-to-workspace-2,
+            value: "['<Shift><Super>at']",
+          }
+        - {
+            key: /org/cinnamon/desktop/keybindings/wm/move-to-workspace-3,
+            value: "['<Shift><Super>numbersign']",
+          }
+        - {
+            key: /org/cinnamon/desktop/keybindings/wm/move-to-workspace-4,
+            value: "['<Shift><Super>dollar']",
+          }
+        - {
+            key: /org/cinnamon/desktop/keybindings/wm/move-to-workspace-5,
+            value: "['<Shift><Super>percent']",
+          }
+        - {
+            key: /org/cinnamon/desktop/keybindings/wm/move-to-workspace-6,
+            value: "['<Shift><Super>asciicircum']",
+          }
+        - {
             key: /org/cinnamon/desktop/keybindings/media-keys/screensaver,
             value: "['XF86ScreenSaver']",
           }
