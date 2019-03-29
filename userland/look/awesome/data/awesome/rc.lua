@@ -250,6 +250,10 @@ globalkeys =
         "l",
         function()
             awful.client.focus.global_bydirection("right")
+            local c = client.focus
+            if c then
+                c:raise()
+            end
         end,
         {description = "focus next by index", group = "client"}
     ),
@@ -258,6 +262,10 @@ globalkeys =
         "j",
         function()
             awful.client.focus.global_bydirection("down")
+            local c = client.focus
+            if c then
+                c:raise()
+            end
         end,
         {description = "focus down by index", group = "client"}
     ),
@@ -266,6 +274,10 @@ globalkeys =
         "k",
         function()
             awful.client.focus.global_bydirection("up")
+            local c = client.focus
+            if c then
+                c:raise()
+            end
         end,
         {description = "focus up by index", group = "client"}
     ),
@@ -274,6 +286,10 @@ globalkeys =
         "h",
         function()
             awful.client.focus.global_bydirection("left")
+            local c = client.focus
+            if c then
+                c:raise()
+            end
         end,
         {description = "focus previous by index", group = "client"}
     ),
@@ -282,6 +298,11 @@ globalkeys =
         "Tab",
         function()
             awful.client.focus.byidx(1)
+            local c = client.focus
+            if c then
+                c:raise()
+            end
+
         end,
         {description = "cycle by index", group = "client"}
     ),
@@ -721,7 +742,8 @@ awful.rules.rules = {
                 "Nm-connection-editor",
                 "File-roller",
                 "htop",
-                "fst"
+                "fst",
+                "xpad"
             },
             name = {
                 "Event Tester" -- xev
@@ -734,7 +756,15 @@ awful.rules.rules = {
                 "dialog"
             }
         },
-        properties = {floating = false, ontop = false}
+        properties = {floating = false, ontop = false, maximized_vertical = false, maximized_horizontal = false}
+    },
+    {
+        rule_any = {
+            class = {
+                "xpad"
+            }
+        },
+        properties = {floating = true, width = screen_width * 0.25, height = screen_height * 0.35},
     },
     -- Centered clients
     {
