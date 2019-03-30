@@ -6,6 +6,8 @@ local xresources = require("beautiful.xresources")
 local dpi = xresources.apply_dpi
 
 local helpers = require("helpers")
+local calendar = require("bar_themes.calendar.calendar")
+
 local pad = helpers.pad
 
 -- {{{ Widgets
@@ -73,15 +75,13 @@ awful.screen.connect_for_each_screen(
             end
         )
 
-        local time = wibox.widget.textclock("%H:%M")
-        time.align = "center"
-        time.valign = "center"
-        time.font = beautiful.taglist_text_font
 
-        local date = wibox.widget.textclock("%B %d")
+        local date = wibox.widget.textclock("%a %B %d %H:%M")
         date.align = "center"
         date.valign = "center"
         date.font = beautiful.taglist_text_font
+
+        calendar({}):attach(date)
 
         update_interval = 60
         cpu_cores = [[bash -c '
@@ -130,7 +130,6 @@ awful.screen.connect_for_each_screen(
             systray_whole,
             sysload,
             date,
-            time,
             {
                 -- Padding
                 spacing = dpi(6),
