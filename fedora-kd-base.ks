@@ -66,6 +66,7 @@ xdotool
 
 # libraries
 qt-x11
+mesa-libGL-devel
 
 # packaging tools
 fedora-packager
