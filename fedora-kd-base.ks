@@ -121,6 +121,15 @@ texlive-collection-latexextra
 texlive-collection-latexrecommended 
 texlive-collection-xetex
 
+# gstreamer
+gstreamer-plugins-bad
+gstreamer-plugins-bad-free-extras
+gstreamer-plugins-bad-nonfree
+gstreamer-plugins-ugly
+gstreamer-ffmpeg
+gstreamer1-plugins-good-extras
+gstreamer1-plugins-bad-free-extras
+
 # rofi
 rofi
 rofi-themes
