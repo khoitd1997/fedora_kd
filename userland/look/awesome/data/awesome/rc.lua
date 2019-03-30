@@ -633,7 +633,6 @@ for i = 1, 9 do
             "#" .. i + 9,
             function()
                 for s in screen do
-                    -- local screen = awful.screen.focused()
                     local tag = s.tags[i]
                     if tag then
                         tag:view_only()
@@ -641,17 +640,17 @@ for i = 1, 9 do
                 end
 
                 local last_focus = last_focus_list[i]
+                
                 if last_focus.screen then 
                     -- gears.debug.print_warning("Changing focused screen")
                     awful.screen.focus(last_focus.screen)
                 end
 
-                if last_focus.client then
+                if last_focus.client and last_focus.client.valid then
                     -- gears.debug.print_warning("Found last focus client whose name is " .. last_focus.client.name)
                     client.focus = last_focus.client
                     last_focus.client:raise()
                     local c = client.focus
-                    -- c:emit_signal("focus")
                     -- gears.debug.print_warning("Current focus client is " .. c.name)
                 end
             end,
