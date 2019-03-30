@@ -25,6 +25,9 @@ local wibox = require("wibox")
 local naughty = require("naughty")
 local menubar = require("menubar")
 
+local timer = require("gears.timer")
+
+
 local hotkeys_popup = require("awful.hotkeys_popup").widget
 require("awful.hotkeys_popup.keys")
 
@@ -645,7 +648,6 @@ for i = 1, 9 do
 
                 if last_focus.client then
                     -- gears.debug.print_warning("Found last focus client whose name is " .. last_focus.client.name)
-                    -- awful.client.focus.global_bydirection("right")
                     client.focus = last_focus.client
                     last_focus.client:raise()
                     local c = client.focus
@@ -1051,6 +1053,45 @@ client.connect_signal(
         -- gears.debug.print_warning("Unfocus: " .. tostring(last_focus_list[c.first_tag.index].client.name))
     end
 )
+
+-- got this segment from awesome autofocus library
+-- https://github.com/awesomeWM/awesome/blob/master/lib/awful/autofocus.lua
+-- the entire autofocus lib wasn't used because it interferes with
+-- remembering last active window of each tag
+local function filter_sticky(c)
+    return not c.sticky and awful.client.focus.filter(c)
+end
+local function auto_focus(objScreen)
+    if not client.focus or not client.focus:isvisible() then
+        local c = awful.client.focus.history.get(screen[objScreen], 0, filter_sticky)
+        if not c then
+            c = awful.client.focus.history.get(screen[objScreen], 0, awful.client.focus.filter)
+        end
+        if c then
+            c:emit_signal("request::activate", "autofocus.check_focus",
+                          {raise=false})
+            return true
+        else
+            return false
+        end
+    end
+end
+local function check_focus(obj)
+    if not obj.screen.valid then return end 
+    currScreenHasClient = auto_focus(obj.screen)
+
+    if not currScreenHasClient then
+        gears.debug.print_warning("Checking other screen")
+        for s in screen do
+            auto_focus(s)
+        end
+    end
+    gears.debug.print_warning("Finished unmanage")
+end
+local function check_focus_delayed(obj)
+    timer.delayed_call(check_focus, {screen = obj.screen})
+end
+client.connect_signal("unmanage", check_focus_delayed)
 
 -- Set mouse resize mode (live or after)
 awful.mouse.resize.set_mode("live")

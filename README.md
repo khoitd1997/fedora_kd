@@ -18,6 +18,8 @@ Plymouth animation from [Reddit r/loadingicon][6]
 
 [Awesome calendar][8]
 
+[Awesome autofocus][9]
+
 ## Dependency
 
 This repo depends on the [fedora kickstart repo][4] used for building popular spins for fedora. By default it should track the latest stable tag of the newest stable fedora branch. The dependency can be initialized using git submodule commands:
@@ -47,4 +49,5 @@ The ansible script is mostly composed of tasks described by yml in their separat
 [5]: https://github.com/jcklpe/Plymouth-Animated-Boot-Screen-Creator
 [6]: https://www.reddit.com/r/loadingicon/comments/6hy8cd/when_loading_takes_forever_oc/
 [7]: https://github.com/elenapan/dotfiles
-[7]: https://github.com/deficient/calendar
+[8]: https://github.com/deficient/calendar
+[9]: https://github.com/awesomeWM/awesome/blob/master/lib/awful/autofocus.lua
