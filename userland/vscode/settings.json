@@ -17,6 +17,8 @@
     "*.tdd": "makefile",
     "*.cfg": "tcl",
     "*.svd": "xml",
+    "*.emProject": "xml",
+    "*.emSession": "xml",
     "*.hpp": "cpp",
     "*.ks": "shellscript",
     "*.rasi": "css"
@@ -190,8 +192,8 @@
   "vim.easymotionMarkerBackgroundColor": "orange",
   "workbench.editor.labelFormat": "short",
   "breadcrumbs.enabled": true,
-"latex-workshop.view.pdf.viewer": "tab",
-"workbench.editor.closeEmptyGroups": false,
-"terminal.integrated.cursorStyle": "underline",
-"editor.cursorStyle": "underline"
+  "latex-workshop.view.pdf.viewer": "tab",
+  "workbench.editor.closeEmptyGroups": false,
+  "terminal.integrated.cursorStyle": "underline",
+  "editor.cursorStyle": "underline"
 }

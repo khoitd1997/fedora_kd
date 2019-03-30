@@ -1375,5 +1375,21 @@
   {
     "key": "ctrl+down",
     "command": "workbench.action.increaseViewSize"
+  },
+  {
+    "key": "ctrl+shift+o",
+    "command": "workbench.action.files.openFile"
+  },
+  {
+    "key": "ctrl+o",
+    "command": "-workbench.action.files.openFile"
+  },
+  {
+    "key": "ctrl+o",
+    "command": "workbench.action.gotoSymbol"
+  },
+  {
+    "key": "ctrl+shift+o",
+    "command": "-workbench.action.gotoSymbol"
   }
 ]

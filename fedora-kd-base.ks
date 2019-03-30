@@ -64,6 +64,9 @@ glibc-devel.i686
 libnsl
 xdotool
 
+# libraries
+qt-x11
+
 # packaging tools
 fedora-packager
 mock
