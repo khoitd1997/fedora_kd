@@ -113,8 +113,7 @@
       "command": "multiCommand.saveAndEnterCommand",
       "sequence": ["workbench.action.files.save", "extension.vim_escape"]
     }
-  ],
-  "editor.hover.sticky": false,
+],
   "terminal.integrated.fontFamily": "source code pro",
   "terminal.integrated.shell.windows": "C:\\Program Files\\Git\\bin\\bash.exe",
   "terminal.integrated.shell.linux": "/bin/zsh",
@@ -168,8 +167,7 @@
   },
   "editor.wordSeparators": "`~!@#$%^&*()-=+[{]}\\|;:'\",.<>/?",
   "editor.smoothScrolling": true,
-  "scrolloff.scrolloff": 25,
-  "scrolloff.alwaysCenter": true,
+"scrolloff.scrolloff": 10,
   "terminal.integrated.commandsToSkipShell": [
     "workbench.action.openEditorAtIndex1",
     "workbench.action.openEditorAtIndex2",
