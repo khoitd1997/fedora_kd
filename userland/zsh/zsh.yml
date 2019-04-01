@@ -24,7 +24,12 @@
 
     - block:
         - name: remove existing zsh plugin
-          shell: rm -rf ~/.oh-my-zsh/custom/plugins/*
+          shell: "{{item}}"
+          with_items:
+            - rm -rf ~/.oh-my-zsh/custom/plugins/*
+            - git reset --hard origin/master
+          args:
+            chdir: ~/.oh-my-zsh/
 
         - name: clone zsh plugins
           command: chdir=~/.oh-my-zsh/custom/plugins git clone "{{item}}"
