@@ -23,10 +23,11 @@
         - zsh_conf
 
     - block:
-        - name: remove existing zsh plugin
+        - name: remove existing zsh plugin and themes
           shell: "{{item}}"
           with_items:
             - rm -rf ~/.oh-my-zsh/custom/plugins/*
+            - rm -rf ~/.oh-my-zsh/custom/themes/*
             - git reset --hard origin/master
           args:
             chdir: ~/.oh-my-zsh/
@@ -36,6 +37,13 @@
           with_items:
             - https://github.com/zsh-users/zsh-completions.git
             - https://github.com/zsh-users/zsh-autosuggestions.git
+
+        - name: install spaceship theme
+          shell: "{{item}}"
+          with_items:
+            - git clone https://github.com/denysdovhan/spaceship-prompt.git ~/.oh-my-zsh/custom/themes/spaceship-prompt
+            - ln -s ~/.oh-my-zsh/custom/themes/spaceship-prompt/spaceship.zsh-theme ~/.oh-my-zsh/custom/themes/spaceship.zsh-theme
+
       tags:
         - zsh_plugin
         - oh-my-zsh
