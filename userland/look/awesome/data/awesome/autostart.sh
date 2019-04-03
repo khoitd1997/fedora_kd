@@ -31,6 +31,7 @@ run redshift-gtk -l 34.052235:-118.243683
 run dnfdragora-updater
 run /usr/bin/seapplet
 run autokey-gtk
+run /usr/libexec/polkit-gnome-authentication-agent-1
 
 # Keyboard layout
 # setxkbmap -layout "us,gr" -option "grp:alt_shift_toggle" &

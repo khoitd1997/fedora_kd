@@ -160,6 +160,10 @@ rpmfusion-nonfree-release-tainted
 zsh 
 zsh-syntax-highlighting
 
+# java
+java-1.8.0-openjdk
+java-openjdk
+
 # misc
 adobe-source-code-pro-fonts
 arc-theme
