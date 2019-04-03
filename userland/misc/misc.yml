@@ -53,6 +53,8 @@
 
       become: true
 
+    - include: helpful_script/helpful_script.yml
+
     - name: set timezone to America/Los_Angeles
       timezone:
         name: America/Los_Angeles
