@@ -116,6 +116,10 @@ ansible
 # flatpak
 flatpak
 
+# power management
+tlp 
+tlp-rdw
+
 # latex
 texlive-latexindent
 texlive-scheme-basic 
@@ -267,6 +271,14 @@ FOE
 
 systemctl enable firewalld
 systemctl enable libvirtd
+
+# enable power mangement
+systemctl enable tlp.service
+systemctl enable tlp-sleep.service
+systemctl mask systemd-rfkill.service
+systemctl mask systemd-rfkill.socket
+systemctl enable NetworkManager-dispatcher.service
+sudo sed -i 's/^TLP_DEFAULT_MODE=.*/TLP_DEFAULT_MODE=BAT/' /etc/default/tlp
 
 sed -i '/upgrade_type/s/default/security/' /etc/dnf/automatic.conf 
 sed -i '/apply_updates/s/no/yes/' /etc/dnf/automatic.conf
