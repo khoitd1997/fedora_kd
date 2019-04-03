@@ -39,6 +39,7 @@ gcc
 clang
 llvm 
 htop
+glances
 net-tools
 minicom
 screen
