@@ -8,6 +8,7 @@
         - git config --global core.autocrlf input
         - git config --global core.editor "vim"
         - git config --global merge.tool meld
+        - git config --global core.pager "diff-so-fancy | less --tabs=4 -RFX"
       tags:
         - git
         - development

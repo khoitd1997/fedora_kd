@@ -49,6 +49,8 @@
             - awesome
             - keyring
 
+        - include: npm/npm.yml
+
       become: true
 
     - name: set timezone to America/Los_Angeles
