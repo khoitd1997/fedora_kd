@@ -113,7 +113,7 @@
       "command": "multiCommand.saveAndEnterCommand",
       "sequence": ["workbench.action.files.save", "extension.vim_escape"]
     }
-],
+  ],
   "terminal.integrated.fontFamily": "source code pro",
   "terminal.integrated.shell.windows": "C:\\Program Files\\Git\\bin\\bash.exe",
   "terminal.integrated.shell.linux": "/bin/zsh",
@@ -167,7 +167,7 @@
   },
   "editor.wordSeparators": "`~!@#$%^&*()-=+[{]}\\|;:'\",.<>/?",
   "editor.smoothScrolling": true,
-"scrolloff.scrolloff": 10,
+  "scrolloff.scrolloff": 10,
   "terminal.integrated.commandsToSkipShell": [
     "workbench.action.openEditorAtIndex1",
     "workbench.action.openEditorAtIndex2",
@@ -193,5 +193,8 @@
   "latex-workshop.view.pdf.viewer": "tab",
   "workbench.editor.closeEmptyGroups": false,
   "terminal.integrated.cursorStyle": "underline",
-  "editor.cursorStyle": "underline"
+  "editor.cursorStyle": "underline",
+  "C_Cpp.default.intelliSenseMode": "clang-x64",
+  "C_Cpp.autocomplete": "Disabled",
+  "C_Cpp.errorSquiggles": "Disabled"
 }
