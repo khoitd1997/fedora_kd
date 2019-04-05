@@ -1,5 +1,5 @@
 {
-  "workbench.iconTheme": "Monokai Pro (Filter Spectrum) Icons",
+  "workbench.iconTheme": "Monokai Pro (Filter Octagon) Icons",
   "gitlens.advanced.messages": {
     "suppressCommitHasNoPreviousCommitWarning": false,
     "suppressCommitNotFoundWarning": false,
@@ -29,7 +29,7 @@
   "gitlens.keymap": "chorded",
   "editor.minimap.enabled": false,
   "editor.wordWrap": "bounded",
-  "workbench.colorTheme": "Monokai Pro (Filter Spectrum)",
+  "workbench.colorTheme": "Monokai Pro (Filter Octagon)",
   "pasteImage.path": "${currentFileDir}/image",
   "editor.quickSuggestionsDelay": 2,
   "[markdown]": {
@@ -194,7 +194,6 @@
   "workbench.editor.closeEmptyGroups": false,
   "terminal.integrated.cursorStyle": "underline",
   "editor.cursorStyle": "underline",
-  "C_Cpp.default.intelliSenseMode": "clang-x64",
-  "C_Cpp.autocomplete": "Disabled",
-  "C_Cpp.errorSquiggles": "Disabled"
+"C_Cpp.default.intelliSenseMode": "gcc-x64",
+"C_Cpp.errorSquiggles": "Disabled"
 }
