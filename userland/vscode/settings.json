@@ -196,5 +196,6 @@
   "editor.cursorStyle": "underline",
   "C_Cpp.default.intelliSenseMode": "clang-x64",
   "C_Cpp.autocomplete": "Disabled",
-  "C_Cpp.errorSquiggles": "Disabled"
+"C_Cpp.errorSquiggles": "Disabled",
+"vim.useSystemClipboard": true
 }
