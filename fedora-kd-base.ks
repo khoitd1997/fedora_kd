@@ -25,6 +25,7 @@ gnome-terminal-nautilus
 bat
 
 # c/c++ dev
+qt-creator
 cmake
 valgrind
 gcc
