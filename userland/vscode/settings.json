@@ -121,7 +121,6 @@
   "vim.cursorStylePerMode.normal": "block-outline",
   "vim.camelCaseMotion.enable": true,
   "vim.hlsearch": true,
-  "files.autoSave": "afterDelay",
   "vim.normalModeKeyBindingsNonRecursive": [
     {
       "before": ["<C-n>"],
@@ -194,6 +193,18 @@
   "workbench.editor.closeEmptyGroups": false,
   "terminal.integrated.cursorStyle": "underline",
   "editor.cursorStyle": "underline",
-"C_Cpp.default.intelliSenseMode": "gcc-x64",
-"C_Cpp.errorSquiggles": "Disabled"
+  "C_Cpp.default.intelliSenseMode": "gcc-x64",
+  "C_Cpp.errorSquiggles": "Disabled",
+  "saveAndRun": {
+    "commands": [
+      {
+        "match": "\\CMakeLists.txt$",
+        "cmd": "cmake-format -i ${file}",
+        "useShortcut": false,
+        "silent": true
+      }
+    ]
+  },
+"c-cpp-flylint.flexelint.enable": false,
+  "files.autoSaveDelay": 1
 }

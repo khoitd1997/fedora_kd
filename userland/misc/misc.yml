@@ -118,7 +118,10 @@
         name:
           - pylint
           - autopep8
+          - cpplint
+          - cmake_format
         extra_args: --user
+        executable: pip3
       tags:
         - pip
         - base
