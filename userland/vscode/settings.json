@@ -90,7 +90,6 @@
     "foreground": "black",
     "background": "#6F6F70"
   },
-  "vsicons.dontShowNewVersionMessage": true,
   "window.newWindowDimensions": "inherit",
   "window.restoreFullscreen": true,
   "workbench.activityBar.visible": false,
@@ -196,6 +195,6 @@
   "editor.cursorStyle": "underline",
   "C_Cpp.default.intelliSenseMode": "clang-x64",
   "C_Cpp.autocomplete": "Disabled",
-"C_Cpp.errorSquiggles": "Disabled",
-"vim.useSystemClipboard": true
+  "C_Cpp.errorSquiggles": "Disabled",
+  "vim.useSystemClipboard": true
 }
