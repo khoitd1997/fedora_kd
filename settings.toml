@@ -1,0 +1,56 @@
+# build options
+[build]
+mock_env_fedora_version = "29"
+image_fedora_version = "29"
+base_kickstart_tag="latest" # can also be value like "0.29.2"
+os_name="fedora-kd" # also name of your main kickstart
+post_script_dir="post_script.sh"
+
+# define list of repos
+# $releasever and $basearch will be replaced when doing build
+[[repo]]
+name="rpmfusion-free-updates"
+display_name="RPM Fusion for Fedora $releasever - Free - Updates" 
+enabled=true
+metalink="https://mirrors.rpmfusion.org/metalink?repo=free-fedora-updates-released-$releasever&arch=$basearch"
+baseurl="http://download1.rpmfusion.org/free/fedora/updates/$releasever/$basearch/"
+gpgcheck=true
+gpgkey="file:///etc/pki/rpm-gpg/RPM-GPG-KEY-rpmfusion-free-fedora-$releasever"
+
+[[repo]]
+name="rpmfusion-free"
+display_name="RPM Fusion for Fedora $releasever - Free" 
+enabled=true
+metalink="https://mirrors.rpmfusion.org/metalink?repo=free-fedora-$releasever&arch=$basearch"
+baseurl="http://download1.rpmfusion.org/free/fedora/releases/$releasever/Everything/$basearch/os/"
+gpgcheck=true
+gpgkey="file:///etc/pki/rpm-gpg/RPM-GPG-KEY-rpmfusion-free-fedora-$releasever"
+
+# define package and package groups to include/exclude
+[package]
+
+    [package.include]
+    packages=[
+    "moreutils",
+    "jq",
+    "ripgrep",
+    "gnome-terminal"
+    ]
+
+    groups=[
+    "@multimedia",
+    "@sound-and-video"
+    ]
+
+    [package.exclude]
+    packages=[
+        "gnome-calculator"
+    ]
+
+    groups=[
+    ]
+
+[misc]
+lang="en_US.UTF-8" # locale -a
+keyboard="us" # localectl list-x11-keymap-layouts
+timezone="US/Pacific" # https://en.wikipedia.org/wiki/List_of_tz_database_time_zones
