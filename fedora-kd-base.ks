@@ -24,6 +24,19 @@ gnome-terminal-nautilus
 # modular
 bat
 
+# c/c++ dev
+qt-creator
+cmake
+valgrind
+gcc
+clang
+llvm 
+cppcheck
+clang-analyzer
+iwyu
+libasan
+ninja-build
+
 # cli
 moreutils
 jq
@@ -33,11 +46,6 @@ doxygen
 dnfdragora-updater
 zeitgeist
 youtube-dl
-cmake
-valgrind
-gcc
-clang
-llvm 
 htop
 glances
 net-tools

@@ -1,5 +1,5 @@
 {
-  "workbench.iconTheme": "Monokai Pro (Filter Spectrum) Icons",
+  "workbench.iconTheme": "Monokai Pro (Filter Octagon) Icons",
   "gitlens.advanced.messages": {
     "suppressCommitHasNoPreviousCommitWarning": false,
     "suppressCommitNotFoundWarning": false,
@@ -29,7 +29,7 @@
   "gitlens.keymap": "chorded",
   "editor.minimap.enabled": false,
   "editor.wordWrap": "bounded",
-  "workbench.colorTheme": "Monokai Pro (Filter Spectrum)",
+  "workbench.colorTheme": "Monokai Pro (Filter Octagon)",
   "pasteImage.path": "${currentFileDir}/image",
   "editor.quickSuggestionsDelay": 2,
   "[markdown]": {
@@ -120,7 +120,6 @@
   "vim.cursorStylePerMode.normal": "block-outline",
   "vim.camelCaseMotion.enable": true,
   "vim.hlsearch": true,
-  "files.autoSave": "afterDelay",
   "vim.normalModeKeyBindingsNonRecursive": [
     {
       "before": ["<C-n>"],
@@ -193,8 +192,20 @@
   "workbench.editor.closeEmptyGroups": false,
   "terminal.integrated.cursorStyle": "underline",
   "editor.cursorStyle": "underline",
-  "C_Cpp.default.intelliSenseMode": "clang-x64",
   "C_Cpp.autocomplete": "Disabled",
+  "vim.useSystemClipboard": true,
+  "C_Cpp.default.intelliSenseMode": "gcc-x64",
   "C_Cpp.errorSquiggles": "Disabled",
-  "vim.useSystemClipboard": true
+  "saveAndRun": {
+    "commands": [
+      {
+        "match": "\\CMakeLists.txt$",
+        "cmd": "cmake-format -i ${file}",
+        "useShortcut": false,
+        "silent": true
+      }
+    ]
+  },
+  "c-cpp-flylint.flexelint.enable": false,
+  "files.autoSaveDelay": 1
 }
