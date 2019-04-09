@@ -23,6 +23,7 @@ gnome-terminal-nautilus
 
 # modular
 bat
+hyperfine
 
 # c/c++ dev
 qt-creator
