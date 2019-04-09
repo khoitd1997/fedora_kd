@@ -35,6 +35,7 @@ cppcheck
 clang-analyzer
 iwyu
 libasan
+libubsan
 ninja-build
 
 # cli
