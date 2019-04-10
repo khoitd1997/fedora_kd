@@ -207,5 +207,6 @@
     ]
   },
   "c-cpp-flylint.flexelint.enable": false,
-  "files.autoSaveDelay": 1
+"files.autoSaveDelay": 1,
+"C_Cpp.updateChannel": "Insiders"
 }

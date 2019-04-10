@@ -120,7 +120,7 @@ konsole
 ansible
 
 # snap
-# snapd
+snapd
 
 # flatpak
 flatpak
@@ -189,6 +189,8 @@ plymouth-plugin-script
 %end
 
 %post --log=/root/ks-post.log --erroronfail
+# snap fix
+sudo ln -s /var/lib/snapd/snap /snap
 
 cat > /etc/lightdm/slick-greeter.conf <<EOF
 
