@@ -1,6 +1,6 @@
 #!/bin/bash
 
-extension_general=" kevinkyang.auto-comment-blocks CoenraadS.bracket-pair-colorizer formulahendry.code-runner webfreak.debug wayou.vscode-todo-highlight emilast.logfilehighlighter Tyriar.sort-lines oderwat.indent-rainbow rashwell.tcl eugenwiens.bitbake redhat.vscode-yaml Gruntfuggly.todo-tree ibm.output-colorizer compulim.vscode-clock ryuta46.multi-command vscodevim.vim laurenttreguier.rpm-spec bungcip.better-toml ionutvmi.path-autocomplete tickleforce.scrolloff esbenp.prettier-vscode wk-j.save-and-run "
+extension_general=" kevinkyang.auto-comment-blocks CoenraadS.bracket-pair-colorizer formulahendry.code-runner webfreak.debug wayou.vscode-todo-highlight emilast.logfilehighlighter Tyriar.sort-lines oderwat.indent-rainbow rashwell.tcl eugenwiens.bitbake redhat.vscode-yaml Gruntfuggly.todo-tree ibm.output-colorizer compulim.vscode-clock ryuta46.multi-command vscodevim.vim laurenttreguier.rpm-spec bungcip.better-toml ionutvmi.path-autocomplete tickleforce.scrolloff esbenp.prettier-vscode wk-j.save-and-run shakram02.bash-beautify "
 
 extension_theme=" monokai.theme-monokai-pro-vscode  vscode-icons-team.vscode-icons "
 
@@ -50,8 +50,8 @@ extension_all="${extension_all}${extension_web}"
 
 for ext in ${extension_all}
 do
-		if ! code --install-extension "${ext}" ; then
-				print_error "Errrors while installing extensions\n"
-				exit 1
-		fi
+    if ! code --install-extension "${ext}" ; then
+        print_error "Errrors while installing extensions\n"
+        exit 1
+    fi
 done
