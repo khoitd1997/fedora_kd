@@ -31,7 +31,7 @@ cmake
 valgrind
 gcc
 clang
-llvm 
+llvm
 cppcheck
 clang-analyzer
 iwyu
@@ -53,25 +53,25 @@ glances
 net-tools
 minicom
 screen
-python3-pip 
+python3-pip
 curl
 python3-setuptools
 ranger
 tldr
 the_silver_searcher
-neofetch 
-task 
+neofetch
+task
 autojump
 fd-find
 fzf
-hub 
+hub
 git
-nano 
-dnf-automatic 
-openconnect 
-tmux 
+nano
+dnf-automatic
+openconnect
+tmux
 libsecret
-glibc-devel.i686 
+glibc-devel.i686
 libnsl
 xdotool
 
@@ -83,6 +83,12 @@ mesa-libGL-devel
 fedora-packager
 mock
 fedora-review
+
+# fedora dev
+python2-hawkey
+python3-hawkey
+python-rpm
+python3-rpm
 
 # gui apps
 redshift-gtk
@@ -127,14 +133,14 @@ snapd
 flatpak
 
 # power management
-tlp 
+tlp
 tlp-rdw
 
 # latex
 texlive-latexindent
-texlive-scheme-basic 
-texlive-collection-latexextra 
-texlive-collection-latexrecommended 
+texlive-scheme-basic
+texlive-collection-latexextra
+texlive-collection-latexrecommended
 texlive-collection-xetex
 
 # gstreamer
@@ -157,7 +163,7 @@ golint
 # arm toolchain
 openocd
 arm-none-eabi-newlib
-arm-none-eabi-gcc-cs 
+arm-none-eabi-gcc-cs
 arm-none-eabi-gcc-cs-c++
 
 # embedded linux stuffs
@@ -172,7 +178,7 @@ rpmfusion-nonfree-release
 rpmfusion-nonfree-release-tainted
 
 # zsh
-zsh 
+zsh
 zsh-syntax-highlighting
 
 # java
@@ -252,7 +258,7 @@ if [ -d "~/hatter/fedora-kickstarts" ]; then
 git -C ~/hatter/fedora-kickstarts pull
 else
 git clone https://github.com/khoitd1997/hatter.git ~/hatter
-git clone https://github.com/khoitd1997/fedora_kd.git ~/hatter/fedora-kickstarts 
+git clone https://github.com/khoitd1997/fedora_kd.git ~/hatter/fedora-kickstarts
 fi
 
 bash ~/hatter/fedora-kickstarts/userland/setup_wrapper.sh&
@@ -292,7 +298,7 @@ systemctl mask systemd-rfkill.socket
 systemctl enable NetworkManager-dispatcher.service
 sudo sed -i 's/^TLP_DEFAULT_MODE=.*/TLP_DEFAULT_MODE=BAT/' /etc/default/tlp
 
-sed -i '/upgrade_type/s/default/security/' /etc/dnf/automatic.conf 
+sed -i '/upgrade_type/s/default/security/' /etc/dnf/automatic.conf
 sed -i '/apply_updates/s/no/yes/' /etc/dnf/automatic.conf
 systemctl enable --now dnf-automatic-install.timer
 systemctl enable --now dnf-automatic.timer

@@ -118,6 +118,7 @@
         name:
           - pylint
           - autopep8
+          # - rpm-py-installer
           - cpplint
           - cmake_format
         extra_args: --user
