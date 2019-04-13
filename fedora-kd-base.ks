@@ -89,6 +89,9 @@ python3-hawkey
 python3-dnf
 python-rpm
 python3-rpm
+lorax-lmc-novirt 
+pykickstart
+livecd-tools
 
 # gui apps
 redshift-gtk
