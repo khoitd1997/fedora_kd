@@ -85,8 +85,8 @@ mock
 fedora-review
 
 # fedora dev
-python2-hawkey
 python3-hawkey
+python3-dnf
 python-rpm
 python3-rpm
 
