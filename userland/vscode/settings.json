@@ -65,8 +65,6 @@
   },
   "C_Cpp.clang_format_fallbackStyle": "LLVM",
   "C_Cpp.loggingLevel": "Information",
-  "git.enableSmartCommit": true,
-  "editor.foldingStrategy": "indentation",
   "git.autofetch": true,
   "logFileHighlighter.customPatterns": [
     {
@@ -184,7 +182,8 @@
     "workbench.action.openRecent",
     "workbench.files.action.focusFilesExplorer",
     "workbench.view.extensions",
-    "workbench.view.scm"
+    "workbench.view.scm",
+    "workbench.action.gotoSymbol"
   ],
   "editor.wordWrapColumn": 100,
   "vim.easymotion": true,
@@ -218,14 +217,19 @@
   "c-cpp-flylint.flexelint.enable": false,
   "files.autoSaveDelay": 1,
   "C_Cpp.updateChannel": "Insiders",
-"workbench.tree.indent": 18,
-"githd.blameView.enabled": false,
-"gitlens.codeLens.recentChange.enabled": false,
-"gitlens.advanced.quickPick.closeOnFocusOut": false,
-"gitlens.blame.heatmap.location": "left",
-"gitlens.blame.highlight.enabled": false,
-"gitlens.codeLens.includeSingleLineSymbols": true,
-"gitlens.hovers.currentLine.changes": false,
-"gitlens.hovers.avatars": false,
-"gitlens.hovers.currentLine.details": false
+  "workbench.tree.indent": 18,
+  "githd.blameView.enabled": false,
+  "gitlens.codeLens.recentChange.enabled": false,
+  "gitlens.advanced.quickPick.closeOnFocusOut": false,
+  "gitlens.blame.heatmap.location": "left",
+  "gitlens.blame.highlight.enabled": false,
+  "gitlens.codeLens.includeSingleLineSymbols": true,
+  "gitlens.hovers.currentLine.changes": false,
+  "gitlens.hovers.avatars": false,
+  "gitlens.hovers.currentLine.details": false,
+  "editor.foldingStrategy": "indentation",
+  "fold.level": 10,
+  "bookmarks.useWorkaroundForFormatters": true,
+  "bookmarks.showCommandsInContextMenu": false,
+  "bookmarks.saveBookmarksInProject": true
 }
