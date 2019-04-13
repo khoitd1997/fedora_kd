@@ -253,20 +253,86 @@ awful.screen.connect_for_each_screen(
     end
 )
 
+-- got this segment from awesome autofocus library
+-- https://github.com/awesomeWM/awesome/blob/master/lib/awful/autofocus.lua
+-- the entire autofocus lib wasn't used because it interferes with
+-- remembering last active window of each tag
+local function filter_sticky(c)
+    return not c.sticky and awful.client.focus.filter(c)
+end
+local function auto_focus(objScreen)
+    if not client.focus or not client.focus:isvisible() then
+        local c = awful.client.focus.history.get(screen[objScreen], 0, filter_sticky)
+        if not c then
+            c = awful.client.focus.history.get(screen[objScreen], 0, awful.client.focus.filter)
+        end
+        if c then
+            c:emit_signal("request::activate", "autofocus.check_focus",
+                          {raise=false})
+            return true
+        else
+            return false
+        end
+    end
+end
+local function check_focus(obj)
+    if not obj.screen.valid then return end 
+    currScreenHasClient = auto_focus(obj.screen)
+
+    if not currScreenHasClient then
+        gears.debug.print_warning("Checking other screen")
+        for s in screen do
+            auto_focus(s)
+        end
+    end
+    gears.debug.print_warning("Finished unmanage")
+end
+local function check_focus_delayed(obj)
+    timer.delayed_call(check_focus, {screen = obj.screen})
+end
+local function check_focus_delayed_screen(s)
+    timer.delayed_call(check_focus, {screen = s})
+end
+
+local function custom_viewprev()
+    for s in screen do
+        awful.tag.viewprev(s)
+    end
+    s = awful.screen.focused()
+    check_focus_delayed_screen(s)
+end
+
+local function custom_viewnext()
+    for s in screen do
+        awful.tag.viewnext(s)
+    end
+    s = awful.screen.focused()
+    check_focus_delayed_screen(s)
+end
+
 globalkeys =
     gears.table.join(
     awful.key({modkey, "Shift"}, "s", hotkeys_popup.show_help, {description = "show help", group = "awesome"}),
-    awful.key({modkey}, "Left", awful.tag.viewprev, {description = "view previous", group = "tag"}),
-    awful.key({modkey}, "Right", awful.tag.viewnext, {description = "view next", group = "tag"}),
+    awful.key({modkey}, "Left", custom_viewprev, {description = "view previous", group = "tag"}),
+    awful.key({modkey}, "Right", custom_viewnext, {description = "view next", group = "tag"}),
     awful.key({modkey}, "Escape", awful.tag.history.restore, {description = "go back", group = "tag"}),
     awful.key(
         {modkey},
         "l",
         function()
             awful.client.focus.global_bydirection("right")
-            local c = client.focus
-            if c then
-                c:raise()
+            while 1 do
+                local c = client.focus
+                if c then
+                    if c.class == "xpad" then
+                        awful.client.focus.global_bydirection("right") 
+                    else
+                        c:raise()
+                        break
+                    end
+                else
+                    break
+                end
             end
         end,
         {description = "focus next by index", group = "client"}
@@ -300,9 +366,18 @@ globalkeys =
         "h",
         function()
             awful.client.focus.global_bydirection("left")
-            local c = client.focus
-            if c then
-                c:raise()
+            while 1 do
+                local c = client.focus
+                if c then
+                    if c.class == "xpad" then
+                        awful.client.focus.global_bydirection("left") 
+                    else
+                        c:raise()
+                        break
+                    end
+                else
+                    break
+                end
             end
         end,
         {description = "focus previous by index", group = "client"}
@@ -1041,7 +1116,6 @@ client.connect_signal(
         c.opacity = 0
         last_focus_list[c.first_tag.index].client = c
         last_focus_list[c.first_tag.index].screen = c.screen
-        -- gears.debug.print_warning("Focus " .. tostring(last_focus_list[c.first_tag.index].client.name))
     end
 )
 client.connect_signal(
@@ -1049,48 +1123,12 @@ client.connect_signal(
     function(c)
         c.opacity = 1
         c.border_color = beautiful.border_normal
-        -- gears.debug.print_warning("Unfocus: " .. tostring(last_focus_list[c.first_tag.index].client.name))
     end
 )
 
--- got this segment from awesome autofocus library
--- https://github.com/awesomeWM/awesome/blob/master/lib/awful/autofocus.lua
--- the entire autofocus lib wasn't used because it interferes with
--- remembering last active window of each tag
-local function filter_sticky(c)
-    return not c.sticky and awful.client.focus.filter(c)
-end
-local function auto_focus(objScreen)
-    if not client.focus or not client.focus:isvisible() then
-        local c = awful.client.focus.history.get(screen[objScreen], 0, filter_sticky)
-        if not c then
-            c = awful.client.focus.history.get(screen[objScreen], 0, awful.client.focus.filter)
-        end
-        if c then
-            c:emit_signal("request::activate", "autofocus.check_focus",
-                          {raise=false})
-            return true
-        else
-            return false
-        end
-    end
-end
-local function check_focus(obj)
-    if not obj.screen.valid then return end 
-    currScreenHasClient = auto_focus(obj.screen)
 
-    if not currScreenHasClient then
-        gears.debug.print_warning("Checking other screen")
-        for s in screen do
-            auto_focus(s)
-        end
-    end
-    gears.debug.print_warning("Finished unmanage")
-end
-local function check_focus_delayed(obj)
-    timer.delayed_call(check_focus, {screen = obj.screen})
-end
 client.connect_signal("unmanage", check_focus_delayed)
+client.connect_signal("property::screen", check_focus_delayed)
 
 -- Set mouse resize mode (live or after)
 awful.mouse.resize.set_mode("live")
