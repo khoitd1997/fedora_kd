@@ -20,7 +20,7 @@ extension_md=" mushan.vscode-paste-image DavidAnson.vscode-markdownlint yzhang.m
 extension_latex=" james-yu.latex-workshop "
 
 # tools
-extension_git=" eamodio.gitlens donjayamanne.githistory huizhou.githd github.vscode-pull-request-github "
+extension_git=" eamodio.gitlens donjayamanne.githistory huizhou.githd github.vscode-pull-request-github felipecaputo.git-project-manager "
 extension_doxygen=" bbenoist.doxygen cschlosser.doxdocgen "
 extension_arm=" dan-c-underwood.arm marus25.cortex-debug "
 extension_qt=" zhoufeng.pyqt-integration bbenoist.qml "

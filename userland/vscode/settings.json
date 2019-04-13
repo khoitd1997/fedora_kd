@@ -218,5 +218,14 @@
   "c-cpp-flylint.flexelint.enable": false,
   "files.autoSaveDelay": 1,
   "C_Cpp.updateChannel": "Insiders",
-  "workbench.tree.indent": 18
+"workbench.tree.indent": 18,
+"githd.blameView.enabled": false,
+"gitlens.codeLens.recentChange.enabled": false,
+"gitlens.advanced.quickPick.closeOnFocusOut": false,
+"gitlens.blame.heatmap.location": "left",
+"gitlens.blame.highlight.enabled": false,
+"gitlens.codeLens.includeSingleLineSymbols": true,
+"gitlens.hovers.currentLine.changes": false,
+"gitlens.hovers.avatars": false,
+"gitlens.hovers.currentLine.details": false
 }
