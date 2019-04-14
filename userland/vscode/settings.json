@@ -74,8 +74,7 @@
   ],
   "doxdocgen.generic.authorTag": "@author Khoi Trinh",
   "editor.detectIndentation": false,
-  "go.formatTool": "gofmt",
-  "editor.formatOnSave": true,
+"go.formatTool": "gofmt",
   "workbench.editor.enablePreview": false,
   "workbench.tips.enabled": false,
   "workbench.editor.enablePreviewFromQuickOpen": false,
@@ -164,6 +163,19 @@
       "after": ["leader", "leader", "g", "e"]
     }
   ],
+  "vim.visualModeKeyBindingsNonRecursive": [
+    // {
+    //   "before": ["<C-n>"],
+    //   "commands": [":nohl"]
+    // },
+    {
+      "before": ["<C-h>"],
+      "commands": [
+        "editor.action.addSelectionToNextFindMatch",
+        "editor.action.startFindReplaceAction"
+      ]
+    }
+  ],
   "editor.tabCompletion": "on",
   "path-autocomplete.triggerOutsideStrings": true,
   "editor.lineNumbers": "relative",
@@ -202,7 +214,7 @@
   "vim.easymotionMarkerBackgroundColor": "orange",
   "workbench.editor.labelFormat": "short",
   "workbench.settings.openDefaultSettings": false,
-  "breadcrumbs.enabled": false,
+  "breadcrumbs.enabled": true,
   //   "breadcrumbs.filePath": "off",
   "latex-workshop.view.pdf.viewer": "tab",
   "workbench.editor.closeEmptyGroups": false,
@@ -238,5 +250,8 @@
   "fold.level": 10,
   "bookmarks.showCommandsInContextMenu": false,
   "bookmarks.saveBookmarksInProject": false,
-  "workbench.sideBar.location": "left"
+"workbench.sideBar.location": "left",
+"[typescript]": {
+	"editor.defaultFormatter": "vscode.typescript-language-features"
+}
 }
