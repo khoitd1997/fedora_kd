@@ -1,13 +1,13 @@
 #!/bin/bash
 
-extension_general=" kevinkyang.auto-comment-blocks CoenraadS.bracket-pair-colorizer formulahendry.code-runner webfreak.debug wayou.vscode-todo-highlight emilast.logfilehighlighter Tyriar.sort-lines oderwat.indent-rainbow rashwell.tcl eugenwiens.bitbake redhat.vscode-yaml Gruntfuggly.todo-tree ibm.output-colorizer compulim.vscode-clock ryuta46.multi-command vscodevim.vim laurenttreguier.rpm-spec bungcip.better-toml ionutvmi.path-autocomplete tickleforce.scrolloff esbenp.prettier-vscode wk-j.save-and-run shakram02.bash-beautify dakara.dakara-foldplus alefragnani.bookmarks "
+extension_general=" kevinkyang.auto-comment-blocks CoenraadS.bracket-pair-colorizer webfreak.debug emilast.logfilehighlighter Tyriar.sort-lines oderwat.indent-rainbow rashwell.tcl eugenwiens.bitbake redhat.vscode-yaml Gruntfuggly.todo-tree ibm.output-colorizer compulim.vscode-clock ryuta46.multi-command vscodevim.vim laurenttreguier.rpm-spec bungcip.better-toml ionutvmi.path-autocomplete tickleforce.scrolloff esbenp.prettier-vscode wk-j.save-and-run shakram02.bash-beautify dakara.dakara-foldplus alefragnani.bookmarks "
 
 extension_theme=" monokai.theme-monokai-pro-vscode  vscode-icons-team.vscode-icons emmanuelbeziat.vscode-great-icons "
 
 extension_dropped=" vsciot-vscode.vscode-arduino"
 
 # programing languages
-extension_cpp=" ms-vscode.cpptools hars.cppsnippets vector-of-bool.cmake-tools twxs.cmake mitaki28.vscode-clang "
+extension_cpp=" ms-vscode.cpptools hars.cppsnippets twxs.cmake mitaki28.vscode-clang "
 extension_python=" ms-python.python njpwerner.autodocstring "
 extension_java=" redhat.java vscjava.vscode-java-debug naco-siren.gradle-language "
 extension_vhdl=" puorc.awesome-vhdl "

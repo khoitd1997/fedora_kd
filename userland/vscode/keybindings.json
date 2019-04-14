@@ -1324,11 +1324,13 @@
   },
   {
     "key": "ctrl+shift+up",
-    "command": "editor.action.insertCursorAbove"
+    "command": "editor.action.insertCursorAbove",
+    "when": "editorFocus"
   },
   {
     "key": "ctrl+shift+down",
-    "command": "editor.action.insertCursorBelow"
+    "command": "editor.action.insertCursorBelow",
+    "when": "editorFocus"
   },
   {
     "key": "ctrl+n",
@@ -1472,5 +1474,36 @@
   {
     "key": "ctrl+shift+i",
     "command": "bookmarks.listFromAllFiles"
+  },
+  {
+    "key": "ctrl+alt+d",
+    "command": "workbench.view.debug"
+  },
+  {
+    "key": "ctrl+shift+d",
+    "command": "-workbench.view.debug"
+  },
+  {
+    "key": "ctrl+shift+down",
+    "command": "-workbench.action.terminal.scrollDown",
+    "when": "terminalFocus"
+  },
+  {
+    "key": "ctrl+shift+up",
+    "command": "-workbench.action.terminal.scrollUp",
+    "when": "terminalFocus"
+  },
+  {
+    "key": "ctrl+n",
+    "command": "workbench.action.togglePanelPosition"
+  },
+  {
+    "key": "ctrl+.",
+    "command": "-editor.action.quickFix",
+    "when": "editorHasCodeActionsProvider && editorTextFocus && !editorReadonly"
+  },
+  {
+    "key": "ctrl+.",
+    "command": "editor.action.wordHighlight.trigger"
   }
 ]

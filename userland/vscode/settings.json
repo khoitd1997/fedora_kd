@@ -86,7 +86,7 @@
   "editor.fontSize": 16,
   "todo-tree.highlightDelay": 0,
   "todo-tree.showCountsInTree": true,
-  "todo-tree.tags": ["TODO", "FIXME", "HACK"],
+  "todo-tree.tags": ["TODO", "FIXME", "HACK", "NOTE"],
   "todo-tree.defaultHighlight": {
     "type": "text",
     "foreground": "black",
@@ -126,9 +126,16 @@
   "vim.camelCaseMotion.enable": true,
   "vim.hlsearch": true,
   "vim.normalModeKeyBindingsNonRecursive": [
+    // {
+    //   "before": ["<C-n>"],
+    //   "commands": [":nohl"]
+    // },
     {
-      "before": ["<C-n>"],
-      "commands": [":nohl"]
+      "before": ["<C-h>"],
+      "commands": [
+        "editor.action.addSelectionToNextFindMatch",
+        "editor.action.startFindReplaceAction"
+      ]
     },
     // {
     //     "before": [
@@ -166,7 +173,8 @@
   "vim.useCtrlKeys": false,
   "vim.handleKeys": {
     "<C-d>": true,
-    "<C-n>": true
+    // "<C-n>": true,
+    "<C-h>": true
   },
   "editor.wordSeparators": "`~!@#$%^&*()-=+[{]}\\|;:'\",.<>/?",
   "editor.smoothScrolling": true,
@@ -201,7 +209,6 @@
   "terminal.integrated.cursorStyle": "line",
   "editor.cursorStyle": "underline",
   "C_Cpp.autocomplete": "Disabled",
-  "vim.useSystemClipboard": true,
   "C_Cpp.default.intelliSenseMode": "gcc-x64",
   "C_Cpp.errorSquiggles": "Disabled",
   "saveAndRun": {
@@ -229,7 +236,7 @@
   "gitlens.hovers.currentLine.details": false,
   "editor.foldingStrategy": "indentation",
   "fold.level": 10,
-  "bookmarks.useWorkaroundForFormatters": true,
   "bookmarks.showCommandsInContextMenu": false,
-  "bookmarks.saveBookmarksInProject": true
+  "bookmarks.saveBookmarksInProject": false,
+  "workbench.sideBar.location": "left"
 }
