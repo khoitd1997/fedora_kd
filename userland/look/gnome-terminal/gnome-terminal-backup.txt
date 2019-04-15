@@ -1,3 +1,6 @@
+[legacy/keybindings]
+find='<Primary>f'
+
 [legacy/profiles:]
 list=['eebcde74-7335-4005-a0a6-e2cbc8ce1f5a', 'c7c28369-b060-4535-9212-fca1d5e8fe24', 'e1bdd38c-edd4-4168-b6d0-b2249d94bbd8', 'f84c1a93-b8f2-4667-9c8d-8881de9f2ecf', '9fd5e83d-4510-408d-95b6-258bedd1f901', '8ef8fe7e-8c6f-4968-878d-448cf52ab643', '30464058-bd16-4f43-9fdc-1c41533acde3', '1709467a-4d41-4599-8182-8035fc0f44b6', '6186f2ea-f561-4769-9c20-c66b544c0432', 'e22b5b9c-19bd-452f-98e9-d160f6afc0c1', '311508c5-a687-462c-91cd-3f7eca95c566', '7820d65c-a06a-4c53-b931-d7bd056bdc27', '3fd61033-b259-4297-a783-836957a37168', 'f58dc6d0-b043-4006-b253-8691190f378e', '6d8b71bb-7bb9-4f93-8682-67b7a9650f7b']
 default='3fd61033-b259-4297-a783-836957a37168'
@@ -201,5 +204,5 @@ audible-bell=false
 
 [legacy]
 schema-version=uint32 3
-theme-variant='system'
 default-show-menubar=false
+theme-variant='dark'
