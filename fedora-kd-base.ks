@@ -40,6 +40,7 @@ libubsan
 ninja-build
 
 # cli
+neovim
 moreutils
 jq
 ripgrep
@@ -200,7 +201,7 @@ plymouth-plugin-script
 
 %post --log=/root/ks-post.log --erroronfail
 # snap fix
-sudo ln -s /var/lib/snapd/snap /snap
+ln -s /var/lib/snapd/snap /snap
 
 cat > /etc/lightdm/slick-greeter.conf <<EOF
 
@@ -290,6 +291,7 @@ ShowDelay=0
 FOE
 /usr/sbin/plymouth-set-default-theme boot -R
 
+# TODO: Move this to first boot script
 systemctl enable firewalld
 systemctl enable libvirtd
 

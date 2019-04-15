@@ -325,7 +325,7 @@ globalkeys =
             while 1 do
                 local c = client.focus
                 if c then
-                    if c.floating then
+                    if c.class == "xpad" then
                         awful.client.focus.global_bydirection("right") 
                     else
                         c:raise()
@@ -370,7 +370,7 @@ globalkeys =
             while 1 do
                 local c = client.focus
                 if c then
-                    if c.floating then
+                    if c.class == "xpad" then
                         awful.client.focus.global_bydirection("left") 
                     else
                         c:raise()

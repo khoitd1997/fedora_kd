@@ -8,6 +8,17 @@
 
     - name: installing vim plugins
       shell: vim +'PlugInstall --sync' +qall &> /dev/null < /dev/tty
-      tags:
-        - vim
-        - development
+
+    - name: configuring neovim
+      blockinfile:
+        path: ~/.config/nvim/init.vim
+        marker: "\" {mark} nvim ansible config"
+        create: yes
+        block: |
+          set runtimepath^=~/.vim runtimepath+=~/.vim/after
+          let &packpath = &runtimepath
+          source ~/.vimrc
+
+  tags:
+      - vim
+      - development 

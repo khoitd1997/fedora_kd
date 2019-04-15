@@ -81,7 +81,7 @@ endfunction
 "set statusline+=\[%{&fileformat}\]
 "set statusline+=\ %p%%
 "set statusline+=\ %l:%c
-"set statusline+=\ 
+"set statusline+=\
 
 let g:airline#extensions#whitespace#enabled = 0
 let g:airline_skip_empty_sections = 1
@@ -104,6 +104,8 @@ endif
 
 "vimplug plugins
 call plug#begin('~/.vim/plugged')
+Plug 'sheerun/vim-polyglot'
+Plug 'joshdick/onedark.vim'
 Plug 'vim-airline/vim-airline'
 Plug 'easymotion/vim-easymotion'
 Plug 'tpope/vim-fugitive'
@@ -120,12 +122,15 @@ call plug#end()
 "color scheme
 syntax enable
 set background=dark
-silent! colorscheme gruvbox
+" silent! colorscheme gruvbox
+silent! colorscheme onedark
 
 "hard time mode
 let g:hardtime_default_on = 1
 
 "alt key bindings
+"not necessary in nvim
+if !has('nvim')
 execute "set <M-h>=\eh"
 execute "set <M-H>=\eH"
 execute "set <M-j>=\ej"
@@ -134,6 +139,7 @@ execute "set <M-k>=\ek"
 execute "set <M-K>=\eK"
 execute "set <M-l>=\el"
 execute "set <M-L>=\eL"
+endif
 
 nnoremap <M-j> :m .+1<CR>==
 nnoremap <M-k> :m .-2<CR>==
@@ -167,7 +173,7 @@ set updatetime=200
 au CursorHold,CursorHoldI * checktime
 au FocusGained,BufEnter * :checktime
 
-nnoremap <c-z> :u<CR> 
+nnoremap <c-z> :u<CR>
 inoremap <c-z> <c-o>:u<CR>
 
 set clipboard=unnamedplus
