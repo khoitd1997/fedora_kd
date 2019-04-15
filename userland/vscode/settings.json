@@ -1,289 +1,306 @@
 {
-  "workbench.iconTheme": "vscode-great-icons",
-  "gitlens.advanced.messages": {
-    "suppressCommitHasNoPreviousCommitWarning": false,
-    "suppressCommitNotFoundWarning": false,
-    "suppressFileNotUnderSourceControlWarning": false,
-    "suppressGitVersionWarning": false,
-    "suppressLineUncommittedWarning": false,
-    "suppressNoRepositoryWarning": false,
-    "suppressResultsExplorerNotice": false,
-    "suppressShowKeyBindingsNotice": true,
-    "suppressUpdateNotice": false,
-    "suppressWelcomeNotice": true
-  },
-  "files.associations": {
-    "*.cu": "c",
-    "*.tdd": "makefile",
-    "*.cfg": "tcl",
-    "*.svd": "xml",
-    "*.emProject": "xml",
-    "*.emSession": "xml",
-    "*.hpp": "cpp",
-    "*.ks": "shellscript",
-    "*.rasi": "css"
-  },
-  "workbench.startupEditor": "newUntitledFile",
-  "window.zoomLevel": 1,
-  "python.formatting.provider": "autopep8",
-  "gitlens.keymap": "chorded",
-  "editor.minimap.enabled": false,
-  "editor.wordWrap": "bounded",
-  "workbench.colorTheme": "Monokai Pro",
-  "pasteImage.path": "${currentFileDir}/image",
-  "editor.quickSuggestionsDelay": 2,
-  "[markdown]": {
-    "editor.wordWrap": "on",
-    "editor.quickSuggestions": true
-  },
-  "html.autoClosingTags": false,
-  "markdown.preview.doubleClickToSwitchToEditor": false,
-  "editor.tokenColorCustomizations": {
-    "textMateRules": [
-      {
-        "scope": "log.error",
-        "settings": {
-          "foreground": "#af1f1f",
-          "fontStyle": "bold"
-        }
-      },
-      {
-        "scope": "log.warning",
-        "settings": {
-          "foreground": "#f4ad42",
-          "fontStyle": ""
-        }
-      },
-      {
-        "scope": "log.info",
-        "settings": {
-          "foreground": "#42f4e5",
-          "fontStyle": ""
-        }
-      }
-    ]
-  },
-  "C_Cpp.clang_format_fallbackStyle": "LLVM",
-  "C_Cpp.loggingLevel": "Information",
-  "git.autofetch": true,
-  "logFileHighlighter.customPatterns": [
-    {
-      "pattern": "\\[(.*?)\\]",
-      "foreground": "#98f442"
-    }
-  ],
-  "doxdocgen.generic.authorTag": "@author Khoi Trinh",
-  "editor.detectIndentation": false,
-  "go.formatTool": "gofmt",
-  "workbench.editor.enablePreview": false,
-  "workbench.tips.enabled": false,
-  "workbench.editor.enablePreviewFromQuickOpen": false,
-  "go.autocompleteUnimportedPackages": true,
-  "window.titleBarStyle": "native",
-  "editor.fontFamily": "source code pro",
-  "editor.fontSize": 16,
-  "todo-tree.highlightDelay": 0,
-  "todo-tree.showCountsInTree": true,
-  "todo-tree.tags": [
-    "TODO",
-    "FIXME",
-    "HACK",
-    "NOTE"
-  ],
-  "todo-tree.defaultHighlight": {
-    "type": "text",
-    "foreground": "black",
-    "background": "#6F6F70"
-  },
-  "window.newWindowDimensions": "inherit",
-  "window.restoreFullscreen": true,
-  "workbench.activityBar.visible": false,
-  "editor.hover.delay": 50,
-  "editor.cursorBlinking": "solid",
-  "search.showLineNumbers": true,
-  "extensions.ignoreRecommendations": true,
-  "extensions.autoUpdate": true,
-  "extensions.showRecommendationsOnlyOnDemand": true,
-  "window.menuBarVisibility": "hidden",
-  "workbench.statusBar.feedback.visible": false,
-  "gitlens.mode.statusBar.enabled": false,
-  "gitlens.statusBar.enabled": false,
-  "C_Cpp.default.cppStandard": "c++11",
-  "C_Cpp.default.cStandard": "c99",
-  "multiCommand.commands": [
-    {
-      "command": "multiCommand.openFileAndCloseSideBar",
-      "sequence": [
-        "list.select"
-      ]
+    "workbench.iconTheme": "vscode-great-icons",
+    "gitlens.advanced.messages": {
+        "suppressCommitHasNoPreviousCommitWarning": false,
+        "suppressCommitNotFoundWarning": false,
+        "suppressFileNotUnderSourceControlWarning": false,
+        "suppressGitVersionWarning": false,
+        "suppressLineUncommittedWarning": false,
+        "suppressNoRepositoryWarning": false,
+        "suppressResultsExplorerNotice": false,
+        "suppressShowKeyBindingsNotice": true,
+        "suppressUpdateNotice": false,
+        "suppressWelcomeNotice": true
     },
-    {
-      "command": "multiCommand.saveAndEnterCommand",
-      "sequence": [
-        "workbench.action.files.save",
-        "extension.vim_escape"
-      ]
-    }
-  ],
-  "terminal.integrated.fontFamily": "source code pro",
-  "terminal.integrated.shell.windows": "C:\\Program Files\\Git\\bin\\bash.exe",
-  "terminal.integrated.scrollback": 5000,
-  "terminal.integrated.shell.linux": "/bin/zsh",
-  "keyboard.dispatch": "keyCode",
-  "vim.cursorStylePerMode.normal": "block-outline",
-  "vim.camelCaseMotion.enable": true,
-  "vim.hlsearch": true,
-  "vim.normalModeKeyBindingsNonRecursive": [
-    // {
-    //   "before": ["<C-n>"],
-    //   "commands": [":nohl"]
-    // },
-    {
-      "before": [
-        "<C-h>"
-      ],
-      "commands": [
-        "editor.action.addSelectionToNextFindMatch",
-        "editor.action.startFindReplaceAction"
-      ]
+    "files.associations": {
+        "*.cu": "c",
+        "*.tdd": "makefile",
+        "*.cfg": "tcl",
+        "*.svd": "xml",
+        "*.emProject": "xml",
+        "*.emSession": "xml",
+        "*.hpp": "cpp",
+        "*.ks": "shellscript",
+        "*.rasi": "css"
     },
-    // {
-    //     "before": [
-    //         "j"
-    //     ],
-    //     "after": [
-    //         "g",
-    //         "j"
-    //     ]
-    // },
-    // {
-    //     "before": [
-    //         "k"
-    //     ],
-    //     "after": [
-    //         "g",
-    //         "k"
-    //     ]
-    // },
-    {
-      "before": [
-        "leader",
-        "leader",
-        "W"
-      ],
-      "after": [
-        "leader",
-        "leader",
-        "b"
-      ]
+    "workbench.startupEditor": "newUntitledFile",
+    "window.zoomLevel": 1,
+    "python.formatting.provider": "autopep8",
+    "gitlens.keymap": "chorded",
+    "editor.minimap.enabled": false,
+    "editor.wordWrap": "bounded",
+    "workbench.colorTheme": "Monokai Pro",
+    "pasteImage.path": "${currentFileDir}/image",
+    "editor.quickSuggestionsDelay": 2,
+    "[markdown]": {
+        "editor.wordWrap": "on",
+        "editor.quickSuggestions": true
     },
-    {
-      "before": [
-        "leader",
-        "leader",
-        "E"
-      ],
-      "after": [
-        "leader",
-        "leader",
-        "g",
-        "e"
-      ]
-    }
-  ],
-  "vim.visualModeKeyBindingsNonRecursive": [
-    // {
-    //   "before": ["<C-n>"],
-    //   "commands": [":nohl"]
-    // },
-    {
-      "before": [
-        "<C-h>"
-      ],
-      "commands": [
-        "editor.action.addSelectionToNextFindMatch",
-        "editor.action.startFindReplaceAction"
-      ]
-    }
-  ],
-  "editor.tabCompletion": "on",
-  "path-autocomplete.triggerOutsideStrings": true,
-  "editor.lineNumbers": "relative",
-  "vim.sneak": true,
-  "vim.iskeyword": "`~!@#$%^&*()-=+[{]}\\|;:'\",.<>/?",
-  "vim.leader": "<space>",
-  "vim.useCtrlKeys": false,
-  "vim.handleKeys": {
-    "<C-d>": true,
-    // "<C-n>": true,
-    "<C-h>": true
-  },
-  "editor.wordSeparators": "`~!@#$%^&*()-=+[{]}\\|;:'\",.<>/?",
-  "editor.smoothScrolling": true,
-  "scrolloff.scrolloff": 10,
-  "terminal.integrated.commandsToSkipShell": [
-    "workbench.action.openEditorAtIndex1",
-    "workbench.action.openEditorAtIndex2",
-    "workbench.action.openEditorAtIndex3",
-    "workbench.action.openEditorAtIndex4",
-    "workbench.action.openEditorAtIndex5",
-    "workbench.action.openEditorAtIndex6",
-    "multiCommand.saveAndEnterCommand",
-    "workbench.action.openRecent",
-    "workbench.files.action.focusFilesExplorer",
-    "workbench.view.extensions",
-    "workbench.view.scm",
-    "workbench.action.gotoSymbol"
-  ],
-  "editor.wordWrapColumn": 100,
-  "vim.easymotion": true,
-  "vim.easymotionMarkerFontFamily": "source code pro",
-  "vim.easymotionMarkerWidthPerChar": 13,
-  "vim.easymotionMarkerHeight": 16,
-  "vim.easymotionMarkerForegroundColorTwoChar": "7bd88f",
-  "vim.easymotionMarkerBackgroundColor": "orange",
-  "workbench.editor.labelFormat": "short",
-  "workbench.settings.openDefaultSettings": false,
-  "breadcrumbs.enabled": true,
-  //   "breadcrumbs.filePath": "off",
-  "latex-workshop.view.pdf.viewer": "tab",
-  "workbench.editor.closeEmptyGroups": false,
-  "terminal.integrated.cursorStyle": "line",
-  "editor.cursorStyle": "underline",
-  "C_Cpp.autocomplete": "Disabled",
-  "C_Cpp.default.intelliSenseMode": "gcc-x64",
-  "C_Cpp.errorSquiggles": "Disabled",
-  "saveAndRun": {
-    "commands": [
-      {
-        "match": "\\CMakeLists.txt$",
-        "cmd": "cmake-format -i ${file}",
-        "useShortcut": false,
-        "silent": true
-      }
-    ]
-  },
-  "c-cpp-flylint.flexelint.enable": false,
-  "files.autoSaveDelay": 1,
-  "C_Cpp.updateChannel": "Insiders",
-  "workbench.tree.indent": 18,
-  "githd.blameView.enabled": false,
-  "gitlens.codeLens.recentChange.enabled": false,
-  "gitlens.advanced.quickPick.closeOnFocusOut": false,
-  "gitlens.blame.heatmap.location": "left",
-  "gitlens.blame.highlight.enabled": false,
-  "gitlens.codeLens.includeSingleLineSymbols": true,
-  "gitlens.hovers.currentLine.changes": false,
-  "gitlens.hovers.avatars": false,
-  "gitlens.hovers.currentLine.details": false,
-  "editor.foldingStrategy": "indentation",
-  "fold.level": 10,
-  "bookmarks.showCommandsInContextMenu": false,
-  "bookmarks.saveBookmarksInProject": false,
-  "workbench.sideBar.location": "left",
-  "[typescript]": {
-    "editor.defaultFormatter": "vscode.typescript-language-features"
-  },
-  "markdown.extension.tableFormatter.enabled": false,
-  "markdown.extension.toc.updateOnSave": false
+    "html.autoClosingTags": false,
+    "markdown.preview.doubleClickToSwitchToEditor": false,
+    "editor.tokenColorCustomizations": {
+        "textMateRules": [
+            {
+                "scope": "log.error",
+                "settings": {
+                    "foreground": "#af1f1f",
+                    "fontStyle": "bold"
+                }
+            },
+            {
+                "scope": "log.warning",
+                "settings": {
+                    "foreground": "#f4ad42",
+                    "fontStyle": ""
+                }
+            },
+            {
+                "scope": "log.info",
+                "settings": {
+                    "foreground": "#42f4e5",
+                    "fontStyle": ""
+                }
+            }
+        ]
+    },
+    "C_Cpp.clang_format_fallbackStyle": "LLVM",
+    "C_Cpp.loggingLevel": "Information",
+    "git.autofetch": true,
+    "logFileHighlighter.customPatterns": [
+        {
+            "pattern": "\\[(.*?)\\]",
+            "foreground": "#98f442"
+        }
+    ],
+    "doxdocgen.generic.authorTag": "@author Khoi Trinh",
+    "editor.detectIndentation": false,
+    "go.formatTool": "gofmt",
+    "workbench.editor.enablePreview": false,
+    "workbench.tips.enabled": false,
+    "go.autocompleteUnimportedPackages": true,
+    "window.titleBarStyle": "native",
+    "editor.fontFamily": "source code pro",
+    "editor.fontSize": 16,
+    "todo-tree.highlightDelay": 0,
+    "todo-tree.showCountsInTree": true,
+    "todo-tree.tags": [
+        "TODO",
+        "FIXME",
+        "HACK",
+        "NOTE"
+    ],
+    "todo-tree.defaultHighlight": {
+        "type": "text",
+        "foreground": "black",
+        "background": "#6F6F70"
+    },
+    "window.newWindowDimensions": "inherit",
+    "window.restoreFullscreen": true,
+    "workbench.activityBar.visible": false,
+    "editor.hover.delay": 50,
+    "editor.cursorBlinking": "solid",
+    "search.showLineNumbers": true,
+    "extensions.ignoreRecommendations": true,
+    "extensions.autoUpdate": true,
+    "extensions.showRecommendationsOnlyOnDemand": true,
+    "window.menuBarVisibility": "hidden",
+    "workbench.statusBar.feedback.visible": false,
+    "gitlens.mode.statusBar.enabled": false,
+    "gitlens.statusBar.enabled": false,
+    "C_Cpp.default.cppStandard": "c++11",
+    "C_Cpp.default.cStandard": "c99",
+    "multiCommand.commands": [
+        {
+            "command": "multiCommand.openFileAndCloseSideBar",
+            "sequence": [
+                "list.select"
+            ]
+        },
+        {
+            "command": "multiCommand.saveAndEnterCommand",
+            "sequence": [
+                "workbench.action.files.save",
+                "extension.vim_escape"
+            ]
+        }
+    ],
+    "terminal.integrated.fontFamily": "source code pro",
+    "terminal.integrated.shell.windows": "C:\\Program Files\\Git\\bin\\bash.exe",
+    "terminal.integrated.scrollback": 5000,
+    "terminal.integrated.shell.linux": "/bin/zsh",
+    "keyboard.dispatch": "keyCode",
+    "vim.cursorStylePerMode.normal": "block-outline",
+    "vim.camelCaseMotion.enable": true,
+    "vim.hlsearch": true,
+    "vim.normalModeKeyBindingsNonRecursive": [
+        // {
+        //   "before": ["<C-n>"],
+        //   "commands": [":nohl"]
+        // },
+        {
+            "before": [
+                "<C-h>"
+            ],
+            "commands": [
+                "editor.action.addSelectionToNextFindMatch",
+                "editor.action.startFindReplaceAction"
+            ]
+        },
+        // {
+        //     "before": [
+        //         "leader",
+        //         "f"
+        //     ],
+        //     "commands": [
+        //         "actions.find"
+        //     ]
+        // },
+        // {
+        //     "before": [
+        //         "leader",
+        //         "F"
+        //     ],
+        //     "commands": [
+        //         "workbench.action.findInFiles"
+        //     ]
+        // },
+        // {
+        //     "before": [
+        //         "j"
+        //     ],
+        //     "after": [
+        //         "g",
+        //         "j"
+        //     ]
+        // },
+        // {
+        //     "before": [
+        //         "k"
+        //     ],
+        //     "after": [
+        //         "g",
+        //         "k"
+        //     ]
+        // },
+        {
+            "before": [
+                "leader",
+                "leader",
+                "W"
+            ],
+            "after": [
+                "leader",
+                "leader",
+                "b"
+            ]
+        },
+        {
+            "before": [
+                "leader",
+                "leader",
+                "E"
+            ],
+            "after": [
+                "leader",
+                "leader",
+                "g",
+                "e"
+            ]
+        }
+    ],
+    "vim.visualModeKeyBindingsNonRecursive": [
+        // {
+        //   "before": ["<C-n>"],
+        //   "commands": [":nohl"]
+        // },
+        {
+            "before": [
+                "<C-h>"
+            ],
+            "commands": [
+                "editor.action.addSelectionToNextFindMatch",
+                "editor.action.startFindReplaceAction"
+            ]
+        }
+    ],
+    "editor.tabCompletion": "on",
+    "path-autocomplete.triggerOutsideStrings": true,
+    "editor.lineNumbers": "relative",
+    "vim.sneak": true,
+    "vim.iskeyword": "`~!@#$%^&*()-=+[{]}\\|;:'\",.<>/?",
+    "vim.leader": "<space>",
+    "vim.useCtrlKeys": false,
+    "vim.handleKeys": {
+        "<C-d>": true,
+        // "<C-n>": true,
+        "<C-h>": true
+    },
+    "editor.wordSeparators": "`~!@#$%^&*()-=+[{]}\\|;:'\",.<>/?",
+    "editor.smoothScrolling": true,
+    "scrolloff.scrolloff": 10,
+    "terminal.integrated.commandsToSkipShell": [
+        "workbench.action.openEditorAtIndex1",
+        "workbench.action.openEditorAtIndex2",
+        "workbench.action.openEditorAtIndex3",
+        "workbench.action.openEditorAtIndex4",
+        "workbench.action.openEditorAtIndex5",
+        "workbench.action.openEditorAtIndex6",
+        "multiCommand.saveAndEnterCommand",
+        "workbench.action.openRecent",
+        "workbench.files.action.focusFilesExplorer",
+        "workbench.view.extensions",
+        "workbench.view.scm",
+        "workbench.action.gotoSymbol"
+    ],
+    "editor.wordWrapColumn": 100,
+    "vim.easymotion": true,
+    "vim.easymotionMarkerFontFamily": "source code pro",
+    "vim.easymotionMarkerWidthPerChar": 13,
+    "vim.easymotionMarkerHeight": 16,
+    "vim.easymotionMarkerForegroundColorTwoChar": "7bd88f",
+    "vim.easymotionMarkerBackgroundColor": "orange",
+    "workbench.editor.labelFormat": "short",
+    "workbench.settings.openDefaultSettings": false,
+    "breadcrumbs.enabled": true,
+    //   "breadcrumbs.filePath": "off",
+    "latex-workshop.view.pdf.viewer": "tab",
+    "workbench.editor.closeEmptyGroups": false,
+    "terminal.integrated.cursorStyle": "line",
+    "editor.cursorStyle": "underline",
+    "C_Cpp.autocomplete": "Disabled",
+    "C_Cpp.default.intelliSenseMode": "gcc-x64",
+    "C_Cpp.errorSquiggles": "Disabled",
+    "saveAndRun": {
+        "commands": [
+            {
+                "match": "\\CMakeLists.txt$",
+                "cmd": "cmake-format -i ${file}",
+                "useShortcut": false,
+                "silent": true
+            }
+        ]
+    },
+    "c-cpp-flylint.flexelint.enable": false,
+    "files.autoSaveDelay": 1,
+    "C_Cpp.updateChannel": "Insiders",
+    "workbench.tree.indent": 18,
+    "githd.blameView.enabled": false,
+    "gitlens.codeLens.recentChange.enabled": false,
+    "gitlens.advanced.quickPick.closeOnFocusOut": false,
+    "gitlens.blame.heatmap.location": "left",
+    "gitlens.blame.highlight.enabled": false,
+    "gitlens.codeLens.includeSingleLineSymbols": true,
+    "gitlens.hovers.currentLine.changes": false,
+    "gitlens.hovers.avatars": false,
+    "gitlens.hovers.currentLine.details": false,
+    "editor.foldingStrategy": "indentation",
+    "fold.level": 10,
+    "bookmarks.showCommandsInContextMenu": false,
+    "bookmarks.saveBookmarksInProject": false,
+    "workbench.sideBar.location": "left",
+    "[typescript]": {
+        "editor.defaultFormatter": "vscode.typescript-language-features"
+    },
+    "markdown.extension.tableFormatter.enabled": false,
+    "markdown.extension.toc.updateOnSave": false
 }

@@ -1548,5 +1548,20 @@
     {
         "key": "ctrl+q",
         "command": "workbench.action.terminal.toggleTerminal"
+    },
+    {
+        "key": "Escape",
+        "command": "workbench.action.toggleSidebarVisibility",
+        "when": "filesExplorerFocus || searchViewletFocus || activeViewlet == 'workbench.view.scm'"
+    },
+    {
+        "key": "Tab",
+        "command": "search.action.focusSearchList",
+        "when": "!replaceActive && searchViewletFocus"
+    },
+    {
+        "key": "Shift+Tab",
+        "command": "workbench.view.search.focus",
+        "when": "searchViewletFocus"
     }
 ]
