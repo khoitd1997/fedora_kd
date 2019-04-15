@@ -310,6 +310,7 @@ local function custom_viewnext()
     check_focus_delayed_screen(s)
 end
 
+
 globalkeys =
     gears.table.join(
     awful.key({modkey, "Shift"}, "s", hotkeys_popup.show_help, {description = "show help", group = "awesome"}),
@@ -324,7 +325,7 @@ globalkeys =
             while 1 do
                 local c = client.focus
                 if c then
-                    if c.class == "xpad" then
+                    if c.floating then
                         awful.client.focus.global_bydirection("right") 
                     else
                         c:raise()
@@ -369,7 +370,7 @@ globalkeys =
             while 1 do
                 local c = client.focus
                 if c then
-                    if c.class == "xpad" then
+                    if c.floating then
                         awful.client.focus.global_bydirection("left") 
                     else
                         c:raise()
