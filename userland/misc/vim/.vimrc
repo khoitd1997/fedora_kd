@@ -104,20 +104,27 @@ endif
 
 "vimplug plugins
 call plug#begin('~/.vim/plugged')
+if has('nvim')
+  Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+  "Plug 'shougo/denite.nvim', { 'do': ':UpdateRemotePlugins' }
+endif
+Plug 'jeetsukumaran/vim-buffergator'
+Plug 'junegunn/fzf.vim'
 Plug 'sheerun/vim-polyglot'
 Plug 'joshdick/onedark.vim'
 Plug 'vim-airline/vim-airline'
 Plug 'easymotion/vim-easymotion'
 Plug 'tpope/vim-fugitive'
-Plug 'takac/vim-hardtime'
+"Plug 'takac/vim-hardtime'
 Plug 'tpope/vim-surround'
 Plug 'Chiel92/vim-autoformat'
-Plug 'scrooloose/syntastic'
+"Plug 'scrooloose/syntastic'
 Plug 'scrooloose/nerdcommenter'
 Plug 'morhetz/gruvbox'
 Plug 'enricobacis/vim-airline-clock'
 Plug 'justinmk/vim-sneak'
 call plug#end()
+let g:deoplete#enable_at_startup = 1
 
 "color scheme
 syntax enable
@@ -154,6 +161,28 @@ nnoremap <M-K> yypk
 nnoremap <c-j> <c-d>
 nnoremap <c-k> <c-u>
 
+"fzf mapping
+nnoremap <c-p> :FZF<cr>
+
+"buffer mapping
+map <M-1> <Plug>AirlineSelectTab1
+map <M-2> <Plug>AirlineSelectTab2
+map <M-3> <Plug>AirlineSelectTab3
+map <M-4> <Plug>AirlineSelectTab4
+map <M-5> <Plug>AirlineSelectTab5
+map <M-6> <Plug>AirlineSelectTab6
+map <M-7> <Plug>AirlineSelectTab7
+map <M-8> <Plug>AirlineSelectTab8
+map <M-9> <Plug>AirlineSelectTab9
+map <c-w> :bd<CR>
+
+"buffer switching
+
+"deoplete mapping
+inoremap <expr> <M-j> pumvisible() ? "\<C-n>" :':m .+1<CR>=='
+inoremap <expr> <M-k> pumvisible() ? "\<C-p>" :':m .-2<CR>=='
+inoremap <expr> <CR> pumvisible() ? "\<C-y>" :'<CR>'
+
 "folding settings
 set foldenable
 set foldmethod=syntax
@@ -177,3 +206,8 @@ nnoremap <c-z> :u<CR>
 inoremap <c-z> <c-o>:u<CR>
 
 set clipboard=unnamedplus
+
+"buffer config
+let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#tabline#fnamemod = ':t'
+let g:airline#extensions#tabline#buffer_idx_mode = 1
