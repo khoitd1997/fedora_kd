@@ -108,6 +108,7 @@ if has('nvim')
   Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
   "Plug 'shougo/denite.nvim', { 'do': ':UpdateRemotePlugins' }
 endif
+Plug 'luochen1990/rainbow'
 Plug 'jeetsukumaran/vim-buffergator'
 Plug 'junegunn/fzf.vim'
 Plug 'sheerun/vim-polyglot'
@@ -125,6 +126,8 @@ Plug 'enricobacis/vim-airline-clock'
 Plug 'justinmk/vim-sneak'
 call plug#end()
 let g:deoplete#enable_at_startup = 1
+
+let g:rainbow_active = 1
 
 "color scheme
 syntax enable
