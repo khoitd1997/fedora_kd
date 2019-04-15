@@ -74,18 +74,22 @@
   ],
   "doxdocgen.generic.authorTag": "@author Khoi Trinh",
   "editor.detectIndentation": false,
-"go.formatTool": "gofmt",
+  "go.formatTool": "gofmt",
   "workbench.editor.enablePreview": false,
   "workbench.tips.enabled": false,
   "workbench.editor.enablePreviewFromQuickOpen": false,
-  "editor.formatOnPaste": true,
   "go.autocompleteUnimportedPackages": true,
   "window.titleBarStyle": "native",
   "editor.fontFamily": "source code pro",
   "editor.fontSize": 16,
   "todo-tree.highlightDelay": 0,
   "todo-tree.showCountsInTree": true,
-  "todo-tree.tags": ["TODO", "FIXME", "HACK", "NOTE"],
+  "todo-tree.tags": [
+    "TODO",
+    "FIXME",
+    "HACK",
+    "NOTE"
+  ],
   "todo-tree.defaultHighlight": {
     "type": "text",
     "foreground": "black",
@@ -109,11 +113,16 @@
   "multiCommand.commands": [
     {
       "command": "multiCommand.openFileAndCloseSideBar",
-      "sequence": ["list.select"]
+      "sequence": [
+        "list.select"
+      ]
     },
     {
       "command": "multiCommand.saveAndEnterCommand",
-      "sequence": ["workbench.action.files.save", "extension.vim_escape"]
+      "sequence": [
+        "workbench.action.files.save",
+        "extension.vim_escape"
+      ]
     }
   ],
   "terminal.integrated.fontFamily": "source code pro",
@@ -130,7 +139,9 @@
     //   "commands": [":nohl"]
     // },
     {
-      "before": ["<C-h>"],
+      "before": [
+        "<C-h>"
+      ],
       "commands": [
         "editor.action.addSelectionToNextFindMatch",
         "editor.action.startFindReplaceAction"
@@ -155,12 +166,29 @@
     //     ]
     // },
     {
-      "before": ["leader", "leader", "W"],
-      "after": ["leader", "leader", "b"]
+      "before": [
+        "leader",
+        "leader",
+        "W"
+      ],
+      "after": [
+        "leader",
+        "leader",
+        "b"
+      ]
     },
     {
-      "before": ["leader", "leader", "E"],
-      "after": ["leader", "leader", "g", "e"]
+      "before": [
+        "leader",
+        "leader",
+        "E"
+      ],
+      "after": [
+        "leader",
+        "leader",
+        "g",
+        "e"
+      ]
     }
   ],
   "vim.visualModeKeyBindingsNonRecursive": [
@@ -169,7 +197,9 @@
     //   "commands": [":nohl"]
     // },
     {
-      "before": ["<C-h>"],
+      "before": [
+        "<C-h>"
+      ],
       "commands": [
         "editor.action.addSelectionToNextFindMatch",
         "editor.action.startFindReplaceAction"
@@ -250,8 +280,10 @@
   "fold.level": 10,
   "bookmarks.showCommandsInContextMenu": false,
   "bookmarks.saveBookmarksInProject": false,
-"workbench.sideBar.location": "left",
-"[typescript]": {
-	"editor.defaultFormatter": "vscode.typescript-language-features"
-}
+  "workbench.sideBar.location": "left",
+  "[typescript]": {
+    "editor.defaultFormatter": "vscode.typescript-language-features"
+  },
+  "markdown.extension.tableFormatter.enabled": false,
+  "markdown.extension.toc.updateOnSave": false
 }
