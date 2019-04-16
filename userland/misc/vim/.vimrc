@@ -32,6 +32,8 @@ nnoremap <silent> <ESC><ESC> :nohlsearch<CR>
 "format and change to normal on ctrl-s save
 nmap <c-s> :w<CR>
 imap <c-s> <Esc>:w<CR>
+
+"format on save
 au BufWrite * :Autoformat
 
 "NERDCommenter stuffs
@@ -131,12 +133,16 @@ Plug 'scrooloose/nerdcommenter'
 Plug 'morhetz/gruvbox'
 Plug 'enricobacis/vim-airline-clock'
 Plug 'justinmk/vim-sneak'
+Plug 'yggdroot/indentline'
+Plug 'nathanaelkane/vim-indent-guides'
 
 "Plug 'scrooloose/syntastic'
 "Plug 'takac/vim-hardtime'
 "Plug 'neoclide/coc.nvim', {'do': { -> coc#util#install()}}
 call plug#end()
 
+let g:indentLine_enabled = 1
+let g:indent_guides_enable_on_vim_startup = 1
 let g:deoplete#enable_at_startup = 1
 let g:rainbow_active = 1
 
@@ -246,8 +252,10 @@ set hidden
 set nobackup
 set nowritebackup
 set cmdheight=2
-set shortmess+=c
 set signcolumn=yes
+
+set list lcs=tab:\|\ "space at the end
+set list
 
 set completeopt=menu,noinsert
 
@@ -286,3 +294,7 @@ let g:multi_cursor_use_default_mapping=0
 let g:multi_cursor_start_word_key      = '<C-d>'
 let g:multi_cursor_next_key            = '<C-d>'
 let g:multi_cursor_quit_key            = '<Esc>'
+
+"let g:indent_guides_auto_colors = 0
+"hi IndentGuidesOdd  ctermbg=grey
+"hi IndentGuidesEven ctermbg=darkgrey
