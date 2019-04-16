@@ -164,3 +164,6 @@ SPACESHIP_PROMPT_ORDER=(
 export GROFF_NO_SGR=1
 
 export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
+
+alias vim="nvim"
+alias vi="nvim"
