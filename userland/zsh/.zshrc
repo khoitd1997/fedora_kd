@@ -162,3 +162,5 @@ SPACESHIP_PROMPT_ORDER=(
   char          # Prompt character
 )
 export GROFF_NO_SGR=1
+
+export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"

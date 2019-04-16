@@ -106,8 +106,15 @@ endif
 call plug#begin('~/.vim/plugged')
 if has('nvim')
   Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+  Plug 'autozimu/LanguageClient-neovim', {
+      \ 'branch': 'next',
+      \ 'do': 'bash install.sh',
+      \ }
+      
   "Plug 'shougo/denite.nvim', { 'do': ':UpdateRemotePlugins' }
 endif
+Plug 'terryma/vim-multiple-cursors'
+Plug 'jiangmiao/auto-pairs'
 Plug 'luochen1990/rainbow'
 Plug 'jeetsukumaran/vim-buffergator'
 Plug 'junegunn/fzf.vim'
@@ -116,17 +123,20 @@ Plug 'joshdick/onedark.vim'
 Plug 'vim-airline/vim-airline'
 Plug 'easymotion/vim-easymotion'
 Plug 'tpope/vim-fugitive'
-"Plug 'takac/vim-hardtime'
+Plug 'tpope/vim-vinegar'
 Plug 'tpope/vim-surround'
 Plug 'Chiel92/vim-autoformat'
-"Plug 'scrooloose/syntastic'
 Plug 'scrooloose/nerdcommenter'
 Plug 'morhetz/gruvbox'
 Plug 'enricobacis/vim-airline-clock'
 Plug 'justinmk/vim-sneak'
-call plug#end()
-let g:deoplete#enable_at_startup = 1
 
+"Plug 'scrooloose/syntastic'
+"Plug 'takac/vim-hardtime'
+"Plug 'neoclide/coc.nvim', {'do': { -> coc#util#install()}}
+call plug#end()
+
+let g:deoplete#enable_at_startup = 1
 let g:rainbow_active = 1
 
 "color scheme
@@ -158,11 +168,20 @@ inoremap <M-k> <Esc>:m .-2<CR>==gi
 
 nnoremap <M-l> <C-W><C-L>
 nnoremap <M-h> <C-W><C-H>
+
+map <C-\> :vsplit<enter>
+
+"alt-shift-j,k to duplicate line
 nnoremap <M-J> yyp
 nnoremap <M-K> yypk
+inoremap <M-J> <ESC>yypi
+inoremap <M-K> <ESC>yypki
 
 nnoremap <c-j> <c-d>
 nnoremap <c-k> <c-u>
+
+"vinegar binding
+autocmd FileType netrw nmap <buffer> <esc> <C-^>
 
 "fzf mapping
 nnoremap <c-p> :FZF<cr>
@@ -214,3 +233,55 @@ set clipboard=unnamedplus
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#fnamemod = ':t'
 let g:airline#extensions#tabline#buffer_idx_mode = 1
+
+"set tab completion
+set wildmode=longest,list,full
+set wildmenu
+"verbose imap <tab>
+inoremap <expr><TAB> pumvisible() ? "<C-y>" : "<TAB>"
+
+"coc nvim settings
+set hidden
+set nobackup
+set nowritebackup
+set cmdheight=2
+set shortmess+=c
+set signcolumn=yes
+
+set completeopt=menu,noinsert
+
+autocmd! CompleteDone * if pumvisible() == 0 | pclose | endif
+"autocmd CursorHold * silent call CocActionAsync('highlight')
+"nnoremap <silent> <space>o  :<C-u>CocList outline<cr>
+
+"let g:coc_global_extensions = [
+"    \ 'coc-pairs',
+"    \ 'coc-lists',
+"    \ 'coc-dictionary',
+"    \ 'coc-html',
+"    \ 'coc-css',
+"    \ 'coc-tsserver',
+"    \ 'coc-json',
+"    \ 'coc-yaml',
+"    \ 'coc-snippets',
+"    \ 'coc-python',
+"    \ 'coc-rls',
+"    \]
+
+"language server settings
+let g:LanguageClient_serverCommands = {
+    \ 'python': ['pyls'],
+    \ 'cpp': ['clangd'],
+    \ }
+nnoremap <silent> <C-r> :call LanguageClient#textDocument_hover()<CR>
+nnoremap <silent> <C-o> :call LanguageClient_textDocument_documentSymbol()<CR>
+nnoremap <silent> ' :call LanguageClient#textDocument_definition()<CR>
+
+"highlight word under cursor
+:autocmd CursorMoved * exe printf('match IncSearch /\V\<%s\>/', escape(expand('<cword>'), '/\'))
+
+"multicursor
+let g:multi_cursor_use_default_mapping=0
+let g:multi_cursor_start_word_key      = '<C-d>'
+let g:multi_cursor_next_key            = '<C-d>'
+let g:multi_cursor_quit_key            = '<Esc>'
