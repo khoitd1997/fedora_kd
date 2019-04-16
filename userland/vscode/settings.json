@@ -146,6 +146,14 @@
                 "editor.action.startFindReplaceAction"
             ]
         },
+        {
+            "before": [
+                "-"
+            ],
+            "commands": [
+                "workbench.files.action.focusFilesExplorer"
+            ]
+        },
         // {
         //     "before": [
         //         "leader",
@@ -164,15 +172,50 @@
         //         "workbench.action.findInFiles"
         //     ]
         // },
-        // {
-        //     "before": [
-        //         "j"
-        //     ],
-        //     "after": [
-        //         "g",
-        //         "j"
-        //     ]
-        // },
+        {
+            "before": [
+                "j"
+            ],
+            "after": [
+                "j"
+            ],
+            "commands":[
+                "editor.action.wordHighlight.trigger"
+            ]
+        },
+        {
+            "before": [
+                "k"
+            ],
+            "after": [
+                "k"
+            ],
+            "commands":[
+                "editor.action.wordHighlight.trigger"
+            ]
+        },
+        {
+            "before": [
+                "l"
+            ],
+            "after": [
+                "l"
+            ],
+            "commands":[
+                "editor.action.wordHighlight.trigger"
+            ]
+        },
+        {
+            "before": [
+                "h"
+            ],
+            "after": [
+                "h"
+            ],
+            "commands":[
+                "editor.action.wordHighlight.trigger"
+            ]
+        },
         // {
         //     "before": [
         //         "k"
@@ -304,5 +347,9 @@
     "markdown.extension.tableFormatter.enabled": false,
 	"markdown.extension.toc.updateOnSave": false,
 	"vim.enableNeovim": true,
-	"vim.neovimPath": "/usr/bin/nvim"
+    "vim.neovimPath": "/usr/bin/nvim",
+    "explorer.autoReveal": true,
+    "[json]": {
+        "editor.defaultFormatter": "vscode.json-language-features"
+    }
 }
