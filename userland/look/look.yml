@@ -4,6 +4,9 @@
     - include: awesome/awesome.yml
     - name: configure gnome terminal
       shell: sh {{ playbook_dir }}/look/gnome-terminal/configure_gnome_terminal.sh
+      tags:
+        - terminal
+        - gnome-terminal
 
   tags:
     - look
