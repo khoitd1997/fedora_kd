@@ -1379,10 +1379,6 @@
         "command": "workbench.action.increaseViewSize"
     },
     {
-        "key": "ctrl+shift+o",
-        "command": "workbench.action.files.openFile"
-    },
-    {
         "key": "ctrl+o",
         "command": "-workbench.action.files.openFile"
     },
@@ -1563,5 +1559,13 @@
         "key": "Shift+Tab",
         "command": "workbench.view.search.focus",
         "when": "searchViewletFocus"
+    },
+    {
+        "key": "ctrl+shift+o",
+        "command": "workbench.action.showAllSymbols"
+    },
+    {
+        "key": "ctrl+t",
+        "command": "-workbench.action.showAllSymbols"
     }
 ]

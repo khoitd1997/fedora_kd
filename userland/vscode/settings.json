@@ -293,7 +293,8 @@
         "workbench.files.action.focusFilesExplorer",
         "workbench.view.extensions",
         "workbench.view.scm",
-        "workbench.action.gotoSymbol"
+		"workbench.action.gotoSymbol",
+		"workbench.view.debug"
     ],
     "editor.wordWrapColumn": 100,
     "vim.easymotion": true,
@@ -351,5 +352,6 @@
     "explorer.autoReveal": true,
     "[json]": {
         "editor.defaultFormatter": "vscode.json-language-features"
-    }
+    },
+    "editor.largeFileOptimizations": false
 }

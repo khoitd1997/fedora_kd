@@ -41,6 +41,8 @@ ninja-build
 
 # cli
 neovim
+strace
+simplescreenrecorder
 moreutils
 jq
 ripgrep
