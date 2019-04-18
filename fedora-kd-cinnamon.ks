@@ -1,7 +1,7 @@
 %include fedora-kickstarts/fedora-live-cinnamon.ks
 %include fedora-kd-base.ks
 
-part / --size=12588
+part / --size=13588
 
 %post
 

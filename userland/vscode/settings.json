@@ -353,5 +353,6 @@
     "[json]": {
         "editor.defaultFormatter": "vscode.json-language-features"
     },
-    "editor.largeFileOptimizations": false
+    "editor.largeFileOptimizations": false,
+    "latex-workshop.message.update.show": false
 }

@@ -31,6 +31,7 @@ cmake
 valgrind
 gcc
 clang
+clang-tools-extra
 llvm
 cppcheck
 clang-analyzer

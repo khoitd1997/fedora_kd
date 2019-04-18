@@ -1,14 +1,23 @@
+# TODO(kd): Support including toml file
+# TODO(kd): Give more detailed errors for missing/invalid keys
+# TODO(kd): Add look customizations like greeter, plymouth
+
 # build options
 [build]
 mock_env_fedora_version = "29"
+mock_env_fedora_arch= "x86_64"
 image_fedora_version = "29"
+image_fedora_arch = "x86_64"
 base_kickstart_tag="latest" # can also be value like "0.29.2"
 os_name="fedora-kd" # also name of your main kickstart
-post_script_dir="post_script.sh"
+first_login_script_dir="first_login.sh"
+post_build_script_dir="post_script.sh"
+included_files=["path_to_dir1", "path_to_dir2"] # will be put in /usr/share/hatter_user_file
 
 # define list of repos
 # $releasever and $basearch will be replaced when doing build
-[[repo]]
+# TODO(kd): optimize for common case like rpmfusion, google-repo, nvidia
+[[repo_list]]
 name="rpmfusion-free-updates"
 display_name="RPM Fusion for Fedora $releasever - Free - Updates" 
 enabled=true
@@ -16,8 +25,9 @@ metalink="https://mirrors.rpmfusion.org/metalink?repo=free-fedora-updates-releas
 baseurl="http://download1.rpmfusion.org/free/fedora/updates/$releasever/$basearch/"
 gpgcheck=true
 gpgkey="file:///etc/pki/rpm-gpg/RPM-GPG-KEY-rpmfusion-free-fedora-$releasever"
+install=true
 
-[[repo]]
+[[repo_list]]
 name="rpmfusion-free"
 display_name="RPM Fusion for Fedora $releasever - Free" 
 enabled=true
@@ -25,29 +35,46 @@ metalink="https://mirrors.rpmfusion.org/metalink?repo=free-fedora-$releasever&ar
 baseurl="http://download1.rpmfusion.org/free/fedora/releases/$releasever/Everything/$basearch/os/"
 gpgcheck=true
 gpgkey="file:///etc/pki/rpm-gpg/RPM-GPG-KEY-rpmfusion-free-fedora-$releasever"
+install=true
 
-# define package and package groups to include/exclude
+# define multiple types of packages to be included
 [package]
 
-    [package.include]
-    packages=[
-    "moreutils",
-    "jq",
-    "ripgrep",
-    "gnome-terminal"
+    [rpm]
+# TODO(kd): Make sure parsing is optional for this section
+        [rpm.include]
+        packages=[
+        "moreutils",
+        "jq",
+        "ripgrep",
+        "gnome-terminal"
+        ]
+
+        groups=[
+        "@multimedia",
+        "@sound-and-video"
+        ]
+
+        [rpm.exclude]
+        packages=[
+            "gnome-calculator"
+        ]
+
+        groups=[
+        ]
+    
+    [snap]
+    include=[
     ]
 
-    groups=[
-    "@multimedia",
-    "@sound-and-video"
+    exclude=[
     ]
 
-    [package.exclude]
-    packages=[
-        "gnome-calculator"
+    [flatpak]
+    include=[
     ]
 
-    groups=[
+    exclude=[
     ]
 
 [misc]
