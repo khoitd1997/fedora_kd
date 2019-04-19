@@ -39,6 +39,8 @@ iwyu
 libasan
 libubsan
 ninja-build
+boost
+boost-devel
 
 # cli
 neovim

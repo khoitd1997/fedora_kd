@@ -112,7 +112,7 @@ if has('nvim')
       \ 'branch': 'next',
       \ 'do': 'bash install.sh',
       \ }
-      
+
   "Plug 'shougo/denite.nvim', { 'do': ':UpdateRemotePlugins' }
 endif
 Plug 'terryma/vim-multiple-cursors'
@@ -298,3 +298,6 @@ let g:multi_cursor_quit_key            = '<Esc>'
 "let g:indent_guides_auto_colors = 0
 "hi IndentGuidesOdd  ctermbg=grey
 "hi IndentGuidesEven ctermbg=darkgrey
+if has("autocmd")
+  au BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$") | exe "normal! g`\"" | endif
+endif
