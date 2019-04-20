@@ -172,3 +172,22 @@ alias vi="nvim"
 export FZF_DEFAULT_COMMAND='fd --type f'
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 
+if [[ -n $DISPLAY ]]; then
+  x-copy-region-as-kill () {
+    zle copy-region-as-kill
+    print -rn -- "$CUTBUFFER" | xsel -ib
+  }
+  x-kill-region () {
+    zle kill-region
+    print -rn -- "$CUTBUFFER" | xsel -ib
+  }
+  x-copy-region() {
+    zle vi-yank-whole-line
+	print -rn -- "$CUTBUFFER" | xsel -ib
+  }
+  zle -N x-copy-region-as-kill
+  zle -N x-kill-region
+  zle -N x-copy-region
+  bindkey '\C-u' x-kill-region
+  bindkey '\C-i' x-copy-region
+fi

@@ -29,9 +29,10 @@ let g:mapleader = "\<Space>"
 
 nnoremap <silent> <ESC><ESC> :nohlsearch<CR>
 
-"format and change to normal on ctrl-s save
-nmap <c-s> :w<CR>
-imap <c-s> <Esc>:w<CR>
+" format and change to normal on ctrl-s save
+noremap <silent> <C-S>          :update<CR>
+vnoremap <silent> <C-S>         <C-C>:update<CR><Esc>
+inoremap <silent> <C-S>         <C-O>:update<CR><Esc>
 
 "format on save
 au BufWrite * :Autoformat
@@ -234,7 +235,7 @@ au FocusGained,BufEnter * :checktime
 nnoremap <c-z> :u<CR>
 inoremap <c-z> <c-o>:u<CR>
 
-set clipboard=unnamedplus
+" set clipboard=unnamedplus
 
 "buffer config
 let g:airline#extensions#tabline#enabled = 1
@@ -301,3 +302,10 @@ let g:multi_cursor_quit_key            = '<Esc>'
 if has("autocmd")
   au BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$") | exe "normal! g`\"" | endif
 endif
+
+augroup HiglightTODO
+    autocmd!
+    autocmd WinEnter,VimEnter * :silent! call matchadd('Todo', 'TODO', -1)
+    autocmd WinEnter,VimEnter * :silent! call matchadd('Fixme', 'FIXME', -1)
+    autocmd WinEnter,VimEnter * :silent! call matchadd('Hack', 'HACK', -1)
+augroup END
