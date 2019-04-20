@@ -189,5 +189,5 @@ if [[ -n $DISPLAY ]]; then
   zle -N x-kill-region
   zle -N x-copy-region
   bindkey '\C-u' x-kill-region
-  bindkey '\C-i' x-copy-region
+  bindkey '\C-o' x-copy-region
 fi
