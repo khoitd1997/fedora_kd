@@ -311,7 +311,6 @@
     "workbench.editor.closeEmptyGroups": false,
     "terminal.integrated.cursorStyle": "line",
     "editor.cursorStyle": "underline",
-    "C_Cpp.autocomplete": "Disabled",
     "C_Cpp.default.intelliSenseMode": "gcc-x64",
     "C_Cpp.errorSquiggles": "Disabled",
     "saveAndRun": {
@@ -354,5 +353,6 @@
         "editor.defaultFormatter": "vscode.json-language-features"
     },
     "editor.largeFileOptimizations": false,
-    "latex-workshop.message.update.show": false
+    "latex-workshop.message.update.show": false,
+
 }
