@@ -66,6 +66,9 @@ ranger
 tldr
 the_silver_searcher
 neofetch
+ncdu
+tig
+iftop
 task
 autojump
 fd-find
