@@ -7,7 +7,7 @@ extension_theme=" monokai.theme-monokai-pro-vscode  vscode-icons-team.vscode-ico
 extension_dropped=" vsciot-vscode.vscode-arduino"
 
 # programing languages
-extension_cpp=" ms-vscode.cpptools hars.cppsnippets twxs.cmake mitaki28.vscode-clang "
+extension_cpp=" ms-vscode.cpptools hars.cppsnippets twxs.cmake "
 extension_python=" ms-python.python njpwerner.autodocstring "
 extension_java=" redhat.java vscjava.vscode-java-debug naco-siren.gradle-language "
 extension_vhdl=" puorc.awesome-vhdl "
