@@ -179,7 +179,7 @@
             "after": [
                 "j"
             ],
-            "commands":[
+            "commands": [
                 "editor.action.wordHighlight.trigger"
             ]
         },
@@ -190,7 +190,7 @@
             "after": [
                 "k"
             ],
-            "commands":[
+            "commands": [
                 "editor.action.wordHighlight.trigger"
             ]
         },
@@ -201,7 +201,7 @@
             "after": [
                 "l"
             ],
-            "commands":[
+            "commands": [
                 "editor.action.wordHighlight.trigger"
             ]
         },
@@ -212,7 +212,7 @@
             "after": [
                 "h"
             ],
-            "commands":[
+            "commands": [
                 "editor.action.wordHighlight.trigger"
             ]
         },
@@ -235,6 +235,20 @@
                 "leader",
                 "leader",
                 "b"
+            ]
+        },
+        {
+            "before": [
+                "leader",
+                "o"
+            ],
+            "after": [
+                "o",
+                "<Esc>",
+                "k",
+                "O",
+                "<Esc>",
+                "j"
             ]
         },
         {
@@ -293,8 +307,8 @@
         "workbench.files.action.focusFilesExplorer",
         "workbench.view.extensions",
         "workbench.view.scm",
-		"workbench.action.gotoSymbol",
-		"workbench.view.debug"
+        "workbench.action.gotoSymbol",
+        "workbench.view.debug"
     ],
     "editor.wordWrapColumn": 100,
     "vim.easymotion": true,
@@ -345,8 +359,8 @@
         "editor.defaultFormatter": "vscode.typescript-language-features"
     },
     "markdown.extension.tableFormatter.enabled": false,
-	"markdown.extension.toc.updateOnSave": false,
-	"vim.enableNeovim": true,
+    "markdown.extension.toc.updateOnSave": false,
+    "vim.enableNeovim": true,
     "vim.neovimPath": "/usr/bin/nvim",
     "explorer.autoReveal": true,
     "[json]": {
@@ -354,5 +368,5 @@
     },
     "editor.largeFileOptimizations": false,
     "latex-workshop.message.update.show": false,
-
+    "bracketPairColorizer.showBracketsInGutter": true
 }

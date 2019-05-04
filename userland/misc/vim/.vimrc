@@ -121,18 +121,25 @@ Plug 'jiangmiao/auto-pairs'
 Plug 'luochen1990/rainbow'
 Plug 'jeetsukumaran/vim-buffergator'
 Plug 'junegunn/fzf.vim'
+
 Plug 'sheerun/vim-polyglot'
+Plug 'cespare/vim-toml'
+
 Plug 'joshdick/onedark.vim'
 Plug 'vim-airline/vim-airline'
+Plug 'morhetz/gruvbox'
+Plug 'enricobacis/vim-airline-clock'
+
 Plug 'easymotion/vim-easymotion'
+
+" git
 Plug 'junegunn/gv.vim'
 Plug 'tpope/vim-fugitive'
+
 Plug 'tpope/vim-vinegar'
 Plug 'tpope/vim-surround'
 Plug 'Chiel92/vim-autoformat'
 Plug 'scrooloose/nerdcommenter'
-Plug 'morhetz/gruvbox'
-Plug 'enricobacis/vim-airline-clock'
 Plug 'justinmk/vim-sneak'
 Plug 'yggdroot/indentline'
 Plug 'nathanaelkane/vim-indent-guides'
@@ -178,6 +185,9 @@ nnoremap <M-l> <C-W><C-L>
 nnoremap <M-h> <C-W><C-H>
 
 map <C-\> :vsplit<enter>
+
+" Open new line below and above current line
+nnoremap <leader>o o<esc>kO<esc>j
 
 "alt-shift-j,k to duplicate line
 nnoremap <M-J> yyp
@@ -309,3 +319,6 @@ augroup HiglightTODO
     autocmd WinEnter,VimEnter * :silent! call matchadd('Fixme', 'FIXME', -1)
     autocmd WinEnter,VimEnter * :silent! call matchadd('Hack', 'HACK', -1)
 augroup END
+
+let g:vim_markdown_no_extensions_in_markdown = 1
+autocmd BufNewFile,BufFilePre,BufRead *.md set filetype=markdown.pandoc
