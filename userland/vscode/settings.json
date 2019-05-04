@@ -305,6 +305,7 @@
         "multiCommand.saveAndEnterCommand",
         "workbench.action.openRecent",
         "workbench.files.action.focusFilesExplorer",
+        "workbench.action.togglePanelPosition",
         "workbench.view.extensions",
         "workbench.view.scm",
         "workbench.action.gotoSymbol",
