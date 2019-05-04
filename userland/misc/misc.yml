@@ -107,12 +107,16 @@
 
     # - include: xmodmap/xmodmap.yml
 
-    - name: other small misc stuffs
-      command: "{{item}}"
+    - name: generate temp directories
+      shell: "{{item}}"
       with_items:
-        - mkdir -vp ~/temp
+        - mkdir -vp ~/temp/
+        - cp -vr {{ playbook_dir }}/misc/temp_dir_template/* ~/temp
+
       args:
         warn: false
+      tags:
+        - tempdir
 
     - pip:
         name:
