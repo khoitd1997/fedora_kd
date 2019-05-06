@@ -7,6 +7,7 @@
     - name: add desktop file to local user
       shell: "{{item}}"
       with_items:
+        - mkdir -p ~/.local/share/applications
         - cp {{ playbook_dir }}/misc/google-chrome/google-chrome.desktop ~/.local/share/applications/google-chrome.desktop
       become_user: "{{ ansible_user_id }}"
   tags:
