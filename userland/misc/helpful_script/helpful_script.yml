@@ -2,6 +2,7 @@
     - name: linking helpful scripts
       shell: "{{item}}"
       with_items:
+        - mkdir -p ~/.local/bin
         - ln -sfv {{ playbook_dir }}/misc/helpful_script/scripts/* ~/.local/bin
       args:
         warn: false
