@@ -369,5 +369,18 @@
     },
     "editor.largeFileOptimizations": false,
     "latex-workshop.message.update.show": false,
-    "bracketPairColorizer.showBracketsInGutter": true
+    "bracketPairColorizer.showBracketsInGutter": true,
+    "local-history.absolute": true,
+    "local-history.daysLimit": 3,
+    "local-history.enabled": 2,
+    "local-history.exclude": [
+        "**/.history/**",
+        "**/.vscode**",
+        "**/node_modules/**",
+        "**/typings/**",
+        "**/out/**"
+    ],
+    "local-history.path": "${workspaceFolder}/.vscode",
+    "local-history.saveDelay": 2000
+
 }
