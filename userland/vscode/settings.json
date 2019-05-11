@@ -24,7 +24,7 @@
         "*.rasi": "css"
     },
     "workbench.startupEditor": "newUntitledFile",
-    "window.zoomLevel": 1,
+    "window.zoomLevel": 0,
     "python.formatting.provider": "autopep8",
     "gitlens.keymap": "chorded",
     "editor.minimap.enabled": false,

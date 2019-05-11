@@ -67,7 +67,7 @@ COMPLETION_WAITING_DOTS="true"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git zsh-autosuggestions zsh-completions taskwarrior colorize autojump colored-man-pages)
+plugins=(git zsh-autosuggestions zsh-completions colorize autojump colored-man-pages)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -191,3 +191,4 @@ if [[ -n $DISPLAY ]]; then
   bindkey '\C-u' x-kill-region
   bindkey '\C-o' x-copy-region
 fi
+

@@ -46,6 +46,24 @@
       "startup": false
     },
     {
+      "name": "Sleep",
+      "command": "systemctl suspend",
+      "comment": "sleep",
+      "launchInTerminal": "false",
+      "iconPath": "sleep",
+      "type": "Application",
+      "startup": false
+    },
+    {
+      "name": "Hibernate",
+      "command": "systemctl hibernate",
+      "comment": "hibernate",
+      "launchInTerminal": "false",
+      "iconPath": "hibernate",
+      "type": "Application",
+      "startup": false
+    },
+    {
       "name": "Reboot",
       "command": "reboot",
       "comment": "reboot",
