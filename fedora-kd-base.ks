@@ -29,6 +29,7 @@ hyperfine
 qt-creator
 cmake
 valgrind
+perf
 gcc
 clang
 clang-tools-extra

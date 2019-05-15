@@ -75,7 +75,6 @@
     "doxdocgen.generic.authorTag": "@author Khoi Trinh",
     "editor.detectIndentation": false,
     "go.formatTool": "gofmt",
-    "workbench.editor.enablePreview": false,
     "workbench.tips.enabled": false,
     "go.autocompleteUnimportedPackages": true,
     "window.titleBarStyle": "native",
