@@ -24,7 +24,7 @@
         "*.rasi": "css"
     },
     "workbench.startupEditor": "newUntitledFile",
-    "window.zoomLevel": 0,
+    "window.zoomLevel": 1,
     "python.formatting.provider": "autopep8",
     "gitlens.keymap": "chorded",
     "editor.minimap.enabled": false,
@@ -308,6 +308,7 @@
         "workbench.view.extensions",
         "workbench.view.scm",
         "workbench.action.gotoSymbol",
+        "workbench.action.gotoLine",
         "workbench.view.debug"
     ],
     "editor.wordWrapColumn": 100,
@@ -381,5 +382,4 @@
     ],
     "local-history.path": "${workspaceFolder}/.vscode",
     "local-history.saveDelay": 2000
-
 }
