@@ -111,7 +111,7 @@
       shell: "{{item}}"
       with_items:
         - mkdir -vp ~/temp/
-        - cp -vr {{ playbook_dir }}/misc/temp_dir_template/* ~/temp
+        - git clone https://github.com/khoitd1997/test_cpp.git ~/temp/test_cpp
 
       args:
         warn: false
