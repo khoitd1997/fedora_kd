@@ -1,6 +1,6 @@
 #!/bin/bash
 
-extension_general=" CoenraadS.bracket-pair-colorizer webfreak.debug emilast.logfilehighlighter Tyriar.sort-lines oderwat.indent-rainbow rashwell.tcl eugenwiens.bitbake redhat.vscode-yaml Gruntfuggly.todo-tree ibm.output-colorizer compulim.vscode-clock ryuta46.multi-command vscodevim.vim laurenttreguier.rpm-spec bungcip.better-toml ionutvmi.path-autocomplete tickleforce.scrolloff wk-j.save-and-run shakram02.bash-beautify dakara.dakara-foldplus alefragnani.bookmarks ms-vsliveshare.vsliveshare-pack xyz.local-history "
+extension_general=" CoenraadS.bracket-pair-colorizer webfreak.debug emilast.logfilehighlighter Tyriar.sort-lines oderwat.indent-rainbow rashwell.tcl eugenwiens.bitbake redhat.vscode-yaml Gruntfuggly.todo-tree ibm.output-colorizer compulim.vscode-clock ryuta46.multi-command vscodevim.vim laurenttreguier.rpm-spec bungcip.better-toml ionutvmi.path-autocomplete tickleforce.scrolloff wk-j.save-and-run shakram02.bash-beautify dakara.dakara-foldplus alefragnani.bookmarks ms-vsliveshare.vsliveshare-pack xyz.local-history dotjoshjohnson.xml "
 
 extension_theme=" monokai.theme-monokai-pro-vscode  vscode-icons-team.vscode-icons emmanuelbeziat.vscode-great-icons "
 

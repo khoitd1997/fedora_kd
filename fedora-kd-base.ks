@@ -86,6 +86,10 @@ libnsl
 xdotool
 
 # libraries
+gmock 
+gmock-devel
+gtest
+gtest-devel 
 qt-x11
 mesa-libGL-devel
 
