@@ -1561,10 +1561,6 @@
         "when": "searchViewletFocus"
     },
     {
-        "key": "ctrl+shift+o",
-        "command": "workbench.action.showAllSymbols"
-    },
-    {
         "key": "ctrl+t",
         "command": "-workbench.action.showAllSymbols"
     },
