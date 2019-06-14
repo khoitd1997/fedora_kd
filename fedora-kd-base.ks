@@ -108,6 +108,8 @@ pykickstart
 livecd-tools
 
 # gui apps
+kdenlive
+frei0r-plugins
 redshift-gtk
 gnome-disk-utility
 seahorse
