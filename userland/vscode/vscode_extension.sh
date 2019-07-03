@@ -1,8 +1,8 @@
 #!/bin/bash
 
-extension_general=" CoenraadS.bracket-pair-colorizer webfreak.debug emilast.logfilehighlighter Tyriar.sort-lines oderwat.indent-rainbow rashwell.tcl eugenwiens.bitbake redhat.vscode-yaml Gruntfuggly.todo-tree ibm.output-colorizer compulim.vscode-clock ryuta46.multi-command vscodevim.vim laurenttreguier.rpm-spec bungcip.better-toml ionutvmi.path-autocomplete tickleforce.scrolloff wk-j.save-and-run shakram02.bash-beautify dakara.dakara-foldplus alefragnani.bookmarks ms-vsliveshare.vsliveshare-pack xyz.local-history dotjoshjohnson.xml "
+extension_general=" CoenraadS.bracket-pair-colorizer webfreak.debug emilast.logfilehighlighter Tyriar.sort-lines oderwat.indent-rainbow rashwell.tcl eugenwiens.bitbake redhat.vscode-yaml Gruntfuggly.todo-tree ibm.output-colorizer compulim.vscode-clock ryuta46.multi-command vscodevim.vim laurenttreguier.rpm-spec bungcip.better-toml ionutvmi.path-autocomplete tickleforce.scrolloff wk-j.save-and-run shakram02.bash-beautify dakara.dakara-foldplus alefragnani.bookmarks ms-vsliveshare.vsliveshare-pack xyz.local-history dotjoshjohnson.xml ms-vscode-remote.vscode-remote-extensionpack visualstudioexptteam.vscodeintellicode "
 
-extension_theme=" monokai.theme-monokai-pro-vscode  vscode-icons-team.vscode-icons emmanuelbeziat.vscode-great-icons "
+extension_theme=" monokai.theme-monokai-pro-vscode vscode-icons-team.vscode-icons emmanuelbeziat.vscode-great-icons "
 
 extension_dropped=" vsciot-vscode.vscode-arduino"
 
@@ -26,7 +26,7 @@ extension_doxygen=" bbenoist.doxygen cschlosser.doxdocgen "
 extension_arm=" dan-c-underwood.arm marus25.cortex-debug "
 extension_qt=" zhoufeng.pyqt-integration bbenoist.qml "
 extension_web=" formulahendry.auto-close-tag "
-extension_docker=" PeterJausovec.vscode-docker "
+extension_docker=" ms-azuretools.vscode-docker "
 
 #-------------------------------------------------------------------------------------
 
@@ -53,7 +53,14 @@ extension_all="${extension_all}${extension_web}"
 for ext in ${extension_all}
 do
     if ! code --install-extension "${ext}" ; then
-        print_error "Errrors while installing extensions\n"
+        print_error "Errrors while installing extensions for regular\n"
         exit 1
+    fi
+
+    if [ -x "$(command -v code-insiders)" ]; then
+        if ! code-insiders --install-extension "${ext}" ; then
+            print_error "Errrors while installing extensions for insider\n"
+            exit 1
+        fi
     fi
 done
