@@ -9,6 +9,8 @@ alias multi-monitor="xrandr --output DVI-D-0 --auto --output HDMI-0 --auto && xr
 # Path to your oh-my-zsh installation.
 export ZSH="${HOME}/.oh-my-zsh"
 export QT_QPA_PLATFORMTHEME=qt5ct
+export SPACESHIP_DIR_TRUNC=0
+export SPACESHIP_DIR_TRUNC_REPO=false
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
@@ -146,7 +148,6 @@ SPACESHIP_PROMPT_ORDER=(
   user          # Username section
   dir           # Current directory section
   git           # Git section (git_branch + git_status)
-  golang        # Go section
   rust          # Rust section
   docker        # Docker section
   aws           # Amazon Web Services section
@@ -154,7 +155,6 @@ SPACESHIP_PROMPT_ORDER=(
   conda         # conda virtualenv section
   pyenv         # Pyenv section
   dotnet        # .NET section
-  kubecontext   # Kubectl context section
   exec_time     # Execution time
   line_sep      # Line break
   jobs          # Background jobs indicator
@@ -167,6 +167,7 @@ export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
 
 alias vim="nvim"
 alias vi="nvim"
+alias code="code-insiders"
 
 # Setting fd as the default source for fzf
 export FZF_DEFAULT_COMMAND='fd --type f'

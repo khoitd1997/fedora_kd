@@ -52,7 +52,7 @@ extension_all="${extension_all}${extension_web}"
 
 for ext in ${extension_all}
 do
-    if ! code --install-extension "${ext}" ; then
+    if ! command code --install-extension "${ext}" ; then
         print_error "Errrors while installing extensions for regular\n"
         exit 1
     fi

@@ -13,7 +13,7 @@ else
     vscode_insider_config_dir="$APPDATA/Code - Insiders/User"
 fi
 
-code&
+command code&
 sleep 5
 
 # copy Visual Studdio Code setting file and keybinding file
