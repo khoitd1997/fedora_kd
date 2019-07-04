@@ -168,6 +168,7 @@ export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
 alias vim="nvim"
 alias vi="nvim"
 alias code="code-insiders"
+alias cmake_clean="cmake --build . --target clean"
 
 # Setting fd as the default source for fzf
 export FZF_DEFAULT_COMMAND='fd --type f'
