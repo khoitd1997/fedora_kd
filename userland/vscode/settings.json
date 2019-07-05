@@ -23,9 +23,10 @@
         "*.ks": "shellscript",
         "*.rasi": "css",
         "*.in": "cmake",
+        "conanfile.txt": "toml"
     },
     "workbench.startupEditor": "newUntitledFile",
-    "window.zoomLevel": 1,
+    "window.zoomLevel": -1,
     "python.formatting.provider": "autopep8",
     "gitlens.keymap": "chorded",
     "editor.minimap.enabled": false,
@@ -339,6 +340,9 @@
             }
         ]
     },
+    "C_Cpp.default.includePath": [
+        "~/.conan/data"
+    ],
     "c-cpp-flylint.flexelint.enable": false,
     "files.autoSaveDelay": 1,
     "C_Cpp.updateChannel": "Insiders",
@@ -438,5 +442,8 @@
             "name": "Vue Green",
             "value": "#42b883"
         }
-    ]
+    ],
+    "workbench.tree.renderIndentGuides": "always",
+    "editor.suggestSelection": "first",
+    "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
 }
