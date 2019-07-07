@@ -366,8 +366,7 @@
     },
     "markdown.extension.tableFormatter.enabled": false,
     "markdown.extension.toc.updateOnSave": false,
-    "vim.enableNeovim": true,
-    "vim.neovimPath": "/usr/bin/nvim",
+    "vim.neovimPath": "",
     "explorer.autoReveal": true,
     "[json]": {
         "editor.defaultFormatter": "vscode.json-language-features"
