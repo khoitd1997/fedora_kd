@@ -8,9 +8,9 @@ OS="$(uname -s)"
 if [ "${OS}" == "Linux" ]; then
     vscode_config_dir="${HOME}/.config/Code/User"
     vscode_insider_config_dir="${HOME}/.config/Code - Insiders/User"
-elif [ "${OS}" == "Darwin" ]; then
+elif [ "${OS}" = "Darwin" ]; then
     vscode_config_dir="$HOME/Library/Application Support/Code/User"
-    vscode_insider_config_dir="$HOME/Library/Application Support/Code - Insiders"
+    vscode_insider_config_dir="$HOME/Library/Application Support/Code - Insiders/User"
 else
     vscode_config_dir="$APPDATA/Code/User"
     vscode_insider_config_dir="$APPDATA/Code - Insiders/User"
@@ -23,7 +23,7 @@ sleep 5
 ln -sfv ${currDir}/settings.json "${vscode_config_dir}/settings.json"
 ln -sfv ${currDir}/keybindings.json "${vscode_config_dir}/keybindings.json"
 
-if [ -x "$(command -v code-insiders)" ]; then
+if [ -x "$(command -v code-insiders)" ] || [ "${OS}" = "Darwin" ]; then
     code-insiders&
     sleep 5
     ln -sfv ${currDir}/settings.json "${vscode_insider_config_dir}/settings.json"

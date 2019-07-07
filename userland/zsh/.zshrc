@@ -1,4 +1,5 @@
 # If you come from bash you might have to change your $PATH.# export PATH=$HOME/bin:/usr/local/bin:$PATH
+OS="$(uname -s)"
 
 # switching monitor mode custom command, will need adjustment when
 # changing physical arrangements
@@ -69,7 +70,7 @@ COMPLETION_WAITING_DOTS="true"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git zsh-autosuggestions zsh-completions colorize autojump colored-man-pages)
+plugins=(git zsh-autosuggestions zsh-completions colorize colored-man-pages)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -116,10 +117,12 @@ TMOUT=300
 bindkey '^ ' autosuggest-accept
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
+if [ "${OS}" != "Darwin" ]; then
 if [ -f "/etc/debian_version" ]; then
 source /usr/share/autojump/autojump.sh
 else
 source /usr/share/fzf/shell/key-bindings.zsh
+fi
 fi
 
 PATH=$PATH:${GOPATH//://bin:}/bin
@@ -141,7 +144,9 @@ stty start undef
 stty stop undef
 setopt noflowcontrol
 
+if [ "$(uname -s)" != "Darwin" ]; then
 source /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+fi
 
 SPACESHIP_PROMPT_ORDER=(
   time          # Time stamps section
@@ -163,7 +168,14 @@ SPACESHIP_PROMPT_ORDER=(
 )
 export GROFF_NO_SGR=1
 
+if [ "${OS}" != "Darwin" ]; then
 export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
+fi
+
+if [ "${OS}" = "Darwin" ]; then
+export PATH="$PATH:/Applications/Visual Studio Code.app/Contents/Resources/app/bin"
+export PATH="$PATH:/Applications/Visual Studio Code - Insiders.app/Contents/Resources/app/bin"
+fi
 
 alias vim="nvim"
 alias vi="nvim"
