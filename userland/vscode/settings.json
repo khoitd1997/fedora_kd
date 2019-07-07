@@ -26,7 +26,7 @@
         "conanfile.txt": "toml"
     },
     "workbench.startupEditor": "newUntitledFile",
-    "window.zoomLevel": -1,
+    "window.zoomLevel": 0,
     "python.formatting.provider": "autopep8",
     "gitlens.keymap": "chorded",
     "editor.minimap.enabled": false,
@@ -448,4 +448,8 @@
     "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
     "terminal.integrated.rendererType": "dom",
     "python.jediEnabled": false,
+    "remote.SSH.defaultExtensions": [
+        "eamodio.gitlens",
+        "ms-vscode.cpptools"
+    ]
 }
