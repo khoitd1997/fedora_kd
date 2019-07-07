@@ -1191,7 +1191,7 @@
         "when": "inQuickOpen && inRecentFilesPicker"
     },
     {
-        "key": "alt+j",
+        "key": "ctrl+p",
         "command": "workbench.action.quickOpenNavigateNextInFilePicker",
         "when": "inFilesPicker && inQuickOpen"
     },
@@ -1244,6 +1244,10 @@
         "key": "cmd+k",
         "command": "workbench.action.quickOpenNavigatePreviousInFilePicker",
         "when": "inFilesPicker && inQuickOpen"
+    },
+    {
+        "key": "ctrl+cmd+o",
+        "command": "workbench.action.openRecent"
     },
     {
         "key": "ctrl+alt+o",
@@ -2057,5 +2061,18 @@
     {
         "key": "shift+cmd+b",
         "command": "-workbench.action.tasks.build"
+    },
+    {
+        "key": "ctrl+p",
+        "command": "workbench.action.quickOpen"
+    },
+    {
+        "key": "cmd+p",
+        "command": "-workbench.action.quickOpen"
+    },
+    {
+        "key": "cmd+p",
+        "command": "-workbench.action.quickOpenNavigateNextInFilePicker",
+        "when": "inFilesPicker && inQuickOpen"
     }
 ]
