@@ -86,6 +86,7 @@ libnsl
 xdotool
 
 # libraries
+systemd-devel
 gmock 
 gmock-devel
 gtest
