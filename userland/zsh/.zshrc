@@ -179,7 +179,7 @@ fi
 
 alias vim="nvim"
 alias vi="nvim"
-alias code="code-insiders"
+alias code="code"
 alias cmake_clean="cmake --build . --target clean"
 
 # Setting fd as the default source for fzf

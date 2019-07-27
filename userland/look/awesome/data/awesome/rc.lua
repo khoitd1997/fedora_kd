@@ -578,7 +578,7 @@ globalkeys =
         {modkey},
         "m",
         function(c)
-            awful.util.spawn("code-insiders")
+            awful.util.spawn("code")
         end,
         {description = "launch vscode", group = "client"}
     )
@@ -892,7 +892,7 @@ awful.rules.rules = {
     {
         rule_any = {
             class = {
-                "code-insiders"
+                "code"
             }
         },
         properties = {maximized_vertical = false, maximized_horizontal = false},
