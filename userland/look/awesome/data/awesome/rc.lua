@@ -313,6 +313,10 @@ end
 
 globalkeys =
     gears.table.join(
+    awful.key({ }, "#122", function () awful.util.spawn("amixer -D pulse sset Master 5%-") end),
+    awful.key({ }, "#123", function () awful.util.spawn("amixer -D pulse sset Master 5%+") end),
+    awful.key({ }, "#232", function () awful.util.spawn("xbacklight -dec 10") end),
+    awful.key({ }, "#233", function () awful.util.spawn("xbacklight -inc 10") end),
     awful.key({modkey, "Shift"}, "s", hotkeys_popup.show_help, {description = "show help", group = "awesome"}),
     awful.key({modkey}, "Left", custom_viewprev, {description = "view previous", group = "tag"}),
     awful.key({modkey}, "Right", custom_viewnext, {description = "view next", group = "tag"}),
