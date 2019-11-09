@@ -1,6 +1,6 @@
 #!/bin/bash
 
-extension_general=" CoenraadS.bracket-pair-colorizer webfreak.debug emilast.logfilehighlighter Tyriar.sort-lines oderwat.indent-rainbow rashwell.tcl eugenwiens.bitbake redhat.vscode-yaml Gruntfuggly.todo-tree ibm.output-colorizer compulim.vscode-clock ryuta46.multi-command vscodevim.vim laurenttreguier.rpm-spec bungcip.better-toml ionutvmi.path-autocomplete tickleforce.scrolloff wk-j.save-and-run shakram02.bash-beautify dakara.dakara-foldplus alefragnani.bookmarks ms-vsliveshare.vsliveshare-pack xyz.local-history dotjoshjohnson.xml ms-vscode-remote.vscode-remote-extensionpack visualstudioexptteam.vscodeintellicode jack89ita.copy-filename sirtobi.code-clip-ring ryu1kn.partial-diff "
+extension_general=" CoenraadS.bracket-pair-colorizer webfreak.debug emilast.logfilehighlighter oderwat.indent-rainbow rashwell.tcl eugenwiens.bitbake redhat.vscode-yaml Gruntfuggly.todo-tree ibm.output-colorizer compulim.vscode-clock ryuta46.multi-command vscodevim.vim laurenttreguier.rpm-spec bungcip.better-toml ionutvmi.path-autocomplete wk-j.save-and-run dakara.dakara-foldplus alefragnani.bookmarks ms-vsliveshare.vsliveshare-pack dotjoshjohnson.xml ms-vscode-remote.vscode-remote-extensionpack visualstudioexptteam.vscodeintellicode jack89ita.copy-filename ryu1kn.partial-diff "
 
 extension_theme=" monokai.theme-monokai-pro-vscode vscode-icons-team.vscode-icons emmanuelbeziat.vscode-great-icons "
 
@@ -21,7 +21,7 @@ extension_md=" mushan.vscode-paste-image DavidAnson.vscode-markdownlint yzhang.m
 extension_latex=" james-yu.latex-workshop "
 
 # tools
-extension_git=" eamodio.gitlens donjayamanne.githistory huizhou.githd github.vscode-pull-request-github felipecaputo.git-project-manager mhutchie.git-graph "
+extension_git=" eamodio.gitlens donjayamanne.githistory github.vscode-pull-request-github mhutchie.git-graph "
 extension_doxygen=" bbenoist.doxygen cschlosser.doxdocgen "
 extension_arm=" dan-c-underwood.arm marus25.cortex-debug "
 extension_qt=" zhoufeng.pyqt-integration bbenoist.qml "
