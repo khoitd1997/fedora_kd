@@ -11,7 +11,7 @@
       shell: "{{item}}"
       become: true
       with_items:
-        - cp {{ playbook_dir }}/misc/helpful_script/auto_turnoff.sh /etc/profile.d/auto_turnoff.sh
+        - cp {{ playbook_dir }}/misc/helpful_script/auto_turnoff.sh /etc/profile.d
       args:
         warn: false
   tags:
