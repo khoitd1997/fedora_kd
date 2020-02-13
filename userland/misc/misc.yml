@@ -24,18 +24,6 @@
             path: /etc/sysctl.conf
             line: "fs.inotify.max_user_watches=524288"
 
-        - name: configure geo clue
-          blockinfile:
-            path: /etc/geoclue/geoclue.conf
-            marker: "# {mark} redshift geoclue permission"
-            block: |
-              [redshift]
-              allowed=true
-              system=false
-              users=
-          tags:
-            - geoclue
-
         - name: configure pam login
           blockinfile:
             path: /etc/pam.d/login
@@ -117,6 +105,16 @@
         warn: false
       tags:
         - tempdir
+
+    - name: configure redshift
+      shell: "{{item}}"
+      with_items:
+        - ln -sfv {{ playbook_dir }}/misc/redshift/redshift.conf ~/.config/redshift.conf
+
+      args:
+        warn: false
+      tags:
+        - redshift
 
     - pip:
         name:

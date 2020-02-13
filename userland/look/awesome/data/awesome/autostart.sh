@@ -27,7 +27,7 @@ run nm-applet
 run dropbox start -i
 run lxqt-powermanagement
 run volumeicon
-run redshift-gtk -l 34.052235:-118.243683
+run redshift-gtk
 run dnfdragora-updater
 run /usr/bin/seapplet
 run autokey-gtk
