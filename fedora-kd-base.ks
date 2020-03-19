@@ -76,6 +76,7 @@ fd-find
 fzf
 hub
 git
+git-credential-libsecret
 nano
 dnf-automatic
 openconnect
