@@ -1,13 +1,13 @@
 #!/bin/bash
 
-extension_general=" CoenraadS.bracket-pair-colorizer webfreak.debug emilast.logfilehighlighter oderwat.indent-rainbow rashwell.tcl eugenwiens.bitbake redhat.vscode-yaml Gruntfuggly.todo-tree ibm.output-colorizer compulim.vscode-clock ryuta46.multi-command vscodevim.vim laurenttreguier.rpm-spec bungcip.better-toml ionutvmi.path-autocomplete wk-j.save-and-run dakara.dakara-foldplus alefragnani.bookmarks ms-vsliveshare.vsliveshare-pack dotjoshjohnson.xml ms-vscode-remote.vscode-remote-extensionpack visualstudioexptteam.vscodeintellicode jack89ita.copy-filename ryu1kn.partial-diff chrmarti.regex streetsidesoftware.code-spell-checker grapecity.gc-excelviewer aaron-bond.better-comments gaborv.flatbuffers bierner.color-info mkxml.vscode-filesize kisstkondoros.vscode-gutter-preview sleistner.vscode-fileutils sirtobi.code-clip-ring "
+extension_general=" CoenraadS.bracket-pair-colorizer webfreak.debug emilast.logfilehighlighter oderwat.indent-rainbow rashwell.tcl eugenwiens.bitbake redhat.vscode-yaml Gruntfuggly.todo-tree ibm.output-colorizer compulim.vscode-clock ryuta46.multi-command vscodevim.vim laurenttreguier.rpm-spec bungcip.better-toml ionutvmi.path-autocomplete wk-j.save-and-run dakara.dakara-foldplus alefragnani.bookmarks ms-vsliveshare.vsliveshare-pack ms-vscode-remote.vscode-remote-extensionpack visualstudioexptteam.vscodeintellicode jack89ita.copy-filename ryu1kn.partial-diff streetsidesoftware.code-spell-checker grapecity.gc-excelviewer aaron-bond.better-comments gaborv.flatbuffers bierner.color-info kisstkondoros.vscode-gutter-preview sleistner.vscode-fileutils "
 
 extension_theme=" monokai.theme-monokai-pro-vscode vscode-icons-team.vscode-icons emmanuelbeziat.vscode-great-icons "
 
 extension_dropped=" vsciot-vscode.vscode-arduino"
 
 # programing languages
-extension_cpp=" ms-vscode.cpptools hars.cppsnippets twxs.cmake ms-vscode.cmake-tools "
+extension_cpp=" ms-vscode.cpptools hars.cppsnippets twxs.cmake asabil.meson "
 extension_csharp=" ms-vscode.csharp "
 extension_python=" ms-python.python njpwerner.autodocstring ms-pyright.pyright "
 extension_java=" redhat.java vscjava.vscode-java-debug naco-siren.gradle-language "
@@ -22,7 +22,7 @@ extension_latex=" james-yu.latex-workshop "
 
 # tools
 extension_git=" eamodio.gitlens donjayamanne.githistory github.vscode-pull-request-github mhutchie.git-graph "
-extension_doxygen=" bbenoist.doxygen cschlosser.doxdocgen "
+extension_doxygen=" cschlosser.doxdocgen "
 extension_arm=" dan-c-underwood.arm marus25.cortex-debug "
 extension_qt=" zhoufeng.pyqt-integration bbenoist.qml "
 extension_web=" formulahendry.auto-close-tag formulahendry.auto-rename-tag vincaslt.highlight-matching-tag "
