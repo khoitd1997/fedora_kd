@@ -7,11 +7,11 @@
       args:
         warn: false
 
-    - name: set up privileged scripts
-      shell: "{{item}}"
-      become: true
-      with_items:
-      args:
-        warn: false
+    # - name: set up privileged scripts
+    #   shell: "{{item}}"
+    #   become: true
+    #   with_items:
+    #   args:
+    #     warn: false
   tags:
     - helpful_script
