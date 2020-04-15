@@ -41,6 +41,8 @@
             - systemctl enable --now dnf-automatic.timer
             - systemctl enable --now dnf-makecache.timer
             - printf "\nkeepcache=True\n" >> /etc/dnf/dnf.conf
+          tags:
+            - no_ci
 
         - name: set inotify limit
           lineinfile:
