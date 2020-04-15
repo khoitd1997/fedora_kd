@@ -7,7 +7,7 @@ jobs:
       - checkout
       - run: 
           name: Install Build Tools
-          command: dnf install ansible -y
+          command: dnf install ansible nc -y
       - run:
           name: Run Build
           command: ./userland/setup.sh
