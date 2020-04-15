@@ -1,5 +1,5 @@
 - block:
-    - name: update system and enable repo
+    - name: update system, enable repo and install packages
       shell: "{{item}}"
       with_items:
         - dnf install -q -y fedora-workstation-repositories
@@ -12,13 +12,7 @@
         - dnf config-manager --set-enabled rpmfusion-nonfree rpmfusion-nonfree-updates
         - dnf groupupdate core -y
         - dnf upgrade -y -q
-      args:
-        warn: false
-
-    - name: install packages
-      shell: "{{item}}"
-      with_items:
-        - ./setup_packages.sh
+        - sh {{ playbook_dir }}/misc/setup_packages.sh
       args:
         warn: false
 
