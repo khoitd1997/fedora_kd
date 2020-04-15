@@ -7,7 +7,7 @@ jobs:
       - checkout
       - run: 
           name: Install Build Tools
-          command: dnf install ansible nc -y
+          command: dnf install ansible nc dnf-plugins-core -y
       - run:
           name: Run Build
           command: export INSIDE_CI=True && ./userland/setup.sh
