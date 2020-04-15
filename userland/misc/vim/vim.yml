@@ -8,6 +8,8 @@
 
     - name: installing vim plugins
       shell: vim +'PlugInstall --sync' +qall &> /dev/null < /dev/tty
+      tags:
+        - no_ci
 
     - name: configuring neovim
       blockinfile:
@@ -18,8 +20,6 @@
           set runtimepath^=~/.vim runtimepath+=~/.vim/after
           let &packpath = &runtimepath
           source ~/.vimrc
-      tags:
-        - no_ci
 
   tags:
       - vim
