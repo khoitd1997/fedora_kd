@@ -1,9 +1,6 @@
 #!/bin/bash
 
 sudo dnf install -q -y \
-    fedora-workstation-repositories \
-    fedora-repos-modular \
-    \
     nautilus-dropbox \
     \
     @development-tools \
