@@ -5,5 +5,6 @@ jobs:
       - image: fedora:latest
     steps:
       - checkout
-      - run: |
-          ls
+      - run: 
+          name: Install Build Tools
+          command: dnf install ansible -y
