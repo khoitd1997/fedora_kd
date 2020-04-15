@@ -1,15 +1,4 @@
 - block:
-    - name: configure non main DE default app handler
-      command: "{{item}}"
-      with_items:
-        - xdg-mime default nautilus.desktop inode/directory
-      args:
-        warn: false
-      when: lookup('env', 'DESKTOP_SESSION') == "i3" or lookup('env', 'DESKTOP_SESSION') == "awesome"
-      tags:
-        - i3
-        - awesome
-
     - name: configure cinnamon default app handler
       command: "{{item}}"
       with_items:
