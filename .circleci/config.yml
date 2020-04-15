@@ -10,4 +10,4 @@ jobs:
           command: dnf install ansible nc dnf-plugins-core -y
       - run:
           name: Run Build
-          command: export INSIDE_CI=True && ./userland/setup.sh
+          command: export INSIDE_CI=True && ./setup.sh

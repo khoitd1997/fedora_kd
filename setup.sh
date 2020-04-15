@@ -13,7 +13,7 @@ read input
 fi
 
 if [ -z "$INSIDE_CI" ]; then
-    ansible-playbook setup.yml --ask-become-pass 
+    ansible-playbook ./userland/setup.yml --ask-become-pass 
 else
-    ansible-playbook setup.yml -b
+    ansible-playbook ./userland/setup.yml -b
 fi
