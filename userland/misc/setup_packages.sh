@@ -132,4 +132,12 @@ sudo dnf install -q -y \
     \
     adobe-source-code-pro-fonts \
     arc-theme \
-    plymouth-plugin-script
+    plymouth-plugin-script \
+    awesome \
+    \
+    lxappearance \
+    qt5ct \
+    \
+    volumeicon \
+    lxqt-powermanagement \
+    udiskie
