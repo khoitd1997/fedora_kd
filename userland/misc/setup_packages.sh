@@ -20,7 +20,6 @@ sudo dnf install -q -y \
     llvm \
     cppcheck \
     clang-analyzer \
-    iwyu \
     libasan \
     libubsan \
     ninja-build \
@@ -88,7 +87,6 @@ sudo dnf install -q -y \
     kernel-headers \
     pylint \
     liveusb-creator \
-    bleachbit \
     gimp \
     vlc \
     konsole \
@@ -104,7 +102,6 @@ sudo dnf install -q -y \
     texlive-collection-xetex \
     \
     gstreamer-plugins-bad \
-    gstreamer-plugins-bad-free-extras \
     gstreamer-plugins-bad-nonfree \
     gstreamer-plugins-ugly \
     gstreamer-ffmpeg \
