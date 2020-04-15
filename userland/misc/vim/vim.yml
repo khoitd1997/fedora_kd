@@ -7,7 +7,7 @@
         warn: false
 
     - name: installing nvim plugins
-      shell: nvim +'PlugInstall --sync' +qall &> /dev/null < /dev/tty
+      shell: nvim +'PlugInstall --sync' +qall 
 
     - name: configuring neovim
       blockinfile:
