@@ -2,7 +2,6 @@
 
 sudo dnf install -q -y \
     ansible \
-    nc \
     dnf-plugins-core \
     rpmfusion-free-release \
     rpmfusion-free-release-tainted \
