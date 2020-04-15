@@ -6,10 +6,8 @@
       args:
         warn: false
 
-    - name: installing vim plugins
-      shell: vim +'PlugInstall --sync' +qall &> /dev/null < /dev/tty
-      tags:
-        - no_ci
+    - name: installing nvim plugins
+      shell: nvim +'PlugInstall --sync' +qall &> /dev/null < /dev/tty
 
     - name: configuring neovim
       blockinfile:
