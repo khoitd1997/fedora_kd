@@ -9,5 +9,5 @@ source ./utils.sh
 if [ -z "$INSIDE_CI" ]; then
     ansible-playbook ./userland/setup.yml --ask-become-pass 
 else
-    ansible-playbook ./userland/setup.yml -b
+    ansible-playbook ./userland/setup.yml -b --skip-tags "no_ci"
 fi

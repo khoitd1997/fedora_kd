@@ -11,6 +11,7 @@
             - hostnamectl set-hostname kd-$(dmidecode -s baseboard-manufacturer | awk '{print $1;}')
           tags:
             - hostname
+            - no_ci
 
         - name: configure misc sudo system stuffs
           shell: "{{item}}"
@@ -18,24 +19,13 @@
             - usermod -a -G dialout "{{ ansible_user_id }}"
             - usermod -a -G mock "{{ ansible_user_id }}"
             - timedatectl set-local-rtc 1 --adjust-system-clock
+          tags:
+            - no_ci
 
         - name: set inotify limit
           lineinfile:
             path: /etc/sysctl.conf
             line: "fs.inotify.max_user_watches=524288"
-
-        - name: configure pam login
-          blockinfile:
-            path: /etc/pam.d/login
-            marker: "# {mark} auto start pam"
-            block: |
-              session    optional     pam_gnome_keyring.so auto_start
-              auth       optional     pam_gnome_keyring.so
-          when: lookup('env', 'DESKTOP_SESSION') == "i3" or lookup('env', 'DESKTOP_SESSION') == "awesome"
-          tags:
-            - i3
-            - awesome
-            - keyring
 
         - include: npm/npm.yml
 
@@ -51,8 +41,6 @@
 
     - include: git.yml
 
-    - include: synapse/synapse.yml
-
     - include: nemo/nemo.yml
 
     - include: launcher_app/launcher_app.yml
@@ -64,8 +52,6 @@
     - include: rofi/rofi.yml
 
     - include: vim/vim.yml
-
-    - include: tmux/tmux.yml
 
     - include: autokey/autokey.yml
 
@@ -119,7 +105,6 @@
           - python-language-server
           - pylint
           - autopep8
-          # - rpm-py-installer
           - cpplint
           - cmake_format
           - pynvim
