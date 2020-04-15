@@ -12,6 +12,8 @@ empty_input_buffer
 read input	
 fi
 
+./setup_deps.sh
+
 if [ -z "$INSIDE_CI" ]; then
     ansible-playbook ./userland/setup.yml --ask-become-pass 
 else

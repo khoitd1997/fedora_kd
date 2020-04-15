@@ -5,9 +5,6 @@ jobs:
       - image: fedora:latest
     steps:
       - checkout
-      - run: 
-          name: Install Build Tools
-          command: dnf install ansible nc dnf-plugins-core -y
       - run:
           name: Run Build
           command: export INSIDE_CI=True && ./setup.sh

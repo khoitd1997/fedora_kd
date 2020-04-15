@@ -14,6 +14,13 @@
         warn: false
 
     - name: install packages
+      shell: "{{item}}"
+      with_items:
+        - ./setup_packages.sh
+      args:
+        warn: false
+
+    - name: install proprietary packages
       dnf:
         enablerepo: google-chrome rpmfusion-nonfree-nvidia-driver
         update_cache: yes
