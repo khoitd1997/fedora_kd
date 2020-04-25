@@ -2,6 +2,10 @@
 
 Khoi Trinh custom fedora config files
 
+## How to use
+
+On a fresh fedora installation, run ```setup.sh```
+
 ## Credits
 
 [OS Logo Made by FreeLogoDesign][1]
