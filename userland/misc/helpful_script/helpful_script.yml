@@ -3,15 +3,24 @@
       shell: "{{item}}"
       with_items:
         - mkdir -p ~/.local/bin
-        - ln -sfv {{ playbook_dir }}/misc/helpful_script/scripts/* ~/.local/bin
+        - ln -sfv {{ playbook_dir }}/misc/helpful_script/scripts/git-st ~/.local/bin
       args:
         warn: false
 
-    # - name: set up privileged scripts
-    #   shell: "{{item}}"
-    #   become: true
-    #   with_items:
-    #   args:
-    #     warn: false
+    - name: set up privileged scripts
+      shell: "{{item}}"
+      become: true
+      with_items:
+        - ln -sfv {{ playbook_dir }}/misc/helpful_script/scripts/auto_turnoff.sh /etc/profile.d/auto_turnoff.sh
+      args:
+        warn: false
+
+    - name: setting up periodic shutdown cron job
+      become: true
+      cron:
+        name: "shutdown periodically"
+        minute: "0"
+        hour: "*/2"
+        job: "/sbin/shutdown -h now"
   tags:
     - helpful_script
