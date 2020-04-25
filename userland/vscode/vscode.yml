@@ -13,26 +13,6 @@
             name: code
             state: latest
       become: true
-      when: ansible_distribution == "Fedora"
-
-    - block:
-        - name: add vscode deb keys
-          shell: "{{item}}"
-          with_items:
-            - curl https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor > microsoft.gpg
-            - install -o root -g root -m 644 microsoft.gpg /etc/apt/trusted.gpg.d/
-            - sh -c 'echo "deb [arch=amd64] https://packages.microsoft.com/repos/vscode stable main" > /etc/apt/sources.list.d/vscode.list'
-          args:
-            warn: false
-
-        - name: install vscode deb package
-          apt:
-            name:
-              - apt-transport-https
-              - code
-            update_cache: yes
-      become: true
-      when: ansible_distribution == "Ubuntu"
 
     - name: install vscode extension
       command: sh "{{ playbook_dir }}/vscode/vscode_extension.sh"

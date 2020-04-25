@@ -1,4 +1,8 @@
 - block:
+    - name: change default shell to zsh
+      command: sed -ie 's:SHELL=/bin/bash:SHELL=/bin/zsh:g' /etc/default/useradd
+      become: true
+
     - name: install oh-my-zsh
       command: "{{item}}"
       with_items:

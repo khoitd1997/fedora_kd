@@ -1,12 +1,71 @@
 - block:
     - include: cinnamon/cinnamon.yml
-    - include: i3/i3.yml
     - include: awesome/awesome.yml
     - name: configure gnome terminal
       shell: sh {{ playbook_dir }}/look/gnome-terminal/configure_gnome_terminal.sh
       tags:
         - terminal
         - gnome-terminal
+    - name: configure slick greeter
+      blockinfile:
+        path: /etc/lightdm/slick-greeter.conf
+        marker: "# {mark} .slick-greeter config"
+        create: yes
+        block: |
+          [Greeter]
+          draw-user-backgrounds=true
+          background=/usr/share/user_file/resource/TCP118v1_by_Tiziano_Consonni.jpg
+          background-color='#2ceb26'
+          logo=/usr/share/user_file/resource/login_logo.png
+          draw-grid=false
+          enable-hidpi='auto'
+          font-name='Noto Sans 11'
+          icon-theme-name='Mint-Y-Aqua'
+          show-hostname=true
+          theme-name='Mint-Y-Dark-Aqua'
+          show-clock=true
+          onscreen-keyboard=false
+      become: true
+
+    - name: configure default desktop env
+      blockinfile:
+        path: /etc/lightdm/lightdm.conf
+        marker: "# {mark} default desktop env config"
+        create: yes
+        block: |
+          [SeatDefaults]
+          user-session=cinnamon
+      become: true
+
+    - name: setting up plymouth
+      block: 
+        - command: mkdir -vp /usr/share/plymouth/themes/boot
+
+        - name: setup plymouth boot
+          blockinfile:
+            path: /usr/share/plymouth/themes/boot/boot.plymouth
+            marker: "# {mark} .plymouth boot config"
+            create: yes
+            block: |
+              [Plymouth Theme]
+              Name=boot
+              Description=Infinite loop rainbow
+              ModuleName=script
+              [script]
+              ImageDir=/usr/share/user_file/plymouth
+              ScriptFile=/usr/share/user_file/plymouth/animation.script
+
+        - name: setup plymouth conf
+          blockinfile:
+            path: /etc/plymouth/plymouthd.conf
+            marker: "# {mark} .plymouth conf config"
+            create: yes
+            block: |
+              ShowDelay=0
+        
+        - command: /usr/sbin/plymouth-set-default-theme boot -R
+
+      become: true
 
   tags:
     - look

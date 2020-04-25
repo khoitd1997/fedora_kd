@@ -315,7 +315,6 @@
     - name: cinnamon python scripts
       command: python3 "{{ playbook_dir }}/look/cinnamon/cinnamon.py"
 
-  when: lookup('env', 'DESKTOP_SESSION') == "cinnamon"
   tags:
     - cinnamon
   become_user: "{{ ansible_user_id }}"
