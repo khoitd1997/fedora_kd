@@ -10,7 +10,6 @@
         - dnf config-manager --set-enabled rpmfusion-nonfree-nvidia-driver google-chrome
         - dnf config-manager --set-enabled rpmfusion-free-updates rpmfusion-free
         - dnf config-manager --set-enabled rpmfusion-nonfree rpmfusion-nonfree-updates
-        - dnf groupupdate core -y
         - dnf upgrade -y -q
         - sh {{ playbook_dir }}/misc/setup_packages.sh
       args:

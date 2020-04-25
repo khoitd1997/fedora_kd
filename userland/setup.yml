@@ -1,4 +1,4 @@
-- hosts: localhost
+- hosts: all
   tasks:
     - include: misc/misc.yml
     - include: zsh/zsh.yml
