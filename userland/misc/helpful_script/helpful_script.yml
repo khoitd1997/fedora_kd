@@ -1,13 +1,13 @@
 - block:
-    - name: linking helpful scripts
+    - name: linking local scripts
       shell: "{{item}}"
       with_items:
         - mkdir -p ~/.local/bin
-        - ln -sfv {{ playbook_dir }}/misc/helpful_script/scripts/git-st ~/.local/bin
+        - ln -sfv {{ playbook_dir }}/misc/helpful_script/scripts/local/* ~/.local/bin
       args:
         warn: false
 
-    - name: set up privileged scripts
+    - name: setting up privileged scripts
       shell: "{{item}}"
       become: true
       with_items:

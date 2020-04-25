@@ -200,3 +200,4 @@ if [[ -n $DISPLAY ]]; then
   bindkey '\C-o' x-copy-region
 fi
 
+tool_reminders.py
