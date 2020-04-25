@@ -221,7 +221,4 @@ exec --no-startup-id udiskie
 
 exec feh --bg-scale /usr/share/user_file/TCP118v1_by_Tiziano_Consonni.jpg
 
-# only until multi screens issues are revoled
-exec xrandr --output DVI-D-0 --auto --output HDMI-0 --off
-
 exec_always python3 ~/.config/i3/autoname_workspace.py &
