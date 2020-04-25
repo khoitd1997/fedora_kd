@@ -6,8 +6,4 @@ source ./utils.sh
 
 ./setup_deps.sh
 
-if [ -z "$INSIDE_CI" ]; then
-    ansible-playbook ./userland/setup.yml --ask-become-pass 
-else
-    ansible-playbook ./userland/setup.yml -b --skip-tags "no_ci"
-fi
+ansible-playbook ./userland/setup.yml --ask-become-pass 

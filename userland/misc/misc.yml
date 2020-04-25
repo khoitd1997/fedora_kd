@@ -17,7 +17,6 @@
             - hostnamectl set-hostname kd-$(dmidecode -s baseboard-manufacturer | awk '{print $1;}')
           tags:
             - hostname
-            - no_ci
 
         - name: configure misc system stuffs
           shell: "{{item}}"
@@ -29,8 +28,6 @@
             - systemctl enable libvirtd
             - passwd -l root
             - rm -vf /usr/share/applications/flameshot.desktop
-          tags:
-            - no_ci
 
         - name: configure dnf
           shell: "{{item}}"
@@ -41,8 +38,6 @@
             - systemctl enable --now dnf-automatic.timer
             - systemctl enable --now dnf-makecache.timer
             - printf "\nkeepcache=True\n" >> /etc/dnf/dnf.conf
-          tags:
-            - no_ci
 
         - name: set inotify limit
           lineinfile:
@@ -63,7 +58,6 @@
         name: America/Los_Angeles
       tags:
         - timezone
-        - no_ci
 
     - include: git.yml
 
