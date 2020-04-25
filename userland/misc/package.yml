@@ -25,7 +25,7 @@
           - google-chrome-stable
           - xorg-x11-drv-nvidia
           - akmod-nvidia
-          - VirtualBox-6.1
+          # - VirtualBox-6.1 # conflict with vagrant
   tags:
     - package
   become: true
