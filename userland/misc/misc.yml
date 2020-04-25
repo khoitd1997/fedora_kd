@@ -124,6 +124,7 @@
         name:
           - python-language-server
           - pylint
+          - wasabi
           - autopep8
           - cpplint
           - cmake_format
