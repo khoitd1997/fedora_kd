@@ -122,6 +122,7 @@ sudo dnf install -q -y \
     @virtualization \
     tigervnc \
     qemu \
+    vagrant \
     \
     zsh \
     zsh-syntax-highlighting \
