@@ -32,6 +32,11 @@ Vagrant.configure('2') do |config|
     config.vm.provision 'shell', inline: 'sudo dnf groupinstall -y "Cinnamon Desktop" && sudo systemctl set-default graphical'
   end
 
+  # dnf cache
+  config.vm.provision 'shell', inline: 'echo "keepcache=1" | sudo tee -a /etc/dnf/dnf.conf'
+  Dir.mkdir('.dnf-cache') unless File.exist?('.dnf-cache')
+  config.vm.synced_folder '.dnf-cache', '/var/cache/dnf', type: 'sshfs' # need sshfs to be bidirectional
+
   config.vm.synced_folder '~/fedora_kd', '/home/vagrant/fedora_kd'
 
   config.vm.provision 'shell', inline: '/bin/sh /home/vagrant/fedora_kd/setup_deps.sh'
