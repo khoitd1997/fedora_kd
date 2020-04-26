@@ -6,6 +6,20 @@ Khoi Trinh custom fedora config files
 
 On a fresh fedora installation, run ```setup.sh```
 
+## Testing the ansible script
+
+```vagrant``` is used to bring up a VM to test the ansible script. The default vscode build task calls the ```vagrant_test.sh``` to do that
+
+Some useful commands:
+
+```shell
+vagrant ssh # helpful for ssh into the VM
+vagrant destroy -f # destroy the current VM
+vagrant up --provider=libvirt # bring up the VM, virtualbox as provider also shows the GUI
+
+ansible-playbook userland/setup.yml --start-at-task="task_name" # good for continuing the playbook after fixing errors
+```
+
 ## Credits
 
 [OS Logo Made by FreeLogoDesign][1]
