@@ -464,5 +464,7 @@
         "HACK",
         "NOTE"
     ],
-    "scm.defaultViewMode": "tree"
+    "scm.defaultViewMode": "tree",
+    "workbench.editor.limit.value": 5,
+    "workbench.editor.limit.enabled": true
 }
