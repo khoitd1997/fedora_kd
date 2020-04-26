@@ -29,6 +29,7 @@ Vagrant.configure('2') do |config|
 
   config.vm.provision 'ansible_local' do |ansible|
     ansible.become = true
+    ansible.limit = "all,localhost"
     ansible.playbook = 'setup.yml'
     ansible.provisioning_path = '/home/vagrant/fedora_kd/userland'
   end
