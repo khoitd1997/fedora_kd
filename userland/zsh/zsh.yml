@@ -1,7 +1,9 @@
 - block:
-    - name: change default shell to zsh
-      command: sed -ie 's:SHELL=/bin/bash:SHELL=/bin/zsh:g' /etc/default/useradd
-      become: true
+    - name: change user shell to zsh
+      become: yes
+      user:
+        name: "{{ ansible_user_id }}"
+        shell: /bin/zsh
 
     - name: install oh-my-zsh
       command: "{{item}}"
