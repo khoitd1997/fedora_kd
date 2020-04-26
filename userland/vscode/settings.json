@@ -1,5 +1,5 @@
 {
-    "workbench.iconTheme": "vscode-great-icons",
+    "workbench.iconTheme": "Monokai Pro (Filter Spectrum) Icons",
     "gitlens.advanced.messages": {
         "suppressCommitHasNoPreviousCommitWarning": false,
         "suppressCommitNotFoundWarning": false,
@@ -450,5 +450,19 @@
     "remote.SSH.defaultExtensions": [
         "eamodio.gitlens",
         "ms-vscode.cpptools"
-    ]
+    ],
+    "todo-tree.highlights.defaultHighlight": {
+        "type": "text",
+        "foreground": "black",
+        "background": "#6F6F70"
+    },
+    "todo-tree.highlights.highlightDelay": 0,
+    "todo-tree.tree.showCountsInTree": true,
+    "todo-tree.general.tags": [
+        "TODO",
+        "FIXME",
+        "HACK",
+        "NOTE"
+    ],
+    "scm.defaultViewMode": "tree"
 }

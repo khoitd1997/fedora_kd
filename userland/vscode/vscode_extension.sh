@@ -1,6 +1,6 @@
 #!/bin/bash
 
-extension_general=" CoenraadS.coenraads.bracket-pair-colorizer-2 webfreak.debug emilast.logfilehighlighter oderwat.indent-rainbow rashwell.tcl eugenwiens.bitbake redhat.vscode-yaml Gruntfuggly.todo-tree ibm.output-colorizer compulim.vscode-clock ryuta46.multi-command vscodevim.vim laurenttreguier.rpm-spec bungcip.better-toml ionutvmi.path-autocomplete wk-j.save-and-run dakara.dakara-foldplus alefragnani.bookmarks ms-vsliveshare.vsliveshare-pack ms-vscode-remote.vscode-remote-extensionpack visualstudioexptteam.vscodeintellicode jack89ita.copy-filename ryu1kn.partial-diff grapecity.gc-excelviewer aaron-bond.better-comments gaborv.flatbuffers bierner.color-info kisstkondoros.vscode-gutter-preview sleistner.vscode-fileutils "
+extension_general=" coenraads.bracket-pair-colorizer-2 webfreak.debug emilast.logfilehighlighter oderwat.indent-rainbow rashwell.tcl eugenwiens.bitbake redhat.vscode-yaml Gruntfuggly.todo-tree ibm.output-colorizer compulim.vscode-clock ryuta46.multi-command vscodevim.vim laurenttreguier.rpm-spec bungcip.better-toml ionutvmi.path-autocomplete wk-j.save-and-run dakara.dakara-foldplus alefragnani.bookmarks ms-vsliveshare.vsliveshare-pack ms-vscode-remote.vscode-remote-extensionpack visualstudioexptteam.vscodeintellicode jack89ita.copy-filename ryu1kn.partial-diff grapecity.gc-excelviewer aaron-bond.better-comments gaborv.flatbuffers bierner.color-info kisstkondoros.vscode-gutter-preview sleistner.vscode-fileutils "
 
 extension_theme=" monokai.theme-monokai-pro-vscode vscode-icons-team.vscode-icons emmanuelbeziat.vscode-great-icons "
 
@@ -8,7 +8,7 @@ extension_dropped=" vsciot-vscode.vscode-arduino"
 
 # programing languages
 extension_cpp=" ms-vscode.cpptools hars.cppsnippets twxs.cmake asabil.meson "
-extension_csharp=" ms-vscode.csharp "
+extension_csharp=" ms-dotnettools.csharp "
 extension_python=" ms-python.python njpwerner.autodocstring ms-pyright.pyright "
 extension_java=" redhat.java vscjava.vscode-java-debug naco-siren.gradle-language "
 extension_vhdl=" puorc.awesome-vhdl "
@@ -56,7 +56,7 @@ do
         print_error "Errrors while installing extensions for regular\n"
         exit 1
     fi
-    
+
     if [ -x "$(command -v code-insiders)" ]; then
         if ! code-insiders --install-extension "${ext}" ; then
             print_error "Errrors while installing extensions for insider\n"

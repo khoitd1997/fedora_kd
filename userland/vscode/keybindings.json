@@ -794,10 +794,6 @@
         "when": "editorTextFocus && !editorReadonly"
     },
     {
-        "key": "ctrl+alt+k",
-        "command": "-code-runner.runCustomCommand"
-    },
-    {
         "key": "ctrl+k ctrl+x",
         "command": "-editor.action.trimTrailingWhitespace",
         "when": "editorTextFocus && !editorReadonly"
@@ -947,11 +943,6 @@
         "key": "ctrl+shift+alt+up",
         "command": "-editor.action.copyLinesUpAction",
         "when": "editorTextFocus && !editorReadonly"
-    },
-    {
-        "key": "Escape",
-        "command": "extension.jumpy-exit",
-        "when": "editorTextFocus && jumpy.isJumpyMode"
     },
     {
         "key": "ctrl+alt+-",
@@ -1111,24 +1102,9 @@
         "when": ""
     },
     {
-        "key": "alt+n",
-        "command": "-C_Cpp.Navigate",
-        "when": "editorTextFocus && editorLangId == 'cpp'"
-    },
-    {
-        "key": "alt+n",
-        "command": "-C_Cpp.Navigate",
-        "when": "editorTextFocus && editorLangId == 'c'"
-    },
-    {
         "key": "escape",
         "command": "closeReferenceSearch",
         "when": "referenceSearchVisible && !config.editor.stablePeek"
-    },
-    {
-        "key": "down",
-        "command": "-outline.focusDownHighlighted",
-        "when": "outlineFiltered && outlineFocused"
     },
     {
         "key": "alt+j",
@@ -1581,10 +1557,6 @@
         "when": "terminalFocus"
     },
     {
-        "key": "ctrl+n",
-        "command": "workbench.action.togglePanelPosition"
-    },
-    {
         "key": "ctrl+.",
         "command": "-editor.action.quickFix",
         "when": "editorHasCodeActionsProvider && editorTextFocus && !editorReadonly"
@@ -1661,16 +1633,6 @@
         "when": "textInputFocus"
     },
     {
-        "key": "ctrl+u",
-        "command": "extension.vim_ctrl+o",
-        "when": "editorTextFocus && vim.active && vim.use<C-o> && !inDebugRepl"
-    },
-    {
-        "key": "ctrl+o",
-        "command": "-extension.vim_ctrl+o",
-        "when": "editorTextFocus && vim.active && vim.use<C-o> && !inDebugRepl"
-    },
-    {
         "key": "ctrl+shift+p",
         "command": "workbench.action.showCommands"
     },
@@ -1744,46 +1706,6 @@
     },
     {
         "key": "ctrl+c",
-        "command": "solutionExplorer.copy",
-        "when": "view == 'solutionExplorer' && viewItem == 'project-file'"
-    },
-    {
-        "key": "cmd+c",
-        "command": "-solutionExplorer.copy",
-        "when": "view == 'solutionExplorer' && viewItem == 'project-file'"
-    },
-    {
-        "key": "ctrl+c",
-        "command": "solutionExplorer.copy",
-        "when": "view == 'solutionExplorer' && viewItem == 'project-folder'"
-    },
-    {
-        "key": "cmd+c",
-        "command": "-solutionExplorer.copy",
-        "when": "view == 'solutionExplorer' && viewItem == 'project-folder'"
-    },
-    {
-        "key": "ctrl+c",
-        "command": "clipring.copyToRing",
-        "when": "editorFocus"
-    },
-    {
-        "key": "cmd+c",
-        "command": "-clipring.copyToRing",
-        "when": "editorFocus"
-    },
-    {
-        "key": "ctrl+c",
-        "command": "editor.action.webvieweditor.copy",
-        "when": "!editorFocus && !inputFocus && activeEditor == 'WebviewEditor'"
-    },
-    {
-        "key": "cmd+c",
-        "command": "-editor.action.webvieweditor.copy",
-        "when": "!editorFocus && !inputFocus && activeEditor == 'WebviewEditor'"
-    },
-    {
-        "key": "ctrl+c",
         "command": "filesExplorer.copy",
         "when": "explorerViewletVisible && filesExplorerFocus && !explorerResourceIsRoot && !inputFocus"
     },
@@ -1831,66 +1753,6 @@
         "key": "cmd+v",
         "command": "-editor.action.clipboardPasteAction",
         "when": "textInputFocus && !editorReadonly"
-    },
-    {
-        "key": "ctrl+v",
-        "command": "solutionExplorer.paste",
-        "when": "view == 'solutionExplorer' && viewItem == 'project-standard'"
-    },
-    {
-        "key": "cmd+v",
-        "command": "-solutionExplorer.paste",
-        "when": "view == 'solutionExplorer' && viewItem == 'project-standard'"
-    },
-    {
-        "key": "ctrl+v",
-        "command": "solutionExplorer.paste",
-        "when": "view == 'solutionExplorer' && viewItem == 'project-cps'"
-    },
-    {
-        "key": "cmd+v",
-        "command": "-solutionExplorer.paste",
-        "when": "view == 'solutionExplorer' && viewItem == 'project-cps'"
-    },
-    {
-        "key": "ctrl+v",
-        "command": "solutionExplorer.paste",
-        "when": "view == 'solutionExplorer' && viewItem == 'project-website'"
-    },
-    {
-        "key": "cmd+v",
-        "command": "-solutionExplorer.paste",
-        "when": "view == 'solutionExplorer' && viewItem == 'project-website'"
-    },
-    {
-        "key": "ctrl+v",
-        "command": "solutionExplorer.paste",
-        "when": "view == 'solutionExplorer' && viewItem == 'project-folder'"
-    },
-    {
-        "key": "cmd+v",
-        "command": "-solutionExplorer.paste",
-        "when": "view == 'solutionExplorer' && viewItem == 'project-folder'"
-    },
-    {
-        "key": "ctrl+v",
-        "command": "editor.action.webvieweditor.paste",
-        "when": "!editorFocus && !inputFocus && activeEditor == 'WebviewEditor'"
-    },
-    {
-        "key": "cmd+v",
-        "command": "-editor.action.webvieweditor.paste",
-        "when": "!editorFocus && !inputFocus && activeEditor == 'WebviewEditor'"
-    },
-    {
-        "key": "ctrl+v",
-        "command": "extension.vim_cmd+v",
-        "when": "editorTextFocus && vim.active && vim.overrideCmdV && vim.use<D-v> && !inDebugRepl"
-    },
-    {
-        "key": "cmd+v",
-        "command": "-extension.vim_cmd+v",
-        "when": "editorTextFocus && vim.active && vim.overrideCmdV && vim.use<D-v> && !inDebugRepl"
     },
     {
         "key": "ctrl+v",
@@ -1984,16 +1846,6 @@
     },
     {
         "key": "ctrl+z",
-        "command": "editor.action.webvieweditor.undo",
-        "when": "!editorFocus && !inputFocus && activeEditor == 'WebviewEditor'"
-    },
-    {
-        "key": "cmd+z",
-        "command": "-editor.action.webvieweditor.undo",
-        "when": "!editorFocus && !inputFocus && activeEditor == 'WebviewEditor'"
-    },
-    {
-        "key": "ctrl+z",
         "command": "undo",
         "when": "textInputFocus && !editorReadonly"
     },
@@ -2011,16 +1863,6 @@
         "key": "shift+cmd+z",
         "command": "-redo",
         "when": "textInputFocus && !editorReadonly"
-    },
-    {
-        "key": "ctrl+y",
-        "command": "editor.action.webvieweditor.redo",
-        "when": "!editorFocus && !inputFocus && activeEditor == 'WebviewEditor'"
-    },
-    {
-        "key": "shift+cmd+z",
-        "command": "-editor.action.webvieweditor.redo",
-        "when": "!editorFocus && !inputFocus && activeEditor == 'WebviewEditor'"
     },
     {
         "key": "ctrl+\\",
@@ -2087,16 +1929,6 @@
     },
     {
         "key": "ctrl+x",
-        "command": "clipring.cutToRing",
-        "when": "editorFocus"
-    },
-    {
-        "key": "cmd+x",
-        "command": "-clipring.cutToRing",
-        "when": "editorFocus"
-    },
-    {
-        "key": "ctrl+x",
         "command": "filesExplorer.cut",
         "when": "explorerViewletVisible && filesExplorerFocus && !explorerResourceIsRoot && !inputFocus"
     },
@@ -2104,16 +1936,6 @@
         "key": "cmd+x",
         "command": "-filesExplorer.cut",
         "when": "explorerViewletVisible && filesExplorerFocus && !explorerResourceIsRoot && !inputFocus"
-    },
-    {
-        "key": "ctrl+x",
-        "command": "editor.action.webvieweditor.cut",
-        "when": "!editorFocus && !inputFocus && activeEditor == 'WebviewEditor'"
-    },
-    {
-        "key": "cmd+x",
-        "command": "-editor.action.webvieweditor.cut",
-        "when": "!editorFocus && !inputFocus && activeEditor == 'WebviewEditor'"
     },
     {
         "key": "ctrl+/",
