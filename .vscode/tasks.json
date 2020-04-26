@@ -6,7 +6,7 @@
         {
             "label": "build vagrant machine",
             "type": "shell",
-            "command": "vagrant up --provider=libvirt && vagrant destroy -f",
+            "command": "./vagrant_test.sh",
             "problemMatcher": [],
             "group": {
                 "kind": "build",
