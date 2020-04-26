@@ -1,26 +1,30 @@
 {
-  "type": "script",
-  "description": "firefox-down",
-  "store": {},
-  "modes": [3],
-  "usageCount": 1,
-  "prompt": false,
-  "omitTrigger": false,
-  "showInTrayMenu": false,
-  "abbreviation": {
-    "abbreviations": [],
-    "backspace": true,
-    "ignoreCase": false,
-    "immediate": false,
-    "triggerInside": false,
-    "wordChars": "[\\w]"
-  },
-  "hotkey": {
-    "modifiers": ["<alt>"],
-    "hotKey": "j"
-  },
-  "filter": {
-    "regex": "firefox",
-    "isRecursive": false
-  }
+    "type": "script",
+    "description": "firefox-down",
+    "store": {},
+    "modes": [
+        3
+    ],
+    "usageCount": 1,
+    "prompt": false,
+    "omitTrigger": false,
+    "showInTrayMenu": false,
+    "abbreviation": {
+        "abbreviations": [],
+        "backspace": true,
+        "ignoreCase": false,
+        "immediate": false,
+        "triggerInside": false,
+        "wordChars": "[\\w]"
+    },
+    "hotkey": {
+        "modifiers": [
+            "<alt>"
+        ],
+        "hotKey": "j"
+    },
+    "filter": {
+        "regex": "Navigator.Firefox",
+        "isRecursive": false
+    }
 }

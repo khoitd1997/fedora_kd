@@ -24,7 +24,7 @@
         "hotKey": "k"
     },
     "filter": {
-        "regex": "firefox",
+        "regex": "Navigator.Firefox",
         "isRecursive": false
     }
 }
