@@ -4,12 +4,23 @@
 import json
 from pathlib import Path
 import os
+import re
+
+
+def find_json_conf_file(rootDir: str) -> str:
+    regex = re.compile('(.*json$)')
+    for root, dirs, files in os.walk(rootDir):
+        for file in files:
+            if regex.match(file):
+                return os.path.join(rootDir, file)
+
+    return ''
 
 
 home = str(Path.home())
 
-menuConf = os.path.join(
-    home, '.cinnamon/configs/menu@cinnamon.org/1.json')
+menuConf = find_json_conf_file(os.path.join(
+    home, '.cinnamon/configs/menu@cinnamon.org'))
 
 with open(menuConf, 'r+') as f:
     data = json.load(f)
@@ -22,8 +33,8 @@ with open(menuConf, 'r+') as f:
     json.dump(data, f, indent=4)
     f.truncate()
 
-calendarConf = os.path.join(
-    home, '.cinnamon/configs/calendar@cinnamon.org/12.json')
+calendarConf = find_json_conf_file(os.path.join(
+    home, '.cinnamon/configs/calendar@cinnamon.org'))
 
 with open(calendarConf, 'r+') as f:
     data = json.load(f)
