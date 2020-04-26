@@ -12,6 +12,13 @@
                 "kind": "build",
                 "isDefault": true
             }
+        },
+        {
+            "label": "show vnc viewer",
+            "type": "shell",
+            "command": "vncviewer 127.0.0.1",
+            "problemMatcher": [],
+            "group": "build"
         }
     ]
 }

@@ -14,13 +14,22 @@ Vagrant.configure('2') do |config|
   CPUS = 4
 
   config.vm.provider :virtualbox do |v|
+    v.gui = true if ENV['GUI_TEST']
+
     v.memory = MEMORY
     v.cpus = CPUS
   end
 
   config.vm.provider :libvirt do |libvirt|
+    libvirt.driver = 'kvm'
+    libvirt.cpu_mode = 'host-passthrough'
+
     libvirt.memory = MEMORY
     libvirt.cpus = CPUS
+  end
+
+  if ENV['GUI_TEST']
+    config.vm.provision 'shell', inline: 'sudo dnf groupinstall -y "Cinnamon Desktop" && sudo systemctl set-default graphical'
   end
 
   config.vm.synced_folder '~/fedora_kd', '/home/vagrant/fedora_kd'
@@ -29,7 +38,7 @@ Vagrant.configure('2') do |config|
 
   config.vm.provision 'ansible_local' do |ansible|
     ansible.become = true
-    ansible.limit = "all,localhost"
+    ansible.limit = 'all,localhost'
     ansible.playbook = 'setup.yml'
     ansible.provisioning_path = '/home/vagrant/fedora_kd/userland'
   end

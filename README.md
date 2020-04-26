@@ -15,10 +15,14 @@ Some useful commands:
 ```shell
 vagrant ssh # helpful for ssh into the VM
 vagrant destroy -f # destroy the current VM
-vagrant up --provider=libvirt # bring up the VM, virtualbox as provider also shows the GUI
+vagrant up --provider=libvirt # bring up the VM
 
 ansible-playbook userland/setup.yml --start-at-task="task_name" # good for continuing the playbook after fixing errors
 ```
+
+There is a vscode build target that launch a vnc viewer to look into the VM
+
+NOTE: vagrant can have virtualbox as provider and has UI but not sure if worth it since it's pretty clunky and there are a couple of problems with dependency conflict when installing the vagrant guest addition plugin
 
 ## Credits
 
