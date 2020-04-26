@@ -1,5 +1,5 @@
 - block:
-    - name: update system, enable repo and install packages
+    - name: setup repos
       shell: "{{item}}"
       with_items:
         - dnf install -q -y fedora-workstation-repositories
@@ -10,10 +10,23 @@
         - dnf config-manager --set-enabled rpmfusion-nonfree-nvidia-driver google-chrome
         - dnf config-manager --set-enabled rpmfusion-free-updates rpmfusion-free
         - dnf config-manager --set-enabled rpmfusion-nonfree rpmfusion-nonfree-updates
-        - dnf upgrade -y -q
-        - sh {{ playbook_dir }}/misc/setup_packages.sh
       args:
         warn: false
+
+    - name: upgrade packages
+      # expect is used because VirtualBox asks for key confirmation
+      expect:
+        command: dnf upgrade -y -q
+        timeout: null
+        responses:
+          'Is this ok \[y/N\]:': "y\r"
+
+        echo: yes
+
+    - name: install packages
+      shell: "{{item}}"
+      with_items:
+        - sh {{ playbook_dir }}/misc/setup_packages.sh
 
     - name: install proprietary packages
       dnf:
