@@ -466,5 +466,9 @@
     ],
     "scm.defaultViewMode": "tree",
     "workbench.editor.limit.value": 5,
-    "workbench.editor.limit.enabled": true
+    "workbench.editor.limit.enabled": true,
+    "ruby.format": "rubocop",
+    "ruby.codeCompletion": "rcodetools",
+    "ruby.intellisense": "rubyLocate",
+    "ruby.useLanguageServer": true
 }

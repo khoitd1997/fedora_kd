@@ -119,6 +119,16 @@
       tags:
         - redshift
 
+    - name: install ruby gems
+      shell: "{{item}}"
+      with_items:
+        - gem install rubocop
+
+      args:
+        warn: false
+      tags:
+        - redshift
+
     - pip:
         name:
           - python-language-server
