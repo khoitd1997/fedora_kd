@@ -42,6 +42,7 @@ sudo dnf install -q -y \
     python3-pip \
     curl \
     python3-setuptools \
+    python3-devel \
     tldr \
     neofetch \
     fd-find \

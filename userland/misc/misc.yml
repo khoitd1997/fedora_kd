@@ -22,7 +22,6 @@
           shell: "{{item}}"
           with_items:
             - usermod -a -G dialout "{{ ansible_user_id }}"
-            - usermod -a -G mock "{{ ansible_user_id }}"
             - timedatectl set-local-rtc 1 --adjust-system-clock
             - systemctl enable firewalld
             - systemctl enable libvirtd
