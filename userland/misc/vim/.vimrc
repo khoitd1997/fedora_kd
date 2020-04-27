@@ -134,7 +134,6 @@ Plug 'easymotion/vim-easymotion'
 
 " git
 Plug 'junegunn/gv.vim'
-Plug 'tpope/vim-fugitive'
 
 Plug 'tpope/vim-vinegar'
 Plug 'tpope/vim-surround'
