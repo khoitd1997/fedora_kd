@@ -38,7 +38,7 @@
       become: true
 
     - name: setting up plymouth
-      block: 
+      block:
         - command: mkdir -vp /usr/share/plymouth/themes/boot
 
         - name: setup plymouth boot
@@ -62,8 +62,9 @@
             create: yes
             block: |
               ShowDelay=0
-        
-        - command: /usr/sbin/plymouth-set-default-theme boot -R
+
+        - name: changing default boot theme
+          command: /usr/sbin/plymouth-set-default-theme boot -R
 
       become: true
 

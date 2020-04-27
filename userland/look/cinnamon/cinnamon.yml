@@ -1,5 +1,5 @@
 - block:
-    - name: theme
+    - name: cinnamon theme
       dconf:
         key: "{{ item.key }}"
         value: "{{ item.value }}"
@@ -32,7 +32,7 @@
       tags:
         - theme
 
-    - name: panel
+    - name: cinnamon panel
       dconf:
         key: "{{ item.key }}"
         value: "{{ item.value }}"
@@ -46,7 +46,7 @@
       tags:
         - panel
 
-    - name: misc
+    - name: cinnamon misc
       dconf:
         key: "{{ item.key }}"
         value: "{{ item.value }}"
@@ -72,7 +72,7 @@
       tags:
         - misc
 
-    - name: effect
+    - name: cinnamon effect
       dconf:
         key: "{{ item.key }}"
         value: "{{ item.value }}"
@@ -87,7 +87,7 @@
       tags:
         - effect
 
-    - name: sound
+    - name: cinnamon sound
       dconf:
         key: "{{ item.key }}"
         value: "{{ item.value }}"
@@ -103,7 +103,7 @@
       tags:
         - sound
 
-    - name: mouse
+    - name: cinnamon mouse
       dconf:
         key: "{{ item.key }}"
         value: "{{ item.value }}"
@@ -115,7 +115,7 @@
       tags:
         - mouse
 
-    - name: keyboard
+    - name: cinnamon keyboard
       dconf:
         key: "{{ item.key }}"
         value: "{{ item.value }}"
@@ -283,7 +283,7 @@
       tags:
         - keyboard
 
-    - name: icons
+    - name: cinnamon icons
       dconf:
         key: "{{ item.key }}"
         value: "{{ item.value }}"
@@ -295,7 +295,7 @@
       tags:
         - icons
 
-    - name: nemo options
+    - name: cinnamon nemo options
       dconf:
         key: "{{ item.key }}"
         value: "{{ item.value }}"
@@ -312,7 +312,7 @@
       tags:
         - nemo
 
-    - name: cinnamon python scripts
+    - name: running cinnamon python scripts
       command: python3 "{{ playbook_dir }}/look/cinnamon/cinnamon.py"
 
   tags:
