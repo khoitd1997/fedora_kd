@@ -16,6 +16,7 @@ Some useful commands:
 vagrant ssh # helpful for ssh into the VM
 vagrant destroy -f # destroy the current VM
 vagrant up --provider=libvirt # bring up the VM
+vagrant reload # restart the vm and update some configs
 
 ansible-playbook userland/setup.yml --start-at-task="task_name" # good for continuing the playbook after fixing errors
 ```
