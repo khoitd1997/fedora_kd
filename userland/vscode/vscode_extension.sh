@@ -9,7 +9,7 @@ extension_dropped=" vsciot-vscode.vscode-arduino"
 # programing languages
 extension_cpp=" ms-vscode.cpptools hars.cppsnippets twxs.cmake asabil.meson "
 extension_csharp=" ms-dotnettools.csharp "
-extension_python=" ms-python.python njpwerner.autodocstring ms-pyright.pyright "
+extension_python=" ms-python.python njpwerner.autodocstring "
 extension_java=" redhat.java vscjava.vscode-java-debug naco-siren.gradle-language "
 extension_vhdl=" puorc.awesome-vhdl "
 extension_verilog=" mshr-h.veriloghdl "
