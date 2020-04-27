@@ -57,3 +57,5 @@ doc/
 test/vagrant-spec/boxes/*.box
 
 .dnf-cache/*
+
+setup_storage.json

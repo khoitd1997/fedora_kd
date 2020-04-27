@@ -4,7 +4,7 @@ Khoi Trinh custom fedora config files
 
 ## How to use
 
-On a fresh fedora installation, run ```setup.sh```
+On a fresh fedora installation, run ```setup.py```
 
 ## Testing the ansible script
 
@@ -18,7 +18,8 @@ vagrant destroy -f # destroy the current VM
 vagrant up --provider=libvirt # bring up the VM
 vagrant reload # restart the vm and update some configs
 
-ansible-playbook userland/setup.yml --start-at-task="task_name" # good for continuing the playbook after fixing errors
+./setup.py --continue # continue from last failed task
+./setup.py "task_name" # start at task_name
 ```
 
 There is a vscode build target that launch a vnc viewer to look into the VM
