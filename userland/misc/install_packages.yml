@@ -1,14 +1,26 @@
-#!/bin/bash
-
 - block:
+    - block:
+        - shell: lspci | grep NVIDIA
+          register: system_has_nvidia_card
+          ignore_errors: True
+
+        - name: install nvidia driver
+          when: system_has_nvidia_card is succeeded
+          dnf:
+            update_cache: yes
+            state: present
+            name:
+              - xorg-x11-drv-nvidia
+              - akmod-nvidia
+      tags:
+        - nvidia
+
     - name: install packages
       dnf:
         update_cache: yes
         state: present
         name:
           - google-chrome-stable
-          - xorg-x11-drv-nvidia
-          - akmod-nvidia
           - VirtualBox-6.0 # 6.1 conflict with vagrant
 
           - nautilus-dropbox
