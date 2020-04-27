@@ -15,6 +15,7 @@ tools_to_remind = [
     "exa: ls replacement",
     "tig: command line git repo browser",
     "peco: command line filter gui",
+    "heaptrack: informative gui memory profiler",
     "tree: display directory structure",
 ]
 tools_per_print = min(3, len(tools_to_remind))
