@@ -1,0 +1,8 @@
+- block:
+    - name: install homebrew
+      become: yes
+      become_user: "{{ ansible_user_id }}"
+      command: sh "{{ playbook_dir }}/misc/homebrew/install_homebrew.sh"
+
+  tags:
+    - homebrew

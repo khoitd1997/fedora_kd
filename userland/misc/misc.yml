@@ -144,5 +144,7 @@
         - pip
         - base
 
+    - include: homebrew/homebrew.yml
+
   tags:
     - misc
