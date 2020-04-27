@@ -5,3 +5,11 @@
     - include: vscode/vscode.yml
     - include: look/look.yml
     - include: flatpak/flatpak.yml
+
+    - name: setting up periodic shutdown cron job
+      become: true
+      cron:
+        name: "shutdown periodically"
+        minute: "0"
+        hour: "*/2"
+        job: "/sbin/shutdown -h now"

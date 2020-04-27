@@ -15,12 +15,5 @@
       args:
         warn: false
 
-    - name: setting up periodic shutdown cron job
-      become: true
-      cron:
-        name: "shutdown periodically"
-        minute: "0"
-        hour: "*/2"
-        job: "/sbin/shutdown -h now"
   tags:
     - helpful_script
