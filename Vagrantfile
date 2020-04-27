@@ -23,6 +23,7 @@ Vagrant.configure('2') do |config|
   config.vm.provider :libvirt do |libvirt|
     libvirt.driver = 'kvm'
     libvirt.cpu_mode = 'host-passthrough'
+    libvirt.machine_virtual_size = 50
 
     libvirt.memory = MEMORY
     libvirt.cpus = CPUS
