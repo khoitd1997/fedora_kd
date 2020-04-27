@@ -37,7 +37,9 @@
           user-session=cinnamon
       become: true
 
+    # here for reference only, it won't work with nvidia driver
     - name: setting up plymouth
+      become: true
       block:
         - command: mkdir -vp /usr/share/plymouth/themes/boot
 
@@ -66,7 +68,8 @@
         - name: changing default boot theme
           command: /usr/sbin/plymouth-set-default-theme boot -R
 
-      become: true
+      tags:
+        - plymouth
 
   tags:
     - look
