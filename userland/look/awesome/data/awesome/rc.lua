@@ -869,7 +869,8 @@ awful.rules.rules = {
     {
         rule_any = {
             class = {
-                "xpad"
+                "xpad",
+                "jetbrains-clion"
             }
         },
         properties = {floating = true, width = screen_width * 0.25, height = screen_height * 0.35},
