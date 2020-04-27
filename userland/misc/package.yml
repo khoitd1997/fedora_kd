@@ -23,21 +23,8 @@
 
         echo: yes
 
-    - name: install packages
-      shell: "{{item}}"
-      with_items:
-        - sh {{ playbook_dir }}/misc/setup_packages.sh
+    - include: ./install_packages.yml
 
-    - name: install proprietary packages
-      dnf:
-        enablerepo: google-chrome rpmfusion-nonfree-nvidia-driver
-        update_cache: yes
-        state: present
-        name:
-          - google-chrome-stable
-          - xorg-x11-drv-nvidia
-          - akmod-nvidia
-          - VirtualBox-6.0 # 6.1 conflict with vagrant
   tags:
     - package
   become: true
