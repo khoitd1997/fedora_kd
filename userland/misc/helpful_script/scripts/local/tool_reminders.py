@@ -12,6 +12,10 @@ tools_to_remind = [
     "glances: system monitoring tool",
     "tldr: more concise man page",
     "fzf ctrl-T: quickly find folders and files",
+    "exa: ls replacement",
+    "tig: command line git repo browser",
+    "peco: command line filter gui",
+    "tree: display directory structure",
 ]
 tools_per_print = min(3, len(tools_to_remind))
 

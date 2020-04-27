@@ -15,4 +15,4 @@ if [ ! -d "~/.linuxbrew/Homebrew" ]; then
 fi
 
 source ~/.profile
-brew install hexyl
+brew install hexyl tig exa peco
