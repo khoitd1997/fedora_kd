@@ -60,6 +60,7 @@ vscode_extension = {
         "partial diff: diff partial section",
         "file utils: convenient file operations",
         "fold plus: smarter folding",
+        "remote development: use vscode through ssh",
         "F11: fullscreen",
         "Ctrl+K: look around without moving cursors",
     ]
