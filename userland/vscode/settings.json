@@ -31,7 +31,7 @@
     "gitlens.keymap": "chorded",
     "editor.minimap.enabled": false,
     "editor.wordWrap": "bounded",
-    "workbench.colorTheme": "Monokai Pro (Filter Spectrum)",
+    "workbench.colorTheme": "One Dark Pro",
     "pasteImage.path": "${currentFileDir}/image",
     "editor.quickSuggestionsDelay": 2,
     "[markdown]": {
@@ -485,5 +485,7 @@
     "ruby.codeCompletion": "rcodetools",
     "ruby.intellisense": "rubyLocate",
     "ruby.useLanguageServer": true,
-    "terminal.integrated.cursorBlinking": true
+    "terminal.integrated.cursorBlinking": true,
+    "oneDarkPro.bold": true,
+    "oneDarkPro.vivid": true
 }
