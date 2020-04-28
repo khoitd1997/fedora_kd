@@ -5,26 +5,26 @@
         value: "{{ item.value }}"
       with_items:
         - {
-            key: /org/cinnamon/desktop/interface/gtk-theme,
-            value: "'Arc-Dark-solid'",
-          }
+          key: /org/cinnamon/desktop/interface/gtk-theme,
+          value: "'Arc-Dark-solid'",
+        }
         - {
-            key: /org/cinnamon/desktop/wm/preferences/theme,
-            value: "'Arc-Dark'",
-          }
+          key: /org/cinnamon/desktop/wm/preferences/theme,
+          value: "'Arc-Dark'",
+        }
         - { key: /org/cinnamon/theme/name, value: "'Arc-Dark-solid'" }
         - {
-            key: /org/cinnamon/settings-daemon/plugins/power/sleep-display-ac,
-            value: "10800",
-          }
+          key: /org/cinnamon/settings-daemon/plugins/power/sleep-display-ac,
+          value: "10800",
+        }
         - {
-            key: /org/cinnamon/settings-daemon/plugins/power/idle-dim-battery,
-            value: "false",
-          }
+          key: /org/cinnamon/settings-daemon/plugins/power/idle-dim-battery,
+          value: "false",
+        }
         - {
-            key: /org/cinnamon/cinnamon-session/quit-delay-toggle,
-            value: "true",
-          }
+          key: /org/cinnamon/cinnamon-session/quit-delay-toggle,
+          value: "true",
+        }
         - { key: /org/cinnamon/enable-indicators, value: "true" }
         - { key: /org/cinnamon/sounds/login-enabled, value: "false" }
         - { key: /org/cinnamon/cinnamon-session/quit-time-delay, value: "20" }
@@ -40,9 +40,9 @@
         - { key: /org/cinnamon/panels-enabled, value: "['1:0:top']" }
         - { key: /org/cinnamon/panels-height, value: "['1:21']" }
         - {
-            key: /org/cinnamon/theme/symbolic-relative-size,
-            value: "0.67000000000000004",
-          }
+          key: /org/cinnamon/theme/symbolic-relative-size,
+          value: "0.67000000000000004",
+        }
       tags:
         - panel
 
@@ -52,23 +52,23 @@
         value: "{{ item.value }}"
       with_items:
         - {
-            key: /org/cinnamon/desktop/background/picture-uri,
-            value: "'file:///usr/share/user_file/resource/TCP118v1_by_Tiziano_Consonni.jpg'",
-          }
+          key: /org/cinnamon/desktop/background/picture-uri,
+          value: "'file:///usr/share/user_file/resource/TCP118v1_by_Tiziano_Consonni.jpg'",
+        }
         - {
-            key: /org/cinnamon/desktop/interface/text-scaling-factor,
-            value: "1.0000000000000003",
-          }
+          key: /org/cinnamon/desktop/interface/text-scaling-factor,
+          value: "1.0000000000000003",
+        }
         - { key: /org/cinnamon/alttab-switcher-style, value: "'icons+preview'" }
         - { key: /org/cinnamon/panels-autohide, value: "['1:false']" }
         - {
-            key: /org/cinnamon/settings-daemon/peripherals/touchscreen/orientation-lock,
-            value: "true",
-          }
+          key: /org/cinnamon/settings-daemon/peripherals/touchscreen/orientation-lock,
+          value: "true",
+        }
         - {
-            key: /org/cinnamon/settings-daemon/plugins/power/sleep-display-ac,
-            value: "0",
-          }
+          key: /org/cinnamon/settings-daemon/plugins/power/sleep-display-ac,
+          value: "0",
+        }
       tags:
         - misc
 
@@ -79,9 +79,9 @@
       with_items:
         - { key: /org/cinnamon/desktop-effects, value: "false" }
         - {
-            key: /org/cinnamon/desktop/interface/gtk-overlay-scrollbars,
-            value: "false",
-          }
+          key: /org/cinnamon/desktop/interface/gtk-overlay-scrollbars,
+          value: "false",
+        }
         - { key: /org/cinnamon/startup-animation, value: "false" }
         - { key: /org/cinnamon/enable-vfade, value: "false" }
       tags:
@@ -109,9 +109,9 @@
         value: "{{ item.value }}"
       with_items:
         - {
-            key: /org/cinnamon/settings-daemon/peripherals/touchpad/natural-scroll,
-            value: "false",
-          }
+          key: /org/cinnamon/settings-daemon/peripherals/touchpad/natural-scroll,
+          value: "false",
+        }
       tags:
         - mouse
 
@@ -121,165 +121,193 @@
         value: "{{ item.value }}"
       with_items:
         - {
-            key: /org/gnome/libgnomekbd/keyboard/options,
-            value: "['caps\tcaps:escape']",
-          }
+          key: /org/cinnamon/desktop/keybindings/wm/unmaximize,
+          value: "@as []",
+        }
         - {
-            key: /org/cinnamon/desktop/keybindings/wm/show-desktop,
-            value: "['<Primary><Alt>d']",
-          }
+          key: /org/cinnamon/desktop/keybindings/wm/toggle-maximized,
+          value: "@as []",
+        }
         - {
-            key: /org/cinnamon/desktop/keybindings/wm/switch-to-workspace-left,
-            value: "['<Control><Alt>Left', '<Primary><Alt>h']",
-          }
+          key: /org/cinnamon/desktop/keybindings/wm/panel-run-dialog,
+          value: "@as []",
+        }
         - {
-            key: /org/cinnamon/desktop/keybindings/wm/switch-to-workspace-right,
-            value: "['<Control><Alt>Right', '<Primary><Alt>l']",
-          }
+          key: /org/cinnamon/desktop/keybindings/wm/begin-resize,
+          value: "@as []",
+        }
         - {
-            key: /org/cinnamon/desktop/keybindings/wm/switch-to-workspace-1,
-            value: "['<Super>1']",
-          }
+          key: /org/cinnamon/desktop/keybindings/wm/begin-move,
+          value: "@as []",
+        }
         - {
-            key: /org/cinnamon/desktop/keybindings/wm/switch-to-workspace-2,
-            value: "['<Super>2']",
-          }
+          key: /org/cinnamon/desktop/keybindings/wm/toggle-recording,
+          value: "@as []",
+        }
         - {
-            key: /org/cinnamon/desktop/keybindings/wm/switch-to-workspace-3,
-            value: "['<Super>3']",
-          }
+          key: /org/cinnamon/desktop/keybindings/media-keys/video-rotation-lock,
+          value: "@as []",
+        }
         - {
-            key: /org/cinnamon/desktop/keybindings/wm/switch-to-workspace-4,
-            value: "['<Super>4']",
-          }
+          key: /org/gnome/libgnomekbd/keyboard/options,
+          value: "['caps\tcaps:escape']",
+        }
         - {
-            key: /org/cinnamon/desktop/keybindings/wm/switch-to-workspace-5,
-            value: "['<Super>5']",
-          }
+          key: /org/cinnamon/desktop/keybindings/wm/show-desktop,
+          value: "['<Primary><Alt>d']",
+        }
         - {
-            key: /org/cinnamon/desktop/keybindings/wm/switch-to-workspace-6,
-            value: "['<Super>6']",
-          }
+          key: /org/cinnamon/desktop/keybindings/wm/switch-to-workspace-left,
+          value: "['<Control><Alt>Left']",
+        }
         - {
-            key: /org/cinnamon/desktop/keybindings/wm/switch-to-workspace-7,
-            value: "['<Super>7']",
-          }
+          key: /org/cinnamon/desktop/keybindings/wm/switch-to-workspace-right,
+          value: "['<Control><Alt>Right']",
+        }
         - {
-            key: /org/cinnamon/desktop/keybindings/wm/switch-to-workspace-8,
-            value: "['<Super>8']",
-          }
+          key: /org/cinnamon/desktop/keybindings/wm/switch-to-workspace-1,
+          value: "['<Super>1']",
+        }
         - {
-            key: /org/cinnamon/desktop/keybindings/wm/switch-to-workspace-9,
-            value: "['<Super>9']",
-          }
+          key: /org/cinnamon/desktop/keybindings/wm/switch-to-workspace-2,
+          value: "['<Super>2']",
+        }
         - {
-            key: /org/cinnamon/desktop/keybindings/wm/move-to-workspace-1,
-            value: "['<Shift><Super>exclam']",
-          }
+          key: /org/cinnamon/desktop/keybindings/wm/switch-to-workspace-3,
+          value: "['<Super>3']",
+        }
         - {
-            key: /org/cinnamon/desktop/keybindings/wm/move-to-workspace-2,
-            value: "['<Shift><Super>at']",
-          }
+          key: /org/cinnamon/desktop/keybindings/wm/switch-to-workspace-4,
+          value: "['<Super>4']",
+        }
         - {
-            key: /org/cinnamon/desktop/keybindings/wm/move-to-workspace-3,
-            value: "['<Shift><Super>numbersign']",
-          }
+          key: /org/cinnamon/desktop/keybindings/wm/switch-to-workspace-5,
+          value: "['<Super>5']",
+        }
         - {
-            key: /org/cinnamon/desktop/keybindings/wm/move-to-workspace-4,
-            value: "['<Shift><Super>dollar']",
-          }
+          key: /org/cinnamon/desktop/keybindings/wm/switch-to-workspace-6,
+          value: "['<Super>6']",
+        }
         - {
-            key: /org/cinnamon/desktop/keybindings/wm/move-to-workspace-5,
-            value: "['<Shift><Super>percent']",
-          }
+          key: /org/cinnamon/desktop/keybindings/wm/switch-to-workspace-7,
+          value: "['<Super>7']",
+        }
         - {
-            key: /org/cinnamon/desktop/keybindings/wm/move-to-workspace-6,
-            value: "['<Shift><Super>asciicircum']",
-          }
+          key: /org/cinnamon/desktop/keybindings/wm/switch-to-workspace-8,
+          value: "['<Super>8']",
+        }
         - {
-            key: /org/cinnamon/desktop/keybindings/media-keys/screensaver,
-            value: "['XF86ScreenSaver']",
-          }
+          key: /org/cinnamon/desktop/keybindings/wm/switch-to-workspace-9,
+          value: "['<Super>9']",
+        }
         - {
-            key: /org/cinnamon/desktop/keybindings/wm/close,
-            value: "['<Alt>F4', '<Super>q']",
-          }
+          key: /org/cinnamon/desktop/keybindings/wm/move-to-workspace-1,
+          value: "['<Shift><Super>exclam']",
+        }
         - {
-            key: /org/cinnamon/desktop/keybindings/custom-list,
-            value: "['custom0', 'custom1', 'custom2', 'custom3', 'custom4']",
-          }
+          key: /org/cinnamon/desktop/keybindings/wm/move-to-workspace-2,
+          value: "['<Shift><Super>at']",
+        }
         - {
-            key: /org/cinnamon/desktop/keybindings/custom-keybindings/custom0/name,
-            value: "'rofi_general'",
-          }
+          key: /org/cinnamon/desktop/keybindings/wm/move-to-workspace-3,
+          value: "['<Shift><Super>numbersign']",
+        }
         - {
-            key: /org/cinnamon/desktop/keybindings/custom-keybindings/custom0/command,
-            value: "'rofi -show combi -config ~/.config/rofi/rofi_config'",
-          }
+          key: /org/cinnamon/desktop/keybindings/wm/move-to-workspace-4,
+          value: "['<Shift><Super>dollar']",
+        }
         - {
-            key: /org/cinnamon/desktop/keybindings/custom-keybindings/custom0/binding,
-            value: "['<Super>r']",
-          }
+          key: /org/cinnamon/desktop/keybindings/wm/move-to-workspace-5,
+          value: "['<Shift><Super>percent']",
+        }
         - {
-            key: /org/cinnamon/desktop/keybindings/custom-keybindings/custom1/name,
-            value: "'rofi_file_search'",
-          }
+          key: /org/cinnamon/desktop/keybindings/wm/move-to-workspace-6,
+          value: "['<Shift><Super>asciicircum']",
+        }
         - {
-            key: /org/cinnamon/desktop/keybindings/custom-keybindings/custom1/command,
-            value: "'rofi -matching normal -config ~/.config/rofi/rofi_config -show find -modi find:~/.config/rofi/rofi_file_open.sh'",
-          }
+          key: /org/cinnamon/desktop/keybindings/media-keys/screensaver,
+          value: "['XF86ScreenSaver']",
+        }
         - {
-            key: /org/cinnamon/desktop/keybindings/custom-keybindings/custom1/binding,
-            value: "['<Super>f']",
-          }
+          key: /org/cinnamon/desktop/keybindings/wm/close,
+          value: "['<Alt>F4', '<Super>q']",
+        }
         - {
-            key: /org/cinnamon/desktop/keybindings/custom-keybindings/custom2/name,
-            value: "'rofi_web_search'",
-          }
+          key: /org/cinnamon/desktop/keybindings/custom-list,
+          value: "['custom0', 'custom1', 'custom2', 'custom3', 'custom4']",
+        }
         - {
-            key: /org/cinnamon/desktop/keybindings/custom-keybindings/custom2/command,
-            value: "'sh /home/kd/.config/rofi/rofi_web_search.sh'",
-          }
+          key: /org/cinnamon/desktop/keybindings/custom-keybindings/custom0/name,
+          value: "'rofi_general'",
+        }
         - {
-            key: /org/cinnamon/desktop/keybindings/wm/switch-windows-backward,
-            value: "['<Super>h']",
-          }
+          key: /org/cinnamon/desktop/keybindings/custom-keybindings/custom0/command,
+          value: "'rofi -show combi -config ~/.config/rofi/rofi_config'",
+        }
         - {
-            key: /org/cinnamon/desktop/keybindings/wm/switch-windows,
-            value: "['<Alt>Tab', '<Super>l']",
-          }
+          key: /org/cinnamon/desktop/keybindings/custom-keybindings/custom0/binding,
+          value: "['<Super>r']",
+        }
         - {
-            key: /org/cinnamon/desktop/keybindings/custom-keybindings/custom2/binding,
-            value: "['<Super>s']",
-          }
+          key: /org/cinnamon/desktop/keybindings/custom-keybindings/custom1/name,
+          value: "'rofi_file_search'",
+        }
         - {
-            key: /org/cinnamon/desktop/keybindings/custom-keybindings/custom3/name,
-            value: "'launch_chrome'",
-          }
+          key: /org/cinnamon/desktop/keybindings/custom-keybindings/custom1/command,
+          value: "'rofi -matching normal -config ~/.config/rofi/rofi_config -show find -modi find:~/.config/rofi/rofi_file_open.sh'",
+        }
         - {
-            key: /org/cinnamon/desktop/keybindings/custom-keybindings/custom3/command,
-            value: "'google-chrome-stable --password-store=gnome'",
-          }
+          key: /org/cinnamon/desktop/keybindings/custom-keybindings/custom1/binding,
+          value: "['<Super>f']",
+        }
         - {
-            key: /org/cinnamon/desktop/keybindings/custom-keybindings/custom3/binding,
-            value: "['<Super>b']",
-          }
+          key: /org/cinnamon/desktop/keybindings/custom-keybindings/custom2/name,
+          value: "'rofi_web_search'",
+        }
         - {
-            key: /org/cinnamon/desktop/keybindings/custom-keybindings/custom4/name,
-            value: "'launch vscode'",
-          }
+          key: /org/cinnamon/desktop/keybindings/custom-keybindings/custom2/command,
+          value: "'sh /home/kd/.config/rofi/rofi_web_search.sh'",
+        }
         - {
-            key: /org/cinnamon/desktop/keybindings/custom-keybindings/custom4/command,
-            value: "'code'",
-          }
+          key: /org/cinnamon/desktop/keybindings/wm/switch-windows-backward,
+          value: "['<Super>h']",
+        }
         - {
-            key: /org/cinnamon/desktop/keybindings/custom-keybindings/custom4/binding,
-            value: "['<Super>m']",
-          }
+          key: /org/cinnamon/desktop/keybindings/wm/switch-windows,
+          value: "['<Alt>Tab', '<Super>l']",
+        }
         - {
-            key: /org/cinnamon/desktop/keybindings/media-keys/terminal,
-            value: "['<Primary><Alt>t', '<Super>Return']",
-          }
+          key: /org/cinnamon/desktop/keybindings/custom-keybindings/custom2/binding,
+          value: "['<Super>s']",
+        }
+        - {
+          key: /org/cinnamon/desktop/keybindings/custom-keybindings/custom3/name,
+          value: "'launch_chrome'",
+        }
+        - {
+          key: /org/cinnamon/desktop/keybindings/custom-keybindings/custom3/command,
+          value: "'google-chrome-stable --password-store=gnome'",
+        }
+        - {
+          key: /org/cinnamon/desktop/keybindings/custom-keybindings/custom3/binding,
+          value: "['<Super>b']",
+        }
+        - {
+          key: /org/cinnamon/desktop/keybindings/custom-keybindings/custom4/name,
+          value: "'launch vscode'",
+        }
+        - {
+          key: /org/cinnamon/desktop/keybindings/custom-keybindings/custom4/command,
+          value: "'code'",
+        }
+        - {
+          key: /org/cinnamon/desktop/keybindings/custom-keybindings/custom4/binding,
+          value: "['<Super>m']",
+        }
+        - {
+          key: /org/cinnamon/desktop/keybindings/media-keys/terminal,
+          value: "['<Primary><Alt>t', '<Super>Return']",
+        }
       tags:
         - keyboard
 
@@ -302,18 +330,25 @@
       with_items:
         - { key: /org/nemo/preferences/never-queue-file-ops, value: "true" }
         - {
-            key: /org/nemo/preferences/show-open-in-terminal-toolbar,
-            value: "true",
-          }
+          key: /org/nemo/preferences/show-open-in-terminal-toolbar,
+          value: "true",
+        }
         - {
-            key: /org/nemo/preferences/show-new-folder-icon-toolbar,
-            value: "true",
-          }
+          key: /org/nemo/preferences/show-new-folder-icon-toolbar,
+          value: "true",
+        }
       tags:
         - nemo
 
     - name: running cinnamon python scripts
       command: python3 "{{ playbook_dir }}/look/cinnamon/cinnamon.py"
+
+    - name: running gsettings stuffs
+      shell: "{{item}}"
+      with_items:
+        - gsettings set org.gnome.desktop.wm.keybindings switch-group "[]"
+        - gsettings set org.gnome.desktop.wm.keybindings switch-group-backward "[]"
+        - gsettings set org.cinnamon.desktop.keybindings.wm switch-group "[]"
 
   tags:
     - cinnamon
