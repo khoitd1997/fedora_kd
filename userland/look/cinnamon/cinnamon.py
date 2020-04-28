@@ -1,10 +1,14 @@
 #!/usr/bin/env python3
 # for use in setting up cinnamon
 
+import ast
+import subprocess
 import json
 from pathlib import Path
 import os
 import re
+
+""" modify json config file """
 
 
 def find_json_conf_file(rootDir: str) -> str:
@@ -44,3 +48,16 @@ with open(calendarConf, 'r+') as f:
     f.seek(0)
     json.dump(data, f, indent=4)
     f.truncate()
+
+""" remove unwanted applets """
+
+applets = ast.literal_eval(subprocess.check_output(
+    "dconf read /org/cinnamon/enabled-applets", shell=True, universal_newlines=True))
+
+appletsToEnable = []
+for i in applets:
+    if not 'grouped-window-list' in i:
+        appletsToEnable.append("'{0}'".format(i))
+
+os.system(
+    "dconf write /org/cinnamon/enabled-applets \"[{0}]\"".format(", ".join(appletsToEnable)))
