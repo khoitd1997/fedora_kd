@@ -1,6 +1,6 @@
 {
     "type": "script",
-    "description": "jetbrain-up",
+    "description": "firefox-down",
     "store": {},
     "modes": [
         3
@@ -21,10 +21,10 @@
         "modifiers": [
             "<alt>"
         ],
-        "hotKey": "k"
+        "hotKey": "j"
     },
     "filter": {
-        "regex": "Focus-Proxy",
+        "regex": "jetbrains-clion.jetbrains-clion",
         "isRecursive": false
     }
 }
