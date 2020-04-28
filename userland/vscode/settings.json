@@ -26,7 +26,7 @@
         "conanfile.txt": "toml"
     },
     "workbench.startupEditor": "newUntitledFile",
-    "window.zoomLevel": 0,
+    "window.zoomLevel": 1,
     "python.formatting.provider": "autopep8",
     "gitlens.keymap": "chorded",
     "editor.minimap.enabled": false,
@@ -326,7 +326,6 @@
     //   "breadcrumbs.filePath": "off",
     "latex-workshop.view.pdf.viewer": "tab",
     "workbench.editor.closeEmptyGroups": false,
-    "terminal.integrated.cursorStyle": "line",
     "editor.cursorStyle": "underline",
     "C_Cpp.default.intelliSenseMode": "gcc-x64",
     "C_Cpp.errorSquiggles": "Disabled",
@@ -449,6 +448,19 @@
     "python.jediEnabled": false,
     "remote.SSH.defaultExtensions": [
         "eamodio.gitlens",
+        "wk-j.save-and-run",
+        "ryuta46.multi-command",
+        "sleistner.vscode-fileutils",
+        "alefragnani.bookmarks",
+        "compulim.vscode-clock",
+        "mushan.vscode-paste-image",
+        "ms-python.python",
+        "redhat.vscode-yaml",
+        "mhutchie.git-graph",
+        "donjayamanne.githistory",
+        "yzhang.markdown-all-in-one",
+        "shd101wyy.markdown-preview-enhanced",
+        "ionutvmi.path-autocomplete",
         "ms-vscode.cpptools"
     ],
     "todo-tree.highlights.defaultHighlight": {
@@ -470,5 +482,6 @@
     "ruby.format": "rubocop",
     "ruby.codeCompletion": "rcodetools",
     "ruby.intellisense": "rubyLocate",
-    "ruby.useLanguageServer": true
+    "ruby.useLanguageServer": true,
+    "terminal.integrated.cursorBlinking": true
 }
