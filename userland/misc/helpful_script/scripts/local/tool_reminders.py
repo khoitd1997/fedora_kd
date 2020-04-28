@@ -59,6 +59,7 @@ vscode_extension = {
     'list': [
         "partial diff: diff partial section",
         "file utils: convenient file operations",
+        "fold plus: smarter folding",
         "F11: fullscreen",
         "Ctrl+K: look around without moving cursors",
     ]
