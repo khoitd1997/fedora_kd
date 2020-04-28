@@ -1,42 +1,67 @@
 #!/usr/bin/env python3
 
-from wasabi import Printer
+from typing import List
+import wasabi
 import os
 import json
 
 
-script_dir = os.path.dirname(__file__)
-storage_file_path = os.path.join(script_dir, "tool_reminder_storage.json")
+def print_reminders(tools: List[dict]) -> None:
+    storage_data = {}
 
-tools_to_remind = [
-    "glances: system monitoring tool",
-    "tldr: more concise man page",
-    "fzf ctrl-T: quickly find folders and files",
-    "exa: ls replacement",
-    "tig: command line git repo browser",
-    "peco: command line filter gui",
-    "heaptrack: informative gui memory profiler",
-    "tree: display directory structure",
-]
-tools_per_print = min(3, len(tools_to_remind))
+    try:
+        script_dir = os.path.dirname(__file__)
+        storage_file_path = os.path.join(
+            script_dir, "tool_reminder_storage.json")
 
-msg = Printer()
+        with open(storage_file_path, 'r') as json_file:
+            storage_data = json.load(json_file)
+    except FileNotFoundError:
+        pass
 
-curr_index = 0
-try:
-    with open(storage_file_path) as json_file:
-        data = json.load(json_file)
-        curr_index = data['curr_index']
-except FileNotFoundError:
-    pass
+    printer = wasabi.Printer()
 
-msg.warn("tooling")
-for x in range(0, tools_per_print):
-    curr_index = (curr_index + 1) % len(tools_to_remind)
-    curr = tools_to_remind[curr_index]
-    msg.info(curr)
+    for tool in tools:
+        tool_name = tool['name']
+        tool_list = tool['list']
+        storage_key = 'curr {0} index'.format(tool_name)
+        curr_index = storage_data.get(storage_key, 0)
+        tools_per_print = min(3, len(tool_list))
 
-with open(storage_file_path, 'w') as outfile:
-    json.dump({
-        'curr_index': curr_index
-    }, outfile)
+        printer.warn(tool_name)  # use warn because of the color
+        for x in range(0, tools_per_print):
+            printer.info(tool_list[curr_index])
+            curr_index = (curr_index + 1) % len(tool_list)
+        if tool != tools[-1]:
+            print()
+
+        storage_data[storage_key] = curr_index
+
+    with open(storage_file_path, 'w') as outfile:
+        json.dump(storage_data, outfile)
+
+
+cmdline_tools = {
+    'name': "cmdline tools",
+    'list': ["glances: system monitoring tool",
+             "tldr: more concise man page",
+             "fzf ctrl-T: quickly find folders and files",
+             "exa: ls replacement",
+             "tig: command line git repo browser",
+             "peco: command line filter gui",
+             "heaptrack: informative gui memory profiler",
+             "ssh-copy-id: copy key to remote server",
+             "tree: display directory structure", ]
+}
+
+vscode_extension = {
+    'name': "vscode extensions",
+    'list': [
+        "partial diff: diff partial section",
+        "file utils: convenient file operations",
+        "F11: fullscreen",
+        "Ctrl+K: look around without moving cursors",
+    ]
+}
+
+print_reminders([cmdline_tools, vscode_extension])
