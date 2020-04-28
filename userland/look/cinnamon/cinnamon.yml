@@ -285,6 +285,10 @@
           value: "'launch_chrome'",
         }
         - {
+          key: /org/cinnamon/desktop/keybindings/looking-glass-keybinding
+          value: "@as []",
+        }
+        - {
           key: /org/cinnamon/desktop/keybindings/custom-keybindings/custom3/command,
           value: "'google-chrome-stable --password-store=gnome'",
         }
