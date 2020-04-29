@@ -1954,5 +1954,13 @@
     {
         "key": "cmd+b",
         "command": "-workbench.action.toggleSidebarVisibility"
+    },
+    {
+        "key": "ctrl+shift+r",
+        "command": "-extension.saveAndRun.execute"
+    },
+    {
+        "key": "ctrl+shift+r",
+        "command": "-extension.saveAndRun.execute"
     }
 ]
