@@ -114,9 +114,6 @@ bindkey '^ ' autosuggest-accept
 if [ "${OS}" != "Darwin" ]; then
 if [ -f "/etc/debian_version" ]; then
 source /usr/share/autojump/autojump.sh
-else
-source /usr/share/fzf/shell/key-bindings.zsh
-fi
 fi
 
 PATH=$PATH:${GOPATH//://bin:}/bin

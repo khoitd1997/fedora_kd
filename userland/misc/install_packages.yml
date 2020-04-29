@@ -25,12 +25,8 @@
 
           - nautilus-dropbox
 
-          - "@development-tools"
           - "@multimedia"
           - "@sound-and-video"
-
-          - bat
-          - hyperfine
 
           - qt-creator
           - cmake
@@ -54,7 +50,6 @@
           - simplescreenrecorder
           - moreutils
           - jq
-          - ripgrep
           - gnome-terminal
           - doxygen
           - dnfdragora-updater
@@ -66,10 +61,7 @@
           - curl
           - python3-setuptools
           - python3-devel
-          - tldr
           - neofetch
-          - fd-find
-          - fzf
           - git
           - git-credential-libsecret
           - nano
@@ -150,9 +142,6 @@
           - vagrant-sshfs
           - vagrant-libvirt
 
-          - zsh
-          - zsh-syntax-highlighting
-
           - java-1.8.0-openjdk
           - java-1.8.0-openjdk-devel
           - java-openjdk
@@ -170,7 +159,3 @@
           - udiskie
 
           - ruby-devel
-
-          # home brew packages need these
-          - perl-Test-Harness
-          - perl-core

@@ -1,7 +1,7 @@
 - hosts: localhost
   tasks:
-    - include: misc/misc.yml
     - include: zsh/zsh.yml
+    - include: misc/misc.yml
     - include: vscode/vscode.yml
     - include: look/look.yml
     - include: flatpak/flatpak.yml

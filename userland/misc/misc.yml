@@ -1,4 +1,6 @@
 - block:
+    - include: homebrew/homebrew.yml
+
     - block:
         - include: package.yml
         - include: google-chrome/google-chrome.yml
@@ -140,8 +142,6 @@
       tags:
         - pip
         - base
-
-    - include: homebrew/homebrew.yml
 
   tags:
     - misc

@@ -120,7 +120,6 @@ Plug 'terryma/vim-multiple-cursors'
 Plug 'jiangmiao/auto-pairs'
 Plug 'luochen1990/rainbow'
 Plug 'jeetsukumaran/vim-buffergator'
-Plug 'junegunn/fzf.vim'
 
 Plug 'sheerun/vim-polyglot'
 Plug 'cespare/vim-toml'
@@ -199,9 +198,6 @@ nnoremap <c-k> <c-u>
 
 "vinegar binding
 autocmd FileType netrw nmap <buffer> <esc> <C-^>
-
-"fzf mapping
-nnoremap <c-p> :FZF<cr>
 
 "buffer mapping
 map <M-1> <Plug>AirlineSelectTab1
