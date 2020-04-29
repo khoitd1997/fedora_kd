@@ -458,9 +458,10 @@ globalkeys =
         {modkey},
         "b",
         function()
-            awful.util.spawn("google-chrome-stable --password-store=gnome")
+            -- awful.util.spawn("google-chrome-stable --password-store=gnome")
+            awful.util.spawn("firefox")
         end,
-        {description = "open google chrome", group = "launcher"}
+        {description = "open default browser", group = "launcher"}
     ),
     awful.key({modkey, "Control"}, "r", awesome.restart, {description = "reload awesome", group = "awesome"}),
     -- awful.key({modkey, "Shift"}, "q", awesome.quit, {description = "quit awesome", group = "awesome"}),
