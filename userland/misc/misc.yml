@@ -74,6 +74,9 @@
         marker: "# {mark} .profile config"
         create: yes
         block: |
+          if xrandr --query | grep "eDP-1 connected" -q; then
+            xrandr --output eDP-1 --right-of DP-1
+          fi
           eval $(gnome-keyring-daemon --start  --components=ssh,secrets)
           export SSH_AUTH_SOCK
       tags:
