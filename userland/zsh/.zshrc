@@ -199,4 +199,8 @@ if [[ -n $DISPLAY ]]; then
   bindkey '\C-o' x-copy-region
 fi
 
+if xrandr --query | grep "eDP-1 connected" -q; then
+    xrandr --output eDP-1 --right-of DP-1
+fi
+
 tool_reminders.py
