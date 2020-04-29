@@ -111,11 +111,6 @@ TMOUT=300
 bindkey '^ ' autosuggest-accept
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
-if [ "${OS}" != "Darwin" ]; then
-if [ -f "/etc/debian_version" ]; then
-source /usr/share/autojump/autojump.sh
-fi
-
 PATH=$PATH:${GOPATH//://bin:}/bin
 PATH=$PATH:${HOME}/.local/bin
 
