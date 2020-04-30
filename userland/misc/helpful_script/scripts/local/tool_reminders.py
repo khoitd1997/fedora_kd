@@ -46,7 +46,7 @@ cmdline_tools = {
     'list': ["glances: system monitoring tool",
              "tldr: more concise man page",
              "fzf ctrl-T: quickly find folders and files",
-             "exa: ls replacement",
+             "z: navigate regularly-used directory",
              "tig: command line git repo browser",
              "peco: command line filter gui",
              "heaptrack: informative gui memory profiler",
