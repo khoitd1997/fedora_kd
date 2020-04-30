@@ -227,5 +227,9 @@
         "key": "shift+escape",
         "command": "-workbench.action.toggleSidebarVisibility",
         "when": "!editorFocus && !inDebugRepl && !problemFocus && !terminalFocus"
+    },
+    {
+        "key": "ctrl+shift+b",
+        "command": "-workbench.action.tasks.build"
     }
 ]
