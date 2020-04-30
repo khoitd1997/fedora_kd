@@ -203,5 +203,29 @@
         "key": "ctrl+shift+b",
         "command": "-editor.action.goToTypeDefinition",
         "when": "editorTextFocus"
+    },
+    {
+        "key": "shift+escape",
+        "command": "workbench.action.closeSidebar"
+    },
+    {
+        "key": "shift+escape",
+        "command": "-workbench.action.terminal.hideFindWidget",
+        "when": "terminalFindWidgetVisible && terminalFocus"
+    },
+    {
+        "key": "shift+escape",
+        "command": "-workbench.action.terminal.toggleTerminal",
+        "when": "terminalFocus"
+    },
+    {
+        "key": "shift+escape",
+        "command": "-workbench.action.terminal.toggleTerminal",
+        "when": "terminalFocus"
+    },
+    {
+        "key": "shift+escape",
+        "command": "-workbench.action.toggleSidebarVisibility",
+        "when": "!editorFocus && !inDebugRepl && !problemFocus && !terminalFocus"
     }
 ]

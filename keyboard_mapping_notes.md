@@ -6,6 +6,7 @@ The goal is to use the Jetbrain shortcuts whenever possible
 
 | Key              | Usage                               |
 |------------------|-------------------------------------|
+| shift + esc      | hide sidebar                        |
 | ctrl + s         | save and exit vim insert mode       |
 | ctrl + b         | go to declaration                   |
 | ctrl + d         | add next occurence to selection     |
