@@ -18,6 +18,7 @@ source ~/.profile
 
 brew install \
     hexyl \
+    z \
     tig \
     exa \
     peco \

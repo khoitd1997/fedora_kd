@@ -193,3 +193,5 @@ if [[ -n $DISPLAY ]]; then
 fi
 
 tool_reminders.py
+
+. $(brew --prefix)/etc/profile.d/z.sh
