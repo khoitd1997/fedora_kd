@@ -166,6 +166,7 @@ fi
 alias vim="nvim"
 alias vi="nvim"
 alias cmake_clean="cmake --build . --target clean"
+alias ls="exa"
 
 # Setting fd as the default source for fzf
 export FZF_DEFAULT_COMMAND='fd --type f'
