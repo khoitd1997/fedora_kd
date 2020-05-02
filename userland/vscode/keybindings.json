@@ -244,5 +244,27 @@
         "key": "ctrl+h",
         "command": "-extension.vim_ctrl+h",
         "when": "editorTextFocus && vim.active && vim.use<C-h> && !inDebugRepl"
+    },
+    {
+        "key": "ctrl+f9",
+        "command": "workbench.action.tasks.build",
+        "when": "!inCMakeProject"
+    },
+    {
+        "key": "ctrl+f9",
+        "command": "-workbench.action.tasks.build"
+    },
+    {
+        "key": "ctrl+f9",
+        "command": "cmake.build",
+        "when": "inCMakeProject"
+    },
+    {
+        "key": "f7",
+        "command": "-cmake.build"
+    },
+    {
+        "key": "f7",
+        "command": "-cmake.build"
     }
 ]
