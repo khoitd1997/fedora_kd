@@ -266,5 +266,10 @@
     {
         "key": "f7",
         "command": "-cmake.build"
+    },
+    {
+        "key": "ctrl+i",
+        "command": "-markdown.extension.editing.toggleItalic",
+        "when": "editorTextFocus && !editorReadonly && editorLangId == 'markdown'"
     }
 ]
