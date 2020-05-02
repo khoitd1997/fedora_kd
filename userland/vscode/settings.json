@@ -326,7 +326,7 @@
     "workbench.editor.closeEmptyGroups": false,
     "editor.cursorStyle": "underline",
     "C_Cpp.default.intelliSenseMode": "gcc-x64",
-    "C_Cpp.errorSquiggles": "Disabled",
+    "C_Cpp.errorSquiggles": "Enabled",
     "saveAndRun": {
         "commands": [
             {
@@ -342,7 +342,6 @@
     ],
     "c-cpp-flylint.flexelint.enable": false,
     "files.autoSaveDelay": 1,
-    "C_Cpp.updateChannel": "Insiders",
     "workbench.tree.indent": 18,
     "githd.blameView.enabled": false,
     "gitlens.codeLens.recentChange.enabled": false,
@@ -431,5 +430,6 @@
     "ruby.useLanguageServer": true,
     "terminal.integrated.cursorBlinking": true,
     "oneDarkPro.bold": true,
-    "oneDarkPro.vivid": true
+    "oneDarkPro.vivid": true,
+    "C_Cpp.updateChannel": "Default" // never ever go insider
 }
