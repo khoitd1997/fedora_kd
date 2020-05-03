@@ -431,5 +431,9 @@
     "terminal.integrated.cursorBlinking": true,
     "oneDarkPro.bold": true,
     "oneDarkPro.vivid": true,
-    "C_Cpp.updateChannel": "Default" // never ever go insider
+    "C_Cpp.updateChannel": "Default", // never ever go insider
+    "cSpell.enabledLanguageIds": [
+        "markdown",
+        "plaintext"
+    ]
 }
