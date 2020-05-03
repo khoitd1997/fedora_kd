@@ -27,6 +27,7 @@ brew install \
     fzf \
     ripgrep \
     tldr \
+    mdbook \
     fd
 
 $(brew --prefix)/opt/fzf/install --all
