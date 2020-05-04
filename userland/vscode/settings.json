@@ -435,5 +435,10 @@
     "cSpell.enabledLanguageIds": [
         "markdown",
         "plaintext"
-    ]
+    ],
+    "git-graph.showStatusBarItem": false,
+    "highlight-matching-tag.enabled": false,
+    "highlight-matching-tag.showPath": false,
+    "latex-workshop.progress.location": "Notification Dialogue",
+    "liveshare.showInStatusBar": "whileCollaborating"
 }
