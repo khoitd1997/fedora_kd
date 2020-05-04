@@ -8,7 +8,7 @@
 # backwards compatibility). Please don't change it unless you know what
 # you're doing.
 Vagrant.configure('2') do |config|
-  config.vm.box = 'fedora/31-cloud-base'
+  config.vm.box = 'fedora/32-cloud-base'
 
   MEMORY = 4048
   CPUS = 4
