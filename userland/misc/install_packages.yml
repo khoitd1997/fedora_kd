@@ -24,6 +24,7 @@
 
           - VirtualBox
           - kmod-VirtualBox
+          - virtualbox-guest-additions
 
           - nautilus-dropbox
 
