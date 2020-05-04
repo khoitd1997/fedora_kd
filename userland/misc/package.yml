@@ -4,24 +4,11 @@
       with_items:
         - dnf install -q -y fedora-workstation-repositories
         - dnf install -q -y fedora-repos-modular
-        - dnf install -q -y https://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm https://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm
-        - dnf config-manager --add-repo https://download.virtualbox.org/virtualbox/rpm/fedora/virtualbox.repo
-        - dnf config-manager --set-enabled virtualbox
+        - dnf install -q -y rpmfusion-free-release rpmfusion-nonfree-release rpmfusion-free-release-tainted rpmfusion-nonfree-release-tainted
         - dnf config-manager --set-enabled rpmfusion-nonfree-nvidia-driver google-chrome
-        - dnf config-manager --set-enabled rpmfusion-free-updates rpmfusion-free
-        - dnf config-manager --set-enabled rpmfusion-nonfree rpmfusion-nonfree-updates
+        - dnf upgrade -q -y
       args:
         warn: false
-
-    - name: upgrade packages
-      # expect is used because VirtualBox asks for key confirmation
-      expect:
-        command: dnf upgrade -y -q
-        timeout: null
-        responses:
-          'Is this ok \[y/N\]:': "y\r"
-
-        echo: yes
 
     - include: ./install_packages.yml
 
