@@ -440,5 +440,7 @@
     "highlight-matching-tag.enabled": false,
     "highlight-matching-tag.showPath": false,
     "latex-workshop.progress.location": "Notification Dialogue",
-    "liveshare.showInStatusBar": "whileCollaborating"
+    "liveshare.showInStatusBar": "whileCollaborating",
+    "search.maintainFileSearchCache": true,
+    "workbench.panel.defaultLocation": "right"
 }
