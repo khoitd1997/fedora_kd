@@ -1,6 +1,6 @@
 {
     "type": "script",
-    "description": "clion-up",
+    "description": "android-studio-up",
     "store": {},
     "modes": [
         3
@@ -24,7 +24,7 @@
         "hotKey": "k"
     },
     "filter": {
-        "regex": "jetbrains-clion.jetbrains-clion",
+        "regex": "sun-awt-X11-XFramePeer.jetbrains-studio",
         "isRecursive": false
     }
 }
