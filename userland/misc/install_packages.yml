@@ -33,7 +33,6 @@
 
           - qt-creator
           - cmake
-          - valgrind
           - heaptrack
           - perf
           - gcc
