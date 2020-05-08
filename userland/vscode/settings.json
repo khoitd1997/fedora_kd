@@ -310,7 +310,8 @@
         "workbench.view.scm",
         "workbench.action.gotoSymbol",
         "workbench.action.gotoLine",
-        "workbench.view.debug"
+        "workbench.view.debug",
+        "workbench.action.closeSidebar"
     ],
     "editor.wordWrapColumn": 100,
     "vim.easymotion": true,
@@ -388,7 +389,6 @@
     "workbench.tree.renderIndentGuides": "always",
     "editor.suggestSelection": "first",
     "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
-    "terminal.integrated.rendererType": "dom",
     "python.jediEnabled": false,
     "remote.SSH.defaultExtensions": [
         "eamodio.gitlens",
@@ -433,9 +433,10 @@
     "oneDarkPro.bold": true,
     "oneDarkPro.vivid": true,
     "C_Cpp.updateChannel": "Default", // never ever go insider
-    "cSpell.enabledLanguageIds": [
+    "cSpell.enableFiletypes": [
         "markdown",
-        "plaintext"
+        "plaintext",
+        "!json"
     ],
     "git-graph.showStatusBarItem": false,
     "highlight-matching-tag.enabled": false,
