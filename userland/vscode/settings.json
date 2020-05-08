@@ -436,7 +436,9 @@
     "cSpell.enableFiletypes": [
         "markdown",
         "plaintext",
-        "!json"
+        "!json",
+        "!cpp",
+        "!c"
     ],
     "git-graph.showStatusBarItem": false,
     "highlight-matching-tag.enabled": false,
