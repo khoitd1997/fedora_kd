@@ -83,19 +83,6 @@
     "window.titleBarStyle": "native",
     "editor.fontFamily": "source code pro",
     "editor.fontSize": 16,
-    "todo-tree.highlightDelay": 0,
-    "todo-tree.showCountsInTree": true,
-    "todo-tree.tags": [
-        "TODO",
-        "FIXME",
-        "HACK",
-        "NOTE"
-    ],
-    "todo-tree.defaultHighlight": {
-        "type": "text",
-        "foreground": "black",
-        "background": "#6F6F70"
-    },
     "window.newWindowDimensions": "inherit",
     "window.restoreFullscreen": true,
     "workbench.activityBar.visible": false,
@@ -106,7 +93,6 @@
     "extensions.autoUpdate": true,
     "extensions.showRecommendationsOnlyOnDemand": true,
     "window.menuBarVisibility": "hidden",
-    "workbench.statusBar.feedback.visible": false,
     "gitlens.mode.statusBar.enabled": false,
     "gitlens.statusBar.enabled": false,
     "C_Cpp.default.cppStandard": "c++11",
@@ -294,7 +280,6 @@
     },
     "editor.wordSeparators": "`~!@#$%^&*()-=+[{]}\\|;:'\",.<>/?",
     "editor.smoothScrolling": true,
-    "scrolloff.scrolloff": 10,
     "terminal.integrated.commandsToSkipShell": [
         "workbench.action.openEditorAtIndex1",
         "workbench.action.openEditorAtIndex2",
@@ -311,7 +296,8 @@
         "workbench.action.gotoSymbol",
         "workbench.action.gotoLine",
         "workbench.view.debug",
-        "workbench.action.closeSidebar"
+        "workbench.action.closeSidebar",
+        "workbench.explorer.fileView.focus"
     ],
     "editor.wordWrapColumn": 100,
     "vim.easymotion": true,
@@ -342,10 +328,8 @@
     "C_Cpp.default.includePath": [
         "~/.conan/data"
     ],
-    "c-cpp-flylint.flexelint.enable": false,
     "files.autoSaveDelay": 1,
     "workbench.tree.indent": 18,
-    "githd.blameView.enabled": false,
     "gitlens.codeLens.recentChange.enabled": false,
     "gitlens.advanced.quickPick.closeOnFocusOut": false,
     "gitlens.blame.heatmap.location": "left",
@@ -355,7 +339,6 @@
     "gitlens.hovers.avatars": false,
     "gitlens.hovers.currentLine.details": false,
     "editor.foldingStrategy": "indentation",
-    "fold.level": 10,
     "bookmarks.showCommandsInContextMenu": false,
     "bookmarks.saveBookmarksInProject": false,
     "workbench.sideBar.location": "left",
@@ -371,19 +354,6 @@
     },
     "editor.largeFileOptimizations": false,
     "latex-workshop.message.update.show": false,
-    "bracketPairColorizer.showBracketsInGutter": true,
-    "local-history.absolute": true,
-    "local-history.daysLimit": 3,
-    "local-history.enabled": 2,
-    "local-history.exclude": [
-        "**/.history/**",
-        "**/.vscode**",
-        "**/node_modules/**",
-        "**/typings/**",
-        "**/out/**"
-    ],
-    "local-history.path": "${workspaceFolder}/.vscode",
-    "local-history.saveDelay": 2000,
     "workbench.editor.enablePreview": false,
     "workbench.editor.enablePreviewFromQuickOpen": false,
     "workbench.tree.renderIndentGuides": "always",
@@ -437,6 +407,7 @@
         "markdown",
         "plaintext",
         "!json",
+        "!jsonc",
         "!cpp",
         "!c"
     ],
