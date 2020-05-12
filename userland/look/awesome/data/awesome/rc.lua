@@ -872,7 +872,8 @@ awful.rules.rules = {
             class = {
                 "xpad",
                 "jetbrains-clion",
-                "jetbrains-studio"
+                "jetbrains-studio",
+                "Kicad"
             }
         },
         properties = {floating = true, width = screen_width * 0.25, height = screen_height * 0.35},
