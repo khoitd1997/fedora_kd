@@ -282,7 +282,7 @@
           }
         - {
             key: /org/cinnamon/desktop/keybindings/custom-keybindings/custom3/name,
-            value: "'launch_chrome'",
+            value: "'launch_default_browser'",
           }
         - {
             key: /org/cinnamon/desktop/keybindings/looking-glass-keybinding,
@@ -290,7 +290,8 @@
           }
         - {
             key: /org/cinnamon/desktop/keybindings/custom-keybindings/custom3/command,
-            value: "'google-chrome-stable --password-store=gnome'",
+            # value: "'google-chrome-stable --password-store=gnome'",
+            value: "'firefox'",
           }
         - {
             key: /org/cinnamon/desktop/keybindings/custom-keybindings/custom3/binding,

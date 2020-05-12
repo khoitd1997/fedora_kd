@@ -872,11 +872,18 @@ awful.rules.rules = {
             class = {
                 "xpad",
                 "jetbrains-clion",
-                "jetbrains-studio",
-                "Kicad"
+                "jetbrains-studio"
             }
         },
         properties = {floating = true, width = screen_width * 0.25, height = screen_height * 0.35},
+    },
+    {
+        rule_any = {
+            class = {
+                "Kicad"
+            }
+        },
+        properties = {floating = true, width = screen_width , height = screen_height},
     },
     -- Centered clients
     {
