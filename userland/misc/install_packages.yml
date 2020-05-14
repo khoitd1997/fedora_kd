@@ -107,7 +107,9 @@
           - pylint
           - liveusb-creator
           - gimp
+          - arduino
           - kicad
+          - cura
           - vlc
           - konsole
 
