@@ -8,6 +8,7 @@
         name: com.spotify.Client
           com.slack.Slack
           com.discordapp.Discord
+          com.google.AndroidStudio
 
   tags:
     - flatpak
