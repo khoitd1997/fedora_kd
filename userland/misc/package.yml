@@ -4,7 +4,8 @@
       with_items:
         - dnf install -q -y fedora-workstation-repositories
         - dnf install -q -y fedora-repos-modular
-        - dnf install -q -y rpmfusion-free-release rpmfusion-nonfree-release rpmfusion-free-release-tainted rpmfusion-nonfree-release-tainted
+        - dnf install -q -y https://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm https://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm
+        - dnf install -q -y rpmfusion-free-release-tainted rpmfusion-nonfree-release-tainted
         - dnf config-manager --set-enabled rpmfusion-nonfree-nvidia-driver google-chrome
         - dnf upgrade -q -y
       args:
