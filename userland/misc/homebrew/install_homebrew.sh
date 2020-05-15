@@ -1,5 +1,7 @@
 #!/bin/bash
 
+set -e
+
 if [ ! -d "~/.linuxbrew/Homebrew" ]; then
     # from https://docs.brew.sh/Homebrew-on-Linux
     git clone https://github.com/Homebrew/brew ~/.linuxbrew/Homebrew
