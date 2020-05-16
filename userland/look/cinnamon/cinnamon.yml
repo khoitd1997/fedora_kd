@@ -149,6 +149,10 @@
             value: "@as []",
           }
         - {
+            key: /org/cinnamon/desktop/keybindings/wm/switch-to-workspace-up,
+            value: "@as []",
+          }
+        - {
             key: /org/gnome/libgnomekbd/keyboard/options,
             value: "['caps\tcaps:escape']",
           }
