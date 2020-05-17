@@ -49,6 +49,7 @@
 
           - neovim
           - strace
+          - lshw
           - simplescreenrecorder
           - moreutils
           - jq
