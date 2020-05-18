@@ -15,9 +15,27 @@ sudo usermod -a -G libvirt kd
 sudo usermod -a -G kvm kd
 sudo usermod -a -G input kd
 
+# these should be run after SeLinux complains
 sudo ausearch -c 'qemu-system-x86' --raw | sudo audit2allow -M my-qemusystemx86
 sudo semodule -i my-qemusystemx86.p
+```
 
+```shell
+# /etc/libvirt/qemu.conf
+user = "kd"
+group = "kvm"
+cgroup_device_acl = [
+    "/dev/kvm",
+    "/dev/input/by-id/usb-1bcf_USB_Optical_Mouse-event-mouse",
+    "/dev/input/by-id/usb-HOLTEK_USB-HID_Keyboard-event-kbd",
+    "/dev/null", "/dev/full", "/dev/zero",
+    "/dev/random", "/dev/urandom",
+    "/dev/ptmx", "/dev/kvm", "/dev/kqemu",
+    "/dev/rtc","/dev/hpet", "/dev/sev"
+]
+```
+
+```shell
 # while the vm is running, DO NOT TRY TO DEFINE
 sudo virsh dumpxml win10 > win10_vm.xml
 sudo virsh define win10_vm.xml
