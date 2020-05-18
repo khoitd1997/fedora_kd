@@ -147,6 +147,12 @@
     <qemu:arg value='input-linux,id=mouse1,evdev=/dev/input/by-id/usb-1bcf_USB_Optical_Mouse-event-mouse'/>
     <qemu:arg value='-object'/>
     <qemu:arg value='input-linux,id=kbd1,evdev=/dev/input/by-id/usb-HOLTEK_USB-HID_Keyboard-event-kbd,grab_all=on,repeat=on'/>
+    <qemu:arg value='-audiodev'/>
+    <qemu:arg value='pa,id=snd0,server=/run/user/1000/pulse/native'/>
+    <qemu:env name='QEMU_AUDIO_DRV' value='pa'/>
+    <qemu:env name='QEMU_PA_SAMPLES' value='8192'/>
+    <qemu:env name='QEMU_AUDIO_TIMER_PERIOD' value='99'/>
+    <qemu:env name='QEMU_PA_SERVER' value='/run/user/1000/pulse/native'/>
   </qemu:commandline>
 </domain>
 
