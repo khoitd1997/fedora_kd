@@ -18,6 +18,7 @@ sudo usermod -a -G input kd
 sudo ausearch -c 'qemu-system-x86' --raw | sudo audit2allow -M my-qemusystemx86
 sudo semodule -i my-qemusystemx86.p
 
+# while the vm is running, DO NOT TRY TO DEFINE
 sudo virsh dumpxml win10 > win10_vm.xml
 sudo virsh define win10_vm.xml
 
@@ -27,4 +28,6 @@ sudo virsh shutdown win10
 # need to install virtio driver for good performance
 # https://fedorapeople.org/groups/virt/virtio-win/direct-downloads/archive-virtio/
 # download the .msi file and install on guest
+
+# XML format reference: https://libvirt.org/formatdomain.html
 ```
