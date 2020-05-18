@@ -1,0 +1,30 @@
+# Steps
+
+```shell
+echo 'options vfio-pci ids=10de:1c81,10de:0fb9' | sudo tee -a /etc/modprobe.d/vfio.conf
+echo 'force_drivers+="vfio vfio-pci vfio_iommu_type1"' | sudo tee -a /etc/dracut.conf.d/vfio.conf
+echo 'options kvm ignore_msrs=1' | sudo tee -a /etc/modprobe.d/kvm.conf
+
+# /etc/default/grub
+GRUB_CMDLINE_LINUX="... amd_iommu=on iommu=pt rd.driver.pre=vfio-pci"
+
+kernel_ver=$(uname -r)
+sudo dracut -f --kver ${kernel_ver} && sudo grub2-mkconfig | sudo tee /etc/grub2-efi.cfg
+
+sudo usermod -a -G libvirt kd
+sudo usermod -a -G kvm kd
+sudo usermod -a -G input kd
+
+sudo ausearch -c 'qemu-system-x86' --raw | sudo audit2allow -M my-qemusystemx86
+sudo semodule -i my-qemusystemx86.p
+
+sudo virsh dumpxml win10 > win10_vm.xml
+sudo virsh define win10_vm.xml
+
+sudo virsh start win10
+sudo virsh shutdown win10
+
+# need to install virtio driver for good performance
+# https://fedorapeople.org/groups/virt/virtio-win/direct-downloads/archive-virtio/
+# download the .msi file and install on guest
+```
