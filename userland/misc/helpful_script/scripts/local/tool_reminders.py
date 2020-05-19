@@ -51,7 +51,11 @@ cmdline_tools = {
              "peco: command line filter gui",
              "heaptrack: informative gui memory profiler",
              "ssh-copy-id: copy key to remote server",
-             "tree: display directory structure", ]
+             "tree: display directory structure",
+             "Terminal Ctrl-W: Delete current word",
+             "Terminal Ctrl-Y: Paste back word just deleted",
+             "Terminal Ctrl-D: Log out",
+             ]
 }
 
 vscode_extension = {
