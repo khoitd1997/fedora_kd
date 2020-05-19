@@ -43,9 +43,15 @@ sudo virsh define win10_vm.xml
 sudo virsh start win10
 sudo virsh shutdown win10
 
-# need to install virtio driver for good performance
-# https://fedorapeople.org/groups/virt/virtio-win/direct-downloads/archive-virtio/
 # download the .msi file and install on guest
 
 # XML format reference: https://libvirt.org/formatdomain.html
 ```
+
+## Prepping Windows 10 Guest
+
+Need to install [virtio](https://fedorapeople.org/groups/virt/virtio-win/direct-downloads/archive-virtio/) and spice guest tools for good performance(and stuffs like clipboard sharing).
+
+Workflow is to switch between monitors using the monitor's input selection.
+
+Left+Right Ctrl to switch to VM mouse and keyboard.
