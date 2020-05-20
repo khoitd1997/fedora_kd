@@ -15,11 +15,11 @@
       command: xdg-mime default {{ item.app }} {{ item.type }}
       with_items:
         - { type: application/pdf, app: evince.desktop }
-        - { type: text/html, app: google-chrome.desktop }
-        - { type: x-scheme-handler/http, app: google-chrome.desktop }
-        - { type: x-scheme-handler/https, app: google-chrome.desktop }
-        - { type: x-scheme-handler/about, app: google-chrome.desktop }
-        - { type: x-scheme-handler/unknown, app: google-chrome.desktop }
+        - { type: text/html, app: firefox.desktop }
+        - { type: x-scheme-handler/http, app: firefox.desktop }
+        - { type: x-scheme-handler/https, app: firefox.desktop }
+        - { type: x-scheme-handler/about, app: firefox.desktop }
+        - { type: x-scheme-handler/unknown, app: firefox.desktop }
         - { type: text/x-svsrc, app: code.desktop }
         - { type: text/x-go, app: code.desktop }
         - { type: application/x-java-keystore, app: code.desktop }
