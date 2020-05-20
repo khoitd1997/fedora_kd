@@ -66,7 +66,7 @@
     </disk>
     <disk type='file' device='cdrom'>
       <driver name='qemu' type='raw'/>
-      <source file='/home/kd/Downloads/Win10_1909_English_x64.iso'/>
+      <source file='/home/kd/Downloads/win10.iso'/>
       <backingStore/>
       <target dev='sdb' bus='sata'/>
       <readonly/>
@@ -85,7 +85,7 @@
     <interface type='network'>
       <mac address='52:54:00:b0:c5:ae'/>
       <source network='default'/>
-      <model type='e1000e'/>
+      <model type='virtio'/>
       <address type='pci' domain='0x0000' bus='0x00' slot='0x03' function='0x0'/>
     </interface>
     <serial type='pty'>
