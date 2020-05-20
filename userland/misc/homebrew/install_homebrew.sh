@@ -13,7 +13,11 @@ if [ ! -d "~/.linuxbrew/Homebrew" ]; then
     test -d ~/.linuxbrew && eval $(~/.linuxbrew/bin/brew shellenv)
     test -d /home/linuxbrew/.linuxbrew && eval $(/home/linuxbrew/.linuxbrew/bin/brew shellenv)
     test -r ~/.bash_profile && echo "eval \$($(brew --prefix)/bin/brew shellenv)" >>~/.bash_profile
+
+    # make sure homebrew is searched after the rest of the system
+    echo "temp_path=\"\$PATH\"" >>~/.profile
     echo "eval \$($(brew --prefix)/bin/brew shellenv)" >>~/.profile
+    echo "export PATH=\"\$temp_path:\$PATH\"" >>~/.profile
 fi
 
 source ~/.profile
