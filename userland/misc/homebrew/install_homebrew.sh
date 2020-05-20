@@ -29,6 +29,7 @@ brew install \
     exa \
     peco \
     bat \
+    ncdu \
     hyperfine \
     fzf \
     ripgrep \
