@@ -44,17 +44,17 @@ Once all that is done, next is to bring up the VM. This folder contains the `win
 # create qcow2 filesystem
 sudo qemu-img create -f qcow2 '/var/lib/libvirt/images/win10.qcow2' 100G
 
-sudo virsh define win10_vm.xml # while the vm is running, DO NOT TRY TO DEFINE
+virsh define win10_vm.xml # while the vm is running, DO NOT TRY TO DEFINE
 
-sudo virsh dumpxml win10 > win10_vm.xml # should do this occasionally and check if config becomes invalid
+virsh dumpxml win10 > win10_vm.xml # should do this occasionally and check if config becomes invalid
 
-sudo virsh start win10
+virsh start win10
 # these should be run after SeLinux complains
 # may need to run multiple times
 sudo ausearch -c 'qemu-system-x86' --raw | sudo audit2allow -M my-qemusystemx86
 sudo semodule -i my-qemusystemx86.p
 
-sudo virsh shutdown win10
+virsh shutdown win10
 ```
 
 ## Prepping Windows 10 Guest
