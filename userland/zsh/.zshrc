@@ -195,3 +195,5 @@ fi
 tool_reminders.py
 
 . $(brew --prefix)/etc/profile.d/z.sh
+
+export LIBVIRT_DEFAULT_URI="qemu:///system"
