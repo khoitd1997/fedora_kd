@@ -10,8 +10,7 @@ echo 'options vfio-pci ids=10de:1c81,10de:0fb9' | sudo tee -a /etc/modprobe.d/vf
 echo 'force_drivers+="vfio vfio-pci vfio_iommu_type1"' | sudo tee -a /etc/dracut.conf.d/vfio.conf
 echo 'options kvm ignore_msrs=1' | sudo tee -a /etc/modprobe.d/kvm.conf # for host-passthrough to work
 
-# /etc/default/grub
-GRUB_CMDLINE_LINUX="... amd_iommu=on iommu=pt rd.driver.pre=vfio-pci"
+sudo grubby --update-kernel ALL --args="amd_iommu=on iommu=pt rd.driver.pre=vfio-pci"
 
 kernel_ver=$(uname -r)
 sudo dracut -f --kver ${kernel_ver} && sudo grub2-mkconfig | sudo tee /etc/grub2-efi.cfg
