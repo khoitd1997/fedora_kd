@@ -349,5 +349,7 @@
   "search.maintainFileSearchCache": true,
   "workbench.panel.defaultLocation": "right",
   "cmake.preferredGenerators": ["Ninja", "Unix Makefiles"],
-  "cmake.generator": "Ninja"
+"cmake.generator": "Ninja",
+"platformio-ide.disablePIOHomeStartup": true,
+"platformio-ide.activateOnlyOnPlatformIOProject": true
 }
