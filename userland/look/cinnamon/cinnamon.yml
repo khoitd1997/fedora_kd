@@ -6,13 +6,13 @@
       with_items:
         - {
             key: /org/cinnamon/desktop/interface/gtk-theme,
-            value: "'Arc-Dark-solid'",
+            value: "'Arc-Dark'",
           }
         - {
             key: /org/cinnamon/desktop/wm/preferences/theme,
             value: "'Arc-Dark'",
           }
-        - { key: /org/cinnamon/theme/name, value: "'Arc-Dark-solid'" }
+        - { key: /org/cinnamon/theme/name, value: "'Arc-Dark'" }
         - {
             key: /org/cinnamon/settings-daemon/plugins/power/sleep-display-ac,
             value: "10800",
