@@ -351,5 +351,8 @@
   "cmake.preferredGenerators": ["Ninja", "Unix Makefiles"],
 "cmake.generator": "Ninja",
 "platformio-ide.disablePIOHomeStartup": true,
-"platformio-ide.activateOnlyOnPlatformIOProject": true
+"platformio-ide.activateOnlyOnPlatformIOProject": true,
+"plantuml.java": "/usr/bin/java",
+"plantuml.exportFormat": "png",
+"plantuml.exportSubFolder": false
 }
