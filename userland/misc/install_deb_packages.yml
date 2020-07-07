@@ -1,15 +1,24 @@
 - block:
+    - name: remove deb packages
+      apt:
+        state: absent
+        name:
+          - gnome-shell-extension-ubuntu-dock
+
     - name: install deb packages
       apt:
         update_cache: yes
         state: present
         name:
           - nautilus-dropbox
+          - curl
+          - wget
+          - zsh
 
           - cmake
           - heaptrack
           - build-essential
-          - perf
+          - linux-tools-common
           - gcc
           - clang
           - clang-tools
@@ -17,7 +26,7 @@
           - cppcheck
           # - libasan
           # - libubsan
-          - ninja
+          - ninja-build
           # - boost
           # - boost-devel
 
@@ -37,32 +46,21 @@
           - python3-pip
           - curl
           - python3-setuptools
-          - python3-devel
+          - python3-dev
           - neofetch
           - git
           - libsecret-1-0
           - libsecret-1-dev
           - nano
-          - dnf-automatic
-          - openconnect
           - tmux
-          - libsecret
-          - glibc-devel.i686
-          - libnsl
 
-          - gmock
-          - gmock-devel
-          - gtest
-          - gtest-devel
-          - qt-x11
-          - mesa-libGL-devel
+          - google-mock
+          - googletest
+          - libgtest-dev
 
-          - kdenlive
           - redshift-gtk
-          - gnome-disk-utility
           - seahorse
           - autokey-gtk
-          - firefox
           - evince
           - xpad
           - gparted
@@ -73,18 +71,15 @@
           - flameshot
           - feh
           - latexmk
-          - kernel-devel
-          - kernel-headers
+          - linux-headers-generic
           - pylint
-          - liveusb-creator
           - gimp
           - arduino
           - kicad
           - cura
-          - openscad
           - vlc
 
-          # - flatpak
+          - flatpak
 
           # - texlive-latexindent
           # - texlive-scheme-basic
@@ -100,19 +95,21 @@
           # - gstreamer1-plugins-bad-free-extras
 
           - rofi
-          - rofi-themes
 
           # - golang
           # - golint
 
-          # - openocd
-          # - arm-none-eabi-newlib
-          # - arm-none-eabi-gcc-cs
-          # - arm-none-eabi-gcc-cs-c++
+          - openocd
+          - gcc-arm-linux-gnueabi
+          - gcc-arm-none-eabi
+          - gcc-arm-linux-gnueabihf
 
           # - "@virtualization"
           # - tigervnc
-          # - qemu
+          - libvirt-bin
+          - libvirt-doc
+          - virt-manager
+          - qemu
           # - vagrant
           # - vagrant-sshfs
           # - vagrant-libvirt
@@ -121,7 +118,6 @@
           # - java-1.8.0-openjdk-devel
           # - java-openjdk
 
-          # - adobe-source-code-pro-fonts
           # - arc-theme
           # - plymouth-plugin-script
           # - awesome
@@ -129,10 +125,8 @@
           # - lxappearance
           # - qt5ct
 
-          # - volumeicon
-          # - lxqt-powermanagement
-          # - udiskie
-
           - ruby-dev
+
+  when: ansible_facts['distribution'] == "Ubuntu"
   tags:
-    - ubuntu_specific
+    - deb_package

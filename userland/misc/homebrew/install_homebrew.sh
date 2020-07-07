@@ -2,7 +2,7 @@
 
 set -e
 
-if [ ! -d "~/.linuxbrew/Homebrew" ]; then
+if [ ! -d "${HOME}/.linuxbrew/Homebrew" ]; then
     # from https://docs.brew.sh/Homebrew-on-Linux
     git clone https://github.com/Homebrew/brew ~/.linuxbrew/Homebrew
     mkdir ~/.linuxbrew/bin
@@ -20,7 +20,7 @@ if [ ! -d "~/.linuxbrew/Homebrew" ]; then
     echo "export PATH=\"\$temp_path:\$PATH\"" >>~/.profile
 fi
 
-source ~/.profile
+. ~/.profile
 
 brew install \
     hexyl \

@@ -1,0 +1,17 @@
+- block:
+    - name: Install Snap Packages
+      shell: "snap install {{item}}"
+      with_items:
+        - spotify
+        - discord
+
+    - name: Install Classic Snap Packages
+      shell: "snap install {{item}} --classic"
+      with_items:
+        - slack
+        - android-studio
+
+  become: true
+  tags:
+    - snap
+    - package

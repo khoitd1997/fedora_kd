@@ -13,7 +13,7 @@
 
     - include: ./install_rpm_packages.yml
 
+  when: ansible_facts['distribution'] == "Fedora"
   tags:
     - package
-    - fedora_specific
   become: true

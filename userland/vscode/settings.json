@@ -76,8 +76,7 @@
   "go.formatTool": "gofmt",
   "workbench.tips.enabled": false,
   "go.autocompleteUnimportedPackages": true,
-  "window.titleBarStyle": "native",
-  "editor.fontFamily": "source code pro",
+"window.titleBarStyle": "native",
   "editor.fontSize": 16,
   "window.newWindowDimensions": "inherit",
   "window.restoreFullscreen": true,
@@ -102,8 +101,7 @@
       "command": "multiCommand.saveAndEnterCommand",
       "sequence": ["workbench.action.files.save", "extension.vim_escape"]
     }
-  ],
-  "terminal.integrated.fontFamily": "source code pro",
+],
   "terminal.integrated.shell.windows": "C:\\Program Files\\Git\\bin\\bash.exe",
   "terminal.integrated.scrollback": 5000,
   "terminal.integrated.shell.linux": "/bin/zsh",

@@ -19,5 +19,6 @@
         - ln -sfv {{ playbook_dir }}/look/awesome/data/gtk/settings.ini ~/.config/gtk-3.0
         - ln -sfv {{ playbook_dir }}/look/awesome/data/gtk/.gtkrc-2.0 ~/
 
+  when: ansible_facts['distribution'] == "Fedora"
   tags:
     - awesome

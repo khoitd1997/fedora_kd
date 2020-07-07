@@ -359,7 +359,7 @@
         - gsettings set org.gnome.desktop.wm.keybindings switch-group-backward "[]"
         - gsettings set org.cinnamon.desktop.keybindings.wm switch-group "[]"
 
+  when: ansible_facts['distribution'] == "Ubuntu"
   tags:
-    - cinnamon
-  when: ansible_facts['distribution'] == "Fedora"
+    - gnome
   become_user: "{{ ansible_user_id }}"
