@@ -1,5 +1,5 @@
 - block:
-    - name: setup repos
+    - name: setup rpm repos
       shell: "{{item}}"
       with_items:
         - dnf install -q -y fedora-workstation-repositories
@@ -11,8 +11,9 @@
       args:
         warn: false
 
-    - include: ./install_packages.yml
+    - include: ./install_rpm_packages.yml
 
   tags:
     - package
+    - fedora_specific
   become: true

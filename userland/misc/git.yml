@@ -2,7 +2,9 @@
     - name: git
       command: "{{item}}"
       with_items:
-        - git config --global credential.helper /usr/libexec/git-core/git-credential-libsecret
+        # fedora specific
+        # - git config --global credential.helper /usr/libexec/git-core/git-credential-libsecret
+        - git config --global credential.helper /usr/share/doc/git/contrib/credential/libsecret/git-credential-libsecret
         - git config --global user.name "khoitd1997"
         - git config --global user.email "khoidinhtrinh@gmail.com"
         - git config --global core.autocrlf input

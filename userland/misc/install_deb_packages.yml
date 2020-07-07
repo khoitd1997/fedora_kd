@@ -1,0 +1,138 @@
+- block:
+    - name: install deb packages
+      apt:
+        update_cache: yes
+        state: present
+        name:
+          - nautilus-dropbox
+
+          - cmake
+          - heaptrack
+          - build-essential
+          - perf
+          - gcc
+          - clang
+          - clang-tools
+          - llvm
+          - cppcheck
+          # - libasan
+          # - libubsan
+          - ninja
+          # - boost
+          # - boost-devel
+
+          - neovim
+          - strace
+          - lshw
+          - simplescreenrecorder
+          - moreutils
+          - jq
+          - gnome-terminal
+          - doxygen
+          - youtube-dl
+          - xclip
+          - htop
+          - glances
+          - net-tools
+          - python3-pip
+          - curl
+          - python3-setuptools
+          - python3-devel
+          - neofetch
+          - git
+          - libsecret-1-0
+          - libsecret-1-dev
+          - nano
+          - dnf-automatic
+          - openconnect
+          - tmux
+          - libsecret
+          - glibc-devel.i686
+          - libnsl
+
+          - gmock
+          - gmock-devel
+          - gtest
+          - gtest-devel
+          - qt-x11
+          - mesa-libGL-devel
+
+          - kdenlive
+          - redshift-gtk
+          - gnome-disk-utility
+          - seahorse
+          - autokey-gtk
+          - firefox
+          - evince
+          - xpad
+          - gparted
+          - moserial
+          - meld
+          - graphviz
+          - npm
+          - flameshot
+          - feh
+          - latexmk
+          - kernel-devel
+          - kernel-headers
+          - pylint
+          - liveusb-creator
+          - gimp
+          - arduino
+          - kicad
+          - cura
+          - openscad
+          - vlc
+
+          # - flatpak
+
+          # - texlive-latexindent
+          # - texlive-scheme-basic
+          # - texlive-collection-latexextra
+          # - texlive-collection-latexrecommended
+          # - texlive-collection-xetex
+
+          # - gstreamer-plugins-bad
+          # - gstreamer-plugins-bad-nonfree
+          # - gstreamer-plugins-ugly
+          # - gstreamer-ffmpeg
+          # - gstreamer1-plugins-good-extras
+          # - gstreamer1-plugins-bad-free-extras
+
+          - rofi
+          - rofi-themes
+
+          # - golang
+          # - golint
+
+          # - openocd
+          # - arm-none-eabi-newlib
+          # - arm-none-eabi-gcc-cs
+          # - arm-none-eabi-gcc-cs-c++
+
+          # - "@virtualization"
+          # - tigervnc
+          # - qemu
+          # - vagrant
+          # - vagrant-sshfs
+          # - vagrant-libvirt
+
+          # - java-1.8.0-openjdk
+          # - java-1.8.0-openjdk-devel
+          # - java-openjdk
+
+          # - adobe-source-code-pro-fonts
+          # - arc-theme
+          # - plymouth-plugin-script
+          # - awesome
+
+          # - lxappearance
+          # - qt5ct
+
+          # - volumeicon
+          # - lxqt-powermanagement
+          # - udiskie
+
+          - ruby-dev
+  tags:
+    - ubuntu_specific

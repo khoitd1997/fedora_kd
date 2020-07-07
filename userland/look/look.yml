@@ -70,6 +70,7 @@
 
       tags:
         - plymouth
+        - fedora_specific
 
   tags:
     - look

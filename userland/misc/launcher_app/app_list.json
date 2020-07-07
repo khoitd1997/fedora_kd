@@ -1,103 +1,85 @@
 {
-  "apps": [
-    {
-      "name": "flameshot",
-      "command": "flameshot gui",
-      "comment": "Screenshot utils",
-      "launchInTerminal": "false",
-      "iconPath": "flameshot",
-      "type": "Application",
-      "startup": false
-    },
-    {
-      "name": "Redshift",
-      "command": "redshift-gtk",
-      "comment": "Color temperature adjustment tool",
-      "launchInTerminal": "false",
-      "iconPath": "redshift",
-      "type": "Application",
-      "startup": true
-    },
-    {
-      "name": "Terminal",
-      "command": "gnome-terminal",
-      "comment": "terminal",
-      "launchInTerminal": "false",
-      "iconPath": "terminal",
-      "type": "Application",
-      "startup": false
-    },
-    {
-      "name": "Log Out",
-      "command": "kill -9 -1",
-      "comment": "log out of current session",
-      "launchInTerminal": "true",
-      "iconPath": "logout",
-      "type": "Application",
-      "startup": false
-    },
-    {
-      "name": "Shutdown",
-      "command": "shutdown -h now",
-      "comment": "shut down",
-      "launchInTerminal": "false",
-      "iconPath": "shutdown",
-      "type": "Application",
-      "startup": false
-    },
-    {
-      "name": "Sleep",
-      "command": "systemctl suspend",
-      "comment": "sleep",
-      "launchInTerminal": "false",
-      "iconPath": "sleep",
-      "type": "Application",
-      "startup": false
-    },
-    {
-      "name": "Hibernate",
-      "command": "systemctl hibernate",
-      "comment": "hibernate",
-      "launchInTerminal": "false",
-      "iconPath": "hibernate",
-      "type": "Application",
-      "startup": false
-    },
-    {
-      "name": "Reboot",
-      "command": "reboot",
-      "comment": "reboot",
-      "launchInTerminal": "true",
-      "iconPath": "reboot",
-      "type": "Application",
-      "startup": false
-    },
-    {
-      "name": "Lock",
-      "command": "i3lock",
-      "comment": "lock screen",
-      "launchInTerminal": "false",
-      "iconPath": "lock",
-      "type": "Application",
-      "startup": false
-    },
-    {
-      "name": "autokey",
-      "command": "autokey-gtk",
-      "comment": "add keybindings",
-      "launchInTerminal": "false",
-      "iconPath": "autokey",
-      "type": "Application",
-      "startup": true
-    },
-    {
-      "name": "calculator",
-      "command": "qalculate-gtk",
-      "comment": "a really good calculator",
-      "launchInTerminal": "false",
-      "iconPath": "calculator",
-      "type": "Application",
-      "startup": false
-    }
-  ]
+    "apps": [
+        {
+            "name": "flameshot",
+            "command": "flameshot gui",
+            "comment": "Screenshot utils",
+            "launchInTerminal": "false",
+            "iconPath": "flameshot",
+            "type": "Application",
+            "startup": false
+        },
+        {
+            "name": "Redshift",
+            "command": "redshift-gtk",
+            "comment": "Color temperature adjustment tool",
+            "launchInTerminal": "false",
+            "iconPath": "redshift",
+            "type": "Application",
+            "startup": true
+        },
+        {
+            "name": "Terminal",
+            "command": "gnome-terminal",
+            "comment": "terminal",
+            "launchInTerminal": "false",
+            "iconPath": "terminal",
+            "type": "Application",
+            "startup": false
+        },
+        {
+            "name": "Log Out",
+            "command": "kill -9 -1",
+            "comment": "log out of current session",
+            "launchInTerminal": "true",
+            "iconPath": "logout",
+            "type": "Application",
+            "startup": false
+        },
+        {
+            "name": "Shutdown",
+            "command": "shutdown -h now",
+            "comment": "shut down",
+            "launchInTerminal": "false",
+            "iconPath": "shutdown",
+            "type": "Application",
+            "startup": false
+        },
+        {
+            "name": "Sleep",
+            "command": "systemctl suspend",
+            "comment": "sleep",
+            "launchInTerminal": "false",
+            "iconPath": "sleep",
+            "type": "Application",
+            "startup": false
+        },
+        {
+            "name": "Hibernate",
+            "command": "systemctl hibernate",
+            "comment": "hibernate",
+            "launchInTerminal": "false",
+            "iconPath": "hibernate",
+            "type": "Application",
+            "startup": false
+        },
+        {
+            "name": "Reboot",
+            "command": "reboot",
+            "comment": "reboot",
+            "launchInTerminal": "true",
+            "iconPath": "reboot",
+            "type": "Application",
+            "startup": false
+        },
+        {
+            "name": "autokey",
+            "command": "autokey-gtk",
+            "comment": "add keybindings",
+            "launchInTerminal": "false",
+            "iconPath": "autokey",
+            "type": "Application",
+            "startup": true
+        }
+    ]
 }

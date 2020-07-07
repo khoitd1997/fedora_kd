@@ -2,8 +2,9 @@
     - include: homebrew/homebrew.yml
 
     - block:
-        - include: package.yml
-        - include: google-chrome/google-chrome.yml
+        - include: rpm_package.yml
+        - include: install_deb_packages.yml
+        # - include: google-chrome/google-chrome.yml
 
         - name: make user files available
           shell: "{{item}}"
@@ -39,6 +40,8 @@
             - systemctl enable --now dnf-automatic.timer
             - systemctl enable --now dnf-makecache.timer
             - printf "\nkeepcache=True\n" >> /etc/dnf/dnf.conf
+          tags:
+            - fedora_specific
 
         - name: set inotify limit
           lineinfile:
@@ -49,6 +52,8 @@
 
         - name: fix snap
           shell: "ln -s /var/lib/snapd/snap /snap"
+          tags:
+            - fedora_specific
 
       become: true
 

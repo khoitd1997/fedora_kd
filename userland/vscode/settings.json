@@ -20,11 +20,13 @@
     "*.emProject": "xml",
     "*.emSession": "xml",
     "*.hpp": "cpp",
+    "*.h": "cpp",
     "*.ks": "shellscript",
     "*.rasi": "css",
     "*.in": "cmake",
-    "conanfile.txt": "toml"
-  },
+    "conanfile.txt": "toml",
+    "*.vdi": "log"
+},
   "workbench.startupEditor": "newUntitledFile",
   "window.zoomLevel": 0,
   "python.formatting.provider": "autopep8",
@@ -41,40 +43,34 @@
   },
   "html.autoClosingTags": false,
   "markdown.preview.doubleClickToSwitchToEditor": false,
-  "editor.tokenColorCustomizations": {
-    "textMateRules": [
-      {
-        "scope": "log.error",
-        "settings": {
-          "foreground": "#af1f1f",
-          "fontStyle": "bold"
-        }
-      },
-      {
-        "scope": "log.warning",
-        "settings": {
-          "foreground": "#f4ad42",
-          "fontStyle": ""
-        }
-      },
-      {
-        "scope": "log.info",
-        "settings": {
-          "foreground": "#42f4e5",
-          "fontStyle": ""
-        }
-      }
-    ]
-  },
+//   "editor.tokenColorCustomizations": {
+//     "textMateRules": [
+//       {
+//         "scope": "log.error",
+//         "settings": {
+//           "foreground": "#af1f1f",
+//           "fontStyle": "bold"
+//         }
+//       },
+//       {
+//         "scope": "log.warning",
+//         "settings": {
+//           "foreground": "#f4ad42",
+//           "fontStyle": ""
+//         }
+//       },
+//       {
+//         "scope": "log.info",
+//         "settings": {
+//           "foreground": "#42f4e5",
+//           "fontStyle": ""
+//         }
+//       }
+//     ]
+//   },
   "C_Cpp.clang_format_fallbackStyle": "LLVM",
   "C_Cpp.loggingLevel": "Information",
   "git.autofetch": true,
-  "logFileHighlighter.customPatterns": [
-    {
-      "pattern": "\\[(.*?)\\]",
-      "foreground": "#98f442"
-    }
-  ],
   "doxdocgen.generic.authorTag": "@author Khoi Trinh",
   "editor.detectIndentation": false,
   "go.formatTool": "gofmt",
@@ -340,7 +336,7 @@
     "!yaml",
     "markdown",
     "plaintext"
-  ],
+],
   "git-graph.showStatusBarItem": false,
   "highlight-matching-tag.enabled": false,
   "highlight-matching-tag.showPath": false,
@@ -354,5 +350,6 @@
 "platformio-ide.activateOnlyOnPlatformIOProject": true,
 "plantuml.java": "/usr/bin/java",
 "plantuml.exportFormat": "png",
-"plantuml.exportSubFolder": false
+"plantuml.exportSubFolder": false,
+"python.languageServer": "Microsoft"
 }
