@@ -1,0 +1,132 @@
+- block:
+    - name: remove deb packages
+      apt:
+        state: absent
+        name:
+          - gnome-shell-extension-ubuntu-dock
+
+    - name: install deb packages
+      apt:
+        update_cache: yes
+        state: present
+        name:
+          - nautilus-dropbox
+          - curl
+          - wget
+          - zsh
+
+          - cmake
+          - heaptrack
+          - build-essential
+          - linux-tools-common
+          - gcc
+          - clang
+          - clang-tools
+          - llvm
+          - cppcheck
+          # - libasan
+          # - libubsan
+          - ninja-build
+          # - boost
+          # - boost-devel
+
+          - neovim
+          - strace
+          - lshw
+          - simplescreenrecorder
+          - moreutils
+          - jq
+          - gnome-terminal
+          - doxygen
+          - youtube-dl
+          - xclip
+          - htop
+          - glances
+          - net-tools
+          - python3-pip
+          - curl
+          - python3-setuptools
+          - python3-dev
+          - neofetch
+          - git
+          - libsecret-1-0
+          - libsecret-1-dev
+          - nano
+          - tmux
+
+          - google-mock
+          - googletest
+          - libgtest-dev
+
+          - redshift-gtk
+          - seahorse
+          - autokey-gtk
+          - evince
+          - xpad
+          - gparted
+          - moserial
+          - meld
+          - graphviz
+          - npm
+          - flameshot
+          - feh
+          - latexmk
+          - linux-headers-generic
+          - pylint
+          - gimp
+          - arduino
+          - kicad
+          - cura
+          - vlc
+
+          # - texlive-latexindent
+          # - texlive-scheme-basic
+          # - texlive-collection-latexextra
+          # - texlive-collection-latexrecommended
+          # - texlive-collection-xetex
+
+          # - gstreamer-plugins-bad
+          # - gstreamer-plugins-bad-nonfree
+          # - gstreamer-plugins-ugly
+          # - gstreamer-ffmpeg
+          # - gstreamer1-plugins-good-extras
+          # - gstreamer1-plugins-bad-free-extras
+
+          - rofi
+          - gnome-tweaks
+          - dconf-editor
+
+          # - golang
+          # - golint
+
+          - openocd
+          - gcc-arm-linux-gnueabi
+          - gcc-arm-none-eabi
+          - gcc-arm-linux-gnueabihf
+
+          # - "@virtualization"
+          # - tigervnc
+          - libvirt-bin
+          - libvirt-doc
+          - virt-manager
+          - qemu
+          # - vagrant
+          # - vagrant-sshfs
+          # - vagrant-libvirt
+
+          # - java-1.8.0-openjdk
+          # - java-1.8.0-openjdk-devel
+          # - java-openjdk
+
+          # - arc-theme
+          # - plymouth-plugin-script
+          # - awesome
+
+          # - lxappearance
+          # - qt5ct
+
+          - ruby-dev
+
+  when: ansible_facts['distribution'] == "Ubuntu"
+  tags:
+    - deb_package

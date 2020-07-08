@@ -36,5 +36,6 @@
       tags:
         - xdg
 
+  when: ansible_facts['distribution'] == "Fedora"
   tags:
     - handler

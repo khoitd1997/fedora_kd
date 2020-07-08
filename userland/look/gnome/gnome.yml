@@ -1,0 +1,154 @@
+- block:
+    - name: gnome looks
+      dconf:
+        key: "{{ item.key }}"
+        value: "{{ item.value }}"
+      with_items:
+        - {
+            key: /org/gnome/desktop/interface/gtk-theme,
+            value: "'Adwaita-dark'",
+          }
+        - {
+            key: /org/gnome/desktop/background/show-desktop-icons,
+            value: "false",
+          }
+        - { key: /org/gnome/desktop/interface/font-name, value: "'Ubuntu 12'" }
+        - {
+            key: /org/gnome/desktop/interface/document-font-name,
+            value: "'Sans 12'",
+          }
+        - {
+            key: /org/gnome/desktop/input-sources/xkb-options,
+            value: "['caps:escape']",
+          }
+        - { key: /org/gnome/desktop/interface/clock-show-date, value: "true" }
+        - { key: /org/gnome/mutter/workspaces-only-on-primary, value: "false" }
+
+        # keyboard
+        - {
+            key: /org/gnome/settings-daemon/plugins/media-keys/terminal,
+            value: "'<Super>Return'",
+          }
+        - {
+            key: /org/gnome/desktop/wm/keybindings/move-to-workspace-1,
+            value: "['<Shift><Super>exclam']",
+          }
+        - {
+            key: /org/gnome/desktop/wm/keybindings/move-to-workspace-2,
+            value: "['<Shift><Super>at']",
+          }
+        - {
+            key: /org/gnome/desktop/wm/keybindings/move-to-workspace-3,
+            value: "['<Shift><Super>numbersign']",
+          }
+        - {
+            key: /org/gnome/desktop/wm/keybindings/move-to-workspace-4,
+            value: "['<Shift><Super>dollar']",
+          }
+        - {
+            key: /org/gnome/settings-daemon/plugins/media-keys/www,
+            value: "'<Super>b'",
+          }
+        - {
+            key: /org/gnome/desktop/wm/keybindings/switch-to-workspace-1,
+            value: "['<Super>1']",
+          }
+        - {
+            key: /org/gnome/desktop/wm/keybindings/switch-to-workspace-2,
+            value: "['<Super>2']",
+          }
+        - {
+            key: /org/gnome/desktop/wm/keybindings/switch-to-workspace-3,
+            value: "['<Super>3']",
+          }
+        - {
+            key: /org/gnome/desktop/wm/keybindings/switch-to-workspace-4,
+            value: "['<Super>4']",
+          }
+        - {
+            key: /org/gnome/desktop/wm/keybindings/panel-main-menu,
+            value: "@as []",
+          }
+        - {
+            key: /org/gnome/desktop/wm/keybindings/panel-run-dialog,
+            value: "@as []",
+          }
+        - {
+            key: /org/gnome/desktop/wm/keybindings/close,
+            value: "['<Super>q']",
+          }
+        - { key: /org/gnome/desktop/wm/keybindings/begin-move, value: "@as []" }
+        - {
+            key: /org/gnome/desktop/wm/keybindings/begin-resize,
+            value: "@as []",
+          }
+        - {
+            key: /org/gnome/desktop/wm/keybindings/toggle-maximized,
+            value: "@as []",
+          }
+        - {
+            key: /org/gnome/shell/keybindings/toggle-message-tray,
+            value: "['']",
+          }
+        - {
+            key: /org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/binding,
+            value: "'<Super>m'",
+          }
+        - {
+            key: /org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/name,
+            value: "'Vscode'",
+          }
+        - {
+            key: /org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/command,
+            value: "'code'",
+          }
+        - {
+            key: /org/gnome/settings-daemon/plugins/media-keys/custom-keybindings,
+            value: "['/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/']",
+          }
+        - {
+            key: /org/gnome/desktop/wm/keybindings/cycle-group,
+            value: "@as []",
+          }
+        - {
+            key: /org/gnome/desktop/wm/keybindings/cycle-group-backward,
+            value: "@as []",
+          }
+        - {
+            key: /org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1/binding,
+            value: "'<Super>r'",
+          }
+        - {
+            key: /org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1/name,
+            value: "'rofi general'",
+          }
+        - {
+            key: /org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1/command,
+            value: "'rofi -show combi -config ~/.config/rofi/rofi_config'",
+          }
+        - {
+            key: /org/gnome/settings-daemon/plugins/media-keys/custom-keybindings,
+            value: "['/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1/']",
+          }
+        - {
+            key: /org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom2/binding,
+            value: "'<Super>f'",
+          }
+        - {
+            key: /org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom2/name,
+            value: "'rofi file search'",
+          }
+        - {
+            key: /org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom2/command,
+            value: "'rofi -matching normal -config ~/.config/rofi/rofi_config -show find -modi find:~/.config/rofi/rofi_file_open.sh'",
+          }
+        - {
+            key: /org/gnome/settings-daemon/plugins/media-keys/custom-keybindings,
+            value: "['/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom2/']",
+          }
+        - { key: /org/gnome/desktop/wm/keybindings/show-desktop, value: "['']" }
+
+  when: ansible_facts['distribution'] == "Ubuntu"
+  tags:
+    - gnome
+  become_user: "{{ ansible_user_id }}"

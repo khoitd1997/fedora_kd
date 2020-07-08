@@ -361,4 +361,5 @@
 
   tags:
     - cinnamon
+  when: ansible_facts['distribution'] == "Fedora"
   become_user: "{{ ansible_user_id }}"

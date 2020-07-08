@@ -4,11 +4,11 @@ Khoi Trinh custom fedora config files
 
 ## How to use
 
-On a fresh fedora installation, run ```setup.py```
+On a fresh fedora installation, run `setup.py`
 
 ## Testing the ansible script
 
-```vagrant``` is used to bring up a VM to test the ansible script. The default vscode build task calls the ```vagrant_test.sh``` to do that
+`vagrant` is used to bring up a VM to test the ansible script. The default vscode build task calls the `vagrant_test.sh` to do that
 
 Some useful commands:
 
@@ -20,6 +20,9 @@ vagrant reload # restart the vm and update some configs
 
 ./setup.py --continue # continue from last failed task
 ./setup.py "task_name" # start at task_name
+
+# to run a tag
+ansible-playbook ./userland/setup.yml --tags="gnome"
 ```
 
 There is a vscode build target that launch a vnc viewer to look into the VM

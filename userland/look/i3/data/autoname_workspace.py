@@ -140,7 +140,6 @@ WINDOW_ICONS = {
     'slic3r.pl': fa.icons['cube'],
     'spotify': fa.icons['music'],  # could also use the 'spotify' icon
     'steam': fa.icons['steam'],
-    'konsole': fa.icons['terminal'],
     'totem': fa.icons['play'],
     'urxvt': fa.icons['terminal'],
     'xfce4-terminal': fa.icons['terminal'],

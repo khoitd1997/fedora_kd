@@ -2,8 +2,9 @@
     - include: homebrew/homebrew.yml
 
     - block:
-        - include: package.yml
-        - include: google-chrome/google-chrome.yml
+        - include: rpm_package.yml
+        - include: install_deb_packages.yml
+        # - include: google-chrome/google-chrome.yml
 
         - name: make user files available
           shell: "{{item}}"
@@ -20,13 +21,24 @@
           tags:
             - hostname
 
+        - name: configure fedora misc system stuffs
+          shell: "{{item}}"
+          with_items:
+            - systemctl enable firewalld
+          when: ansible_facts['distribution'] == "Fedora"
+
+        - name: configure Ubuntu misc system stuffs
+          shell: "{{item}}"
+          with_items:
+            - ufw enable
+          when: ansible_facts['distribution'] == "Ubuntu"
+
         - name: configure misc system stuffs
           shell: "{{item}}"
           with_items:
+            - systemctl enable libvirtd
             - usermod -a -G dialout "{{ ansible_user_id }}"
             - timedatectl set-local-rtc 1 --adjust-system-clock
-            - systemctl enable firewalld
-            - systemctl enable libvirtd
             - passwd -l root
             - rm -vf /usr/share/applications/flameshot.desktop
 
@@ -39,6 +51,7 @@
             - systemctl enable --now dnf-automatic.timer
             - systemctl enable --now dnf-makecache.timer
             - printf "\nkeepcache=True\n" >> /etc/dnf/dnf.conf
+          when: ansible_facts['distribution'] == "Fedora"
 
         - name: set inotify limit
           lineinfile:
@@ -49,6 +62,7 @@
 
         - name: fix snap
           shell: "ln -s /var/lib/snapd/snap /snap"
+          when: ansible_facts['distribution'] == "Fedora"
 
       become: true
 
@@ -122,6 +136,7 @@
       shell: "{{item}}"
       with_items:
         - gem install rubocop
+      become: true
 
       args:
         warn: false

@@ -13,5 +13,6 @@
         - awesome
         - i3
 
+  when: ansible_facts['distribution'] == "Fedora"
   tags:
     - applet

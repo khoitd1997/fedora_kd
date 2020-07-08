@@ -4,7 +4,7 @@
     - include: misc/misc.yml
     - include: vscode/vscode.yml
     - include: look/look.yml
-    - include: flatpak/flatpak.yml
+    - include: snap/snap.yml
 
     - name: setting up periodic shutdown cron job
       become: true

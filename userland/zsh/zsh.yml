@@ -5,12 +5,16 @@
         name: "{{ ansible_user_id }}"
         shell: /bin/zsh
 
+    - stat: path=~/.oh-my-zsh/
+      register: omz_file
+
     - name: install oh-my-zsh
       command: "{{item}}"
       with_items:
         - curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh -o ~/omz.sh
         - sh ~/omz.sh --skip-chsh
         - rm -rf ~/omz.sh
+      when: not omz_file.stat.exists
       tags:
         - oh-my-zsh
 
