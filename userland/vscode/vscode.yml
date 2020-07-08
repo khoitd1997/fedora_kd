@@ -1,5 +1,9 @@
 - block:
     - block:
+        # might need restart before taking effects
+        - name: install source code pro font
+          shell: bash {{ playbook_dir }}/vscode/install_source_code_pro_font.sh
+
         - name: install vscode rpm package
           command: "{{item}}"
           with_items:

@@ -349,5 +349,7 @@
 "plantuml.java": "/usr/bin/java",
 "plantuml.exportFormat": "png",
 "plantuml.exportSubFolder": false,
-"python.languageServer": "Microsoft"
+"python.languageServer": "Microsoft",
+"terminal.integrated.fontFamily": "source code pro",
+"editor.fontFamily": "source code pro"
 }
