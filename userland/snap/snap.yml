@@ -4,6 +4,8 @@
       with_items:
         - spotify
         - discord
+        - kdenlive
+        - openscad
 
     - name: Install Classic Snap Packages
       shell: "snap install {{item}} --classic"
