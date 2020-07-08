@@ -146,6 +146,7 @@
             key: /org/gnome/settings-daemon/plugins/media-keys/custom-keybindings,
             value: "['/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom2/']",
           }
+        - { key: /org/gnome/desktop/wm/keybindings/show-desktop, value: "['']" }
 
   when: ansible_facts['distribution'] == "Ubuntu"
   tags:
