@@ -1,5 +1,5 @@
 - block:
-    # - include: gnome/gnome.yml
+    - include: gnome/gnome.yml
     - include: cinnamon/cinnamon.yml
     - include: awesome/awesome.yml
     - name: configure gnome terminal

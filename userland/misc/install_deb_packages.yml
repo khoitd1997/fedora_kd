@@ -79,8 +79,6 @@
           - cura
           - vlc
 
-          - flatpak
-
           # - texlive-latexindent
           # - texlive-scheme-basic
           # - texlive-collection-latexextra
@@ -95,6 +93,8 @@
           # - gstreamer1-plugins-bad-free-extras
 
           - rofi
+          - gnome-tweaks
+          - dconf-editor
 
           # - golang
           # - golint

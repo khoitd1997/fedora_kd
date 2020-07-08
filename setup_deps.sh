@@ -4,7 +4,7 @@ distro=$(lsb_release -i | cut -d: -f2 | sed s/'^\t'//)
 
 if [ "$distro" = "Ubuntu" ]; then
     sudo apt update
-    sudo apt install python3-pip build-essential zsh ansible perl -y
+    sudo apt install python3-pip python-psutil build-essential zsh ansible perl -y
     sudo -E pip3 install fexpect -q
 else
     sudo dnf install -q -y \
