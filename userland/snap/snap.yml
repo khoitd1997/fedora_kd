@@ -13,6 +13,11 @@
         - slack
         - android-studio
 
+    - name: Install Edge Snap Packages
+      shell: "snap install {{item}} --edge"
+      with_items:
+        - cura-slicer
+
   become: true
   tags:
     - snap

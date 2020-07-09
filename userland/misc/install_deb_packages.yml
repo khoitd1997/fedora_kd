@@ -75,8 +75,6 @@
           - pylint
           - gimp
           - arduino
-          - kicad
-          - cura
           - vlc
 
           # - texlive-latexindent
