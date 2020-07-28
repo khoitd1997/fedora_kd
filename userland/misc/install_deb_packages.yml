@@ -38,7 +38,6 @@
           - jq
           - gnome-terminal
           - doxygen
-          - youtube-dl
           - xclip
           - htop
           - glances

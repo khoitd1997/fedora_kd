@@ -25,6 +25,7 @@ fi
 brew install \
     hexyl \
     z \
+    youtube-dl \
     tig \
     exa \
     peco \

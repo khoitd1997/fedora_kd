@@ -56,7 +56,6 @@
           - gnome-terminal
           - doxygen
           - dnfdragora-updater
-          - youtube-dl
           - xclip
           - htop
           - glances
