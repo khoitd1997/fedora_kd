@@ -1,16 +1,33 @@
 - block:
+    - name: fedora specific git config
+      command: "{{item}}"
+      with_items:
+        - git config --global credential.helper /usr/libexec/git-core/git-credential-libsecret
+      when: ansible_facts['distribution'] == "Fedora"
+
+    - name: ubuntu specific sudo git config
+      command: "{{item}}"
+      with_items:
+        - make -C /usr/share/doc/git/contrib/credential/libsecret
+      when: ansible_facts['distribution'] == "Ubuntu"
+      become: true
+
+    - name: ubuntu specific git config
+      command: "{{item}}"
+      with_items:
+        - git config --global credential.helper /usr/share/doc/git/contrib/credential/libsecret/git-credential-libsecret
+      when: ansible_facts['distribution'] == "Ubuntu"
+
     - name: git
       command: "{{item}}"
       with_items:
-        # fedora specific
-        # - git config --global credential.helper /usr/libexec/git-core/git-credential-libsecret
-        - git config --global credential.helper /usr/share/doc/git/contrib/credential/libsecret/git-credential-libsecret
         - git config --global user.name "khoitd1997"
         - git config --global user.email "khoidinhtrinh@gmail.com"
         - git config --global core.autocrlf input
         - git config --global core.editor "vim"
         - git config --global merge.tool meld
         - git config --global core.pager "diff-so-fancy | less --tabs=4 -RFX"
-      tags:
-        - git
-        - development
+
+  tags:
+    - git
+    - development
