@@ -188,7 +188,7 @@ if [[ -n $DISPLAY ]]; then
   zle -N x-copy-region-as-kill
   zle -N x-kill-region
   zle -N x-copy-region
-  bindkey '\C-u' x-kill-region
+#   bindkey '\C-u' x-kill-region
   bindkey '\C-o' x-copy-region
 fi
 
@@ -197,3 +197,5 @@ tool_reminders.py
 . $(brew --prefix)/etc/profile.d/z.sh
 
 export LIBVIRT_DEFAULT_URI="qemu:///system"
+
+bindkey -r '\C-u'
