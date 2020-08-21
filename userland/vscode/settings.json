@@ -1,5 +1,5 @@
 {
-    "gitlens.advanced.messages": {
+  "gitlens.advanced.messages": {
     "suppressCommitHasNoPreviousCommitWarning": false,
     "suppressCommitNotFoundWarning": false,
     "suppressFileNotUnderSourceControlWarning": false,
@@ -25,8 +25,7 @@
     "*.in": "cmake",
     "conanfile.txt": "toml",
     "*.vdi": "log"
-},
-  "workbench.startupEditor": "newUntitledFile",
+  },
   "window.zoomLevel": 2,
   "python.formatting.provider": "autopep8",
   "gitlens.keymap": "chorded",
@@ -42,31 +41,31 @@
   },
   "html.autoClosingTags": false,
   "markdown.preview.doubleClickToSwitchToEditor": false,
-//   "editor.tokenColorCustomizations": {
-//     "textMateRules": [
-//       {
-//         "scope": "log.error",
-//         "settings": {
-//           "foreground": "#af1f1f",
-//           "fontStyle": "bold"
-//         }
-//       },
-//       {
-//         "scope": "log.warning",
-//         "settings": {
-//           "foreground": "#f4ad42",
-//           "fontStyle": ""
-//         }
-//       },
-//       {
-//         "scope": "log.info",
-//         "settings": {
-//           "foreground": "#42f4e5",
-//           "fontStyle": ""
-//         }
-//       }
-//     ]
-//   },
+  //   "editor.tokenColorCustomizations": {
+  //     "textMateRules": [
+  //       {
+  //         "scope": "log.error",
+  //         "settings": {
+  //           "foreground": "#af1f1f",
+  //           "fontStyle": "bold"
+  //         }
+  //       },
+  //       {
+  //         "scope": "log.warning",
+  //         "settings": {
+  //           "foreground": "#f4ad42",
+  //           "fontStyle": ""
+  //         }
+  //       },
+  //       {
+  //         "scope": "log.info",
+  //         "settings": {
+  //           "foreground": "#42f4e5",
+  //           "fontStyle": ""
+  //         }
+  //       }
+  //     ]
+  //   },
   "C_Cpp.clang_format_fallbackStyle": "LLVM",
   "C_Cpp.loggingLevel": "Information",
   "git.autofetch": true,
@@ -75,7 +74,7 @@
   "go.formatTool": "gofmt",
   "workbench.tips.enabled": false,
   "go.autocompleteUnimportedPackages": true,
-"window.titleBarStyle": "native",
+  "window.titleBarStyle": "native",
   "editor.fontSize": 16,
   "window.newWindowDimensions": "inherit",
   "window.restoreFullscreen": true,
@@ -100,7 +99,7 @@
       "command": "multiCommand.saveAndEnterCommand",
       "sequence": ["workbench.action.files.save", "extension.vim_escape"]
     }
-],
+  ],
   "terminal.integrated.shell.windows": "C:\\Program Files\\Git\\bin\\bash.exe",
   "terminal.integrated.scrollback": 5000,
   "terminal.integrated.shell.linux": "/bin/zsh",
@@ -230,7 +229,6 @@
   ],
   "editor.wordWrapColumn": 100,
   "vim.easymotion": true,
-  "vim.easymotionMarkerFontFamily": "source code pro",
   "vim.easymotionMarkerWidthPerChar": 13,
   "vim.easymotionMarkerHeight": 16,
   "vim.easymotionMarkerForegroundColorTwoChar": "7bd88f",
@@ -325,15 +323,6 @@
   "oneDarkPro.bold": true,
   "oneDarkPro.vivid": true,
   "C_Cpp.updateChannel": "Default", // never ever go insider
-  "cSpell.enableFiletypes": [
-    "!c",
-    "!cpp",
-    "!json",
-    "!jsonc",
-    "!yaml",
-    "markdown",
-    "plaintext"
-],
   "git-graph.showStatusBarItem": false,
   "highlight-matching-tag.enabled": false,
   "highlight-matching-tag.showPath": false,
@@ -342,14 +331,14 @@
   "search.maintainFileSearchCache": true,
   "workbench.panel.defaultLocation": "right",
   "cmake.preferredGenerators": ["Ninja", "Unix Makefiles"],
-"cmake.generator": "Ninja",
-"platformio-ide.disablePIOHomeStartup": true,
-"platformio-ide.activateOnlyOnPlatformIOProject": true,
-"plantuml.java": "/usr/bin/java",
-"plantuml.exportFormat": "png",
-"plantuml.exportSubFolder": false,
-"python.languageServer": "Microsoft",
-"terminal.integrated.fontFamily": "source code pro",
-"editor.fontFamily": "source code pro",
-"editor.mouseWheelZoom": true
+  "cmake.generator": "Ninja",
+  "platformio-ide.disablePIOHomeStartup": true,
+  "platformio-ide.activateOnlyOnPlatformIOProject": true,
+  "plantuml.java": "/usr/bin/java",
+  "plantuml.exportFormat": "png",
+  "plantuml.exportSubFolder": false,
+  "python.languageServer": "Microsoft",
+  "terminal.integrated.fontFamily": "source code pro",
+  "editor.fontFamily": "source code pro",
+  "editor.mouseWheelZoom": true
 }
