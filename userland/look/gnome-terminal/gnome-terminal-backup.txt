@@ -1,208 +1,210 @@
+[legacy]
+default-show-menubar=false
+new-terminal-mode='window'
+schema-version=uint32 3
+theme-variant='dark'
+
 [legacy/keybindings]
 find='<Primary>f'
 
 [legacy/profiles:]
+default='6186f2ea-f561-4769-9c20-c66b544c0432'
 list=['eebcde74-7335-4005-a0a6-e2cbc8ce1f5a', 'c7c28369-b060-4535-9212-fca1d5e8fe24', 'e1bdd38c-edd4-4168-b6d0-b2249d94bbd8', 'f84c1a93-b8f2-4667-9c8d-8881de9f2ecf', '9fd5e83d-4510-408d-95b6-258bedd1f901', '8ef8fe7e-8c6f-4968-878d-448cf52ab643', '30464058-bd16-4f43-9fdc-1c41533acde3', '1709467a-4d41-4599-8182-8035fc0f44b6', '6186f2ea-f561-4769-9c20-c66b544c0432', 'e22b5b9c-19bd-452f-98e9-d160f6afc0c1', '311508c5-a687-462c-91cd-3f7eca95c566', '7820d65c-a06a-4c53-b931-d7bd056bdc27', '3fd61033-b259-4297-a783-836957a37168', 'f58dc6d0-b043-4006-b253-8691190f378e', '6d8b71bb-7bb9-4f93-8682-67b7a9650f7b']
-default='3fd61033-b259-4297-a783-836957a37168'
 
-[legacy/profiles:/:f84c1a93-b8f2-4667-9c8d-8881de9f2ecf]
-foreground-color='#ebebdbdbb2b2'
-visible-name='Gruvbox Dark'
-palette=['#282828282828', '#cccc24241d1d', '#989897971a1a', '#d7d799992121', '#454585858888', '#b1b162628686', '#68689d9d6a6a', '#a8a899998484', '#929283837474', '#fbfb49493434', '#b8b8bbbb2626', '#fafabdbd2f2f', '#8383a5a59898', '#d3d386869b9b', '#8e8ec0c07c7c', '#ebebdbdbb2b2']
-use-theme-colors=false
+[legacy/profiles:/:1709467a-4d41-4599-8182-8035fc0f44b6]
 allow-bold=true
-use-theme-background=false
+background-color='#1f1f1f1f1f1f'
+bold-color='#b9b9bcbcbaba'
 bold-color-same-as-fg=true
-bold-color='#ebebdbdbb2b2'
-background-color='#282828282828'
+foreground-color='#b9b9bcbcbaba'
+palette=['#3a3a3d3d4343', '#bebe3f3f4848', '#87879a9a3b3b', '#c5c5a6a63535', '#4f4f7676a1a1', '#85855c5c8d8d', '#57578f8fa4a4', '#b9b9bcbcbaba', '#888889898787', '#fbfb00001f1f', '#0f0f72722f2f', '#c4c470703333', '#18186d6de3e3', '#fbfb00006767', '#2e2e70706d6d', '#fdfdffffb9b9']
+use-theme-background=false
+use-theme-colors=false
+visible-name='Dimmed Monokai'
+
+[legacy/profiles:/:30464058-bd16-4f43-9fdc-1c41533acde3]
+allow-bold=true
+background-color='#131313131313'
+bold-color='#d6d6dbdbe5e5'
+bold-color-same-as-fg=true
+foreground-color='#d6d6dbdbe5e5'
+palette=['#1f1f1f1f1f1f', '#f8f811111818', '#2d2dc5c55e5e', '#ececbaba0f0f', '#2a2a8484d2d2', '#4e4e5a5ab7b7', '#10108181d6d6', '#d6d6dbdbe5e5', '#d6d6dbdbe5e5', '#dede35352e2e', '#1d1dd3d36161', '#f3f3bdbd0909', '#10108181d6d6', '#53535050b9b9', '#0f0f7d7ddbdb', '#ffffffffffff']
+use-theme-background=false
+use-theme-colors=false
+visible-name='Brogrammer'
+
+[legacy/profiles:/:311508c5-a687-462c-91cd-3f7eca95c566]
+allow-bold=true
+background-color='#1d1d1f1f2121'
+bold-color='#b8b8dbdbefef'
+bold-color-same-as-fg=true
+foreground-color='#b8b8dbdbefef'
+palette=['#1d1d1d1d1919', '#f1f183833939', '#9f9fd3d36464', '#f4f4efef6d6d', '#50509696bebe', '#69695a5abcbc', '#d6d638386565', '#ffffffffffff', '#1d1d1d1d1919', '#d2d22a2a2424', '#a7a7d4d42c2c', '#ffff89894949', '#6161b9b9d0d0', '#69695a5abcbc', '#d6d638386565', '#ffffffffffff']
+use-theme-background=false
+use-theme-colors=false
+visible-name='Flatland'
+
+[legacy/profiles:/:3fd61033-b259-4297-a783-836957a37168]
+allow-bold=true
+audible-bell=false
+background-color='#1a1a1a1a1a1a'
+bold-color='#c4c4c5c5b5b5'
+bold-color-same-as-fg=true
+cursor-shape='ibeam'
+font='Source Code Pro Semi-Bold 12'
+foreground-color='#c4c4c5c5b5b5'
+palette=['#1a1a1a1a1a1a', '#f4f400005f5f', '#9898e0e02424', '#fafa84841919', '#9d9d6565ffff', '#f4f400005f5f', '#5858d1d1ebeb', '#c4c4c5c5b5b5', '#62625e5e4c4c', '#f4f400005f5f', '#9898e0e02424', '#e0e0d5d56161', '#9d9d6565ffff', '#f4f400005f5f', '#5858d1d1ebeb', '#f6f6f6f6efef']
+use-system-font=false
+use-theme-background=false
+use-theme-colors=false
+visible-name='Monokai Soda'
+
+[legacy/profiles:/:6186f2ea-f561-4769-9c20-c66b544c0432]
+allow-bold=true
+background-color='#1E1E28282C2C'
+bold-color='#C3C3C7C7D1D1'
+bold-color-same-as-fg=true
+foreground-color='#C3C3C7C7D1D1'
+palette=['#070736364141', '#EBEB60606B6B', '#C3C3E8E88D8D', '#F7F7EBEB9595', '#8080CBCBC3C3', '#FFFF24249090', '#AEAEDDDDFFFF', '#FFFFFFFFFFFF', '#00002B2B3636', '#EBEB60606B6B', '#C3C3E8E88D8D', '#F7F7EBEB9595', '#7D7DC6C6BFBF', '#6C6C7171C3C3', '#343443434D4D', '#FFFFFFFFFFFF']
+use-theme-background=false
+use-theme-colors=false
+visible-name='Material'
+
+[legacy/profiles:/:6d8b71bb-7bb9-4f93-8682-67b7a9650f7b]
+allow-bold=true
+background-color='#000000000000'
+bold-color='#dcdcdfdfe4e4'
+bold-color-same-as-fg=true
+foreground-color='#dcdcdfdfe4e4'
+palette=['#28282c2c3434', '#e0e06c6c7575', '#9898c3c37979', '#e5e5c0c07b7b', '#6161afafefef', '#c6c67878dddd', '#5656b6b6c2c2', '#dcdcdfdfe4e4', '#28282c2c3434', '#e0e06c6c7575', '#9898c3c37979', '#e5e5c0c07b7b', '#6161afafefef', '#c6c67878dddd', '#5656b6b6c2c2', '#dcdcdfdfe4e4']
+use-theme-background=false
+use-theme-colors=false
+visible-name='One Half Black'
+
+[legacy/profiles:/:7820d65c-a06a-4c53-b931-d7bd056bdc27]
+allow-bold=true
+background-color='#12120b0b0d0d'
+bold-color='#f7f7d6d66a6a'
+bold-color-same-as-fg=true
+foreground-color='#f7f7d6d66a6a'
+palette=['#35351b1b0e0e', '#9b9b29291c1c', '#636362623232', '#c3c36e6e2828', '#51515c5c5d5d', '#9b9b1d1d2929', '#585880805656', '#f7f7d7d75c5c', '#878742422828', '#ffff43433131', '#b4b4b2b26464', '#ffff95956666', '#9e9eb2b2b4b4', '#ffff5b5b6a6a', '#8a8acdcd8f8f', '#ffffe5e59898']
+use-theme-background=false
+use-theme-colors=false
+visible-name='Mona Lisa'
+
+[legacy/profiles:/:8ef8fe7e-8c6f-4968-878d-448cf52ab643]
+allow-bold=true
+audible-bell=false
+background-color='#161617171919'
+bold-color='#c5c5c8c8c6c6'
+bold-color-same-as-fg=true
+foreground-color='#c5c5c8c8c6c6'
+palette=['#000000000000', '#fdfd5f5ff1f1', '#8787c3c38a8a', '#ffffd7d7b1b1', '#8585bebefdfd', '#b9b9b6b6fcfc', '#8585bebefdfd', '#e0e0e0e0e0e0', '#000000000000', '#fdfd5f5ff1f1', '#9494fafa3636', '#f5f5ffffa8a8', '#9696cbcbfefe', '#b9b9b6b6fcfc', '#8585bebefdfd', '#e0e0e0e0e0e0']
+use-theme-background=false
+use-theme-colors=false
+visible-name='Atom'
+
+[legacy/profiles:/:9fd5e83d-4510-408d-95b6-258bedd1f901]
+allow-bold=true
+background-color='#1f1f1d1d4545'
+bold-color='#f8f8dcdcc0c0'
+bold-color-same-as-fg=true
+foreground-color='#f8f8dcdcc0c0'
+palette=['#050504040404', '#bdbd00001313', '#4a4ab1b11818', '#e7e774741e1e', '#0f0f4a4ac6c6', '#666659599393', '#7070a5a59898', '#f8f8dcdcc0c0', '#4e4e7c7cbfbf', '#fcfc5f5f5a5a', '#9e9effff6e6e', '#efefc1c11a1a', '#19199797c6c6', '#9b9b59595353', '#c8c8fafaf4f4', '#f6f6f5f5fbfb']
+use-theme-background=false
+use-theme-colors=false
+visible-name='Adventure Time'
 
 [legacy/profiles:/:b1dcc9dd-5262-4d8d-a863-c897e6d979b9]
+audible-bell=false
+background-color='rgb(43,45,53)'
+background-transparency-percent=23
+bold-color='#000000000000'
+bold-color-same-as-fg=true
+bold-is-bright=true
+cursor-background-color='rgb(104,108,108)'
+cursor-colors-set=true
+cursor-foreground-color='rgb(255,255,255)'
+cursor-shape='underline'
+custom-command='/bin/zsh'
+default-size-columns=90
+font='Source Code Pro Semi-Bold 12'
 foreground-color='rgb(253,253,253)'
+highlight-background-color='rgb(82,81,84)'
+highlight-colors-set=true
 highlight-foreground-color='rgb(192,191,191)'
 palette=['rgb(40,42,54)', 'rgb(243,127,151)', 'rgb(90,222,205)', 'rgb(242,162,114)', 'rgb(136,151,244)', 'rgb(197,116,221)', 'rgb(121,230,243)', 'rgb(253,253,253)', 'rgb(65,68,88)', 'rgb(255,73,113)', 'rgb(24,227,200)', 'rgb(255,128,55)', 'rgb(85,111,255)', 'rgb(176,67,209)', 'rgb(63,220,238)', 'rgb(190,190,193)']
 text-blink-mode='never'
-bold-is-bright=true
-custom-command='/bin/zsh'
-default-size-columns=90
-cursor-background-color='rgb(104,108,108)'
-cursor-shape='underline'
-cursor-colors-set=true
-highlight-colors-set=true
-use-system-font=false
-use-custom-command=true
 title='terminal'
-cursor-foreground-color='rgb(255,255,255)'
-font='Source Code Pro Semi-Bold 12'
+use-custom-command=true
+use-system-font=false
 use-theme-colors=false
 use-theme-transparency=true
 use-transparent-background=false
-bold-color-same-as-fg=true
-bold-color='#000000000000'
-background-color='rgb(43,45,53)'
-background-transparency-percent=23
-highlight-background-color='rgb(82,81,84)'
-audible-bell=false
-
-[legacy/profiles:/:f58dc6d0-b043-4006-b253-8691190f378e]
-foreground-color='#97979C9CACAC'
-visible-name='Ocean Dark'
-palette=['#4F4F4F4F4F4F', '#AFAF4B4B5757', '#AFAFD3D38383', '#E5E5C0C07979', '#7D7D9090A4A4', '#A4A479799D9D', '#8585A6A6A5A5', '#EEEEEDEDEEEE', '#7B7B7B7B7B7B', '#AFAF4B4B5757', '#CECEFFFFABAB', '#FFFFFEFECCCC', '#B5B5DCDCFEFE', '#FBFB9B9BFEFE', '#DFDFDFDFFDFD', '#FEFEFFFFFEFE']
-use-theme-colors=false
-allow-bold=true
-use-theme-background=false
-bold-color-same-as-fg=true
-bold-color='#97979C9CACAC'
-background-color='#1C1C1F1F2727'
-
-[legacy/profiles:/:30464058-bd16-4f43-9fdc-1c41533acde3]
-foreground-color='#d6d6dbdbe5e5'
-visible-name='Brogrammer'
-palette=['#1f1f1f1f1f1f', '#f8f811111818', '#2d2dc5c55e5e', '#ececbaba0f0f', '#2a2a8484d2d2', '#4e4e5a5ab7b7', '#10108181d6d6', '#d6d6dbdbe5e5', '#d6d6dbdbe5e5', '#dede35352e2e', '#1d1dd3d36161', '#f3f3bdbd0909', '#10108181d6d6', '#53535050b9b9', '#0f0f7d7ddbdb', '#ffffffffffff']
-use-theme-colors=false
-allow-bold=true
-use-theme-background=false
-bold-color-same-as-fg=true
-bold-color='#d6d6dbdbe5e5'
-background-color='#131313131313'
-
-[legacy/profiles:/:311508c5-a687-462c-91cd-3f7eca95c566]
-foreground-color='#b8b8dbdbefef'
-visible-name='Flatland'
-palette=['#1d1d1d1d1919', '#f1f183833939', '#9f9fd3d36464', '#f4f4efef6d6d', '#50509696bebe', '#69695a5abcbc', '#d6d638386565', '#ffffffffffff', '#1d1d1d1d1919', '#d2d22a2a2424', '#a7a7d4d42c2c', '#ffff89894949', '#6161b9b9d0d0', '#69695a5abcbc', '#d6d638386565', '#ffffffffffff']
-use-theme-colors=false
-allow-bold=true
-use-theme-background=false
-bold-color-same-as-fg=true
-bold-color='#b8b8dbdbefef'
-background-color='#1d1d1f1f2121'
-
-[legacy/profiles:/:e1bdd38c-edd4-4168-b6d0-b2249d94bbd8]
-foreground-color='#5C5C63637070'
-visible-name='One Dark'
-palette=['#000000000000', '#E0E06C6C7575', '#9898C3C37979', '#D1D19A9A6666', '#6161AFAFEFEF', '#C6C67878DDDD', '#5656B6B6C2C2', '#ABABB2B2BFBF', '#5C5C63637070', '#E0E06C6C7575', '#9898C3C37979', '#D1D19A9A6666', '#6161AFAFEFEF', '#C6C67878DDDD', '#5656B6B6C2C2', '#FFFFFEFEFEFE']
-use-theme-colors=false
-allow-bold=true
-use-theme-background=false
-bold-color-same-as-fg=true
-bold-color='#5C5C63637070'
-background-color='#1E1E21212727'
-
-[legacy/profiles:/:6186f2ea-f561-4769-9c20-c66b544c0432]
-foreground-color='#C3C3C7C7D1D1'
-visible-name='Material'
-palette=['#070736364141', '#EBEB60606B6B', '#C3C3E8E88D8D', '#F7F7EBEB9595', '#8080CBCBC3C3', '#FFFF24249090', '#AEAEDDDDFFFF', '#FFFFFFFFFFFF', '#00002B2B3636', '#EBEB60606B6B', '#C3C3E8E88D8D', '#F7F7EBEB9595', '#7D7DC6C6BFBF', '#6C6C7171C3C3', '#343443434D4D', '#FFFFFFFFFFFF']
-use-theme-colors=false
-allow-bold=true
-use-theme-background=false
-bold-color-same-as-fg=true
-bold-color='#C3C3C7C7D1D1'
-background-color='#1E1E28282C2C'
-
-[legacy/profiles:/:1709467a-4d41-4599-8182-8035fc0f44b6]
-foreground-color='#b9b9bcbcbaba'
-visible-name='Dimmed Monokai'
-palette=['#3a3a3d3d4343', '#bebe3f3f4848', '#87879a9a3b3b', '#c5c5a6a63535', '#4f4f7676a1a1', '#85855c5c8d8d', '#57578f8fa4a4', '#b9b9bcbcbaba', '#888889898787', '#fbfb00001f1f', '#0f0f72722f2f', '#c4c470703333', '#18186d6de3e3', '#fbfb00006767', '#2e2e70706d6d', '#fdfdffffb9b9']
-use-theme-colors=false
-allow-bold=true
-use-theme-background=false
-bold-color-same-as-fg=true
-bold-color='#b9b9bcbcbaba'
-background-color='#1f1f1f1f1f1f'
-
-[legacy/profiles:/:6d8b71bb-7bb9-4f93-8682-67b7a9650f7b]
-foreground-color='#dcdcdfdfe4e4'
-visible-name='One Half Black'
-palette=['#28282c2c3434', '#e0e06c6c7575', '#9898c3c37979', '#e5e5c0c07b7b', '#6161afafefef', '#c6c67878dddd', '#5656b6b6c2c2', '#dcdcdfdfe4e4', '#28282c2c3434', '#e0e06c6c7575', '#9898c3c37979', '#e5e5c0c07b7b', '#6161afafefef', '#c6c67878dddd', '#5656b6b6c2c2', '#dcdcdfdfe4e4']
-use-theme-colors=false
-allow-bold=true
-use-theme-background=false
-bold-color-same-as-fg=true
-bold-color='#dcdcdfdfe4e4'
-background-color='#000000000000'
 
 [legacy/profiles:/:c7c28369-b060-4535-9212-fca1d5e8fe24]
-foreground-color='#f8f8f8f8f2f2'
-visible-name='Monokai Dark'
-palette=['#757571715e5e', '#f9f926267272', '#a6a6e2e22e2e', '#f4f4bfbf7575', '#6666d9d9efef', '#aeae8181ffff', '#2A2AA1A19898', '#f9f9f8f8f5f5', '#272728282222', '#f9f926267272', '#a6a6e2e22e2e', '#f4f4bfbf7575', '#6666d9d9efef', '#aeae8181ffff', '#2A2AA1A19898', '#f8f8f8f8f2f2']
-use-theme-colors=false
 allow-bold=true
-use-theme-background=false
-bold-color-same-as-fg=true
-bold-color='#f8f8f8f8f2f2'
 background-color='#272728282222'
-
-[legacy/profiles:/:9fd5e83d-4510-408d-95b6-258bedd1f901]
-foreground-color='#f8f8dcdcc0c0'
-visible-name='Adventure Time'
-palette=['#050504040404', '#bdbd00001313', '#4a4ab1b11818', '#e7e774741e1e', '#0f0f4a4ac6c6', '#666659599393', '#7070a5a59898', '#f8f8dcdcc0c0', '#4e4e7c7cbfbf', '#fcfc5f5f5a5a', '#9e9effff6e6e', '#efefc1c11a1a', '#19199797c6c6', '#9b9b59595353', '#c8c8fafaf4f4', '#f6f6f5f5fbfb']
-use-theme-colors=false
-allow-bold=true
-use-theme-background=false
+bold-color='#f8f8f8f8f2f2'
 bold-color-same-as-fg=true
-bold-color='#f8f8dcdcc0c0'
-background-color='#1f1f1d1d4545'
+foreground-color='#f8f8f8f8f2f2'
+palette=['#757571715e5e', '#f9f926267272', '#a6a6e2e22e2e', '#f4f4bfbf7575', '#6666d9d9efef', '#aeae8181ffff', '#2A2AA1A19898', '#f9f9f8f8f5f5', '#272728282222', '#f9f926267272', '#a6a6e2e22e2e', '#f4f4bfbf7575', '#6666d9d9efef', '#aeae8181ffff', '#2A2AA1A19898', '#f8f8f8f8f2f2']
+use-theme-background=false
+use-theme-colors=false
+visible-name='Monokai Dark'
+
+[legacy/profiles:/:e1bdd38c-edd4-4168-b6d0-b2249d94bbd8]
+allow-bold=true
+audible-bell=false
+background-color='#1E1E21212727'
+bold-color='#5C5C63637070'
+bold-color-same-as-fg=true
+foreground-color='#5C5C63637070'
+palette=['#000000000000', '#E0E06C6C7575', '#9898C3C37979', '#D1D19A9A6666', '#6161AFAFEFEF', '#C6C67878DDDD', '#5656B6B6C2C2', '#ABABB2B2BFBF', '#5C5C63637070', '#E0E06C6C7575', '#9898C3C37979', '#D1D19A9A6666', '#6161AFAFEFEF', '#C6C67878DDDD', '#5656B6B6C2C2', '#FFFFFEFEFEFE']
+use-theme-background=false
+use-theme-colors=false
+visible-name='One Dark'
 
 [legacy/profiles:/:e22b5b9c-19bd-452f-98e9-d160f6afc0c1]
-foreground-color='#BDBDX3X3C7C7'
-visible-name='Maia'
-palette=['#232324242323', '#BABA29292222', '#7E7E80807E7E', '#4C4C4F4F4D4D', '#1616A0A08585', '#434374746A6A', '#0000CCCCCCCC', '#E0E0E0E0E0E0', '#282829292828', '#CCCC37372C2C', '#8D8D8F8F8D8D', '#4E4E52524F4F', '#1313BFBF9D9D', '#48487D7D7272', '#0000D1D1D1D1', '#E8E8E8E8E8E8']
-use-theme-colors=false
 allow-bold=true
-use-theme-background=false
-bold-color-same-as-fg=true
-bold-color='#BDBDX3X3C7C7'
 background-color='#313136363B3B'
+bold-color='#BDBDX3X3C7C7'
+bold-color-same-as-fg=true
+foreground-color='#BDBDX3X3C7C7'
+palette=['#232324242323', '#BABA29292222', '#7E7E80807E7E', '#4C4C4F4F4D4D', '#1616A0A08585', '#434374746A6A', '#0000CCCCCCCC', '#E0E0E0E0E0E0', '#282829292828', '#CCCC37372C2C', '#8D8D8F8F8D8D', '#4E4E52524F4F', '#1313BFBF9D9D', '#48487D7D7272', '#0000D1D1D1D1', '#E8E8E8E8E8E8']
+use-theme-background=false
+use-theme-colors=false
+visible-name='Maia'
 
 [legacy/profiles:/:eebcde74-7335-4005-a0a6-e2cbc8ce1f5a]
-foreground-color='#BBBBBBBBBBBB'
-visible-name='Molokai'
-palette=['#1b1b1d1d1e1e', '#73732525FAFA', '#2323E2E29898', '#6060D4D4DFDF', '#D0D080801010', '#FFFF00008787', '#D0D0A8A84343', '#BBBBBBBBBBBB', '#555555555555', '#9D9D6666F6F6', '#5F5FE0E0B1B1', '#6D6DF2F2FFFF', '#FFFFAFAF0000', '#FFFF8787AFAF', '#FFFFCECE5151', '#FFFFFFFFFFFF']
-use-theme-colors=false
 allow-bold=true
-use-theme-background=false
-bold-color-same-as-fg=true
-bold-color='#BBBBBBBBBBBB'
 background-color='#1b1b1d1d1e1e'
-
-[legacy/profiles:/:8ef8fe7e-8c6f-4968-878d-448cf52ab643]
-foreground-color='#c5c5c8c8c6c6'
-visible-name='Atom'
-palette=['#000000000000', '#fdfd5f5ff1f1', '#8787c3c38a8a', '#ffffd7d7b1b1', '#8585bebefdfd', '#b9b9b6b6fcfc', '#8585bebefdfd', '#e0e0e0e0e0e0', '#000000000000', '#fdfd5f5ff1f1', '#9494fafa3636', '#f5f5ffffa8a8', '#9696cbcbfefe', '#b9b9b6b6fcfc', '#8585bebefdfd', '#e0e0e0e0e0e0']
-use-theme-colors=false
-allow-bold=true
-use-theme-background=false
+bold-color='#BBBBBBBBBBBB'
 bold-color-same-as-fg=true
-bold-color='#c5c5c8c8c6c6'
-background-color='#161617171919'
-audible-bell=false
-
-[legacy/profiles:/:7820d65c-a06a-4c53-b931-d7bd056bdc27]
-foreground-color='#f7f7d6d66a6a'
-visible-name='Mona Lisa'
-palette=['#35351b1b0e0e', '#9b9b29291c1c', '#636362623232', '#c3c36e6e2828', '#51515c5c5d5d', '#9b9b1d1d2929', '#585880805656', '#f7f7d7d75c5c', '#878742422828', '#ffff43433131', '#b4b4b2b26464', '#ffff95956666', '#9e9eb2b2b4b4', '#ffff5b5b6a6a', '#8a8acdcd8f8f', '#ffffe5e59898']
-use-theme-colors=false
-allow-bold=true
+foreground-color='#BBBBBBBBBBBB'
+palette=['#1b1b1d1d1e1e', '#73732525FAFA', '#2323E2E29898', '#6060D4D4DFDF', '#D0D080801010', '#FFFF00008787', '#D0D0A8A84343', '#BBBBBBBBBBBB', '#555555555555', '#9D9D6666F6F6', '#5F5FE0E0B1B1', '#6D6DF2F2FFFF', '#FFFFAFAF0000', '#FFFF8787AFAF', '#FFFFCECE5151', '#FFFFFFFFFFFF']
 use-theme-background=false
-bold-color-same-as-fg=true
-bold-color='#f7f7d6d66a6a'
-background-color='#12120b0b0d0d'
-
-[legacy/profiles:/:3fd61033-b259-4297-a783-836957a37168]
-foreground-color='#c4c4c5c5b5b5'
-visible-name='Monokai Soda'
-palette=['#1a1a1a1a1a1a', '#f4f400005f5f', '#9898e0e02424', '#fafa84841919', '#9d9d6565ffff', '#f4f400005f5f', '#5858d1d1ebeb', '#c4c4c5c5b5b5', '#62625e5e4c4c', '#f4f400005f5f', '#9898e0e02424', '#e0e0d5d56161', '#9d9d6565ffff', '#f4f400005f5f', '#5858d1d1ebeb', '#f6f6f6f6efef']
-cursor-shape='ibeam'
-use-system-font=false
 use-theme-colors=false
-font='Source Code Pro Semi-Bold 12'
-allow-bold=true
-use-theme-background=false
-bold-color-same-as-fg=true
-bold-color='#c4c4c5c5b5b5'
-background-color='#1a1a1a1a1a1a'
-audible-bell=false
+visible-name='Molokai'
 
-[legacy]
-schema-version=uint32 3
-default-show-menubar=false
-theme-variant='dark'
+[legacy/profiles:/:f58dc6d0-b043-4006-b253-8691190f378e]
+allow-bold=true
+background-color='#1C1C1F1F2727'
+bold-color='#97979C9CACAC'
+bold-color-same-as-fg=true
+foreground-color='#97979C9CACAC'
+palette=['#4F4F4F4F4F4F', '#AFAF4B4B5757', '#AFAFD3D38383', '#E5E5C0C07979', '#7D7D9090A4A4', '#A4A479799D9D', '#8585A6A6A5A5', '#EEEEEDEDEEEE', '#7B7B7B7B7B7B', '#AFAF4B4B5757', '#CECEFFFFABAB', '#FFFFFEFECCCC', '#B5B5DCDCFEFE', '#FBFB9B9BFEFE', '#DFDFDFDFFDFD', '#FEFEFFFFFEFE']
+use-theme-background=false
+use-theme-colors=false
+visible-name='Ocean Dark'
+
+[legacy/profiles:/:f84c1a93-b8f2-4667-9c8d-8881de9f2ecf]
+allow-bold=true
+background-color='#282828282828'
+bold-color='#ebebdbdbb2b2'
+bold-color-same-as-fg=true
+foreground-color='#ebebdbdbb2b2'
+palette=['#282828282828', '#cccc24241d1d', '#989897971a1a', '#d7d799992121', '#454585858888', '#b1b162628686', '#68689d9d6a6a', '#a8a899998484', '#929283837474', '#fbfb49493434', '#b8b8bbbb2626', '#fafabdbd2f2f', '#8383a5a59898', '#d3d386869b9b', '#8e8ec0c07c7c', '#ebebdbdbb2b2']
+use-theme-background=false
+use-theme-colors=false
+visible-name='Gruvbox Dark'
