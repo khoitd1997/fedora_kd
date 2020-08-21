@@ -1,6 +1,5 @@
 {
-  "workbench.iconTheme": "Monokai Pro (Filter Spectrum) Icons",
-  "gitlens.advanced.messages": {
+    "gitlens.advanced.messages": {
     "suppressCommitHasNoPreviousCommitWarning": false,
     "suppressCommitNotFoundWarning": false,
     "suppressFileNotUnderSourceControlWarning": false,
@@ -28,7 +27,7 @@
     "*.vdi": "log"
 },
   "workbench.startupEditor": "newUntitledFile",
-  "window.zoomLevel": 0,
+  "window.zoomLevel": 2,
   "python.formatting.provider": "autopep8",
   "gitlens.keymap": "chorded",
   "editor.minimap.enabled": false,
@@ -351,5 +350,6 @@
 "plantuml.exportSubFolder": false,
 "python.languageServer": "Microsoft",
 "terminal.integrated.fontFamily": "source code pro",
-"editor.fontFamily": "source code pro"
+"editor.fontFamily": "source code pro",
+"editor.mouseWheelZoom": true
 }
