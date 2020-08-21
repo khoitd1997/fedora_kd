@@ -74,6 +74,15 @@
           - libsecret
           - glibc-devel.i686
           - libnsl
+          - fd
+          - tig
+          - hexyl
+          - bat
+          - ncdu
+          - fzf
+          - ripgrep
+          - tldr
+          - youtube-dl
 
           - gmock
           - gmock-devel

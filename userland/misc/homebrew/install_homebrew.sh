@@ -23,19 +23,9 @@ fi
 . ~/.profile
 
 brew install \
-    hexyl \
-    z \
-    youtube-dl \
-    tig \
     exa \
     peco \
-    bat \
-    ncdu \
     hyperfine \
-    fzf \
-    ripgrep \
-    tldr \
-    mdbook \
-    fd
+    mdbook
 
 $(brew --prefix)/opt/fzf/install --all
