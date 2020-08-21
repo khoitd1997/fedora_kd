@@ -75,7 +75,7 @@
   "workbench.tips.enabled": false,
   "go.autocompleteUnimportedPackages": true,
   "window.titleBarStyle": "native",
-  "editor.fontSize": 16,
+  "editor.fontSize": 12,
   "window.newWindowDimensions": "inherit",
   "window.restoreFullscreen": true,
   "workbench.activityBar.visible": false,
@@ -319,8 +319,7 @@
   "ruby.codeCompletion": "rcodetools",
   "ruby.intellisense": "rubyLocate",
   "ruby.useLanguageServer": true,
-  "terminal.integrated.cursorBlinking": true,
-  "oneDarkPro.bold": true,
+"terminal.integrated.cursorBlinking": true,
   "oneDarkPro.vivid": true,
   "C_Cpp.updateChannel": "Default", // never ever go insider
   "git-graph.showStatusBarItem": false,
@@ -340,5 +339,5 @@
   "python.languageServer": "Microsoft",
   "terminal.integrated.fontFamily": "source code pro",
   "editor.fontFamily": "source code pro",
-  "editor.mouseWheelZoom": true
+"editor.mouseWheelZoom": true
 }
