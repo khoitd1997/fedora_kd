@@ -64,7 +64,7 @@ COMPLETION_WAITING_DOTS="true"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git zsh-autosuggestions zsh-completions colorize colored-man-pages)
+plugins=(git zsh-autosuggestions zsh-completions colored-man-pages)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -101,15 +101,28 @@ export EDITOR='vim'
 # MODE_INDICATOR="%{$fg_bold[red]%} -- NORMAL -- %{$reset_color%}"
 # RPROMPT='$(vi_mode_prompt_info)'
 
-bindkey -M vicmd "^R" fzf-history-widget
-
 TRAPALRM() {
     zle reset-prompt
 }
 TMOUT=300
 
 bindkey '^ ' autosuggest-accept
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+if [ "${OS}" != "Darwin" ]; then
+    export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
+
+    export PATH="$PATH:/Applications/Visual Studio Code.app/Contents/Resources/app/bin"
+    export PATH="$PATH:/Applications/Visual Studio Code - Insiders.app/Contents/Resources/app/bin"
+
+    source /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+
+    if [ -f "/etc/debian_version" ]; then
+        source /usr/share/doc/fzf/examples/key-bindings.zsh
+        alias bat=batcat
+    else
+        source /usr/share/fzf/shell/key-bindings.zsh
+    fi
+fi
 
 PATH=$PATH:${GOPATH//://bin:}/bin
 PATH=$PATH:${HOME}/.local/bin
@@ -130,10 +143,6 @@ stty start undef
 stty stop undef
 setopt noflowcontrol
 
-if [ "$(uname -s)" != "Darwin" ]; then
-source /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-fi
-
 SPACESHIP_PROMPT_ORDER=(
   time          # Time stamps section
   user          # Username section
@@ -153,15 +162,6 @@ SPACESHIP_PROMPT_ORDER=(
   char          # Prompt character
 )
 export GROFF_NO_SGR=1
-
-if [ "${OS}" != "Darwin" ]; then
-export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
-fi
-
-if [ "${OS}" = "Darwin" ]; then
-export PATH="$PATH:/Applications/Visual Studio Code.app/Contents/Resources/app/bin"
-export PATH="$PATH:/Applications/Visual Studio Code - Insiders.app/Contents/Resources/app/bin"
-fi
 
 alias vim="nvim"
 alias vi="nvim"
@@ -194,8 +194,8 @@ fi
 
 tool_reminders.py
 
-. $(brew --prefix)/etc/profile.d/z.sh
-
 export LIBVIRT_DEFAULT_URI="qemu:///system"
 
 bindkey -r '\C-u'
+
+eval "$(direnv hook zsh)"
