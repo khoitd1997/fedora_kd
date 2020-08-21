@@ -54,6 +54,7 @@ cmdline_tools = {
              "tree: display directory structure",
              "Terminal Ctrl-W: Delete current word",
              "Terminal Ctrl-Y: Paste back word just deleted",
+             "Terminal Ctrl-X, Ctrl-E: Edit current command in text editor",
              "Terminal Ctrl-D: Log out",
              ]
 }
