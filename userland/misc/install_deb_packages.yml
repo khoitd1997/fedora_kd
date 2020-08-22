@@ -14,7 +14,7 @@
           - curl
           - wget
           - zsh
-          - fd
+          - fd-find
           - bat
           - ncdu
           - fzf
