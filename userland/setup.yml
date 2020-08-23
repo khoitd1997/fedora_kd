@@ -1,6 +1,7 @@
 - hosts: localhost
   tasks:
     - include: zsh/zsh.yml
+    - include: fish/fish.yml
     - include: misc/misc.yml
     - include: vscode/vscode.yml
     - include: look/look.yml

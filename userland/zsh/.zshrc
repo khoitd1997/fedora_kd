@@ -119,6 +119,7 @@ if [ "${OS}" != "Darwin" ]; then
     if [ -f "/etc/debian_version" ]; then
         source /usr/share/doc/fzf/examples/key-bindings.zsh
         alias bat=batcat
+        alias fd=fdfind
     else
         source /usr/share/fzf/shell/key-bindings.zsh
     fi

@@ -1,9 +1,9 @@
 - block:
-    - name: change user shell to zsh
-      become: yes
-      user:
-        name: "{{ ansible_user_id }}"
-        shell: /bin/zsh
+    # - name: change user shell to zsh
+    #   become: yes
+    #   user:
+    #     name: "{{ ansible_user_id }}"
+    #     shell: /bin/zsh
 
     - stat: path=~/.oh-my-zsh/
       register: omz_file

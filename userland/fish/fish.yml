@@ -1,0 +1,17 @@
+- block:
+    - name: change user shell to fish
+      become: yes
+      user:
+        name: "{{ ansible_user_id }}"
+        shell: /usr/bin/fish
+
+    - name: configure fish
+      shell: "{{item}}"
+      with_items:
+        - rm -rf ~/.config/fish/functions
+        - ln -sfv {{ playbook_dir }}/fish/data/* ~/.config/fish/
+
+  tags:
+    - shell
+    - fish
+    - development

@@ -64,6 +64,8 @@
           - curl
           - python3-setuptools
           - python3-devel
+          - tio
+          - fish
           - neofetch
           - git
           - git-credential-libsecret
