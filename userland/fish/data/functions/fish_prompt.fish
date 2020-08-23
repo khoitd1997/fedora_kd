@@ -2,13 +2,11 @@ function fish_prompt --description 'Write out the prompt'
     set -l last_pipestatus $pipestatus
 
     # NOTE: DOCS HERE https://fishshell.com/docs/current/cmds/fish_git_prompt.html
-    # if not set -q __fish_git_prompt_show_informative_status
-    #     set -g __fish_git_prompt_show_informative_status 0
-    # end
     set -e -g __fish_git_prompt_show_informative_status
+
     set -g __fish_git_prompt_showdirtystate 1
     set -g __fish_git_prompt_char_stateseparator '|'
-    set -g __fish_git_prompt_hide_untrackedfiles 1
+
     if not set -q __fish_git_prompt_color_branch
         set -g __fish_git_prompt_color_branch magenta --bold
     end
@@ -27,9 +25,6 @@ function fish_prompt --description 'Write out the prompt'
     set -g -e __fish_git_prompt_char_stagedstate
     if not set -q __fish_git_prompt_char_dirtystate
         set -g __fish_git_prompt_char_dirtystate "!"
-    end
-    if not set -q __fish_git_prompt_char_untrackedfiles
-        set -g __fish_git_prompt_char_untrackedfiles ""
     end
     if not set -q __fish_git_prompt_char_invalidstate
         set -g __fish_git_prompt_char_invalidstate "✖"

@@ -102,7 +102,6 @@
   ],
   "terminal.integrated.shell.windows": "C:\\Program Files\\Git\\bin\\bash.exe",
   "terminal.integrated.scrollback": 5000,
-  "terminal.integrated.shell.linux": "/bin/zsh",
   "keyboard.dispatch": "keyCode",
   "vim.cursorStylePerMode.normal": "block-outline",
   "vim.camelCaseMotion.enable": true,

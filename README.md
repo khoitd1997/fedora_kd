@@ -22,7 +22,7 @@ vagrant reload # restart the vm and update some configs
 ./setup.py "task_name" # start at task_name
 
 # to run a tag
-ansible-playbook ./userland/setup.yml --tags="gnome"
+ansible-playbook ./userland/setup.yml --ask-become-pass --tags="gnome"
 ```
 
 There is a vscode build target that launch a vnc viewer to look into the VM
