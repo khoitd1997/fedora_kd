@@ -1,9 +1,15 @@
 - block:
-    - name: change user shell to fish
-      become: yes
-      user:
-        name: "{{ ansible_user_id }}"
-        shell: /usr/bin/fish
+    # - name: change user shell to fish
+    #   become: yes
+    #   user:
+    #     name: "{{ ansible_user_id }}"
+    #     shell: /usr/bin/fish
+
+    - name: configure to launch fish through bash
+      shell: "{{item}}"
+      with_items:
+        - printf "\n# NOTE: THIS LINE MUST ALWAYS BE AT THE END" >> ~/.bashrc
+        - echo "fish" >> ~/.bashrc
 
     - name: configure fish
       shell: "{{item}}"
