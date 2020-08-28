@@ -125,9 +125,6 @@ if [ "${OS}" != "Darwin" ]; then
     fi
 fi
 
-PATH=$PATH:${GOPATH//://bin:}/bin
-PATH=$PATH:${HOME}/.local/bin
-
 setopt HIST_IGNORE_DUPS
 setopt HIST_FIND_NO_DUPS
 setopt HIST_SAVE_NO_DUPS
@@ -136,9 +133,6 @@ HISTSIZE=999999999
 
 bindkey '\ek' history-search-backward
 bindkey '\ej' history-search-forward
-
-export FZF_DEFAULT_OPTS='--bind alt-j:down,alt-k:up'
-export TERMINAL=gnome-terminal
 
 stty start undef
 stty stop undef
@@ -166,12 +160,7 @@ export GROFF_NO_SGR=1
 
 alias vim="nvim"
 alias vi="nvim"
-alias cmake_clean="cmake --build . --target clean"
 alias ls="exa"
-
-# Setting fd as the default source for fzf
-export FZF_DEFAULT_COMMAND='fd --type f'
-export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 
 if [[ -n $DISPLAY ]]; then
   x-copy-region-as-kill () {
@@ -192,10 +181,6 @@ if [[ -n $DISPLAY ]]; then
 #   bindkey '\C-u' x-kill-region
   bindkey '\C-o' x-copy-region
 fi
-
-tool_reminders.py
-
-export LIBVIRT_DEFAULT_URI="qemu:///system"
 
 bindkey -r '\C-u'
 

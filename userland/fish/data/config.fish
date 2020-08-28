@@ -7,11 +7,11 @@ bind \ek history-token-search-backward
 bind \ek up-or-search
 bind \ej history-token-search-forward
 
-export FZF_DEFAULT_OPTS='--bind alt-j:down,alt-k:up'
-
 alias ls='exa'
 alias bat='batcat'
 alias fd='fdfind'
+alias vim='nvim'
+alias vi='nvim'
 
 set fish_greeting
 set -U fish_prompt_pwd_dir_length 0
