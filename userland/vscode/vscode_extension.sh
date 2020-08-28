@@ -27,6 +27,7 @@ extension_general=" coenraads.bracket-pair-colorizer-2 \
                     marcostazi.vs-code-vagrantfile \
                     k--kato.intellij-idea-keybindings \
                     esbenp.prettier-vscode \
+                    ms-vscode.hexeditor \
                     jebbs.plantuml "
 
 extension_theme=" zhuangtongfa.material-theme "
