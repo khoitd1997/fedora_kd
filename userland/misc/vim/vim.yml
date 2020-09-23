@@ -3,22 +3,11 @@
       command: "{{item}}"
       with_items:
         - ln -vfs {{ playbook_dir }}/misc/vim/.vimrc ~/.vimrc
+        - mkdir -p ~/.config/nvim
+        - ln -vfs {{ playbook_dir }}/misc/vim/data ~/.config/nvim
       args:
         warn: false
 
-    - name: installing nvim plugins
-      shell: nvim +'PlugInstall --sync' +qall 
-
-    - name: configuring neovim
-      blockinfile:
-        path: ~/.config/nvim/init.vim
-        marker: "\" {mark} nvim ansible config"
-        create: yes
-        block: |
-          set runtimepath^=~/.vim runtimepath+=~/.vim/after
-          let &packpath = &runtimepath
-          source ~/.vimrc
-
   tags:
-      - vim
-      - development 
+    - vim
+    - development

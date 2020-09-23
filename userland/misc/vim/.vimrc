@@ -9,9 +9,6 @@ set showcmd
 :  autocmd BufLeave,FocusLost,InsertEnter   * set norelativenumber
 :augroup END
 
-"for vim airline
-set ttimeoutlen=50
-
 "misc stuffs
 set scrolloff=25
 set tabstop=4
@@ -34,15 +31,12 @@ noremap <silent> <C-S>          :update<CR>
 vnoremap <silent> <C-S>         <C-C>:update<CR><Esc>
 inoremap <silent> <C-S>         <C-O>:update<CR><Esc>
 
-"format on save
-au BufWrite * :Autoformat
-
 "NERDCommenter stuffs
 let g:NERDSpaceDelims = 1
 let g:NERDCommentEmptyLines = 1
 let g:NERDTrimTrailingWhitespace = 1
-nmap <C-_> <plug>NERDCommenterInvert
-vmap <C-_> <Plug>NERDCommenterInvert<CR>gv
+nmap <C-/> <plug>NERDCommenterInvert
+vmap <C-/> <Plug>NERDCommenterInvert<CR>gv
 
 "terminal stuffs
 if has("autocmd")
@@ -56,97 +50,6 @@ if has("autocmd")
 		au VimLeave * silent execute '!echo -ne "\e[ q"' | redraw!
 endif
 
-"syntastic stuffs
-"set statusline+=%#warningmsg#
-"set statusline+=%{SyntasticStatuslineFlag()}
-"set statusline+=%*
-
-function! GitBranch()
-  return system("git rev-parse --abbrev-ref HEAD 2>/dev/null | tr -d '\n'")
-endfunction
-
-function! StatuslineGit()
-  let l:branchname = GitBranch()
-  return strlen(l:branchname) > 0?'  '.l:branchname.' ':''
-endfunction
-
-"set statusline=%f
-"set statusline=
-"set statusline+=%#PmenuSel#
-"set statusline+=%{StatuslineGit()}
-"set statusline+=%#LineNr#
-"set statusline+=\ %f
-"set statusline+=%m\
-"set statusline+=%=
-"set statusline+=%#CursorColumn#
-"set statusline+=\ %y
-"set statusline+=\ %{&fileencoding?&fileencoding:&encoding}
-"set statusline+=\[%{&fileformat}\]
-"set statusline+=\ %p%%
-"set statusline+=\ %l:%c
-"set statusline+=\
-
-let g:airline#extensions#whitespace#enabled = 0
-let g:airline_skip_empty_sections = 1
-
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 0
-let g:syntastic_check_on_open = 1
-let g:syntastic_check_on_wq = 0
-
-"easymotion stuffs
-map <leader><leader>W <Plug>(easymotion-b)
-map <leader><leader>E <Plug>(easymotion-ge)
-
-"vim plug stuffs
-if empty(glob('~/.vim/autoload/plug.vim'))
-  silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
-    \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-  autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
-endif
-
-"vimplug plugins
-call plug#begin('~/.vim/plugged')
-if has('nvim')
-  Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
-  Plug 'autozimu/LanguageClient-neovim', {
-      \ 'branch': 'next',
-      \ 'do': 'bash install.sh',
-      \ }
-
-  "Plug 'shougo/denite.nvim', { 'do': ':UpdateRemotePlugins' }
-endif
-Plug 'terryma/vim-multiple-cursors'
-Plug 'jiangmiao/auto-pairs'
-Plug 'luochen1990/rainbow'
-Plug 'jeetsukumaran/vim-buffergator'
-
-Plug 'sheerun/vim-polyglot'
-Plug 'cespare/vim-toml'
-
-Plug 'joshdick/onedark.vim'
-Plug 'vim-airline/vim-airline'
-Plug 'morhetz/gruvbox'
-Plug 'enricobacis/vim-airline-clock'
-
-Plug 'easymotion/vim-easymotion'
-
-" git
-Plug 'junegunn/gv.vim'
-
-Plug 'tpope/vim-vinegar'
-Plug 'tpope/vim-surround'
-Plug 'Chiel92/vim-autoformat'
-Plug 'scrooloose/nerdcommenter'
-Plug 'justinmk/vim-sneak'
-Plug 'yggdroot/indentline'
-Plug 'nathanaelkane/vim-indent-guides'
-
-"Plug 'scrooloose/syntastic'
-"Plug 'takac/vim-hardtime'
-"Plug 'neoclide/coc.nvim', {'do': { -> coc#util#install()}}
-call plug#end()
-
 let g:indentLine_enabled = 1
 let g:indent_guides_enable_on_vim_startup = 1
 let g:deoplete#enable_at_startup = 1
@@ -154,24 +57,30 @@ let g:rainbow_active = 1
 
 "color scheme
 syntax enable
+filetype plugin on
 set background=dark
-" silent! colorscheme gruvbox
+" silent! colorscheme industry
 silent! colorscheme onedark
 
-"hard time mode
-let g:hardtime_default_on = 1
+" Search down into subfolders
+" Provides tab-completion for all file-related tasks
+set path+=**
+
+" Display all matching files when we tab complete
+set wildmenu
 
 "alt key bindings
 "not necessary in nvim
 if !has('nvim')
-execute "set <M-h>=\eh"
-execute "set <M-H>=\eH"
-execute "set <M-j>=\ej"
-execute "set <M-S-J>=\eJ"
-execute "set <M-k>=\ek"
-execute "set <M-K>=\eK"
-execute "set <M-l>=\el"
-execute "set <M-L>=\eL"
+    execute "set <M-h>=\eh"
+    execute "set <M-H>=\eH"
+    execute "set <M-H>=\eH"
+    execute "set <M-j>=\ej"
+    execute "set <M-S-J>=\eJ"
+    execute "set <M-k>=\ek"
+    execute "set <M-K>=\eK"
+    execute "set <M-l>=\el"
+    execute "set <M-L>=\eL"
 endif
 
 nnoremap <M-j> :m .+1<CR>==
@@ -187,36 +96,8 @@ map <C-\> :vsplit<enter>
 " Open new line below and above current line
 nnoremap <leader>o o<esc>kO<esc>j
 
-"alt-shift-j,k to duplicate line
-nnoremap <M-J> yyp
-nnoremap <M-K> yypk
-inoremap <M-J> <ESC>yypi
-inoremap <M-K> <ESC>yypki
-
 nnoremap <c-j> <c-d>
 nnoremap <c-k> <c-u>
-
-"vinegar binding
-autocmd FileType netrw nmap <buffer> <esc> <C-^>
-
-"buffer mapping
-map <M-1> <Plug>AirlineSelectTab1
-map <M-2> <Plug>AirlineSelectTab2
-map <M-3> <Plug>AirlineSelectTab3
-map <M-4> <Plug>AirlineSelectTab4
-map <M-5> <Plug>AirlineSelectTab5
-map <M-6> <Plug>AirlineSelectTab6
-map <M-7> <Plug>AirlineSelectTab7
-map <M-8> <Plug>AirlineSelectTab8
-map <M-9> <Plug>AirlineSelectTab9
-map <c-w> :bd<CR>
-
-"buffer switching
-
-"deoplete mapping
-inoremap <expr> <M-j> pumvisible() ? "\<C-n>" :':m .+1<CR>=='
-inoremap <expr> <M-k> pumvisible() ? "\<C-p>" :':m .-2<CR>=='
-inoremap <expr> <CR> pumvisible() ? "\<C-y>" :'<CR>'
 
 "folding settings
 set foldenable
@@ -237,8 +118,8 @@ set updatetime=200
 au CursorHold,CursorHoldI * checktime
 au FocusGained,BufEnter * :checktime
 
-nnoremap <c-z> :u<CR>
-inoremap <c-z> <c-o>:u<CR>
+"nnoremap <c-z> :u<CR>
+"inoremap <c-z> <c-o>:u<CR>
 
 " set clipboard=unnamedplus
 
@@ -253,53 +134,18 @@ set wildmenu
 "verbose imap <tab>
 inoremap <expr><TAB> pumvisible() ? "<C-y>" : "<TAB>"
 
-"coc nvim settings
-set hidden
-set nobackup
-set nowritebackup
-set cmdheight=2
-set signcolumn=yes
-
 set list lcs=tab:\|\ "space at the end
 set list
 
 set completeopt=menu,noinsert
 
 autocmd! CompleteDone * if pumvisible() == 0 | pclose | endif
-"autocmd CursorHold * silent call CocActionAsync('highlight')
-"nnoremap <silent> <space>o  :<C-u>CocList outline<cr>
-
-"let g:coc_global_extensions = [
-"    \ 'coc-pairs',
-"    \ 'coc-lists',
-"    \ 'coc-dictionary',
-"    \ 'coc-html',
-"    \ 'coc-css',
-"    \ 'coc-tsserver',
-"    \ 'coc-json',
-"    \ 'coc-yaml',
-"    \ 'coc-snippets',
-"    \ 'coc-python',
-"    \ 'coc-rls',
-"    \]
-
-"language server settings
-let g:LanguageClient_serverCommands = {
-    \ 'python': ['pyls'],
-    \ 'cpp': ['clangd'],
-    \ }
-nnoremap <silent> <C-r> :call LanguageClient#textDocument_hover()<CR>
-nnoremap <silent> <C-o> :call LanguageClient_textDocument_documentSymbol()<CR>
-nnoremap <silent> ' :call LanguageClient#textDocument_definition()<CR>
-
-"highlight word under cursor
-:autocmd CursorMoved * exe printf('match IncSearch /\V\<%s\>/', escape(expand('<cword>'), '/\'))
 
 "multicursor
-let g:multi_cursor_use_default_mapping=0
-let g:multi_cursor_start_word_key      = '<C-d>'
-let g:multi_cursor_next_key            = '<C-d>'
-let g:multi_cursor_quit_key            = '<Esc>'
+"let g:multi_cursor_use_default_mapping=0
+"let g:multi_cursor_start_word_key      = '<C-d>'
+"let g:multi_cursor_next_key            = '<C-d>'
+"let g:multi_cursor_quit_key            = '<Esc>'
 
 "let g:indent_guides_auto_colors = 0
 "hi IndentGuidesOdd  ctermbg=grey
@@ -310,9 +156,7 @@ endif
 
 augroup HiglightTODO
     autocmd!
-    autocmd WinEnter,VimEnter * :silent! call matchadd('Todo', 'TODO', -1)
-    autocmd WinEnter,VimEnter * :silent! call matchadd('Fixme', 'FIXME', -1)
-    autocmd WinEnter,VimEnter * :silent! call matchadd('Hack', 'HACK', -1)
+    autocmd WinEnter,VimEnter * :silent! call matchadd('Todo', 'TODO\|FIXME\|HACK\|NOTE', -1)
 augroup END
 
 let g:vim_markdown_no_extensions_in_markdown = 1
