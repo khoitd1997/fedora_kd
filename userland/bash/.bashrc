@@ -116,6 +116,11 @@ if ! shopt -oq posix; then
   fi
 fi
 
+alias bat='batcat'
+alias fd='fdfind'
+alias vim='nvim'
+alias vi='nvim'
+
 export FZF_DEFAULT_OPTS='--bind alt-j:down,alt-k:up'
 
 # Setting fd as the default source for fzf
@@ -134,9 +139,11 @@ export PATH=$PATH:${HOME}/.local/bin
 # source /tools/Xilinx/Vivado/2019.2/settings64.sh
 # source ~/petalinux/settings.sh
 
+source /usr/share/doc/fzf/examples/key-bindings.bash
+
 tool_reminders.py
 echo ""
 
 # NOTE: THIS LINE MUST ALWAYS BE AT THE END
-fish
+# fish
 # zsh

@@ -4,30 +4,30 @@ extension_general=" coenraads.bracket-pair-colorizer-2 \
                     emilast.logfilehighlighter \
                     oderwat.indent-rainbow \
                     rashwell.tcl \
-                    eugenwiens.bitbake \
                     redhat.vscode-yaml \
                     Gruntfuggly.todo-tree \
-                    ibm.output-colorizer \
                     compulim.vscode-clock \
                     ryuta46.multi-command \
                     vscodevim.vim \
-                    bungcip.better-toml \
                     ionutvmi.path-autocomplete \
                     wk-j.save-and-run \
                     dakara.dakara-foldplus \
                     alefragnani.bookmarks \
-                    ms-vscode-remote.vscode-remote-extensionpack \
-                    visualstudioexptteam.vscodeintellicode \
-                    jack89ita.copy-filename \
                     ryu1kn.partial-diff \
                     grapecity.gc-excelviewer \
                     aaron-bond.better-comments \
-                    gaborv.flatbuffers \
                     sleistner.vscode-fileutils \
-                    marcostazi.vs-code-vagrantfile \
                     k--kato.intellij-idea-keybindings \
                     esbenp.prettier-vscode \
-                    ms-vscode.hexeditor \
+                    ms-vscode.hexeditor "
+
+extension_misc="    eugenwiens.bitbake \
+                    bungcip.better-toml \
+                    ms-vscode-remote.vscode-remote-extensionpack \
+                    gaborv.flatbuffers \
+                    ibm.output-colorizer \
+                    marcostazi.vs-code-vagrantfile \
+                    jack89ita.copy-filename \
                     jebbs.plantuml "
 
 extension_theme=" zhuangtongfa.material-theme "
@@ -100,8 +100,18 @@ extension_all="${extension_all}${extension_qt}"
 extension_all="${extension_all}${extension_docker}"
 extension_all="${extension_all}${extension_liveshare}"
 extension_all="${extension_all}${extension_web}"
+extension_all="${extension_all}${extension_misc}"
 
-for ext in ${extension_all}
+extension_minimal="${extension_general}${extension_theme}"
+extension_minimal="${extension_all}${extension_git}"
+extension_minimal="${extension_all} ms-python.python ms-vscode.cpptools hars.cppsnippets twxs.cmake "
+
+extension_final="${extension_minimal}"
+if [ "$#" -gt 0 ]; then
+    extension_final="${extension_all}"
+fi
+
+for ext in ${extension_final}
 do
     if ! command code --install-extension "${ext}" ; then
         print_error "Errrors while installing extensions for regular\n"

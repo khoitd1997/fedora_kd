@@ -336,7 +336,7 @@
   "plantuml.exportFormat": "png",
   "plantuml.exportSubFolder": false,
   "python.languageServer": "Microsoft",
-  "terminal.integrated.fontFamily": "source code pro",
-  "editor.fontFamily": "source code pro",
+  "terminal.integrated.fontFamily": "Ubuntu Mono",
+  "editor.fontFamily": "Ubuntu Mono",
 "editor.mouseWheelZoom": true
 }
