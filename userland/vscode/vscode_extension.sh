@@ -6,7 +6,6 @@ extension_general=" coenraads.bracket-pair-colorizer-2 \
                     rashwell.tcl \
                     redhat.vscode-yaml \
                     Gruntfuggly.todo-tree \
-                    compulim.vscode-clock \
                     ryuta46.multi-command \
                     vscodevim.vim \
                     ionutvmi.path-autocomplete \
@@ -25,6 +24,7 @@ extension_misc="    eugenwiens.bitbake \
                     bungcip.better-toml \
                     ms-vscode-remote.vscode-remote-extensionpack \
                     gaborv.flatbuffers \
+                    compulim.vscode-clock \
                     ibm.output-colorizer \
                     marcostazi.vs-code-vagrantfile \
                     jack89ita.copy-filename \

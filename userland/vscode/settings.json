@@ -77,8 +77,7 @@
   "window.titleBarStyle": "native",
   "editor.fontSize": 12,
   "window.newWindowDimensions": "inherit",
-  "window.restoreFullscreen": true,
-  "workbench.activityBar.visible": false,
+"window.restoreFullscreen": true,
   "editor.hover.delay": 50,
   "editor.cursorBlinking": "solid",
   "search.showLineNumbers": true,
@@ -338,5 +337,6 @@
   "python.languageServer": "Microsoft",
   "terminal.integrated.fontFamily": "Ubuntu Mono",
   "editor.fontFamily": "Ubuntu Mono",
-"editor.mouseWheelZoom": true
+"editor.mouseWheelZoom": true,
+"workbench.activityBar.visible": false
 }
