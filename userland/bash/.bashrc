@@ -141,8 +141,25 @@ export PATH=$PATH:${HOME}/.local/bin
 
 source /usr/share/doc/fzf/examples/key-bindings.bash
 
-tool_reminders.py
-echo ""
+source /usr/share/bash-completion/completions/git
+
+source ~/git-prompt.sh
+export GIT_PS1_SHOWDIRTYSTATE=1
+PS1='${debian_chroot:+($debian_chroot)}\[\033[01;35m\]\w\[\033[00m\]\[\033[01;33m\]$(__git_ps1 " (%s)")\[\033[00m\] →  '
+# export PS1='\w$(__git_ps1 " (%s)")\$ '
+
+# colored less
+export LESS_TERMCAP_mb=$'\e[1;32m'
+export LESS_TERMCAP_md=$'\e[1;32m'
+export LESS_TERMCAP_me=$'\e[0m'
+export LESS_TERMCAP_se=$'\e[0m'
+export LESS_TERMCAP_so=$'\e[01;33m'
+export LESS_TERMCAP_ue=$'\e[0m'
+export LESS_TERMCAP_us=$'\e[1;4;31m'
+
+if [ -x "$(command -v tool_reminders.py)" ]; then
+    tool_reminders.py
+fi
 
 # NOTE: THIS LINE MUST ALWAYS BE AT THE END
 # fish

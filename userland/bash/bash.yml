@@ -3,6 +3,7 @@
       shell: "{{item}}"
       with_items:
         - ln -sfv {{ playbook_dir }}/bash/.bashrc ~/.bashrc
+        - cp {{ playbook_dir }}/bash/git-prompt.sh ~
 
   tags:
     - shell
