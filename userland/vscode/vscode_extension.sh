@@ -117,10 +117,10 @@ do
         exit 1
     fi
 
-    if [ -x "$(command -v code-insiders)" ]; then
-        if ! code-insiders --install-extension "${ext}" ; then
-            print_error "Errrors while installing extensions for insider\n"
-            exit 1
-        fi
-    fi
+    # if [ -x "$(command -v code-insiders)" ]; then
+    #     if ! code-insiders --install-extension "${ext}" ; then
+    #         print_error "Errrors while installing extensions for insider\n"
+    #         exit 1
+    #     fi
+    # fi
 done
