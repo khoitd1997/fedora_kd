@@ -18,6 +18,7 @@ shopt -s histappend
 # for setting history length see HISTSIZE and HISTFILESIZE in bash(1)
 HISTSIZE=1000
 HISTFILESIZE=2000
+export HISTCONTROL=ignoreboth:erasedups
 
 # check the window size after each command and, if necessary,
 # update the values of LINES and COLUMNS.
@@ -135,10 +136,6 @@ export LIBVIRT_DEFAULT_URI="qemu:///system"
 export PATH=$PATH:${GOPATH//://bin:}/bin
 export PATH=$PATH:${HOME}/.local/bin
 
-# source /tools/Xilinx/Vitis/2019.2/settings64.sh
-# source /tools/Xilinx/Vivado/2019.2/settings64.sh
-# source ~/petalinux/settings.sh
-
 source /usr/share/doc/fzf/examples/key-bindings.bash
 
 source /usr/share/bash-completion/completions/git
@@ -146,7 +143,6 @@ source /usr/share/bash-completion/completions/git
 source ~/git-prompt.sh
 export GIT_PS1_SHOWDIRTYSTATE=1
 PS1='${debian_chroot:+($debian_chroot)}\[\033[01;35m\]\w\[\033[00m\]\[\033[01;33m\]$(__git_ps1 " (%s)")\[\033[00m\] →  '
-# export PS1='\w$(__git_ps1 " (%s)")\$ '
 
 # colored less
 export LESS_TERMCAP_mb=$'\e[1;32m'
