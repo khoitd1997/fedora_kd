@@ -103,8 +103,7 @@ extension_all="${extension_all}${extension_web}"
 extension_all="${extension_all}${extension_misc}"
 
 extension_minimal="${extension_general}${extension_theme}"
-extension_minimal="${extension_minimal}${extension_git}"
-extension_minimal="${extension_minimal} ms-python.python ms-vscode.cpptools hars.cppsnippets twxs.cmake "
+extension_minimal="${extension_minimal} ms-python.python ms-vscode.cpptools hars.cppsnippets twxs.cmake eamodio.gitlens donjayamanne.githistory mhutchie.git-graph Atlassian.atlascode "
 
 extension_final="${extension_minimal}"
 if [ "$#" -gt 0 ]; then
