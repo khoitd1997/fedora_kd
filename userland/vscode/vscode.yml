@@ -32,7 +32,7 @@
       become: true
 
     - name: install vscode extension
-      command: sh "{{ playbook_dir }}/vscode/vscode_extension.sh all"
+      shell: "{{ playbook_dir }}/vscode/vscode_extension.sh all"
       tags:
         - vscode_extension
 

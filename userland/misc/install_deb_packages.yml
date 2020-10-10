@@ -9,8 +9,10 @@
       apt:
         update_cache: yes
         state: present
+        dpkg_options: "force-overwrite,force-confdef,force-confold" 
         name:
           - nautilus-dropbox
+          - prusa-slicer
           - curl
           - wget
           - zsh
@@ -114,8 +116,8 @@
 
           # - "@virtualization"
           # - tigervnc
-          - libvirt-bin
-          - libvirt-doc
+          # - libvirt-bin
+          # - libvirt-doc
           - virt-manager
           - qemu
           # - vagrant

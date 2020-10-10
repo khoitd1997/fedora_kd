@@ -110,8 +110,12 @@
             - rm -vf ~/.config/autostart/xpad.desktop
 
     # - include: xmodmap/xmodmap.yml
+    - stat:
+        path: ~/temp
+      register: temp_directory_status
 
     - name: generate temp directories
+      when: temp_directory_status.stat.exists == false
       shell: "{{item}}"
       with_items:
         - mkdir -vp ~/temp/
