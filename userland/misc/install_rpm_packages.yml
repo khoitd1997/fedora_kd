@@ -171,6 +171,9 @@
           - lxappearance
           - qt5ct
 
+          - qt5-qtbase
+          - qt5-qtbase-devel
+
           - volumeicon
           - lxqt-powermanagement
           - udiskie
