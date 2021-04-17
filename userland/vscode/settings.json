@@ -338,5 +338,13 @@
   "terminal.integrated.fontFamily": "Ubuntu Mono",
   "editor.fontFamily": "Ubuntu Mono",
 "editor.mouseWheelZoom": true,
-"workbench.activityBar.visible": false
+"workbench.activityBar.visible": false,
+"workbench.editor.showTabs": false,
+"workbench.startupEditor": "newUntitledFile",
+"workbench.editorAssociations": [
+    {
+        "viewType": "jupyter.notebook.ipynb",
+        "filenamePattern": "*.ipynb"
+    }
+]
 }
