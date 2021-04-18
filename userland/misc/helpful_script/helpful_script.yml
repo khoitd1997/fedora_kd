@@ -37,5 +37,16 @@
         minute: "0"
         hour: "*/2"
         job: "/sbin/shutdown -h now"
+
+    - name: customize firefox policies
+      shell: "{{item}}"
+      with_items:
+        - mkdir -p /etc/firefox/policies
+        - cp {{ playbook_dir }}/misc/helpful_script/scripts/policies.json /etc/firefox/policies
+      become: true
+      args:
+        warn: false
+      tags:
+        - debug
   tags:
     - helpful_script
