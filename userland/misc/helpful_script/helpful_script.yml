@@ -30,13 +30,13 @@
           login & ssh;*;*;Al0730-2300
       become: true
 
-    - name: setting up periodic shutdown cron job
-      become: true
-      cron:
-        name: "shutdown periodically"
-        minute: "0"
-        hour: "*/2"
-        job: "/sbin/shutdown -h now"
+    # - name: setting up periodic shutdown cron job
+    #   become: true
+    #   cron:
+    #     name: "shutdown periodically"
+    #     minute: "0"
+    #     hour: "*/2"
+    #     job: "/sbin/shutdown -h now"
 
     - name: customize firefox policies
       shell: "{{item}}"
