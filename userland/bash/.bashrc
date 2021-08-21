@@ -144,9 +144,6 @@ source ~/git-prompt.sh
 export GIT_PS1_SHOWDIRTYSTATE=1
 PS1='${debian_chroot:+($debian_chroot)}\[\033[01;35m\]\w\[\033[00m\]\[\033[01;33m\]$(__git_ps1 " (%s)")\[\033[00m\] →  '
 
-set colored-completion-prefix on
-set colored-stats on
-
 # colored less
 export LESS_TERMCAP_mb=$'\e[1;32m'
 export LESS_TERMCAP_md=$'\e[1;32m'
