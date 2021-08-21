@@ -28,6 +28,7 @@
           - tig
           - hexyl
           - youtube-dl
+          - python-is-python3
 
           - cmake
           - heaptrack
