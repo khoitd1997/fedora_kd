@@ -63,6 +63,7 @@
           - python3-dev
           - neofetch
           - git
+          - git-lfs
           - libsecret-1-0
           - libsecret-1-dev
           - nano
