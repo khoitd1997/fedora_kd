@@ -24,8 +24,9 @@
     "*.rasi": "css",
     "*.in": "cmake",
     "conanfile.txt": "toml",
-    "*.vdi": "log"
-  },
+    "*.vdi": "log",
+    "*.inc": "bitbake"
+},
   "window.zoomLevel": 2,
   "python.formatting.provider": "autopep8",
   "gitlens.keymap": "chorded",
@@ -341,10 +342,7 @@
 "workbench.activityBar.visible": false,
 "workbench.editor.showTabs": false,
 "workbench.startupEditor": "newUntitledFile",
-"workbench.editorAssociations": [
-    {
-        "viewType": "jupyter.notebook.ipynb",
-        "filenamePattern": "*.ipynb"
-    }
-]
+"workbench.editorAssociations": {
+    "*.ipynb": "jupyter.notebook.ipynb"
+}
 }
