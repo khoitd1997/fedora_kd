@@ -1,6 +1,0 @@
-- block:
-    - name: install homebrew
-      command: sh "{{ playbook_dir }}/misc/homebrew/install_homebrew.sh"
-
-  tags:
-    - homebrew

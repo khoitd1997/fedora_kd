@@ -27,5 +27,3 @@ brew install \
     peco \
     hyperfine \
     mdbook
-
-$(brew --prefix)/opt/fzf/install --all

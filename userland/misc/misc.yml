@@ -1,6 +1,4 @@
 - block:
-    - include: homebrew/homebrew.yml
-
     - block:
         - include: rpm_package.yml
         - include: install_deb_packages.yml

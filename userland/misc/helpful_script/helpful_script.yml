@@ -7,15 +7,15 @@
       args:
         warn: false
 
-    - name: setting up privileged scripts
-      shell: "{{item}}"
-      become: true
-      with_items:
+#    - name: setting up privileged scripts
+#      shell: "{{item}}"
+#      become: true
+#      with_items:
         # - cp {{ playbook_dir }}/misc/helpful_script/scripts/auto_turnoff.sh /usr/sbin/auto_turnoff.sh
         # - cp {{ playbook_dir }}/misc/helpful_script/scripts/auto_turnoff.sh /etc/profile.d/auto_turnoff.sh
         # - chmod +x /usr/sbin/auto_turnoff.sh
-      args:
-        warn: false
+#      args:
+#        warn: false
     # - name: setting up reboot auto_turnoff cron job
     #   become: true
     #   cron:
