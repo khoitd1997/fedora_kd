@@ -180,3 +180,6 @@
           - udiskie
 
           - ruby-devel
+
+          # Vitis 2020.1
+          - libtinfo5

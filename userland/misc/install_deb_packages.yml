@@ -140,6 +140,9 @@
 
           - ruby-dev
 
+          # Vitis 2020.1
+          - libtinfo5
+
   when: ansible_facts['distribution'] == "Ubuntu"
   tags:
     - deb_package
