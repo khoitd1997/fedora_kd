@@ -123,6 +123,7 @@
           # - libvirt-doc
           - virt-manager
           - qemu
+          - libvirt-daemon-driver-lxc
           # - vagrant
           # - vagrant-sshfs
           # - vagrant-libvirt
