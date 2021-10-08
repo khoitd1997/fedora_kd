@@ -137,6 +137,7 @@ export PATH=$PATH:${GOPATH//://bin:}/bin
 export PATH=$PATH:${HOME}/.local/bin
 
 source /usr/share/doc/fzf/examples/key-bindings.bash
+source /usr/share/doc/fzf/examples/completion.bash
 
 source /usr/share/bash-completion/completions/git
 
