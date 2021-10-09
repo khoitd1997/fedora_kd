@@ -1,0 +1,19 @@
+- tags:
+  - server
+  - never
+
+  block:
+    - name: install server deb packages
+      apt:
+        update_cache: yes
+        state: present
+        dpkg_options: "force-overwrite,force-confdef,force-confold" 
+        name:
+          - nfs-kernel-server
+          - openssh-server
+
+    - include: sshd.yml
+    - include: nfs.yml
+    - include: ufw.yml
+
+  become: true

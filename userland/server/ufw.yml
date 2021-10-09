@@ -1,0 +1,18 @@
+- block:
+  - name: enable ufw
+    ufw:
+      state: enabled
+
+  - name: enable ufw logging
+    ufw:
+      logging: 'on'
+
+  - name: allow openssh through ufw
+    ufw:
+      rule: allow
+      name: OpenSSH
+
+  - name: allow nfs through ufw
+    ufw:
+      rule: allow
+      port: 'nfs'

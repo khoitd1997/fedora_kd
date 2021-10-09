@@ -334,8 +334,7 @@
   "platformio-ide.activateOnlyOnPlatformIOProject": true,
   "plantuml.java": "/usr/bin/java",
   "plantuml.exportFormat": "png",
-  "plantuml.exportSubFolder": false,
-  "python.languageServer": "Microsoft",
+"plantuml.exportSubFolder": false,
   "terminal.integrated.fontFamily": "Ubuntu Mono",
   "editor.fontFamily": "Ubuntu Mono",
 "editor.mouseWheelZoom": true,
@@ -344,5 +343,7 @@
 "workbench.startupEditor": "newUntitledFile",
 "workbench.editorAssociations": {
     "*.ipynb": "jupyter.notebook.ipynb"
-}
+},
+"python.languageServer": "Microsoft",
+"redhat.telemetry.enabled": true
 }

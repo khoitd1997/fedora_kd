@@ -1,0 +1,12 @@
+- block:
+  - name: configure sshd
+    register: sshd_conf
+    blockinfile:
+      path: /etc/ssh/sshd_config
+      block: |
+        # something
+  - name: restart sshd
+    service:
+      name: sshd
+      state: restarted
+    when: sshd_conf.changed

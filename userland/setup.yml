@@ -7,3 +7,4 @@
     - include: vscode/vscode.yml
     - include: look/look.yml
     - include: snap/snap.yml
+    - include: server/server.yml

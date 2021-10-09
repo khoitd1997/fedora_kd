@@ -10,15 +10,6 @@
             - cp -vr {{ playbook_dir }}/../user_file /usr/share/
             - chmod -R a+r+x /usr/share/user_file
 
-        # convention is kd-{manufacture_name}
-        - name: set host name
-          shell: "{{item}}"
-          with_items:
-            - hostname kd-$(dmidecode -s baseboard-manufacturer | awk '{print $1;}')
-            - hostnamectl set-hostname kd-$(dmidecode -s baseboard-manufacturer | awk '{print $1;}')
-          tags:
-            - hostname
-
         - name: configure fedora misc system stuffs
           shell: "{{item}}"
           with_items:

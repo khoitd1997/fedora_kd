@@ -59,3 +59,4 @@ test/vagrant-spec/boxes/*.box
 .dnf-cache/*
 
 setup_storage.json
+userland/packages.microsoft.gpg
