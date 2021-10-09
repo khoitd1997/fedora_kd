@@ -1,0 +1,13 @@
+- block:
+  - name: configure apt auto upgrade
+    copy:
+      dest: /etc/apt/apt.conf.d/20auto-upgrades
+      content: |
+        APT::Periodic::Update-Package-Lists "1";
+        APT::Periodic::Download-Upgradeable-Packages "1";
+        APT::Periodic::AutocleanInterval "7";
+        APT::Periodic::Unattended-Upgrade "1";;
+
+  become: true
+  tags:
+    - unattended_upgrade

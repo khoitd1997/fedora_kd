@@ -12,6 +12,7 @@
           - nfs-kernel-server
           - openssh-server
 
+    # TODO: PXE/tftp
     - include: sshd.yml
     - include: nfs.yml
     - include: ufw.yml

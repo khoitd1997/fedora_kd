@@ -29,6 +29,7 @@
           - hexyl
           - youtube-dl
           - python-is-python3
+          - unattended-upgrades
 
           - cmake
           - heaptrack

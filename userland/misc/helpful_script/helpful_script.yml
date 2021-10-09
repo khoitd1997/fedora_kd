@@ -54,7 +54,5 @@
       become: true
       args:
         warn: false
-      tags:
-        - debug
   tags:
     - helpful_script

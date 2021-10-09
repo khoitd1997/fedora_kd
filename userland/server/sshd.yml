@@ -4,7 +4,9 @@
     blockinfile:
       path: /etc/ssh/sshd_config
       block: |
-        # something
+        DebianBanner no
+        IgnoreRhosts yes
+
   - name: restart sshd
     service:
       name: sshd

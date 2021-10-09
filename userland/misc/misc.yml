@@ -16,10 +16,7 @@
             - systemctl enable firewalld
           when: ansible_facts['distribution'] == "Fedora"
 
-        - name: configure Ubuntu misc system stuffs
-          shell: "{{item}}"
-          with_items:
-            - ufw enable
+        - include: unattended_upgrade.yml
           when: ansible_facts['distribution'] == "Ubuntu"
 
         - name: configure misc system stuffs
