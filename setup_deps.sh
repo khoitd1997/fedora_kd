@@ -6,6 +6,7 @@ if [ "$distro" = "Ubuntu" ]; then
     sudo apt update
     sudo apt install python3-pip curl python-psutil build-essential zsh ansible perl -y
     sudo -E pip3 install fexpect -q
+    sudo ubuntu-drivers install
 else
     sudo dnf install -q -y \
         @development-tools \
