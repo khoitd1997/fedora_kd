@@ -5,6 +5,11 @@
         name:
           - gnome-shell-extension-ubuntu-dock
 
+    - name: upgrade deb packages
+      apt:
+        update_cache: yes
+        upgrade: dist
+
     - name: install deb packages
       apt:
         update_cache: yes
@@ -133,9 +138,7 @@
           # - vagrant-sshfs
           # - vagrant-libvirt
 
-          # - java-1.8.0-openjdk
-          # - java-1.8.0-openjdk-devel
-          # - java-openjdk
+          - default-jdk
 
           # - arc-theme
           # - plymouth-plugin-script
