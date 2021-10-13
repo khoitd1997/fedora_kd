@@ -18,7 +18,7 @@ try {
 
 }
 catch {
-    LogError "Ran into an issue: $PSItem"
+    LogError "$PSItem"
 }
 
 LogHeader "Finished Windows Configurations"
