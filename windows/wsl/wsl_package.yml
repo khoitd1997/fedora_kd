@@ -1,0 +1,41 @@
+- block:
+    - name: Updating System
+      apt:
+        upgrade: dist
+        update_cache: yes
+
+    - name: Installing software
+      apt:
+        name: "{{ packages }}"
+      vars:
+        packages:
+          - doxygen
+          - lm-sensors
+          - cmake
+          - valgrind
+          - gcc
+          - clang
+          - llvm
+          - build-essential
+          - htop
+          - net-tools
+          - minicom
+          - screen
+          - python3-pip
+          - curl
+          - libboost-all-dev
+          - python3-setuptools
+          - ranger
+          - tldr
+          - silversearcher-ag
+          - neofetch
+          - autojump
+          - dos2unix
+          - ansible
+          - zsh
+        autoremove: yes
+        state: present
+
+  become: true
+  tags:
+    - package

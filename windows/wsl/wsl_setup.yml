@@ -1,0 +1,4 @@
+- hosts: localhost
+  tasks:
+    - include: wsl_package.yml
+    - include: ../fedora_kd/userland/zsh/zsh.yml

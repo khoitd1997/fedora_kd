@@ -1,0 +1,3 @@
+[submodule "fedora_kd"]
+	path = fedora_kd
+	url = https://github.com/khoitd1997/fedora_kd.git
