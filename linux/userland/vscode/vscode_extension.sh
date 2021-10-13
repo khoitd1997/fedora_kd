@@ -1,5 +1,7 @@
 #!/bin/bash
 
+set -e
+
 extension_general=" coenraads.bracket-pair-colorizer-2 \
                     emilast.logfilehighlighter \
                     oderwat.indent-rainbow \

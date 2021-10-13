@@ -7,7 +7,7 @@ import re
 import json
 
 abspath = os.path.abspath(__file__)
-dname = os.path.dirname(abspath)
+dname = os.path.dirname(os.path.realpath(__file__))
 os.chdir(dname)
 
 os.environ['ANSIBLE_FORCE_COLOR'] = "True"
@@ -36,7 +36,7 @@ if len(sys.argv) > 1:
         task_name)
 
 else:
-    os.system('./setup_deps.sh')
+    os.system('bash ./setup_deps.sh')
     ansible_command = 'ansible-playbook ./userland/setup.yml --ask-become-pass'
 
 p = subprocess.Popen(ansible_command, stdout=subprocess.PIPE,
