@@ -72,7 +72,7 @@
     "workbench.tips.enabled": false,
     "go.autocompleteUnimportedPackages": true,
     "window.titleBarStyle": "native",
-    "editor.fontSize": 12,
+    "editor.fontSize": 11,
     "window.newWindowDimensions": "inherit",
     "window.restoreFullscreen": true,
     "editor.hover.delay": 50,
@@ -415,5 +415,9 @@
     "redhat.telemetry.enabled": true,
     "yaml.schemas": {
         "file:///c%3A/Users/khoid/.vscode/extensions/atlassian.atlascode-2.9.1/resources/schemas/pipelines-schema.json": "bitbucket-pipelines.yml"
-    }
+    },
+    "[jsonc]": {
+        "editor.defaultFormatter": "vscode.json-language-features"
+    },
+    "terminal.integrated.fontSize": 12
 }

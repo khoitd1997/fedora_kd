@@ -28,7 +28,8 @@ extension_misc="    eugenwiens.bitbake \
                     ibm.output-colorizer \
                     marcostazi.vs-code-vagrantfile \
                     jack89ita.copy-filename \
-                    jebbs.plantuml "
+                    jebbs.plantuml 
+                    ms-vscode.powershell "
 
 extension_theme=" zhuangtongfa.material-theme "
 
