@@ -1,3 +1,14 @@
+Write-Host @"
+CUSTOM COMMAND LIST:
+
+ssh-to-server: ssh to home server
+
+"@ -ForegroundColor black -BackgroundColor white
+
+function ssh-to-server {
+    ssh kd@kd-server
+}
+
 if ($host.Name -eq 'ConsoleHost') {
     Import-Module PSReadLine
     Import-Module PSFzf

@@ -419,5 +419,8 @@
     "[jsonc]": {
         "editor.defaultFormatter": "vscode.json-language-features"
     },
-    "terminal.integrated.fontSize": 12
+    "terminal.integrated.fontSize": 12,
+    "remote.SSH.remotePlatform": {
+        "kd-server": "linux"
+    }
 }
