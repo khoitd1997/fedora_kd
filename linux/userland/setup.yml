@@ -1,4 +1,6 @@
 - hosts: localhost
+  vars:
+    server_hostname: "kd-server"
   tasks:
     - include: bash/bash.yml
     # - include: zsh/zsh.yml

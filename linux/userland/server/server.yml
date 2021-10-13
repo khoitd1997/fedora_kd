@@ -12,6 +12,10 @@
           - nfs-kernel-server
           - openssh-server
 
+    - name: Set server hostname
+      ansible.builtin.hostname:
+        name: "{{ server_hostname }}"
+
     # TODO: PXE/tftp
     # https://github.com/awesome-selfhosted/awesome-selfhosted
     - include: sshd.yml

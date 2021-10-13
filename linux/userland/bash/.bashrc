@@ -158,6 +158,10 @@ if [ -x "$(command -v tool_reminders.py)" ]; then
     tool_reminders.py
 fi
 
+if [ -f "/var/run/reboot-required" ]; then
+    echo "REBOOT IS NEEDED FOR UPDATES"
+fi
+
 # NOTE: THIS LINE MUST ALWAYS BE AT THE END
 # fish
 # zsh

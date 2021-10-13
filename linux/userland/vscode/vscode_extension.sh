@@ -22,7 +22,8 @@ extension_general=" coenraads.bracket-pair-colorizer-2 \
 
 extension_misc="    eugenwiens.bitbake \
                     bungcip.better-toml \
-                    ms-vscode-remote.vscode-remote-extensionpack \
+                    ms-vscode-remote.vscode-remote-extensionpack 
+                    ms-vscode-remote.remote-ssh \
                     gaborv.flatbuffers \
                     compulim.vscode-clock \
                     ibm.output-colorizer \
