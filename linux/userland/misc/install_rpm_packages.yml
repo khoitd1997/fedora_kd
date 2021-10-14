@@ -103,7 +103,6 @@
           - autokey-gtk
           - firefox
           - evince
-          - xpad
           - gparted
           - moserial
           - ncurses-devel
