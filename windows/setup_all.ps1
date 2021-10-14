@@ -4,6 +4,9 @@
 
 LogHeader "Starting Windows Configuration"
 
+# TODO: Configure git
+# https://stackoverflow.com/questions/6476513/git-file-permissions-on-windows
+
 try {
     & "$PSScriptRoot\sw_install\install_software.ps1"
 
