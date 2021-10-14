@@ -1,0 +1,6 @@
+- block:
+  - name: copy request-download-big-file
+    copy:
+      src: "{{ playbook_dir }}/client/custom_client_scripts/scripts/"
+      dest: /bin/
+      mode: u=rwx,g=rx,o=rx

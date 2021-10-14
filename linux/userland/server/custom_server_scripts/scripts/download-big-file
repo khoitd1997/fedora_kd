@@ -3,20 +3,23 @@
 set -e
 
 if [ "$#" -lt 1 ]; then
-    echo "usage: download-big-file '<url>' [file_name]"
-fi
-
-if [ -z "${2}" ]; then
-    log_file=${work_dir}/download-big-file_$(date +%H_%M_%S).log
-else
-    log_file=${work_dir}/download-big-file_${2}_$(date +%H_%M_%S).log
+    echo "usage: download-big-file '<url>' '[file_name]'"
+    exit 1
 fi
 
 work_dir=/bulk-storage/nfs/general/big_file_storage
+if [ -z "${2}" ]; then
+    log_file=${work_dir}/download-big-file_$(date +%H_%M_%S).log
+    wget_output_arg=""
+else
+    log_file=${work_dir}/download-big-file_${2}_$(date +%H_%M_%S).log
+    wget_output_arg="--output-document ${2}"
+fi
+
 mkdir -p ${work_dir}
 cd ${work_dir}
 
 
 echo "Log file at ${log_file}"
 
-nohup wget --content-disposition "${1}" > ${log_file} 2>&1 &
+nohup wget ${wget_output_arg} --content-disposition "${1}" > ${log_file} 2>&1 &
