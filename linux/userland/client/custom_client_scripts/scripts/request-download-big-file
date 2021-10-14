@@ -8,5 +8,5 @@ if [ "$#" -lt 1 ]; then
 fi
 
 ssh -T kd-server <<EOL
-	download-big-file ${@}
+	download-big-file "${1}" "${2}"
 EOL
