@@ -10,3 +10,4 @@
     - include: look/look.yml
     - include: snap/snap.yml
     - include: server/server.yml
+    - include: client/client.yml

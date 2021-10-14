@@ -1,0 +1,7 @@
+- tags:
+  - client
+
+  block:
+    - include: custom_client_scripts/custom_client_scripts.yml
+
+  become: true
