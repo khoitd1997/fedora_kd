@@ -18,9 +18,10 @@
         - git config --global credential.helper /usr/share/doc/git/contrib/credential/libsecret/git-credential-libsecret
       when: ansible_facts['distribution'] == "Ubuntu"
 
-    - name: git
+    - name: git misc config
       command: "{{item}}"
       with_items:
+        - git lfs install
         - git config --global user.name "khoitd1997"
         - git config --global user.email "khoidinhtrinh@gmail.com"
         - git config --global alias.lg "log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit"
