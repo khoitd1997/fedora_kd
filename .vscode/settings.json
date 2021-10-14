@@ -1,3 +1,7 @@
 {
     "editor.formatOnSave": true,
+    "files.associations": {
+        "**/linux/userland/client/custom_client_scripts/scripts/*": "shellscript",
+        "**/linux/userland/server/custom_server_scripts/scripts": "shellscript"
+    }
 }

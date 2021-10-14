@@ -10,8 +10,10 @@
   - name: create the nfs directory
     ansible.builtin.file:
       path: "{{ nfs_dir }}"
+      recurse: yes
+      mode: u+rwx,g+rwx,o-rwx
       owner: nobody
-      group: nogroup
+      group: kd-nfs
       state: directory
 
   - name: configure nfs server export
@@ -19,7 +21,7 @@
     blockinfile:
       path: /etc/exports
       block: |
-        {{ nfs_dir }}       kd-*(rw,sync,no_root_squash,no_subtree_check)
+        {{ nfs_dir }}       kd-*(rw,sync,no_subtree_check)
   - name: restart nfs server if needed
     service:
       name: nfs-kernel-server

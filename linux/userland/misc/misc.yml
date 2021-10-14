@@ -70,6 +70,22 @@
             state: restarted
           when: resolv_conf.changed
 
+        - name: create group for nfs
+          tags:
+            - debug
+          ansible.builtin.group:
+            name: kd-nfs
+            state: present
+            gid: 1750
+        - name: add user to kd-nfs group
+          tags:
+              - debug
+          ansible.builtin.user:
+            name: "{{ ansible_user_id }}"
+            shell: /bin/bash
+            groups: kd-nfs
+            append: yes
+
       become: true
 
     - include: helpful_script/helpful_script.yml

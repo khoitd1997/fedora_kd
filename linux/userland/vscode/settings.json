@@ -21,7 +21,8 @@
         "*.in": "cmake",
         "conanfile.txt": "toml",
         "*.vdi": "log",
-        "*.inc": "bitbake"
+        "*.inc": "bitbake",
+        "mount-server-nfs": "shellscript"
     },
     "window.zoomLevel": 2,
     "python.formatting.provider": "autopep8",

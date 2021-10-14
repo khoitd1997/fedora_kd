@@ -1,5 +1,5 @@
 - block:
-  - name: copy request-download-big-file
+  - name: copy custom_client_scripts
     copy:
       src: "{{ playbook_dir }}/client/custom_client_scripts/scripts/"
       dest: /bin/
