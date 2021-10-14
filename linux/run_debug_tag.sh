@@ -10,5 +10,5 @@ cd ${script_dir}
 ansible-playbook ./userland/setup.yml \
     --ask-become-pass \
     -i ${script_dir}/inventory \
-    --tags="debug" \
+    --tags debug \
     --extra-vars "${extra_var}"

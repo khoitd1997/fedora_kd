@@ -37,7 +37,7 @@
         - vscode_extension
 
     - name: configure vscode
-      command: sh "{{ playbook_dir }}/vscode/vscode_configure.sh"
+      shell: "{{ playbook_dir }}/vscode/vscode_configure.sh"
       tags:
         - vscode_conf
 
