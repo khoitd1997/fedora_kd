@@ -1,4 +1,3 @@
-# ansible-playbook server.yml --extra-vars "variable_host=newtarget(s)"
 - hosts: "{{ variable_host | default('localhost') }}"
   vars:
     server_hostname: "kd-server"

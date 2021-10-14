@@ -32,12 +32,12 @@ if len(sys.argv) > 1:
     else:
         task_name = arg
 
-    ansible_command = 'ansible-playbook ./userland/setup.yml --ask-become-pass --start-at-task="{0}"'.format(
+    ansible_command = f'ansible-playbook ./userland/setup.yml --ask-become-pass -i {dname}/inventory --start-at-task="{0}"'.format(
         task_name)
 
 else:
     os.system('bash ./setup_deps.sh')
-    ansible_command = 'ansible-playbook ./userland/setup.yml --ask-become-pass'
+    ansible_command = f'ansible-playbook ./userland/setup.yml --ask-become-pass -i {dname}/inventory'
 
 p = subprocess.Popen(ansible_command, stdout=subprocess.PIPE,
                      stderr=subprocess.STDOUT, shell=True, universal_newlines=True)
