@@ -21,5 +21,6 @@
     - include: sshd.yml
     - include: nfs.yml
     - include: ufw.yml
+    - include: custom_server_scripts/custom_server_scripts.yml
 
   become: true

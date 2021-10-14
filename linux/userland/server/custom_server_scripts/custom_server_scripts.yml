@@ -1,0 +1,6 @@
+- block:
+  - name: copy download-big-file.sh
+    copy:
+      src: "{{ playbook_dir }}/server/custom_server_scripts/scripts/"
+      dest: /bin/
+      mode: u=rwx,g=rx,o=rx
