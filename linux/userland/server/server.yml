@@ -2,10 +2,10 @@
   - server
   - never
 
-  vars:
-    bulk_storage_share_dir: "/bulk-storage/nfs/general"
-
   block:
+    - fail: msg="The variable 'bulk_storage_share_dir' is not defined"
+      when: bulk_storage_share_dir is undefined
+
     - name: install server deb packages
       apt:
         update_cache: yes
