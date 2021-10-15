@@ -38,13 +38,13 @@
     #     hour: "*/2"
     #     job: "/sbin/shutdown -h now"
 
-    - name: setting up curfew shutdown cron job
-      become: true
-      cron:
-        name: "shutdown at curfew"
-        minute: "00"
-        hour: "22"
-        job: "/sbin/shutdown -h now"
+    # - name: setting up curfew shutdown cron job
+    #   become: true
+    #   cron:
+    #     name: "shutdown at curfew"
+    #     minute: "00"
+    #     hour: "22"
+    #     job: "/sbin/shutdown -h now"
 
     - name: customize firefox policies
       shell: "{{item}}"
