@@ -135,6 +135,7 @@ export LIBVIRT_DEFAULT_URI="qemu:///system"
 
 export PATH=$PATH:${GOPATH//://bin:}/bin
 export PATH=$PATH:${HOME}/.local/bin
+export PATH=$PATH:${HOME}/.local/bin/custom_client_scripts
 
 source /usr/share/doc/fzf/examples/key-bindings.bash
 source /usr/share/doc/fzf/examples/completion.bash

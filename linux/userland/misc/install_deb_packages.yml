@@ -94,6 +94,7 @@
           - linux-headers-generic
           - pylint
           - gimp
+          - tree
           - arduino
           - vlc
 

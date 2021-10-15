@@ -7,6 +7,4 @@ if [ "$#" -lt 1 ]; then
     exit 1
 fi
 
-ssh -T kd-server <<EOL
-	download-big-file "${1}" "${2}"
-EOL
+ssh -T kd-server "download-big-file \"${1}\" \"${2}\""

@@ -2,7 +2,7 @@
 
 set -e
 
-nfs_mount_point="${HOME}/server_nfs_mount_2"
+nfs_mount_point="${HOME}/server_nfs_mount"
 mkdir -p ${nfs_mount_point}
 
 echo "Mount point at ${nfs_mount_point}"

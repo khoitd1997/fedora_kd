@@ -1,6 +1,7 @@
 - block:
-  - name: copy custom_client_scripts
-    copy:
-      src: "{{ playbook_dir }}/client/custom_client_scripts/scripts/"
-      dest: /bin/
-      mode: u=rwx,g=rx,o=rx
+  - name: create link to custom_client_scripts
+    ansible.builtin.file:
+      src: "{{ playbook_dir }}/client/custom_client_scripts/scripts"
+      dest: "{{ lookup('env','HOME') }}/.local/bin/custom_client_scripts"
+      state: link
+    become_user: "{{ ansible_user_id }}"

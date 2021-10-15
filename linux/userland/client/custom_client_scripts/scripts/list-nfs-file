@@ -1,0 +1,10 @@
+#!/bin/bash
+
+set -e
+
+tree_level=2
+if [ "$#" -eq 1 ]; then
+    tree_level="${1}"
+fi
+
+ssh -T kd-server "tree -L ${tree_level} /bulk-storage/nfs/general"
