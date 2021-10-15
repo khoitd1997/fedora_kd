@@ -159,7 +159,7 @@ if [ -x "$(command -v tool_reminders.py)" ]; then
     tool_reminders.py
 fi
 
-if [ -x "$(command -v print_client_command)" ]; then
+if [ -x "$(command -v print-client-command)" ]; then
     print_client_command
 fi
 
