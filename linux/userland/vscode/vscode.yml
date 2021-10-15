@@ -4,6 +4,11 @@
         - name: install source code pro font
           shell: bash {{ playbook_dir }}/vscode/install_source_code_pro_font.sh
 
+        - name: check if vscode is installed
+          shell: command -v code >/dev/null 2>&1
+          register: is_code_exist
+          ignore_errors: yes
+
         - name: install vscode rpm package
           command: "{{item}}"
           with_items:
@@ -12,7 +17,7 @@
             - dnf install code -y
           args:
             warn: false
-          when: ansible_facts['distribution'] == "Fedora"
+          when: ansible_facts['distribution'] == "Fedora" and is_code_exist.rc != 0
 
         - name: install vscode deb package
           command: "{{item}}"
@@ -27,7 +32,7 @@
 
           args:
             warn: false
-          when: ansible_facts['distribution'] == "Ubuntu"
+          when: ansible_facts['distribution'] == "Ubuntu" and is_code_exist.rc != 0
 
       become: true
 
