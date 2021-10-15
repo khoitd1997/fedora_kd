@@ -160,7 +160,7 @@ if [ -x "$(command -v tool_reminders.py)" ]; then
 fi
 
 if [ -x "$(command -v print-client-command)" ]; then
-    print_client_command
+    print-client-command
 fi
 
 if [ -f "/var/run/reboot-required" ]; then
