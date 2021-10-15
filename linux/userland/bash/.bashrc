@@ -158,6 +158,10 @@ if [ -x "$(command -v tool_reminders.py)" ]; then
     tool_reminders.py
 fi
 
+if [ -x "$(command -v print_client_command)" ]; then
+    print_client_command
+fi
+
 if [ -f "/var/run/reboot-required" ]; then
     echo "REBOOT IS NEEDED FOR UPDATES"
 fi

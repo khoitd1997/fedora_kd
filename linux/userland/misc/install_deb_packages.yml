@@ -170,6 +170,7 @@
           # for connecting to server
           - openssh-client
           - nfs-common
+          - ethtool
 
   when: ansible_facts['distribution'] == "Ubuntu"
   tags:
