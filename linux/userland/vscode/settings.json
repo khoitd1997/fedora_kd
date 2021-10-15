@@ -22,7 +22,7 @@
         "conanfile.txt": "toml",
         "*.vdi": "log",
         "*.inc": "bitbake",
-        "mount-server-nfs": "shellscript"
+        "mount-bulk-share": "shellscript"
     },
     "window.zoomLevel": 2,
     "python.formatting.provider": "autopep8",

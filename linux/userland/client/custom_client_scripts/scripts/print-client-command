@@ -18,7 +18,7 @@ class bcolors:
 command_list = {
     "print-client-command": "print this list\n",
 
-    "mount-server-nfs": "mount the server nfs share at ~/server_nfs_mount",
+    "mount-bulk-share": "mount the server nfs share at ~/server_nfs_mount",
     "list-nfs-file <tree_level>": "print a tree list of the files on the server, optionally specify the depth of the tree",
     "request-download-big-file 'url' 'file_name'": "Request the server to download big file, REMEMBER TO QUOTE THE URL AND NAME\n",
 

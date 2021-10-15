@@ -2,6 +2,9 @@
   - server
   - never
 
+  vars:
+    bulk_storage_share_dir: "/bulk-storage/nfs/general"
+
   block:
     - name: install server deb packages
       apt:
@@ -11,6 +14,8 @@
         name:
           - nfs-kernel-server
           - openssh-server
+          - samba
+          - cifs-utils
 
     - name: Set server hostname
       ansible.builtin.hostname:
@@ -20,6 +25,7 @@
     # https://github.com/awesome-selfhosted/awesome-selfhosted
     - include: sshd.yml
     - include: nfs.yml
+    - include: samba.yml
     - include: ufw.yml
     - include: custom_server_scripts/custom_server_scripts.yml
 

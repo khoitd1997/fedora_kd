@@ -16,3 +16,8 @@
     ufw:
       rule: allow
       port: 'nfs'
+
+  - name: allow samba through ufw
+    ufw:
+      rule: allow
+      port: 'samba'

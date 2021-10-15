@@ -1,0 +1,16 @@
+- block:
+  - name: configure nfs server export
+    register: samba_conf
+    blockinfile:
+      path: /etc/samba/smb.conf
+      block: |
+        [Bulk_Storage_Share]
+        comment = Bulk Storage Share
+        path = {{ bulk_storage_share_dir }}
+        read only = no
+        guest ok = yes
+  - name: restart samba server if needed
+    service:
+      name: smbd 
+      state: restarted
+    when: samba_conf.changed

@@ -1,7 +1,4 @@
-- vars:
-    nfs_dir: "/bulk-storage/nfs/general"
-
-  block:
+- block:
   - name: start nfs server
     service:
       name: nfs-kernel-server
@@ -9,7 +6,7 @@
 
   - name: create the nfs directory
     ansible.builtin.file:
-      path: "{{ nfs_dir }}"
+      path: "{{ bulk_storage_share_dir }}"
       recurse: yes
       mode: u+rwx,g+rwx,o-rwx
       owner: nobody
@@ -21,7 +18,7 @@
     blockinfile:
       path: /etc/exports
       block: |
-        {{ nfs_dir }}       kd-*(rw,sync,no_subtree_check)
+        {{ bulk_storage_share_dir }}       kd-*(rw,sync,no_subtree_check)
   - name: restart nfs server if needed
     service:
       name: nfs-kernel-server
