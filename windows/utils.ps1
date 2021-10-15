@@ -16,3 +16,22 @@ function LogError {
     )
     Write-Host "$LogContent" -ForegroundColor red -BackgroundColor white
 }
+
+function AddToEnvironmentVariable {
+    param (
+        [string]$VarName,
+        [string]$ValueToAdd
+    )
+
+    $currVarValue = [Environment]::GetEnvironmentVariable($VarName, [EnvironmentVariableTarget]::Machine)
+    if ($currVarValue.IndexOf($ValueToAdd) -eq -1) {
+        Write-Output "Adding $ValueToAdd to $VarName env variable"
+        [Environment]::SetEnvironmentVariable(
+            $VarName,
+            $currVarValue + ";$ValueToAdd",
+            [EnvironmentVariableTarget]::Machine)
+    }
+    else {
+        Write-Output "$ValueToAdd already exists in $VarName env variable"
+    }
+}

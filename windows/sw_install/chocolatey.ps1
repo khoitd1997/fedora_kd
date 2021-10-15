@@ -8,6 +8,7 @@ choco install -y microsoft-windows-terminal --pre
 $choco_app_list = @(
     "fzf"
     "sourcecodepro"
+    "nerdfont-hack"
     "powershell-core"
     "googlechrome"
     "git.install"

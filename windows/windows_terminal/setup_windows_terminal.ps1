@@ -5,7 +5,7 @@ New-Item -Path "$profile" `
     -Value "$PSScriptRoot\powershell_profile.ps1"`
     -Force
 
-New-Item -Path "$env:LOCALAPPDATA\Packages\Microsoft.WindowsTerminalPreview_8wekyb3d8bbwe\LocalState\settings.json" `
+New-Item -Path "$env:LOCALAPPDATA\Packages\Microsoft.WindowsTerminal_8wekyb3d8bbwe\LocalState\settings.json" `
     -ItemType SymbolicLink `
     -Value "$PSScriptRoot\terminal_settings.json"`
     -Force
