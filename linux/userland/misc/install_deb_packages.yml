@@ -14,11 +14,12 @@
       apt:
         update_cache: yes
         state: present
-        dpkg_options: "force-overwrite,force-confdef,force-confold" 
+        dpkg_options: "force-overwrite,force-confdef,force-confold"
         name:
           - nautilus-dropbox
           - prusa-slicer
           - curl
+          - debconf-utils
           - wget
           - zsh
           - fd-find
@@ -130,7 +131,7 @@
           - virt-manager
           - qemu
           - libvirt-daemon-driver-lxc
-          - qemu-kvm 
+          - qemu-kvm
           - libvirt-daemon-system
           - libvirt-clients
           - bridge-utils
@@ -153,7 +154,7 @@
           - libtinfo5
 
           # Yocto
-          - datamash 
+          - datamash
           - gawk
           - wget
           - git-core

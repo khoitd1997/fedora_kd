@@ -1,26 +1,29 @@
 - block:
-  - name: start nfs server
-    service:
-      name: nfs-kernel-server
-      state: started
+    - name: start nfs server
+      service:
+        name: nfs-kernel-server
+        state: started
 
-  - name: create the nfs directory
-    ansible.builtin.file:
-      path: "{{ bulk_storage_share_dir }}"
-      recurse: yes
-      mode: u+rwx,g+rwx,o-rwx
-      owner: nobody
-      group: kd-nfs
-      state: directory
+    # NOTE: This can take some time since there can be a lot of files
+    # (for example, buildroot build)
+    - name: create the nfs directory
+      ansible.builtin.file:
+        path: "{{ bulk_storage_share_dir }}"
+        recurse: yes
+        mode: u=rwx,g=rwx,o=rx
+        owner: nobody
+        group: kd-nfs
+        follow: no # buildroot build has some weird symlink so don't follow it
+        state: directory
 
-  - name: configure nfs server export
-    register: nfs_export_conf
-    blockinfile:
-      path: /etc/exports
-      block: |
-        {{ bulk_storage_share_dir }}       kd-*(rw,sync,no_subtree_check)
-  - name: restart nfs server if needed
-    service:
-      name: nfs-kernel-server
-      state: restarted
-    when: nfs_export_conf.changed
+    - name: configure nfs server export
+      register: nfs_export_conf
+      blockinfile:
+        path: /etc/exports
+        block: |
+          {{ bulk_storage_share_dir }}       kd-*(rw,sync,no_subtree_check)
+    - name: restart nfs server if needed
+      service:
+        name: nfs-kernel-server
+        state: restarted
+      when: nfs_export_conf.changed
