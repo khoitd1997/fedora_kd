@@ -160,7 +160,6 @@
           - diffstat
           - unzip
           - texinfo
-          - gcc-multilib
           - build-essential
           - chrpath
           - socat

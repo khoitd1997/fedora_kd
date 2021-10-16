@@ -3,6 +3,7 @@
         # might need restart before taking effects
         - name: install source code pro font
           shell: bash {{ playbook_dir }}/vscode/install_source_code_pro_font.sh
+          become_user: "{{ ansible_user_id }}"
 
         - name: check if vscode is installed
           shell: command -v code >/dev/null 2>&1

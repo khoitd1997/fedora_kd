@@ -3,10 +3,10 @@
     server_hostname: "kd-server"
   tasks:
     - include: bash/bash.yml
+    - include: vscode/vscode.yml
     # - include: zsh/zsh.yml
     # - include: fish/fish.yml
     - include: misc/misc.yml
-    - include: vscode/vscode.yml
     - include: look/look.yml
     - include: snap/snap.yml
     - include: server/server.yml

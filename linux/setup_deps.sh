@@ -1,5 +1,7 @@
 #!/bin/bash
 
+set -e
+
 distro=$(lsb_release -i | cut -d: -f2 | sed s/'^\t'//)
 
 if [ "$distro" = "Ubuntu" ]; then
