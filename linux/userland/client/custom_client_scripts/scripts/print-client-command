@@ -22,7 +22,11 @@ command_list = {
     "list-nfs-file <tree_level>": "print a tree list of the files on the server, optionally specify the depth of the tree",
     "request-download-big-file 'url' 'file_name'": "Request the server to download big file, REMEMBER TO QUOTE THE URL AND NAME\n",
 
-    "ssh-to-server": "ssh to the server"
+    "ssh-to-server": "ssh to the server\n",
+    "vscode-ssh <path-on-server>": "create a vscode session to the server with the specified path"
+
+    "request-buildroot-build <build_name>": "request a buildroot build to be done on the server",
+    "list-ongoing-buildroot-build": "list all ongoing buildroot build",
 }
 
 
