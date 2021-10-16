@@ -1,0 +1,23 @@
+#!/bin/bash
+
+script_dir="$( cd -- "$( dirname -- "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )"
+source ${script_dir}/kd_utils.sh
+
+if [ "$EUID" -ne 0 ]; then
+    echo "Please run as root"
+    exit 1
+fi
+
+trap btrfs_cleanup EXIT
+
+btrfs_cleanup
+
+set -e
+
+btrfs_get_partition
+
+brtfs_create_snapshot_subvolume "${btrfs_partition}"
+
+btrfs_create_back_up
+
+echo "DONE CREATING SNAPSHOT"

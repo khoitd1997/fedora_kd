@@ -1,0 +1,10 @@
+#!/bin/bash
+
+set -e
+
+script_dir="$( cd -- "$( dirname -- "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )"
+source ${script_dir}/kd_utils.sh
+
+btrfs_mount_snapshot_subvolume
+
+echo "mount point is at ${snapshots_dir}"
