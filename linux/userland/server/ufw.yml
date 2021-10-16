@@ -20,4 +20,4 @@
   - name: allow samba through ufw
     ufw:
       rule: allow
-      port: 'samba'
+      name: samba
