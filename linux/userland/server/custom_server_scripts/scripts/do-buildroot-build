@@ -11,6 +11,7 @@ function do_build
 
         mv ${config_file_path} .config
         ln -sfv ${build_dir} ${ongoing_build_dir}
+        ln -sfv ${PWD}/output/images ${build_dir}
         set +e
         make
         rm -f ${ongoing_build_dir}/${build_full_name}
