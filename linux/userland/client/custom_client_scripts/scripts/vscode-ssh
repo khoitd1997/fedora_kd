@@ -1,0 +1,20 @@
+#!/bin/bash
+# usage: vscode-ssh <path-on-server>
+# example: vscode-ssh "${HOME}"
+
+set -e
+
+if [ -z ${1} ]; then
+    echo "Missing folder path!"
+    exit 1
+fi
+
+server_hostname="kd-server"
+if [ ! -z ${2} ]; then
+    server_hostname="${2}"
+fi
+
+echo "Host: ${server_hostname}"
+echo "Path: ${1}"
+
+code --folder-uri "vscode-remote://ssh-remote+${server_hostname}/${1}"
