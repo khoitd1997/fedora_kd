@@ -53,5 +53,5 @@ Run, chrome, max
 return
 
 #Enter::
-Run, Cmder, max
+Run, wt, max
 return
