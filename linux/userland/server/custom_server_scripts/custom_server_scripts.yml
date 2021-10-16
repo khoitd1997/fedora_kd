@@ -1,6 +1,9 @@
-- block:
-  - name: copy custom_server_scripts
-    copy:
-      src: "{{ playbook_dir }}/server/custom_server_scripts/scripts/"
-      dest: /bin/
-      mode: u=rwx,g=rx,o=rx
+- tags:
+    - custom_server_scripts
+
+  block:
+    - name: copy custom_server_scripts
+      copy:
+        src: "{{ playbook_dir }}/server/custom_server_scripts/scripts/"
+        dest: /bin/
+        mode: u=rwx,g=rx,o=rx
