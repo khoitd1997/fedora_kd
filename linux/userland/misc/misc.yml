@@ -116,6 +116,23 @@
           fi
       tags:
         - profile
+    - name: configure .ssh config
+      blockinfile:
+        path: ~/.ssh/config
+        create: yes
+        block: |
+          # do ssh reuse whenever possible
+          # check https://puppet.com/blog/speed-up-ssh-by-reusing-connections/
+          # for list of gotchas
+          Host *
+            ControlMaster auto
+            ControlPath  ~/.ssh/sockets/%r@%h-%p
+            ControlPersist 600
+            PreferredAuthentications=publickey
+    - name: generate ssh socket directory
+      shell: "{{item}}"
+      with_items:
+        - mkdir -p ~/.ssh/sockets
 
     # - include: xmodmap/xmodmap.yml
     - stat:
