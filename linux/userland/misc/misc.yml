@@ -110,8 +110,10 @@
         marker: "# {mark} .profile config"
         create: yes
         block: |
-          eval $(gnome-keyring-daemon --start  --components=ssh,secrets)
-          export SSH_AUTH_SOCK
+          if [ ! -z ${DISPLAY} ]; then
+            eval $(gnome-keyring-daemon --start --components=ssh,secrets)
+            export SSH_AUTH_SOCK
+          fi
       tags:
         - profile
 
