@@ -19,11 +19,13 @@ command_list = {
     "print-client-command": "print this list\n",
 
     "mount-bulk-share": "mount the server nfs share at ~/server_nfs_mount",
-    "list-nfs-file <tree_level>": "print a tree list of the files on the server, optionally specify the depth of the tree",
-    "request-download-big-file 'url' 'file_name'": "Request the server to download big file, REMEMBER TO QUOTE THE URL AND NAME\n",
+    "list-nfs-file <tree_level>": "print a tree list of the files on the server, optionally specify the depth of the tree\n",
+    
+    "request-download-big-file 'url' 'file_name'": "request the server to download big file, REMEMBER TO QUOTE THE URL AND NAME",
+    "list-ongoing-big-file-download": "list all ongoing big file download\n",
 
-    "ssh-to-server": "ssh to the server\n",
-    "vscode-ssh <path-on-server>": "create a vscode session to the server with the specified path",
+    "ssh-to-server": "ssh to the server",
+    "vscode-ssh <path-on-server>": "create a vscode session to the server with the specified path\n",
 
     "request-buildroot-build <build_name>": "request a buildroot build to be done on the server",
     "list-ongoing-buildroot-build": "list all ongoing buildroot build",
