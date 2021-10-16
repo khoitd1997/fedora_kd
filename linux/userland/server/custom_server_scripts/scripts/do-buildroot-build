@@ -1,0 +1,45 @@
+#!/bin/bash
+
+function do_build
+{
+    nohup bash << END
+        wget --output-document ${buildroot_version}.tar.gz "https://buildroot.org/downloads/${buildroot_version}.tar.gz"
+
+        tar xzf ${buildroot_version}.tar.gz
+        rm -f ${buildroot_version}.tar.gz
+        cd ${buildroot_version}
+
+        mv ${config_file_path} .config
+        make
+END
+}
+
+set -e
+
+if [ -z ${1} ]; then
+    echo "Missing config!"
+    exit 1
+fi
+config_file_path="${1}"
+
+if [ -z ${2} ]; then
+    echo "Missing build name!"
+    exit 1
+fi
+build_name="${2}"
+
+buildroot_version="buildroot-2021.08.1"
+if [ ! -z ${3} ]; then
+    buildroot_version="${3}"
+fi
+
+timestamp=$(date "+%Y_%m_%d-%H_%M_%S")
+
+build_dir="/bulk-storage/nfs/general/buildroot_build/${build_name}-${timestamp}"
+log_file="${build_dir}/log.txt"
+mkdir -p ${build_dir}
+cd ${build_dir}
+echo "Log file is at ${log_file}"
+
+do_build > ${log_file} 2>&1 &
+

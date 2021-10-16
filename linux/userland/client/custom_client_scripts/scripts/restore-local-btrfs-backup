@@ -1,0 +1,19 @@
+#!/bin/bash
+# NOTE: THIS SHOULD BE EXECUTED FROM AN ENVIRONMENT
+# THAT IS NOT THE ONE BEING RESTORED LIKE FROM A RESCUE DISK
+# OR A RAMDISK
+
+set -e
+
+script_dir="$( cd -- "$( dirname -- "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )"
+source ${script_dir}/kd_utils.sh
+
+exit 1
+
+btrfs_mount_root_subvolume
+
+btrfs subvolume delete ${root_mount_dir}/@
+btrfs subvol snapshot ${snapshots_dir}/root ${root_mount_dir}/@
+
+btrfs subvolume delete ${root_mount_dir}/@home
+btrfs subvol snapshot ${snapshots_dir}/home ${root_mount_dir}/@

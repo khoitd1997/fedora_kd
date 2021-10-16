@@ -9,11 +9,12 @@ fi
 
 work_dir=/bulk-storage/nfs/general/big_file_storage
 log_dir=${work_dir}/logs
+timestamp=$(date "+%Y_%m_%d-%H_%M_%S")
 if [ -z "${2}" ]; then
-    log_file=${log_dir}/download-big-file_$(date +%H_%M_%S).log
+    log_file=${log_dir}/download-big-file_${timestamp}.log
     wget_output_arg=""
 else
-    log_file=${log_dir}/download-big-file_${2}_$(date +%H_%M_%S).log
+    log_file=${log_dir}/download-big-file_${2}_${timestamp}.log
     wget_output_arg="--output-document ${2}"
 fi
 

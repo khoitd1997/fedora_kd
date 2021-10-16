@@ -1,0 +1,21 @@
+#!/bin/bash
+# usage:
+# cd to root of a buildroot source
+# do config and then save
+# request-buildroot-build <build-name>
+
+set -e
+
+if [ -z ${1} ]; then
+    echo "Missing build name!"
+    exit 1
+fi
+build_name="${1}"
+
+timestamp=$(date "+%Y_%m_%d-%H_%M_%S")
+config_dest_path="/tmp/config-${build_name}-${timestamp}"
+buildroot_version="buildroot-$(make print-version)"
+
+scp ./.config kd-server:${config_dest_path}
+
+ssh -T kd-server "do-buildroot-build ${config_dest_path} ${build_name} ${buildroot_version}"
