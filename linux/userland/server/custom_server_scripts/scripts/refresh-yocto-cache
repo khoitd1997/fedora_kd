@@ -12,6 +12,18 @@ function do_build
         echo "TIMESTAMP: ${timestamp}"
 
         cd ${yocto_cache_build_dir}
+        bb_extra_arg=""
+
+        if [ ! -z "${do_clean}" ]; then
+            echo "Cleaning old build"
+            rm -rf yocto_test
+        fi
+
+        if [ ! -z "${do_fetch}" ]; then
+            echo "Will only fetch for this build"
+            bb_extra_arg="${bb_extra_arg} --runall=fetch"
+        fi
+
         if [ ! -d yocto_test ]; then
             git clone https://github.com/khoitd1997/yocto_test.git
         fi
@@ -27,11 +39,22 @@ function do_build
         # do a build first to set up all the necessary stuff
         ./build.sh
         . init_env.sh
-        bitbake world --continue
+        bitbake world --continue ${bb_extra_arg}
 END
 }
 
 set -e
+
+for var in "$@"; do
+    if [ "${var}" = "--clean" ]; then
+        do_clean=1
+    elif [ "${var}" = "--fetch" ]; then
+        do_fetch=1
+    else
+        echo "Unknown argument ${var}"
+        exit 1
+    fi
+done
 
 yocto_cache_build_dir="/bulk-storage/nfs/general/yocto_cache"
 log_file="${yocto_cache_build_dir}/log.txt"
