@@ -51,6 +51,8 @@ function btrfs_create_back_up {
     mv ${new_rootfs} ${rootfs_snapshot}
     mv ${new_home} ${home_snapshot}
 
+    sync
+
     # local timestamp=$(date "+%Y_%m_%d-%H_%M_%S")
 }
 
