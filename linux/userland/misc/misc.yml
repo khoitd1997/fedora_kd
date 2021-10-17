@@ -84,6 +84,18 @@
             groups: kd-nfs
             append: yes
 
+        - name: create group for backup
+          ansible.builtin.group:
+            name: kd-backup
+            state: present
+            gid: 1751
+        - name: add user to kd-backup group
+          ansible.builtin.user:
+            name: "{{ ansible_user_id }}"
+            shell: /bin/bash
+            groups: kd-backup
+            append: yes
+
       become: true
 
     - include: helpful_script/helpful_script.yml

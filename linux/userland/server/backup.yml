@@ -25,6 +25,7 @@
       ansible.builtin.file:
         path: "{{ backup_dir }}"
         recurse: yes
-        mode: u=rwx,g=rx,o=rx
+        mode: u=rwx,g=rwx,o=
         state: directory
         owner: "{{ ansible_user_id }}"
+        group: kd-backup
