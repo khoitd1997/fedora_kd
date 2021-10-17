@@ -26,6 +26,7 @@
     - include: sshd.yml
     - include: nfs.yml
     - include: samba.yml
+    - include: backup.yml
     - include: ufw.yml
     - include: custom_server_scripts/custom_server_scripts.yml
 

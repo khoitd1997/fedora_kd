@@ -1,0 +1,30 @@
+- tags:
+    - backup
+
+  block:
+    # - name: create btrfs snapshots subvolume
+    #   args:
+    #     executable: /bin/bash
+    #   shell: |
+    #     source kd_utils.sh
+
+    #     brtfs_create_snapshot_subvolume
+    #     mkdir -p {{ backup_dir }}
+
+    #     btrfs_cleanup
+
+    # - shell: source kd_utils.sh && btrfs_get_partition_disk_uuid
+    #   register: btrfs_partition_disk_uuid
+    # - name: make sure snapshot subvolume is mounted at boot
+    #   blockinfile:
+    #     path: /etc/fstab
+    #     block: |
+    #       UUID={{ btrfs_partition_disk_uuid.stdout_lines }} {{ backup_dir }}               btrfs   defaults,subvol=snapshots 0       1
+
+    - name: create the backup directory
+      ansible.builtin.file:
+        path: "{{ backup_dir }}"
+        recurse: yes
+        mode: u=rwx,g=rx,o=rx
+        state: directory
+      become_user: "{{ ansible_user_id }}"

@@ -24,15 +24,35 @@ function brtfs_create_snapshot_subvolume {
 }
 
 function btrfs_get_partition {
-    export btrfs_partition=$(mount -l | grep "on /home type btrfs" |  awk '{ print $1 }')
+    btrfs_partition_search="/home"
+    # the server stores the snapshot at a different location
+    if [ $(hostname) = "kd-server" ]; then
+        btrfs_partition_search="/bulk-storage"
+    fi
+    export btrfs_partition=$(mount -l | grep "on ${btrfs_partition_search} type btrfs" |  awk '{ print $1 }')
+}
+
+function btrfs_get_partition_disk_uuid {
+    btrfs_get_partition
+    export btrfs_partition_uuid=$(ls -l /dev/disk/by-uuid | grep "${btrfs_partition}" | awk '{ print $9 }')
 }
 
 function btrfs_create_back_up {
-    btrfs subvolume delete ${rootfs_snapshot} || true
-    btrfs subvolume delete ${home_snapshot} || true
+    new_rootfs="${rootfs_snapshot}-new"
+    new_home="${home_snapshot}-new"
+    btrfs subvolume snapshot -r / ${new_rootfs}
+    btrfs subvolume snapshot -r /home ${new_home}
+
+    if [ -d ${rootfs_snapshot} ]; then
+    #     btrfs send -p ${rootfs_snapshot} ${new_rootfs} | ssh kd@kd-server "btrfs receive /Backups/"
+        btrfs subvolume delete ${rootfs_snapshot}
+        btrfs subvolume delete ${home_snapshot}
+    fi
+
+    mv ${new_rootfs} ${rootfs_snapshot}
+    mv ${new_home} ${home_snapshot}
+
     # local timestamp=$(date "+%Y_%m_%d-%H_%M_%S")
-    btrfs subvolume snapshot -r / ${rootfs_snapshot}
-    btrfs subvolume snapshot -r /home ${home_snapshot}
 }
 
 function btrfs_mount_snapshot_subvolume {
@@ -45,5 +65,4 @@ function btrfs_mount_snapshot_subvolume {
 function btrfs_cleanup {
     umount ${root_mount_dir}
     umount ${snapshots_dir}
-    rm -rf ${root_mount_dir}
 }

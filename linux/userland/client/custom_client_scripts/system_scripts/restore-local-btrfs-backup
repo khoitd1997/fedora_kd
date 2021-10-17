@@ -6,7 +6,7 @@
 set -e
 
 script_dir="$( cd -- "$( dirname -- "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )"
-source ${script_dir}/kd_utils.sh
+source kd_utils.sh
 
 exit 1
 

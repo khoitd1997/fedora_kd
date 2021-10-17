@@ -5,4 +5,6 @@ all:
       ansible_connection: local
   vars:
     ansible_python_interpreter: "/usr/bin/python3"
-    bulk_storage_share_dir: "/bulk-storage/nfs/general"
+    bulk_storage_dir: "/bulk-storage"
+    backup_dir: "{{ bulk_storage_dir }}/backup"
+    bulk_storage_share_dir: "{{ bulk_storage_dir }}/nfs/general"
