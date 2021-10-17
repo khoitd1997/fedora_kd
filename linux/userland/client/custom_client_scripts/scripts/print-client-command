@@ -28,7 +28,12 @@ command_list = {
     "vscode-ssh <path-on-server>": "create a vscode session to the server with the specified path\n",
 
     "request-buildroot-build <build_name>": "request a buildroot build to be done on the server",
-    "list-ongoing-buildroot-build": "list all ongoing buildroot build",
+    "list-ongoing-buildroot-build": "list all ongoing buildroot build\n",
+
+    "create-local-btrfs-backup": "create local btrfs backup",
+    "create-and-send-local-btrfs-backup": "create and send btrfs backup",
+    "mount-local-btrfs-backup": "mount the local btrfs backup",
+    "umount-local-btrfs-backup": "unmount the local btrfs backup",
 }
 
 
