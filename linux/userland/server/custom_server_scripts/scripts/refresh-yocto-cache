@@ -1,0 +1,51 @@
+#!/bin/bash
+
+function do_build
+{
+    nohup bash << END
+        set -e
+        function cleanup {
+            rm -f ${guard_file}
+        }
+        trap cleanup EXIT
+
+        echo "TIMESTAMP: ${timestamp}"
+
+        cd ${yocto_cache_build_dir}
+        if [ ! -d yocto_test ]; then
+            git clone https://github.com/khoitd1997/yocto_test.git
+        fi
+
+        cd yocto_test
+        git pull
+        git submodule init
+        git submodule update
+
+        # TODO: Allow adjustment of build config
+        ./set_build_config.sh debug
+
+        # do a build first to set up all the necessary stuff
+        ./build.sh
+        . init_env.sh
+        bitbake world --continue
+END
+}
+
+set -e
+
+yocto_cache_build_dir="/bulk-storage/nfs/general/yocto_cache"
+log_file="${yocto_cache_build_dir}/log.txt"
+guard_file="${yocto_cache_build_dir}/.build_in_progress"
+timestamp=$(date "+%Y_%m_%d-%H_%M_%S")
+
+mkdir -p ${yocto_cache_build_dir}
+
+if [ -f ${guard_file} ]; then
+    echo "A build is already in progress! Exiting"
+    exit 1
+fi
+
+touch ${guard_file}
+
+echo "Cache refresh starting at ${yocto_cache_build_dir}"
+do_build > ${log_file} 2>&1 &
