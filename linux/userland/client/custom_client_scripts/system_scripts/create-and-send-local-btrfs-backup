@@ -1,0 +1,19 @@
+#!/bin/bash
+
+set -e
+
+source kd_utils.sh
+
+trap btrfs_cleanup EXIT
+
+sudo create-local-btrfs-backup
+
+sudo mount-local-btrfs-backup
+
+echo ""
+
+echo "Sending rootfs snapshot to remote"
+time sudo btrfs send ${rootfs_snapshot} | ssh -o "Compression yes" kd@kd-server "cat - > /bulk-storage/backup/rootfs_snapshot.btrfs"
+
+echo "Sending home snapshot to remote"
+time sudo btrfs send ${home_snapshot} | ssh -o "Compression yes" kd@kd-server "cat - > /bulk-storage/backup/home_snapshot.btrfs"

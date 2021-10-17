@@ -44,7 +44,6 @@ function btrfs_create_back_up {
     btrfs subvolume snapshot -r /home ${new_home}
 
     if [ -d ${rootfs_snapshot} ]; then
-    #     btrfs send -p ${rootfs_snapshot} ${new_rootfs} | ssh kd@kd-server "btrfs receive /Backups/"
         btrfs subvolume delete ${rootfs_snapshot}
         btrfs subvolume delete ${home_snapshot}
     fi
@@ -63,6 +62,6 @@ function btrfs_mount_snapshot_subvolume {
 
 # TODO: Make this safer
 function btrfs_cleanup {
-    umount ${root_mount_dir}
-    umount ${snapshots_dir}
+    umount ${root_mount_dir} || true
+    umount ${snapshots_dir} || true
 }
