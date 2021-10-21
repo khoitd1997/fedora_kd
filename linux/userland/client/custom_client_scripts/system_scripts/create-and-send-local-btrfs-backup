@@ -1,0 +1,27 @@
+#!/bin/bash
+
+set -e
+
+if [ "$EUID" -ne 0 ]; then
+    echo "Please run as root"
+    exit 1
+fi
+
+source kd_utils.sh
+
+trap btrfs_cleanup EXIT
+
+sudo create-local-btrfs-backup
+
+sudo mount-local-btrfs-backup
+
+echo ""
+
+# need to send it as another user since root has problem resolving kd-server
+echo "Sending rootfs snapshot to remote"
+time sudo btrfs send ${rootfs_snapshot} | pv - | sudo -H -u ${SUDO_USER} bash -c \
+    "ssh -o \"Compression yes\" ${SUDO_USER}@kd-server \"cat - > /bulk-storage/backup/rootfs_snapshot.btrfs\""
+
+echo "Sending home snapshot to remote"
+time sudo btrfs send ${home_snapshot} | pv - | sudo -H -u ${SUDO_USER} bash -c \
+    "ssh -o \"Compression yes\" ${SUDO_USER}@kd-server \"cat - > /bulk-storage/backup/home_snapshot.btrfs\""

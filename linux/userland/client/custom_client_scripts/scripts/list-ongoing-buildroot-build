@@ -1,0 +1,5 @@
+#!/bin/bash
+
+set -e
+
+ssh -T kd-server "ls /bulk-storage/nfs/general/buildroot_build/ongoing_build"

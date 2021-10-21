@@ -10,7 +10,11 @@ function do_build
         cd ${buildroot_version}
 
         mv ${config_file_path} .config
+        ln -sfv ${build_dir} ${ongoing_build_dir}
+        ln -sfv ${build_dir}/${buildroot_version}/output/images ${build_dir}
+        set +e
         make
+        rm -f ${ongoing_build_dir}/${build_full_name}
 END
 }
 
@@ -35,8 +39,11 @@ fi
 
 timestamp=$(date "+%Y_%m_%d-%H_%M_%S")
 
-build_dir="/bulk-storage/nfs/general/buildroot_build/${build_name}-${timestamp}"
+build_full_name="${build_name}-${timestamp}"
+build_dir="/bulk-storage/nfs/general/buildroot_build/${build_full_name}"
 log_file="${build_dir}/log.txt"
+ongoing_build_dir="/bulk-storage/nfs/general/buildroot_build/ongoing_build"
+mkdir -p ${ongoing_build_dir}
 mkdir -p ${build_dir}
 cd ${build_dir}
 echo "Log file is at ${log_file}"

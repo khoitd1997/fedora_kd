@@ -5,3 +5,9 @@
       dest: "{{ lookup('env','HOME') }}/.local/bin/custom_client_scripts"
       state: link
     become_user: "{{ ansible_user_id }}"
+
+  - name: copy client system_scripts
+    copy:
+      src: "{{ playbook_dir }}/client/custom_client_scripts/system_scripts/"
+      dest: /bin/
+      mode: u=rwx,g=rx,o=rx

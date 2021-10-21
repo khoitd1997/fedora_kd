@@ -1,14 +1,28 @@
 - block:
-  - name: configure sshd
-    register: sshd_conf
-    blockinfile:
-      path: /etc/ssh/sshd_config
-      block: |
-        DebianBanner no
-        IgnoreRhosts yes
+    - name: configure sshd
+      register: sshd_conf
+      blockinfile:
+        path: /etc/ssh/sshd_config
+        block: |
+          DebianBanner no
+          # for extra security
+          IgnoreRhosts yes
 
-  - name: restart sshd
-    service:
-      name: sshd
-      state: restarted
-    when: sshd_conf.changed
+          # used to speed up ssh connnection
+          AddressFamily inet
+          GSSAPIAuthentication no
+          UseDNS no
+
+          # recommended by https://www.ssh.com/academy/ssh/sshd_config
+          Ciphers aes128-ctr,aes192-ctr,aes256-ctr
+          HostKeyAlgorithms ecdsa-sha2-nistp256,ecdsa-sha2-nistp384,ecdsa-sha2-nistp521,ssh-rsa,ssh-dss
+          KexAlgorithms ecdh-sha2-nistp256,ecdh-sha2-nistp384,ecdh-sha2-nistp521,diffie-hellman-group14-sha1,diffie-hellman-group-exchange-sha256
+          MACs hmac-sha2-256,hmac-sha2-512,hmac-sha1
+
+          X11Forwarding yes
+
+    - name: restart sshd
+      service:
+        name: sshd
+        state: restarted
+      when: sshd_conf.changed

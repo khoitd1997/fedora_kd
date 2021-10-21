@@ -84,6 +84,18 @@
             groups: kd-nfs
             append: yes
 
+        - name: create group for backup
+          ansible.builtin.group:
+            name: kd-backup
+            state: present
+            gid: 1751
+        - name: add user to kd-backup group
+          ansible.builtin.user:
+            name: "{{ ansible_user_id }}"
+            shell: /bin/bash
+            groups: kd-backup
+            append: yes
+
       become: true
 
     - include: helpful_script/helpful_script.yml
@@ -110,10 +122,29 @@
         marker: "# {mark} .profile config"
         create: yes
         block: |
-          eval $(gnome-keyring-daemon --start  --components=ssh,secrets)
-          export SSH_AUTH_SOCK
+          if [ ! -z ${DISPLAY} ]; then
+            eval $(gnome-keyring-daemon --start --components=ssh,secrets)
+            export SSH_AUTH_SOCK
+          fi
       tags:
         - profile
+    - name: configure .ssh config
+      blockinfile:
+        path: ~/.ssh/config
+        create: yes
+        block: |
+          # do ssh reuse whenever possible
+          # check https://puppet.com/blog/speed-up-ssh-by-reusing-connections/
+          # for list of gotchas
+          Host *
+            ControlMaster auto
+            ControlPath  ~/.ssh/sockets/%r@%h-%p
+            ControlPersist 600
+            PreferredAuthentications=publickey
+    - name: generate ssh socket directory
+      shell: "{{item}}"
+      with_items:
+        - mkdir -p ~/.ssh/sockets
 
     # - include: xmodmap/xmodmap.yml
     - stat:

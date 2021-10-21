@@ -1,6 +1,6 @@
 - tags:
-  - server
-  - never
+    - server
+    - never
 
   block:
     - fail: msg="The variable 'bulk_storage_share_dir' is not defined"
@@ -10,7 +10,7 @@
       apt:
         update_cache: yes
         state: present
-        dpkg_options: "force-overwrite,force-confdef,force-confold" 
+        dpkg_options: "force-overwrite,force-confdef,force-confold"
         name:
           - nfs-kernel-server
           - openssh-server
@@ -26,6 +26,7 @@
     - include: sshd.yml
     - include: nfs.yml
     - include: samba.yml
+    - include: backup.yml
     - include: ufw.yml
     - include: custom_server_scripts/custom_server_scripts.yml
 
