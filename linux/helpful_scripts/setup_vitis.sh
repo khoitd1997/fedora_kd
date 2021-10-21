@@ -8,7 +8,7 @@ if [[ $EUID -ne 0 ]]; then
 fi
 
 script_dir="$( cd -- "$(dirname "$0")" >/dev/null 2>&1 ; pwd -P )"
-vitis_config_dir="${script_dir}/../../windows/vitis/install_config.txt"
+vitis_config_dir="${script_dir}/../../windows/vitis/install_config_linux.txt"
 
 # NOTE: will need changing
 vitis_files_dir="/bulk-storage/nfs/general/big_file_storage/"
