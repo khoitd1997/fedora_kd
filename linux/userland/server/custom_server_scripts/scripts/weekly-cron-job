@@ -1,0 +1,10 @@
+#!/bin/bash
+
+set -e
+
+/usr/bin/apt update
+/usr/bin/apt full-upgrade -y
+
+if [ -f "/var/run/reboot-required" ]; then
+    /usr/bin/systemctl reboot -i
+fi

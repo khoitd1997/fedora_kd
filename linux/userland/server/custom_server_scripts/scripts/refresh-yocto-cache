@@ -37,7 +37,9 @@ function do_build
         ./set_build_config.sh debug
 
         # do a build first to set up all the necessary stuff
+        set +e
         ./build.sh
+        set -e
         . init_env.sh
         bitbake world --continue ${bb_extra_arg}
 END
@@ -56,9 +58,9 @@ for var in "$@"; do
     fi
 done
 
-yocto_cache_build_dir="/bulk-storage/nfs/general/yocto_cache"
+yocto_cache_build_dir="/bulk-storage/projects/yocto_cache"
 log_file="${yocto_cache_build_dir}/log.txt"
-guard_file="${yocto_cache_build_dir}/.build_in_progress"
+guard_file="/tmp/.yocto_build_in_progress"
 timestamp=$(date "+%Y_%m_%d-%H_%M_%S")
 
 mkdir -p ${yocto_cache_build_dir}

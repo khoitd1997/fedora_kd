@@ -1,0 +1,17 @@
+- block:
+    # TODO: Fix this one day
+    # - name: setting up reboot cron job
+    #   become: true
+    #   cron:
+    #     name: "reboot when convenient"
+    #     special_time: weekly
+    #     job: "/bin/weekly-cron-job"
+
+    - name: create project directory
+      ansible.builtin.file:
+        path: "{{ projects_dir }}"
+        recurse: yes
+        mode: u=rwx,g=rwx,o=
+        state: directory
+        owner: "{{ ansible_user_id }}"
+        group: kd-project

@@ -23,6 +23,7 @@
 
     # TODO: PXE/tftp
     # https://github.com/awesome-selfhosted/awesome-selfhosted
+    - include: server_misc.yml
     - include: sshd.yml
     - include: nfs.yml
     - include: samba.yml

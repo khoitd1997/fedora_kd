@@ -96,6 +96,18 @@
             groups: kd-backup
             append: yes
 
+        - name: create group for projects
+          ansible.builtin.group:
+            name: kd-project
+            state: present
+            gid: 1752
+        - name: add user to kd-project group
+          ansible.builtin.user:
+            name: "{{ ansible_user_id }}"
+            shell: /bin/bash
+            groups: kd-project
+            append: yes
+
       become: true
 
     - include: helpful_script/helpful_script.yml

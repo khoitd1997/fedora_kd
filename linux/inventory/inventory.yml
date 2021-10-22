@@ -6,5 +6,6 @@ all:
   vars:
     ansible_python_interpreter: "/usr/bin/python3"
     bulk_storage_dir: "/bulk-storage"
+    projects_dir: "{{ bulk_storage_dir }}/projects"
     backup_dir: "{{ bulk_storage_dir }}/backup"
     bulk_storage_share_dir: "{{ bulk_storage_dir }}/nfs/general"
