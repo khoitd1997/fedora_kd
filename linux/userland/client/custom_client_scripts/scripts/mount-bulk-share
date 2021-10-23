@@ -1,9 +1,11 @@
 #!/bin/bash
 
+source /bin/server_common.sh
+
 set -e
 
 nfs_mount_point="${HOME}/server_nfs_mount"
 mkdir -p ${nfs_mount_point}
 
 echo "Mount point at ${nfs_mount_point}"
-sudo mount -t nfs kd-server:/bulk-storage/nfs/general ${nfs_mount_point}
+sudo mount -t nfs ${kd_server_hostname}:${bulk_storage_share_dir} ${nfs_mount_point}

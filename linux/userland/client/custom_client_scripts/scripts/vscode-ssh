@@ -2,6 +2,8 @@
 # usage: vscode-ssh <path-on-server>
 # example: vscode-ssh "${HOME}"
 
+source /bin/server_common.sh
+
 set -e
 
 if [ -z ${1} ]; then
@@ -9,7 +11,7 @@ if [ -z ${1} ]; then
     exit 1
 fi
 
-server_hostname="kd-server"
+server_hostname="${kd_server_hostname}"
 if [ ! -z ${2} ]; then
     server_hostname="${2}"
 fi

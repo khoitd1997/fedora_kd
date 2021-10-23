@@ -1,5 +1,7 @@
 #!/bin/bash
 
+source /bin/server_common.sh
+
 set -e
 
 if [ "$EUID" -ne 0 ]; then
@@ -20,8 +22,8 @@ echo ""
 # need to send it as another user since root has problem resolving kd-server
 echo "Sending rootfs snapshot to remote"
 time sudo btrfs send ${rootfs_snapshot} | pv - | sudo -H -u ${SUDO_USER} bash -c \
-    "ssh -o \"Compression yes\" ${SUDO_USER}@kd-server \"cat - > /bulk-storage/backup/rootfs_snapshot.btrfs\""
+    "ssh -o \"Compression yes\" ${SUDO_USER}@${kd_server_hostname} \"cat - > ${kd_backup_dir}/rootfs_snapshot.btrfs\""
 
 echo "Sending home snapshot to remote"
 time sudo btrfs send ${home_snapshot} | pv - | sudo -H -u ${SUDO_USER} bash -c \
-    "ssh -o \"Compression yes\" ${SUDO_USER}@kd-server \"cat - > /bulk-storage/backup/home_snapshot.btrfs\""
+    "ssh -o \"Compression yes\" ${SUDO_USER}@${kd_server_hostname} \"cat - > ${kd_backup_dir}/home_snapshot.btrfs\""

@@ -1,6 +1,4 @@
 - hosts: "{{ variable_host | default('localhost') }}"
-  vars:
-    server_hostname: "kd-server"
   tasks:
     - include: bash/bash.yml
     - include: vscode/vscode.yml

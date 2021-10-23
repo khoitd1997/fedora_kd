@@ -1,5 +1,7 @@
 #!/bin/bash
 
+source /bin/server_common.sh
+
 set -e
 
 if [ "$#" -lt 1 ]; then
@@ -7,4 +9,4 @@ if [ "$#" -lt 1 ]; then
     exit 1
 fi
 
-ssh -T kd-server "download-big-file \"${1}\" \"${2}\""
+ssh -T ${kd_server_hostname} "download-big-file \"${1}\" \"${2}\""

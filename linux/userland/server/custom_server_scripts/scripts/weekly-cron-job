@@ -1,5 +1,7 @@
 #!/bin/bash
 
+source /bin/server_common.sh
+
 set -e
 
 /usr/bin/apt update

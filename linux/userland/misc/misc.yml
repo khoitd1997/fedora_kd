@@ -110,6 +110,23 @@
 
         - include: client_slurm/client_slurm.yml
 
+        - name: create server_common.sh
+          copy:
+            dest: /bin/server_common.sh
+            mode: u=rwx,g=rx,o=rx
+            content: |
+              export kd_server_hostname="{{ kd_server_hostname }}"
+
+              export bulk_storage_slow_dir="{{ bulk_storage_slow_dir }}"
+              export kd_backup_dir="{{ kd_backup_dir }}"
+              export bulk_storage_share_dir="{{ bulk_storage_share_dir }}"
+              export kd_big_file_storage="{{ kd_big_file_storage }}"
+
+              export bulk_storage_fast_dir="{{ bulk_storage_fast_dir }}"
+              export kd_projects_dir="{{ kd_projects_dir }}"
+              export kd_yocto_cache_dir="{{ kd_yocto_cache_dir }}"
+              export kd_buildroot_build_dir="{{ kd_buildroot_build_dir }}"
+
       become: true
 
     - include: helpful_script/helpful_script.yml

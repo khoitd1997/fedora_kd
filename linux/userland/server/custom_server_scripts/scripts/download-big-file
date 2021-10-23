@@ -1,5 +1,7 @@
 #!/bin/bash
 
+source /bin/server_common.sh
+
 function do_download
 {
     nohup bash << END
@@ -18,7 +20,7 @@ if [ "$#" -ne 2 ]; then
 fi
 
 download_url="${1}"
-work_dir=/bulk-storage/nfs/general/big_file_storage
+work_dir="${kd_big_file_storage}"
 ongoing_download_dir=${work_dir}/ongoing_download
 log_dir=${work_dir}/logs
 timestamp=$(date "+%Y_%m_%d-%H_%M_%S")

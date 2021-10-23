@@ -1,5 +1,7 @@
 #!/bin/bash
 
+source /bin/server_common.sh
+
 root_mount_dir="/tmp/btrfs_root_mount"
 
 snapshots_dir="${root_mount_dir}/snapshots"
@@ -27,7 +29,7 @@ function btrfs_get_partition {
     btrfs_partition_search="/home"
     # the server stores the snapshot at a different location
     if [ $(hostname) = "kd-server" ]; then
-        btrfs_partition_search="/bulk-storage"
+        btrfs_partition_search="${bulk_storage_slow_dir}"
     fi
     export btrfs_partition=$(mount -l | grep "on ${btrfs_partition_search} type btrfs" |  awk '{ print $1 }')
 }

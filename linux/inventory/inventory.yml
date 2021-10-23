@@ -5,7 +5,15 @@ all:
       ansible_connection: local
   vars:
     ansible_python_interpreter: "/usr/bin/python3"
-    bulk_storage_dir: "/bulk-storage"
-    projects_dir: "{{ bulk_storage_dir }}/projects"
-    backup_dir: "{{ bulk_storage_dir }}/backup"
-    bulk_storage_share_dir: "{{ bulk_storage_dir }}/nfs/general"
+
+    kd_server_hostname: "kd-server"
+
+    bulk_storage_slow_dir: "/bulk-storage-slow"
+    kd_backup_dir: "{{ bulk_storage_slow_dir }}/backup"
+    bulk_storage_share_dir: "{{ bulk_storage_slow_dir }}/nfs/general"
+    kd_big_file_storage: "{{ bulk_storage_share_dir }}/big_file_storage"
+
+    bulk_storage_fast_dir: "/bulk-storage-fast"
+    kd_projects_dir: "{{ bulk_storage_fast_dir }}/projects"
+    kd_buildroot_build_dir: "{{ kd_projects_dir }}/buildroot_build"
+    kd_yocto_cache_dir: "{{ kd_projects_dir }}/yocto_cache"

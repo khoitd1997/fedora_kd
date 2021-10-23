@@ -4,6 +4,8 @@
 # do config and then save
 # request-buildroot-build <build-name>
 
+source /bin/server_common.sh
+
 set -e
 
 if [ -z ${1} ]; then
@@ -16,6 +18,6 @@ timestamp=$(date "+%Y_%m_%d-%H_%M_%S")
 config_dest_path="/tmp/config-${build_name}-${timestamp}"
 buildroot_version="buildroot-$(make print-version)"
 
-scp ./.config kd-server:${config_dest_path}
+scp ./.config ${kd_server_hostname}:${config_dest_path}
 
-ssh -T kd-server "do-buildroot-build ${config_dest_path} ${build_name} ${buildroot_version}"
+ssh -T ${kd_server_hostname} "do-buildroot-build ${config_dest_path} ${build_name} ${buildroot_version}"

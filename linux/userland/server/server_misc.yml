@@ -9,7 +9,7 @@
 
     - name: create project directory
       ansible.builtin.file:
-        path: "{{ projects_dir }}"
+        path: "{{ kd_projects_dir }}"
         mode: u=rwx,g=rwx,o=
         state: directory
         owner: "{{ ansible_user_id }}"

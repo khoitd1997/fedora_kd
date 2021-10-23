@@ -9,7 +9,7 @@
     #     source kd_utils.sh
 
     #     brtfs_create_snapshot_subvolume
-    #     mkdir -p {{ backup_dir }}
+    #     mkdir -p {{ kd_backup_dir }}
 
     #     btrfs_cleanup
 
@@ -19,11 +19,11 @@
     #   blockinfile:
     #     path: /etc/fstab
     #     block: |
-    #       UUID={{ btrfs_partition_disk_uuid.stdout_lines }} {{ backup_dir }}               btrfs   defaults,subvol=snapshots 0       1
+    #       UUID={{ btrfs_partition_disk_uuid.stdout_lines }} {{ kd_backup_dir }}               btrfs   defaults,subvol=snapshots 0       1
 
     - name: create the backup directory
       ansible.builtin.file:
-        path: "{{ backup_dir }}"
+        path: "{{ kd_backup_dir }}"
         mode: u=rwx,g=rwx,o=
         state: directory
         owner: "{{ ansible_user_id }}"

@@ -1,5 +1,7 @@
 #!/bin/bash
 
+source /bin/server_common.sh
+
 function do_build
 {
     nohup bash << END
@@ -58,7 +60,7 @@ for var in "$@"; do
     fi
 done
 
-yocto_cache_build_dir="/bulk-storage/projects/yocto_cache"
+yocto_cache_build_dir="${kd_yocto_cache_dir}"
 log_file="${yocto_cache_build_dir}/log.txt"
 guard_file="/tmp/.yocto_build_in_progress"
 timestamp=$(date "+%Y_%m_%d-%H_%M_%S")

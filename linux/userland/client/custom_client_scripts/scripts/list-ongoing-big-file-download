@@ -1,5 +1,7 @@
 #!/bin/bash
 
+source /bin/server_common.sh
+
 set -e
 
-ssh -T kd-server "ls /bulk-storage/nfs/general/big_file_storage/ongoing_download"
+ssh -T kd-server "ls ${kd_big_file_storage}/ongoing_download"

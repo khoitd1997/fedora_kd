@@ -26,10 +26,24 @@
         name:
           - slurm-wlm
 
+    - name: set permission for bulk-storage-slow directory
+      ansible.builtin.file:
+        path: "{{ bulk_storage_slow_dir }}"
+        mode: u=rwx,g=rwx,o=rx
+        owner: kd
+        group: kd
+        state: directory
+    - name: set permission for bulk-storage-fast directory
+      ansible.builtin.file:
+        path: "{{ bulk_storage_fast_dir }}"
+        mode: u=rwx,g=rwx,o=rx
+        owner: kd
+        group: kd
+        state: directory
 
     - name: Set server hostname
       ansible.builtin.hostname:
-        name: "{{ server_hostname }}"
+        name: "{{ kd_server_hostname }}"
 
     # TODO: PXE/tftp
     # https://github.com/awesome-selfhosted/awesome-selfhosted
