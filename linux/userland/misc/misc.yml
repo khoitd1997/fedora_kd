@@ -3,6 +3,13 @@
         - include: rpm_package.yml
         - include: install_deb_packages.yml
 
+        - name: enable ufw
+          ufw:
+            state: enabled
+        - name: enable ufw logging
+          ufw:
+            logging: "on"
+
         - include: sshd.yml
 
         # - include: google-chrome/google-chrome.yml

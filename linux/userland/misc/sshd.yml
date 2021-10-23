@@ -26,3 +26,8 @@
         name: sshd
         state: restarted
       when: sshd_conf.changed
+
+    - name: allow openssh through ufw
+      ufw:
+        rule: allow
+        name: OpenSSH
