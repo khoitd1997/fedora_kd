@@ -1,0 +1,41 @@
+- block:
+    - name: create the /var/spool/slurmctld directory
+      ansible.builtin.file:
+        path: /var/spool/slurmctld
+        mode: u=rwx,g=rx,o=x
+        state: directory
+        owner: slurm
+        group: slurm
+    - name: create /var/spool/slurmd directory
+      ansible.builtin.file:
+        path: /var/spool/slurmd
+        mode: u=rwx,g=rx,o=x
+        state: directory
+        owner: slurm
+        group: slurm
+
+    - name: copy slurm config files
+      register: slurm_conf
+      copy:
+        src: "{{ playbook_dir }}/server/slurm/slurm_conf/"
+        dest: /etc/slurm-llnl
+        mode: u=rwx,g=r,o=r
+        owner: slurm
+        group: slurm
+    - name: restart slurmctld
+      service:
+        name: slurmctld
+        enabled: yes
+        state: restarted
+      when: slurm_conf.changed
+    - name: restart slurmd
+      service:
+        name: slurmd
+        enabled: yes
+        state: restarted
+      when: slurm_conf.changed
+
+  become: true
+  tags:
+    - server_slurm
+    - slurm

@@ -1,0 +1,22 @@
+- block:
+    - name: set fixed gid for slurm group
+      ansible.builtin.group:
+        name: slurm
+        gid: 1753
+    - name: set fixed gid for munge group
+      ansible.builtin.group:
+        name: munge
+        gid: 1754
+
+    - name: copy slurm.conf file
+      copy:
+        src: "{{ playbook_dir }}/server/slurm/slurm_conf/"
+        dest: /etc/slurm-llnl
+        mode: u=rwx,g=r,o=r
+        owner: slurm
+        group: slurm
+
+  become: true
+  tags:
+    - client_slurm
+    - slurm

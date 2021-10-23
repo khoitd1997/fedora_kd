@@ -108,6 +108,8 @@
             groups: kd-project
             append: yes
 
+        - include: client_slurm/client_slurm.yml
+
       become: true
 
     - include: helpful_script/helpful_script.yml

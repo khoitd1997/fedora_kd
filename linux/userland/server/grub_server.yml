@@ -1,0 +1,15 @@
+- block:
+  # for cgroup slurm
+  - name: Configure GRUB_CMDLINE_LINUX
+    register: grub_cmdline
+    ansible.builtin.lineinfile:
+      path: /etc/default/grub
+      regexp: '^GRUB_CMDLINE_LINUX='
+      line: GRUB_CMDLINE_LINUX="cgroup_enable=memory swapaccount=1"
+  - name: regenerate grub config
+    shell: "update-grub"
+    when: grub_cmdline.changed
+  
+  tags:
+    - grub
+    - grub_server

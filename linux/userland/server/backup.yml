@@ -24,7 +24,6 @@
     - name: create the backup directory
       ansible.builtin.file:
         path: "{{ backup_dir }}"
-        recurse: yes
         mode: u=rwx,g=rwx,o=
         state: directory
         owner: "{{ ansible_user_id }}"

@@ -16,6 +16,16 @@
           - openssh-server
           - samba
           - cifs-utils
+          - slurmd
+
+    - name: install slurm-wlm deb packages only on main scheduler
+      when: inventory_hostname == "kd-server"
+      apt:
+        update_cache: yes
+        state: present
+        name:
+          - slurm-wlm
+
 
     - name: Set server hostname
       ansible.builtin.hostname:
@@ -24,6 +34,8 @@
     # TODO: PXE/tftp
     # https://github.com/awesome-selfhosted/awesome-selfhosted
     - include: server_misc.yml
+    - include: grub_server.yml
+    - include: slurm/server_slurm.yml
     - include: sshd.yml
     - include: nfs.yml
     - include: samba.yml

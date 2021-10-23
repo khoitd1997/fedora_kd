@@ -21,3 +21,16 @@
       ufw:
         rule: allow
         name: samba
+
+    - name: allow slurmctl port
+      ufw:
+        rule: allow
+        port: '6817'
+    - name: allow slurmd port
+      ufw:
+        rule: allow
+        port: '6818'
+    - name: allow slurmdbd port
+      ufw:
+        rule: allow
+        port: '6819'

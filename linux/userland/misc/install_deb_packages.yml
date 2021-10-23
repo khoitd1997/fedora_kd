@@ -173,6 +173,7 @@
           - openssh-client
           - nfs-common
           - ethtool
+          - slurm-client
 
   when: ansible_facts['distribution'] == "Ubuntu"
   tags:
