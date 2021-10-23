@@ -2,6 +2,9 @@
     - block:
         - include: rpm_package.yml
         - include: install_deb_packages.yml
+
+        - include: sshd.yml
+
         # - include: google-chrome/google-chrome.yml
 
         - name: make user files available
@@ -171,7 +174,6 @@
             ControlMaster auto
             ControlPath  ~/.ssh/sockets/%r@%h-%p
             ControlPersist 600
-            PreferredAuthentications=publickey
     - name: generate ssh socket directory
       shell: "{{item}}"
       with_items:

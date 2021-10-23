@@ -171,6 +171,7 @@
 
           # for connecting to server
           - openssh-client
+          - openssh-server
           - nfs-common
           - iftop
           - ethtool

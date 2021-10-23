@@ -1,8 +1,14 @@
 all:
   hosts:
-    kd-server:
     localhost:
       ansible_connection: local
+  children:
+    server_group:
+      hosts:
+        kd-server:
+    client_group:
+      hosts:
+        kd-client-b550-Asrock:
   vars:
     ansible_python_interpreter: "/usr/bin/python3"
 

@@ -1,0 +1,12 @@
+#!/bin/bash
+
+source /bin/server_common.sh
+
+set -e
+
+key_path="${HOME}/.ssh/id_rsa"
+if [ ! -f ${key_path} ]; then
+    ssh-keygen -f ${key_path}
+fi
+
+ssh-copy-id ${kd_server_hostname}

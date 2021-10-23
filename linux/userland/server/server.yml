@@ -13,7 +13,6 @@
         dpkg_options: "force-overwrite,force-confdef,force-confold"
         name:
           - nfs-kernel-server
-          - openssh-server
           - samba
           - cifs-utils
           - slurmd
@@ -50,7 +49,6 @@
     - include: server_misc.yml
     - include: grub_server.yml
     - include: slurm/server_slurm.yml
-    - include: sshd.yml
     - include: nfs.yml
     - include: samba.yml
     - include: backup.yml

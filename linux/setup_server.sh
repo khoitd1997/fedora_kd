@@ -7,7 +7,7 @@ cd ${script_dir}
 
 # if this is being run locally on the server
 # then use localhost otherwise use the server hostname
-extra_var="variable_host=kd-server"
+extra_var="variable_host=server_group"
 if [ $(hostname) = "kd-server" ]; then
     extra_var=""
 fi

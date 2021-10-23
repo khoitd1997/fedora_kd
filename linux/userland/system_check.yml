@@ -1,0 +1,9 @@
+- become: true
+  tags:
+    - always
+    - system_check
+  block:
+    - fail: msg="Host name should begin with kd-server or kd-client"
+      when: 
+        - "'kd-server' not in lookup('pipe','hostname')"
+        - "'kd-client' not in lookup('pipe','hostname')"

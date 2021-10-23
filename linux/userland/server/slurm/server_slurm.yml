@@ -34,6 +34,34 @@
         enabled: yes
         state: restarted
       when: slurm_conf.changed
+    - name: enable Munge
+      service:
+        name: munge
+        enabled: yes
+
+    # NOTE: CAN ONLY BE RUN FROM THE SLURM SERVER
+    # Munge key synchronization
+    - tags:
+        - munge-key
+        - never
+      when: kd_server_hostname == lookup("pipe","hostname")
+      block:
+        - fail: msg="The variable 'munge_key_path' is not defined"
+          when: munge_key_path is undefined
+        - name: copy Munge key
+          register: munge_key
+          copy:
+            src: "{{ munge_key_path }}"
+            dest: /etc/munge/munge.key
+            mode: u=r,g=,o=
+            owner: munge
+            group: munge
+        - name: restart Munge
+          service:
+            name: munge
+            enabled: yes
+            state: restarted
+          when: munge_key.changed
 
   become: true
   tags:
