@@ -172,6 +172,7 @@
           # for connecting to server
           - openssh-client
           - nfs-common
+          - iftop
           - ethtool
           - slurm-client
 
