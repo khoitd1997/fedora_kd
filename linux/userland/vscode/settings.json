@@ -379,7 +379,7 @@
         "NOTE"
     ],
     "scm.defaultViewMode": "tree",
-    "workbench.editor.limit.value": 5,
+    "workbench.editor.limit.value": 10,
     "workbench.editor.limit.enabled": true,
     "ruby.format": "rubocop",
     "ruby.codeCompletion": "rcodetools",
@@ -425,5 +425,6 @@
     "terminal.integrated.fontSize": 12,
     "remote.SSH.remotePlatform": {
         "kd-server": "linux"
-    }
+    },
+    "security.workspace.trust.untrustedFiles": "open"
 }
