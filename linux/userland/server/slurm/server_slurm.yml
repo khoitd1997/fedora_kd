@@ -14,7 +14,7 @@
         owner: slurm
         group: slurm
 
-    - name: copy slurm config files
+    - name: copy slurm config files to server
       register: slurm_conf
       copy:
         src: "{{ playbook_dir }}/server/slurm/slurm_conf/"

@@ -8,7 +8,7 @@
         name: munge
         gid: 1754
 
-    - name: copy slurm.conf file
+    - name: copy slurm.conf file to client
       copy:
         src: "{{ playbook_dir }}/server/slurm/slurm_conf/"
         dest: /etc/slurm-llnl
