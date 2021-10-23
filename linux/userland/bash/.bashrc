@@ -118,6 +118,8 @@ if ! shopt -oq posix; then
 fi
 
 alias bat='batcat'
+export BAT_THEME="Monokai Extended"
+
 alias fd='fdfind'
 alias vim='nvim'
 alias vi='nvim'
@@ -161,6 +163,10 @@ fi
 
 if [ -x "$(command -v print-client-command)" ]; then
     print-client-command
+fi
+
+if [ -x "$(command -v print-server-command)" ]; then
+    print-server-command
 fi
 
 if [ -f "/var/run/reboot-required" ]; then

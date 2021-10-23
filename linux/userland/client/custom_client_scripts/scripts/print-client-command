@@ -38,6 +38,7 @@ command_list = {
 
 
 def main() -> int:
+    print(f'{bcolors.OKCYAN}{bcolors.UNDERLINE}Client Commands:{bcolors.ENDC}')
     for cmd_name, cmd_note in command_list.items():
         print(f'{bcolors.WARNING}{cmd_name}{bcolors.ENDC}: {cmd_note}')
 

@@ -1,0 +1,5 @@
+#!/bin/bash
+
+set -e
+
+tail -f /bulk-storage/projects/yocto_cache/log.txt | batcat --paging=never -p
