@@ -137,6 +137,17 @@
               export kd_yocto_cache_dir="{{ kd_yocto_cache_dir }}"
               export kd_buildroot_build_dir="{{ kd_buildroot_build_dir }}"
 
+        - name: configure pam.d login
+          blockinfile:
+            path: /etc/pam.d/login
+            marker: "# {mark} .profile config"
+            create: yes
+            block: |
+              auth     optional  pam_gnome_keyring.so
+              session  optional  pam_gnome_keyring.so auto_start
+          tags:
+            - pam_login
+
       become: true
 
     - include: helpful_script/helpful_script.yml
@@ -157,18 +168,6 @@
 
     - include: autokey/autokey.yml
 
-    - name: configure .profile
-      blockinfile:
-        path: ~/.profile
-        marker: "# {mark} .profile config"
-        create: yes
-        block: |
-          if [ ! -z ${DISPLAY} ]; then
-            eval $(gnome-keyring-daemon --start --components=ssh,secrets)
-            export SSH_AUTH_SOCK
-          fi
-      tags:
-        - profile
     - name: configure .ssh config
       blockinfile:
         path: ~/.ssh/config
