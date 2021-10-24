@@ -5,6 +5,13 @@ New-Item -Path "$profile" `
     -Value "$PSScriptRoot\powershell_profile.ps1"`
     -Force
 
+$myDocumentPath = [Environment]::GetFolderPath("MyDocuments")
+New-Item `
+    -Path "$myDocumentPath\PowerShell\Microsoft.VSCode_profile.ps1" `
+    -ItemType SymbolicLink `
+    -Value "$PSScriptRoot\powershell_profile.ps1" `
+    -Force
+
 # set up profile for powershell 7
 pwsh -c { New-Item -Path "$profile" -ItemType SymbolicLink -Value "$((Get-Item -Path .\ -Verbose).FullName)\powershell_profile.ps1" -Force } -WorkingDirectory $PSScriptRoot
 

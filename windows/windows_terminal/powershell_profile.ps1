@@ -65,4 +65,7 @@ if ($host.Name -eq 'ConsoleHost') {
     Import-Module posh-git
     Import-Module oh-my-posh
     Set-PoshPrompt -Theme paradox
+
+    Set-Alias -Name vim -Value nvim
+    Set-Alias -Name vi -Value nvim
 }
