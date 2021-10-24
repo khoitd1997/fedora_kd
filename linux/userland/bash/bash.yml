@@ -5,6 +5,8 @@
         - ln -sfv {{ playbook_dir }}/bash/.bashrc ~/.bashrc
         - ln -sfv {{ playbook_dir }}/bash/.inputrc ~/.inputrc
         - cp {{ playbook_dir }}/bash/git-prompt.sh ~
+      args:
+        warn: false
 
   tags:
     - shell

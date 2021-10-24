@@ -14,6 +14,8 @@
           with_items:
             - cp -vr {{ playbook_dir }}/../user_file /usr/share/
             - chmod -R a+r+x /usr/share/user_file
+          args:
+            warn: false
 
         - name: configure fedora misc system stuffs
           shell: "{{item}}"
@@ -32,6 +34,8 @@
             - timedatectl set-local-rtc 1 --adjust-system-clock
             - passwd -l root
             - rm -vf /usr/share/applications/flameshot.desktop
+          args:
+            warn: false
 
         - name: configure dnf
           shell: "{{item}}"
@@ -180,6 +184,8 @@
       shell: "{{item}}"
       with_items:
         - mkdir -p ~/.ssh/sockets
+      args:
+        warn: false
 
     # - include: xmodmap/xmodmap.yml
     - stat:
