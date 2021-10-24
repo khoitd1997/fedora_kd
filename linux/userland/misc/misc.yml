@@ -70,8 +70,8 @@
               # nameserver 2606:4700:4700::1001
 
               options edns0 trust-ad
-              search attlocal.net
               search local
+              search attlocal.net
         - name: restart resolv_conf
           service:
             name: systemd-resolved
