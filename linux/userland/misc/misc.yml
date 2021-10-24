@@ -3,14 +3,9 @@
         - include: rpm_package.yml
         - include: install_deb_packages.yml
 
-        - name: enable ufw
-          ufw:
-            state: enabled
-        - name: enable ufw logging
-          ufw:
-            logging: "on"
-
+        - include: client_ufw.yml
         - include: sshd.yml
+        - include: avahi.yml
 
         # - include: google-chrome/google-chrome.yml
 
@@ -76,6 +71,7 @@
 
               options edns0 trust-ad
               search attlocal.net
+              search local
         - name: restart resolv_conf
           service:
             name: systemd-resolved

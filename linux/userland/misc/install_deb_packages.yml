@@ -177,6 +177,14 @@
           - ethtool
           - slurm-client
 
+          # zeroconf/avahi stuff
+          - avahi-daemon  
+          - avahi-discover
+          - avahi-utils
+          - libnss-mdns
+          - mdns-scan
+          - nscd
+
   when: ansible_facts['distribution'] == "Ubuntu"
   tags:
     - deb_package

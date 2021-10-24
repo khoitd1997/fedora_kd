@@ -1,0 +1,13 @@
+- become: true
+  block:
+    - name: enable avahi-daemon
+      service:
+        name: avahi-daemon
+        enabled: yes
+    - name: enable nscd
+      service:
+        name: nscd
+        enabled: yes
+
+  tags:
+    - avahi
