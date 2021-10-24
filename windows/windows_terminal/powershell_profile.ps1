@@ -1,16 +1,37 @@
-Write-Host @"
+function print-reminder {
+    Write-Host @"
+
+rufus and etcher are installed
+
+mobaxterm and putty are installed
+
+bat, nvim, weget are installed
+
+use powertoys win+R for quick navigations
+
+"@ -ForegroundColor black -BackgroundColor white
+
+}
+
+function print-cmd-list {
+    Write-Host @"
 CUSTOM COMMAND LIST:
+
+print-cmd-list: print this list
 
 vscode-ssh <path-on-server> [server-host-name]: open a remote vscode session
 
 init-server-key: for first time initialization of ssh key
 ssh-to-server: ssh to home server
 mount-bulk-share: mount the bulk share to Z: drive
+umount-bulk-share: unmount the bulk share
 
 sha256sum <file_path>: take sha256 hash of a file
 extract-tar <file-to-extract> [destination]: extract a .tar.gz file
 
 "@ -ForegroundColor black -BackgroundColor white
+}
+
 
 function init-server-key {
     # ssh-keygen.exe
@@ -26,6 +47,10 @@ function mount-bulk-share {
     Write-Host "Powershell terminal seems to have problems when entering credentials, use cmd.exe if there is an issue"
     Write-Host "If asked for password, use Linux credentials (ie the kd account)"
     net use z: \\kd-server\Bulk_Storage_Share /savecred /persistent:yes
+}
+function umount-bulk-share {
+    Write-Host "Unmounting bulk share"
+    net use Z: /delete /y
 }
 
 function vscode-ssh {
@@ -54,6 +79,10 @@ function extract-tar {
     )
     tar -xvzf $FilePath -C $DestPath
 }
+
+print-cmd-list
+
+print-reminder
 
 if ($host.Name -eq 'ConsoleHost') {
     Import-Module PSReadLine
