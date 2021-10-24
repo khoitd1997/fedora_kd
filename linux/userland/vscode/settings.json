@@ -426,5 +426,6 @@
     "remote.SSH.remotePlatform": {
         "kd-server": "linux"
     },
-    "security.workspace.trust.untrustedFiles": "open"
+    "security.workspace.trust.untrustedFiles": "open",
+    "terminal.integrated.shell.windows": "C:\\Program Files\\PowerShell\\7\\pwsh.exe"
 }
