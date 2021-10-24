@@ -90,7 +90,7 @@ if ($host.Name -eq 'ConsoleHost') {
     Import-Module PSReadLine
     Import-Module PSFzf
 
-    Set-PSReadlineKeyHandler -Key Tab -Function Complete
+    Set-PSReadlineKeyHandler -Key Tab -Function MenuComplete
 
     Set-PsFzfOption -PSReadlineChordProvider 'Ctrl+t' -PSReadlineChordReverseHistory 'Ctrl+r'
     # Set-PSReadLineKeyHandler -Key Tab -ScriptBlock { Invoke-FzfTabCompletion }
