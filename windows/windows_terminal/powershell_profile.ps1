@@ -9,6 +9,8 @@ bat, nvim, weget are installed
 
 use powertoys win+R for quick navigations
 
+use Everything(bound to ctrl+alt+r) for file search
+
 use powertoys win+V for clipboard history
 
 "@ -ForegroundColor black -BackgroundColor white

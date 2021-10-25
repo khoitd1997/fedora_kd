@@ -22,6 +22,7 @@ $choco_app_list = @(
     "treesizefree"
     "firefox"
     "powertoys"
+    "everything"
     # dev apps
     "sourcecodepro"
     "nerdfont-hack"
