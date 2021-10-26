@@ -27,6 +27,7 @@ vscode-ssh <path-on-server> [server-host-name]: open a remote vscode session
 
 init-server-key: for first time initialization of ssh key
 ssh-to-server: ssh to home server
+scp-to-big-file-download <local-file-path>: copy local file to big download folder on the server
 
 list-nfs-file: list bulk storage files
 mount-bulk-share: mount the bulk share to Z: drive
@@ -48,6 +49,14 @@ function init-server-key {
 function ssh-to-server {
     ssh kd@kd-server
 }
+function scp-to-big-file-download {
+    param(
+        [string]$SourceFilePath
+    )
+
+    scp $SourceFilePath kd@kd-server:"/bulk-storage-slow/nfs/general/big_file_storage"
+}
+
 
 function list-nfs-file {
     ssh kd@"kd-server" "source /bin/server_common.sh && tree -L 3 `${bulk_storage_share_dir}"
