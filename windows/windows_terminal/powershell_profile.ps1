@@ -41,9 +41,12 @@ extract-tar <file-to-extract> [destination]: extract a .tar.gz file
 
 
 function init-server-key {
-    # ssh-keygen.exe
+    $SshKeyPath = "$env:USERPROFILE\.ssh\id_rsa.pub"
+    if (-not(Test-Path -Path "$SshKeyPath" -PathType Leaf)) {
+        ssh-keygen.exe
+    }
 
-    Get-Content $env:USERPROFILE\.ssh\id_rsa.pub | ssh kd@"kd-server" "cat >> .ssh/authorized_keys"
+    Get-Content "$SshKeyPath" | ssh kd@"kd-server" "cat >> .ssh/authorized_keys"
 }
 
 function ssh-to-server {
@@ -54,7 +57,7 @@ function scp-to-big-file-download {
         [string]$SourceFilePath
     )
 
-    scp $SourceFilePath kd@kd-server:"/bulk-storage-slow/nfs/general/big_file_storage"
+    scp -r $SourceFilePath kd@kd-server:"/bulk-storage-slow/nfs/general/big_file_storage"
 }
 
 
