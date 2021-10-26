@@ -27,6 +27,8 @@ vscode-ssh <path-on-server> [server-host-name]: open a remote vscode session
 
 init-server-key: for first time initialization of ssh key
 ssh-to-server: ssh to home server
+
+list-nfs-file: list bulk storage files
 mount-bulk-share: mount the bulk share to Z: drive
 umount-bulk-share: unmount the bulk share
 
@@ -45,6 +47,10 @@ function init-server-key {
 
 function ssh-to-server {
     ssh kd@kd-server
+}
+
+function list-nfs-file {
+    ssh kd@"kd-server" "source /bin/server_common.sh && tree -L 3 `${bulk_storage_share_dir}"
 }
 
 function mount-bulk-share {
