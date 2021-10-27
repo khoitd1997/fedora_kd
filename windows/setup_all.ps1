@@ -4,12 +4,12 @@
 
 LogHeader "Starting Windows Configuration"
 
-# TODO: Configure git
-# https://stackoverflow.com/questions/6476513/git-file-permissions-on-windows
 try {
     & "$PSScriptRoot\sw_install\install_software.ps1"
 
     & "$PSScriptRoot\autohotkey\setup_autohotkey.ps1"
+
+    & "$PSScriptRoot\xyplorer\setup_xyplorer.ps1"
 
     & "$PSScriptRoot\vscode\setup_vscode.ps1"
 
@@ -20,6 +20,8 @@ try {
     & "$PSScriptRoot\git\git_setup.ps1"
 
     & "$PSScriptRoot\misc_setup.ps1"
+
+    & "$PSScriptRoot\vitis\setup_vitis.ps1"
 }
 catch {
     LogError "$PSItem"
