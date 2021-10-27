@@ -36,6 +36,7 @@ If (-Not $installed) {
         -ArgumentList "--config", "$PSScriptRoot/install_config_windows.txt", "--agree", "XilinxEULA,3rdPartyEULA,WebTalkTerms", "--batch", "Install" `
         -NoNewWindow `
         -Wait
+    # TODO: It freezes right after install, so need to do something to get it unstuck
 
     Write-Host "Updating Vitis" -ForegroundColor black -BackgroundColor white
     $VitisUpdateBatPath = "$InstallWorkDir/$VitisUpdateBaseName/bin/xsetup.bat"

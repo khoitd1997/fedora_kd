@@ -5,11 +5,11 @@ Start-Process -FilePath '"C:\Program Files\Git\git-bash.exe"' -ArgumentList "$PS
 $vscode_config_src_dir = "$linux_userland_dir/vscode"
 $vscode_config_dest_dir = "$env:APPDATA/Code/User"
 
-New-Item -Path "$vscode_config_dest_dir/settings.json" `
+$null = New-Item -Path "$vscode_config_dest_dir/settings.json" `
     -ItemType SymbolicLink `
     -Value "$vscode_config_src_dir/settings.json"`
     -Force
-New-Item -Path "$vscode_config_dest_dir/keybindings.json" `
+$null = New-Item -Path "$vscode_config_dest_dir/keybindings.json" `
     -ItemType SymbolicLink `
     -Value "$vscode_config_src_dir/keybindings.json"`
     -Force
