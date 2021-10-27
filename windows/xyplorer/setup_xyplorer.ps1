@@ -28,8 +28,5 @@ else {
     Write-Host "XYplorer is already installed" -ForegroundColor black -BackgroundColor white
 }
 
-$xyplorerAppDataFolder = "$env:APPDATA/XYplorer"
-$null = New-Item -Path "$xyplorerAppDataFolder/XYplorer.ini" `
-    -ItemType SymbolicLink `
-    -Value "$PSScriptRoot/XYplorer.ini" `
-    -Force
+# NOTE: Doesn't look like it works with symlink settings file
+Copy-Item "$PSScriptRoot/XYplorer.ini" -Destination "$env:APPDATA/XYplorer"
