@@ -30,6 +30,10 @@ if (-not (Test-Path -Path "$XYPlorerInstallDestDir")) {
     CreateXYPlorerShortcut
 
     # NOTE: Doesn't look like it works with symlink settings file
+    # NOTE: This doesn't seem to include all the settings
+    # For complete customizations, go to these menu in the GUI:
+    # "Tools" -> "Customize Tree"
+    # "Tools" -> "Customize List"
     Copy-Item "$PSScriptRoot/XYplorer.ini" -Destination "$XYPlorerAppDataDir"
 }
 else {
