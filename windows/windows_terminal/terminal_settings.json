@@ -55,6 +55,13 @@
         {
             "command": {
                 "action": "switchToTab",
+                "index": 7
+            },
+            "keys": "alt+8"
+        },
+        {
+            "command": {
+                "action": "switchToTab",
                 "index": 4
             },
             "keys": "alt+5"
@@ -72,13 +79,6 @@
                 "index": 6
             },
             "keys": "alt+7"
-        },
-        {
-            "command": {
-                "action": "switchToTab",
-                "index": 7
-            },
-            "keys": "alt+8"
         },
         {
             "command": {
@@ -143,6 +143,15 @@
                 "hidden": false,
                 "name": "Ubuntu",
                 "source": "Windows.Terminal.Wsl"
+            },
+            {
+                "bellStyle": "none",
+                "commandline": "C:\\Program Files\\Git\\bin\\bash.exe",
+                "guid": "{02744c25-268a-490c-8e8c-f3af0b9be230}",
+                "historySize": 9999,
+                "name": "Git Bash Profile",
+                "startingDirectory": "%USERPROFILE%",
+                "tabTitle": "Git Bash"
             }
         ]
     },
