@@ -9,6 +9,8 @@ try {
 
     & "$PSScriptRoot\autohotkey\setup_autohotkey.ps1"
 
+    & "$PSScriptRoot\powertoys\setup_powertoys.ps1"
+
     & "$PSScriptRoot\xyplorer\setup_xyplorer.ps1"
 
     & "$PSScriptRoot\vscode\setup_vscode.ps1"
