@@ -116,8 +116,9 @@ if ($host.Name -eq 'ConsoleHost') {
     # Set-PSReadLineKeyHandler -Key Tab -ScriptBlock { Invoke-FzfTabCompletion }
     
     Import-Module posh-git
-    Import-Module oh-my-posh
-    Set-PoshPrompt -Theme paradox
+
+    $global:GitPromptSettings.DefaultPromptBeforeSuffix.Text = "`e[36m@$(hostname)`e[0m `n"
+    $GitPromptSettings.DefaultPromptPath.ForegroundColor = 'Orange'
 
     Set-Alias -Name vim -Value nvim
     Set-Alias -Name vi -Value nvim

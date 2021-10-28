@@ -27,7 +27,6 @@ $choco_app_list = @(
     "xyplorer"
     # dev apps
     "sourcecodepro"
-    "nerdfont-hack"
     "powershell-core"
     "vcredist140"
     "python"
