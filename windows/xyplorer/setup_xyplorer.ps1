@@ -1,9 +1,17 @@
-#Requires -RunAsAdministrator
+. $PSScriptRoot\xyplorer_common.ps1
 
-# NOTE: for some reasons, the 
-# Get-ItemProperty HKLM:\Software\Microsoft\Windows\CurrentVersion\Uninstall\
-# trick doesn't work so check for folder existence instead
-if (-not (Test-Path -Path "C:\Program Files (x86)\XYplorer")) {
+function CreateXYPlorerShortcut() {
+    $WshShell = New-Object -comObject WScript.Shell
+
+    # Icon was automatically obtained from the thing it points to
+    $Shortcut = $WshShell.CreateShortcut($XYPlorerShortcutPath)
+    $Shortcut.TargetPath = "$XYPlorerInstallDestDir\XYplorer.exe"
+    $Shortcut.Save()
+}
+
+# NOTE: Get-ItemProperty HKLM:\Software\Microsoft\Windows\CurrentVersion\Uninstall\
+# trick doesn't work because xyplorer is fully portable so check install path instead
+if (-not (Test-Path -Path "$XYPlorerInstallDestDir")) {
     Write-Host "XYplorer hasn't been installed yet, starting install process" -ForegroundColor black -BackgroundColor white
 
     $InstallWorkDir = "$env:TEMP/xyplorer_install"
@@ -15,18 +23,15 @@ if (-not (Test-Path -Path "C:\Program Files (x86)\XYplorer")) {
     $null = Remove-Item "$InstallWorkDir" -Recurse -ErrorAction Ignore
     $null = New-Item -ItemType Directory -Force -Path $InstallWorkDir
 
-    wget --output-document "$InstallWorkDir/xyplorer_full.zip" "https://www.xyplorer.com/download/xyplorer_full.zip"
-    Expand-Archive -LiteralPath "$InstallWorkDir/xyplorer_full.zip" -DestinationPath $InstallWorkDir
+    wget --output-document "$InstallWorkDir/xyplorer_full_noinstall.zip" "https://www.xyplorer.com/download/xyplorer_full_noinstall.zip"
+    New-Item -ItemType Directory -Force -Path $XYPlorerInstallDestDir
+    Expand-Archive -LiteralPath "$InstallWorkDir/xyplorer_full_noinstall.zip" -DestinationPath $XYPlorerInstallDestDir
 
-    $exe_name = (Get-ChildItem $InstallWorkDir | Where-Object Name -match ("_Install.exe"))[0].Name
-    Start-Process `
-        -FilePath "$InstallWorkDir/$exe_name" `
-        -NoNewWindow `
-        -Wait
+    CreateXYPlorerShortcut
+
+    # NOTE: Doesn't look like it works with symlink settings file
+    Copy-Item "$PSScriptRoot/XYplorer.ini" -Destination "$XYPlorerAppDataDir"
 }
 else {
     Write-Host "XYplorer is already installed" -ForegroundColor black -BackgroundColor white
 }
-
-# NOTE: Doesn't look like it works with symlink settings file
-Copy-Item "$PSScriptRoot/XYplorer.ini" -Destination "$env:APPDATA/XYplorer"
