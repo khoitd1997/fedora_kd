@@ -95,13 +95,15 @@ function DownloadAndInstallGenericExe {
 }
 function RemoveAppXPackage {
     param (
-        [string]$AppXNameSearchString
+        [string[]]$AppXNameSearchList
     )
     # powershell 7 has problems importing this module
     # so use windows powershell mode
     import-module appx -usewindowspowershell
 
-    Get-AppxPackage | Where-Object { $_.Name -like "*$AppXNameSearchString*" } | Remove-AppxPackage
+    foreach ($AppName in $AppXNameSearchList) {
+        Get-AppxPackage | Where-Object { $_.Name -like "*$AppName*" } | Remove-AppxPackage
+    }
 }
 
 function LogError {

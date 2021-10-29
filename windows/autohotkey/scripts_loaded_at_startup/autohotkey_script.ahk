@@ -4,9 +4,6 @@
 SendMode Input  ; Recommended for new scripts due to its superior speed and reliability.
 SetWorkingDir %A_ScriptDir%  ; Ensures a consistent starting directory.
 
-; reload the script using Ctrl+Alt+A
-^!a::Reload
-
 ; EXPANSION EXAMPLE:
 ; NOTE: The timing of the character doesn't matter, it simply expands the character
 ; set

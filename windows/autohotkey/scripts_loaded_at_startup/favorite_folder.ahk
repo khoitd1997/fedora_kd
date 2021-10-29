@@ -107,9 +107,6 @@ Menu, FavoriteCommands, Add, fedora_kd dev, f_FedoraKdDev
 Menu, RootMenu, Add, Folders, :FavoriteFolders
 Menu, RootMenu, Add, Dev Env, :FavoriteCommands
 
-; reload the script using Ctrl+Alt+A
-^!b::Reload
-
 return  ;----End of auto-execute section.
 
 
