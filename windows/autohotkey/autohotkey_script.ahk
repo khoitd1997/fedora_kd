@@ -16,6 +16,16 @@ send {Up}
 return ;
 #IfWinActive
 
+#IfWinActive, ahk_exe Code.exe
+Alt & j::
+send {Down}
+return ;
+
+Alt & k::
+send {Up}
+return ;
+#IfWinActive
+
 #IfWinActive, ahk_class MozillaWindowClass
 Alt & j::
 send {Down}
