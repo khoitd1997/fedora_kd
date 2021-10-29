@@ -18,6 +18,16 @@ SetScrollLockState, AlwaysOff
 
 CapsLock::Esc
 
+#IfWinActive, ahk_exe WindowsTerminal.exe
+Alt & j::
+send {Down}
+return ;
+
+Alt & k::
+send {Up}
+return ;
+#IfWinActive
+
 #IfWinActive, ahk_exe PowerLauncher.exe
 Alt & j::
 send {Down}
