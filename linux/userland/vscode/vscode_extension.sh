@@ -20,7 +20,8 @@ extension_general=" coenraads.bracket-pair-colorizer-2 \
                     sleistner.vscode-fileutils \
                     k--kato.intellij-idea-keybindings \
                     esbenp.prettier-vscode \
-                    ms-vscode.hexeditor "
+                    ms-vscode.hexeditor \
+                    slevesque.vscode-autohotkey "
 
 extension_misc="    eugenwiens.bitbake \
                     bungcip.better-toml \
