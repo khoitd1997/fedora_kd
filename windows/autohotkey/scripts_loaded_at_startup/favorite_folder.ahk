@@ -39,7 +39,7 @@ f_Hotkey = MButton
 
 
 /*
-ITEMS IN FAVORITES MENU <-- Do not change this string.
+ITEMS IN FAVORITE FOLDER MENU <-- Do not change this string.
 Desktop      ; %A_Desktop%
 Documents ; %A_MyDocuments%
 Downloads ; %A_MyDocuments%
@@ -77,7 +77,7 @@ Loop, Read, %f_FavoritesFile%
     ; arrived at.
     if f_AtStartingPos = n
     {
-        IfInString, A_LoopReadLine, ITEMS IN FAVORITES MENU
+        IfInString, A_LoopReadLine, ITEMS IN FAVORITE FOLDER MENU
             f_AtStartingPos = y
         continue  ; Start a new loop iteration.
     }
@@ -89,7 +89,7 @@ Loop, Read, %f_FavoritesFile%
 	; with A_ThisMenuItemPos:
 	f_MenuItemCount++
 	if A_LoopReadLine =  ; Blank indicates a separator line.
-		Menu, Favorites, Add
+		Menu, FavoriteFolders, Add
 	else
 	{
 		StringSplit, f_line, A_LoopReadLine, `;
@@ -99,9 +99,10 @@ Loop, Read, %f_FavoritesFile%
 		; create a new array element containing the path of this favorite:
 		Transform, f_path%f_MenuItemCount%, deref, %f_line2%
 		Transform, f_line1, deref, %f_line1%
-		Menu, Favorites, Add, %f_line1%, f_OpenFavorite
+		Menu, FavoriteFolders, Add, %f_line1%, f_OpenFavorite
 	}
 }
+Menu, RootMenu, Add, Folders, :FavoriteFolders
 return  ;----End of auto-execute section.
 
 
@@ -137,5 +138,5 @@ if f_AlwaysShowMenu = n  ; The menu should be shown only selectively.
 		return ; Since it's some other window type, don't display menu.
 }
 ; Otherwise, the menu should be presented for this type of window:
-Menu, Favorites, show
+Menu, RootMenu, show
 return
