@@ -2,7 +2,7 @@
 
 . $PSScriptRoot\..\utils.ps1
 
-If (-Not (ProgramIsInstalled "Vitis Unified Software Platform 2020.1")) {
+If (-Not (ProgramIsInstalledUsingHKLM "Vitis Unified Software Platform 2020.1")) {
     Write-Host "Vitis is already uninstalled, exitting" -ForegroundColor black -BackgroundColor white
 }
 else {

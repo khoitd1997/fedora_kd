@@ -216,6 +216,29 @@
             "IconPathDark": "VSCodeWorkspace\\Images\\code-dark.png",
             "IconPathLight": "VSCodeWorkspace\\Images\\code-light.png",
             "AdditionalOptions": []
+        },
+        {
+            "Id": "F59BA85006B14389A72A0EA756695F1D",
+            "Name": "Windows Terminal",
+            "Description": "Open Windows Terminal profiles.",
+            "Author": "davidegiacometti",
+            "Disabled": true,
+            "IsGlobal": true,
+            "ActionKeyword": "_",
+            "IconPathDark": "WindowsTerminal\\Images\\WindowsTerminal.dark.png",
+            "IconPathLight": "WindowsTerminal\\Images\\WindowsTerminal.light.png",
+            "AdditionalOptions": [
+                {
+                    "Key": "OpenNewTab",
+                    "DisplayLabel": "Open profiles in a new tab",
+                    "Value": false
+                },
+                {
+                    "Key": "ShowHiddenProfiles",
+                    "DisplayLabel": "Show hidden profiles",
+                    "Value": false
+                }
+            ]
         }
     ],
     "name": "PowerToys Run",

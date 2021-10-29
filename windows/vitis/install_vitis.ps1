@@ -12,7 +12,7 @@ Register-EngineEvent PowerShell.Exiting –Action {
     Remove-Item "$InstallWorkDir" -Recurse -ErrorAction Ignore
 } >$nul
 
-If (-Not (ProgramIsInstalled "Vitis Unified Software Platform 2020.1")) {
+If (-Not (ProgramIsInstalledUsingHKLM "Vitis Unified Software Platform 2020.1")) {
     Write-Host "Vitis hasn't been installed yet, starting install process" -ForegroundColor black -BackgroundColor white
 
     try {
