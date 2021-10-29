@@ -1,19 +1,18 @@
 #Requires -RunAsAdministrator
 
+. $PSScriptRoot\..\utils.ps1
+
 $InstallWorkDir = "$env:TEMP/vitis_install_tmp"
 
 $VitisInstallBaseName = "Xilinx_Unified_2020.1_0602_1208"
 $VitisUpdateBaseName = "Xilinx_Vivado_Vitis_Update_2020.1.1_0805_2247"
-
-$installed = `
-    $null -ne (Get-ItemProperty HKLM:\Software\Microsoft\Windows\CurrentVersion\Uninstall\* | Where-Object { $_.DisplayName -eq "Xilinx Design Tools Vitis Unified Software Platform 2020.1 (C:\Xilinx)" })
 
 Register-EngineEvent PowerShell.Exiting –Action { 
     # always remove the tmp directory on exit
     Remove-Item "$InstallWorkDir" -Recurse -ErrorAction Ignore
 } >$nul
 
-If (-Not $installed) {
+If (-Not (ProgramIsInstalled "Vitis Unified Software Platform 2020.1")) {
     Write-Host "Vitis hasn't been installed yet, starting install process" -ForegroundColor black -BackgroundColor white
 
     try {

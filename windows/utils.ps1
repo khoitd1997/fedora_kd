@@ -10,6 +10,13 @@ function LogHeader {
     Write-Host "$LogContent" -ForegroundColor black -BackgroundColor white
 }
 
+function ProgramIsInstalled {
+    param (
+        [string]$DisplayNameSearchString
+    )
+    return $null -ne (Get-ItemProperty HKLM:\Software\Microsoft\Windows\CurrentVersion\Uninstall\* | Where-Object { $_.DisplayName -like "*$DisplayNameSearchString*" })
+}
+
 function LogError {
     param (
         [string]$LogContent
