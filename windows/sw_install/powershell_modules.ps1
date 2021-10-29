@@ -1,3 +1,5 @@
+. $PSScriptRoot\..\utils.ps1
+
 LogHeader "Installing Powershell Modules"
 
 $ps_module_list = 
