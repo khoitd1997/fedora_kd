@@ -6,6 +6,16 @@ SetWorkingDir %A_ScriptDir%  ; Ensures a consistent starting directory.
 
 CapsLock::Esc
 
+#IfWinActive, ahk_exe PowerLauncher.exe
+Alt & j::
+send {Down}
+return ;
+
+Alt & k::
+send {Up}
+return ;
+#IfWinActive
+
 #IfWinActive, ahk_class MozillaWindowClass
 Alt & j::
 send {Down}
