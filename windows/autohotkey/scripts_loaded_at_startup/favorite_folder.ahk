@@ -102,9 +102,25 @@ Loop, Read, %f_FavoritesFile%
 		Menu, FavoriteFolders, Add, %f_line1%, f_OpenFavorite
 	}
 }
+Menu, FavoriteCommands, Add, fedora_kd dev, f_FedoraKdDev
+
 Menu, RootMenu, Add, Folders, :FavoriteFolders
+Menu, RootMenu, Add, Dev Env, :FavoriteCommands
+
+; reload the script using Ctrl+Alt+A
+^!b::Reload
+
 return  ;----End of auto-execute section.
 
+
+; used for setting up basic programs for developing fedora_kd repo
+f_FedoraKdDev:
+
+Run, "C:\Program Files\Mozilla Firefox\firefox.exe"
+Run, "%A_ProgramFiles%\Microsoft VS Code\bin\code" "%A_MyDocuments%\GitHub\fedora_kd"
+Run, wt
+
+return
 
 ;----Open the selected favorite
 f_OpenFavorite:
