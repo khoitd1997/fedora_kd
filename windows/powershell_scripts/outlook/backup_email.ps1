@@ -15,6 +15,8 @@ $OutlookNamespace = $(New-Object -comobject Outlook.Application).GetNameSpace("M
 
 $OutlookBackupRelativePath = "outlook_backup\backup_2.pst"
 $OutlookBackupPath = "$env:TEMP\$OutlookBackupRelativePath"
+# $EmailAddressToBackup = "khoidinhtrinh@gmail.com"
+$EmailAddressToBackup = "khoidinhtrinh@outlook.com"
 
 $OutlookNamespace.AddStore($OutlookBackupPath)
 $BackupStoreDisplayName = `
@@ -24,7 +26,7 @@ $OutlookBackupFolder = $OutlookNamespace.Folders.Item($BackupStoreDisplayName)
 $OutlookBackupFolder.Name = "Outlook Backup Folder Name 2"
 
 # Adjust to pick which folder to backup
-# $FolderToBackup = $OutlookNamespace.GetDefaultFolder([Microsoft.Office.Interop.Outlook.OlDefaultFolders]::olFolderInbox)
-$FolderToBackup = $OutlookNamespace.Folders.Item("khoidinhtrinh@gmail.com").Folders.Item("Outbox")
+$FolderToBackup = $OutlookNamespace.GetDefaultFolder([Microsoft.Office.Interop.Outlook.OlDefaultFolders]::olFolderInbox)
+# $FolderToBackup = $OutlookNamespace.Folders.Item($EmailAddressToBackup).Folders.Item("Outbox")
 
 $null = $FolderToBackup.CopyTo($OutlookBackupFolder)
