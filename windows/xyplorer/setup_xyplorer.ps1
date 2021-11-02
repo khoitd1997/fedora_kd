@@ -1,3 +1,6 @@
+#Requires -RunAsAdministrator
+
+. $PSScriptRoot\..\utils.ps1
 . $PSScriptRoot\xyplorer_common.ps1
 
 function CreateXYPlorerShortcut() {
@@ -12,7 +15,7 @@ function CreateXYPlorerShortcut() {
 # NOTE: Get-ItemProperty HKLM:\Software\Microsoft\Windows\CurrentVersion\Uninstall\
 # trick doesn't work because xyplorer is fully portable so check install path instead
 if (-not (Test-Path -Path "$XYPlorerInstallDestDir")) {
-    Write-Host "XYplorer hasn't been installed yet, starting install process" -ForegroundColor black -BackgroundColor white
+    LogHeader "XYplorer hasn't been installed yet, starting install process"
 
     $InstallWorkDir = "$env:TEMP/xyplorer_install"
     Register-EngineEvent PowerShell.Exiting –Action { 
@@ -37,5 +40,7 @@ if (-not (Test-Path -Path "$XYPlorerInstallDestDir")) {
     Copy-Item "$PSScriptRoot/XYplorer.ini" -Destination "$XYPlorerAppDataDir"
 }
 else {
-    Write-Host "XYplorer is already installed" -ForegroundColor black -BackgroundColor white
+    LogHeader "XYplorer is already installed"
 }
+
+AddToEnvironmentVariable "Path" "$XYPlorerInstallDestDir"

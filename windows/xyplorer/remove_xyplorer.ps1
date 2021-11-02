@@ -1,6 +1,7 @@
 . $PSScriptRoot\xyplorer_common.ps1
+. $PSScriptRoot\..\utils.ps1
 
-Write-Host "Removing XYPlorer" -ForegroundColor black -BackgroundColor white
+LogHeader "Removing XYPlorer"
 
 Remove-Item `
     -Path "$XYPlorerInstallDestDir", `

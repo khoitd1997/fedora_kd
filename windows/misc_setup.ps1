@@ -1,3 +1,7 @@
+#Requires -RunAsAdministrator
+
+. $PSScriptRoot\utils.ps1
+
 function CreateAdminTerminalShortcut() {
     $DesktopFolderPath = [Environment]::GetFolderPath("Desktop")
     $WshShell = New-Object -comObject WScript.Shell

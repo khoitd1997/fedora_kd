@@ -7,7 +7,11 @@ function LogHeader {
     param (
         [string]$LogContent
     )
-    Write-Host "$LogContent" -ForegroundColor black -BackgroundColor white
+
+    # have to write a special character at end of line for this issue:
+    # https://stackoverflow.com/questions/66123718/write-host-with-background-colour-fills-the-entire-line-with-background-colour-w
+    Write-Host "$LogContent" -ForegroundColor black -BackgroundColor white -NoNewline
+    Write-Host ([char]0xA0)
 }
 
 # Input string can be gotten from DisplayName of

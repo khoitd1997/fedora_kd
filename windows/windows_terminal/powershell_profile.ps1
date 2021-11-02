@@ -14,9 +14,8 @@ use Everything(bound to ctrl+alt+r) for file search
 use powertoys win+V for clipboard history
 
 USE AUTOHOTKEY FUNCTIONALITIES
-
-"@ -ForegroundColor black -BackgroundColor white
-
+"@ -ForegroundColor black -BackgroundColor white -NoNewline
+    Write-Host ([char]0xA0)
 }
 
 function print-cmd-list {
@@ -37,8 +36,8 @@ umount-bulk-share: unmount the bulk share
 
 sha256sum <file_path>: take sha256 hash of a file
 extract-tar <file-to-extract> [destination]: extract a .tar.gz file
-
-"@ -ForegroundColor black -BackgroundColor white
+"@ -ForegroundColor black -BackgroundColor white -NoNewline
+    Write-Host ([char]0xA0)
 }
 
 

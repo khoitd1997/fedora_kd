@@ -3,10 +3,10 @@
 . $PSScriptRoot\..\utils.ps1
 
 If (-Not (ProgramIsInstalledUsingHKLM "Vitis Unified Software Platform 2020.1")) {
-    Write-Host "Vitis is already uninstalled, exitting" -ForegroundColor black -BackgroundColor white
+    LogHeader "Vitis is already uninstalled, exitting"
 }
 else {
-    Write-Host "Uninstalling Vitis" -ForegroundColor black -BackgroundColor white
+    LogHeader "Uninstalling Vitis"
     Start-Process `
         -FilePath "C:\Xilinx\.xinstall\Vitis_2020.1\bin\xsetup.bat" `
         -ArgumentList "-b", "Uninstall" `
