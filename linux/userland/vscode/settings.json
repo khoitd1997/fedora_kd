@@ -394,7 +394,6 @@
     "latex-workshop.progress.location": "Notification Dialogue",
     "liveshare.showInStatusBar": "whileCollaborating",
     "search.maintainFileSearchCache": true,
-    "workbench.panel.defaultLocation": "right",
     "cmake.preferredGenerators": [
         "Ninja",
         "Unix Makefiles"
