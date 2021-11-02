@@ -200,7 +200,7 @@
                 },
                 {
                     "Key": "LocalizeSystemCommands",
-                    "DisplayLabel": "Use localized system commands instead of english ones",
+                    "DisplayLabel": "Use localized system commands instead of English ones",
                     "Value": true
                 }
             ]
