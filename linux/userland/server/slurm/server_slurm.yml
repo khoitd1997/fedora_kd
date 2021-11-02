@@ -43,11 +43,10 @@
     # Munge key synchronization
     - tags:
         - munge-key
-        - never
-      when: kd_server_hostname == lookup("pipe","hostname")
+      when: 
+        - kd_server_hostname == lookup("pipe","hostname")
+        - munge_key_path is defined
       block:
-        - fail: msg="The variable 'munge_key_path' is not defined"
-          when: munge_key_path is undefined
         - name: copy Munge key
           register: munge_key
           copy:

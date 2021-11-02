@@ -1,9 +1,4 @@
 - block:
-    - name: start nfs server
-      service:
-        name: nfs-kernel-server
-        state: started
-
     # NOTE: This can take some time since there can be a lot of files
     # (for example, buildroot build)
     - name: create the nfs directory
@@ -27,3 +22,8 @@
         name: nfs-kernel-server
         state: restarted
       when: nfs_export_conf.changed
+
+    - name: start nfs server
+      service:
+        name: nfs-kernel-server
+        state: started
