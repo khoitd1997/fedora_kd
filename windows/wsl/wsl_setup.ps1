@@ -1,3 +1,5 @@
+. $PSScriptRoot\..\utils.ps1
+
 LogHeader "Setting up WSL"
 
 wsl --install -d Ubuntu
