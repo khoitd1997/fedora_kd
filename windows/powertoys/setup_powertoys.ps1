@@ -12,3 +12,7 @@ $null = New-Item -Path "$PowerToysAppDataDir\PowerToys Run\settings.json" `
     -ItemType SymbolicLink `
     -Value "$PSScriptRoot/powertoys_run/settings.json"`
     -Force
+$null = New-Item -Path "$PowerToysAppDataDir\FancyZones\settings.json" `
+    -ItemType SymbolicLink `
+    -Value "$PSScriptRoot/fancyzones/settings.json"`
+    -Force
