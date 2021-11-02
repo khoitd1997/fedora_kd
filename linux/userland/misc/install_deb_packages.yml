@@ -57,6 +57,7 @@
           - lshw
           - simplescreenrecorder
           - moreutils
+          - multitail
           - jq
           - gnome-terminal
           - doxygen

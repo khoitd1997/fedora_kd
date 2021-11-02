@@ -1,0 +1,7 @@
+#!/bin/bash
+
+source /bin/server_common.sh
+
+set -e
+
+multitail ${kd_ongoing_download_dir}/*.log

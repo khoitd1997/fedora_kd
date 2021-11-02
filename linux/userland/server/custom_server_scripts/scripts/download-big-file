@@ -5,10 +5,10 @@ source /bin/server_common.sh
 function do_download
 {
     nohup bash << END
-        touch ${ongoing_download_dir}/${output_file_name}
+        ln -sfv ${log_file} ${kd_ongoing_download_dir}/$(basename ${log_file})
         wget -q --show-progress --progress=dot:giga --output-document ${output_file_name} --content-disposition "${download_url}"
 
-        rm -f ${ongoing_download_dir}/${output_file_name}
+        rm -f ${kd_ongoing_download_dir}/$(basename ${log_file})
 END
 }
 
@@ -21,16 +21,14 @@ fi
 
 download_url="${1}"
 work_dir="${kd_big_file_storage}"
-ongoing_download_dir=${work_dir}/ongoing_download
-log_dir=${work_dir}/logs
 timestamp=$(date "+%Y_%m_%d-%H_%M_%S")
 output_file_name="${2}"
 
-log_file=${log_dir}/download-big-file_${output_file_name}_${timestamp}.log
+log_file=${kd_download_log_dir}/download-big-file_${output_file_name}_${timestamp}.log
 
 mkdir -p ${work_dir}
-mkdir -p ${ongoing_download_dir}
-mkdir -p ${log_dir}
+mkdir -p ${kd_ongoing_download_dir}
+mkdir -p ${kd_download_log_dir}
 cd ${work_dir}
 
 

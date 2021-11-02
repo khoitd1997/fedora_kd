@@ -132,6 +132,9 @@
               export bulk_storage_share_dir="{{ bulk_storage_share_dir }}"
               export kd_big_file_storage="{{ kd_big_file_storage }}"
 
+              export kd_ongoing_download_dir="${kd_big_file_storage}/ongoing_download"
+              export kd_download_log_dir="${kd_big_file_storage}/logs"
+
               export bulk_storage_fast_dir="{{ bulk_storage_fast_dir }}"
               export kd_projects_dir="{{ kd_projects_dir }}"
               export kd_yocto_cache_dir="{{ kd_yocto_cache_dir }}"

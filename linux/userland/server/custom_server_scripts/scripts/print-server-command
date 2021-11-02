@@ -18,6 +18,9 @@ class bcolors:
 command_list = {
     "print-server-command": "print this list\n",
 
+    "download-big-file 'url' 'file_name'": "download big file, REMEMBER TO QUOTE THE URL AND NAME",
+    "view-ongoing-download": "view logs of all the ongoing download\n",
+
     "stream-yocto-log": "view real-time yocto log, good for monitoring build",
     "view-yocto-log": "view entire yocto log, good for checking the entire build",
 }
