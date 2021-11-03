@@ -25,7 +25,7 @@
             "value": false
         },
         "fancyzones_appLastZone_moveWindows": {
-            "value": false
+            "value": true
         },
         "fancyzones_openWindowOnActiveMonitor": {
             "value": false

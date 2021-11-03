@@ -13,7 +13,7 @@
         "Shortcut Guide": false,
         "Video Conference": false
     },
-    "is_elevated": true,
+    "is_elevated": false,
     "run_elevated": false,
     "download_updates_automatically": true,
     "is_admin": true,
