@@ -3,6 +3,7 @@
     - include: system_check.yml
 
     - include: bash/bash.yml
+    - include: pwsh/pwsh.yml
     - include: vscode/vscode.yml
     # - include: zsh/zsh.yml
     # - include: fish/fish.yml

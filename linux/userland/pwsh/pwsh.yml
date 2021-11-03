@@ -1,0 +1,7 @@
+- tags:
+    - pwsh
+  block:
+    - name: install pwsh
+      shell: bash {{ playbook_dir }}/pwsh/install_powershell.sh
+
+  become: true
