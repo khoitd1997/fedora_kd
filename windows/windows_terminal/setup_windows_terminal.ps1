@@ -1,3 +1,5 @@
+. $PSScriptRoot\..\utils.ps1
+
 LogHeader "Setting Up Windows Terminal"
 
 New-Item -Path "$profile" `

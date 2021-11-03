@@ -1,3 +1,5 @@
+. $PSScriptRoot\..\utils.ps1
+
 LogHeader "Starting Vscode Config"
 
 Start-Process -FilePath '"C:\Program Files\Git\git-bash.exe"' -ArgumentList "$PSScriptRoot\setup_vscode.sh"

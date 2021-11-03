@@ -13,6 +13,13 @@ function LogHeader {
     Write-Host "$LogContent" -ForegroundColor black -BackgroundColor white -NoNewline
     Write-Host ([char]0xA0)
 }
+function LogError {
+    param (
+        [string]$LogContent
+    )
+    Write-Host "$LogContent" -ForegroundColor red -BackgroundColor white -NoNewline
+    Write-Host ([char]0xA0)
+}
 
 # Input string can be gotten from DisplayName of
 # Get-ItemProperty HKLM:\Software\Microsoft\Windows\CurrentVersion\Uninstall\*
@@ -108,13 +115,6 @@ function RemoveAppXPackage {
     foreach ($AppName in $AppXNameSearchList) {
         Get-AppxPackage | Where-Object { $_.Name -like "*$AppName*" } | Remove-AppxPackage
     }
-}
-
-function LogError {
-    param (
-        [string]$LogContent
-    )
-    Write-Host "$LogContent" -ForegroundColor red -BackgroundColor white
 }
 
 function AddToEnvironmentVariable {
