@@ -11,7 +11,7 @@ function CreateAdminTerminalShortcut() {
     # got it from https://github.com/microsoft/terminal/tree/main/res
     $Shortcut.IconLocation = "$PSScriptRoot\pics\terminal.ico"
 
-    $Shortcut.Arguments = '-Command Start-Process -FilePath "wt" -Verb RunAs'
+    $Shortcut.Arguments = '-NonInteractive -NoProfile -Command Start-Process -FilePath "wt" -Verb RunAs'
     $Shortcut.Save()
 }
 
