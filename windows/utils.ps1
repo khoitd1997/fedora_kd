@@ -117,6 +117,14 @@ function RemoveAppXPackage {
     }
 }
 
+function GetProgramInstallPathUsingHKLM {
+    param (
+        [string]$DisplayNameSearchString
+    )
+
+    return Get-ChildItem HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall | ForEach-Object { Get-ItemProperty $_.PsPath } | Where-Object { $_.DisplayName -eq "$DisplayNameSearchString" } | Select-Object -First 1 | ForEach-Object { $_.InstallLocation }
+}
+
 function AddToEnvironmentVariable {
     param (
         [string]$VarName,

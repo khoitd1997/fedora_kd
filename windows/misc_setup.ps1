@@ -18,4 +18,7 @@ function CreateAdminTerminalShortcut() {
 AddToEnvironmentVariable "Path" "C:\Xilinx\Vitis\2020.1\bin"
 AddToEnvironmentVariable "Path" "C:\Xilinx\Vivado\2020.1\bin"
 
+# exposes git vim and nano
+AddToEnvironmentVariable "Path" "$(GetProgramInstallPathUsingHKLM 'Git')/usr/bin"
+
 CreateAdminTerminalShortcut
