@@ -118,6 +118,8 @@ if ($host.Name -eq 'ConsoleHost') {
     $global:GitPromptSettings.DefaultPromptBeforeSuffix.Text = "`e[36m@$(hostname)`e[0m `n"
     $GitPromptSettings.DefaultPromptPath.ForegroundColor = 'Orange'
 
+    Set-PSReadlineOption -EditMode Emacs
+
     Set-Alias -Name vim -Value nvim
     Set-Alias -Name vi -Value nvim
 }
