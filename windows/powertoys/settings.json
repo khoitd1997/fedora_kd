@@ -1,19 +1,19 @@
 {
     "startup": true,
     "enabled": {
-        "Awake": true,
-        "ColorPicker": true,
+        "Awake": false,
+        "ColorPicker": false,
         "FancyZones": true,
         "File Explorer": true,
-        "FindMyMouse": true,
+        "FindMyMouse": false,
         "Image Resizer": true,
-        "Keyboard Manager": true,
+        "Keyboard Manager": false,
         "PowerRename": true,
         "PowerToys Run": true,
-        "Shortcut Guide": true,
-        "Video Conference": true
+        "Shortcut Guide": false,
+        "Video Conference": false
     },
-    "is_elevated": false,
+    "is_elevated": true,
     "run_elevated": false,
     "download_updates_automatically": true,
     "is_admin": true,
