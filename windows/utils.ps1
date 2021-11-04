@@ -23,6 +23,10 @@ function LogError {
     Write-Host ([char]0xA0)
 }
 
+function IsUsingWindowPowershell {
+    return -not($PSVersionTable.PSVersion.Major -gt 5)
+}
+
 # Input string can be gotten from DisplayName of
 # Get-ItemProperty HKLM:\Software\Microsoft\Windows\CurrentVersion\Uninstall\*
 function ProgramIsInstalledUsingHKLM {
@@ -40,7 +44,7 @@ function ProgramIsInstalledUsingAppX {
     )
     # powershell 7 has problems importing this module
     # so use windows powershell mode
-    if ($PSVersionTable.PSVersion.Major -ne 5) {
+    if (-not(IsUsingWindowPowershell)) {
         import-module appx -usewindowspowershell
     }
 
@@ -128,7 +132,7 @@ function RemoveAppXPackage {
     )
     # powershell 7 has problems importing this module
     # so use windows powershell mode
-    if ($PSVersionTable.PSVersion.Major -ne 5) {
+    if (-not(IsUsingWindowPowershell)) {
         import-module appx -usewindowspowershell
     }
 
