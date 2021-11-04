@@ -25,7 +25,7 @@ if (Test-Path -Path "$TerminalAppDataDir") {
         -Force
 }
 
-$TerminalPreviewAppDataDir = "$env:LOCALAPPDATA\Microsoft.WindowsTerminalPreview_8wekyb3d8bbwe"
+$TerminalPreviewAppDataDir = "$env:LOCALAPPDATA\Packages\Microsoft.WindowsTerminalPreview_8wekyb3d8bbwe"
 if (Test-Path -Path "$TerminalPreviewAppDataDir") {
     $null = New-Item -Path "$TerminalPreviewAppDataDir\LocalState\settings.json" `
         -ItemType SymbolicLink `
