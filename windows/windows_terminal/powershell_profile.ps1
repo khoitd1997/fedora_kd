@@ -115,7 +115,8 @@ if ($host.Name -eq 'ConsoleHost') {
     
     Import-Module posh-git
 
-    $global:GitPromptSettings.DefaultPromptBeforeSuffix.Text = "`e[36m@$(hostname)`e[0m `n"
+    $global:GitPromptSettings.DefaultPromptBeforeSuffix.Text = "@$(hostname)`n"
+    $global:GitPromptSettings.DefaultPromptBeforeSuffix.ForegroundColor = 'Cyan'
     $GitPromptSettings.DefaultPromptPath.ForegroundColor = 'Orange'
 
     Set-PSReadlineOption -EditMode Emacs
