@@ -19,4 +19,9 @@ AddToUserLevelEnvironmentVariable "Path" "C:\Xilinx\Vivado\2020.1\bin"
 # exposes git vim and nano
 AddToUserLevelEnvironmentVariable "Path" "$(GetProgramInstallPathUsingHKLM 'Git')/usr/bin"
 
+# expose convenient script
+AddToUserLevelEnvironmentVariable "Path" "$PSScriptRoot/powershell_scripts/user_level"
+
+SetUserLevelEnvironmentVariable "KD_SCRIPT_DIR" "$PSScriptRoot/powershell_scripts"
+
 CreateAdminTerminalShortcut

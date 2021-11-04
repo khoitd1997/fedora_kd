@@ -5,6 +5,7 @@ Set-Variable -Name "linux_userland_dir" -Value ("$linux_conf_root_dir/userland")
 
 function LogHeader {
     param (
+        [Parameter(Mandatory = $true)]
         [string]$LogContent
     )
 
@@ -15,6 +16,7 @@ function LogHeader {
 }
 function LogError {
     param (
+        [Parameter(Mandatory = $true)]
         [string]$LogContent
     )
     Write-Host "$LogContent" -ForegroundColor red -BackgroundColor white -NoNewline
@@ -25,6 +27,7 @@ function LogError {
 # Get-ItemProperty HKLM:\Software\Microsoft\Windows\CurrentVersion\Uninstall\*
 function ProgramIsInstalledUsingHKLM {
     param (
+        [Parameter(Mandatory = $true)]
         [string]$DisplayNameSearchString
     )
     return $null -ne (Get-ItemProperty HKLM:\Software\Microsoft\Windows\CurrentVersion\Uninstall\* | Where-Object { $_.DisplayName -like "*$DisplayNameSearchString*" })
@@ -32,6 +35,7 @@ function ProgramIsInstalledUsingHKLM {
 # used for UWP apps like Windows Terminal
 function ProgramIsInstalledUsingAppX {
     param (
+        [Parameter(Mandatory = $true)]
         [string]$AppXNameSearchString
     )
     # powershell 7 has problems importing this module
@@ -42,6 +46,7 @@ function ProgramIsInstalledUsingAppX {
 }
 function ProgramIsInstalledUsingWMI {
     param (
+        [Parameter(Mandatory = $true)]
         [string]$AppName
     )
 
@@ -49,6 +54,7 @@ function ProgramIsInstalledUsingWMI {
 }
 function ProgramIsInstalledUsingCommandName {
     param (
+        [Parameter(Mandatory = $true)]
         [string]$CommandName
     )
     return $null -ne (Get-Command $CommandName -errorAction SilentlyContinue)
@@ -56,7 +62,10 @@ function ProgramIsInstalledUsingCommandName {
 
 function DownloadAndInstallAppXPackage { 
     param (
+        [Parameter(Mandatory = $true)]
         [string]$InstallerDownloadURL,
+
+        [Parameter(Mandatory = $true)]
         [string]$AppName
     )
     if (-Not (ProgramIsInstalledUsingAppX "$AppName")) {
@@ -80,9 +89,15 @@ function DownloadAndInstallAppXPackage {
 }
 function DownloadAndInstallGenericExe { 
     param (
+        [Parameter(Mandatory = $true)]
         [string]$AppName,
+
+        [Parameter(Mandatory = $true)]
         [string]$InstallerDownloadURL,
+
         [string]$InstallerDownloadFile = "installer.exe",
+
+        [Parameter(Mandatory = $true)]
         [string[]]$ArgList
     )
     LogHeader "Installing $AppName"
@@ -106,6 +121,7 @@ function DownloadAndInstallGenericExe {
 }
 function RemoveAppXPackage {
     param (
+        [Parameter(Mandatory = $true)]
         [string[]]$AppXNameSearchList
     )
     # powershell 7 has problems importing this module
@@ -119,6 +135,7 @@ function RemoveAppXPackage {
 
 function GetProgramInstallPathUsingHKLM {
     param (
+        [Parameter(Mandatory = $true)]
         [string]$DisplayNameSearchString
     )
 
@@ -127,7 +144,10 @@ function GetProgramInstallPathUsingHKLM {
 
 function AddToMachineLevelEnvironmentVariable {
     param (
+        [Parameter(Mandatory = $true)]
         [string]$VarName,
+
+        [Parameter(Mandatory = $true)]
         [string]$ValueToAdd
     )
 
@@ -146,7 +166,10 @@ function AddToMachineLevelEnvironmentVariable {
 
 function AddToUserLevelEnvironmentVariable {
     param (
+        [Parameter(Mandatory = $true)]
         [string]$VarName,
+
+        [Parameter(Mandatory = $true)]
         [string]$ValueToAdd
     )
 
@@ -161,4 +184,43 @@ function AddToUserLevelEnvironmentVariable {
     else {
         Write-Output "$ValueToAdd already exists in $VarName User Env Variable"
     }
+}
+function SetUserLevelEnvironmentVariable {
+    param (
+        [Parameter(Mandatory = $true)]
+        [string]$VarName,
+
+        [Parameter(Mandatory = $true)]
+        [string]$ValueToSet
+    )
+
+    [Environment]::SetEnvironmentVariable($VarName, $ValueToSet, [EnvironmentVariableTarget]::User)
+}
+
+function RunAsAnotherUser {
+    param (
+        [Parameter(Mandatory = $true)]
+        [Scriptblock] $ScriptBlock,
+
+        [Parameter(Mandatory = $true)]
+        [Object[]]$ArgList,
+
+        [Parameter(Mandatory = $true)]
+        [String]$PromptMessage
+    )
+
+    $Cred = Get-Credential -Message $PromptMessage
+
+    $job = Start-Job -scriptblock $ScriptBlock -ArgumentList $ArgList -Credential $Cred
+    Receive-Job -Job $job -Wait
+
+    Write-Host "Job Output: $($job.Output)"
+    Write-Host "Job Warning: $($job.Warning)"
+    Write-Host "Job Verbose: $($job.Verbose)"
+
+    if ($job.State -eq "Failed") {
+        Write-Host "Job Error: $($job.Error)"
+        return $false
+    }
+    return $true
 }

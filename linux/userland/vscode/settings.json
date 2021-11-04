@@ -434,5 +434,6 @@
             ]
         }
     },
+    "powershell.powerShellDefaultVersion": "Windows PowerShell (x64)",
     // "terminal.integrated.defaultProfile.windows": "PowerShell"
 }

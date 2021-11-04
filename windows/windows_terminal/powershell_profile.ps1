@@ -1,3 +1,14 @@
+
+$PathToImport = "$env:KD_SCRIPT_DIR/server_commands.ps1"
+if (Test-Path "$PathToImport" -PathType Leaf) {
+    . "$PathToImport"
+}
+
+$PathToImport = "$env:KD_SCRIPT_DIR/misc_commands.ps1"
+if (Test-Path "$PathToImport" -PathType Leaf) {
+    . "$PathToImport"
+}
+
 function print-reminder {
     Write-Host @"
 
@@ -33,71 +44,9 @@ CUSTOM COMMAND LIST:
 
 - sha256sum <file_path>: take sha256 hash of a file
 - extract-tar <file-to-extract> [destination]: extract a .tar.gz file
+- run-script-bypass <path-to-script>: run a script with bypassing execution policy
 "@ -ForegroundColor black -BackgroundColor white -NoNewline
     Write-Host ([char]0xA0)
-}
-
-
-function init-server-key {
-    $SshKeyPath = "$env:USERPROFILE\.ssh\id_rsa.pub"
-    if (-not(Test-Path -Path "$SshKeyPath" -PathType Leaf)) {
-        ssh-keygen.exe
-    }
-
-    Get-Content "$SshKeyPath" | ssh kd@"kd-server" "cat >> .ssh/authorized_keys"
-}
-
-function ssh-to-server {
-    ssh kd@kd-server
-}
-function scp-to-big-file-download {
-    param(
-        [string]$SourceFilePath
-    )
-
-    scp -r $SourceFilePath kd@kd-server:"/bulk-storage-slow/nfs/general/big_file_storage"
-}
-
-
-function list-nfs-file {
-    ssh kd@"kd-server" "source /bin/server_common.sh && tree -L 3 `${bulk_storage_share_dir}"
-}
-
-function mount-bulk-share {
-    Write-Host "Powershell terminal seems to have problems when entering credentials, use cmd.exe if there is an issue"
-    Write-Host "If asked for password, use Linux credentials (ie the kd account)"
-    net use z: \\kd-server\Bulk_Storage_Share /savecred /persistent:yes
-}
-function umount-bulk-share {
-    Write-Host "Unmounting bulk share"
-    net use Z: /delete /y
-}
-
-function vscode-ssh {
-    param(
-        [string]$PathOnServer,
-        [string]$ServerHostName = "kd-server"
-    )
-
-    Write-Output "Host: ${ServerHostName}"
-    Write-Output "Path: ${PathOnServer}"
-
-    code --folder-uri "vscode-remote://ssh-remote+${ServerHostName}/${PathOnServer}"
-}
-
-function sha256sum {
-    param (
-        [string]$FilePath
-    )
-    Get-FileHash $FilePath -Algorithm SHA256 | Format-List
-}
-
-function extract-tar {
-    param (
-        [string]$FilePath,
-        [string]$DestPath = "."
-    )
-    tar -xvzf $FilePath -C $DestPath
 }
 
 print-cmd-list
