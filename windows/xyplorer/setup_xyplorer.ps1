@@ -43,4 +43,4 @@ else {
     LogHeader "XYplorer is already installed"
 }
 
-AddToEnvironmentVariable "Path" "$XYPlorerInstallDestDir"
+AddToUserLevelEnvironmentVariable "Path" "$XYPlorerInstallDestDir"

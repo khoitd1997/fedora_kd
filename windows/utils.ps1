@@ -125,7 +125,7 @@ function GetProgramInstallPathUsingHKLM {
     return Get-ChildItem HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall | ForEach-Object { Get-ItemProperty $_.PsPath } | Where-Object { $_.DisplayName -eq "$DisplayNameSearchString" } | Select-Object -First 1 | ForEach-Object { $_.InstallLocation }
 }
 
-function AddToEnvironmentVariable {
+function AddToMachineLevelEnvironmentVariable {
     param (
         [string]$VarName,
         [string]$ValueToAdd
@@ -133,13 +133,32 @@ function AddToEnvironmentVariable {
 
     $currVarValue = [Environment]::GetEnvironmentVariable($VarName, [EnvironmentVariableTarget]::Machine)
     if ($currVarValue.IndexOf($ValueToAdd) -eq -1) {
-        Write-Output "Adding $ValueToAdd to $VarName env variable"
+        Write-Output "Adding $ValueToAdd to $VarName Machine Env Variable"
         [Environment]::SetEnvironmentVariable(
             $VarName,
             $currVarValue + ";$ValueToAdd",
             [EnvironmentVariableTarget]::Machine)
     }
     else {
-        Write-Output "$ValueToAdd already exists in $VarName env variable"
+        Write-Output "$ValueToAdd already exists in $VarName Machine Env Variable"
+    }
+}
+
+function AddToUserLevelEnvironmentVariable {
+    param (
+        [string]$VarName,
+        [string]$ValueToAdd
+    )
+
+    $currVarValue = [Environment]::GetEnvironmentVariable($VarName, [EnvironmentVariableTarget]::User)
+    if ($currVarValue.IndexOf($ValueToAdd) -eq -1) {
+        Write-Output "Adding $ValueToAdd to $VarName User Env Variable"
+        [Environment]::SetEnvironmentVariable(
+            $VarName,
+            $currVarValue + ";$ValueToAdd",
+            [EnvironmentVariableTarget]::User)
+    }
+    else {
+        Write-Output "$ValueToAdd already exists in $VarName User Env Variable"
     }
 }

@@ -1,5 +1,3 @@
-#Requires -RunAsAdministrator
-
 . $PSScriptRoot\utils.ps1
 
 function CreateAdminTerminalShortcut() {
@@ -15,10 +13,10 @@ function CreateAdminTerminalShortcut() {
     $Shortcut.Save()
 }
 
-AddToEnvironmentVariable "Path" "C:\Xilinx\Vitis\2020.1\bin"
-AddToEnvironmentVariable "Path" "C:\Xilinx\Vivado\2020.1\bin"
+AddToUserLevelEnvironmentVariable "Path" "C:\Xilinx\Vitis\2020.1\bin"
+AddToUserLevelEnvironmentVariable "Path" "C:\Xilinx\Vivado\2020.1\bin"
 
 # exposes git vim and nano
-AddToEnvironmentVariable "Path" "$(GetProgramInstallPathUsingHKLM 'Git')/usr/bin"
+AddToUserLevelEnvironmentVariable "Path" "$(GetProgramInstallPathUsingHKLM 'Git')/usr/bin"
 
 CreateAdminTerminalShortcut
