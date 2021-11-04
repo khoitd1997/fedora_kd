@@ -40,7 +40,9 @@ function ProgramIsInstalledUsingAppX {
     )
     # powershell 7 has problems importing this module
     # so use windows powershell mode
-    import-module appx -usewindowspowershell
+    if ($PSVersionTable.PSVersion.Major -ne 5) {
+        import-module appx -usewindowspowershell
+    }
 
     return $null -ne (Get-AppxPackage | Where-Object { $_.Name -like "*$AppXNameSearchString*" })
 }
@@ -126,7 +128,9 @@ function RemoveAppXPackage {
     )
     # powershell 7 has problems importing this module
     # so use windows powershell mode
-    import-module appx -usewindowspowershell
+    if ($PSVersionTable.PSVersion.Major -ne 5) {
+        import-module appx -usewindowspowershell
+    }
 
     foreach ($AppName in $AppXNameSearchList) {
         Get-AppxPackage | Where-Object { $_.Name -like "*$AppName*" } | Remove-AppxPackage
