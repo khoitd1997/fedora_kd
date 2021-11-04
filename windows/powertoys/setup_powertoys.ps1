@@ -1,18 +1,23 @@
+. $PSScriptRoot\..\utils.ps1
+
+LogHeader "Setting up PowerToys"
+
 $PowerToysAppDataDir = "$env:LOCALAPPDATA\Microsoft\PowerToys"
 
-$null = New-Item -Path "$PowerToysAppDataDir\settings.json" `
-    -ItemType SymbolicLink `
-    -Value "$PSScriptRoot/settings.json"`
-    -Force
-$null = New-Item -Path "$PowerToysAppDataDir\File Explorer\settings.json" `
-    -ItemType SymbolicLink `
-    -Value "$PSScriptRoot/file_explorer/settings.json"`
-    -Force
-$null = New-Item -Path "$PowerToysAppDataDir\PowerToys Run\settings.json" `
-    -ItemType SymbolicLink `
-    -Value "$PSScriptRoot/powertoys_run/settings.json"`
-    -Force
-$null = New-Item -Path "$PowerToysAppDataDir\FancyZones\settings.json" `
-    -ItemType SymbolicLink `
-    -Value "$PSScriptRoot/fancyzones/settings.json"`
-    -Force
+$null = MakeSymlinkUsingMkLink `
+    "$PSScriptRoot/settings.json" `
+    "$PowerToysAppDataDir\settings.json"
+
+$null = MakeSymlinkUsingMkLink `
+    "$PSScriptRoot/file_explorer/settings.json" `
+    "$PowerToysAppDataDir\File Explorer\settings.json" 
+
+$null = MakeSymlinkUsingMkLink `
+    "$PSScriptRoot/powertoys_run/settings.json" `
+    "$PowerToysAppDataDir\PowerToys Run\settings.json" 
+
+$null = MakeSymlinkUsingMkLink `
+    "$PSScriptRoot/fancyzones/settings.json" `
+    "$PowerToysAppDataDir\FancyZones\settings.json"
+
+LogHeader "Finished Setting up PowerToys"
