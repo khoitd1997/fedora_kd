@@ -58,19 +58,27 @@ if ($host.Name -eq 'ConsoleHost') {
     Import-Module PSReadLine
     Import-Module PSFzf
 
-    Set-PSReadlineKeyHandler -Key Tab -Function MenuComplete
-
-    Set-PsFzfOption -PSReadlineChordProvider 'Ctrl+t' -PSReadlineChordReverseHistory 'Ctrl+r'
-    # Set-PSReadLineKeyHandler -Key Tab -ScriptBlock { Invoke-FzfTabCompletion }
-    
     Import-Module posh-git
 
     $global:GitPromptSettings.DefaultPromptBeforeSuffix.Text = "@$(hostname)`n"
     $global:GitPromptSettings.DefaultPromptBeforeSuffix.ForegroundColor = 'Cyan'
     $GitPromptSettings.DefaultPromptPath.ForegroundColor = 'Orange'
 
-    Set-PSReadlineOption -EditMode Emacs
+    if ($PSVersionTable.PSVersion.Major -gt 5) {
+        # Emacs mode seems to break tab completion
+        Set-PSReadlineOption -EditMode Emacs
+    }
+    else {
+        # emulate some necessary keys
+        Set-PSReadlineKeyHandler -Key ctrl+a -Function BeginningOfLine
+        Set-PSReadlineKeyHandler -Key ctrl+e -Function EndOfLine
+    }
 
     Set-Alias -Name vim -Value nvim
     Set-Alias -Name vi -Value nvim
+
+    # NOTE: This sections needs to be below here otherwise Ctrl+r doesn't work
+    Set-PsFzfOption -PSReadlineChordProvider 'Ctrl+t' -PSReadlineChordReverseHistory 'Ctrl+r'
+    # Set-PSReadLineKeyHandler -Key Tab -ScriptBlock { Invoke-FzfTabCompletion }
+    Set-PSReadlineKeyHandler -Key Tab -Function MenuComplete
 }
