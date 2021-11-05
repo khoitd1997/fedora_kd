@@ -7,11 +7,6 @@ $InstallWorkDir = "$env:TEMP/vitis_install_tmp"
 $VitisInstallBaseName = "Xilinx_Unified_2020.1_0602_1208"
 $VitisUpdateBaseName = "Xilinx_Vivado_Vitis_Update_2020.1.1_0805_2247"
 
-Register-EngineEvent PowerShell.Exiting –Action { 
-    # always remove the tmp directory on exit
-    Remove-Item "$InstallWorkDir" -Recurse -ErrorAction Ignore
-} >$nul
-
 If (-Not (ProgramIsInstalledUsingHKLM "Vitis Unified Software Platform 2020.1")) {
     LogHeader "Vitis hasn't been installed yet, starting install process"
 
@@ -44,6 +39,8 @@ If (-Not (ProgramIsInstalledUsingHKLM "Vitis Unified Software Platform 2020.1"))
         -ArgumentList "--batch", "Update" `
         -NoNewWindow `
         -Wait
+
+    Remove-Item "$InstallWorkDir" -Recurse -ErrorAction Ignore
 }
 else {
     LogHeader "Vitis is already installed, exitting"

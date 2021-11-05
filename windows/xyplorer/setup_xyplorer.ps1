@@ -18,10 +18,6 @@ if (-not (Test-Path -Path "$XYPlorerInstallDestDir")) {
     LogHeader "XYplorer hasn't been installed yet, starting install process"
 
     $InstallWorkDir = "$env:TEMP/xyplorer_install"
-    Register-EngineEvent PowerShell.Exiting –Action { 
-        # always remove the tmp directory on exit
-        Remove-Item "$InstallWorkDir" -Recurse -ErrorAction Ignore
-    } >$nul
 
     $null = Remove-Item "$InstallWorkDir" -Recurse -ErrorAction Ignore
     $null = New-Item -ItemType Directory -Force -Path $InstallWorkDir
@@ -38,6 +34,8 @@ if (-not (Test-Path -Path "$XYPlorerInstallDestDir")) {
     # "Tools" -> "Customize Tree"
     # "Tools" -> "Customize List"
     Copy-Item "$PSScriptRoot/XYplorer.ini" -Destination "$XYPlorerAppDataDir"
+
+    $null = Remove-Item "$InstallWorkDir" -Recurse -ErrorAction Ignore
 }
 else {
     LogHeader "XYplorer is already installed"
