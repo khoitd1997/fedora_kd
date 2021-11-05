@@ -43,3 +43,27 @@ function MakeSymlinkUsingMkLink {
     }
     cmd.exe /c "mklink `"$DestPath`" `"$SrcPath`""
 }
+
+function MountTempNetworkDrive {
+    param(
+        [Parameter(Mandatory = $true)]
+        [string]$DriveName,
+
+        [Parameter(Mandatory = $true)]
+        [string]$DriveUrl
+    )
+
+    try {
+        # NOTE: This needs to be null otherwise the callback is messed up
+        $null = New-PSDrive -Name "$DriveName" -Root "$DriveUrl" -PSProvider "FileSystem" -Scope "Global" -Erroraction stop
+    }
+    catch {
+        LogError "$PSItem"
+        throw [System.IO.IOException] "Error mounting drive $DriveName"
+    }
+
+    return { 
+        Write-Host "Unmounting Drive $DriveName"
+        Remove-PSDrive $DriveName 
+    }.GetNewClosure()
+}

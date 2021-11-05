@@ -41,11 +41,13 @@ function list-nfs-file {
 function mount-bulk-share {
     Write-Host "Powershell terminal seems to have problems when entering credentials, use cmd.exe if there is an issue"
     Write-Host "If asked for password, use Linux credentials (ie the kd account)"
-    net use z: \\${KdServerHostName}\Bulk_Storage_Share /savecred /persistent:yes
+
+    Write-Host "Mounting to Z Drive"
+    New-PSDrive -Name "Z" -Root "\\${KdServerHostName}\Bulk_Storage_Share" -Persist -PSProvider "FileSystem" -Scope "Global"
 }
 function umount-bulk-share {
     Write-Host "Unmounting bulk share"
-    net use Z: /delete /y
+    Remove-PSDrive -Name "Z"
 }
 
 function vscode-ssh {
