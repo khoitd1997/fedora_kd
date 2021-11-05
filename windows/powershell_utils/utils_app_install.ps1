@@ -3,6 +3,7 @@
 function ProgramIsInstalledUsingHKLM {
     param (
         [Parameter(Mandatory = $true)]
+        [ValidateNotNullOrEmpty()]
         [string]$DisplayNameSearchString
     )
     return $null -ne (Get-ItemProperty HKLM:\Software\Microsoft\Windows\CurrentVersion\Uninstall\* | Where-Object { $_.DisplayName -like "*$DisplayNameSearchString*" })
@@ -11,6 +12,7 @@ function ProgramIsInstalledUsingHKLM {
 function ProgramIsInstalledUsingAppX {
     param (
         [Parameter(Mandatory = $true)]
+        [ValidateNotNullOrEmpty()]
         [string]$AppXNameSearchString
     )
     # powershell 7 has problems importing this module
@@ -24,6 +26,7 @@ function ProgramIsInstalledUsingAppX {
 function ProgramIsInstalledUsingWMI {
     param (
         [Parameter(Mandatory = $true)]
+        [ValidateNotNullOrEmpty()]
         [string]$AppName
     )
 
@@ -32,6 +35,7 @@ function ProgramIsInstalledUsingWMI {
 function ProgramIsInstalledUsingCommandName {
     param (
         [Parameter(Mandatory = $true)]
+        [ValidateNotNullOrEmpty()]
         [string]$CommandName
     )
     return $null -ne (Get-Command $CommandName -errorAction SilentlyContinue)
@@ -40,9 +44,11 @@ function ProgramIsInstalledUsingCommandName {
 function DownloadAndInstallAppXPackage { 
     param (
         [Parameter(Mandatory = $true)]
+        [ValidateNotNullOrEmpty()]
         [string]$InstallerDownloadURL,
 
         [Parameter(Mandatory = $true)]
+        [ValidateNotNullOrEmpty()]
         [string]$AppName
     )
     if (-Not (ProgramIsInstalledUsingAppX "$AppName")) {
@@ -67,15 +73,16 @@ function DownloadAndInstallAppXPackage {
 function DownloadAndInstallGenericExe { 
     param (
         [Parameter(Mandatory = $true)]
+        [ValidateNotNullOrEmpty()]
         [string]$AppName,
 
         [Parameter(Mandatory = $true)]
+        [ValidateNotNullOrEmpty()]
         [string]$InstallerDownloadURL,
 
         [string]$InstallerDownloadFile = "installer.exe",
 
-        [Parameter(Mandatory = $true)]
-        [string[]]$ArgList
+        [string[]]$ArgList = @("")
     )
     LogHeader "Installing $AppName"
     
@@ -99,6 +106,7 @@ function DownloadAndInstallGenericExe {
 function RemoveAppXPackage {
     param (
         [Parameter(Mandatory = $true)]
+        [ValidateNotNullOrEmpty()]
         [string[]]$AppXNameSearchList
     )
     # powershell 7 has problems importing this module
@@ -115,6 +123,7 @@ function RemoveAppXPackage {
 function GetProgramInstallPathUsingHKLM {
     param (
         [Parameter(Mandatory = $true)]
+        [ValidateNotNullOrEmpty()]
         [string]$DisplayNameSearchString
     )
 

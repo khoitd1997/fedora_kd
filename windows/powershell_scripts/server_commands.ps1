@@ -17,7 +17,7 @@ function ssh-to-server {
 function scp-to-big-file-download {
     param(
         [Parameter(Mandatory = $true)]
-        [string]$SourceFilePath
+        [System.IO.FileInfo]$SourceFilePath
     )
 
     scp -r $SourceFilePath ${KdServerSshAddress}:"$KdServerBigFileDirectory"
@@ -25,9 +25,10 @@ function scp-to-big-file-download {
 function scp-from-big-file-download {
     param(
         [Parameter(Mandatory = $true)]
+        [ValidateNotNullOrEmpty()]
         [string]$NameOfFileToCopy,
 
-        [string]$DestPath = "$((New-Object -ComObject Shell.Application).NameSpace('shell:Downloads').Self.Path)"
+        [System.IO.FileInfo]$DestPath = "$((New-Object -ComObject Shell.Application).NameSpace('shell:Downloads').Self.Path)"
     )
 
     scp -r ${KdServerSshAddress}:"${KdServerBigFileDirectory}/${NameOfFileToCopy}" "$DestPath"
@@ -53,6 +54,7 @@ function umount-bulk-share {
 function vscode-ssh {
     param(
         [Parameter(Mandatory = $true)]
+        [ValidateNotNullOrEmpty()]
         [string]$PathOnServer,
 
         [string]$TargetHostName = "$KdServerHostName"

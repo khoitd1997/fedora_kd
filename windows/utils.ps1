@@ -11,9 +11,11 @@ function IsUsingWindowPowershell {
 function AddToMachineLevelEnvironmentVariable {
     param (
         [Parameter(Mandatory = $true)]
+        [ValidateNotNullOrEmpty()]
         [string]$VarName,
 
         [Parameter(Mandatory = $true)]
+        [ValidateNotNullOrEmpty()]
         [string]$ValueToAdd
     )
 
@@ -33,9 +35,11 @@ function AddToMachineLevelEnvironmentVariable {
 function AddToUserLevelEnvironmentVariable {
     param (
         [Parameter(Mandatory = $true)]
+        [ValidateNotNullOrEmpty()]
         [string]$VarName,
 
         [Parameter(Mandatory = $true)]
+        [ValidateNotNullOrEmpty()]
         [string]$ValueToAdd
     )
 
@@ -54,6 +58,7 @@ function AddToUserLevelEnvironmentVariable {
 function SetUserLevelEnvironmentVariable {
     param (
         [Parameter(Mandatory = $true)]
+        [ValidateNotNullOrEmpty()]
         [string]$VarName,
 
         [Parameter(Mandatory = $true)]
@@ -66,12 +71,13 @@ function SetUserLevelEnvironmentVariable {
 function RunAsAnotherUser {
     param (
         [Parameter(Mandatory = $true)]
+        [ValidateNotNullOrEmpty()]
         [Scriptblock] $ScriptBlock,
 
-        [Parameter(Mandatory = $true)]
-        [Object[]]$ArgList,
+        [Object[]]$ArgList = @(),
 
         [Parameter(Mandatory = $true)]
+        [ValidateNotNullOrEmpty()]
         [String]$PromptMessage
     )
 

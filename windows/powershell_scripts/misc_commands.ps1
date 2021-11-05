@@ -1,7 +1,8 @@
 function sha256sum {
     param (
         [Parameter(Mandatory = $true)]
-        [string]$FilePath
+        [System.IO.FileInfo]
+        $FilePath
     )
     Get-FileHash $FilePath -Algorithm SHA256 | Format-List
 }
@@ -9,8 +10,9 @@ function sha256sum {
 function extract-tar {
     param (
         [Parameter(Mandatory = $true)]
-        [string]$FilePath,
-        [string]$DestPath = "."
+        [System.IO.FileInfo]$FilePath,
+
+        [System.IO.FileInfo]$DestPath = "."
     )
     tar -xvzf $FilePath -C $DestPath
 }
@@ -18,7 +20,7 @@ function extract-tar {
 function run-script-bypass {
     param (
         [Parameter(Mandatory = $true)]
-        [string]$ScriptPath
+        [System.IO.FileInfo]$ScriptPath
     )
     powershell.exe -NoProfile -ExecutionPolicy Bypass -File $ScriptPath
 }

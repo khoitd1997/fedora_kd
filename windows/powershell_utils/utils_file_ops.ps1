@@ -1,10 +1,10 @@
 function MakeSymlinkIfAllowed {
     param(
         [Parameter(Mandatory = $true)]
-        [string]$SrcPath,
+        [System.IO.FileInfo]$SrcPath,
 
         [Parameter(Mandatory = $true)]
-        [string]$DestPath
+        [System.IO.FileInfo]$DestPath
     )
     <#
         .SYNOPSIS
@@ -27,10 +27,10 @@ function MakeSymlinkIfAllowed {
 function MakeSymlinkUsingMkLink {
     param(
         [Parameter(Mandatory = $true)]
-        [string]$SrcPath,
+        [System.IO.FileInfo]$SrcPath,
 
         [Parameter(Mandatory = $true)]
-        [string]$DestPath
+        [System.IO.FileInfo]$DestPath
     )
     <#
         .SYNOPSIS
@@ -47,9 +47,11 @@ function MakeSymlinkUsingMkLink {
 function MountTempNetworkDrive {
     param(
         [Parameter(Mandatory = $true)]
+        [ValidateNotNullOrEmpty()]
         [string]$DriveName,
 
         [Parameter(Mandatory = $true)]
+        [ValidateNotNullOrEmpty()]
         [string]$DriveUrl
     )
 
