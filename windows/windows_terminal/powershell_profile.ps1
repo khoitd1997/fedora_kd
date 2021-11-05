@@ -37,6 +37,7 @@ CUSTOM COMMAND LIST:
 - init-server-key: for first time initialization of ssh key
 - ssh-to-server: ssh to home server
 - scp-to-big-file-download <local-file-path>: copy local file to big download folder on the server
+- scp-from-big-file-download <file-to-copy-name> [destination-path]: copy remote file to local, if destination not specified then download to the Downloads folder
 
 - list-nfs-file: list bulk storage files
 - mount-bulk-share: mount the bulk share to Z: drive
