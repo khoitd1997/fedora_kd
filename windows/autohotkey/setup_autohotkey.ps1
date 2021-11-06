@@ -12,7 +12,7 @@ Foreach-Object {
 
 Get-ChildItem "$PSScriptRoot\scripts_loaded_at_startup" -Filter *.ahk | 
 Foreach-Object {
-    MakeSymlinkUsingMkLink "$($_.FullName)" "${StartupFolder}\$($_.Name)"
+    TryToMakeSymlink "$($_.FullName)" "${StartupFolder}\$($_.Name)"
 }
 
 LogHeader "Finished Setting Up Autohotkey"

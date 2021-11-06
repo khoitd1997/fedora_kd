@@ -4,19 +4,19 @@ LogHeader "Setting up PowerToys"
 
 $PowerToysAppDataDir = "$env:LOCALAPPDATA\Microsoft\PowerToys"
 
-$null = MakeSymlinkUsingMkLink `
+$null = TryToMakeSymlink `
     "$PSScriptRoot/settings.json" `
     "$PowerToysAppDataDir\settings.json"
 
-$null = MakeSymlinkUsingMkLink `
+$null = TryToMakeSymlink `
     "$PSScriptRoot/file_explorer/settings.json" `
     "$PowerToysAppDataDir\File Explorer\settings.json" 
 
-$null = MakeSymlinkUsingMkLink `
+$null = TryToMakeSymlink `
     "$PSScriptRoot/powertoys_run/settings.json" `
     "$PowerToysAppDataDir\PowerToys Run\settings.json" 
 
-$null = MakeSymlinkUsingMkLink `
+$null = TryToMakeSymlink `
     "$PSScriptRoot/fancyzones/settings.json" `
     "$PowerToysAppDataDir\FancyZones\settings.json"
 

@@ -1,4 +1,6 @@
-function MakeSymlinkIfAllowed {
+. "$PSScriptRoot/utils_sys_info.ps1"
+
+function TryToMakeSymlink {
     param(
         [Parameter(Mandatory = $true)]
         [System.IO.FileInfo]$SrcPath,
@@ -12,36 +14,24 @@ function MakeSymlinkIfAllowed {
         in that case, copy the file instead
     #>
 
-    try {
-        $null = New-Item -Path "$DestPath" `
-            -ItemType SymbolicLink `
-            -Value "$SrcPath" `
-            -Force -Erroraction stop
+    if (IsUsingHomeConfig) {
+        if (Test-Path $DestPath) {
+            $null = Remove-Item -Recurse $DestPath
+        }
+        cmd.exe /c "mklink `"$DestPath`" `"$SrcPath`""
     }
-    catch [System.UnauthorizedAccessException] {
-        Write-Host "Permission denied to create symlink for file $SrcPath, trying to copy instead"
-        $null = Copy-Item "$SrcPath" -Destination "$DestPath"
+    else {
+        try {
+            $null = New-Item -Path "$DestPath" `
+                -ItemType SymbolicLink `
+                -Value "$SrcPath" `
+                -Force -Erroraction stop
+        }
+        catch [System.UnauthorizedAccessException] {
+            Write-Host "Permission denied to create symlink for file $SrcPath, trying to copy instead"
+            $null = Copy-Item "$SrcPath" -Destination "$DestPath"
+        }
     }
-}
-
-function MakeSymlinkUsingMkLink {
-    param(
-        [Parameter(Mandatory = $true)]
-        [System.IO.FileInfo]$SrcPath,
-
-        [Parameter(Mandatory = $true)]
-        [System.IO.FileInfo]$DestPath
-    )
-    <#
-        .SYNOPSIS
-        Symlink using New-Item require admin access but bat mklink doesn't seem to
-        so use it instead
-    #>
-
-    if (Test-Path $DestPath) {
-        $null = Remove-Item -Recurse $DestPath
-    }
-    cmd.exe /c "mklink `"$DestPath`" `"$SrcPath`""
 }
 
 function MountTempNetworkDrive {
