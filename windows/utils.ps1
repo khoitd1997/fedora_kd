@@ -3,10 +3,7 @@
 . "$PSScriptRoot/powershell_utils/utils_log.ps1"
 . "$PSScriptRoot/powershell_utils/utils_app_install.ps1"
 . "$PSScriptRoot/powershell_utils/utils_file_ops.ps1"
-
-function IsUsingWindowPowershell {
-    return -not($PSVersionTable.PSVersion.Major -gt 5)
-}
+. "$PSScriptRoot/powershell_utils/utils_sys_info.ps1"
 
 function AddToMachineLevelEnvironmentVariable {
     param (
