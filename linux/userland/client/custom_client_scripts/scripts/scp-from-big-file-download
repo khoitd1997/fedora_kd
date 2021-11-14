@@ -1,0 +1,8 @@
+#!/bin/bash
+# usage: scp-from-big-file-download <file-to-copy-name> [destination-path]
+
+source /bin/server_common.sh
+
+set -e
+
+scp -r ${kd_server_hostname}:"${kd_big_file_storage}/${1}" "${2}"

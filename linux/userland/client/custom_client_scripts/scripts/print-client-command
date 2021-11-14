@@ -26,7 +26,8 @@ command_list = {
     "list-nfs-file <tree_level>": "print a tree list of the files on the server, optionally specify the depth of the tree\n",
     
     "request-download-big-file 'url' 'file_name'": "request the server to download big file, REMEMBER TO QUOTE THE URL AND NAME",
-    "list-ongoing-big-file-download": "list all ongoing big file download\n",
+    "list-ongoing-big-file-download": "list all ongoing big file download",
+    "scp-from-big-file-download <file-to-copy-name> [destination-path]": "copy remote file to local, if destination not specified then download to the Downloads folder\n",
 
     "request-buildroot-build <build_name> [path-to-buildroot-config-folder]": "request a buildroot build to be done on the server",
     "list-ongoing-buildroot-build": "list all ongoing buildroot build\n",
