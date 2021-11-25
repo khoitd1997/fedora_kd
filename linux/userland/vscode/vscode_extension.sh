@@ -8,7 +8,6 @@ extension_general=" coenraads.bracket-pair-colorizer-2 \
                     rashwell.tcl \
                     redhat.vscode-yaml \
                     Gruntfuggly.todo-tree \
-                    ryuta46.multi-command \
                     vscodevim.vim \
                     ionutvmi.path-autocomplete \
                     wk-j.save-and-run \

@@ -145,14 +145,6 @@
         "command": "-workbench.view.scm"
     },
     {
-        "key": "ctrl+s",
-        "command": "-workbench.action.files.save"
-    },
-    {
-        "key": "ctrl+s",
-        "command": "multiCommand.saveAndEnterCommand"
-    },
-    {
         "key": "ctrl+d",
         "command": "-extension.vim_ctrl+d",
         "when": "editorTextFocus && vim.active && !inDebugRepl"
