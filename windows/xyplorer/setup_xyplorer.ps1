@@ -22,7 +22,7 @@ if (-not (Test-Path -Path "$XYPlorerInstallDestDir")) {
     $null = Remove-Item "$InstallWorkDir" -Recurse -ErrorAction Ignore
     $null = New-Item -ItemType Directory -Force -Path $InstallWorkDir
 
-    wget --output-document "$InstallWorkDir/xyplorer_full_noinstall.zip" "https://www.xyplorer.com/download/xyplorer_full_noinstall.zip"
+    Invoke-WebRequest -OutFile "$InstallWorkDir/xyplorer_full_noinstall.zip" "https://www.xyplorer.com/download/xyplorer_full_noinstall.zip"
     New-Item -ItemType Directory -Force -Path $XYPlorerInstallDestDir
     Expand-Archive -LiteralPath "$InstallWorkDir/xyplorer_full_noinstall.zip" -DestinationPath $XYPlorerInstallDestDir
 

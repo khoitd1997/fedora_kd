@@ -43,6 +43,7 @@ CUSTOM COMMAND LIST:
 - mount-bulk-share: mount the bulk share to Z: drive
 - umount-bulk-share: unmount the bulk share
 
+- cd-to-download: cd to the download folder
 - sha256sum <file_path>: take sha256 hash of a file
 - extract-tar <file-to-extract> [destination]: extract a .tar.gz file
 - run-script-bypass <path-to-script>: run a script with bypassing execution policy

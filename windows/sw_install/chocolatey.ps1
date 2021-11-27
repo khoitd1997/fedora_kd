@@ -18,7 +18,10 @@ $choco_app_list = @(
     "googlechrome"
     "autohotkey" 
     "dropbox" 
-    "spotify"
+
+    # Spotify is installed by default right now but uncomment when needed
+    # "spotify"
+
     "crystaldiskinfo"
     "treesizefree"
     "firefox"

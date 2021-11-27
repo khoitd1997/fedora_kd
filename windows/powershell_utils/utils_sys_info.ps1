@@ -8,7 +8,8 @@ function IsRunningAsAdmin {
 }
 
 function IsUsingHomeConfig {
-    return (get-itemproperty -Path "HKLM:\SOFTWARE\Microsoft\Windows NT\CurrentVersion" -Name ProductName).ProductName -like "*Home"
+    $WindowsTypeName = (get-itemproperty -Path "HKLM:\SOFTWARE\Microsoft\Windows NT\CurrentVersion" -Name ProductName).ProductName
+    return ($WindowsTypeName -like "*Home") -or ($WindowsTypeName -like "*Pro")
 }
 function IsUsingWorkConfig {
     return (get-itemproperty -Path "HKLM:\SOFTWARE\Microsoft\Windows NT\CurrentVersion" -Name ProductName).ProductName -like "*Enteprise"

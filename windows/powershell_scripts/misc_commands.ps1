@@ -25,3 +25,8 @@ function run-script-bypass {
     powershell.exe -NoProfile -ExecutionPolicy Bypass -File $ScriptPath
 }
 
+function cd-to-download {
+    $DownloadDir = (New-Object -ComObject Shell.Application).NameSpace('shell:Downloads').Self.Path
+    cd $DownloadDir
+}
+
