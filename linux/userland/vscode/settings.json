@@ -7,23 +7,6 @@
         "suppressLineUncommittedWarning": false,
         "suppressNoRepositoryWarning": false,
     },
-    "files.associations": {
-        "*.cu": "c",
-        "*.tdd": "makefile",
-        "*.cfg": "tcl",
-        "*.svd": "xml",
-        "*.emProject": "xml",
-        "*.emSession": "xml",
-        "*.hpp": "cpp",
-        "*.h": "cpp",
-        "*.ks": "shellscript",
-        "*.rasi": "css",
-        "*.in": "cmake",
-        "conanfile.txt": "toml",
-        "*.vdi": "log",
-        "*.inc": "bitbake",
-        "mount-bulk-share": "shellscript"
-    },
     "window.zoomLevel": 2,
     "python.formatting.provider": "autopep8",
     "gitlens.keymap": "chorded",
@@ -39,31 +22,6 @@
     },
     "html.autoClosingTags": false,
     "markdown.preview.doubleClickToSwitchToEditor": false,
-    //   "editor.tokenColorCustomizations": {
-    //     "textMateRules": [
-    //       {
-    //         "scope": "log.error",
-    //         "settings": {
-    //           "foreground": "#af1f1f",
-    //           "fontStyle": "bold"
-    //         }
-    //       },
-    //       {
-    //         "scope": "log.warning",
-    //         "settings": {
-    //           "foreground": "#f4ad42",
-    //           "fontStyle": ""
-    //         }
-    //       },
-    //       {
-    //         "scope": "log.info",
-    //         "settings": {
-    //           "foreground": "#42f4e5",
-    //           "fontStyle": ""
-    //         }
-    //       }
-    //     ]
-    //   },
     "C_Cpp.clang_format_fallbackStyle": "LLVM",
     "C_Cpp.loggingLevel": "Information",
     "git.autofetch": true,
@@ -277,6 +235,7 @@
     "workbench.editor.labelFormat": "short",
     "workbench.settings.openDefaultSettings": false,
     "breadcrumbs.enabled": true,
+    "editor.bracketPairColorization.enabled": true,
     //   "breadcrumbs.filePath": "off",
     "latex-workshop.view.pdf.viewer": "tab",
     "workbench.editor.closeEmptyGroups": false,

@@ -2,8 +2,7 @@
 
 set -e
 
-extension_general=" coenraads.bracket-pair-colorizer-2 \
-                    emilast.logfilehighlighter \
+extension_general=" emilast.logfilehighlighter \
                     oderwat.indent-rainbow \
                     rashwell.tcl \
                     redhat.vscode-yaml \
