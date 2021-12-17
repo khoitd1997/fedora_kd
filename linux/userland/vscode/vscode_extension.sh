@@ -4,6 +4,7 @@ set -e
 
 extension_general=" emilast.logfilehighlighter \
                     oderwat.indent-rainbow \
+                    ms-vscode.vscode-markdown-notebook \
                     rashwell.tcl \
                     redhat.vscode-yaml \
                     Gruntfuggly.todo-tree \

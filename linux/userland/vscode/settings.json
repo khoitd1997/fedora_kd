@@ -374,5 +374,11 @@
         }
     },
     "powershell.powerShellDefaultVersion": "Windows PowerShell (x64)",
+    "notebook.lineNumbers": "on",
+    "notebook.consolidatedRunButton": true,
+    "notebook.cellToolbarVisibility": "hover",
+    "workbench.editorAssociations": {
+        "*.md": "markdown-notebook"
+    },
     // "terminal.integrated.defaultProfile.windows": "PowerShell"
 }
