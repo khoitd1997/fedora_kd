@@ -3,6 +3,7 @@
 set -e
 
 extension_general=" emilast.logfilehighlighter \
+                    teabyii.ayu \
                     oderwat.indent-rainbow \
                     ms-vscode.vscode-markdown-notebook \
                     rashwell.tcl \
@@ -37,7 +38,8 @@ extension_misc="    eugenwiens.bitbake \
 extension_theme=" zhuangtongfa.material-theme "
 
 # programing languages
-extension_cpp=" ms-vscode.cpptools \
+extension_cpp=" ms-vscode.cpptools-extension-pack \
+                ms-vscode.cpptools \
                 hars.cppsnippets \
                 twxs.cmake \
                 asabil.meson \

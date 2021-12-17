@@ -12,7 +12,7 @@
     "gitlens.keymap": "chorded",
     "editor.minimap.enabled": false,
     "editor.wordWrap": "bounded",
-    "workbench.colorTheme": "One Dark Pro",
+    "workbench.colorTheme": "Ayu Mirage Bordered",
     "pasteImage.path": "${currentFileDir}/image",
     "editor.quickSuggestionsDelay": 2,
     "[markdown]": {
@@ -31,6 +31,7 @@
     "workbench.tips.enabled": false,
     "go.autocompleteUnimportedPackages": true,
     "window.titleBarStyle": "native",
+    "window.title": "${rootPath}${separator}${activeEditorShort}",
     "editor.fontSize": 11,
     "window.newWindowDimensions": "inherit",
     "window.restoreFullscreen": true,
@@ -350,7 +351,6 @@
     "editor.fontFamily": "Source Code Pro",
     "editor.mouseWheelZoom": true,
     "workbench.activityBar.visible": false,
-    "workbench.editor.showTabs": false,
     "workbench.startupEditor": "newUntitledFile",
     "python.languageServer": "Pylance",
     "redhat.telemetry.enabled": true,
@@ -380,5 +380,15 @@
     "workbench.editorAssociations": {
         "*.md": "markdown-notebook"
     },
+    "editor.guides.bracketPairs": true,
+    "workbench.editor.wrapTabs": true,
+    "workbench.editor.tabSizing": "shrink",
+    "editor.stickyTabStops": true,
+    "editor.wordBasedSuggestionsMode": "allDocuments",
+    "editor.suggest.showStatusBar": true,
+    "editor.formatOnSaveMode": "modifications",
+    "workbench.colorCustomizations": { // Can customize each aspect
+        "tab.activeBackground": "#7f8080" // Active Tab Top Highlighting
+    }
     // "terminal.integrated.defaultProfile.windows": "PowerShell"
 }
