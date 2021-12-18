@@ -3,7 +3,7 @@
 set -e
 
 script_dir="$( cd -- "$(dirname "$0")" >/dev/null 2>&1 ; pwd -P )"
-cd ${script_dir}
+cd "${script_dir}"
 
 if [ $(hostname) != "kd-server" ]; then
     echo "This can only be run from slurm controller, exitting"
@@ -11,7 +11,7 @@ if [ $(hostname) != "kd-server" ]; then
 fi
 
 function cleanup {
-    rm -rfv ${munge_key_path}
+    rm -rfv "${munge_key_path}"
 }
 trap cleanup EXIT
 
@@ -27,6 +27,6 @@ EOF
 ansible-playbook ./userland/setup.yml \
     --ask-become-pass \
     --tags munge-key \
-    -i ${script_dir}/inventory \
+    -i "${script_dir}/inventory" \
     --extra-vars "munge_key_path=${munge_key_path}" \
     --extra-vars "variable_host=client_group"

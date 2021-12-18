@@ -2,6 +2,8 @@
 
 work_dir=/tmp/pwsh_install
 
+set -e
+
 function cleanup {
     rm -rf ${work_dir}
 }
@@ -10,7 +12,7 @@ trap cleanup EXIT
 rm -rf ${work_dir}
 mkdir -p ${work_dir}
 
-cd ${work_dir}
+cd "${work_dir}"
 
 if [ -x "$(command -v pwsh)" ]; then
     echo "Powershell is already installed, exitting"

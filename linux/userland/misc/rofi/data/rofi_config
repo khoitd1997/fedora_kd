@@ -2,8 +2,6 @@
 rofi.modi:                           window,run,drun,combi
 ! "Set the modi to combine in combi mode" Set from: Default
 rofi.combi-modi:                     window,drun
-! "Font to use" Set from: Default
-rofi.font:                           source code pro 14
 
 ! "Whether to load and show icons" Set from: Default
 rofi.show-icons:                     true

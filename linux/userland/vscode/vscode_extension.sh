@@ -3,6 +3,7 @@
 set -e
 
 extension_general=" emilast.logfilehighlighter \
+                    timonwong.shellcheck \
                     teabyii.ayu \
                     oderwat.indent-rainbow \
                     ms-vscode.vscode-markdown-notebook \
@@ -46,7 +47,7 @@ extension_cpp=" ms-vscode.cpptools-extension-pack \
                 ms-vscode.cmake-tools "
 
 extension_csharp=" ms-dotnettools.csharp "
-extension_python=" ms-python.python njpwerner.autodocstring "
+extension_python=" ms-python.python njpwerner.autodocstring ms-python.vscode-pylance "
 extension_java=" redhat.java vscjava.vscode-java-debug naco-siren.gradle-language "
 extension_vhdl=" puorc.awesome-vhdl "
 extension_verilog=" mshr-h.veriloghdl "
@@ -119,7 +120,7 @@ fi
 for ext in ${extension_final}
 do
     if ! command code --install-extension "${ext}" ; then
-        print_error "Errrors while installing extensions for regular\n"
+        echo "Errrors while installing extensions for regular"
         exit 1
     fi
 

@@ -347,15 +347,13 @@
     "plantuml.java": "/usr/bin/java",
     "plantuml.exportFormat": "png",
     "plantuml.exportSubFolder": false,
-    "terminal.integrated.fontFamily": "Source Code Pro",
-    "editor.fontFamily": "Source Code Pro",
     "editor.mouseWheelZoom": true,
     "workbench.activityBar.visible": false,
     "workbench.startupEditor": "newUntitledFile",
     "python.languageServer": "Pylance",
     "redhat.telemetry.enabled": true,
     "yaml.schemas": {
-        "file:///c%3A/Users/khoid/.vscode/extensions/atlassian.atlascode-2.10.0/resources/schemas/pipelines-schema.json": "bitbucket-pipelines.yml"
+        "file:///c%3A/Users/khoid/.vscode/extensions/atlassian.atlascode-2.10.1/resources/schemas/pipelines-schema.json": "bitbucket-pipelines.yml"
     },
     "[jsonc]": {
         "editor.defaultFormatter": "vscode.json-language-features"

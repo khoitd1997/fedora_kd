@@ -3,7 +3,7 @@
 set -e
 
 currDir="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )"
-cd ${currDir}
+cd "${currDir}"
 
 #---------------------------------------------------------------------------
 
@@ -23,12 +23,12 @@ command code&
 sleep 5
 
 # copy Visual Studdio Code setting file and keybinding file
-ln -sfv ${currDir}/settings.json "${vscode_config_dir}/settings.json"
-ln -sfv ${currDir}/keybindings.json "${vscode_config_dir}/keybindings.json"
+ln -sfv "${currDir}/settings.json" "${vscode_config_dir}/settings.json"
+ln -sfv "${currDir}/keybindings.json" "${vscode_config_dir}/keybindings.json"
 
 if [ -x "$(command -v code-insiders)" ] || [ "${OS}" = "Darwin" ]; then
     code-insiders&
     sleep 5
-    ln -sfv ${currDir}/settings.json "${vscode_insider_config_dir}/settings.json"
-    ln -sfv ${currDir}/keybindings.json "${vscode_insider_config_dir}/keybindings.json"
+    ln -sfv "${currDir}/settings.json" "${vscode_insider_config_dir}/settings.json"
+    ln -sfv "${currDir}/keybindings.json" "${vscode_insider_config_dir}/keybindings.json"
 fi

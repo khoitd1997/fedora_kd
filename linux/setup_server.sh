@@ -3,17 +3,17 @@
 set -e
 
 script_dir="$( cd -- "$(dirname "$0")" >/dev/null 2>&1 ; pwd -P )"
-cd ${script_dir}
+cd "${script_dir}"
 
 # if this is being run locally on the server
 # then use localhost otherwise use the server hostname
 extra_var="variable_host=server_group"
-if [ $(hostname) = "kd-server" ]; then
+if [ "$(hostname)" = "kd-server" ]; then
     extra_var=""
 fi
 
 ansible-playbook ./userland/setup.yml \
     --ask-become-pass \
     --tags server \
-    -i ${script_dir}/inventory \
+    -i "${script_dir}/inventory" \
     --extra-vars "${extra_var}"

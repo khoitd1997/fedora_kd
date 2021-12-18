@@ -12,7 +12,7 @@ On a fresh fedora installation, run `setup.py`
 
 Some useful commands:
 
-```shell
+```markdown
 vagrant ssh # helpful for ssh into the VM
 vagrant destroy -f # destroy the current VM
 vagrant up --provider=libvirt # bring up the VM

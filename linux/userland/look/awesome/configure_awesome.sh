@@ -3,7 +3,7 @@
 
 set -e
 
-config_dir="~/.config/awesome"
+config_dir="${HOME}/.config/awesome"
 currDir="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )"
 #--------------------------------------------------------------
 
@@ -13,4 +13,4 @@ then
 else
     rm -rf "$config_dir"
 fi
-    ln -sfv ${currDir}/data/awesome ~/.config
+    ln -sfv "${currDir}/data/awesome" "${HOME}/.config"

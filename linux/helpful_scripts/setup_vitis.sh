@@ -23,7 +23,7 @@ tar xvf ${vitis_files_dir}/Xilinx_Vivado_Vitis_Update_2020.1.1_0805_2247.tar.gz
 
 cd ${work_dir}/Xilinx_Unified_2020.1_0602_1208
 echo "Installing Main Vitis"
-./xsetup -c ${vitis_config_dir} --agree XilinxEULA,3rdPartyEULA,WebTalkTerms --batch Add
+./xsetup -c "${vitis_config_dir}" --agree XilinxEULA,3rdPartyEULA,WebTalkTerms --batch Add
 
 cd ${work_dir}/Xilinx_Vivado_Vitis_Update_2020.1.1_0805_2247
 echo "Updating Vitis"
