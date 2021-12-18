@@ -3,8 +3,8 @@
 set -e
 
 extension_general=" emilast.logfilehighlighter \
+                    jeff-hykin.xd-theme \
                     timonwong.shellcheck \
-                    teabyii.ayu \
                     oderwat.indent-rainbow \
                     ms-vscode.vscode-markdown-notebook \
                     rashwell.tcl \
@@ -35,8 +35,6 @@ extension_misc="    eugenwiens.bitbake \
                     jack89ita.copy-filename \
                     jebbs.plantuml 
                     ms-vscode.powershell "
-
-extension_theme=" zhuangtongfa.material-theme "
 
 # programing languages
 extension_cpp=" ms-vscode.cpptools-extension-pack \
@@ -85,7 +83,7 @@ extension_embedded=" platformio.platformio-ide webfreak.debug "
 
 #-------------------------------------------------------------------------------------
 
-extension_all="${extension_general}${extension_theme}"
+extension_all="${extension_general}"
 
 extension_all="${extension_all}${extension_python}"
 extension_all="${extension_all}${extension_cpp}"
@@ -109,7 +107,7 @@ extension_all="${extension_all}${extension_liveshare}"
 extension_all="${extension_all}${extension_web}"
 extension_all="${extension_all}${extension_misc}"
 
-extension_minimal="${extension_general}${extension_theme}"
+extension_minimal="${extension_general}"
 extension_minimal="${extension_minimal} ms-python.python ms-vscode.cpptools hars.cppsnippets twxs.cmake eamodio.gitlens donjayamanne.githistory mhutchie.git-graph Atlassian.atlascode "
 
 extension_final="${extension_minimal}"

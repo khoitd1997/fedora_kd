@@ -12,7 +12,7 @@
     "gitlens.keymap": "chorded",
     "editor.minimap.enabled": false,
     "editor.wordWrap": "bounded",
-    "workbench.colorTheme": "Ayu Mirage Bordered",
+    "workbench.colorTheme": "XD Theme - MixItUp",
     "pasteImage.path": "${currentFileDir}/image",
     "editor.quickSuggestionsDelay": 2,
     "[markdown]": {
