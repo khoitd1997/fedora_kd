@@ -19,6 +19,7 @@
           - nautilus-dropbox
           - prusa-slicer
           - curl
+          - sshpass
           - debconf-utils
           - wget
           - zsh
