@@ -5,6 +5,7 @@ set -e
 extension_general=" emilast.logfilehighlighter \
                     jeff-hykin.xd-theme \
                     timonwong.shellcheck \
+                    ritwickdey.liveserver \
                     mads-hartmann.bash-ide-vscode \
                     oderwat.indent-rainbow \
                     ms-vscode.vscode-markdown-notebook \
