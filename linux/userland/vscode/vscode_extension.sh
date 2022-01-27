@@ -8,7 +8,6 @@ extension_general=" emilast.logfilehighlighter \
                     ritwickdey.liveserver \
                     mads-hartmann.bash-ide-vscode \
                     oderwat.indent-rainbow \
-                    ms-vscode.vscode-markdown-notebook \
                     rashwell.tcl \
                     redhat.vscode-yaml \
                     Gruntfuggly.todo-tree \

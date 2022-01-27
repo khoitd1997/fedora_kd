@@ -138,7 +138,7 @@
           - libvirt-daemon-system
           - libvirt-clients
           - bridge-utils
-          # - vagrant
+          - vagrant
           # - vagrant-sshfs
           # - vagrant-libvirt
 
