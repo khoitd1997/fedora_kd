@@ -1,45 +1,59 @@
 {
     "$help": "https://aka.ms/terminal-documentation",
     "$schema": "https://aka.ms/terminal-profiles-schema",
-    "actions": [
+    "actions": 
+    [
         {
-            "command": {
-                "action": "switchToTab",
-                "index": 7
-            },
-            "keys": "alt+8"
-        },
-        {
-            "command": {
-                "action": "copy",
-                "singleLine": false
-            },
-            "keys": "ctrl+c"
-        },
-        {
-            "command": {
+            "command": 
+            {
                 "action": "switchToTab",
                 "index": 3
             },
             "keys": "alt+4"
         },
         {
-            "command": "find",
-            "keys": "ctrl+shift+f"
+            "command": 
+            {
+                "action": "copy",
+                "singleLine": false
+            },
+            "keys": "ctrl+c"
         },
         {
-            "command": {
+            "command": 
+            {
+                "action": "switchToTab",
+                "index": 7
+            },
+            "keys": "alt+8"
+        },
+        {
+            "command": 
+            {
                 "action": "switchToTab",
                 "index": 0
             },
             "keys": "alt+1"
         },
         {
+            "command": "find",
+            "keys": "ctrl+shift+f"
+        },
+        {
             "command": "paste",
             "keys": "ctrl+v"
         },
         {
-            "command": {
+            "command": 
+            {
+                "action": "switchToTab",
+                "index": 8
+            },
+            "keys": "alt+9"
+        },
+        {
+            "command": 
+            {
                 "action": "splitPane",
                 "split": "auto",
                 "splitMode": "duplicate"
@@ -47,42 +61,40 @@
             "keys": "alt+shift+d"
         },
         {
-            "command": {
-                "action": "switchToTab",
-                "index": 8
-            },
-            "keys": "alt+9"
-        },
-        {
-            "command": {
-                "action": "switchToTab",
-                "index": 1
-            },
-            "keys": "alt+2"
-        },
-        {
-            "command": {
+            "command": 
+            {
                 "action": "switchToTab",
                 "index": 4
             },
             "keys": "alt+5"
         },
         {
-            "command": {
+            "command": 
+            {
+                "action": "switchToTab",
+                "index": 1
+            },
+            "keys": "alt+2"
+        },
+        {
+            "command": 
+            {
                 "action": "switchToTab",
                 "index": 2
             },
             "keys": "alt+3"
         },
         {
-            "command": {
+            "command": 
+            {
                 "action": "switchToTab",
                 "index": 5
             },
             "keys": "alt+6"
         },
         {
-            "command": {
+            "command": 
+            {
                 "action": "switchToTab",
                 "index": 6
             },
@@ -93,13 +105,16 @@
     "copyOnSelect": false,
     "defaultProfile": "{61c54bbd-c2c6-5271-96e7-009a87ff44bf}",
     "disableAnimations": true,
-    "profiles": {
+    "profiles": 
+    {
         "defaults": {},
-        "list": [
+        "list": 
+        [
             {
                 "bellStyle": "taskbar",
                 "commandline": "powershell.exe",
-                "font": {
+                "font": 
+                {
                     "face": "Consolas"
                 },
                 "guid": "{61c54bbd-c2c6-5271-96e7-009a87ff44bf}",
@@ -110,7 +125,8 @@
                 "bellStyle": "taskbar",
                 "colorScheme": "Campbell",
                 "commandline": "cmd.exe",
-                "font": {
+                "font": 
+                {
                     "face": "Consolas"
                 },
                 "guid": "{0caa0dad-35be-5f56-a8ff-afceeeaa6101}",
@@ -120,7 +136,8 @@
             {
                 "bellStyle": "taskbar",
                 "experimental.retroTerminalEffect": false,
-                "font": {
+                "font": 
+                {
                     "face": "Consolas"
                 },
                 "guid": "{b453ae62-4e3d-5e58-b989-0a998ec441b8}",
@@ -131,7 +148,8 @@
             {
                 "bellStyle": "taskbar",
                 "colorScheme": "Campbell",
-                "font": {
+                "font": 
+                {
                     "face": "Consolas"
                 },
                 "guid": "{574e775e-4f2a-5b96-ac1e-a2962a402336}",
@@ -140,19 +158,10 @@
                 "source": "Windows.Terminal.PowershellCore"
             },
             {
-                "bellStyle": "taskbar",
-                "font": {
-                    "face": "Consolas"
-                },
-                "guid": "{2c4de342-38b7-51cf-b940-2309a097f518}",
-                "hidden": false,
-                "name": "Ubuntu",
-                "source": "Windows.Terminal.Wsl"
-            },
-            {
                 "bellStyle": "none",
                 "commandline": "C:\\Program Files\\Git\\bin\\bash.exe",
-                "font": {
+                "font": 
+                {
                     "face": "Consolas"
                 },
                 "guid": "{02744c25-268a-490c-8e8c-f3af0b9be230}",
@@ -160,10 +169,17 @@
                 "name": "Git Bash Profile",
                 "startingDirectory": "%USERPROFILE%",
                 "tabTitle": "Git Bash"
+            },
+            {
+                "guid": "{2c4de342-38b7-51cf-b940-2309a097f518}",
+                "hidden": false,
+                "name": "Ubuntu",
+                "source": "Windows.Terminal.Wsl"
             }
         ]
     },
-    "schemes": [
+    "schemes": 
+    [
         {
             "background": "#0C0C0C",
             "black": "#0C0C0C",
