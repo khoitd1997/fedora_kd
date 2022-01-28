@@ -7,6 +7,7 @@ extension_general=" emilast.logfilehighlighter \
                     timonwong.shellcheck \
                     ritwickdey.liveserver \
                     mads-hartmann.bash-ide-vscode \
+                    enkia.tokyo-night \
                     oderwat.indent-rainbow \
                     rashwell.tcl \
                     redhat.vscode-yaml \

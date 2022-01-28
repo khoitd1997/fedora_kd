@@ -12,7 +12,7 @@
     "gitlens.keymap": "chorded",
     "editor.minimap.enabled": false,
     "editor.wordWrap": "bounded",
-    "workbench.colorTheme": "XD Theme",
+    "workbench.colorTheme": "Tokyo Night",
     "pasteImage.path": "${currentFileDir}/image",
     "editor.quickSuggestionsDelay": 2,
     "[markdown]": {
@@ -387,6 +387,9 @@
     "editor.formatOnSaveMode": "modifications",
     "workbench.colorCustomizations": { // Can customize each aspect
         "tab.activeBackground": "#7f8080" // Active Tab Top Highlighting
+    },
+    "files.associations": {
+        "*.inc": "bitbake"
     }
     // "terminal.integrated.defaultProfile.windows": "PowerShell"
 }
