@@ -33,6 +33,7 @@
 
           - qt-creator
           - cmake
+          - sshpass
           - heaptrack
           - perf
           - gcc

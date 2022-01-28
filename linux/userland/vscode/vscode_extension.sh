@@ -5,9 +5,10 @@ set -e
 extension_general=" emilast.logfilehighlighter \
                     jeff-hykin.xd-theme \
                     timonwong.shellcheck \
+                    ritwickdey.liveserver \
                     mads-hartmann.bash-ide-vscode \
+                    enkia.tokyo-night \
                     oderwat.indent-rainbow \
-                    ms-vscode.vscode-markdown-notebook \
                     rashwell.tcl \
                     redhat.vscode-yaml \
                     Gruntfuggly.todo-tree \
