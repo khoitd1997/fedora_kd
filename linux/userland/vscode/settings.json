@@ -243,16 +243,6 @@
     "editor.cursorStyle": "underline",
     "C_Cpp.default.intelliSenseMode": "gcc-x64",
     "C_Cpp.errorSquiggles": "Enabled",
-    "saveAndRun": {
-        "commands": [
-            {
-                "match": "\\CMakeLists.txt$",
-                "cmd": "cmake-format -i ${file}",
-                "useShortcut": false,
-                "silent": true
-            }
-        ]
-    },
     "C_Cpp.default.includePath": [
         "~/.conan/data"
     ],
@@ -269,7 +259,6 @@
     "editor.foldingStrategy": "indentation",
     "bookmarks.showCommandsInContextMenu": false,
     "bookmarks.saveBookmarksInProject": false,
-    "workbench.sideBar.location": "left",
     "[typescript]": {
         "editor.defaultFormatter": "vscode.typescript-language-features"
     },
@@ -348,7 +337,6 @@
     "plantuml.exportFormat": "png",
     "plantuml.exportSubFolder": false,
     "editor.mouseWheelZoom": true,
-    "workbench.activityBar.visible": false,
     "workbench.startupEditor": "newUntitledFile",
     "python.languageServer": "Pylance",
     "redhat.telemetry.enabled": true,

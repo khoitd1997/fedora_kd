@@ -1948,14 +1948,6 @@
         "command": "-workbench.action.toggleSidebarVisibility"
     },
     {
-        "key": "ctrl+shift+r",
-        "command": "-extension.saveAndRun.execute"
-    },
-    {
-        "key": "ctrl+shift+r",
-        "command": "-extension.saveAndRun.execute"
-    },
-    {
         "key": "ctrl+r",
         "command": "-extension.vim_ctrl+r",
         "when": "editorTextFocus && vim.active && vim.use<C-r> && !inDebugRepl"

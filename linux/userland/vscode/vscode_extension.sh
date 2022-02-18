@@ -14,7 +14,6 @@ extension_general=" emilast.logfilehighlighter \
                     Gruntfuggly.todo-tree \
                     vscodevim.vim \
                     ionutvmi.path-autocomplete \
-                    wk-j.save-and-run \
                     dakara.dakara-foldplus \
                     alefragnani.bookmarks \
                     ryu1kn.partial-diff \
@@ -44,6 +43,7 @@ extension_cpp=" ms-vscode.cpptools-extension-pack \
                 hars.cppsnippets \
                 twxs.cmake \
                 asabil.meson \
+                cheshirekow.cmake-format \
                 ms-vscode.cmake-tools "
 
 extension_csharp=" ms-dotnettools.csharp "
