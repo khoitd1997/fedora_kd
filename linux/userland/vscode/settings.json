@@ -237,7 +237,6 @@
     "workbench.settings.openDefaultSettings": false,
     "breadcrumbs.enabled": true,
     "editor.bracketPairColorization.enabled": true,
-    //   "breadcrumbs.filePath": "off",
     "latex-workshop.view.pdf.viewer": "tab",
     "workbench.editor.closeEmptyGroups": false,
     "editor.cursorStyle": "underline",
@@ -279,7 +278,6 @@
     "python.jediEnabled": false,
     "remote.SSH.defaultExtensions": [
         "eamodio.gitlens",
-        "wk-j.save-and-run",
         "sleistner.vscode-fileutils",
         "alefragnani.bookmarks",
         "compulim.vscode-clock",
@@ -378,6 +376,7 @@
     },
     "files.associations": {
         "*.inc": "bitbake"
-    }
+    },
+    "git.confirmSync": false
     // "terminal.integrated.defaultProfile.windows": "PowerShell"
 }
