@@ -1,5 +1,4 @@
 {
-    "$help": "https://aka.ms/terminal-documentation",
     "$schema": "https://aka.ms/terminal-profiles-schema",
     "actions": 
     [
@@ -7,9 +6,9 @@
             "command": 
             {
                 "action": "switchToTab",
-                "index": 3
+                "index": 7
             },
-            "keys": "alt+4"
+            "keys": "alt+8"
         },
         {
             "command": 
@@ -23,9 +22,13 @@
             "command": 
             {
                 "action": "switchToTab",
-                "index": 7
+                "index": 3
             },
-            "keys": "alt+8"
+            "keys": "alt+4"
+        },
+        {
+            "command": "find",
+            "keys": "ctrl+shift+f"
         },
         {
             "command": 
@@ -34,10 +37,6 @@
                 "index": 0
             },
             "keys": "alt+1"
-        },
-        {
-            "command": "find",
-            "keys": "ctrl+shift+f"
         },
         {
             "command": "paste",
@@ -54,11 +53,10 @@
         {
             "command": 
             {
-                "action": "splitPane",
-                "split": "auto",
-                "splitMode": "duplicate"
+                "action": "switchToTab",
+                "index": 1
             },
-            "keys": "alt+shift+d"
+            "keys": "alt+2"
         },
         {
             "command": 
@@ -71,10 +69,11 @@
         {
             "command": 
             {
-                "action": "switchToTab",
-                "index": 1
+                "action": "splitPane",
+                "split": "auto",
+                "splitMode": "duplicate"
             },
-            "keys": "alt+2"
+            "keys": "alt+shift+d"
         },
         {
             "command": 
@@ -110,6 +109,16 @@
         "defaults": {},
         "list": 
         [
+            {
+                "name": "Developer PowerShell for VS 2019",
+                "commandline": "powershell.exe -noe -c \"&{$vsPath = &(Join-Path ${env:ProgramFiles(x86)} '\\Microsoft Visual Studio\\Installer\\vswhere.exe') -property installationpath; Import-Module (Join-Path $vsPath 'Common7\\Tools\\Microsoft.VisualStudio.DevShell.dll'); Enter-VsDevShell -VsInstallPath $vsPath -SkipAutomaticLocation}\"",
+                "icon": "%ProgramFiles(x86)%\\Microsoft Visual Studio\\2019\\Community\\Common7\\IDE\\Assets\\VisualStudio.70x70.contrast-standard_scale-180.png"
+            },
+            {
+                "name": "Developer Command Prompt for VS 2019",
+                "commandline": "%comspec%  /k \"%ProgramFiles(x86)%\\Microsoft Visual Studio\\2019\\Community\\Common7\\Tools\\VsDevCmd.bat\"",
+                "icon": "%ProgramFiles(x86)%\\Microsoft Visual Studio\\2019\\Community\\Common7\\IDE\\Assets\\VisualStudio.70x70.contrast-standard_scale-180.png"
+            },
             {
                 "bellStyle": "taskbar",
                 "commandline": "powershell.exe",

@@ -12,7 +12,7 @@
     "gitlens.keymap": "chorded",
     "editor.minimap.enabled": false,
     "editor.wordWrap": "bounded",
-    "workbench.colorTheme": "Tokyo Night",
+    "workbench.colorTheme": "XD Theme",
     "pasteImage.path": "${currentFileDir}/image",
     "editor.quickSuggestionsDelay": 2,
     "[markdown]": {
@@ -339,7 +339,7 @@
     "python.languageServer": "Pylance",
     "redhat.telemetry.enabled": true,
     "yaml.schemas": {
-        "file:///c%3A/Users/khoid/.vscode/extensions/atlassian.atlascode-2.10.1/resources/schemas/pipelines-schema.json": "bitbucket-pipelines.yml"
+        "file:///c%3A/Users/khoid/.vscode/extensions/atlassian.atlascode-2.10.9/resources/schemas/pipelines-schema.json": "bitbucket-pipelines.yml"
     },
     "[jsonc]": {
         "editor.defaultFormatter": "vscode.json-language-features"
@@ -375,8 +375,10 @@
         "tab.activeBackground": "#7f8080" // Active Tab Top Highlighting
     },
     "files.associations": {
-        "*.inc": "bitbake"
+        "*.inc": "bitbake",
+        "*.json": "jsonc"
     },
-    "git.confirmSync": false
+    "sigasi.pathToLicense": "C:\\Users\\khoid\\Downloads\\sigasi.lic",
+    "sigasi.java.path": "JAVA_HOME"
     // "terminal.integrated.defaultProfile.windows": "PowerShell"
 }
