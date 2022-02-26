@@ -186,7 +186,6 @@
       args:
         warn: false
 
-    # - include: xmodmap/xmodmap.yml
     - stat:
         path: ~/temp
       register: temp_directory_status
