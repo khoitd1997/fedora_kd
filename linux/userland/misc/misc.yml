@@ -161,8 +161,6 @@
 
     - include: handler.yml
 
-    - include: applet/applet.yml
-
     - include: rofi/rofi.yml
 
     - include: vim/vim.yml
