@@ -207,16 +207,6 @@
       tags:
         - tempdir
 
-    - name: configure redshift
-      shell: "{{item}}"
-      with_items:
-        - ln -sfv {{ playbook_dir }}/misc/redshift/redshift.conf ~/.config/redshift.conf
-
-      args:
-        warn: false
-      tags:
-        - redshift
-
     - name: install ruby gems
       shell: "{{item}}"
       with_items:
