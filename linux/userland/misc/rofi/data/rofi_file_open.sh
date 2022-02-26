@@ -33,16 +33,16 @@ then
   then
     while read -r line; do
       echo "$line"
-    done <<< $(fd .*"${QUERY#\?}".* ~ 2>&1 | grep -v 'Permission denied\|Input/output error')
+    done <<< $(fdfind .*"${QUERY#\?}".* ~ 2>&1 | grep -v 'Permission denied\|Input/output error')
 
   elif [[ "$@" == \~* ]]
   then
     while read -r line; do
       echo "$line"
-    done <<< $(fd .*"${QUERY#\~}".* ~ 2>&1 | grep -v 'Permission denied\|Input/output error')
+    done <<< $(fdfind .*"${QUERY#\~}".* ~ 2>&1 | grep -v 'Permission denied\|Input/output error')
   else
-    fd .*"${QUERY#!}".* ~ 2>&1 | grep -v 'Permission denied\|Input/output error'
+    fdfind .*"${QUERY#!}".* ~ 2>&1 | grep -v 'Permission denied\|Input/output error'
   fi
 else
-    fd . ~ # show every file in home path for user to choose
+    fdfind . ~ # show every file in home path for user to choose
 fi
