@@ -5,27 +5,6 @@
       tags:
         - terminal
         - gnome-terminal
-    - name: configure slick greeter
-      blockinfile:
-        path: /etc/lightdm/slick-greeter.conf
-        marker: "# {mark} .slick-greeter config"
-        create: yes
-        block: |
-          [Greeter]
-          draw-user-backgrounds=true
-          background=/usr/share/user_file/resource/TCP118v1_by_Tiziano_Consonni.jpg
-          background-color='#2ceb26'
-          logo=/usr/share/user_file/resource/login_logo.png
-          draw-grid=false
-          enable-hidpi='auto'
-          font-name='Noto Sans 11'
-          icon-theme-name='Mint-Y-Aqua'
-          show-hostname=true
-          theme-name='Mint-Y-Dark-Aqua'
-          show-clock=true
-          onscreen-keyboard=false
-      become: true
-      when: ansible_facts['distribution'] == "Fedora"
 
   tags:
     - look
