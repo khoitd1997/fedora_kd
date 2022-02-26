@@ -1,16 +1,4 @@
 - block:
-    - name: configure cinnamon default app handler
-      command: "{{item}}"
-      with_items:
-        - ln -sfv {{ playbook_dir }}/misc/mimeapps.list ~/.config/mimeapps.list
-        - xdg-mime default code.desktop application/nemo-action
-        - xdg-mime default nemo.desktop inode/directory
-      args:
-        warn: false
-      when: lookup('env', 'DESKTOP_SESSION') == "cinnamon"
-      tags:
-        - cinnamon
-
     - name: configure xdg open default app handler
       command: xdg-mime default {{ item.app }} {{ item.type }}
       with_items:

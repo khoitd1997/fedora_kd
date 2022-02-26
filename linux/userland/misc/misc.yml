@@ -157,8 +157,6 @@
 
     - include: git.yml
 
-    - include: nemo/nemo.yml
-
     - include: launcher_app/launcher_app.yml
 
     - include: handler.yml
