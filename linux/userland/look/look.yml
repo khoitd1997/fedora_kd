@@ -40,41 +40,5 @@
       become: true
       when: ansible_facts['distribution'] == "Fedora"
 
-    # here for reference only, it won't work with nvidia driver
-    - name: setting up plymouth
-      become: true
-      block:
-        - command: mkdir -vp /usr/share/plymouth/themes/boot
-
-        - name: setup plymouth boot
-          blockinfile:
-            path: /usr/share/plymouth/themes/boot/boot.plymouth
-            marker: "# {mark} .plymouth boot config"
-            create: yes
-            block: |
-              [Plymouth Theme]
-              Name=boot
-              Description=Infinite loop rainbow
-              ModuleName=script
-              [script]
-              ImageDir=/usr/share/user_file/plymouth
-              ScriptFile=/usr/share/user_file/plymouth/animation.script
-
-        - name: setup plymouth conf
-          blockinfile:
-            path: /etc/plymouth/plymouthd.conf
-            marker: "# {mark} .plymouth conf config"
-            create: yes
-            block: |
-              ShowDelay=0
-
-        - name: changing default boot theme
-          command: /usr/sbin/plymouth-set-default-theme boot -R
-
-      tags:
-        - plymouth
-
-      when: ansible_facts['distribution'] == "Fedora"
-
   tags:
     - look
