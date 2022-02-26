@@ -1,10 +1,6 @@
 {
     "policies": {
         "ExtensionSettings": {
-            "{37cf1a46-0300-4893-a483-248807035bbf}": {
-                "installation_mode": "force_installed",
-                "install_url": "https://addons.mozilla.org/firefox/downloads/latest/freedom-website-blocker/latest.xpi"
-            }
         }
     }
 }

@@ -17,7 +17,6 @@
         dpkg_options: "force-overwrite,force-confdef,force-confold"
         name:
           - nautilus-dropbox
-          - prusa-slicer
           - curl
           - sshpass
           - debconf-utils
@@ -25,7 +24,10 @@
           - zsh
           - fd-find
           - tio
-          - qt5-default
+          - qtbase5-dev
+          - qtchooser
+          - qt5-qmake
+          - qtbase5-dev-tools
           - fish
           - bat
           - ncdu
@@ -47,11 +49,7 @@
           - clang-tools
           - llvm
           - cppcheck
-          # - libasan
-          # - libubsan
           - ninja-build
-          # - boost
-          # - boost-devel
 
           - neovim
           - strace
@@ -82,7 +80,6 @@
           - googletest
           - libgtest-dev
 
-          - redshift-gtk
           - seahorse
           - autokey-gtk
           - evince
@@ -101,19 +98,6 @@
           - arduino
           - vlc
           - pv
-
-          # - texlive-latexindent
-          # - texlive-scheme-basic
-          # - texlive-collection-latexextra
-          # - texlive-collection-latexrecommended
-          # - texlive-collection-xetex
-
-          # - gstreamer-plugins-bad
-          # - gstreamer-plugins-bad-nonfree
-          # - gstreamer-plugins-ugly
-          # - gstreamer-ffmpeg
-          # - gstreamer1-plugins-good-extras
-          # - gstreamer1-plugins-bad-free-extras
 
           - rofi
           - gnome-tweaks
@@ -143,13 +127,6 @@
           # - vagrant-libvirt
 
           - default-jdk
-
-          # - arc-theme
-          # - plymouth-plugin-script
-          # - awesome
-
-          # - lxappearance
-          # - qt5ct
 
           - ruby-dev
 
