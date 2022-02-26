@@ -139,12 +139,11 @@ export PATH=$PATH:${GOPATH//://bin:}/bin
 export PATH=$PATH:${HOME}/.local/bin
 export PATH=$PATH:${HOME}/.local/bin/custom_client_scripts
 
-source /usr/share/doc/fzf/examples/key-bindings.bash
-source /usr/share/doc/fzf/examples/completion.bash
+source "/usr/share/doc/fzf/examples/key-bindings.bash"
 
-source /usr/share/bash-completion/completions/git
+source "/usr/share/bash-completion/completions/git"
 
-source ~/git-prompt.sh
+source "${HOME}/git-prompt.sh"
 export GIT_PS1_SHOWDIRTYSTATE=1
 PS1='${debian_chroot:+($debian_chroot)}\[\033[01;35m\]\w\[\033[00m\]\[\033[01;33m\]$(__git_ps1 " (%s)")\[\033[00m\]\[\033[01;32m\] \h\[\033[00m\] →  '
 
