@@ -387,6 +387,9 @@
     "atlascode.jira.statusbar.showProduct": false,
     "atlascode.jira.statusbar.showUser": false,
     "git.enableStatusBarSync": false,
-    "git-graph.showStatusBarItem": false
+    "git-graph.showStatusBarItem": false,
+    "gitlens.plusFeatures.enabled": false,
+    "gitlens.showWelcomeOnInstall": false,
+    "gitlens.statusBar.reduceFlicker": false
     // "terminal.integrated.defaultProfile.windows": "PowerShell"
 }
