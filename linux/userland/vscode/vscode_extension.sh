@@ -3,11 +3,10 @@
 set -e
 
 extension_general=" emilast.logfilehighlighter \
-                    jeff-hykin.xd-theme \
                     timonwong.shellcheck \
+                    monokai.theme-monokai-pro-vscode \
                     ritwickdey.liveserver \
                     mads-hartmann.bash-ide-vscode \
-                    enkia.tokyo-night \
                     oderwat.indent-rainbow \
                     rashwell.tcl \
                     redhat.vscode-yaml \
@@ -39,6 +38,7 @@ extension_misc="    eugenwiens.bitbake \
 
 # programing languages
 extension_cpp=" ms-vscode.cpptools-extension-pack \
+                jeff-hykin.better-cpp-syntax \
                 ms-vscode.cpptools \
                 hars.cppsnippets \
                 twxs.cmake \

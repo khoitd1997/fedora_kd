@@ -12,7 +12,7 @@
     "gitlens.keymap": "chorded",
     "editor.minimap.enabled": false,
     "editor.wordWrap": "bounded",
-    "workbench.colorTheme": "XD Theme",
+    "workbench.colorTheme": "Monokai Pro",
     "pasteImage.path": "${currentFileDir}/image",
     "editor.quickSuggestionsDelay": 2,
     "[markdown]": {
@@ -390,6 +390,7 @@
     "git-graph.showStatusBarItem": false,
     "gitlens.plusFeatures.enabled": false,
     "gitlens.showWelcomeOnInstall": false,
-    "gitlens.statusBar.reduceFlicker": false
+    "gitlens.statusBar.reduceFlicker": false,
+    "workbench.iconTheme": "Monokai Pro Icons"
     // "terminal.integrated.defaultProfile.windows": "PowerShell"
 }
