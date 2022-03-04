@@ -26,43 +26,33 @@ extension_general=" emilast.logfilehighlighter \
 
 extension_misc="    eugenwiens.bitbake \
                     bungcip.better-toml \
-                    ms-vscode-remote.vscode-remote-extensionpack 
+                    ms-vscode-remote.vscode-remote-extensionpack \
                     ms-vscode-remote.remote-ssh \
                     gaborv.flatbuffers \
                     compulim.vscode-clock \
                     ibm.output-colorizer \
                     marcostazi.vs-code-vagrantfile \
                     jack89ita.copy-filename \
-                    jebbs.plantuml 
                     ms-vscode.powershell "
 
 # programing languages
 extension_cpp=" ms-vscode.cpptools-extension-pack \
                 jeff-hykin.better-cpp-syntax \
                 ms-vscode.cpptools \
-                hars.cppsnippets \
+                cschlosser.doxdocgen \
                 twxs.cmake \
-                asabil.meson \
                 cheshirekow.cmake-format \
                 ms-vscode.cmake-tools "
 
-extension_csharp=" ms-dotnettools.csharp "
 extension_python=" ms-python.python njpwerner.autodocstring ms-python.vscode-pylance "
-extension_java=" redhat.java vscjava.vscode-java-debug naco-siren.gradle-language "
-extension_vhdl=" puorc.awesome-vhdl "
-extension_verilog=" mshr-h.veriloghdl "
-extension_matlab=" Gimly81.matlab "
-extension_golang=" ms-vscode.go "
+extension_java=" redhat.java "
 extension_gcode=" ml.nc-gcode "
 
 # text marking languages
-extension_md=" mushan.vscode-paste-image \
-               DavidAnson.vscode-markdownlint \
+extension_md=" DavidAnson.vscode-markdownlint \
                yzhang.markdown-all-in-one \
                shd101wyy.markdown-preview-enhanced \
-               yzane.markdown-pdf "
-
-extension_latex=" james-yu.latex-workshop "
+               "
 
 # tools
 extension_git=" eamodio.gitlens \
@@ -70,7 +60,6 @@ extension_git=" eamodio.gitlens \
                 github.vscode-pull-request-github \
                 mhutchie.git-graph "
 
-extension_doxygen=" cschlosser.doxdocgen "
 extension_arm=" dan-c-underwood.arm marus25.cortex-debug "
 extension_qt=" zhoufeng.pyqt-integration bbenoist.qml "
 
@@ -89,28 +78,21 @@ extension_all="${extension_general}"
 
 extension_all="${extension_all}${extension_python}"
 extension_all="${extension_all}${extension_cpp}"
-# extension_all="${extension_all}${extension_csharp}"
-# extension_all="${extension_all}${extension_matlab}"
-# extension_all="${extension_all}${extension_vhdl}"
-# extension_all="${extension_all}${extension_golang}"
-# extension_all="${extension_all}${extension_verilog}"
-# extension_all="${extension_all}${extension_latex}"
 extension_all="${extension_all}${extension_java}"
 extension_all="${extension_all}${extension_md}"
-extension_all="${extension_all}${extension_gcode}"
-extension_all="${extension_all}${extension_embedded}"
+# extension_all="${extension_all}${extension_gcode}"
+# extension_all="${extension_all}${extension_embedded}"
 
 extension_all="${extension_all}${extension_git}"
-extension_all="${extension_all}${extension_doxygen}"
 extension_all="${extension_all}${extension_arm}"
 # extension_all="${extension_all}${extension_qt}"
 extension_all="${extension_all}${extension_docker}"
-extension_all="${extension_all}${extension_liveshare}"
-extension_all="${extension_all}${extension_web}"
+# extension_all="${extension_all}${extension_liveshare}"
+# extension_all="${extension_all}${extension_web}"
 extension_all="${extension_all}${extension_misc}"
 
 extension_minimal="${extension_general}"
-extension_minimal="${extension_minimal} ms-python.python ms-vscode.cpptools hars.cppsnippets twxs.cmake eamodio.gitlens donjayamanne.githistory mhutchie.git-graph Atlassian.atlascode "
+extension_minimal="${extension_minimal} ${extension_cpp} ${extension_git} ${extension_python} "
 
 extension_final="${extension_minimal}"
 if [ "$#" -gt 0 ]; then
@@ -123,11 +105,4 @@ do
         echo "Errrors while installing extensions for regular"
         exit 1
     fi
-
-    # if [ -x "$(command -v code-insiders)" ]; then
-    #     if ! code-insiders --install-extension "${ext}" ; then
-    #         print_error "Errrors while installing extensions for insider\n"
-    #         exit 1
-    #     fi
-    # fi
 done
