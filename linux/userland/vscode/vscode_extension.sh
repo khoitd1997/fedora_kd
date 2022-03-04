@@ -22,18 +22,19 @@ extension_general=" emilast.logfilehighlighter \
                     k--kato.intellij-idea-keybindings \
                     esbenp.prettier-vscode \
                     ms-vscode.hexeditor \
+                    jack89ita.copy-filename \
+                    ms-vscode.powershell \
+                    ibm.output-colorizer \
+                    ms-vscode-remote.vscode-remote-extensionpack \
+                    ms-vscode-remote.remote-ssh \
                     slevesque.vscode-autohotkey "
 
 extension_misc="    eugenwiens.bitbake \
                     bungcip.better-toml \
-                    ms-vscode-remote.vscode-remote-extensionpack \
-                    ms-vscode-remote.remote-ssh \
                     gaborv.flatbuffers \
                     compulim.vscode-clock \
-                    ibm.output-colorizer \
                     marcostazi.vs-code-vagrantfile \
-                    jack89ita.copy-filename \
-                    ms-vscode.powershell "
+                    "
 
 # programing languages
 extension_cpp=" ms-vscode.cpptools-extension-pack \
@@ -60,7 +61,6 @@ extension_git=" eamodio.gitlens \
                 github.vscode-pull-request-github \
                 mhutchie.git-graph "
 
-extension_arm=" dan-c-underwood.arm marus25.cortex-debug "
 extension_qt=" zhoufeng.pyqt-integration bbenoist.qml "
 
 extension_web=" formulahendry.auto-close-tag \
@@ -84,7 +84,6 @@ extension_all="${extension_all}${extension_md}"
 # extension_all="${extension_all}${extension_embedded}"
 
 extension_all="${extension_all}${extension_git}"
-extension_all="${extension_all}${extension_arm}"
 # extension_all="${extension_all}${extension_qt}"
 extension_all="${extension_all}${extension_docker}"
 # extension_all="${extension_all}${extension_liveshare}"
