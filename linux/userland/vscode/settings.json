@@ -317,8 +317,7 @@
     "ruby.useLanguageServer": true,
     "terminal.integrated.cursorBlinking": true,
     "oneDarkPro.vivid": true,
-    "C_Cpp.updateChannel": "Default", // never ever go insider
-    "git-graph.showStatusBarItem": false,
+    "C_Cpp.updateChannel": "Default",
     "highlight-matching-tag.enabled": false,
     "highlight-matching-tag.showPath": false,
     "latex-workshop.progress.location": "Notification Dialogue",
@@ -369,7 +368,6 @@
     "workbench.editor.tabSizing": "shrink",
     "editor.stickyTabStops": true,
     "editor.wordBasedSuggestionsMode": "allDocuments",
-    "editor.suggest.showStatusBar": true,
     "editor.formatOnSaveMode": "modifications",
     "workbench.colorCustomizations": { // Can customize each aspect
         "tab.activeBackground": "#7f8080" // Active Tab Top Highlighting
@@ -379,6 +377,16 @@
         "*.json": "jsonc"
     },
     "sigasi.pathToLicense": "C:\\Users\\khoid\\Downloads\\sigasi.lic",
-    "sigasi.java.path": "JAVA_HOME"
+    "sigasi.java.path": "JAVA_HOME",
+    "editor.suggest.showStatusBar": true,
+    "atlascode.bitbucket.statusbar.showLogin": false,
+    "atlascode.bitbucket.statusbar.showProduct": false,
+    "atlascode.bitbucket.statusbar.showUser": false,
+    "atlascode.jira.statusbar.showActiveIssue": false,
+    "atlascode.jira.statusbar.showLogin": false,
+    "atlascode.jira.statusbar.showProduct": false,
+    "atlascode.jira.statusbar.showUser": false,
+    "git.enableStatusBarSync": false,
+    "git-graph.showStatusBarItem": false
     // "terminal.integrated.defaultProfile.windows": "PowerShell"
 }
