@@ -13,7 +13,7 @@ else {
     Write-Output "Chocolatey already installed"
 }
 
-choco install -y microsoft-windows-terminal --pre
+choco install -y microsoft-windows-terminal
 $choco_app_list = @(
     "googlechrome"
     "autohotkey" 
