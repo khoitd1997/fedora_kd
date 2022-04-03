@@ -3,9 +3,7 @@
 set -e
 
 extension_general=" emilast.logfilehighlighter \
-                    timonwong.shellcheck \
                     monokai.theme-monokai-pro-vscode \
-                    ritwickdey.liveserver \
                     mads-hartmann.bash-ide-vscode \
                     oderwat.indent-rainbow \
                     rashwell.tcl \
@@ -15,14 +13,10 @@ extension_general=" emilast.logfilehighlighter \
                     ionutvmi.path-autocomplete \
                     dakara.dakara-foldplus \
                     alefragnani.bookmarks \
-                    ryu1kn.partial-diff \
-                    grapecity.gc-excelviewer \
                     aaron-bond.better-comments \
-                    sleistner.vscode-fileutils \
                     k--kato.intellij-idea-keybindings \
                     esbenp.prettier-vscode \
                     ms-vscode.hexeditor \
-                    jack89ita.copy-filename \
                     ms-vscode.powershell \
                     ibm.output-colorizer \
                     ms-vscode-remote.vscode-remote-extensionpack \
@@ -30,10 +24,7 @@ extension_general=" emilast.logfilehighlighter \
                     slevesque.vscode-autohotkey "
 
 extension_misc="    eugenwiens.bitbake \
-                    bungcip.better-toml \
                     gaborv.flatbuffers \
-                    compulim.vscode-clock \
-                    marcostazi.vs-code-vagrantfile \
                     "
 
 # programing languages
