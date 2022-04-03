@@ -33,12 +33,12 @@
       become: true
 
     - name: install vscode extension
-      shell: "{{ playbook_dir }}/vscode/vscode_extension.sh all"
+      shell: "bash {{ playbook_dir }}/vscode/vscode_extension.sh all"
       tags:
         - vscode_extension
 
     - name: configure vscode
-      shell: "{{ playbook_dir }}/vscode/vscode_configure.sh"
+      shell: "bash {{ playbook_dir }}/vscode/vscode_configure.sh"
       tags:
         - vscode_conf
 

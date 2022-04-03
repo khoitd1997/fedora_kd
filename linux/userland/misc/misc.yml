@@ -9,14 +9,6 @@
 
         # - include: google-chrome/google-chrome.yml
 
-        - name: make user files available
-          shell: "{{item}}"
-          with_items:
-            - cp -vr {{ playbook_dir }}/../user_file /usr/share/
-            - chmod -R a+r+x /usr/share/user_file
-          args:
-            warn: false
-
         - name: configure fedora misc system stuffs
           shell: "{{item}}"
           with_items:
