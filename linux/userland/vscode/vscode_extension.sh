@@ -21,7 +21,7 @@ extension_general=" emilast.logfilehighlighter \
                     ibm.output-colorizer \
                     ms-vscode-remote.vscode-remote-extensionpack \
                     ms-vscode-remote.remote-ssh \
-                    slevesque.vscode-autohotkey "
+                    "
 
 extension_misc="    eugenwiens.bitbake \
                     gaborv.flatbuffers \
