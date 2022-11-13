@@ -194,17 +194,6 @@
       tags:
         - tempdir
 
-    - name: install ruby gems
-      shell: "{{item}}"
-      with_items:
-        - gem install rubocop
-      become: true
-
-      args:
-        warn: false
-      tags:
-        - redshift
-
     - pip:
         name:
           - python-language-server

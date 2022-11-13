@@ -10,15 +10,6 @@
             "startup": false
         },
         {
-            "name": "Redshift",
-            "command": "redshift-gtk",
-            "comment": "Color temperature adjustment tool",
-            "launchInTerminal": "false",
-            "iconPath": "redshift",
-            "type": "Application",
-            "startup": true
-        },
-        {
             "name": "Terminal",
             "command": "gnome-terminal",
             "comment": "terminal",
