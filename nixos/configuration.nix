@@ -38,8 +38,66 @@
   services.xserver.enable = true;
 
   # Enable the GNOME Desktop Environment.
-  services.xserver.displayManager.gdm.enable = true;
-  services.xserver.desktopManager.gnome.enable = true;
+  services.xserver.displayManager.gdm = { 
+    enable = true;
+    autoSuspend = false;
+  };
+  services.xserver.desktopManager.gnome = {
+    enable = true;
+    extraGSettingsOverrides = ''
+      [org/gnome/desktop/input-sources]
+      sources=[('xkb', 'us')]
+      xkb-options=['terminate:ctrl_alt_bksp', 'lv3:ralt_switch', 'caps:escape']
+
+      [org/gnome/mutter]
+      workspaces-only-on-primary=false
+
+      [org/gnome/desktop/session]
+      idle-delay=uint32 0
+
+      [org/gnome/desktop/interface]
+      color-scheme='prefer-dark'
+      enable-animations=false
+      enable-hot-corners=false
+
+      [org/gnome/settings-daemon/plugins/color]
+      night-light-enabled=true
+
+      [org/gnome/settings-daemon/plugins/media-keys]
+      custom-keybindings=['/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1/']
+      www=['<Super>b']
+
+      [org/gnome/desktop/wm/keybindings]
+      close=['<Super>q']
+
+      [org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0]
+      binding='<Super>m'
+      command='code'
+      name='launch_vscode'
+
+      [org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1]
+      binding='<Super>Return'
+      command='tilix'
+      name='launch_terminal'
+
+      [org/gnome/shell/app-switcher]
+      current-workspace-only=true
+
+      [com/gexperts/Tilix]
+      background-image-mode='tile'
+      prompt-on-close=true
+      sidebar-on-right=false
+      tab-position='top'
+      terminal-title-style='none'
+      theme-variant='dark'
+      use-tabs=true
+      window-save-state=true
+
+      [com/gexperts/Tilix/profiles/2b7c4080-0ddd-46c5-8f23-563fd3ba789d]
+      terminal-bell='none'
+      visible-name='Default'
+    '';
+  };
 
   # Configure keymap in X11
   services.xserver = {
@@ -115,6 +173,7 @@
     hyperfine
     tree
     gawk
+    ansible
 
     # Java
     jdk
@@ -150,11 +209,13 @@
     cura
     kdenlive
     wireshark
+    tilix
 
     texlive.combined.scheme-full
 
     # gnome stuffs
     gnome3.gnome-tweaks
+    gnome.adwaita-icon-theme
   ];
 
   programs.neovim = {
