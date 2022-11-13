@@ -17,7 +17,11 @@
     "editor.quickSuggestionsDelay": 2,
     "[markdown]": {
         "editor.wordWrap": "on",
-        "editor.quickSuggestions": true,
+        "editor.quickSuggestions": {
+            "comments": "on",
+            "strings": "on",
+            "other": "on"
+        },
         "editor.defaultFormatter": "esbenp.prettier-vscode"
     },
     "html.autoClosingTags": false,
