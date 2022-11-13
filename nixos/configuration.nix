@@ -62,6 +62,10 @@
 
       [org/gnome/settings-daemon/plugins/color]
       night-light-enabled=true
+      night-light-schedule-automatic=false
+      night-light-schedule-from=0.0
+      night-light-schedule-to=23.983333333333334
+      night-light-temperature=uint32 3121
 
       [org/gnome/settings-daemon/plugins/media-keys]
       custom-keybindings=['/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1/']
@@ -95,7 +99,13 @@
       window-save-state=true
 
       [com/gexperts/Tilix/profiles/2b7c4080-0ddd-46c5-8f23-563fd3ba789d]
+      default-size-columns=140
+      default-size-rows=40
+      draw-margin=72
+      font='Monospace 15'
+      scrollback-unlimited=true
       terminal-bell='none'
+      use-system-font=false
       visible-name='Default'
     '';
   };
@@ -229,6 +239,11 @@
   programs.bash = {
     enableCompletion = true;
     interactiveShellInit = (builtins.readFile ./bash/shell_init.sh);
+  };
+
+  system.autoUpgrade = {
+    enable = true;
+    allowReboot = true;
   };
 
   # Some programs need SUID wrappers, can be configured further or are
