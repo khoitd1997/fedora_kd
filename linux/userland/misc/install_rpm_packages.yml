@@ -57,7 +57,6 @@
           - dnfdragora-updater
           - xclip
           - htop
-          - glances
           - net-tools
           - python3-pip
           - curl
@@ -97,14 +96,11 @@
           - frei0r-plugins
           - gnome-disk-utility
           - seahorse
-          - i3lock
           - autokey-gtk
           - firefox
           - evince
           - gparted
-          - moserial
           - ncurses-devel
-          - meld
           - graphviz
           - npm
           - flameshot
@@ -119,8 +115,6 @@
           - arduino
           - kicad
           - cura
-          - openscad
-          - vlc
 
           - snapd
 

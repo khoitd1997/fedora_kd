@@ -62,7 +62,6 @@
           - doxygen
           - xclip
           - htop
-          - glances
           - net-tools
           - python3-pip
           - curl
@@ -84,8 +83,6 @@
           - autokey-gtk
           - evince
           - gparted
-          - moserial
-          - meld
           - graphviz
           - npm
           - flameshot
@@ -96,7 +93,6 @@
           - gimp
           - tree
           - arduino
-          - vlc
           - pv
 
           - rofi
