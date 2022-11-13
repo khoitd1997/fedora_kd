@@ -111,6 +111,7 @@
     htop
     nettools
     neofetch
+    hyperfine
     tree
     gawk
 
