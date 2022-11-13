@@ -148,6 +148,7 @@
     vscode
     cura
     kdenlive
+    wireshark
 
     texlive.combined.scheme-full
 
@@ -155,10 +156,15 @@
     gnome3.gnome-tweaks
   ];
 
-  environment.variables.EDITOR = "nvim";
   programs.neovim.enable = true;
+  programs.neovim.defaultEditor = true;
   programs.neovim.viAlias = true;
   programs.neovim.vimAlias = true;
+
+  programs.bash = {
+    enableCompletion = true;
+    interactiveShellInit = (builtins.readFile ./bash/shell_init.sh);
+  };
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
