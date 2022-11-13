@@ -72,10 +72,9 @@
   users.users.kd = {
     isNormalUser = true;
     description = "Khoi Trinh";
-    extraGroups = [ "networkmanager" "wheel" ];
+    extraGroups = [ "networkmanager" "wheel" "dialout" ];
     packages = with pkgs; [
-      firefox
-      #  thunderbird
+      firefox-wayland
     ];
   };
 
@@ -156,10 +155,12 @@
     gnome3.gnome-tweaks
   ];
 
-  programs.neovim.enable = true;
-  programs.neovim.defaultEditor = true;
-  programs.neovim.viAlias = true;
-  programs.neovim.vimAlias = true;
+  programs.neovim = {
+    enable = true;
+    defaultEditor = true;
+    viAlias = true;
+    vimAlias = true;
+  };
 
   programs.bash = {
     enableCompletion = true;
