@@ -20,8 +20,6 @@
         update_cache: yes
         state: present
         name:
-          - google-chrome-stable
-
           - VirtualBox
           - kmod-VirtualBox
           - virtualbox-guest-additions

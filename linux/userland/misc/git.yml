@@ -24,11 +24,8 @@
         - git lfs install
         - git config --global user.name "khoitd1997"
         - git config --global user.email "khoidinhtrinh@gmail.com"
-        - git config --global alias.lg "log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit"
         - git config --global core.autocrlf input
         - git config --global core.editor "vim"
-        - git config --global merge.tool meld
-        - git config --global core.pager "diff-so-fancy | less --tabs=4 -RFX"
 
   tags:
     - git

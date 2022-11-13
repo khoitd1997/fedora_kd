@@ -7,8 +7,6 @@
         - include: sshd.yml
         - include: avahi.yml
 
-        # - include: google-chrome/google-chrome.yml
-
         - name: configure fedora misc system stuffs
           shell: "{{item}}"
           with_items:
@@ -44,8 +42,6 @@
           lineinfile:
             path: /etc/sysctl.conf
             line: "fs.inotify.max_user_watches=524288"
-
-        - include: npm/npm.yml
 
         - name: fix snap
           shell: "ln -s /var/lib/snapd/snap /snap"
