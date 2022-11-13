@@ -85,6 +85,7 @@
 
       [com/gexperts/Tilix]
       background-image-mode='tile'
+      enable-wide-handle=true
       prompt-on-close=true
       sidebar-on-right=false
       tab-position='top'
