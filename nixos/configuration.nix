@@ -4,6 +4,9 @@
 
 { config, pkgs, ... }:
 
+let
+  unstable = import <unstable> { config.allowUnfree = true; };
+in
 {
   imports =
     [
@@ -97,13 +100,14 @@
       name='launch_terminal'
 
       [org/gnome/shell]
-      disabled-extensions=['window-list@gnome-shell-extensions.gcampax.github.com', 'places-menu@gnome-shell-extensions.gcampax.github.com', 'native-window-placement@gnome-shell-extensions.gcampax.github.com']
-      enabled-extensions=['workspace-indicator@gnome-shell-extensions.gcampax.github.com', 'drive-menu@gnome-shell-extensions.gcampax.github.com', 'apps-menu@gnome-shell-extensions.gcampax.github.com', 'pop-shell@system76.com']
+      disabled-extensions=['window-list@gnome-shell-extensions.gcampax.github.com', 'places-menu@gnome-shell-extensions.gcampax.github.com', 'native-window-placement@gnome-shell-extensions.gcampax.github.com', 'apps-menu@gnome-shell-extensions.gcampax.github.com']
+      enabled-extensions=['workspace-indicator@gnome-shell-extensions.gcampax.github.com', 'drive-menu@gnome-shell-extensions.gcampax.github.com', 'pop-shell@system76.com']
 
       [org/gnome/shell/extensions/pop-shell]
       active-hint=true
       show-title=false
       tile-by-default=true
+      tile-enter=['''''']
 
       [org/gnome/shell/app-switcher]
       current-workspace-only=true
@@ -173,8 +177,6 @@
     extraGroups = [ "networkmanager" "wheel" "dialout" "libvirtd" ];
   };
   home-manager.users.kd = { pkgs, ... }: {
-    home.packages = [ pkgs.atool pkgs.httpie ];
-
     programs.bash = {
       enable = true;
       bashrcExtra = (builtins.readFile ./bash/shell_init.sh);
@@ -269,7 +271,7 @@
     flameshot
     qtcreator
     kicad
-    vscode
+    unstable.vscode # always use newest vscode
     cura
     kdenlive
     wireshark
