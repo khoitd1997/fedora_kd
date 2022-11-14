@@ -306,5 +306,18 @@
     {
         "key": "ctrl+d",
         "command": "editor.action.addSelectionToNextFindMatch"
+    },
+    {
+        "key": "alt+j",
+        "command": "workbench.action.quickOpenSelectNext"
+    },
+    {
+        "key": "alt+k",
+        "command": "workbench.action.quickOpenSelectPrevious"
+    },
+    {
+        "key": "alt+k",
+        "command": "-keybindings.editor.recordSearchKeys",
+        "when": "inKeybindings && inKeybindingsSearch"
     }
 ]
