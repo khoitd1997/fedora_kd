@@ -144,9 +144,6 @@
     isNormalUser = true;
     description = "Khoi Trinh";
     extraGroups = [ "networkmanager" "wheel" "dialout" ];
-    packages = with pkgs; [
-      firefox-wayland
-    ];
   };
 
   # Allow unfree packages
@@ -221,7 +218,9 @@
     kdenlive
     wireshark
     tilix
+    firefox-wayland
 
+    # latex
     texlive.combined.scheme-full
 
     # gnome stuffs
