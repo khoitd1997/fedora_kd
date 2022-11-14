@@ -98,7 +98,12 @@
 
       [org/gnome/shell]
       disabled-extensions=['window-list@gnome-shell-extensions.gcampax.github.com', 'places-menu@gnome-shell-extensions.gcampax.github.com', 'native-window-placement@gnome-shell-extensions.gcampax.github.com']
-      enabled-extensions=['workspace-indicator@gnome-shell-extensions.gcampax.github.com', 'drive-menu@gnome-shell-extensions.gcampax.github.com', 'apps-menu@gnome-shell-extensions.gcampax.github.com']
+      enabled-extensions=['workspace-indicator@gnome-shell-extensions.gcampax.github.com', 'drive-menu@gnome-shell-extensions.gcampax.github.com', 'apps-menu@gnome-shell-extensions.gcampax.github.com', 'pop-shell@system76.com']
+
+      [org/gnome/shell/extensions/pop-shell]
+      active-hint=true
+      show-title=false
+      tile-by-default=true
 
       [org/gnome/shell/app-switcher]
       current-workspace-only=true
