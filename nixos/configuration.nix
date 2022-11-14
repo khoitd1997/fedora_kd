@@ -7,6 +7,7 @@
 {
   imports =
     [
+      <home-manager/nixos>
       # Include the results of the hardware scan.
       /etc/nixos/hardware-configuration.nix
     ];
@@ -162,6 +163,29 @@
     description = "Khoi Trinh";
     extraGroups = [ "networkmanager" "wheel" "dialout" "libvirtd" ];
   };
+  home-manager.users.kd = { pkgs, ... }: {
+    home.packages = [ pkgs.atool pkgs.httpie ];
+
+    programs.bash = {
+      enable = true;
+      bashrcExtra = (builtins.readFile ./bash/shell_init.sh);
+    };
+
+    programs.git = {
+      enable = true;
+      userName = "khoitd1997";
+      userEmail = "khoidinhtrinh@gmail.com";
+
+      lfs = {
+        enable = true;
+      };
+
+      difftastic = {
+        enable = true;
+        background = "dark";
+      };
+    };
+  };
 
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
@@ -207,8 +231,11 @@
     gcc
     clang
     clang-tools
+    bloaty
     cppcheck
+    cpplint
     cmake
+    cmake-format
     ninja
     clang-analyzer
     gcc-arm-embedded
@@ -217,6 +244,9 @@
 
     # Python
     python3Full
+    black
+    python-language-server
+    pylint
 
     # Haskell
     ghc
@@ -254,11 +284,6 @@
     defaultEditor = true;
     viAlias = true;
     vimAlias = true;
-  };
-
-  programs.bash = {
-    enableCompletion = true;
-    interactiveShellInit = (builtins.readFile ./bash/shell_init.sh);
   };
 
   system.autoUpgrade = {

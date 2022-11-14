@@ -5,4 +5,7 @@ cd "${script_dir}"
 
 sudo ln -sfv "${script_dir}/configuration.nix" /etc/nixos/configuration.nix
 
+sudo nix-channel --add https://github.com/nix-community/home-manager/archive/release-22.05.tar.gz home-manager
+sudo nix-channel --update
+
 sudo nixos-rebuild boot --upgrade
