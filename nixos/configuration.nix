@@ -34,9 +34,6 @@
 
   i18n.defaultLocale = "en_US.utf8";
 
-  # Enable the X11 windowing system.
-  services.xserver.enable = true;
-
   # Enable the GNOME Desktop Environment.
   services.xserver.displayManager.gdm = { 
     enable = true;
@@ -112,9 +109,15 @@
 
   # Configure keymap in X11
   services.xserver = {
+    enable = true;
+    videoDrivers = [ "nvidia" ];
     layout = "us";
     xkbVariant = "";
   };
+
+  # nvidia driver stuffs
+  hardware.opengl.enable = true;
+  hardware.nvidia.package = config.boot.kernelPackages.nvidiaPackages.stable;
 
   # Enable CUPS to print documents.
   services.printing.enable = true;
