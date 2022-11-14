@@ -34,8 +34,14 @@
 
   i18n.defaultLocale = "en_US.utf8";
 
+  nix.gc = {
+    automatic = true;
+    dates = "weekly";
+    options = "-d";
+  };
+
   # Enable the GNOME Desktop Environment.
-  services.xserver.displayManager.gdm = { 
+  services.xserver.displayManager.gdm = {
     enable = true;
     autoSuspend = false;
   };
@@ -53,6 +59,7 @@
       idle-delay=uint32 0
 
       [org/gnome/desktop/interface]
+      clock-show-weekday=true
       color-scheme='prefer-dark'
       enable-animations=false
       enable-hot-corners=false
@@ -68,8 +75,15 @@
       custom-keybindings=['/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1/']
       www=['<Super>b']
 
+      [org/gnome/desktop/wm/preferences]
+      button-layout='appmenu:minimize,maximize,close'
+
       [org/gnome/desktop/wm/keybindings]
       close=['<Super>q']
+      switch-applications=@as []
+      switch-applications-backward=@as []
+      switch-windows=['<Alt>Tab']
+      switch-windows-backward=['<Shift><Alt>Tab']
 
       [org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0]
       binding='<Super>m'
