@@ -105,6 +105,8 @@ in
 
       [org/gnome/shell/extensions/pop-shell]
       active-hint=true
+      gap-inner=uint32 0
+      gap-outer=uint32 0
       show-title=false
       tile-by-default=true
       tile-enter=['''''']
