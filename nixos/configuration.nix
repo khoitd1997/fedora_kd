@@ -96,6 +96,10 @@
       command='tilix'
       name='launch_terminal'
 
+      [org/gnome/shell]
+      disabled-extensions=['window-list@gnome-shell-extensions.gcampax.github.com', 'places-menu@gnome-shell-extensions.gcampax.github.com', 'native-window-placement@gnome-shell-extensions.gcampax.github.com']
+      enabled-extensions=['workspace-indicator@gnome-shell-extensions.gcampax.github.com', 'drive-menu@gnome-shell-extensions.gcampax.github.com', 'apps-menu@gnome-shell-extensions.gcampax.github.com']
+
       [org/gnome/shell/app-switcher]
       current-workspace-only=true
 
