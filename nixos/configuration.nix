@@ -259,7 +259,6 @@
     gparted
     flameshot
     qtcreator
-    autokey
     kicad
     vscode
     cura
@@ -274,6 +273,8 @@
     # gnome stuffs
     gnome3.gnome-tweaks
     gnome.adwaita-icon-theme
+    gnomeExtensions.window-list
+    gnomeExtensions.pop-shell
   ];
 
   virtualisation.libvirtd.enable = true;

@@ -9,3 +9,6 @@ sudo nix-channel --add https://github.com/nix-community/home-manager/archive/rel
 sudo nix-channel --update
 
 sudo nixos-rebuild boot --upgrade
+
+bash "${script_dir}/../linux/userland/vscode/vscode_extension.sh"
+bash "${script_dir}/../linux/userland/vscode/vscode_configure.sh"
