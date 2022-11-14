@@ -160,7 +160,7 @@
   users.users.kd = {
     isNormalUser = true;
     description = "Khoi Trinh";
-    extraGroups = [ "networkmanager" "wheel" "dialout" ];
+    extraGroups = [ "networkmanager" "wheel" "dialout" "libvirtd" ];
   };
 
   # Allow unfree packages
@@ -223,6 +223,7 @@
 
     # virtualization
     qemu_full
+    virt-manager
 
     # GUI apps
     gparted
@@ -244,6 +245,9 @@
     gnome3.gnome-tweaks
     gnome.adwaita-icon-theme
   ];
+
+  virtualisation.libvirtd.enable = true;
+  programs.dconf.enable = true;
 
   programs.neovim = {
     enable = true;
