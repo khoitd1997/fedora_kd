@@ -14,6 +14,14 @@ color-scheme='prefer-dark'
 enable-animations=false
 enable-hot-corners=false
 
+[org/gnome/desktop/wm/keybindings]
+unmaximize=@as []
+maximize=@as []
+
+[org/gnome/mutter/keybindings]
+toggle-tiled-left=@as []
+toggle-tiled-right=@as []
+
 [org/gnome/settings-daemon/plugins/color]
 night-light-enabled=true
 night-light-schedule-automatic=false
