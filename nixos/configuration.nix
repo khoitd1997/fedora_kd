@@ -157,6 +157,7 @@ in
     gawk
     ansible
     file
+    entr
 
     # Java
     jdk
