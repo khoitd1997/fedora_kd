@@ -156,6 +156,7 @@ in
     tree
     gawk
     ansible
+    file
 
     # Java
     jdk
