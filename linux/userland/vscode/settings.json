@@ -1,4 +1,5 @@
 {
+    "nix.serverPath": "rnix-lsp",
     "gitlens.advanced.messages": {
         "suppressCommitHasNoPreviousCommitWarning": false,
         "suppressCommitNotFoundWarning": false,

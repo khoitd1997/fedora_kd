@@ -21,6 +21,7 @@ extension_general=" emilast.logfilehighlighter \
                     ibm.output-colorizer \
                     ms-vscode-remote.vscode-remote-extensionpack \
                     ms-vscode-remote.remote-ssh \
+                    jnoortheen.nix-ide \
                     "
 
 extension_misc="    eugenwiens.bitbake \
