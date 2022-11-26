@@ -158,6 +158,7 @@ in
     ansible
     file
     entr
+    rnix-lsp
 
     # Java
     jdk

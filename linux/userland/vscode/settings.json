@@ -366,6 +366,7 @@
     "gitlens.plusFeatures.enabled": false,
     "gitlens.showWelcomeOnInstall": false,
     "gitlens.statusBar.reduceFlicker": false,
-    "workbench.iconTheme": "Monokai Pro Icons"
+    "workbench.iconTheme": "Monokai Pro Icons",
+    "nix.enableLanguageServer": true
     // "terminal.integrated.defaultProfile.windows": "PowerShell"
 }
