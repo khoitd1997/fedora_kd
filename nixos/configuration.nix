@@ -28,6 +28,7 @@ in
       efiSupport = true;
     };
   };
+  boot.supportedFilesystems = [ "ntfs" ];
 
   networking.hostName = "nixos-kd";
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
