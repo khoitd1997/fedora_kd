@@ -160,6 +160,7 @@ in
     file
     entr
     rnix-lsp
+    nixos-option
 
     # Java
     jdk
@@ -187,6 +188,8 @@ in
 
     # Haskell
     ghc
+    haskellPackages.cabal-install
+    haskellPackages.stack
 
     # virtualization
     qemu_full
