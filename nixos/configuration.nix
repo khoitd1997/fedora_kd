@@ -190,6 +190,7 @@ in
     ghc
     haskellPackages.cabal-install
     haskellPackages.stack
+    haskell-language-server
 
     # virtualization
     qemu_full
