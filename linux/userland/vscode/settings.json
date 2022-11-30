@@ -367,6 +367,7 @@
     "gitlens.showWelcomeOnInstall": false,
     "gitlens.statusBar.reduceFlicker": false,
     "workbench.iconTheme": "Monokai Pro Icons",
-    "nix.enableLanguageServer": true
+    "nix.enableLanguageServer": true,
+    "haskell.manageHLS": "PATH"
     // "terminal.integrated.defaultProfile.windows": "PowerShell"
 }
