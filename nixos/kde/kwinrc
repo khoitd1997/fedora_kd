@@ -1,0 +1,8 @@
+[NightColor]
+Active=true
+Mode=Constant
+NightTemperature=2900
+
+[org.kde.kdecoration2]
+library=org.kde.kwin.aurorae
+theme=kwin4_decoration_qml_plastik

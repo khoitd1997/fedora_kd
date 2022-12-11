@@ -6,9 +6,11 @@
 {
   imports =
     [
-      home-manager.nixosModule
       # Include the results of the hardware scan.
       ./hardware-configuration.nix
+
+      home-manager.nixosModule
+      ./kde/kde.nix
     ];
 
   boot.loader = {
@@ -45,15 +47,6 @@
     automatic = true;
     dates = "weekly";
     options = "-d";
-  };
-
-  # Enable the GNOME Desktop Environment.
-  services.xserver.displayManager.gdm = {
-    enable = true;
-    autoSuspend = false;
-  };
-  services.xserver.desktopManager.gnome = {
-    enable = true;
   };
 
   # Configure keymap in X11
@@ -211,11 +204,6 @@
 
     # latex
     texlive.combined.scheme-full
-
-    # gnome stuffs
-    gnome3.gnome-tweaks
-    gnome.adwaita-icon-theme
-    gnomeExtensions.pop-shell
   ];
 
   virtualisation.libvirtd.enable = true;
