@@ -12,7 +12,7 @@ fi
 rm -f ./hardware-configuration.nix
 sudo nixos-generate-config --dir .
 
-sudo nixos-rebuild switch --flake '.#nixos-kd'
+./rebuild.sh
 
 dconf load / < "${script_dir}/gnome_settings.txt"
 
