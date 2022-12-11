@@ -8,13 +8,11 @@ if [ "$EUID" -eq 0 ]; then
     exit 1
 fi
 
-sudo ln -sfv "${script_dir}/configuration.nix" /etc/nixos/configuration.nix
+# generate hardware-configuration.nix
+rm -f ./hardware-configuration.nix
+sudo nixos-generate-config --dir .
 
-sudo nix-channel --add https://github.com/nix-community/home-manager/archive/release-22.05.tar.gz home-manager
-sudo nix-channel --add https://nixos.org/channels/nixos-unstable unstable
-sudo nix-channel --update
-
-sudo nixos-rebuild switch --upgrade
+sudo nixos-rebuild switch --flake '.#nixos-kd'
 
 dconf load / < "${script_dir}/gnome_settings.txt"
 

@@ -2,17 +2,13 @@
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 
-{ config, pkgs, ... }:
-
-let
-  unstable = import <unstable> { config.allowUnfree = true; };
-in
+{ config, pkgs, home-manager, ... }:
 {
   imports =
     [
-      <home-manager/nixos>
+      home-manager.nixosModule
       # Include the results of the hardware scan.
-      /etc/nixos/hardware-configuration.nix
+      ./hardware-configuration.nix
     ];
 
   boot.loader = {
@@ -42,6 +38,9 @@ in
 
   i18n.defaultLocale = "en_US.utf8";
 
+  nix.settings = {
+    experimental-features = [ "nix-command" "flakes" ];
+  };
   nix.gc = {
     automatic = true;
     dates = "weekly";
@@ -55,7 +54,6 @@ in
   };
   services.xserver.desktopManager.gnome = {
     enable = true;
-
   };
 
   # Configure keymap in X11
@@ -100,6 +98,10 @@ in
     extraGroups = [ "networkmanager" "wheel" "dialout" "libvirtd" ];
   };
   home-manager.users.kd = { pkgs, ... }: {
+    home = {
+      stateVersion = "22.11";
+    };
+
     programs.bash = {
       enable = true;
       bashrcExtra = (builtins.readFile ./bash/shell_init.sh);
@@ -144,7 +146,6 @@ in
     youtube-dl
     pylint
     openocd
-    qt5Full
     strace
     lshw
     moreutils
@@ -257,6 +258,5 @@ in
   # this value at the release version of the first install of this system.
   # Before changing this value read the documentation for this option
   # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
-  system.stateVersion = "22.05"; # Did you read the comment?
-
+  system.stateVersion = "22.11"; # Did you read the comment?
 }
