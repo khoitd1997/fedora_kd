@@ -8,6 +8,12 @@
     supportDDC = true;
   };
 
-  environment.etc."xdg/kwinrc".text = (builtins.readFile ./kwinrc);
-  environment.etc."xdg/kdeglobals".text = (builtins.readFile ./kdeglobals);
+  environment.etc = {
+    "xdg/kwinrc".text = (builtins.readFile ./conf/kwinrc);
+    "xdg/kdeglobals".text = (builtins.readFile ./conf/kdeglobals);
+    "xdg/kcminputrc".text = (builtins.readFile ./conf/kcminputrc);
+    "xdg/kscreenlockerrc".text = (builtins.readFile ./conf/kscreenlockerrc);
+    "xdg/kaccessrc".text = (builtins.readFile ./conf/kaccessrc);
+    "xdg/kxkbrc".text = (builtins.readFile ./conf/kxkbrc);
+  };
 }

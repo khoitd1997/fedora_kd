@@ -1,0 +1,15 @@
+[General]
+fixed=Hack,13,-1,5,50,0,0,0,0,0
+font=Noto Sans,13,-1,5,50,0,0,0,0,0
+menuFont=Noto Sans,13,-1,5,50,0,0,0,0,0
+toolBarFont=Noto Sans,13,-1,5,50,0,0,0,0,0
+ColorScheme=BreezeDark
+
+[WM]
+activeFont=Noto Sans,13,-1,5,50,0,0,0,0,0
+
+[Icons]
+Theme=breeze-dark
+
+[KDE]
+LookAndFeelPackage=org.kde.breezedark.desktop

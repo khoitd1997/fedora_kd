@@ -1,0 +1,32 @@
+[Desktops]
+Id_1=9721a837-bf66-4fec-829b-de67ce55668c
+Id_2=ed11d1ce-e1dd-4cfd-a430-ba40d85e70e4
+Id_3=37873a24-3909-4da6-9faf-7767c2509bde
+Id_4=b2465b5c-e3fa-41df-bed0-f4715868b86b
+Name_2=New Desktop
+Name_3=New Desktop
+Name_4=New Desktop
+Number=4
+Rows=1
+
+[Plugins]
+kwin4_effect_fullscreenEnabled=false
+kwin4_effect_maximizeEnabled=false
+snaphelperEnabled=true
+
+[NightColor]
+Active=true
+Mode=Constant
+NightTemperature=2900
+
+[TabBox]
+HighlightWindows=false
+LayoutName=thumbnails
+
+[Windows]
+RollOverDesktops=true
+
+[org.kde.kdecoration2]
+NoPlugin=false
+library=org.kde.kwin.aurorae
+theme=kwin4_decoration_qml_plastik

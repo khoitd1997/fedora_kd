@@ -199,7 +199,7 @@
     cura
     kdenlive
     wireshark
-    tilix
+    konsole
     firefox-wayland
 
     # latex
