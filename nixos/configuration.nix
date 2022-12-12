@@ -209,6 +209,19 @@
   virtualisation.libvirtd.enable = true;
   programs.dconf.enable = true;
 
+  programs.ssh = {
+    startAgent = true;
+  };
+  environment.variables.SSH_ASKPASS_REQUIRE = "prefer";
+  environment.etc = {
+    "xdg/autostart/ssh-add.desktop".text = ''
+      [Desktop Entry]
+      Exec=ssh-add -q
+      Name=ssh-add
+      Type=Application
+    '';
+  };
+
   programs.neovim = {
     enable = true;
     defaultEditor = true;
