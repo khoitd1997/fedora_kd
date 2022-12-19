@@ -267,7 +267,6 @@
         "editor.defaultFormatter": "vscode.json-language-features"
     },
     "editor.largeFileOptimizations": false,
-    "workbench.editor.enablePreview": false,
     "workbench.editor.enablePreviewFromQuickOpen": false,
     "workbench.tree.renderIndentGuides": "always",
     "editor.suggestSelection": "first",
@@ -368,6 +367,8 @@
     "gitlens.statusBar.reduceFlicker": false,
     "workbench.iconTheme": "Monokai Pro Icons",
     "nix.enableLanguageServer": true,
-    "haskell.manageHLS": "PATH"
+    "haskell.manageHLS": "PATH",
+    "vim.showMarksInGutter": true,
+    "workbench.editor.enablePreview": false
     // "terminal.integrated.defaultProfile.windows": "PowerShell"
 }
