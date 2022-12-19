@@ -229,10 +229,11 @@
     vimAlias = true;
   };
 
-  system.autoUpgrade = {
-    enable = true;
-    allowReboot = true;
-  };
+  # using flake so disable auto
+  # system.autoUpgrade = {
+  #   enable = true;
+  #   allowReboot = true;
+  # };
 
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions
