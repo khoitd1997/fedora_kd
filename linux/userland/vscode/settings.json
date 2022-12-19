@@ -211,7 +211,6 @@
         "<C-h>": true
     },
     "editor.wordSeparators": "`~!@#$%^&*()-=+[{]}\\|;:'\",.<>/?",
-    "editor.smoothScrolling": true,
     "terminal.integrated.commandsToSkipShell": [
         "workbench.action.openEditorAtIndex1",
         "workbench.action.openEditorAtIndex2",
@@ -369,6 +368,9 @@
     "nix.enableLanguageServer": true,
     "haskell.manageHLS": "PATH",
     "vim.showMarksInGutter": true,
-    "workbench.editor.enablePreview": false
+    "workbench.editor.enablePreview": false,
+    "terminal.integrated.smoothScrolling": true,
+    "workbench.list.smoothScrolling": true,
+    "editor.smoothScrolling": true
     // "terminal.integrated.defaultProfile.windows": "PowerShell"
 }
