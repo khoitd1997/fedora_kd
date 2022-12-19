@@ -372,6 +372,7 @@
     "terminal.integrated.smoothScrolling": true,
     "workbench.list.smoothScrolling": true,
     "editor.smoothScrolling": true,
-    "editor.stickyScroll.enabled": true
+    "editor.stickyScroll.enabled": true,
+    "search.useIgnoreFiles": false
     // "terminal.integrated.defaultProfile.windows": "PowerShell"
 }
