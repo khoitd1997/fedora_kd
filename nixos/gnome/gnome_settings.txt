@@ -50,7 +50,7 @@ name='launch_vscode'
 
 [org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1]
 binding='<Super>Return'
-command='tilix'
+command='konsole'
 name='launch_terminal'
 
 [org/gnome/shell]
