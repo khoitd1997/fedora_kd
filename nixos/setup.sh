@@ -14,8 +14,5 @@ sudo nixos-generate-config --dir .
 
 ./rebuild.sh
 
-# only for GNOME
-# dconf load / < "${script_dir}/gnome/gnome_settings.txt"
-
 bash "${script_dir}/../linux/userland/vscode/vscode_extension.sh"
 bash "${script_dir}/../linux/userland/vscode/vscode_configure.sh"

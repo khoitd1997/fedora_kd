@@ -10,7 +10,7 @@
       ./hardware-configuration.nix
 
       home-manager.nixosModule
-      ./kde/kde.nix
+      ./gnome/gnome.nix
     ];
 
   boot.loader = {
