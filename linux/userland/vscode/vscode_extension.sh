@@ -12,7 +12,6 @@ extension_general=" emilast.logfilehighlighter \
                     vscodevim.vim \
                     ionutvmi.path-autocomplete \
                     dakara.dakara-foldplus \
-                    alefragnani.bookmarks \
                     aaron-bond.better-comments \
                     k--kato.intellij-idea-keybindings \
                     esbenp.prettier-vscode \

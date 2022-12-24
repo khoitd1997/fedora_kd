@@ -373,6 +373,9 @@
     "workbench.list.smoothScrolling": true,
     "editor.smoothScrolling": true,
     "editor.stickyScroll.enabled": true,
-    "search.useIgnoreFiles": false
+    "search.useIgnoreFiles": false,
+    "vim.foldfix": true,
+    "vim.targets.enable": true,
+    "vim.visualstar": true
     // "terminal.integrated.defaultProfile.windows": "PowerShell"
 }
