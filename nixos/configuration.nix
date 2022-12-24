@@ -195,7 +195,7 @@
     flameshot
     qtcreator
     kicad
-    unstable.vscode # always use newest vscode
+    unstable.vscode-fhs # always use newest vscode
     cura
     kdenlive
     wireshark
