@@ -376,6 +376,9 @@
     "search.useIgnoreFiles": false,
     "vim.foldfix": true,
     "vim.targets.enable": true,
-    "vim.visualstar": true
+    "vim.visualstar": true,
+    "editor.rulers": [
+        100
+    ]
     // "terminal.integrated.defaultProfile.windows": "PowerShell"
 }
