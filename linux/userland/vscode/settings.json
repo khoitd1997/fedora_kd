@@ -33,11 +33,9 @@
     "doxdocgen.generic.authorTag": "@author Khoi Trinh",
     "editor.detectIndentation": false,
     "workbench.tips.enabled": false,
-    "window.titleBarStyle": "custom",
-    "window.title": "${rootPath}${separator}${activeEditorShort}",
+    "window.title": "${rootPath}${separator}${remoteName}",
     "editor.fontSize": 11,
     "window.newWindowDimensions": "inherit",
-    "window.restoreFullscreen": true,
     "editor.hover.delay": 50,
     "editor.cursorBlinking": "solid",
     "search.showLineNumbers": true,
@@ -48,7 +46,6 @@
     "C_Cpp.default.cppStandard": "c++11",
     "C_Cpp.default.cStandard": "c99",
     "terminal.integrated.scrollback": 5000,
-    "keyboard.dispatch": "keyCode",
     "vim.cursorStylePerMode.normal": "block-outline",
     "vim.camelCaseMotion.enable": true,
     "vim.hlsearch": true,
@@ -240,13 +237,11 @@
     "workbench.editor.closeEmptyGroups": false,
     "editor.cursorStyle": "underline",
     "C_Cpp.default.intelliSenseMode": "gcc-x64",
-    "C_Cpp.errorSquiggles": "Enabled",
+    "C_Cpp.errorSquiggles": "enabled",
     "C_Cpp.default.includePath": [
         "~/.conan/data"
     ],
-    "files.autoSaveDelay": 1,
     "workbench.tree.indent": 18,
-    "gitlens.codeLens.recentChange.enabled": false,
     "gitlens.advanced.quickPick.closeOnFocusOut": false,
     "gitlens.blame.heatmap.location": "left",
     "gitlens.blame.highlight.enabled": false,
@@ -265,7 +260,6 @@
     "[json]": {
         "editor.defaultFormatter": "vscode.json-language-features"
     },
-    "editor.largeFileOptimizations": false,
     "workbench.editor.enablePreviewFromQuickOpen": false,
     "workbench.tree.renderIndentGuides": "always",
     "editor.suggestSelection": "first",
@@ -304,7 +298,6 @@
     "scm.defaultViewMode": "tree",
     "workbench.editor.limit.value": 10,
     "workbench.editor.limit.enabled": true,
-    "terminal.integrated.cursorBlinking": true,
     "oneDarkPro.vivid": true,
     "cmake.preferredGenerators": [
         "Ninja",
@@ -344,7 +337,8 @@
     "editor.stickyTabStops": true,
     "editor.wordBasedSuggestionsMode": "allDocuments",
     "editor.formatOnSaveMode": "modifications",
-    "workbench.colorCustomizations": { // Can customize each aspect
+    "workbench.colorCustomizations": {
+        // Can customize each aspect
         "tab.activeBackground": "#7f8080" // Active Tab Top Highlighting
     },
     "files.associations": {
@@ -363,8 +357,6 @@
     "git-graph.showStatusBarItem": false,
     "gitlens.plusFeatures.enabled": false,
     "gitlens.showWelcomeOnInstall": false,
-    "gitlens.statusBar.reduceFlicker": false,
-    "workbench.iconTheme": "Monokai Pro Icons",
     "nix.enableLanguageServer": true,
     "haskell.manageHLS": "PATH",
     "vim.showMarksInGutter": true,
@@ -379,6 +371,22 @@
     "vim.visualstar": true,
     "editor.rulers": [
         100
-    ]
+    ],
+    "editor.linkedEditing": true,
+    "editor.peekWidgetDefaultFocus": "editor",
+    "editor.showFoldingControls": "always",
+    "editor.quickSuggestions": {
+        "comments": "on",
+        "strings": "on"
+    },
+    "files.maxMemoryForLargeFilesMB": 8192,
+    "workbench.iconTheme": "Monokai Pro Icons",
+    "workbench.editor.defaultBinaryEditor": "hexEditor.hexedit",
+    "window.titleBarStyle": "custom",
+    "search.defaultViewMode": "tree",
+    "search.quickOpen.includeHistory": false,
+    "scm.repositories.sortOrder": "name",
+    "terminal.integrated.cursorBlinking": true,
+    "terminal.integrated.tabs.hideCondition": "never"
     // "terminal.integrated.defaultProfile.windows": "PowerShell"
 }
