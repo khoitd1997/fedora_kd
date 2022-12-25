@@ -124,6 +124,7 @@
     git-lfs
     neovim
     nixpkgs-fmt
+    stress-ng
     curl
     sshpass
     wget
@@ -155,6 +156,9 @@
     entr
     rnix-lsp
     nixos-option
+    duf
+    du-dust
+    broot
 
     # Java
     jdk

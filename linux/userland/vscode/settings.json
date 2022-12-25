@@ -387,6 +387,7 @@
     "search.quickOpen.includeHistory": false,
     "scm.repositories.sortOrder": "name",
     "terminal.integrated.cursorBlinking": true,
-    "terminal.integrated.tabs.hideCondition": "never"
+    "terminal.integrated.tabs.hideCondition": "never",
+    "keyboard.dispatch": "keyCode"
     // "terminal.integrated.defaultProfile.windows": "PowerShell"
 }
