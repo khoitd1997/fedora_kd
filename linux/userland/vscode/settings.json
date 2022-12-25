@@ -43,52 +43,13 @@
     "extensions.autoUpdate": true,
     "gitlens.mode.statusBar.enabled": false,
     "gitlens.statusBar.enabled": false,
-    "C_Cpp.default.cppStandard": "c++11",
+    "C_Cpp.default.cppStandard": "c++17",
     "C_Cpp.default.cStandard": "c99",
     "terminal.integrated.scrollback": 5000,
     "vim.cursorStylePerMode.normal": "block-outline",
     "vim.camelCaseMotion.enable": true,
     "vim.hlsearch": true,
     "vim.normalModeKeyBindingsNonRecursive": [
-        // {
-        //   "before": ["<C-n>"],
-        //   "commands": [":nohl"]
-        // },
-        {
-            "before": [
-                "<C-h>"
-            ],
-            "commands": [
-                "editor.action.addSelectionToNextFindMatch",
-                "editor.action.startFindReplaceAction"
-            ]
-        },
-        {
-            "before": [
-                "-"
-            ],
-            "commands": [
-                "workbench.files.action.focusFilesExplorer"
-            ]
-        },
-        // {
-        //     "before": [
-        //         "leader",
-        //         "f"
-        //     ],
-        //     "commands": [
-        //         "actions.find"
-        //     ]
-        // },
-        // {
-        //     "before": [
-        //         "leader",
-        //         "F"
-        //     ],
-        //     "commands": [
-        //         "workbench.action.findInFiles"
-        //     ]
-        // },
         {
             "before": [
                 "j"
@@ -131,69 +92,6 @@
             ],
             "commands": [
                 "editor.action.wordHighlight.trigger"
-            ]
-        },
-        // {
-        //     "before": [
-        //         "k"
-        //     ],
-        //     "after": [
-        //         "g",
-        //         "k"
-        //     ]
-        // },
-        {
-            "before": [
-                "leader",
-                "leader",
-                "W"
-            ],
-            "after": [
-                "leader",
-                "leader",
-                "b"
-            ]
-        },
-        {
-            "before": [
-                "leader",
-                "o"
-            ],
-            "after": [
-                "o",
-                "<Esc>",
-                "k",
-                "O",
-                "<Esc>",
-                "j"
-            ]
-        },
-        {
-            "before": [
-                "leader",
-                "leader",
-                "E"
-            ],
-            "after": [
-                "leader",
-                "leader",
-                "g",
-                "e"
-            ]
-        }
-    ],
-    "vim.visualModeKeyBindingsNonRecursive": [
-        // {
-        //   "before": ["<C-n>"],
-        //   "commands": [":nohl"]
-        // },
-        {
-            "before": [
-                "<C-h>"
-            ],
-            "commands": [
-                "editor.action.addSelectionToNextFindMatch",
-                "editor.action.startFindReplaceAction"
             ]
         }
     ],
@@ -204,9 +102,6 @@
     "vim.iskeyword": "`~!@#$%^&*()-=+[{]}\\|;:'\",.<>/?",
     "vim.leader": "<space>",
     "vim.useCtrlKeys": false,
-    "vim.handleKeys": {
-        "<C-h>": true
-    },
     "editor.wordSeparators": "`~!@#$%^&*()-=+[{]}\\|;:'\",.<>/?",
     "terminal.integrated.commandsToSkipShell": [
         "workbench.action.openEditorAtIndex1",
@@ -250,8 +145,6 @@
     "gitlens.hovers.avatars": false,
     "gitlens.hovers.currentLine.details": false,
     "editor.foldingStrategy": "indentation",
-    "bookmarks.showCommandsInContextMenu": false,
-    "bookmarks.saveBookmarksInProject": false,
     "[typescript]": {
         "editor.defaultFormatter": "vscode.typescript-language-features"
     },
@@ -389,5 +282,4 @@
     "terminal.integrated.cursorBlinking": true,
     "terminal.integrated.tabs.hideCondition": "never",
     "keyboard.dispatch": "keyCode"
-    // "terminal.integrated.defaultProfile.windows": "PowerShell"
 }
