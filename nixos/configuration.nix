@@ -43,11 +43,6 @@
   nix.settings = {
     experimental-features = [ "nix-command" "flakes" ];
   };
-  nix.gc = {
-    automatic = true;
-    dates = "weekly";
-    options = "-d";
-  };
 
   # Configure keymap in X11
   services.xserver = {
@@ -232,12 +227,6 @@
     viAlias = true;
     vimAlias = true;
   };
-
-  # using flake so disable auto
-  # system.autoUpgrade = {
-  #   enable = true;
-  #   allowReboot = true;
-  # };
 
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions
