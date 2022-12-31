@@ -104,20 +104,40 @@
 
     programs.fzf = {
       enable = true;
+      defaultOptions = [ "--bind alt-j:down,alt-k:up" ];
+    };
+
+    programs.bat = {
+      enable = true;
+      config = {
+        theme = "Monokai Extended";
+      };
     };
 
     programs.zsh = {
       enable = true;
-      enableAutosuggestions = true;
+      # enableAutosuggestions = true;
       enableSyntaxHighlighting = true;
+      initExtraBeforeCompInit = ''
+        ${builtins.readFile ./zsh/lscolors.sh}
+        zstyle ':completion:*' list-colors ''${(s.:.)LS_COLORS}
+        
+        # zsh-autocomplete settings
+        zstyle ':autocomplete:*' widget-style menu-select
+        zstyle ':autocomplete:*' fzf-completion yes
+        zstyle ':autocomplete:*' min-delay 0.3
+      '';
       initExtra = ''
         ${builtins.readFile ./zsh/.p10k.zsh}
         ${builtins.readFile ./zsh/colored-man-pages.plugin.zsh}
-        ${builtins.readFile ./zsh/lscolors.sh}
         bindkey -e
-        setopt nomenucomplete
-        zstyle ':completion:*' menu select
-        zstyle ':completion:*' list-colors ''${(s.:.)LS_COLORS}
+
+        # Up arrow:
+        bindkey '\e[A' up-line-or-history
+        bindkey '\eOA' up-line-or-history
+        # Down arrow:
+        bindkey '\e[B' down-line-or-history
+        bindkey '\eOB' down-line-or-history
       '';
       shellAliases = {
         ll = "ls -l";
@@ -125,6 +145,8 @@
       zplug = {
         enable = true;
         plugins = [
+          { name = "zsh-users/zsh-completions"; }
+          { name = "marlonrichert/zsh-autocomplete"; }
           { name = "romkatv/powerlevel10k"; tags = [ as:theme depth:1 ]; }
         ];
       };
