@@ -2,7 +2,7 @@
 
 set -e
 
-extension_general=" emilast.logfilehighlighter \
+extension_general=" \
                     monokai.theme-monokai-pro-vscode \
                     mads-hartmann.bash-ide-vscode \
                     oderwat.indent-rainbow \
@@ -16,7 +16,6 @@ extension_general=" emilast.logfilehighlighter \
                     esbenp.prettier-vscode \
                     ms-vscode.hexeditor \
                     ms-vscode.powershell \
-                    ibm.output-colorizer \
                     ms-vscode-remote.vscode-remote-extensionpack \
                     ms-vscode-remote.remote-ssh \
                     jnoortheen.nix-ide \
