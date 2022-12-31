@@ -1,3 +1,4 @@
+# got this from https://github.com/ohmyzsh/ohmyzsh/blob/master/plugins/colored-man-pages/colored-man-pages.plugin.zsh
 # Requires colors autoload.
 # See termcap(5).
 

@@ -102,20 +102,22 @@
       enable = true;
     };
 
+    programs.fzf = {
+      enable = true;
+    };
+
     programs.zsh = {
       enable = true;
       enableAutosuggestions = true;
       enableSyntaxHighlighting = true;
       initExtra = ''
-        if [ -n "''${commands[fzf-share]}" ]; then
-          source "$(fzf-share)/key-bindings.zsh"
-          source "$(fzf-share)/completion.zsh"
-        fi
-
         ${builtins.readFile ./zsh/.p10k.zsh}
         ${builtins.readFile ./zsh/colored-man-pages.plugin.zsh}
+        ${builtins.readFile ./zsh/lscolors.sh}
         bindkey -e
         setopt nomenucomplete
+        zstyle ':completion:*' menu select
+        zstyle ':completion:*' list-colors ''${(s.:.)LS_COLORS}
       '';
       shellAliases = {
         ll = "ls -l";
