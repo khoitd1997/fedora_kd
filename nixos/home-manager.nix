@@ -98,6 +98,10 @@
       ];
     };
 
+    programs.zoxide = {
+      enable = true;
+    };
+
     programs.zsh = {
       enable = true;
       enableAutosuggestions = true;
@@ -109,6 +113,7 @@
         fi
 
         ${builtins.readFile ./zsh/.p10k.zsh}
+        ${builtins.readFile ./zsh/colored-man-pages.plugin.zsh}
         bindkey -e
         setopt nomenucomplete
       '';

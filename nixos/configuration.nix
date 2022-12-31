@@ -86,6 +86,8 @@
     description = "Khoi Trinh";
     extraGroups = [ "networkmanager" "wheel" "dialout" "libvirtd" ];
   };
+  programs.zsh.enable = true;
+  users.users.kd.shell = pkgs.zsh;
 
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
