@@ -22,6 +22,8 @@ extension_general=" emilast.logfilehighlighter \
                     ms-vscode-remote.remote-ssh \
                     jnoortheen.nix-ide \
                     haskell.haskell \
+                    dhall.dhall-lang \
+                    dhall.vscode-dhall-lsp-server \
                     "
 
 extension_misc="    eugenwiens.bitbake \

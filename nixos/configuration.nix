@@ -185,6 +185,10 @@
     haskellPackages.stack
     haskell-language-server
 
+    # dhall
+    dhall
+    dhall-lsp-server
+
     # virtualization
     qemu_full
     virt-manager
