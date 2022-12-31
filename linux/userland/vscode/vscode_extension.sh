@@ -11,7 +11,6 @@ extension_general=" emilast.logfilehighlighter \
                     Gruntfuggly.todo-tree \
                     vscodevim.vim \
                     ionutvmi.path-autocomplete \
-                    dakara.dakara-foldplus \
                     aaron-bond.better-comments \
                     k--kato.intellij-idea-keybindings \
                     esbenp.prettier-vscode \

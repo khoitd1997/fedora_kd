@@ -90,6 +90,10 @@
       stateVersion = "22.11";
     };
 
+    nixpkgs.config = {
+      allowUnfree = true;
+    };
+
     programs.bash = {
       enable = true;
       bashrcExtra = (builtins.readFile ./bash/shell_init.sh);
@@ -109,6 +113,45 @@
         background = "dark";
       };
     };
+
+    programs.vscode = {
+      enable = true;
+      extensions = with pkgs.vscode-extensions; [
+        vscodevim.vim
+        yzhang.markdown-all-in-one
+        dhall.dhall-lang
+        dhall.vscode-dhall-lsp-server
+        haskell.haskell
+        justusadam.language-haskell
+        ms-vscode-remote.remote-ssh
+        ms-vscode.hexeditor
+        ms-vscode.cpptools
+        twxs.cmake
+        ms-vscode.cmake-tools
+        ms-python.python
+        ms-python.vscode-pylance
+        yzhang.markdown-all-in-one
+        shd101wyy.markdown-preview-enhanced
+        eamodio.gitlens
+        github.vscode-pull-request-github
+        donjayamanne.githistory
+        mhutchie.git-graph
+        jnoortheen.nix-ide
+      ] ++ pkgs.vscode-utils.extensionsFromVscodeMarketplace [
+        {
+          name = "theme-monokai-pro-vscode";
+          publisher = "monokai";
+          version = "1.2.0";
+          sha256 = "08z5zalc3y9j89sxav254bx5j606ym7g8dlc49yf53i0srj1bnjs";
+        }
+        {
+          name = "intellij-idea-keybindings";
+          publisher = "k--kato";
+          version = "1.5.4";
+          sha256 = "1y759wa4rz2n5a1cjpbj7q0n52932pv30ymhvisq9zva1cwp04yx";
+        }
+      ];
+    };
   };
 
   # Allow unfree packages
@@ -122,6 +165,7 @@
     stress-ng
     curl
     sshpass
+    cabal2nix
     wget
     fd
     tio
@@ -180,10 +224,10 @@
     pylint
 
     # Haskell
-    ghc
-    haskellPackages.cabal-install
-    haskellPackages.stack
-    haskell-language-server
+    # ghc
+    # haskellPackages.cabal-install
+    # haskellPackages.stack
+    # haskell-language-server
 
     # dhall
     dhall
@@ -198,7 +242,6 @@
     flameshot
     qtcreator
     kicad
-    unstable.vscode-fhs # always use newest vscode
     cura
     kdenlive
     wireshark
