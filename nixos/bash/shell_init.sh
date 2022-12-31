@@ -30,3 +30,5 @@ fi
 if [ -f "/var/run/reboot-required" ]; then
     echo "REBOOT IS NEEDED FOR UPDATES"
 fi
+
+zsh
