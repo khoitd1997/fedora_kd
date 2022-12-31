@@ -121,8 +121,9 @@
       initExtraBeforeCompInit = ''
         ${builtins.readFile ./zsh/lscolors.sh}
         zstyle ':completion:*' list-colors ''${(s.:.)LS_COLORS}
-        
+
         # zsh-autocomplete settings
+        zstyle ':autocomplete:recent-dirs' backend zoxide
         zstyle ':autocomplete:*' widget-style menu-select
         zstyle ':autocomplete:*' fzf-completion yes
         zstyle ':autocomplete:*' min-delay 0.3
