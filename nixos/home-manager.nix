@@ -126,6 +126,9 @@
       # enableAutosuggestions = true;
       enableSyntaxHighlighting = true;
       initExtraBeforeCompInit = ''
+        # run tmux by default unless inside vscode
+        [ -z "$TMUX"  ] && [ -z "$VSCODE_INJECTION" ] && { exec tmux new-session;}
+
         ${builtins.readFile ./zsh/lscolors.sh}
         zstyle ':completion:*' list-colors ''${(s.:.)LS_COLORS}
 
@@ -135,6 +138,11 @@
         # zsh-autocomplete settings
         # zstyle ':autocomplete:*' widget-style menu-complete
         # zstyle ':autocomplete:*' min-delay 0.4
+
+        # zsh vim mode config
+        function zvm_config() {
+          ZVM_LINE_INIT_MODE=$ZVM_MODE_INSERT
+        }
       '';
       initExtra = ''
         ${builtins.readFile ./zsh/.p10k.zsh}
@@ -147,16 +155,24 @@
         # Down arrow:
         bindkey '\e[B' down-line-or-history
         bindkey '\eOB' down-line-or-history
-
-        # run tmux by default unless inside vscode
-        [ -z "$TMUX"  ] && [ -z "$VSCODE_INJECTION" ] && { exec tmux new-session;}
       '';
       shellAliases = {
         ll = "ls -l";
       };
+
+      # only do completion init once every day
+      completionInit = ''
+        autoload -Uz compinit
+        for dump in ~/.zcompdump(N.mh+24); do
+          compinit
+        done
+        compinit -C
+      '';
+
       zplug = {
         enable = true;
         plugins = [
+          { name = "jeffreytse/zsh-vi-mode"; }
           { name = "zsh-users/zsh-completions"; }
           { name = "Aloxaf/fzf-tab"; }
           # { name = "marlonrichert/zsh-autocomplete"; }
@@ -313,6 +329,7 @@
 
         # mouse stuffs
         set -g mouse on
+        bind-key -T copy-mode-vi MouseDragEnd1Pane send-keys -X copy-pipe-and-cancel "xclip -selection clipboard -i"
 
         # tmux thumb config
         set -g @thumbs-command 'echo -n {} | xclip -in -selection clipboard'
