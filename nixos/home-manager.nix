@@ -149,11 +149,6 @@
         # zsh-autocomplete settings
         # zstyle ':autocomplete:*' widget-style menu-complete
         # zstyle ':autocomplete:*' min-delay 0.4
-
-        # zsh vim mode config
-        function zvm_config() {
-          ZVM_LINE_INIT_MODE=$ZVM_MODE_INSERT
-        }
       '';
       initExtra = ''
         ${builtins.readFile ./zsh/.p10k.zsh}
@@ -183,7 +178,6 @@
       zplug = {
         enable = true;
         plugins = [
-          { name = "jeffreytse/zsh-vi-mode"; }
           { name = "zsh-users/zsh-completions"; }
           { name = "Aloxaf/fzf-tab"; }
           # { name = "marlonrichert/zsh-autocomplete"; }
@@ -365,6 +359,9 @@
     programs.fzf = {
       enable = true;
       defaultOptions = [ "--bind alt-j:down,alt-k:up" ];
+      tmux = {
+        enableShellIntegration = true;
+      };
     };
 
     programs.bat = {
