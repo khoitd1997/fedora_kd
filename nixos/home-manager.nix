@@ -147,6 +147,9 @@
         # Down arrow:
         bindkey '\e[B' down-line-or-history
         bindkey '\eOB' down-line-or-history
+
+        # run tmux by default unless inside vscode
+        [ -z "$TMUX"  ] && [ -z "$VSCODE_INJECTION" ] && { exec tmux new-session;}
       '';
       shellAliases = {
         ll = "ls -l";
@@ -318,6 +321,8 @@
         unbind-key C-b
         set-option -g prefix C-Space
         bind-key C-Space send-prefix
+        # show PREFIX when in prefix mode
+        set-option -ga status-right "#[bg=colour248,fg=colour237] #{?client_prefix,PREFIX,}"
       '';
 
       tmuxinator = {

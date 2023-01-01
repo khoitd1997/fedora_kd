@@ -103,6 +103,10 @@ in
   nixpkgs.config.allowUnfree = true;
 
   environment.systemPackages = with pkgs; [
+    # some nix commands like flake need git
+    git
+    git-lfs
+
     # Java
     jdk
 
