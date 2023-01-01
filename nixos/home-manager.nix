@@ -10,7 +10,6 @@
       cabal2nix
       rnix-lsp
       nixos-option
-      xsel
 
       # dhall
       dhall
@@ -39,7 +38,6 @@
         zstyle ':completion:*' list-colors ''${(s.:.)LS_COLORS}
 
         # zsh-autocomplete settings
-        zstyle ':autocomplete:recent-dirs' backend zoxide
         zstyle ':autocomplete:*' widget-style menu-select
         zstyle ':autocomplete:*' fzf-completion yes
         zstyle ':autocomplete:*' min-delay 0.4
@@ -215,11 +213,15 @@
         set -g status-right '#(gitmux "#{pane_current_path}")'
         set -g status-justify centre
 
-        # mouse stuffs
+        # clipboard
         set-option -s set-clipboard off
+
+        # mouse stuffs
         set -g mouse on
         # dragging mouse to copy
-        bind-key -T copy-mode-vi MouseDragEnd1Pane send-keys -X copy-pipe-and-cancel "xclip -selection clipboard -i"
+        bind-key -T copy-mode-vi MouseDragEnd1Pane send-keys -X copy-pipe-and-cancel "xclip -in -selection clipboard"
+        # y to copy to clipboard
+        bind -T copy-mode-vi y send-keys -X copy-pipe-and-cancel 'xclip -in -selection clipboard'
       '';
 
       tmuxinator = {

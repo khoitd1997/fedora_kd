@@ -128,6 +128,7 @@
     duf
     du-dust
     broot
+    xclip
 
     # Java
     jdk
