@@ -96,11 +96,9 @@
     git
     git-lfs
     neovim
-    nixpkgs-fmt
     stress-ng
     curl
     sshpass
-    cabal2nix
     wget
     fd
     tio
@@ -111,7 +109,6 @@
     tldr
     tig
     hexyl
-    youtube-dl
     pylint
     openocd
     strace
@@ -128,8 +125,6 @@
     ansible
     file
     entr
-    rnix-lsp
-    nixos-option
     duf
     du-dust
     broot
@@ -163,10 +158,6 @@
     # haskellPackages.cabal-install
     # haskellPackages.stack
     # haskell-language-server
-
-    # dhall
-    dhall
-    dhall-lsp-server
 
     # virtualization
     qemu_full

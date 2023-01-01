@@ -58,7 +58,7 @@ name='launch_terminal'
 
 [org/gnome/shell]
 disabled-extensions=['places-menu@gnome-shell-extensions.gcampax.github.com', 'native-window-placement@gnome-shell-extensions.gcampax.github.com', 'apps-menu@gnome-shell-extensions.gcampax.github.com']
-enabled-extensions=['workspace-indicator@gnome-shell-extensions.gcampax.github.com', 'drive-menu@gnome-shell-extensions.gcampax.github.com', 'pop-shell@system76.com']
+enabled-extensions=['workspace-indicator@gnome-shell-extensions.gcampax.github.com', 'drive-menu@gnome-shell-extensions.gcampax.github.com', 'pop-shell@system76.com', 'appindicatorsupport@rgcjonas.gmail.com']
 
 [org/gnome/shell/extensions/pop-shell]
 active-hint=true

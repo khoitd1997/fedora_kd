@@ -5,8 +5,68 @@
       stateVersion = "22.11";
     };
 
+    home.packages = with pkgs; [
+      nixpkgs-fmt
+      cabal2nix
+      rnix-lsp
+      nixos-option
+      xsel
+
+      # dhall
+      dhall
+      dhall-lsp-server
+    ];
+
+    services.home-manager.autoUpgrade = {
+      enable = true;
+      frequency = "weekly";
+    };
+
+    services.flameshot = {
+      enable = true;
+    };
+
     nixpkgs.config = {
       allowUnfree = true;
+    };
+
+    programs.zsh = {
+      enable = true;
+      # enableAutosuggestions = true;
+      enableSyntaxHighlighting = true;
+      initExtraBeforeCompInit = ''
+        ${builtins.readFile ./zsh/lscolors.sh}
+        zstyle ':completion:*' list-colors ''${(s.:.)LS_COLORS}
+
+        # zsh-autocomplete settings
+        zstyle ':autocomplete:recent-dirs' backend zoxide
+        zstyle ':autocomplete:*' widget-style menu-select
+        zstyle ':autocomplete:*' fzf-completion yes
+        zstyle ':autocomplete:*' min-delay 0.4
+      '';
+      initExtra = ''
+        ${builtins.readFile ./zsh/.p10k.zsh}
+        ${builtins.readFile ./zsh/colored-man-pages.plugin.zsh}
+        bindkey -e
+
+        # Up arrow:
+        bindkey '\e[A' up-line-or-history
+        bindkey '\eOA' up-line-or-history
+        # Down arrow:
+        bindkey '\e[B' down-line-or-history
+        bindkey '\eOB' down-line-or-history
+      '';
+      shellAliases = {
+        ll = "ls -l";
+      };
+      zplug = {
+        enable = true;
+        plugins = [
+          { name = "zsh-users/zsh-completions"; }
+          { name = "marlonrichert/zsh-autocomplete"; }
+          { name = "romkatv/powerlevel10k"; tags = [ as:theme depth:1 ]; }
+        ];
+      };
     };
 
     programs.bash = {
@@ -98,6 +158,75 @@
       ];
     };
 
+    programs.htop = {
+      enable = true;
+      settings = {
+        hide_kernel_threads=1;
+        hide_userland_threads=0;
+        shadow_other_users=0;
+        show_thread_names=1;
+        show_program_path=1;
+        highlight_base_name=1;
+        highlight_deleted_exe=1;
+        highlight_megabytes=1;
+        highlight_threads=1;
+        highlight_changes=0;
+        highlight_changes_delay_secs=5;
+        find_comm_in_cmdline=1;
+        strip_exe_from_cmdline=1;
+        show_merged_command=0;
+        header_margin=1;
+        screen_tabs=1;
+        detailed_cpu_time=0;
+        cpu_count_from_one=0;
+        show_cpu_usage=1;
+        show_cpu_frequency=0;
+        show_cpu_temperature=0;
+        degree_fahrenheit=0;
+        update_process_names=0;
+        account_guest_in_cpu_meter=0;
+        color_scheme=0;
+        enable_mouse=1;
+        delay=15;
+        tree_view=1;
+      };
+    };
+
+    programs.broot = {
+      enable = true;
+    };
+
+    programs.tmux = {
+      enable = true;
+      sensibleOnTop = true;
+      baseIndex = 1;
+      clock24 = true;
+      terminal = "xterm-256color";
+      keyMode = "vi";
+
+      extraConfig = ''
+        # status bar
+        set -g status-left-length 85
+        set -g status-left "Session #[fg=colour135] #S"
+        set -g window-status-current-format "#[fg=black,bold bg=default]│#[fg=white bg=cyan]#W#[fg=black,bold bg=default]│"
+        set -g window-status-current-format "#[fg=black,bold bg=default]│#[fg=colour135 bg=black]#W#[fg=black,bold bg=default]│"
+        set -g status-style bg=default
+        set -g status-right "#[fg=magenta] #[bg=gray] %b %d %Y %l:%M %p"
+        set -g status-right '#(gitmux "#{pane_current_path}")'
+        set -g status-justify centre
+
+        # mouse stuffs
+        set-option -s set-clipboard off
+        set -g mouse on
+        # dragging mouse to copy
+        bind-key -T copy-mode-vi MouseDragEnd1Pane send-keys -X copy-pipe-and-cancel "xclip -selection clipboard -i"
+      '';
+
+      tmuxinator = {
+        enable = true;
+      };
+    };
+
     programs.zoxide = {
       enable = true;
     };
@@ -111,45 +240,6 @@
       enable = true;
       config = {
         theme = "Monokai Extended";
-      };
-    };
-
-    programs.zsh = {
-      enable = true;
-      # enableAutosuggestions = true;
-      enableSyntaxHighlighting = true;
-      initExtraBeforeCompInit = ''
-        ${builtins.readFile ./zsh/lscolors.sh}
-        zstyle ':completion:*' list-colors ''${(s.:.)LS_COLORS}
-
-        # zsh-autocomplete settings
-        zstyle ':autocomplete:recent-dirs' backend zoxide
-        zstyle ':autocomplete:*' widget-style menu-select
-        zstyle ':autocomplete:*' fzf-completion yes
-        zstyle ':autocomplete:*' min-delay 0.3
-      '';
-      initExtra = ''
-        ${builtins.readFile ./zsh/.p10k.zsh}
-        ${builtins.readFile ./zsh/colored-man-pages.plugin.zsh}
-        bindkey -e
-
-        # Up arrow:
-        bindkey '\e[A' up-line-or-history
-        bindkey '\eOA' up-line-or-history
-        # Down arrow:
-        bindkey '\e[B' down-line-or-history
-        bindkey '\eOB' down-line-or-history
-      '';
-      shellAliases = {
-        ll = "ls -l";
-      };
-      zplug = {
-        enable = true;
-        plugins = [
-          { name = "zsh-users/zsh-completions"; }
-          { name = "marlonrichert/zsh-autocomplete"; }
-          { name = "romkatv/powerlevel10k"; tags = [ as:theme depth:1 ]; }
-        ];
       };
     };
   };
