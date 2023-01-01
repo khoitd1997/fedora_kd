@@ -215,6 +215,14 @@
 
         # mouse stuffs
         set -g mouse on
+
+        # tmux thumb config
+        set -g @thumbs-command 'echo -n {} | xclip -in -selection clipboard'
+
+        # use ctrl+space for prefix instead of ctrl+b
+        unbind-key C-b
+        set-option -g prefix C-Space
+        bind-key C-Space send-prefix
       '';
 
       tmuxinator = {
