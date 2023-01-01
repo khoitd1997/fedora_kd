@@ -202,26 +202,19 @@
       terminal = "xterm-256color";
       keyMode = "vi";
 
-      extraConfig = ''
-        # status bar
-        set -g status-left-length 85
-        set -g status-left "Session #[fg=colour135] #S"
-        set -g window-status-current-format "#[fg=black,bold bg=default]│#[fg=white bg=cyan]#W#[fg=black,bold bg=default]│"
-        set -g window-status-current-format "#[fg=black,bold bg=default]│#[fg=colour135 bg=black]#W#[fg=black,bold bg=default]│"
-        set -g status-style bg=default
-        set -g status-right "#[fg=magenta] #[bg=gray] %b %d %Y %l:%M %p"
-        set -g status-right '#(gitmux "#{pane_current_path}")'
-        set -g status-justify centre
+      plugins = with pkgs.tmuxPlugins; [
+        better-mouse-mode
+        tmux-thumbs
+        gruvbox
+        pain-control
+      ];
 
+      extraConfig = ''
         # clipboard
         set-option -s set-clipboard off
 
         # mouse stuffs
         set -g mouse on
-        # dragging mouse to copy
-        bind-key -T copy-mode-vi MouseDragEnd1Pane send-keys -X copy-pipe-and-cancel "xclip -in -selection clipboard"
-        # y to copy to clipboard
-        bind -T copy-mode-vi y send-keys -X copy-pipe-and-cancel 'xclip -in -selection clipboard'
       '';
 
       tmuxinator = {
