@@ -9,7 +9,6 @@
   };
 
   environment.systemPackages = with pkgs; [
-    # gnome stuffs
     gnome3.gnome-tweaks
     gnome.adwaita-icon-theme
     gnomeExtensions.pop-shell

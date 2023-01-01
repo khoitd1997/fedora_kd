@@ -8,6 +8,10 @@
     supportDDC = true;
   };
 
+  environment.systemPackages = with pkgs; [
+    konsole
+  ];
+
   environment.etc = {
     "xdg/kwinrc".text = (builtins.readFile ./conf/kwinrc);
     "xdg/kdeglobals".text = (builtins.readFile ./conf/kdeglobals);

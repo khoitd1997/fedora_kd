@@ -80,6 +80,7 @@
       texlive.combined.scheme-full
 
       # GUI apps
+      alacritty
       gparted
       flameshot
       qtcreator
@@ -87,7 +88,6 @@
       cura
       kdenlive
       wireshark
-      konsole
       firefox-wayland
     ];
 
