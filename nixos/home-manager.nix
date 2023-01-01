@@ -80,7 +80,6 @@
       texlive.combined.scheme-full
 
       # GUI apps
-      alacritty
       gparted
       flameshot
       qtcreator
@@ -89,6 +88,9 @@
       kdenlive
       wireshark
       firefox-wayland
+
+      # fonts
+      source-code-pro
     ];
 
     # TODO: This might be necessary once we are on Ubuntu
@@ -117,6 +119,15 @@
         };
         home-manager = {
           flake = home-manager;
+        };
+      };
+    };
+
+    programs.alacritty = {
+      enable = true;
+      settings = {
+        font.normal = {
+          family = "Source Code Pro";
         };
       };
     };
