@@ -2,7 +2,7 @@
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 
-args@{ config, pkgs, home-manager, ... }:
+args@{ config, pkgs, nixpkgs, home-manager, ... }:
 let
   primary_user = "kd";
   stateVersion = "22.11";
@@ -19,7 +19,7 @@ in
       (
         import ./home-manager.nix (
           args
-          // { inherit primary_user stateVersion; }
+          // { inherit nixpkgs primary_user stateVersion; }
         )
       )
     ];

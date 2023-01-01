@@ -1,4 +1,4 @@
-{ config, pkgs, home-manager, primary_user, stateVersion, ... }:
+{ config, pkgs, nixpkgs, home-manager, primary_user, stateVersion, ... }:
 {
   home-manager.users.${primary_user} = { pkgs, ... }: {
     home = {
@@ -109,6 +109,15 @@
       enable = true;
       settings = {
         experimental-features = [ "nix-command" "flakes" ];
+      };
+
+      registry = {
+        nixpkgs = {
+          flake = nixpkgs;
+        };
+        home-manager = {
+          flake = home-manager;
+        };
       };
     };
 
