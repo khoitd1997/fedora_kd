@@ -1,25 +1,101 @@
-{ config, pkgs, home-manager, ... }:
+{ config, pkgs, home-manager, primary_user, stateVersion, ... }:
 {
-  home-manager.users.kd = { pkgs, ... }: {
+  home-manager.users.${primary_user} = { pkgs, ... }: {
     home = {
-      stateVersion = "22.11";
+      stateVersion = stateVersion;
     };
 
     home.packages = with pkgs; [
+      stress-ng
+      curl
+      sshpass
+      wget
+      fd
+      tio
+      ripgrep
+      tldr
+      tig
+      hexyl
+      pylint
+      openocd
+      strace
+      lshw
+      moreutils
+      jq
+      doxygen
+      nettools
+      neofetch
+      hyperfine
+      tree
+      gawk
+      ansible
+      file
+      entr
+      duf
+      du-dust
+      xclip
       nixpkgs-fmt
       cabal2nix
       rnix-lsp
       nixos-option
+      sshfs
+      ncdu
+
+      # C++
+      gcc
+      (pkgs.lib.hiPrio clang)
+      clang-tools
+      bloaty
+      cppcheck
+      cpplint
+      cmake
+      cmake-format
+      ninja
+      clang-analyzer
+      gcc-arm-embedded
+      perf-tools
+      lttng-tools
+
+      # Python
+      python3Full
+      black
+      python-language-server
+      pylint
+
+      # Haskell
+      # ghc
+      # haskellPackages.cabal-install
+      # haskellPackages.stack
+      # haskell-language-server
+
+      # virtualization
+      qemu_full
+      virt-manager
 
       # dhall
       dhall
       dhall-lsp-server
+
+      # latex
+      texlive.combined.scheme-full
+
+      # GUI apps
+      gparted
+      flameshot
+      qtcreator
+      kicad
+      cura
+      kdenlive
+      wireshark
+      konsole
+      firefox-wayland
     ];
 
-    services.home-manager.autoUpgrade = {
-      enable = true;
-      frequency = "weekly";
-    };
+    # TODO: This might be necessary once we are on Ubuntu
+    # services.home-manager.autoUpgrade = {
+    #   enable = true;
+    #   frequency = "weekly";
+    # };
 
     services.flameshot = {
       enable = true;
@@ -27,6 +103,13 @@
 
     nixpkgs.config = {
       allowUnfree = true;
+    };
+
+    nix = {
+      enable = true;
+      settings = {
+        experimental-features = [ "nix-command" "flakes" ];
+      };
     };
 
     programs.zsh = {
@@ -162,34 +245,34 @@
     programs.htop = {
       enable = true;
       settings = {
-        hide_kernel_threads=1;
-        hide_userland_threads=0;
-        shadow_other_users=0;
-        show_thread_names=1;
-        show_program_path=1;
-        highlight_base_name=1;
-        highlight_deleted_exe=1;
-        highlight_megabytes=1;
-        highlight_threads=1;
-        highlight_changes=0;
-        highlight_changes_delay_secs=5;
-        find_comm_in_cmdline=1;
-        strip_exe_from_cmdline=1;
-        show_merged_command=0;
-        header_margin=1;
-        screen_tabs=1;
-        detailed_cpu_time=0;
-        cpu_count_from_one=0;
-        show_cpu_usage=1;
-        show_cpu_frequency=0;
-        show_cpu_temperature=0;
-        degree_fahrenheit=0;
-        update_process_names=0;
-        account_guest_in_cpu_meter=0;
-        color_scheme=0;
-        enable_mouse=1;
-        delay=15;
-        tree_view=1;
+        hide_kernel_threads = 1;
+        hide_userland_threads = 0;
+        shadow_other_users = 0;
+        show_thread_names = 1;
+        show_program_path = 1;
+        highlight_base_name = 1;
+        highlight_deleted_exe = 1;
+        highlight_megabytes = 1;
+        highlight_threads = 1;
+        highlight_changes = 0;
+        highlight_changes_delay_secs = 5;
+        find_comm_in_cmdline = 1;
+        strip_exe_from_cmdline = 1;
+        show_merged_command = 0;
+        header_margin = 1;
+        screen_tabs = 1;
+        detailed_cpu_time = 0;
+        cpu_count_from_one = 0;
+        show_cpu_usage = 1;
+        show_cpu_frequency = 0;
+        show_cpu_temperature = 0;
+        degree_fahrenheit = 0;
+        update_process_names = 0;
+        account_guest_in_cpu_meter = 0;
+        color_scheme = 0;
+        enable_mouse = 1;
+        delay = 15;
+        tree_view = 1;
       };
     };
 
@@ -247,6 +330,26 @@
       config = {
         theme = "Monokai Extended";
       };
+    };
+
+    home.sessionVariables = { EDITOR = "nvim"; };
+    programs.neovim = {
+      enable = true;
+      # defaultEditor = true;
+      viAlias = true;
+      vimAlias = true;
+    };
+
+    programs.ssh = {
+      enable = true;
+      controlMaster = "auto";
+      controlPersist = "3h";
+
+      extraConfig = ''
+        TCPKeepAlive no
+        ServerAliveInterval 60
+        ServerAliveCountMax 10
+      '';
     };
   };
 }

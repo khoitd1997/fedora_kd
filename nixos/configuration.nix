@@ -2,7 +2,11 @@
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 
-{ config, pkgs, home-manager, ... }:
+args@{ config, pkgs, home-manager, ... }:
+let
+  primary_user = "kd";
+  stateVersion = "22.11";
+in
 {
   imports =
     [
@@ -10,8 +14,14 @@
       ./hardware-configuration.nix
 
       home-manager.nixosModule
-      ./home-manager.nix
       ./gnome/gnome.nix
+
+      (
+        import ./home-manager.nix (
+          args
+          // { inherit primary_user stateVersion; }
+        )
+      )
     ];
 
   boot.loader = {
@@ -29,7 +39,7 @@
   };
   boot.supportedFilesystems = [ "ntfs" ];
 
-  networking.hostName = "nixos-kd";
+  networking.hostName = "nixos-${primary_user}";
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
 
   networking.networkmanager.enable = true;
@@ -81,102 +91,23 @@
   # services.xserver.libinput.enable = true;
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
-  users.users.kd = {
+  users.users.${primary_user} = {
     isNormalUser = true;
     description = "Khoi Trinh";
     extraGroups = [ "networkmanager" "wheel" "dialout" "libvirtd" ];
+    shell = pkgs.zsh;
   };
   programs.zsh.enable = true;
-  users.users.kd.shell = pkgs.zsh;
 
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
 
   environment.systemPackages = with pkgs; [
-    git
-    git-lfs
-    neovim
-    stress-ng
-    curl
-    sshpass
-    wget
-    fd
-    tio
-    bat
-    ncdu
-    fzf
-    ripgrep
-    tldr
-    tig
-    hexyl
-    pylint
-    openocd
-    strace
-    lshw
-    moreutils
-    jq
-    doxygen
-    htop
-    nettools
-    neofetch
-    hyperfine
-    tree
-    gawk
-    ansible
-    file
-    entr
-    duf
-    du-dust
-    broot
-    xclip
-
     # Java
     jdk
 
     # C++
-    gcc
-    clang
-    clang-tools
-    bloaty
-    cppcheck
-    cpplint
-    cmake
-    cmake-format
-    ninja
-    clang-analyzer
-    gcc-arm-embedded
-    perf-tools
-    lttng-tools
-
-    # Python
-    python3Full
-    black
-    python-language-server
-    pylint
-
-    # Haskell
-    # ghc
-    # haskellPackages.cabal-install
-    # haskellPackages.stack
-    # haskell-language-server
-
-    # virtualization
-    qemu_full
-    virt-manager
-
-    # GUI apps
-    gparted
-    flameshot
-    qtcreator
-    kicad
-    cura
-    kdenlive
-    wireshark
-    konsole
-    firefox-wayland
-
-    # latex
-    texlive.combined.scheme-full
+    # gcc and clang has collision when installed using home manager
   ];
 
   virtualisation.libvirtd.enable = true;
@@ -198,8 +129,6 @@
   programs.neovim = {
     enable = true;
     defaultEditor = true;
-    viAlias = true;
-    vimAlias = true;
   };
 
   # This value determines the NixOS release from which the default
@@ -208,5 +137,5 @@
   # this value at the release version of the first install of this system.
   # Before changing this value read the documentation for this option
   # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
-  system.stateVersion = "22.11"; # Did you read the comment?
+  system.stateVersion = stateVersion; # Did you read the comment?
 }
