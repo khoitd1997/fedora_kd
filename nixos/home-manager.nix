@@ -37,10 +37,12 @@
         ${builtins.readFile ./zsh/lscolors.sh}
         zstyle ':completion:*' list-colors ''${(s.:.)LS_COLORS}
 
+        setopt nomenucomplete
+        zstyle ':completion:*' menu select
+
         # zsh-autocomplete settings
-        zstyle ':autocomplete:*' widget-style menu-select
-        zstyle ':autocomplete:*' fzf-completion yes
-        zstyle ':autocomplete:*' min-delay 0.4
+        # zstyle ':autocomplete:*' widget-style menu-complete
+        # zstyle ':autocomplete:*' min-delay 0.4
       '';
       initExtra = ''
         ${builtins.readFile ./zsh/.p10k.zsh}
@@ -61,7 +63,8 @@
         enable = true;
         plugins = [
           { name = "zsh-users/zsh-completions"; }
-          { name = "marlonrichert/zsh-autocomplete"; }
+          { name = "Aloxaf/fzf-tab"; }
+          # { name = "marlonrichert/zsh-autocomplete"; }
           { name = "romkatv/powerlevel10k"; tags = [ as:theme depth:1 ]; }
         ];
       };
