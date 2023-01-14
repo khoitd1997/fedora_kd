@@ -372,5 +372,13 @@
         "key": "alt+right",
         "command": "-gitlens.key.alt+right",
         "when": "gitlens:key:alt+right"
+    },
+    {
+        "key": "ctrl+e",
+        "command": "-workbench.action.quickOpen"
+    },
+    {
+        "key": "ctrl+r",
+        "command": "-workbench.action.openRecent"
     }
 ]
