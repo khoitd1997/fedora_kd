@@ -275,6 +275,12 @@
           version = "1.5.4";
           sha256 = "1y759wa4rz2n5a1cjpbj7q0n52932pv30ymhvisq9zva1cwp04yx";
         }
+        {
+          name = "devicetree";
+          publisher = "plorefice";
+          version = "0.1.1";
+          sha256 = "0yfz6rgmh9j9bq7ahcjxphj74jd8rnnlg355vffdy8xfqdirxp5r";
+        }
       ];
     };
 
