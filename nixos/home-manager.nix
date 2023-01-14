@@ -40,6 +40,11 @@
       nixos-option
       sshfs
       ncdu
+      nmap
+      pciutils
+      usbutils
+      bind
+      tcpdump
 
       # C++
       gcc
