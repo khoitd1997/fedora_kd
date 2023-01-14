@@ -45,6 +45,7 @@
       usbutils
       bind
       tcpdump
+      traceroute
 
       # C++
       gcc
