@@ -205,26 +205,48 @@
       userName = "khoitd1997";
       userEmail = "khoidinhtrinh@gmail.com";
       extraConfig = {
-        pull.rebasae = true;
+        pull.ff = "only";
+        commit.verbose = true;
         advice.skippedCherryPicks = false;
         branch.sort = "-committerdate";
         column.ui = "auto";
+
         fetch = {
           prune = true;
           output = "compact";
           parallel = 0;
         };
-        push.followTags = true;
+
+        push = {
+          followTags = true;
+          autoSetupRemote = true;
+        };
         rebase.stat = true;
-      };
+        merge.conflictStyle = "diff3";
 
-      lfs = {
-        enable = true;
-      };
+        diff = {
+          algorithm = "histogram";
+          mnemonicPrefix = true;
+          renames = true;
+          submodule = "log";
+        };
 
-      difftastic = {
-        enable = true;
-        background = "dark";
+        mergetool = {
+          # Clean up backup files created by merge tools on tool exit
+          keepBackup = false;
+          # Clean up temp files created by merge tools on tool exit
+          keepTemporaries = false;
+          # Put the temp files in a dedicated dir anyway
+          writeToTemp = true;
+          # Auto-accept file prompts when launching merge tools
+          prompt = false;
+        };
+        status = {
+          # Display submodule rev change summaries in status
+          submoduleSummary = true;
+          # Recursively traverse untracked directories to display all contents
+          showUntrackedFiles = "all";
+        };
       };
     };
 
