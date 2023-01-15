@@ -204,6 +204,19 @@
       enable = true;
       userName = "khoitd1997";
       userEmail = "khoidinhtrinh@gmail.com";
+      extraConfig = {
+        pull.rebasae = true;
+        advice.skippedCherryPicks = false;
+        branch.sort = "-committerdate";
+        column.ui = "auto";
+        fetch = {
+          prune = true;
+          output = "compact";
+          parallel = 0;
+        };
+        push.followTags = true;
+        rebase.stat = true;
+      };
 
       lfs = {
         enable = true;
