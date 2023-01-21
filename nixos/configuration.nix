@@ -122,10 +122,13 @@ in
     extraGroups = [ "networkmanager" "wheel" "dialout" "libvirtd" ];
     shell = pkgs.zsh;
   };
-  programs.zsh.enable = true;
+  # fix /etc/shells not having zsh problem
+  environment.shells = with pkgs; [ zsh ];
 
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
+
+  virtualisation.vmware.host.enable = true;
 
   environment.systemPackages = with pkgs; [
     # some nix commands like flake need git
