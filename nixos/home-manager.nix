@@ -12,6 +12,7 @@
       wget
       fd
       tio
+      picocom
       ripgrep
       tldr
       tig
@@ -46,6 +47,7 @@
       bind
       tcpdump
       traceroute
+      libarchive
 
       # C++
       gcc
@@ -163,6 +165,10 @@
         ${builtins.readFile ./zsh/.p10k.zsh}
         ${builtins.readFile ./zsh/colored-man-pages.plugin.zsh}
         bindkey -e
+
+        bindkey "^[[1;5C" forward-word
+        bindkey "^[[1;5D" backward-word
+        bindkey "\e[3~" delete-char
 
         # Up arrow:
         bindkey '\e[A' up-line-or-history
