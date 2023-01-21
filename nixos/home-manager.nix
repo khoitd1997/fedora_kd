@@ -54,8 +54,8 @@
       libarchive
 
       # C++
-      gcc
-      (pkgs.lib.hiPrio clang)
+      gcc_latest
+      (pkgs.lib.hiPrio llvmPackages_latest.clang)
       clang-tools
       bloaty
       cppcheck
