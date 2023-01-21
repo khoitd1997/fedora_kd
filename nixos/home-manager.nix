@@ -249,6 +249,14 @@
           showUntrackedFiles = "all";
         };
       };
+
+      lfs = {
+        enable = true;
+      };
+      diffstatic = {
+        enable = true;
+        background = "dark";
+      };
     };
 
     programs.vscode = {
