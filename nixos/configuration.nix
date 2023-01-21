@@ -2,7 +2,7 @@
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 
-args@{ config, pkgs, nixpkgs, home-manager, ... }:
+args@{ config, pkgs, ... }:
 let
   primary_user = "kd";
   stateVersion = "22.11";
@@ -13,13 +13,12 @@ in
       # Include the results of the hardware scan.
       ./hardware-configuration.nix
 
-      home-manager.nixosModule
       ./gnome/gnome.nix
 
       (
         import ./home-manager.nix (
           args
-          // { inherit nixpkgs primary_user stateVersion; }
+          // { inherit primary_user stateVersion; }
         )
       )
     ];
@@ -51,8 +50,35 @@ in
 
   i18n.defaultLocale = "en_US.utf8";
 
-  nix.settings = {
-    experimental-features = [ "nix-command" "flakes" ];
+  nix = {
+    settings = {
+      experimental-features = [ "nix-command" "flakes" ];
+    };
+    nixPath = [ ("nixos-config=" + ./configuration.nix) ];
+    registry = {
+      nixpkgs = {
+        from = {
+          id = "nixpkgs";
+          type = "indirect";
+        };
+        to = {
+          owner = "NixOS";
+          repo = "nixpkgs/nixos-22.11";
+          type = "github";
+        };
+      };
+      home-manager = {
+        from = {
+          id = "home-manager";
+          type = "indirect";
+        };
+        to = {
+          owner = "nix-community";
+          repo = "home-manager";
+          type = "github";
+        };
+      };
+    };
   };
 
   # Configure keymap in X11

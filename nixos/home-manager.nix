@@ -1,5 +1,9 @@
-{ config, pkgs, nixpkgs, home-manager, primary_user, stateVersion, ... }:
+{ config, pkgs, primary_user, stateVersion, ... }:
 {
+  imports = [
+    <home-manager/nixos>
+  ];
+
   home-manager.users.${primary_user} = { pkgs, ... }: {
     home = {
       stateVersion = stateVersion;
@@ -119,15 +123,6 @@
       enable = true;
       settings = {
         experimental-features = [ "nix-command" "flakes" ];
-      };
-
-      registry = {
-        nixpkgs = {
-          flake = nixpkgs;
-        };
-        home-manager = {
-          flake = home-manager;
-        };
       };
     };
 
@@ -275,8 +270,7 @@
         ms-vscode.cpptools
         twxs.cmake
         ms-vscode.cmake-tools
-        ms-python.python
-        ms-python.vscode-pylance
+        # ms-python.python
         yzhang.markdown-all-in-one
         shd101wyy.markdown-preview-enhanced
         eamodio.gitlens

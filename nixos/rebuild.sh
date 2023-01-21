@@ -3,4 +3,4 @@
 script_dir="$( cd -- "$(dirname "$0")" >/dev/null 2>&1 ; pwd -P )"
 cd "${script_dir}"
 
-sudo nixos-rebuild boot --install-bootloader --flake '.#nixos-kd'
+sudo nixos-rebuild boot --install-bootloader -I nixos-config="${script_dir}/configuration.nix"
