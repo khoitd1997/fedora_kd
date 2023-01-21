@@ -443,7 +443,7 @@
       controlPersist = "3h";
 
       extraConfig = ''
-        TCPKeepAlive no
+        TCPKeepAlive yes
         ServerAliveInterval 60
         ServerAliveCountMax 10
       '';
