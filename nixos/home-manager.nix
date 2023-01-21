@@ -168,9 +168,11 @@
         # Up arrow:
         bindkey '\e[A' up-line-or-history
         bindkey '\eOA' up-line-or-history
+        bindkey '^[k' up-line-or-history
         # Down arrow:
         bindkey '\e[B' down-line-or-history
         bindkey '\eOB' down-line-or-history
+        bindkey '^[j' down-line-or-history
       '';
       shellAliases = {
         ll = "ls -l";
