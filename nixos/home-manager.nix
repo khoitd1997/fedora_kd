@@ -253,7 +253,7 @@
       lfs = {
         enable = true;
       };
-      diffstatic = {
+      difftastic = {
         enable = true;
         background = "dark";
       };

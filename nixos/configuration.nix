@@ -54,7 +54,6 @@ in
     settings = {
       experimental-features = [ "nix-command" "flakes" ];
     };
-    nixPath = [ ("nixos-config=" + ./configuration.nix) ];
     registry = {
       nixpkgs = {
         from = {
