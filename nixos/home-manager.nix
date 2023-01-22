@@ -53,6 +53,7 @@
       traceroute
       libarchive
       unzip
+      procs
 
       # C++
       gcc_latest
@@ -206,6 +207,9 @@
     programs.bash = {
       enable = true;
       bashrcExtra = (builtins.readFile ./bash/shell_init.sh);
+      historySize = 10000000;
+      historyFileSize = 10000000;
+      historyControl = [ "erasedups" "ignoredups" ];
     };
 
     programs.git = {
@@ -439,7 +443,10 @@
       };
     };
 
-    home.sessionVariables = { EDITOR = "nvim"; };
+    home.sessionVariables = {
+      NIX_SHELL_PRESERVE_PROMPT = 1;
+      EDITOR = "nvim";
+    };
     programs.neovim = {
       enable = true;
       viAlias = true;

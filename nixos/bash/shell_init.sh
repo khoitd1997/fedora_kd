@@ -1,5 +1,11 @@
 export TERMINAL=alacritty
-export HISTFILESIZE=10000000
-export HISTSIZE=10000000
 
 export LIBVIRT_DEFAULT_URI="qemu:///system"
+
+export PROMPT="\[\e[36m\]\w\[\e[m\] "
+
+if [[ -n "$IN_NIX_SHELL" ]]; then
+    export PS1="\[\e[33m\](nix-shell)\[\e[m\] ${PROMPT}"
+else
+    export PS1="${PROMPT}"
+fi
