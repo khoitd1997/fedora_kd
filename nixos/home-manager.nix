@@ -52,6 +52,7 @@
       tcpdump
       traceroute
       libarchive
+      unzip
 
       # C++
       gcc_latest
@@ -402,6 +403,7 @@
 
         # tmux thumb config
         set -g @thumbs-command 'echo -n {} | xclip -in -selection clipboard'
+        set -g @thumbs-osc52 1
 
         # use ctrl+space for prefix instead of ctrl+b
         unbind-key C-b
