@@ -143,8 +143,10 @@
       # enableAutosuggestions = true;
       enableSyntaxHighlighting = true;
       initExtraBeforeCompInit = ''
-        # run tmux by default unless inside vscode
-        [ -z "$TMUX"  ] && [ -z "$VSCODE_INJECTION" ] && { exec tmux new-session;}
+        export HISTSIZE=1000000000
+        export SAVEHIST=$HISTSIZE
+        setopt share_history
+        setopt HIST_IGNORE_ALL_DUPS
 
         ${builtins.readFile ./zsh/lscolors.sh}
         zstyle ':completion:*' list-colors ''${(s.:.)LS_COLORS}
@@ -405,6 +407,9 @@
         bind-key C-Space send-prefix
         # show PREFIX when in prefix mode
         set-option -ga status-right "#[bg=colour248,fg=colour237] #{?client_prefix,PREFIX,}"
+
+        set -g pane-active-border-style bg=default,fg=magenta
+        set -g pane-border-style fg=green
       '';
 
       tmuxinator = {
@@ -434,7 +439,6 @@
     home.sessionVariables = { EDITOR = "nvim"; };
     programs.neovim = {
       enable = true;
-      # defaultEditor = true;
       viAlias = true;
       vimAlias = true;
     };

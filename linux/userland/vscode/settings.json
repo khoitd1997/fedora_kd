@@ -45,7 +45,7 @@
     "gitlens.statusBar.enabled": false,
     "C_Cpp.default.cppStandard": "c++17",
     "C_Cpp.default.cStandard": "c99",
-    "terminal.integrated.scrollback": 5000,
+    "terminal.integrated.scrollback": 100000,
     "vim.cursorStylePerMode.normal": "block-outline",
     "vim.camelCaseMotion.enable": true,
     "vim.hlsearch": true,
@@ -211,14 +211,6 @@
         "kd-server": "linux"
     },
     "security.workspace.trust.untrustedFiles": "open",
-    "terminal.integrated.profiles.windows": {
-        "PowerShell": {
-            "source": "PowerShell",
-            "args": [
-                "-noexit",
-            ]
-        }
-    },
     "powershell.powerShellDefaultVersion": "Windows PowerShell (x64)",
     "notebook.lineNumbers": "on",
     "notebook.consolidatedRunButton": true,
@@ -284,5 +276,8 @@
     "[python]": {
         "editor.formatOnType": true
     },
-    "terminal.integrated.shellIntegration.enabled": false
+    "terminal.integrated.shellIntegration.enabled": false,
+    "terminal.integrated.altClickMovesCursor": false,
+    "terminal.integrated.enablePersistentSessions": false,
+    "terminal.integrated.tabs.enabled": false
 }
