@@ -75,10 +75,9 @@
       pylint
 
       # Haskell
-      # ghc
-      # haskellPackages.cabal-install
-      # haskellPackages.stack
-      # haskell-language-server
+      ghc
+      haskellPackages.cabal-install
+      haskell-language-server
 
       # virtualization
       qemu_full
@@ -411,8 +410,7 @@
         # show PREFIX when in prefix mode
         set-option -ga status-right "#[bg=colour248,fg=colour237] #{?client_prefix,PREFIX,}"
 
-        set -g pane-active-border-style bg=default,fg=magenta
-        set -g pane-border-style fg=green
+        set -g pane-active-border-style fg=colour208,bg=default
       '';
 
       tmuxinator = {
