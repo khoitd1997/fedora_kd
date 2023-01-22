@@ -417,6 +417,11 @@
         set-option -ga status-right "#[bg=colour248,fg=colour237] #{?client_prefix,PREFIX,}"
 
         set -g pane-active-border-style fg=colour208,bg=default
+
+        # reduce escape time so that things like vim
+        # is more responsive
+        set -sg escape-time 0
+        set -g focus-event on
       '';
 
       tmuxinator = {
@@ -451,6 +456,68 @@
       enable = true;
       viAlias = true;
       vimAlias = true;
+
+      coc = {
+        enable = true;
+        settings = {
+          "colors.enable" = true;
+          "codeLens.enable" = true;
+          "coc.preferences.enableLinkedEditing" = true;
+          "diagnostic.floatConfig" = {
+            "rounded" = true;
+            "border" = true;
+          };
+          "diagnostic.format" = "%message [%source]";
+          "diagnostic.virtualText" = true;
+          "diagnostic.checkCurrentLine" = true;
+          "diagnostic.separateRelatedInformationAsDiagnostics" = true;
+        };
+      };
+
+      extraConfig = ''
+        set timeoutlen=1000
+        set ttimeoutlen=50
+
+        filetype plugin on
+
+        set noswapfile
+
+        "Ctrl + s for saving
+        noremap <silent> <C-S>          :update<CR>
+        vnoremap <silent> <C-S>         <C-C>:update<CR>
+        inoremap <silent> <C-S>         <C-O>:update<CR>
+
+        "coc stuffs
+        inoremap <expr> <Tab> pumvisible() ? coc#_select_confirm() : "<Tab>"
+        inoremap <expr> <cr> pumvisible() ? coc#_select_confirm() : "<cr>"
+      '';
+
+      plugins = with pkgs.vimPlugins; [
+        coc-clangd
+        coc-json
+        coc-python
+        coc-yaml
+
+        vim-surround
+        vim-gitgutter
+        fzf-vim
+        {
+          plugin = gruvbox;
+          config = ''
+            colorscheme gruvbox
+          '';
+        }
+        {
+          plugin = nerdcommenter;
+          config = ''
+            "ctrl + / for commenting
+            nmap <C-_>   <Plug>NERDCommenterToggle
+            vmap <C-_>   <Plug>NERDCommenterToggle<CR>gv
+
+            let g:NERDCreateDefaultMappings = 0
+          '';
+        }
+      ];
     };
 
     programs.ssh = {
