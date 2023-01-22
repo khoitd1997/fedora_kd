@@ -143,10 +143,8 @@
       # enableAutosuggestions = true;
       enableSyntaxHighlighting = true;
       initExtraBeforeCompInit = ''
-        export HISTSIZE=1000000000
-        export SAVEHIST=$HISTSIZE
-        setopt share_history
-        setopt HIST_IGNORE_ALL_DUPS
+        # run tmux by default
+        [ -z "$TMUX"  ] && { exec tmux new-session;}
 
         ${builtins.readFile ./zsh/lscolors.sh}
         zstyle ':completion:*' list-colors ''${(s.:.)LS_COLORS}
@@ -161,6 +159,11 @@
       initExtra = ''
         ${builtins.readFile ./zsh/.p10k.zsh}
         ${builtins.readFile ./zsh/colored-man-pages.plugin.zsh}
+        export HISTSIZE=1000000000
+        export SAVEHIST=$HISTSIZE
+        setopt share_history
+        setopt HIST_IGNORE_ALL_DUPS
+
         bindkey -e
 
         bindkey "^[[1;5C" forward-word
