@@ -481,26 +481,46 @@
         filetype plugin on
 
         set noswapfile
+        set number relativenumber
+        set nu rnu
 
-        "Ctrl + s for saving
-        noremap <silent> <C-S>          :update<CR>
-        vnoremap <silent> <C-S>         <C-C>:update<CR>
-        inoremap <silent> <C-S>         <C-O>:update<CR>
+        "Ctrl+s for saving
+        noremap <silent> <C-S> :update<CR>
+        vnoremap <silent> <C-S> <C-C>:update<CR>
+        inoremap <silent> <C-S> <C-O>:update<CR>
 
-        "coc stuffs
-        inoremap <expr> <Tab> pumvisible() ? coc#_select_confirm() : "<Tab>"
-        inoremap <expr> <cr> pumvisible() ? coc#_select_confirm() : "<cr>"
+        "bind ctrl+z to undo
+        nnoremap <c-z> :undo <CR>
+        vnoremap <c-z> :undo <CR>
+        inoremap <c-z> <esc>:undo <CR>
+
+        "coc alt-j and alt-k to navigate completions
+        execute "map \ej <M-j>"
+        inoremap <expr> <M-j> coc#pum#visible() ? coc#pum#next(1) : "<M-j>"
+        execute "map \ek <M-k>"
+        inoremap <expr> <M-k> coc#pum#visible() ? coc#pum#prev(1) : "<M-k>"
+
+        "coc tab and enter to select the completions
+        inoremap <expr> <Tab> coc#pum#visible() ? coc#_select_confirm() : "<Tab>"
+        inoremap <expr> <cr> coc#pum#visible() ? coc#_select_confirm() : "<cr>"
       '';
 
       plugins = with pkgs.vimPlugins; [
-        coc-clangd
         coc-json
-        coc-python
+        coc-pyright
+        coc-sh
         coc-yaml
 
         vim-surround
-        vim-gitgutter
-        fzf-vim
+
+        {
+          plugin = fzf-vim;
+          config = ''
+            "ctrl+shift+n to search for files
+            nnoremap <silent> <C-N> :Files<CR>
+            vnoremap <silent> <C-N> :Files<CR>
+          '';
+        }
         {
           plugin = gruvbox;
           config = ''
@@ -515,6 +535,18 @@
             vmap <C-_>   <Plug>NERDCommenterToggle<CR>gv
 
             let g:NERDCreateDefaultMappings = 0
+          '';
+        }
+        {
+          plugin = vim-gitgutter;
+          config = ''
+            set updatetime=100
+            set signcolumn=yes
+
+            highlight GitGutterAdd    ctermbg=191 ctermfg=2
+            highlight GitGutterChange ctermbg=214 ctermfg=3
+            highlight GitGutterDelete ctermbg=160 ctermfg=1
+            highlight GitGutterChangeDelete ctermbg=160 ctermfg=1
           '';
         }
       ];
