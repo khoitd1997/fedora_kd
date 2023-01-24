@@ -119,7 +119,7 @@ in
   users.users.${primary_user} = {
     isNormalUser = true;
     description = "Khoi Trinh";
-    extraGroups = [ "networkmanager" "wheel" "dialout" "libvirtd" ];
+    extraGroups = [ "networkmanager" "wheel" "dialout" "libvirtd" "docker" ];
     shell = pkgs.zsh;
   };
   # fix /etc/shells not having zsh problem
@@ -141,6 +141,9 @@ in
     # C++
     # gcc and clang has collision when installed using home manager
   ];
+
+  virtualisation.docker.enable = true;
+  virtualisation.podman.enable = true;
 
   virtualisation.libvirtd.enable = true;
   programs.dconf.enable = true;
