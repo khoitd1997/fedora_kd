@@ -54,6 +54,7 @@
       libarchive
       unzip
       procs
+      distrobox
 
       # C++
       gcc_latest
@@ -512,6 +513,7 @@
         coc-yaml
 
         vim-surround
+        vim-nix
 
         {
           plugin = fzf-vim;
