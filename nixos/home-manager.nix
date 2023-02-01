@@ -7,6 +7,9 @@
   home-manager.users.${primary_user} = { pkgs, ... }: {
     home = {
       stateVersion = stateVersion;
+      shellAliases = {
+        code = "env -u TMUX_PANE -u TMUX -u TMUX_TMPDIR code";
+      };
     };
 
     home.packages = with pkgs; [
@@ -146,7 +149,7 @@
       enableSyntaxHighlighting = true;
       initExtraBeforeCompInit = ''
         # run tmux by default
-        [ -z "$TMUX"  ] && { exec tmux new-session;}
+        [ -z "$TMUX_PANE"  ] && { exec tmux new-session;}
 
         ${builtins.readFile ./zsh/lscolors.sh}
         zstyle ':completion:*' list-colors ''${(s.:.)LS_COLORS}
@@ -437,9 +440,6 @@
     programs.fzf = {
       enable = true;
       defaultOptions = [ "--bind alt-j:down,alt-k:up" ];
-      tmux = {
-        enableShellIntegration = true;
-      };
     };
 
     programs.bat = {
@@ -452,6 +452,7 @@
     home.sessionVariables = {
       NIX_SHELL_PRESERVE_PROMPT = 1;
       EDITOR = "nvim";
+      FZF_CTRL_T_OPTS = "--preview='bat --color \"always\" -r :500 {}'";
     };
     programs.neovim = {
       enable = true;
