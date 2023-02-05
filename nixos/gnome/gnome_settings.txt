@@ -1,4 +1,4 @@
-[org/gnome/desktop/input-sources]
+[org/gnome/deskop/input-sources]
 sources=[('xkb', 'us')]
 xkb-options=['terminate:ctrl_alt_bksp', 'lv3:ralt_switch', 'caps:escape']
 
@@ -70,24 +70,3 @@ tile-enter=['']
 
 [org/gnome/shell/app-switcher]
 current-workspace-only=true
-
-[com/gexperts/Tilix]
-background-image-mode='tile'
-enable-wide-handle=true
-prompt-on-close=true
-sidebar-on-right=false
-tab-position='top'
-terminal-title-style='none'
-theme-variant='dark'
-use-tabs=true
-window-save-state=true
-
-[com/gexperts/Tilix/profiles/2b7c4080-0ddd-46c5-8f23-563fd3ba789d]
-default-size-columns=140
-default-size-rows=40
-draw-margin=72
-font='Monospace 15'
-scrollback-unlimited=true
-terminal-bell='none'
-use-system-font=false
-visible-name='Default'
