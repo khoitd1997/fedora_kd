@@ -32,6 +32,7 @@ night-light-temperature=uint32 3121
 [org/gnome/settings-daemon/plugins/media-keys]
 custom-keybindings=['/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1/']
 www=['<Super>b']
+screensaver=@as []
 
 [org/gnome/desktop/wm/preferences]
 button-layout='appmenu:minimize,maximize,close'
@@ -42,6 +43,7 @@ switch-applications=@as []
 switch-applications-backward=@as []
 switch-windows=['<Alt>Tab']
 switch-windows-backward=['<Shift><Alt>Tab']
+minimize=@as []
 
 [org/gnome/shell/keybindings]
 toggle-message-tray=@as []
@@ -67,6 +69,7 @@ gap-outer=uint32 0
 show-title=false
 tile-by-default=true
 tile-enter=['']
+active-hint-border-radius=uint32 3
 
 [org/gnome/shell/app-switcher]
 current-workspace-only=true
