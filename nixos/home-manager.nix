@@ -1,4 +1,7 @@
 { config, pkgs, primary_user, stateVersion, ... }:
+let
+  unstable = import <unstable> {};
+in
 {
   imports = [
     <home-manager/nixos>
@@ -98,7 +101,6 @@
 
       # GUI apps
       gparted
-      flameshot
       qtcreator
       kicad
       cura
@@ -411,7 +413,16 @@
 
         # tmux thumb config
         set -g @thumbs-command 'echo -n {} | xclip -in -selection clipboard'
-        set -g @thumbs-osc52 1
+        # set -g @thumbs-osc52 1
+        set -g @thumbs-unique enabled
+        set -g @thumbs-reverse enabled
+        set -g @thumbs-fg-color magenta
+        # match all things separated by whitespace
+        set -g @thumbs-regexp-1 '[\S]+'
+        # to make tmux thumb perform better
+        set -g visual-activity off
+        set -g visual-bell off
+        set -g visual-silence on
 
         # use ctrl+space for prefix instead of ctrl+b
         unbind-key C-b
@@ -424,13 +435,8 @@
 
         # reduce escape time so that things like vim
         # is more responsive
-        set -sg escape-time 0
         set -g focus-event on
       '';
-
-      tmuxinator = {
-        enable = true;
-      };
     };
 
     programs.zoxide = {

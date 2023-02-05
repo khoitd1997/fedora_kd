@@ -9,7 +9,7 @@ release_version="22.11"
 
 sudo nix-channel --add https://nixos.org/channels/"nixos-${release_version}" nixos
 sudo nix-channel --add https://github.com/nix-community/home-manager/archive/release-${release_version}.tar.gz home-manager
-sudo nix-channel --add https://nixos.org/channels/nixos-unstable
+sudo nix-channel --add https://nixos.org/channels/nixos-unstable unstable
 
 sudo nix-channel --update
 ./rebuild.sh
