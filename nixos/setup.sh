@@ -9,7 +9,6 @@ if [ "$EUID" -eq 0 ]; then
 fi
 
 # generate hardware-configuration.nix
-rm -f ./hardware-configuration.nix
 sudo nixos-generate-config --dir .
 
 ./rebuild.sh
