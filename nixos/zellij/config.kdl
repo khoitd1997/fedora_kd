@@ -1,0 +1,37 @@
+theme "one-half-dark"
+themes {
+    one-half-dark {
+        fg 220 223 228
+        bg 40 44 52
+        black 27 29 35
+        red 227 63 76
+        green 152 195 121
+        yellow 229 192 123
+        blue 97 175 239
+        magenta 198 120 221
+        cyan 86 182 194
+        white 233 225 254
+        orange 216 133 76
+    }
+}
+
+scroll_buffer_size 50000
+
+keybinds {
+    unbind "Ctrl t"
+    shared_except "locked" {
+    unbind "Alt h"
+    unbind "Alt l"
+    unbind "Alt j"
+    unbind "Alt k"
+    }
+
+    pane {
+    bind "h" "Left" { MoveFocus "Left"; SwitchToMode "Normal"; }
+    bind "l" "Right" { MoveFocus "Right"; SwitchToMode "Normal"; }
+    bind "j" "Down" { MoveFocus "Down"; SwitchToMode "Normal"; }
+    bind "k" "Up" { MoveFocus "Up"; SwitchToMode "Normal"; }
+    }
+}
+
+default_layout "custom_layout"

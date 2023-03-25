@@ -56,7 +56,7 @@ in
     home = {
       stateVersion = stateVersion;
       shellAliases = {
-        code = "env -u TMUX_PANE -u TMUX -u TMUX_TMPDIR code";
+        code = "env -u ZELLIJ -u ZELLIJ_SESSION_NAME code";
       };
     };
 
@@ -106,6 +106,7 @@ in
       unzip
       procs
       distrobox
+      unstable.zellij
 
       # C++
       gcc_latest
@@ -197,8 +198,8 @@ in
       # enableAutosuggestions = true;
       enableSyntaxHighlighting = true;
       initExtraBeforeCompInit = ''
-        # run tmux by default
-        [ -z "$TMUX_PANE"  ] && { exec tmux new-session;}
+        # run zelliji by default
+        [ -z "$ZELLIJ"  ] && { exec zellij;}
 
         ${builtins.readFile ./zsh/lscolors.sh}
         zstyle ':completion:*' list-colors ''${(s.:.)LS_COLORS}
@@ -368,6 +369,15 @@ in
       enable = true;
     };
 
+    xdg.configFile."zellij/config.kdl" = {
+      source = ./zellij/config.kdl;
+    };
+    xdg.configFile."zellij/layouts/custom_layout.swap.kdl" = {
+      source = ./zellij/custom_layout.swap.kdl;
+    };
+    xdg.configFile."zellij/layouts/custom_layout.kdl" = {
+      source = ./zellij/custom_layout.kdl;
+    };
     programs.tmux = {
       enable = true;
       sensibleOnTop = true;
