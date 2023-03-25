@@ -19,11 +19,18 @@ scroll_buffer_size 50000
 
 keybinds {
     unbind "Ctrl t"
+    tab {
+        bind "Ctrl l" { SwitchToMode "Normal"; }
+    }
+    shared_except "tab" "locked" {
+        // use ctrl+l for tab mode
+        bind "Ctrl l" { SwitchToMode "Tab"; }
+    }
     shared_except "locked" {
-    unbind "Alt h"
-    unbind "Alt l"
-    unbind "Alt j"
-    unbind "Alt k"
+        unbind "Alt h"
+        unbind "Alt l"
+        unbind "Alt j"
+        unbind "Alt k"
     }
 
     pane {
@@ -33,5 +40,3 @@ keybinds {
     bind "k" "Up" { MoveFocus "Up"; SwitchToMode "Normal"; }
     }
 }
-
-default_layout "custom_layout"

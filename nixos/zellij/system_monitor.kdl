@@ -3,6 +3,7 @@ layout {
         plugin location="zellij:tab-bar"
     }
     pane
+    pane command="htop" 
     pane size=2 borderless=true {
         plugin location="zellij:status-bar"
     }

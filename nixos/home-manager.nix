@@ -53,6 +53,10 @@ in
   ];
 
   home-manager.users.${primary_user} = { pkgs, ... }: {
+    imports = [
+      ./zellij/zellij.nix
+    ];
+
     home = {
       stateVersion = stateVersion;
       shellAliases = {
@@ -106,7 +110,6 @@ in
       unzip
       procs
       distrobox
-      unstable.zellij
 
       # C++
       gcc_latest
@@ -369,15 +372,6 @@ in
       enable = true;
     };
 
-    xdg.configFile."zellij/config.kdl" = {
-      source = ./zellij/config.kdl;
-    };
-    xdg.configFile."zellij/layouts/custom_layout.swap.kdl" = {
-      source = ./zellij/custom_layout.swap.kdl;
-    };
-    xdg.configFile."zellij/layouts/custom_layout.kdl" = {
-      source = ./zellij/custom_layout.kdl;
-    };
     programs.tmux = {
       enable = true;
       sensibleOnTop = true;
