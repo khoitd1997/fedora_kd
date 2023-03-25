@@ -22,6 +22,8 @@ fi
 command code&
 sleep 5
 
+rm -f ~/.vscode/extensions/.init-default-profile-extensions ~/.vscode/extensions/extensions.json
+
 # copy Visual Studdio Code setting file and keybinding file
 ln -sfv "${currDir}/settings.json" "${vscode_config_dir}/settings.json"
 ln -sfv "${currDir}/keybindings.json" "${vscode_config_dir}/keybindings.json"
