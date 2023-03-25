@@ -4,6 +4,16 @@ let
     config.allowUnfree = true;
   };
 
+  # sometimes it's nice to be able to launch simple bash
+  # terminal in case zsh messes up
+  bashTerminal = pkgs.makeDesktopItem {
+    name = "bash terminal";
+    exec = "alacritty -e bash";
+    comment = "Launch a terminal with bash as shell";
+    desktopName = "bash terminal";
+    type = "Application";
+  };
+
   # most extensions can just be installed using extensionsFromVscodeMarketplace
   # except for a special few, check pkgs/applications/editors/vscode/extensions for list
   # of special ones
@@ -145,6 +155,8 @@ in
 
       # fonts
       source-code-pro
+
+      bashTerminal
     ];
 
     # TODO: This might be necessary once we are on Ubuntu
