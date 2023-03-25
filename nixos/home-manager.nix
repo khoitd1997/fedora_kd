@@ -306,7 +306,7 @@ in
         ms-azuretools.vscode-docker
         mhutchie.git-graph
         jnoortheen.nix-ide
-      ] ++ pkgs.vscode-utils.extensionsFromVscodeMarketplace [
+      ] ++ unstable.vscode-utils.extensionsFromVscodeMarketplace [
         {
           name = "better-comments";
           publisher = "aaron-bond";
