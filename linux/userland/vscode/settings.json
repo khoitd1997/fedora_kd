@@ -40,7 +40,7 @@
     "editor.cursorBlinking": "solid",
     "search.showLineNumbers": true,
     "extensions.ignoreRecommendations": true,
-    "extensions.autoUpdate": true,
+    "extensions.autoUpdate": false,
     "gitlens.mode.statusBar.enabled": false,
     "gitlens.statusBar.enabled": false,
     "C_Cpp.default.cppStandard": "c++17",
