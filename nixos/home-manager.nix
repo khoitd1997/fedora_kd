@@ -1,6 +1,8 @@
 { config, pkgs, primary_user, stateVersion, ... }:
 let
-  unstable = import <unstable> {};
+  unstable = import <unstable> {
+    config.allowUnfree = true;
+  };
 in
 {
   imports = [
@@ -270,15 +272,15 @@ in
       lfs = {
         enable = true;
       };
-      difftastic = {
+      delta = {
         enable = true;
-        background = "dark";
       };
     };
 
     programs.vscode = {
       enable = true;
-      extensions = with pkgs.vscode-extensions; [
+      package = unstable.vscode;
+      extensions = with unstable.vscode-extensions; [
         vscodevim.vim
         mads-hartmann.bash-ide-vscode
         oderwat.indent-rainbow
@@ -295,7 +297,7 @@ in
         ms-vscode.cpptools
         twxs.cmake
         ms-vscode.cmake-tools
-        # ms-python.python
+        ms-python.python
         yzhang.markdown-all-in-one
         shd101wyy.markdown-preview-enhanced
         eamodio.gitlens
