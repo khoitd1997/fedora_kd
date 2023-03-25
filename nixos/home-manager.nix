@@ -3,6 +3,39 @@ let
   unstable = import <unstable> {
     config.allowUnfree = true;
   };
+
+  # most extensions can just be installed using extensionsFromVscodeMarketplace
+  # except for a special few, check pkgs/applications/editors/vscode/extensions for list
+  # of special ones
+  specialVscodeExtensions = [
+    rec {
+      name = "remote-ssh";
+      publisher = "ms-vscode-remote";
+      ext = unstable.vscode-extensions.${publisher}.${name};
+    }
+    rec {
+      name = "vscode-pull-request-github";
+      publisher = "GitHub";
+      ext = unstable.vscode-extensions.github.${name};
+    }
+    rec {
+      name = "cpptools";
+      publisher = "ms-vscode";
+      ext = unstable.vscode-extensions.${publisher}.${name};
+    }
+    rec {
+      name = "python";
+      publisher = "ms-python";
+      ext = unstable.vscode-extensions.${publisher}.${name};
+    }
+  ];
+  normalVscodeExtensions = builtins.filter
+    (
+      x: builtins.all
+        (specialExt: !((x.name == specialExt.name) && (x.publisher == specialExt.publisher)))
+        specialVscodeExtensions
+    )
+    (import ./vscode/extensions.nix).extensions;
 in
 {
   imports = [
@@ -280,76 +313,9 @@ in
     programs.vscode = {
       enable = true;
       package = unstable.vscode;
-      extensions = with unstable.vscode-extensions; [
-        vscodevim.vim
-        mads-hartmann.bash-ide-vscode
-        oderwat.indent-rainbow
-        arrterian.nix-env-selector
-        yzhang.markdown-all-in-one
-        redhat.vscode-yaml
-        gruntfuggly.todo-tree
-        dhall.dhall-lang
-        dhall.vscode-dhall-lsp-server
-        haskell.haskell
-        justusadam.language-haskell
-        ms-vscode-remote.remote-ssh
-        ms-vscode.hexeditor
-        ms-vscode.cpptools
-        twxs.cmake
-        ms-vscode.cmake-tools
-        ms-python.python
-        yzhang.markdown-all-in-one
-        shd101wyy.markdown-preview-enhanced
-        eamodio.gitlens
-        github.vscode-pull-request-github
-        donjayamanne.githistory
-        ms-azuretools.vscode-docker
-        mhutchie.git-graph
-        jnoortheen.nix-ide
-      ] ++ unstable.vscode-utils.extensionsFromVscodeMarketplace [
-        {
-          name = "better-comments";
-          publisher = "aaron-bond";
-          version = "3.0.2";
-          sha256 = "15w1ixvp6vn9ng6mmcmv9ch0ngx8m85i1yabxdfn6zx3ypq802c5";
-        }
-        {
-          name = "cmake-format";
-          publisher = "cheshirekow";
-          version = "0.6.11";
-          sha256 = "14v0wb00iy38ry9bfpzz4fjraggy4ygg5v622mfpxb7498kkrm9m";
-        }
-        {
-          name = "tcl";
-          publisher = "rashwell";
-          version = "0.1.0";
-          sha256 = "0zd1sb1ixz7shwfq70r5dl3b87w6pc4lc5121gcbzwixg1dkzhlk";
-        }
-        {
-          name = "path-autocomplete";
-          publisher = "ionutvmi";
-          version = "1.22.1";
-          sha256 = "0djfxfllxsr5lvxcvnvax25x3skyml2ybccfg9vnahs1sixymfph";
-        }
-        {
-          name = "theme-monokai-pro-vscode";
-          publisher = "monokai";
-          version = "1.2.0";
-          sha256 = "08z5zalc3y9j89sxav254bx5j606ym7g8dlc49yf53i0srj1bnjs";
-        }
-        {
-          name = "intellij-idea-keybindings";
-          publisher = "k--kato";
-          version = "1.5.4";
-          sha256 = "1y759wa4rz2n5a1cjpbj7q0n52932pv30ymhvisq9zva1cwp04yx";
-        }
-        {
-          name = "devicetree";
-          publisher = "plorefice";
-          version = "0.1.1";
-          sha256 = "0yfz6rgmh9j9bq7ahcjxphj74jd8rnnlg355vffdy8xfqdirxp5r";
-        }
-      ];
+      extensions =
+        (builtins.map (x: x.ext) specialVscodeExtensions) ++
+        unstable.vscode-utils.extensionsFromVscodeMarketplace normalVscodeExtensions;
     };
 
     programs.htop = {
