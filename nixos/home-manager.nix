@@ -1,4 +1,4 @@
-{ config, pkgs, primary_user, stateVersion, ... }:
+{ config, pkgs, primary_user, stateVersion, lib, not_in_wsl ? true, ... }:
 let
   unstable = import <unstable> {
     config.allowUnfree = true;
@@ -29,13 +29,29 @@ let
       ext = unstable.vscode-extensions.github.${name};
     }
     rec {
-      name = "cpptools";
-      publisher = "ms-vscode";
+      name = "gitlens";
+      publisher = "eamodio";
       ext = unstable.vscode-extensions.${publisher}.${name};
     }
     rec {
+      name = "vscode-pylance";
+      publisher = "ms-python";
+      ext = unstable.vscode-extensions.${publisher}.${name};
+    }
+    rec {
+      name = "rust-analyzer";
+      publisher = "rust-lang";
+      ext = unstable.vscode-extensions.${publisher}.${name};
+    }
+  ] ++ lib.optionals pkgs.stdenv.hostPlatform.isx86_64 [
+    rec {
       name = "python";
       publisher = "ms-python";
+      ext = unstable.vscode-extensions.${publisher}.${name};
+    }
+    rec {
+      name = "cpptools";
+      publisher = "ms-vscode";
       ext = unstable.vscode-extensions.${publisher}.${name};
     }
   ];
@@ -48,16 +64,15 @@ let
     (import ./vscode/extensions.nix).extensions;
 in
 {
-  imports = [
-    <home-manager/nixos>
-  ];
-
-  home-manager.users.${primary_user} = { pkgs, ... }: {
     imports = [
       ./zellij/zellij.nix
+      ./nvim/nvim.nix
     ];
 
+    fonts.fontconfig.enable = true;
+
     home = {
+      username = primary_user;
       stateVersion = stateVersion;
       shellAliases = {
         code = "env -u ZELLIJ -u ZELLIJ_SESSION_NAME code";
@@ -110,6 +125,13 @@ in
       unzip
       procs
       distrobox
+      git-extras
+      lazygit
+      procs
+      stgit
+      jless
+      nix-diff
+      rustup
 
       # C++
       gcc_latest
@@ -129,7 +151,6 @@ in
       # Python
       python3Full
       black
-      python-language-server
       pylint
 
       # Haskell
@@ -159,6 +180,7 @@ in
 
       # fonts
       source-code-pro
+      nerdfonts
 
       bashTerminal
     ];
@@ -199,11 +221,8 @@ in
     programs.zsh = {
       enable = true;
       # enableAutosuggestions = true;
-      enableSyntaxHighlighting = true;
+      syntaxHighlighting.enable = true;
       initExtraBeforeCompInit = ''
-        # run zelliji by default
-        [ -z "$ZELLIJ"  ] && { exec zellij;}
-
         ${builtins.readFile ./zsh/lscolors.sh}
         zstyle ':completion:*' list-colors ''${(s.:.)LS_COLORS}
 
@@ -213,13 +232,18 @@ in
         # zsh-autocomplete settings
         # zstyle ':autocomplete:*' widget-style menu-complete
         # zstyle ':autocomplete:*' min-delay 0.4
+
+        # ctrl+x ctrl+e to edit command line in vim
+        autoload -z edit-command-line
+        zle -N edit-command-line
+        bindkey "^X^E" edit-command-line
       '';
       initExtra = ''
         ${builtins.readFile ./zsh/.p10k.zsh}
         ${builtins.readFile ./zsh/colored-man-pages.plugin.zsh}
         export HISTSIZE=1000000000
         export SAVEHIST=$HISTSIZE
-        setopt share_history
+        export XILINXD_LICENSE_FILE=2100@10.32.4.123
         setopt HIST_IGNORE_ALL_DUPS
 
         bindkey -e
@@ -236,10 +260,13 @@ in
         bindkey '\e[B' down-line-or-history
         bindkey '\eOB' down-line-or-history
         bindkey '^[j' down-line-or-history
+
+        # fix this issue: https://github.com/jeffreytse/zsh-vi-mode/issues/24
+        zvm_after_init() {
+          . ${pkgs.fzf}/share/fzf/completion.zsh
+          . ${pkgs.fzf}/share/fzf/key-bindings.zsh
+        }
       '';
-      shellAliases = {
-        ll = "ls -l";
-      };
 
       # only do completion init once every day
       completionInit = ''
@@ -254,9 +281,9 @@ in
         enable = true;
         plugins = [
           { name = "zsh-users/zsh-completions"; }
+          { name = "jeffreytse/zsh-vi-mode"; }
           { name = "Aloxaf/fzf-tab"; }
-          # { name = "marlonrichert/zsh-autocomplete"; }
-          { name = "romkatv/powerlevel10k"; tags = [ as:theme depth:1 ]; }
+          { name = "romkatv/powerlevel10k"; tags = [ "as:theme" "depth:1" ]; }
         ];
       };
     };
@@ -327,7 +354,7 @@ in
     };
 
     programs.vscode = {
-      enable = true;
+      enable = not_in_wsl;
       package = unstable.vscode;
       extensions =
         (builtins.map (x: x.ext) specialVscodeExtensions) ++
@@ -444,106 +471,6 @@ in
       EDITOR = "nvim";
       FZF_CTRL_T_OPTS = "--preview='bat --color \"always\" -r :500 {}'";
     };
-    programs.neovim = {
-      enable = true;
-      viAlias = true;
-      vimAlias = true;
-
-      coc = {
-        enable = true;
-        settings = {
-          "colors.enable" = true;
-          "codeLens.enable" = true;
-          "coc.preferences.enableLinkedEditing" = true;
-          "diagnostic.floatConfig" = {
-            "rounded" = true;
-            "border" = true;
-          };
-          "diagnostic.format" = "%message [%source]";
-          "diagnostic.virtualText" = true;
-          "diagnostic.checkCurrentLine" = true;
-          "diagnostic.separateRelatedInformationAsDiagnostics" = true;
-        };
-      };
-
-      extraConfig = ''
-        set timeoutlen=1000
-        set ttimeoutlen=50
-
-        filetype plugin on
-
-        set noswapfile
-        set number relativenumber
-        set nu rnu
-
-        "Ctrl+s for saving
-        noremap <silent> <C-S> :update<CR>
-        vnoremap <silent> <C-S> <C-C>:update<CR>
-        inoremap <silent> <C-S> <C-O>:update<CR>
-
-        "bind ctrl+z to undo
-        nnoremap <c-z> :undo <CR>
-        vnoremap <c-z> :undo <CR>
-        inoremap <c-z> <esc>:undo <CR>
-
-        "coc alt-j and alt-k to navigate completions
-        execute "map \ej <M-j>"
-        inoremap <expr> <M-j> coc#pum#visible() ? coc#pum#next(1) : "<M-j>"
-        execute "map \ek <M-k>"
-        inoremap <expr> <M-k> coc#pum#visible() ? coc#pum#prev(1) : "<M-k>"
-
-        "coc tab and enter to select the completions
-        inoremap <expr> <Tab> coc#pum#visible() ? coc#_select_confirm() : "<Tab>"
-        inoremap <expr> <cr> coc#pum#visible() ? coc#_select_confirm() : "<cr>"
-      '';
-
-      plugins = with pkgs.vimPlugins; [
-        coc-json
-        coc-pyright
-        coc-sh
-        coc-yaml
-
-        vim-surround
-        vim-nix
-
-        {
-          plugin = fzf-vim;
-          config = ''
-            "ctrl+shift+n to search for files
-            nnoremap <silent> <C-N> :Files<CR>
-            vnoremap <silent> <C-N> :Files<CR>
-          '';
-        }
-        {
-          plugin = gruvbox;
-          config = ''
-            colorscheme gruvbox
-          '';
-        }
-        {
-          plugin = nerdcommenter;
-          config = ''
-            "ctrl + / for commenting
-            nmap <C-_>   <Plug>NERDCommenterToggle
-            vmap <C-_>   <Plug>NERDCommenterToggle<CR>gv
-
-            let g:NERDCreateDefaultMappings = 0
-          '';
-        }
-        {
-          plugin = vim-gitgutter;
-          config = ''
-            set updatetime=100
-            set signcolumn=yes
-
-            highlight GitGutterAdd    ctermbg=191 ctermfg=2
-            highlight GitGutterChange ctermbg=214 ctermfg=3
-            highlight GitGutterDelete ctermbg=160 ctermfg=1
-            highlight GitGutterChangeDelete ctermbg=160 ctermfg=1
-          '';
-        }
-      ];
-    };
 
     programs.ssh = {
       enable = true;
@@ -556,5 +483,4 @@ in
         ServerAliveCountMax 10
       '';
     };
-  };
 }

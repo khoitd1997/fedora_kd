@@ -8,7 +8,6 @@
         "suppressLineUncommittedWarning": false,
         "suppressNoRepositoryWarning": false,
     },
-    "window.zoomLevel": 2,
     "python.formatting.provider": "autopep8",
     "gitlens.keymap": "chorded",
     "editor.minimap.enabled": false,
@@ -120,7 +119,7 @@
         "workbench.action.closeSidebar",
         "workbench.explorer.fileView.focus"
     ],
-    "editor.wordWrapColumn": 100,
+    "editor.wordWrapColumn": 600,
     "vim.easymotion": true,
     "vim.easymotionMarkerForegroundColorTwoCharFirst": "7bd88f",
     "vim.easymotionMarkerBackgroundColor": "orange",
@@ -198,7 +197,7 @@
     "cmake.generator": "Ninja",
     "editor.mouseWheelZoom": true,
     "workbench.startupEditor": "newUntitledFile",
-    "python.languageServer": "Pylance",
+    "python.languageServer": "Jedi",
     "redhat.telemetry.enabled": true,
     "yaml.schemas": {
         "file:///c%3A/Users/khoid/.vscode/extensions/atlassian.atlascode-2.10.9/resources/schemas/pipelines-schema.json": "bitbucket-pipelines.yml"
@@ -249,7 +248,7 @@
     "workbench.list.smoothScrolling": true,
     "editor.smoothScrolling": true,
     "editor.stickyScroll.enabled": true,
-    "search.useIgnoreFiles": false,
+    "search.useIgnoreFiles": true,
     "vim.foldfix": true,
     "vim.targets.enable": true,
     "vim.visualstar": true,
@@ -274,10 +273,15 @@
     "terminal.integrated.tabs.hideCondition": "never",
     "keyboard.dispatch": "keyCode",
     "[python]": {
-        "editor.formatOnType": true
     },
     "terminal.integrated.shellIntegration.enabled": false,
     "terminal.integrated.altClickMovesCursor": false,
     "terminal.integrated.enablePersistentSessions": false,
-    "terminal.integrated.tabs.enabled": false
+    "terminal.integrated.tabs.enabled": false,
+    "githubPullRequests.pullBranch": "never",
+    "git.allowForcePush": true,
+    "editor.trimAutoWhitespace": false,
+    "terminal.integrated.defaultProfile.linux": "zsh",
+    "editor.accessibilitySupport": "off",
+    "window.zoomLevel": 2
 }

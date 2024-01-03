@@ -10,19 +10,16 @@ in
 {
   imports =
     [
+      <home-manager/nixos>
       # Include the results of the hardware scan.
       ./hardware-configuration.nix
 
       ./gnome/gnome.nix
-
-      (
-        import ./home-manager.nix (
-          args
-          // { inherit primary_user stateVersion; }
-        )
-      )
     ];
-
+  
+  home-manager.users.${primary_user} = import ./home-manager.nix (
+    args // { inherit primary_user stateVersion; }
+  );
   boot.loader = {
     efi = {
       canTouchEfiVariables = true;
