@@ -51,11 +51,30 @@
         vim-devicons
         vim-codefmt
         vim-nix
-        vim-fugitive
         vim-eunuch
         statix
         nerdtree
         diffview-nvim
+
+        {
+          plugin = trouble-nvim;
+          type = "lua";
+          config = ''
+            -- use gt to open diagnostics list
+            vim.keymap.set('n', 'gt', '<cmd>TroubleToggle workspace_diagnostics<CR>', {
+                desc = "Open diagnostics list"
+            })
+            -- use gq to open quickfix list
+            vim.keymap.set('n', 'gq', '<cmd>TroubleToggle quickfix<CR>', {
+                desc = "Open quickfix list"
+            })
+
+            -- use gr to open references of current symbol
+            vim.keymap.set('n', 'gq', '<cmd>TroubleToggle lsp_references<CR>', {
+                desc = "Open lsp references list"
+            })
+          '';
+        }
 
         {
           plugin = vim-visual-multi;
@@ -167,18 +186,38 @@
             let g:NERDCreateDefaultMappings = 0
           '';
         }
-        {
-          plugin = vim-gitgutter;
-          config = ''
-            set updatetime=100
-            set signcolumn=yes
 
-            highlight GitGutterAdd    ctermbg=191 ctermfg=2
-            highlight GitGutterChange ctermbg=214 ctermfg=3
-            highlight GitGutterDelete ctermbg=160 ctermfg=1
-            highlight GitGutterChangeDelete ctermbg=160 ctermfg=1
+        {
+          plugin = gitsigns-nvim;
+          type = "lua";
+          config = ''
+          require('gitsigns').setup({
+            current_line_blame = true,
+            numhl = true,
+            delay = 500,
+          })
           '';
         }
+
+        {
+          plugin = nvim-lint;
+          type = "lua";
+          config = ''
+            -- filetype list is at https://github.com/vim/vim/blob/master/runtime/filetype.vim
+            require('lint').linters_by_ft = {
+              bash = {'shellcheck'},
+              haskell = {'hlint'},
+              lhaskell = {'hlint'},
+              python = {'pylint'},
+            }
+            vim.api.nvim_create_autocmd({ "BufWritePost" }, {
+              callback = function()
+                require("lint").try_lint()
+              end,
+            })
+          '';
+        }
+
         {
           plugin = toggleterm-nvim;
           type = "lua";
@@ -382,6 +421,9 @@
             lspconfig.rust_analyzer.setup (tableMerge (common_lspconfig, {
               settings = {
                 ['rust-analyzer'] = {
+                  checkOnSave = {
+                    command = "clippy",
+                  },
                   check = {
                     command = "clippy";
                   },
