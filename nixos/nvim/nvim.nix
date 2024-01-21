@@ -88,7 +88,7 @@
             })
 
             -- use gr to open references of current symbol
-            vim.keymap.set('n', 'gq', '<cmd>TroubleToggle lsp_references<CR>', {
+            vim.keymap.set('n', 'gr', '<cmd>TroubleToggle lsp_references<CR>', {
                 desc = "Open lsp references list"
             })
           '';
