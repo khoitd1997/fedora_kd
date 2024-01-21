@@ -136,6 +136,7 @@ in
       statix
       nodePackages.bash-language-server
       nodePackages.pyright
+      helix
 
       # C++
       gcc_latest

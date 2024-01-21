@@ -189,9 +189,9 @@
           '';
         }
         {
-          plugin = tokyonight-nvim;
+          plugin = gruvbox;
           config = ''
-            colorscheme tokyonight
+            colorscheme gruvbox
           '';
         }
         {
@@ -239,9 +239,9 @@
           plugin = toggleterm-nvim;
           type = "lua";
           config = ''
-            -- ctrl+i to toggle terminal
+            -- ctrl+g t to toggle terminal
             require("toggleterm").setup({
-              open_mapping = [[<c-i>]],
+               open_mapping = [[<leader>t]],
             })
 
             -- to open a new terminal we have to do 2ToggleTerm to open the 2nd one, 3ToggleTerm to open 3rd one, etc
@@ -254,7 +254,7 @@
               vim.keymap.set('t', '<M-up>', [[<Cmd>wincmd k<CR>]], opts)
               vim.keymap.set('t', '<M-down>', [[<Cmd>wincmd j<CR>]], opts)
               vim.keymap.set('t', '<C-h>', [[<Cmd>2ToggleTerm<CR>]], opts)
-              vim.keymap.set('t', '<C-i>', [[<C-\><C-n><C-w>]], opts)
+              vim.keymap.set('t', '<leader>t', [[<C-\><C-n><C-w>]], opts)
             end
 
             vim.cmd('autocmd! TermOpen term://* lua set_terminal_keymaps()')
