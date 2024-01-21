@@ -6,37 +6,6 @@
       viAlias = true;
       vimAlias = true;
 
-      coc = {
-        enable = true;
-        settings = {
-          "colors.enable" = true;
-          "codeLens.enable" = true;
-          "coc.preferences.enableLinkedEditing" = true;
-          "diagnostic.floatConfig" = {
-            "rounded" = true;
-            "border" = true;
-          };
-          "diagnostic.format" = "%message [%source]";
-          "diagnostic.virtualText" = true;
-          "diagnostic.checkCurrentLine" = true;
-          "diagnostic.separateRelatedInformationAsDiagnostics" = true;
-          languageserver = {
-            haskell = {
-              command = "haskell-language-server";
-              args = [ "--lsp" ];
-              rootPatterns = [
-                "*.cabal"
-                "stack.yaml"
-                "cabal.project"
-                "package.yaml"
-                "hie.yaml"
-              ];
-              filetypes = [ "haskell" "lhaskell" ];
-            };
-          };
-        };
-      };
-
       extraConfig = ''
         "use ctlr+g as leader key
         let mapleader = "\<C-g>"
@@ -68,45 +37,14 @@
         " use ctrl+\ to vertically split
         nmap <silent> <c-\> :vsplit<CR>
 
-        "coc alt-j and alt-k to navigate completions
-        execute "map \ej <M-j>"
-        inoremap <expr> <M-j> coc#pum#visible() ? coc#pum#next(1) : "<M-j>"
-        execute "map \ek <M-k>"
-        inoremap <expr> <M-k> coc#pum#visible() ? coc#pum#prev(1) : "<M-k>"
-
-        "coc tab and enter to select the completions
-        inoremap <expr> <Tab> coc#pum#visible() ? coc#_select_confirm() : "<Tab>"
-        inoremap <expr> <cr> coc#pum#visible() ? coc#_select_confirm() : "<cr>"
-
         "ctrl+n to search for files
         nmap <unique> <C-N> :Files<CR>
-
-        " use shift+K to show type
-        nnoremap <silent> K :call <SID>show_documentation()<CR>
-        function! s:show_documentation()
-          if (index(['vim','help'], &filetype) >= 0)
-            execute 'h '.expand('<cword>')
-          elseif (coc#rpc#ready())
-            call CocActionAsync('doHover')
-          else
-            execute '!' . &keywordprg . " " . expand('<cword>')
-          endif
-        endfunction
-
-        " gd to go to definition
-        nmap <silent> gd <Plug>(coc-definition)
 
         " toggleterm needs this
         set hidden
       '';
 
       plugins = with pkgs.vimPlugins; [
-        coc-json
-        coc-pyright
-        coc-sh
-        coc-yaml
-        coc-rust-analyzer
-
         vim-surround
         vim-sleuth
         nvim-web-devicons
@@ -211,7 +149,7 @@
           plugin = fzf-vim;
           config = ''
             let $FZF_DEFAULT_COMMAND = 'rg --files'
-        '';
+          '';
         }
         {
           plugin = gruvbox;
@@ -281,23 +219,197 @@
             })
           '';
         }
-        #{
-          #plugin = nvim-navbuddy;
-          #type = "lua";
-          #config = ''
-            #local navbuddy = require("nvim-navbuddy")
-            #local actions = require("nvim-navbuddy.actions")
-            #navbuddy.setup {
-              #lsp = {
-                  #auto_attach = true,
-              #}
-            #}
-            #-- use gb to open navbuddy
-            #vim.keymap.set('n', 'gb', '<cmd>lua require("nvim-navbuddy").open()<CR>', {
-                #desc = "Open navbuddy"
-            #})
-          #'';
-        #}
+        {
+          plugin = nvim-lspconfig;
+          type = "lua";
+          config = ''
+
+            -- Global mappings.
+            -- See `:help vim.diagnostic.*` for documentation on any of the below functions
+            vim.keymap.set('n', '<space>e', vim.diagnostic.open_float)
+            vim.keymap.set('n', '[d', vim.diagnostic.goto_prev)
+            vim.keymap.set('n', ']d', vim.diagnostic.goto_next)
+            vim.keymap.set('n', '<space>q', vim.diagnostic.setloclist)
+
+            -- Use LspAttach autocommand to only map the following keys
+            -- after the language server attaches to the current buffer
+            vim.api.nvim_create_autocmd('LspAttach', {
+              group = vim.api.nvim_create_augroup('UserLspConfig', {}),
+              callback = function(ev)
+                -- Enable completion triggered by <c-x><c-o>
+                vim.bo[ev.buf].omnifunc = 'v:lua.vim.lsp.omnifunc'
+
+                -- Buffer local mappings.
+                -- See `:help vim.lsp.*` for documentation on any of the below functions
+                local opts = { buffer = ev.buf }
+
+                -- gd goes to defintion
+                -- K to show hover
+                vim.keymap.set('n', 'gD', vim.lsp.buf.declaration, opts)
+                vim.keymap.set('n', 'gd', vim.lsp.buf.definition, opts)
+                vim.keymap.set('n', 'K', vim.lsp.buf.hover, opts)
+                vim.keymap.set('n', 'gi', vim.lsp.buf.implementation, opts)
+                vim.keymap.set('n', '<C-k>', vim.lsp.buf.signature_help, opts)
+
+                vim.keymap.set('n', '<space>wa', vim.lsp.buf.add_workspace_folder, opts)
+                vim.keymap.set('n', '<space>wr', vim.lsp.buf.remove_workspace_folder, opts)
+                vim.keymap.set('n', '<space>wl', function()
+                  print(vim.inspect(vim.lsp.buf.list_workspace_folders()))
+                end, opts)
+                vim.keymap.set('n', '<space>D', vim.lsp.buf.type_definition, opts)
+                vim.keymap.set('n', '<space>rn', vim.lsp.buf.rename, opts)
+
+                vim.keymap.set({ 'n', 'v' }, '<space>ca', vim.lsp.buf.code_action, opts)
+                vim.keymap.set('n', 'gr', vim.lsp.buf.references, opts)
+                vim.keymap.set('n', '<space>f', function()
+                vim.lsp.buf.format { async = true }
+                end, opts)
+              end,
+            })
+          '';
+        }
+
+        cmp-buffer
+        cmp-nvim-lsp
+        cmp-path
+        cmp-cmdline
+        cmp-vsnip
+        haskell-tools-nvim
+        vim-vsnip
+        nvim-navic
+        {
+          plugin = barbecue-nvim;
+          type = "lua";
+          config = ''
+            vim.opt.updatetime = 200
+
+            -- to fix this issue: https://github.com/utilyre/barbecue.nvim/issues/35
+            require('barbecue').setup {
+              attach_navic = false,
+            }
+          '';
+        }
+        {
+          plugin = nvim-cmp;
+          type = "lua";
+          config = ''
+            -- Set up nvim-cmp.
+            local cmp = require'cmp'
+
+            cmp.setup({
+              snippet = {
+                -- REQUIRED - you must specify a snippet engine
+                expand = function(args)
+                  vim.fn["vsnip#anonymous"](args.body) -- For `vsnip` users.
+                end,
+              },
+              window = {
+                -- completion = cmp.config.window.bordered(),
+                -- documentation = cmp.config.window.bordered(),
+              },
+              mapping = cmp.mapping.preset.insert({
+                ['<C-b>'] = cmp.mapping.scroll_docs(-4),
+                ['<C-f>'] = cmp.mapping.scroll_docs(4),
+                ['<C-Space>'] = cmp.mapping.complete(),
+                ['<C-e>'] = cmp.mapping.abort(),
+                ['<CR>'] = cmp.mapping.confirm({ select = true }),
+                ['<tab>'] = cmp.mapping.confirm({ select = true }),
+                ['<M-j>'] = cmp.mapping.select_next_item({ behavior = cmp.SelectBehavior.Select }),
+                ['<M-k>'] = cmp.mapping.select_prev_item({ behavior = cmp.SelectBehavior.Select }),
+              }),
+              sources = cmp.config.sources({
+                { name = 'nvim_lsp' },
+                { name = 'vsnip' }, -- For vsnip users.
+              }, {
+                { name = 'buffer' },
+              })
+            })
+
+            -- Set configuration for specific filetype.
+            cmp.setup.filetype('gitcommit', {
+              sources = cmp.config.sources({
+                { name = 'git' }, -- You can specify the `git` source if [you were installed it](https://github.com/petertriho/cmp-git).
+              }, {
+                { name = 'buffer' },
+              })
+            })
+
+            cmp.setup.cmdline({ '/', '?' }, {
+              mapping = cmp.mapping.preset.cmdline(),
+              sources = {
+                { name = 'buffer' }
+              }
+            })
+
+            cmp.setup.cmdline(':', {
+              mapping = cmp.mapping.preset.cmdline(),
+              sources = cmp.config.sources({
+                { name = 'path' }
+              }, {
+                { name = 'cmdline' }
+              })
+            })
+
+            -- Set up lspconfig.
+            -- docs here: https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md
+            local capabilities = require('cmp_nvim_lsp').default_capabilities()
+            local lspconfig = require('lspconfig')
+            local on_attach = function(client, bufnr)
+              if client.server_capabilities.documentSymbolProvider then
+                navic.attach(client, bufnr)
+              end
+            end
+            local function tableMerge(table1, table2)
+              local merge = {}
+              for _, v in ipairs(table1) do
+                table.insert(merge, v)
+              end
+              for _, v in ipairs(table2) do
+                table.insert(merge, v)
+              end
+              return merge
+            end
+            local common_lspconfig = {
+              capabilities = capabilities,
+              on_attach = on_attach,
+            }
+
+            lspconfig.clangd.setup(common_lspconfig)
+            lspconfig.bashls.setup(common_lspconfig)
+            lspconfig.pyright.setup(common_lspconfig)
+            lspconfig.rnix.setup(common_lspconfig)
+            lspconfig.statix.setup(common_lspconfig)
+            lspconfig.rust_analyzer.setup (tableMerge (common_lspconfig, {
+              settings = {
+                ['rust-analyzer'] = {
+                  check = {
+                    command = "clippy";
+                  },
+                  diagnostics = {
+                    enable = true;
+                  }
+                },
+              },
+            }))
+          '';
+        }
+
+        {
+          plugin = nvim-navbuddy;
+          type = "lua";
+          config = ''
+            local navbuddy = require("nvim-navbuddy")
+            navbuddy.setup {
+              lsp = {
+                auto_attach = true,
+              },
+            }
+            -- use gb to open navbuddy which show breadcrumb
+            vim.keymap.set('n', 'gb', '<cmd>lua require("nvim-navbuddy").open()<CR>', {
+                desc = "Open navbuddy"
+            })
+          '';
+        }
       ];
     };
   };

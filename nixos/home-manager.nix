@@ -73,7 +73,7 @@ in
 
     home = {
       username = primary_user;
-      stateVersion = stateVersion;
+      inherit stateVersion;
       shellAliases = {
         code = "env -u ZELLIJ -u ZELLIJ_SESSION_NAME code";
       };
@@ -132,6 +132,10 @@ in
       jless
       nix-diff
       rustup
+      shellcheck
+      statix
+      nodePackages.bash-language-server
+      nodePackages.pyright
 
       # C++
       gcc_latest
@@ -290,7 +294,7 @@ in
 
     programs.bash = {
       enable = true;
-      bashrcExtra = (builtins.readFile ./bash/shell_init.sh);
+      bashrcExtra = builtins.readFile ./bash/shell_init.sh;
       historySize = 10000000;
       historyFileSize = 10000000;
       historyControl = [ "erasedups" "ignoredups" ];
