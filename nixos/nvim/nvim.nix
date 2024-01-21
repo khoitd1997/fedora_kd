@@ -25,9 +25,6 @@
         "highlight currentline
         set cursorline
 
-        "alt+f1 for filesystems browser
-        nnoremap <F49> :Oil<CR>
-
         " Use ctrl+[hjkl] to select the active split
         nmap <silent> <c-k> :wincmd k<CR>
         nmap <silent> <c-j> :wincmd j<CR>
@@ -147,7 +144,25 @@
           plugin = oil-nvim;
           type = "lua";
           config = ''
-            require("oil").setup()
+            -- alt+f1 for filesystems browser
+            vim.keymap.set('n', '<F49>', '<cmd>execute ":Oil " . $PWD<CR>', {
+                desc = "Open filebrowser"
+            })
+            require("oil").setup({
+              columns = {
+                "icon",
+                "permissions",
+                "size",
+                "mtime",
+              },
+
+              view_options = {
+                -- show all hidden files except for .git
+                is_hidden_file = function(name, bufnr)
+                  return vim.startswith(name, ".git")
+                end,
+              }
+            })
           '';
         }
 
