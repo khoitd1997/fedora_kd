@@ -38,6 +38,9 @@
       };
 
       extraConfig = ''
+        "use ctlr+g as leader key
+        let mapleader = "\<C-g>"
+
         set timeoutlen=1000
         set ttimeoutlen=50
 
@@ -56,11 +59,14 @@
         "alt+f1 for filesystems browser
         nnoremap <F49> :Oil<CR>
 
-        " Use ctrl-[hjkl] to select the active split!
+        " Use ctrl+[hjkl] to select the active split
         nmap <silent> <c-k> :wincmd k<CR>
         nmap <silent> <c-j> :wincmd j<CR>
         nmap <silent> <c-h> :wincmd h<CR>
         nmap <silent> <c-l> :wincmd l<CR>
+
+        " use ctrl+\ to vertically split
+        nmap <silent> <c-\> :vsplit<CR>
 
         "coc alt-j and alt-k to navigate completions
         execute "map \ej <M-j>"
@@ -72,7 +78,7 @@
         inoremap <expr> <Tab> coc#pum#visible() ? coc#_select_confirm() : "<Tab>"
         inoremap <expr> <cr> coc#pum#visible() ? coc#_select_confirm() : "<cr>"
 
-        "ctrl+shift+n to search for files
+        "ctrl+n to search for files
         nmap <unique> <C-N> :Files<CR>
 
         " use shift+K to show type
@@ -89,6 +95,9 @@
 
         " gd to go to definition
         nmap <silent> gd <Plug>(coc-definition)
+
+        " toggleterm needs this
+        set hidden
       '';
 
       plugins = with pkgs.vimPlugins; [
@@ -108,6 +117,7 @@
         vim-eunuch
         statix
         nerdtree
+        diffview-nvim
 
         {
           plugin = vim-visual-multi;
@@ -167,6 +177,7 @@
             p.make
             p.python
             p.nix
+            p.rust
           ]);
           type = "lua";
           config = ''
@@ -230,6 +241,63 @@
             highlight GitGutterChangeDelete ctermbg=160 ctermfg=1
           '';
         }
+        {
+          plugin = toggleterm-nvim;
+          type = "lua";
+          config = ''
+            -- ctrl+i to toggle terminal
+            require("toggleterm").setup({
+              open_mapping = [[<c-i>]],
+            })
+
+            -- to open a new terminal we have to do 2ToggleTerm to open the 2nd one, 3ToggleTerm to open 3rd one, etc
+            -- alt+arrow to navigate between splits
+            -- ctrl+h to open 2nd horizontal terminal
+            function _G.set_terminal_keymaps()
+              local opts = {buffer = 0}
+              vim.keymap.set('t', '<M-left>', [[<Cmd>wincmd h<CR>]], opts)
+              vim.keymap.set('t', '<M-right>', [[<Cmd>wincmd l<CR>]], opts)
+              vim.keymap.set('t', '<M-up>', [[<Cmd>wincmd k<CR>]], opts)
+              vim.keymap.set('t', '<M-down>', [[<Cmd>wincmd j<CR>]], opts)
+              vim.keymap.set('t', '<C-h>', [[<Cmd>2ToggleTerm<CR>]], opts)
+              vim.keymap.set('t', '<C-i>', [[<C-\><C-n><C-w>]], opts)
+            end
+
+            vim.cmd('autocmd! TermOpen term://* lua set_terminal_keymaps()')
+          '';
+        }
+        {
+          plugin = nvim-spectre;
+          type = "lua";
+          config = ''
+            require('spectre').setup({
+              is_insert_mode = false,
+              live_update = true,
+            })
+
+            -- ctrl+r to search current word across all files
+            vim.keymap.set('n', '<C-R>', '<cmd>lua require("spectre").open_visual({select_word=true})<CR>', {
+                desc = "Toggle Spectre"
+            })
+          '';
+        }
+        #{
+          #plugin = nvim-navbuddy;
+          #type = "lua";
+          #config = ''
+            #local navbuddy = require("nvim-navbuddy")
+            #local actions = require("nvim-navbuddy.actions")
+            #navbuddy.setup {
+              #lsp = {
+                  #auto_attach = true,
+              #}
+            #}
+            #-- use gb to open navbuddy
+            #vim.keymap.set('n', 'gb', '<cmd>lua require("nvim-navbuddy").open()<CR>', {
+                #desc = "Open navbuddy"
+            #})
+          #'';
+        #}
       ];
     };
   };
