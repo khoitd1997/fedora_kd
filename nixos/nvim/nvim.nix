@@ -59,6 +59,14 @@
         diffview-nvim
 
         {
+          plugin = lualine-nvim;
+          type = "lua";
+          config = ''
+            require('lualine').setup{}
+          '';
+        }
+
+        {
           plugin = todo-comments-nvim;
           type = "lua";
           config = ''
