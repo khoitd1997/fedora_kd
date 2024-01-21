@@ -75,7 +75,7 @@
         "ctrl+shift+n to search for files
         nmap <unique> <C-N> :Files<CR>
 
-        # use shift+K to show type
+        " use shift+K to show type
         nnoremap <silent> K :call <SID>show_documentation()<CR>
         function! s:show_documentation()
           if (index(['vim','help'], &filetype) >= 0)
@@ -86,6 +86,9 @@
             execute '!' . &keywordprg . " " . expand('<cword>')
           endif
         endfunction
+
+        " gd to go to definition
+        nmap <silent> gd <Plug>(coc-definition)
       '';
 
       plugins = with pkgs.vimPlugins; [
@@ -196,6 +199,7 @@
         {
           plugin = fzf-vim;
           config = ''
+            let $FZF_DEFAULT_COMMAND = 'rg --files'
         '';
         }
         {
