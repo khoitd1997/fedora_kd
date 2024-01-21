@@ -42,6 +42,8 @@
 
         " toggleterm needs this
         set hidden
+
+        set scrolloff=5
       '';
 
       plugins = with pkgs.vimPlugins; [
@@ -55,6 +57,14 @@
         statix
         nerdtree
         diffview-nvim
+
+        {
+          plugin = todo-comments-nvim;
+          type = "lua";
+          config = ''
+            require("todo-comments").setup{}
+          '';
+        }
 
         {
           plugin = trouble-nvim;
@@ -171,9 +181,9 @@
           '';
         }
         {
-          plugin = gruvbox;
+          plugin = tokyonight-nvim;
           config = ''
-            colorscheme gruvbox
+            colorscheme tokyonight
           '';
         }
         {
@@ -191,11 +201,10 @@
           plugin = gitsigns-nvim;
           type = "lua";
           config = ''
-          require('gitsigns').setup({
-            current_line_blame = true,
-            numhl = true,
-            delay = 500,
-          })
+            require('gitsigns').setup({
+              current_line_blame = true,
+              numhl = true,
+            })
           '';
         }
 
