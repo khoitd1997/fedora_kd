@@ -485,10 +485,5 @@
     {
         "key": "ctrl+k ctrl+right",
         "command": "-workbench.action.focusRightGroup"
-    },
-    {
-        "key": "shift+k",
-        "command": "editor.action.showDefinitionPreviewHover",
-        "when": "vim.active && vim.mode == 'Normal' && editorTextFocus"
     }
 ]
