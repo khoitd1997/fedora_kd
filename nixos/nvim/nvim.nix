@@ -57,6 +57,16 @@
         vim-fugitive
 
         {
+            plugin = flash-nvim;
+            type = "lua";
+            config = ''
+                vim.keymap.set('n', 's', function() require("flash").jump() end, {
+                    desc = "Flash search"
+                })
+            '';
+        }
+
+        {
             plugin = undotree;
             type = "lua";
             config = ''
@@ -394,6 +404,7 @@
         cmp-vsnip
         haskell-tools-nvim
         vim-vsnip
+        vim-cool
         nvim-navic
         {
           plugin = barbecue-nvim;
@@ -480,6 +491,10 @@
             -- Set up lspconfig.
             -- docs here: https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md
             local capabilities = require('cmp_nvim_lsp').default_capabilities()
+            capabilities.textDocument.foldingRange = {
+                dynamicRegistration = false,
+                lineFoldingOnly = true
+            }
             local lspconfig = require('lspconfig')
             local on_attach = function(client, bufnr)
               if client.server_capabilities.documentSymbolProvider then
@@ -521,6 +536,15 @@
                 },
               },
             }))
+          '';
+        }
+
+        # NOTE: "z" key is prefix for the fold functionalities
+        {
+          plugin = nvim-ufo;
+          type = "lua";
+          config = ''
+            require('ufo').setup()
           '';
         }
 
