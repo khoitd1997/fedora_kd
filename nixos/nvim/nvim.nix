@@ -55,6 +55,7 @@
         nerdtree
         diffview-nvim
         vim-fugitive
+        rainbow-delimiters-nvim
 
         {
           plugin = which-key-nvim;
@@ -117,15 +118,6 @@
           type = "lua";
           config = ''
             require('mini.cursorword').setup()
-            require('mini.indentscope').setup({
-                draw = {
-                  -- disable animation
-                  animation = require('mini.indentscope').gen_animation.none(),
-                },
-                options = {
-                  try_as_border = true,
-                },
-            })
             require('mini.pairs').setup()
             require('mini.tabline').setup()
             require('mini.trailspace').setup()
@@ -390,6 +382,15 @@
             }
           '';
         }
+
+        {
+          plugin = indent-blankline-nvim;
+          type = "lua";
+          config = ''
+            require("ibl").setup()
+          '';
+        }
+
         {
           plugin = nvim-cmp;
           type = "lua";
