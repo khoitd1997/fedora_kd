@@ -57,53 +57,66 @@
         vim-fugitive
 
         {
-            plugin = bufferline-nvim;
-            type = "lua";
-            config = ''
-              vim.opt.termguicolors = true
-              require("bufferline").setup{
-                options = {
-                  color_icons = true;
-                  show_close_icon = true;
-                }
+          plugin = nvim-biscuits;
+          type = "lua";
+          config = ''
+            require('nvim-biscuits').setup{
+              default_config = {
+                -- must be at least this lines number long to show the biscuit
+                min_distance = 20,
+              },
+            }
+          '';
+        }
+
+        {
+          plugin = bufferline-nvim;
+          type = "lua";
+          config = ''
+            vim.opt.termguicolors = true
+            require("bufferline").setup{
+              options = {
+                color_icons = true;
+                show_close_icon = true;
               }
-            '';
+            }
+          '';
         }
 
         {
-            plugin = flash-nvim;
-            type = "lua";
-            config = ''
-                vim.keymap.set('n', 's', function() require("flash").jump() end, {
-                    desc = "Flash search"
-                })
-            '';
+          plugin = flash-nvim;
+          type = "lua";
+          config = ''
+            vim.keymap.set('n', 's', function() require("flash").jump() end, {
+                desc = "Flash search"
+            })
+          '';
         }
 
         {
-            plugin = undotree;
-            type = "lua";
-            config = ''
-                vim.keymap.set('n', '<leader>u', '<cmd>UndotreeToggle<CR>', {
-                    desc = "Toggle undo tree"
-                })
-            '';
+          plugin = undotree;
+          type = "lua";
+          config = ''
+            vim.keymap.set('n', '<leader>u', '<cmd>UndotreeToggle<CR>', {
+                desc = "Toggle undo tree"
+            })
+          '';
         }
 
         {
-            plugin = rainbow-delimiters-nvim;
-            config = ''
-                let g:rainbow_delimiters = {
-                    \ 'highlight': [
-                        \ 'RainbowDelimiterYellow',
-                        \ 'RainbowDelimiterBlue',
-                        \ 'RainbowDelimiterOrange',
-                        \ 'RainbowDelimiterGreen',
-                        \ 'RainbowDelimiterViolet',
-                        \ 'RainbowDelimiterCyan',
-                    \ ],
-                \ }
-            '';
+          plugin = rainbow-delimiters-nvim;
+          config = ''
+            let g:rainbow_delimiters = {
+                \ 'highlight': [
+                    \ 'RainbowDelimiterYellow',
+                    \ 'RainbowDelimiterBlue',
+                    \ 'RainbowDelimiterOrange',
+                    \ 'RainbowDelimiterGreen',
+                    \ 'RainbowDelimiterViolet',
+                    \ 'RainbowDelimiterCyan',
+                \ ],
+            \ }
+          '';
         }
 
         {
