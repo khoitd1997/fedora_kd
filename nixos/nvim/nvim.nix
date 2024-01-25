@@ -57,6 +57,16 @@
         vim-fugitive
 
         {
+            plugin = undotree;
+            type = "lua";
+            config = ''
+                vim.keymap.set('n', '<leader>u', '<cmd>UndotreeToggle<CR>', {
+                    desc = "Toggle undo tree"
+                })
+            '';
+        }
+
+        {
             plugin = rainbow-delimiters-nvim;
             config = ''
                 let g:rainbow_delimiters = {
