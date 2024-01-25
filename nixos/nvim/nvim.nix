@@ -55,7 +55,22 @@
         nerdtree
         diffview-nvim
         vim-fugitive
-        rainbow-delimiters-nvim
+
+        {
+            plugin = rainbow-delimiters-nvim;
+            config = ''
+                let g:rainbow_delimiters = {
+                    \ 'highlight': [
+                        \ 'RainbowDelimiterYellow',
+                        \ 'RainbowDelimiterBlue',
+                        \ 'RainbowDelimiterOrange',
+                        \ 'RainbowDelimiterGreen',
+                        \ 'RainbowDelimiterViolet',
+                        \ 'RainbowDelimiterCyan',
+                    \ ],
+                \ }
+            '';
+        }
 
         {
           plugin = which-key-nvim;
