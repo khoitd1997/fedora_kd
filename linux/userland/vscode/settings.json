@@ -283,5 +283,46 @@
     "editor.trimAutoWhitespace": false,
     "terminal.integrated.defaultProfile.linux": "zsh",
     "editor.accessibilitySupport": "off",
-    "window.zoomLevel": 2
+    "window.zoomLevel": 2,
+    "vim.normalModeKeyBindings": [
+        {
+            "before": [
+                "g",
+                "b"
+            ],
+            "commands": [
+                "workbench.action.gotoSymbol"
+            ],
+            "silent": true
+        },
+        {
+            "before": [
+                "g",
+                "r"
+            ],
+            "commands": [
+                "references-view.findReferences"
+            ],
+            "silent": true
+        },
+        {
+            "before": [
+                "g",
+                "d"
+            ],
+            "commands": [
+                "editor.action.revealDefinition"
+            ],
+            "silent": true
+        },
+        {
+            "before": [
+                "K"
+            ],
+            "commands": [
+                "editor.action.showDefinitionPreviewHover"
+            ],
+            "silent": true
+        }
+    ]
 }
