@@ -485,5 +485,20 @@
     {
         "key": "ctrl+k ctrl+right",
         "command": "-workbench.action.focusRightGroup"
+    },
+    {
+        "key": "shift+k",
+        "command": "editor.action.showDefinitionPreviewHover",
+        "when": "vim.active && vim.mode == 'Normal' && editorTextFocus"
+    },
+    {
+        "key": "g d",
+        "command": "editor.action.revealDefinition",
+        "when": "vim.active && vim.mode == 'Normal' && editorTextFocus"
+    },
+    {
+        "key": "g r",
+        "command": "references-view.findReferences",
+        "when": "editorTextFocus && vim.active && vim.mode == 'Normal'"
     }
 ]
