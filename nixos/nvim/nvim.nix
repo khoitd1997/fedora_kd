@@ -44,7 +44,7 @@
       '';
 
       plugins = with pkgs.vimPlugins; [
-        vim-surround
+        nvim-surround
         vim-sleuth
         nvim-web-devicons
         vim-devicons
@@ -540,13 +540,13 @@
         }
 
         # NOTE: "z" key is prefix for the fold functionalities
-        {
-          plugin = nvim-ufo;
-          type = "lua";
-          config = ''
-            require('ufo').setup()
-          '';
-        }
+        # {
+        #   plugin = nvim-ufo;
+        #   type = "lua";
+        #   config = ''
+        #     require('ufo').setup()
+        #   '';
+        # }
 
         {
           plugin = nvim-navbuddy;
