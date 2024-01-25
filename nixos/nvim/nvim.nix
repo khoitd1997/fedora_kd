@@ -500,6 +500,10 @@
               if client.server_capabilities.documentSymbolProvider then
                 navic.attach(client, bufnr)
               end
+              if client.server_capabilities.inlayHintProvider then
+                vim.g.inlay_hints_visible = true
+                vim.lsp.inlay_hint.enable(bufnr, true)
+              end
             end
             local function tableMerge(table1, table2)
               local merge = {}
@@ -521,6 +525,8 @@
             lspconfig.pyright.setup(common_lspconfig)
             lspconfig.rnix.setup(common_lspconfig)
             lspconfig.statix.setup(common_lspconfig)
+            lspconfig.jsonls.setup(common_lspconfig)
+            lspconfig.yamlls.setup(common_lspconfig)
             lspconfig.rust_analyzer.setup (tableMerge (common_lspconfig, {
               settings = {
                 ['rust-analyzer'] = {

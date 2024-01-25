@@ -80,6 +80,9 @@ in
     };
 
     home.packages = with pkgs; [
+      yaml-language-server
+      vscode-langservers-extracted
+      neovim-qt
       stress-ng
       curl
       sshpass
