@@ -57,6 +57,20 @@
         vim-fugitive
 
         {
+            plugin = bufferline-nvim;
+            type = "lua";
+            config = ''
+              vim.opt.termguicolors = true
+              require("bufferline").setup{
+                options = {
+                  color_icons = true;
+                  show_close_icon = true;
+                }
+              }
+            '';
+        }
+
+        {
             plugin = flash-nvim;
             type = "lua";
             config = ''
@@ -154,7 +168,6 @@
           config = ''
             require('mini.cursorword').setup()
             require('mini.pairs').setup()
-            require('mini.tabline').setup()
             require('mini.trailspace').setup()
           '';
         }
@@ -257,7 +270,7 @@
           '';
         }
         {
-          plugin = gruvbox;
+          plugin = gruvbox-nvim;
           config = ''
             colorscheme gruvbox
           '';
@@ -397,6 +410,13 @@
           '';
         }
 
+        {
+          plugin = twilight-nvim;
+          config = ''
+            autocmd VimEnter * TwilightEnable
+          '';
+        }
+
         cmp-buffer
         cmp-nvim-lsp
         cmp-path
@@ -406,18 +426,6 @@
         vim-vsnip
         vim-cool
         nvim-navic
-        {
-          plugin = barbecue-nvim;
-          type = "lua";
-          config = ''
-            vim.opt.updatetime = 200
-
-            -- to fix this issue: https://github.com/utilyre/barbecue.nvim/issues/35
-            require('barbecue').setup {
-              attach_navic = false,
-            }
-          '';
-        }
 
         {
           plugin = indent-blankline-nvim;
