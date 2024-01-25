@@ -323,6 +323,17 @@
                 "editor.action.showDefinitionPreviewHover"
             ],
             "silent": true
+        },
+        {
+            "before": [
+                "g",
+                "w"
+            ],
+            "commands": [
+                "workbench.action.showAllSymbols"
+            ],
+            "silent": true
         }
-    ]
+    ],
+    "rust-analyzer.workspace.symbol.search.kind": "all_symbols"
 }
