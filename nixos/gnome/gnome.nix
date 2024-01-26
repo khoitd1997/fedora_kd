@@ -13,5 +13,6 @@
     gnome.adwaita-icon-theme
     gnomeExtensions.pop-shell
     gnomeExtensions.appindicator
+    dconf2nix
   ];
 }
