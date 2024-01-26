@@ -136,6 +136,9 @@ in
     # Java
     jdk
 
+    gnome.gnome-terminal
+    alacritty
+
     # C++
     # gcc and clang has collision when installed using home manager
   ];
