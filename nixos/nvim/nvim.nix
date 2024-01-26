@@ -363,8 +363,8 @@
               live_update = true,
             })
 
-            -- ctrl+r to search current word across all files
-            vim.keymap.set('n', '<C-R>', '<cmd>lua require("spectre").open_visual({select_word=true})<CR>', {
+            -- ctrl+u to search current word across all files
+            vim.keymap.set('n', '<C-u>', '<cmd>lua require("spectre").open_visual({select_word=true})<CR>', {
                 desc = "Toggle Spectre"
             })
           '';
