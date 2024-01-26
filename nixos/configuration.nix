@@ -14,9 +14,10 @@ in
       # Include the results of the hardware scan.
       ./hardware-configuration.nix
 
-      ./gnome/gnome.nix
+      # ./gnome/gnome.nix
+      ./kde/kde.nix
     ];
-  
+
   home-manager.users.${primary_user} = import ./home-manager.nix (
     args // { inherit primary_user stateVersion; }
   );

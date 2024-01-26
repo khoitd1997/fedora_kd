@@ -6,11 +6,11 @@
   };
   services.xserver.desktopManager.plasma5 = {
     enable = true;
-    supportDDC = true;
   };
 
   environment.systemPackages = with pkgs; [
     konsole
     konsave
+    libsForQt5.bismuth
   ];
 }
