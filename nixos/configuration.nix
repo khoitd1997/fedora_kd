@@ -15,7 +15,8 @@ in
       ./hardware-configuration.nix
 
       # ./gnome/gnome.nix
-      ./kde/kde.nix
+      # ./kde/kde.nix
+      ./xmonad/xmonad.nix
     ];
 
   home-manager.users.${primary_user} = import ./home-manager.nix (
@@ -153,7 +154,7 @@ in
 
     gnome.gnome-terminal
     alacritty
-
+    firefox-wayland
     # C++
     # gcc and clang has collision when installed using home manager
   ];

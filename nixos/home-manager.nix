@@ -67,6 +67,7 @@ in
     imports = [
       ./zellij/zellij.nix
       ./nvim/nvim.nix
+      ./rofi/rofi.nix
     ];
 
     fonts.fontconfig.enable = true;
@@ -184,7 +185,6 @@ in
       cura
       kdenlive
       wireshark
-      firefox-wayland
 
       # fonts
       source-code-pro
