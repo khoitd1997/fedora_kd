@@ -84,6 +84,7 @@ in
     layout = "us";
     xkbVariant = "";
   };
+  programs.zsh.enable = true;
 
   # nvidia driver stuffs
   hardware.opengl.enable = true;
