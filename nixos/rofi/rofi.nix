@@ -1,5 +1,8 @@
 { config, pkgs, lib, ... }:
 {
+  home.packages = with pkgs; [
+    haskellPackages.greenclip
+  ];
   programs.rofi = {
     enable = true;
     cycle = true;
