@@ -87,8 +87,22 @@ in
   programs.zsh.enable = true;
 
   # nvidia driver stuffs
-  hardware.opengl.enable = true;
-  hardware.nvidia.package = config.boot.kernelPackages.nvidiaPackages.stable;
+  hardware.opengl = {
+    enable = true;
+    driSupport = true;
+    driSupport32Bit = true;
+  };
+  hardware.nvidia = {
+    modesetting.enable = true;
+
+    powerManagement.enable = false;
+    powerManagement.finegrained = false;
+
+    open = false;
+
+    nvidiaSettings = true;
+    package = config.boot.kernelPackages.nvidiaPackages.stable;
+  };
 
   # Enable CUPS to print documents.
   services.printing.enable = true;
