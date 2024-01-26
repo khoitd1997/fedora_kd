@@ -42,6 +42,7 @@ myConfig =
     `additionalKeysP` [ ("M-l", spawn "i3lock"),
                         -- Mod-b is already binded to some other things so use mod-f for browser
                         ("M-f", spawn "firefox"),
+                        ("M-q", kill),
                         ("M-r", spawn "rofi -normal-window -show combi"),
                         ("M-e", spawn "rofi -modi 'clipboard:greenclip print' -show clipboard -run-command '{cmd}' -normal-window"),
                         ("M-m", spawn "code"),
