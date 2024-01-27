@@ -140,7 +140,12 @@ in
       statix
       nodePackages.bash-language-server
       nodePackages.pyright
+      gdb
       helix
+      s-tui
+      sysz
+      btop
+      termshark
 
       # C++
       gcc_latest
