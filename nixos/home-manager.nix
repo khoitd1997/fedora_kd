@@ -158,7 +158,6 @@ in
       cmake-format
       ninja
       clang-analyzer
-      gcc-arm-embedded
       perf-tools
       lttng-tools
 
