@@ -30,10 +30,10 @@ Config
             ""
           ],
         Run Memory ["--template", "Mem: <usedratio>%"] 10,
-        Run Date "%a %Y-%m-%d <fc=#8be9fd>%H:%M</fc>" "date" 10,
+        Run Date "%a %Y-%m-%d | <fc=#8be9fd>%H:%M</fc>" "date" 10,
         Run XMonadLog
       ],
     sepChar = "%",
     alignSep = "}{",
-    template = "}{ %cpu% | %memory% | %date%"
+    template = "%XMonadLog% }{ %cpu% | %memory% | %date%"
   }
