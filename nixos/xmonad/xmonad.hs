@@ -1,4 +1,5 @@
 import XMonad
+import XMonad.Actions.Navigation2D
 import XMonad.Hooks.DynamicLog
 import XMonad.Hooks.EwmhDesktops
 import XMonad.Hooks.ManageDocks
@@ -12,7 +13,7 @@ import XMonad.Util.Loggers
 import XMonad.Util.SpawnOnce
 import XMonad.Util.Ungrab
 
-myLayout = tiled ||| Mirror tiled ||| Full ||| threeCol
+myLayout = avoidStruts(tiled ||| Mirror tiled ||| Full ||| threeCol)
   where
     threeCol = magnifiercz' 1.3 $ ThreeColMid nmaster delta ratio
     tiled = Tall nmaster delta ratio
@@ -33,22 +34,30 @@ myManageHook =
     ]
 
 myConfig =
-  def
-    { modMask = mod4Mask, -- Rebind Mod to the Super key
-      layoutHook = myLayout,
-      startupHook = myStartupHook,
-      manageHook = myManageHook
-    }
-    `additionalKeysP` [ ("M-l", spawn "i3lock"),
-                        -- Mod-b is already binded to some other things so use mod-f for browser
-                        ("M-f", spawn "firefox"),
-                        ("M-q", kill),
-                        ("M-r", spawn "rofi -normal-window -show combi"),
-                        ("M-e", spawn "rofi -modi 'clipboard:greenclip print' -show clipboard -run-command '{cmd}' -normal-window"),
-                        ("M-m", spawn "code"),
-                        ("M-<Return>", spawn "alacritty"),
-                        ("M-x", restart "xmonad" True)
-                      ]
+  navigation2DP
+    def
+    ("k", "h", "j", "l")
+    [ ("M-", windowGo),
+      ("M-S-", windowSwap)
+    ]
+    False
+    $ def
+      { modMask = mod4Mask, -- Rebind Mod to the Super key
+        layoutHook = myLayout,
+        focusFollowsMouse = False,
+        terminal = "alacritty",
+        startupHook = myStartupHook,
+        manageHook = myManageHook
+      }
+      `additionalKeysP` [ ("M-i", spawn "i3lock"),
+                          ("M-b", spawn "firefox"),
+                          ("M-q", kill),
+                          ("M-r", spawn "rofi -normal-window -show combi"),
+                          ("M-e", spawn "rofi -modi 'clipboard:greenclip print' -show clipboard -run-command '{cmd}' -normal-window"),
+                          ("M-m", spawn "code"),
+                          ("M-<Return>", spawn "alacritty"),
+                          ("M-x", restart "xmonad" True)
+                        ]
 
 myXmobarPP :: PP
 myXmobarPP = def
