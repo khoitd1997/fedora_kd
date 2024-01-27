@@ -1,9 +1,9 @@
 Config
   { overrideRedirect = False,
-    font = "xft:iosevka-9",
+    font = "UbuntuNerdFont-Medium 15",
     bgColor = "#5f5f5f",
     fgColor = "#f8f8f2",
-    position = TopW L 90,
+    position = TopSize L 90 25,
     commands =
       [ Run
           Cpu
@@ -35,5 +35,5 @@ Config
       ],
     sepChar = "%",
     alignSep = "}{",
-    template = "%XMonadLog% }{ %alsa:default:Master% | %cpu% | %memory% * %swap% | %EGPF% | %date% "
+    template = "}{ %cpu% | %memory% | %date%"
   }

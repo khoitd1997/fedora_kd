@@ -17,6 +17,18 @@
     setxkbmap -option caps:escape
   '';
 
+  location = {
+    longitude = 90.0;
+    latitude = 90.0;
+  };
+  services.redshift = {
+    enable = true;
+    temperature = {
+      night = 4500;
+      day = 4500;
+    };
+  };
+
   services.gnome.gnome-keyring.enable = true;
   programs.seahorse.enable = true;
 
@@ -25,6 +37,12 @@
     feh
     xmobar
     rofi
+    networkmanagerapplet
+    pavucontrol
+    trayer
+    pamixer
+    i3status-rust
+    volctl
   ];
 
   environment.etc = {
