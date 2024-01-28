@@ -68,6 +68,7 @@ in
     ./zellij/zellij.nix
     ./nvim/nvim.nix
     ./rofi/rofi.nix
+    ./zsh/zsh.nix
   ];
 
   fonts.fontconfig.enable = true;
@@ -220,7 +221,7 @@ in
 
   programs.kitty = {
     enable = true;
-    theme = "One Dark";
+    theme = "Afterglow";
     settings = {
       scrollback_lines = 10000;
       enable_audio_bell = false;
@@ -242,76 +243,6 @@ in
       font.normal = {
         family = "Source Code Pro";
       };
-    };
-  };
-
-  programs.zsh = {
-    enable = true;
-    # enableAutosuggestions = true;
-    syntaxHighlighting.enable = true;
-    initExtraBeforeCompInit = ''
-      ${builtins.readFile ./zsh/lscolors.sh}
-      zstyle ':completion:*' list-colors ''${(s.:.)LS_COLORS}
-
-      setopt nomenucomplete
-      zstyle ':completion:*' menu select
-
-      # zsh-autocomplete settings
-      # zstyle ':autocomplete:*' widget-style menu-complete
-      # zstyle ':autocomplete:*' min-delay 0.4
-
-      # ctrl+x ctrl+e to edit command line in vim
-      autoload -z edit-command-line
-      zle -N edit-command-line
-      bindkey "^X^E" edit-command-line
-    '';
-    initExtra = ''
-      ${builtins.readFile ./zsh/.p10k.zsh}
-      ${builtins.readFile ./zsh/colored-man-pages.plugin.zsh}
-      export HISTSIZE=1000000000
-      export SAVEHIST=$HISTSIZE
-      export XILINXD_LICENSE_FILE=2100@10.32.4.123
-      setopt HIST_IGNORE_ALL_DUPS
-
-      bindkey -e
-
-      bindkey "^[[1;5C" forward-word
-      bindkey "^[[1;5D" backward-word
-      bindkey "\e[3~" delete-char
-
-      # Up arrow:
-      bindkey '\e[A' up-line-or-history
-      bindkey '\eOA' up-line-or-history
-      bindkey '^[k' up-line-or-history
-      # Down arrow:
-      bindkey '\e[B' down-line-or-history
-      bindkey '\eOB' down-line-or-history
-      bindkey '^[j' down-line-or-history
-
-      # fix this issue: https://github.com/jeffreytse/zsh-vi-mode/issues/24
-      zvm_after_init() {
-        . ${pkgs.fzf}/share/fzf/completion.zsh
-        . ${pkgs.fzf}/share/fzf/key-bindings.zsh
-      }
-    '';
-
-    # only do completion init once every day
-    completionInit = ''
-      autoload -Uz compinit
-      for dump in ~/.zcompdump(N.mh+24); do
-        compinit
-      done
-      compinit -C
-    '';
-
-    zplug = {
-      enable = true;
-      plugins = [
-        { name = "zsh-users/zsh-completions"; }
-        { name = "jeffreytse/zsh-vi-mode"; }
-        { name = "Aloxaf/fzf-tab"; }
-        { name = "romkatv/powerlevel10k"; tags = [ "as:theme" "depth:1" ]; }
-      ];
     };
   };
 
