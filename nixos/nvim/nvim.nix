@@ -418,6 +418,11 @@
           plugin = twilight-nvim;
           config = ''
             autocmd VimEnter * TwilightEnable
+            lua << EOF
+                require("twilight").setup {
+                    context = 40,
+                }
+            EOF
           '';
         }
 
