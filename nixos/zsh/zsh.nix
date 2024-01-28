@@ -5,6 +5,9 @@
     enableAutosuggestions = true;
     syntaxHighlighting.enable = true;
     initExtraBeforeCompInit = ''
+      # ctrl space to accept auto suggestion
+      bindkey '^ ' autosuggest-accept
+
       ${builtins.readFile ./lscolors.sh}
       zstyle ':completion:*' list-colors ''${(s.:.)LS_COLORS}
 
