@@ -57,19 +57,6 @@
         vim-fugitive
 
         {
-          plugin = nvim-biscuits;
-          type = "lua";
-          config = ''
-            require('nvim-biscuits').setup{
-              default_config = {
-                -- must be at least this lines number long to show the biscuit
-                min_distance = 20,
-              },
-            }
-          '';
-        }
-
-        {
           plugin = bufferline-nvim;
           type = "lua";
           config = ''
@@ -354,6 +341,7 @@
             vim.cmd('autocmd! TermOpen term://* lua set_terminal_keymaps()')
           '';
         }
+
         {
           plugin = nvim-spectre;
           type = "lua";
@@ -365,6 +353,9 @@
 
             -- ctrl+u to search current word across all files
             vim.keymap.set('n', '<C-u>', '<cmd>lua require("spectre").open_visual({select_word=true})<CR>', {
+                desc = "Toggle Spectre"
+            })
+            vim.keymap.set('v', '<C-u>', '<cmd>lua require("spectre").open_visual({})<CR>', {
                 desc = "Toggle Spectre"
             })
           '';
