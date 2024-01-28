@@ -153,7 +153,7 @@ in
     jdk
 
     gnome.gnome-terminal
-    alacritty
+    kitty
     firefox-wayland
     # C++
     # gcc and clang has collision when installed using home manager

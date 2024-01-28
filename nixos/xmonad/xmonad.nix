@@ -1,10 +1,14 @@
 { config, pkgs, ... }:
 {
-  services.xserver.displayManager.sddm = {
-    enable = true;
-    wayland.enable = true;
+  # use xfce for stuffs that are not window management
+  services.xserver.desktopManager = {
+    xterm.enable = false;
+    xfce = {
+      enable = true;
+      noDesktop = true;
+      enableXfwm = false;
+    };
   };
-
   services.xserver.windowManager.xmonad = {
     enable = true;
     enableContribAndExtras = true;
@@ -13,9 +17,12 @@
     config = builtins.readFile ./xmonad.hs;
   };
 
-  services.xserver.displayManager.sessionCommands = ''
-    setxkbmap -option caps:escape
-  '';
+  services.xserver.displayManager = {
+    defaultSession = "xfce+xmonad";
+    sessionCommands = ''
+      setxkbmap -option caps:escape
+    '';
+  };
 
   location = {
     longitude = 90.0;

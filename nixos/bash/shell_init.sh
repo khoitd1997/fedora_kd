@@ -1,4 +1,4 @@
-export TERMINAL=alacritty
+export TERMINAL=kitty
 
 export LIBVIRT_DEFAULT_URI="qemu:///system"
 

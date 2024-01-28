@@ -2,6 +2,7 @@ import Data.Map qualified as M
 import XMonad
 import XMonad.Actions.MouseResize
 import XMonad.Actions.Navigation2D
+import XMonad.Config.Xfce
 import XMonad.Hooks.DynamicLog
 import XMonad.Hooks.EwmhDesktops
 import XMonad.Hooks.ManageDocks
@@ -33,7 +34,7 @@ myLayout =
         ( emptyBSP -- divide by 2 for each new windows
             ||| Full -- fullscreen curren window
             ||| MosaicAlt M.empty -- equal width for each window
-            ||| magnifier(MosaicAlt M.empty)
+            ||| magnifier (MosaicAlt M.empty)
         )
 
 myStartupHook :: X ()
@@ -65,13 +66,14 @@ myConfig =
       ("M-S-", windowToScreen)
     ]
     False
-    $ def
+    $ xfceConfig
       { modMask = mod4Mask, -- Rebind Mod to the Super key
         layoutHook = myLayout,
         focusFollowsMouse = False,
-        terminal = "alacritty",
+        terminal = "kitty",
         startupHook = myStartupHook,
-        manageHook = myManageHook
+        manageHook = myManageHook,
+        borderWidth = 3
       }
       `additionalKeysP` [ ("M-i", spawn "i3lock"),
                           ("M-b", spawn "firefox"),
@@ -79,7 +81,7 @@ myConfig =
                           ("M-r", spawn "rofi -normal-window -show combi"),
                           ("M-e", spawn "rofi -modi 'clipboard:greenclip print' -show clipboard -run-command '{cmd}' -normal-window"),
                           ("M-m", spawn "code"),
-                          ("M-<Return>", spawn "alacritty"),
+                          ("M-<Return>", spawn "kitty"),
                           ("M-x", restart "xmonad" True)
                         ]
 
