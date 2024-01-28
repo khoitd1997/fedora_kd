@@ -149,6 +149,7 @@ in
     termshark
     lsd
     grc
+    pandoc
 
     # C++
     gcc_latest

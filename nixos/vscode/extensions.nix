@@ -18,6 +18,18 @@
     sha256 = "14v0wb00iy38ry9bfpzz4fjraggy4ygg5v622mfpxb7498kkrm9m";
   }
   {
+    name = "vscode-pandoc";
+    publisher = "ChrisChinchilla";
+    version = "0.4.5";
+    sha256 = "1b7fb5s24jzx3plvfbl7490gagii4p213xbnbzvbqk5c03y1nrjk";
+  }
+  {
+    name = "confluence-markup";
+    publisher = "denco";
+    version = "1.0.3";
+    sha256 = "1dr8ps0dj2s54kc1ixs5891ab6y5q2z581638jjyycz3zdxgvhhv";
+  }
+  {
     name = "dhall-lang";
     publisher = "dhall";
     version = "0.0.4";
@@ -38,8 +50,8 @@
   {
     name = "gitlens";
     publisher = "eamodio";
-    version = "2024.1.2504";
-    sha256 = "0k8aprh24il93lblnjs9iqg6msn8bhpj16avknas2agd7c8r78fn";
+    version = "2024.1.2604";
+    sha256 = "03r1dxwahhgrhda7zqcak0gww4armpg4fp8iy2l9nbxnw7blljjf";
   }
   {
     name = "EditorConfig";
@@ -86,8 +98,8 @@
   {
     name = "intellij-idea-keybindings";
     publisher = "k--kato";
-    version = "1.5.12";
-    sha256 = "0mwfq580zvk4phx5di6dcz7xa1j9s019cicwi1mcfhgh6brww5cj";
+    version = "1.5.13";
+    sha256 = "1rg44bvz29hz673lk0ll93znf3fiiv75f35p60nqhl4cj2x0gv11";
   }
   {
     name = "git-graph";
@@ -116,8 +128,8 @@
   {
     name = "vscode-pylance";
     publisher = "ms-python";
-    version = "2024.1.100";
-    sha256 = "19d680h12acq5p8h72ic8p0gknqhrnzy4jr17f721d5kvycx6q9v";
+    version = "2024.1.101";
+    sha256 = "09w0mkf6y1qnaxbmlx3p91n2mpp22fp9y12q1plkapblvz6kxixz";
   }
   {
     name = "remote-ssh";
@@ -176,8 +188,8 @@
   {
     name = "rust-analyzer";
     publisher = "rust-lang";
-    version = "0.4.1819";
-    sha256 = "0qiz59y322hgz58p5d21160sw9idcwqih70qnd11plwnm5fij7a1";
+    version = "0.4.1821";
+    sha256 = "0bg2hf9vzsldw0gbdgf15bh0phrlb1mf3plb1j7yfimql2wpc5j7";
   }
   {
     name = "markdown-preview-enhanced";
