@@ -147,6 +147,8 @@ in
     sysz
     btop
     termshark
+    lsd
+    grc
 
     # C++
     gcc_latest
@@ -197,12 +199,6 @@ in
 
     bashTerminal
   ];
-
-  # TODO: This might be necessary once we are on Ubuntu
-  # services.home-manager.autoUpgrade = {
-  #   enable = true;
-  #   frequency = "weekly";
-  # };
 
   services.flameshot = {
     enable = true;

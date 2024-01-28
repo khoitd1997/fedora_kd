@@ -3,7 +3,13 @@
   programs.zsh = {
     enable = true;
     enableAutosuggestions = true;
-    syntaxHighlighting.enable = true;
+    syntaxHighlighting = {
+      enable = true;
+      highlighters = [ "main" "brackets" ];
+    };
+    shellAliases = {
+      "ls" = "${lib.getExe pkgs.lsd}";
+    };
     initExtraBeforeCompInit = ''
       # ctrl space to accept auto suggestion
       bindkey '^ ' autosuggest-accept
@@ -51,6 +57,10 @@
         . ${pkgs.fzf}/share/fzf/completion.zsh
         . ${pkgs.fzf}/share/fzf/key-bindings.zsh
       }
+      
+      # zoxide stuffs
+      export _ZO_ECHO=1
+      export _ZO_RESOLVE_SYMLINKS=1
     '';
 
     # only do completion init once every day
@@ -66,10 +76,16 @@
       enable = true;
       plugins = [
         { name = "zsh-users/zsh-completions"; }
+        { name = "hlissner/zsh-autopair"; }
         { name = "jeffreytse/zsh-vi-mode"; }
         { name = "Aloxaf/fzf-tab"; }
         { name = "romkatv/powerlevel10k"; tags = [ "as:theme" "depth:1" ]; }
       ];
     };
+
+    history = {
+      expireDuplicatesFirst = true;
+    };
+    historySubstringSearch.enable = true;
   };
 }
