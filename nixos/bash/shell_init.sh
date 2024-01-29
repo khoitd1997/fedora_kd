@@ -1,5 +1,3 @@
-export TERMINAL=kitty
-
 export LIBVIRT_DEFAULT_URI="qemu:///system"
 
 export PROMPT="\[\e[36m\]\w\[\e[m\] "
