@@ -337,6 +337,5 @@
     ],
     "rust-analyzer.workspace.symbol.search.kind": "all_symbols",
     "debug.inlineValues": true,
-    "editor.fontFamily": "JetBrainsMonoNL Nerd Font",
     "terminal.integrated.fontFamily": "JetBrainsMonoNL Nerd Font"
 }
