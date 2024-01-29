@@ -30,9 +30,10 @@
   };
   services.redshift = {
     enable = true;
+    executable = "/bin/redshift-gtk";
     temperature = {
-      night = 4500;
-      day = 4500;
+      night = 3500;
+      day = 3500;
     };
   };
 
