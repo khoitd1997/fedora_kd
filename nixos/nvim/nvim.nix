@@ -55,6 +55,7 @@
         nerdtree
         diffview-nvim
         vim-fugitive
+        vim-orgmode
 
         {
           plugin = bufferline-nvim;

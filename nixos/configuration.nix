@@ -140,7 +140,12 @@ in
   environment.shells = with pkgs; [ zsh ];
 
   # Allow unfree packages
-  nixpkgs.config.allowUnfree = true;
+  nixpkgs.config = {
+    permittedInsecurePackages = [
+      "electron-25.9.0" # for obsidian
+    ];
+    allowUnfree = true;
+  };
 
   virtualisation.vmware.host.enable = true;
 

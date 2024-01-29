@@ -193,6 +193,7 @@ in
     cura
     kdenlive
     wireshark
+    obsidian
 
     # fonts
     source-code-pro
@@ -206,6 +207,9 @@ in
   };
 
   nixpkgs.config = {
+    permittedInsecurePackages = [
+      "electron-25.9.0" # for obsidian
+    ];
     allowUnfree = true;
   };
 
