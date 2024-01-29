@@ -1,5 +1,6 @@
 import Data.Map qualified as M
 import XMonad
+import XMonad.Core
 import XMonad.Actions.MouseResize
 import XMonad.Actions.Navigation2D
 import XMonad.Config.Xfce
@@ -25,6 +26,7 @@ import XMonad.Util.EZConfig
 import XMonad.Util.Loggers
 import XMonad.Util.SpawnOnce
 import XMonad.Util.Ungrab
+import XMonad.Actions.CycleWS
 
 -- Note: Use Mod+Space to switch between layouts
 myLayout =
@@ -52,6 +54,9 @@ myManageHook =
       isDialog --> doFloat
     ]
 
+defaultTerminal :: String
+defaultTerminal = "kitty"
+
 myConfig =
   navigation2DP
     ( def
@@ -70,7 +75,7 @@ myConfig =
       { modMask = mod4Mask, -- Rebind Mod to the Super key
         layoutHook = myLayout,
         focusFollowsMouse = False,
-        terminal = "kitty",
+        terminal = defaultTerminal,
         startupHook = myStartupHook,
         manageHook = myManageHook,
         borderWidth = 3
@@ -81,8 +86,16 @@ myConfig =
                           ("M-r", spawn "rofi -normal-window -show combi"),
                           ("M-e", spawn "rofi -modi 'clipboard:greenclip print' -show clipboard -run-command '{cmd}' -normal-window"),
                           ("M-m", spawn "code"),
-                          ("M-<Return>", spawn "kitty"),
-                          ("M-x", restart "xmonad" True)
+                          ("M-<Return>", spawn defaultTerminal),
+                          ("M-x", restart "xmonad" True),
+
+                          -- mod + Page_up/Page_down for navigating non empty workspace
+                          ("M-<Page_Down>", moveTo Next (hiddenWS :&: Not emptyWS)),
+                          ("M-<Page_Up>", moveTo Prev (hiddenWS :&: Not emptyWS)),
+
+                          -- mod + up/down for navigating empty workspace when trying to find a blank one
+                          ("M-<Down>", moveTo Next (hiddenWS :&: emptyWS)),
+                          ("M-<Up>", moveTo Prev (hiddenWS :&: emptyWS))
                         ]
 
 myXmobarPP :: PP
