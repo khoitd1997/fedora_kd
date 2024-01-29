@@ -78,7 +78,8 @@ myConfig =
         terminal = defaultTerminal,
         startupHook = myStartupHook,
         manageHook = myManageHook,
-        borderWidth = 3
+        borderWidth = 4,
+        focusedBorderColor = "#efff00"
       }
       `additionalKeysP` [ ("M-i", spawn "i3lock"),
                           ("M-b", spawn "firefox"),
