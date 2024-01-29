@@ -70,7 +70,7 @@ myConfig =
     [ ("M-", windowGo),
       ("M-S-", windowToScreen)
     ]
-    False
+    True
     $ xfceConfig
       { modMask = mod4Mask, -- Rebind Mod to the Super key
         layoutHook = myLayout,
@@ -88,6 +88,9 @@ myConfig =
                           ("M-m", spawn "code"),
                           ("M-<Return>", spawn defaultTerminal),
                           ("M-x", restart "xmonad" True),
+
+                          ("M1-<Tab>", windowGo R True),
+                          ("M1-S-<Tab>", windowGo L True),
 
                           -- mod + Page_up/Page_down for navigating non empty workspace
                           ("M-<Page_Down>", moveTo Next (hiddenWS :&: Not emptyWS)),
