@@ -76,9 +76,6 @@ in
   home = {
     username = primary_user;
     inherit stateVersion;
-    shellAliases = {
-      code = "env -u ZELLIJ -u ZELLIJ_SESSION_NAME code";
-    };
   };
 
   home.packages = with pkgs; [
