@@ -133,6 +133,9 @@ in
     stgit
     jless
     nix-diff
+    imagemagick
+    graphviz
+    nix-output-monitor
     rustup
     shellcheck
     statix
@@ -147,6 +150,7 @@ in
     lsd
     grc
     pandoc
+    nix-tree
 
     # C++
     gcc_latest
