@@ -151,6 +151,9 @@ in
     grc
     pandoc
     nix-tree
+    bandwhich
+    gfold
+    pueue
 
     # C++
     gcc_latest
