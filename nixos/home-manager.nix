@@ -113,7 +113,7 @@ in
     xclip
     nixpkgs-fmt
     cabal2nix
-    rnix-lsp
+    nil
     nixos-option
     sshfs
     ncdu
