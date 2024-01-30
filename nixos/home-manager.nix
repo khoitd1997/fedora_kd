@@ -427,6 +427,73 @@ in
     EDITOR = "nvim";
     FZF_CTRL_T_OPTS = "--preview='bat --color \"always\" -r :500 {}'";
   };
+    home.packages = with pkgs; [
+      yaml-language-server
+      vscode-langservers-extracted
+      neovim-qt
+      stress-ng
+      curl
+      sshpass
+      wget
+      fd
+      tio
+      picocom
+      ripgrep
+      tldr
+      tig
+      hexyl
+      pylint
+      openocd
+      strace
+      lshw
+      moreutils
+      jq
+      doxygen
+      nettools
+      neofetch
+      hyperfine
+      tree
+      gawk
+      ansible
+      file
+      entr
+      duf
+      du-dust
+      xclip
+      nixpkgs-fmt
+      cabal2nix
+      nil
+      nixos-option
+      sshfs
+      ncdu
+      nmap
+      pciutils
+      usbutils
+      bind
+      tcpdump
+      traceroute
+      libarchive
+      unzip
+      procs
+      distrobox
+      git-extras
+      lazygit
+      procs
+      stgit
+      jless
+      nix-diff
+      rustup
+      shellcheck
+      statix
+      nodePackages.bash-language-server
+      nodePackages.pyright
+      gdb
+      helix
+      s-tui
+      sysz
+      btop
+      termshark
+    ];
 
   programs.ssh = {
     enable = true;

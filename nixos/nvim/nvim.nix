@@ -541,7 +541,7 @@
             lspconfig.clangd.setup(common_lspconfig)
             lspconfig.bashls.setup(common_lspconfig)
             lspconfig.pyright.setup(common_lspconfig)
-            lspconfig.rnix.setup(common_lspconfig)
+            lspconfig.nil_ls.setup(common_lspconfig)
             lspconfig.statix.setup(common_lspconfig)
             lspconfig.jsonls.setup(common_lspconfig)
             lspconfig.yamlls.setup(common_lspconfig)
