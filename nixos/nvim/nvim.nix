@@ -545,6 +545,9 @@
             lspconfig.statix.setup(common_lspconfig)
             lspconfig.jsonls.setup(common_lspconfig)
             lspconfig.yamlls.setup(common_lspconfig)
+            lspconfig.hls.setup(tableMerge (common_lspconfig, {
+              filetypes = { 'haskell', 'lhaskell', 'cabal' },
+            }))
             lspconfig.rust_analyzer.setup (tableMerge (common_lspconfig, {
               settings = {
                 ['rust-analyzer'] = {
