@@ -1,6 +1,8 @@
 { pkgs, lib, config, ... }:
 let
-  myKicad = pkgs.kicad.override { };
+  myKicad = pkgs.kicad.override {
+    addons = with pkgs.kicadAddons; [ kikit kikit-library ];
+  };
   kicadVersion = lib.versions.majorMinor myKicad.version;
   kicadPluginsDir = ".local/share/kicad/${kicadVersion}/scripting";
   kicadThemeDir = ".local/share/kicad/${kicadVersion}/3rdparty/colors";
