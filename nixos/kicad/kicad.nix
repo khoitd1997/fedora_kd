@@ -15,6 +15,7 @@ let
   # NOTE: For a list of possible themes, check the folder names in https://github.com/pointhi/kicad-color-schemes/tree/master
   kicadSchematicTheme = "wdark";
   kicadPcbNewTheme = "behave-dark";
+  kicadSymbolEditorTheme = "nord";
 in
 {
   home.file."${kicadPluginsDir}/InteractiveHtmlBom".source = pkgs.fetchFromGitHub
@@ -34,6 +35,7 @@ in
 
   home.file."${kicadThemeDir}/${kicadSchematicTheme}/${kicadSchematicTheme}.json".source = kicadTheme + "/${kicadSchematicTheme}/${kicadSchematicTheme}.json";
   home.file."${kicadThemeDir}/${kicadPcbNewTheme}/${kicadPcbNewTheme}.json".source = kicadTheme + "/${kicadPcbNewTheme}/${kicadPcbNewTheme}.json";
+  home.file."${kicadThemeDir}/${kicadSymbolEditorTheme}/${kicadSymbolEditorTheme}.json".source = kicadTheme + "/${kicadSymbolEditorTheme}/${kicadSymbolEditorTheme}.json";
 
   home.activation.kicadConfig = lib.getExe (pkgs.writeShellApplication {
     name = "kicad-config";
@@ -46,6 +48,10 @@ in
       # pcb layout theme
       pcbnew_conf="${config.xdg.configHome}/kicad/${kicadVersion}/pcbnew.json"
       jq '.appearance.color_theme = "${config.home.homeDirectory}/${kicadThemeDir}/${kicadPcbNewTheme}/${kicadPcbNewTheme}.json"' $pcbnew_conf | sponge $pcbnew_conf
+
+      # symbol editor theme
+      symbol_editor_conf="${config.xdg.configHome}/kicad/${kicadVersion}/symbol_editor.json"
+      jq '.appearance.color_theme = "${config.home.homeDirectory}/${kicadThemeDir}/${kicadSymbolEditorTheme}/${kicadSymbolEditorTheme}.json"' $symbol_editor_conf | sponge $symbol_editor_conf
     '';
   });
 
