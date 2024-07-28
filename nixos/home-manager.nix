@@ -20,11 +20,6 @@ let
       ext = pkgs.unstable.vscode-extensions.${publisher}.${name};
     }
     rec {
-      name = "vscode-pull-request-github";
-      publisher = "GitHub";
-      ext = pkgs.unstable.vscode-extensions.github.${name};
-    }
-    rec {
       name = "gitlens";
       publisher = "eamodio";
       ext = pkgs.unstable.vscode-extensions.${publisher}.${name};
