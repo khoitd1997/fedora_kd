@@ -65,6 +65,7 @@ in
     ./nvim/nvim.nix
     ./rofi/rofi.nix
     ./zsh/zsh.nix
+    ./kicad/kicad.nix
   ];
 
   fonts.fontconfig.enable = true;
@@ -189,7 +190,6 @@ in
     # GUI apps
     gparted
     qtcreator
-    kicad
     cura
     kdenlive
     wireshark

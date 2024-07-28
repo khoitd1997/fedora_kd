@@ -17,8 +17,8 @@
     config = builtins.readFile ./xmonad.hs;
   };
 
+  services.displayManager.defaultSession = "xfce+xmonad";
   services.xserver.displayManager = {
-    defaultSession = "xfce+xmonad";
     sessionCommands = ''
       setxkbmap -option caps:escape
     '';
