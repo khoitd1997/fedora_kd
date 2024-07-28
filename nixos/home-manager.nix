@@ -1,9 +1,5 @@
 { config, pkgs, primary_user, stateVersion, lib, not_in_wsl ? true, ... }:
 let
-  unstable = import <unstable> {
-    config.allowUnfree = true;
-  };
-
   # sometimes it's nice to be able to launch simple bash
   # terminal in case zsh messes up
   bashTerminal = pkgs.makeDesktopItem {
@@ -21,38 +17,38 @@ let
     rec {
       name = "remote-ssh";
       publisher = "ms-vscode-remote";
-      ext = unstable.vscode-extensions.${publisher}.${name};
+      ext = pkgs.unstable.vscode-extensions.${publisher}.${name};
     }
     rec {
       name = "vscode-pull-request-github";
       publisher = "GitHub";
-      ext = unstable.vscode-extensions.github.${name};
+      ext = pkgs.unstable.vscode-extensions.github.${name};
     }
     rec {
       name = "gitlens";
       publisher = "eamodio";
-      ext = unstable.vscode-extensions.${publisher}.${name};
+      ext = pkgs.unstable.vscode-extensions.${publisher}.${name};
     }
     rec {
       name = "vscode-pylance";
       publisher = "ms-python";
-      ext = unstable.vscode-extensions.${publisher}.${name};
+      ext = pkgs.unstable.vscode-extensions.${publisher}.${name};
     }
     rec {
       name = "rust-analyzer";
       publisher = "rust-lang";
-      ext = unstable.vscode-extensions.${publisher}.${name};
+      ext = pkgs.unstable.vscode-extensions.${publisher}.${name};
     }
   ] ++ lib.optionals pkgs.stdenv.hostPlatform.isx86_64 [
     rec {
       name = "python";
       publisher = "ms-python";
-      ext = unstable.vscode-extensions.${publisher}.${name};
+      ext = pkgs.unstable.vscode-extensions.${publisher}.${name};
     }
     rec {
       name = "cpptools";
       publisher = "ms-vscode";
-      ext = unstable.vscode-extensions.${publisher}.${name};
+      ext = pkgs.unstable.vscode-extensions.${publisher}.${name};
     }
   ];
   normalVscodeExtensions = builtins.filter
@@ -210,11 +206,16 @@ in
     enable = true;
   };
 
-  nixpkgs.config = {
-    permittedInsecurePackages = [
-      "electron-25.9.0" # for obsidian
-    ];
-    allowUnfree = true;
+
+  nixpkgs = {
+    overlays = config.nixpkgs.overlays;
+
+    config = {
+      permittedInsecurePackages = [
+        "electron-25.9.0" # for obsidian
+      ];
+      allowUnfree = true;
+    };
   };
 
   nix = {
@@ -318,10 +319,10 @@ in
 
   programs.vscode = {
     enable = not_in_wsl;
-    package = unstable.vscode;
+    package = pkgs.unstable.vscode;
     extensions =
       (builtins.map (x: x.ext) specialVscodeExtensions) ++
-      unstable.vscode-utils.extensionsFromVscodeMarketplace normalVscodeExtensions;
+      pkgs.unstable.vscode-utils.extensionsFromVscodeMarketplace normalVscodeExtensions;
   };
 
   programs.htop = {

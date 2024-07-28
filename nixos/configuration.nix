@@ -2,7 +2,7 @@
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 
-args@{ config, pkgs, ... }:
+args@{ config, pkgs, home-manager, ... }:
 let
   primary_user = "kd";
   stateVersion = "22.11";
@@ -10,7 +10,7 @@ in
 {
   imports =
     [
-      <home-manager/nixos>
+      home-manager.nixosModules.default
       # Include the results of the hardware scan.
       ./hardware-configuration.nix
 

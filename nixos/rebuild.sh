@@ -5,4 +5,4 @@ cd "${script_dir}"
 
 cp /etc/nixos/hardware-configuration.nix .
 
-sudo nixos-rebuild switch --install-bootloader -I nixos-config="${script_dir}/configuration.nix"
+sudo nixos-rebuild switch --install-bootloader --flake .#nixos-kd
