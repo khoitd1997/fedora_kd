@@ -165,6 +165,7 @@ in
     python3Full
     black
     pylint
+    python3Packages.pip
 
     # Haskell
     ghc
