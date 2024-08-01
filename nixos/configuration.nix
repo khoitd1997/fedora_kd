@@ -161,6 +161,7 @@ in
     gnome.gnome-terminal
     kitty
     firefox-wayland
+    orca-slicer
     # C++
     # gcc and clang has collision when installed using home manager
   ];
