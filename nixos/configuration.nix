@@ -161,10 +161,12 @@ in
     gnome.gnome-terminal
     kitty
     firefox-wayland
-    pkgs.unstable.orca-slicer
-    # C++
-    # gcc and clang has collision when installed using home manager
+    orca-slicer
   ];
+  programs.appimage = {
+    enable = true;
+    binfmt = true;
+  };
 
   virtualisation.docker.enable = true;
   virtualisation.podman.enable = true;
