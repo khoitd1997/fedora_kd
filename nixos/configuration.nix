@@ -177,7 +177,12 @@ in
   programs.ssh = {
     startAgent = true;
   };
-  environment.variables.SSH_ASKPASS_REQUIRE = "prefer";
+  environment.variables = {
+    SSH_ASKPASS_REQUIRE = "prefer";
+    # https://github.com/tauri-apps/tauri/issues/9304
+    # TODO:remove once, the fix the above for orca-slicer is no longer required
+    WEBKIT_DISABLE_DMABUF_RENDERER= "1";
+  };
   environment.etc = {
     "xdg/autostart/ssh-add.desktop".text = ''
       [Desktop Entry]
