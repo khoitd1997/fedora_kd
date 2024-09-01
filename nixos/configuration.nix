@@ -162,6 +162,7 @@ in
     kitty
     firefox-wayland
     orca-slicer
+    openscad
   ];
   programs.appimage = {
     enable = true;
