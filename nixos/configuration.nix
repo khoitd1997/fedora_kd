@@ -14,9 +14,9 @@ in
       # Include the results of the hardware scan.
       ./hardware-configuration.nix
 
-      # ./gnome/gnome.nix
+      ./gnome/gnome.nix
       # ./kde/kde.nix
-      ./xmonad/xmonad.nix
+      # ./xmonad/xmonad.nix
     ];
 
   home-manager.users.${primary_user} = import ./home-manager.nix (
@@ -163,6 +163,7 @@ in
     firefox-wayland
     orca-slicer
     openscad
+    xorg.xkill
   ];
   programs.appimage = {
     enable = true;
