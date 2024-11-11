@@ -163,6 +163,7 @@ in
     firefox-wayland
     orca-slicer
     openscad
+    betaflight-configurator
     xorg.xkill
   ];
   programs.appimage = {
