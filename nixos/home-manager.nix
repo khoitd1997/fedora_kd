@@ -221,7 +221,6 @@ in
 
   programs.kitty = {
     enable = true;
-    theme = "Afterglow";
     settings = {
       scrollback_lines = 10000;
       enable_audio_bell = false;
@@ -314,7 +313,7 @@ in
   programs.vscode = {
     enable = not_in_wsl;
     package = pkgs.unstable.vscode;
-    extensions =
+    profiles.default.extensions =
       (builtins.map (x: x.ext) specialVscodeExtensions) ++
       pkgs.unstable.vscode-utils.extensionsFromVscodeMarketplace normalVscodeExtensions;
   };

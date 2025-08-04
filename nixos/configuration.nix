@@ -90,9 +90,9 @@ in
   programs.zsh.enable = true;
 
   # nvidia driver stuffs
-  hardware.opengl = {
+  hardware.graphics = {
     enable = true;
-    driSupport32Bit = true;
+    enable32Bit = true;
   };
   hardware.nvidia = {
     modesetting.enable = true;
@@ -110,7 +110,7 @@ in
   services.printing.enable = true;
 
   # Enable sound with pipewire.
-  hardware.pulseaudio.enable = false;
+  services.pulseaudio.enable = false;
   security.rtkit.enable = true;
   services.pipewire = {
     enable = true;
