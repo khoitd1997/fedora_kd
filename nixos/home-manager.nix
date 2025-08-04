@@ -132,7 +132,7 @@ in
     shellcheck
     statix
     nodePackages.bash-language-server
-    nodePackages.pyright
+    pyright
     gdb
     helix
     s-tui
@@ -186,14 +186,12 @@ in
     # GUI apps
     gparted
     qtcreator
-    cura
-    kdenlive
     wireshark
     obsidian
 
     # fonts
     source-code-pro
-    nerdfonts
+    nerd-fonts.sauce-code-pro
 
     bashTerminal
   ];
