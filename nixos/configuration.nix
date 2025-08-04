@@ -146,7 +146,8 @@ in
     allowUnfree = true;
   };
 
-  virtualisation.vmware.host.enable = true;
+  # Disabled for now since can't download automatically
+  # virtualisation.vmware.host.enable = true;
 
   environment.systemPackages = with pkgs; [
     # some nix commands like flake need git
@@ -156,7 +157,7 @@ in
     # Java
     jdk
 
-    gnome.gnome-terminal
+    gnome-terminal
     kitty
     firefox-wayland
     orca-slicer
@@ -182,7 +183,7 @@ in
     SSH_ASKPASS_REQUIRE = "prefer";
     # https://github.com/tauri-apps/tauri/issues/9304
     # TODO:remove once, the fix the above for orca-slicer is no longer required
-    WEBKIT_DISABLE_DMABUF_RENDERER= "1";
+    WEBKIT_DISABLE_DMABUF_RENDERER = "1";
   };
   environment.etc = {
     "xdg/autostart/ssh-add.desktop".text = ''

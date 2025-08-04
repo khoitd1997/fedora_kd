@@ -9,8 +9,8 @@
   };
 
   environment.systemPackages = with pkgs; [
-    gnome3.gnome-tweaks
-    gnome.adwaita-icon-theme
+    gnome-tweaks
+    adwaita-icon-theme
     gnomeExtensions.pop-shell
     gnomeExtensions.appindicator
     dconf2nix
