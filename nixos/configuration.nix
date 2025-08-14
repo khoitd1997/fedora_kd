@@ -165,6 +165,8 @@ in
     betaflight-configurator
     xorg.xkill
     powertop
+    uefisettings
+    efivar
   ];
   programs.appimage = {
     enable = true;
