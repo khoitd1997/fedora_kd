@@ -164,6 +164,7 @@ in
     openscad
     betaflight-configurator
     xorg.xkill
+    powertop
   ];
   programs.appimage = {
     enable = true;

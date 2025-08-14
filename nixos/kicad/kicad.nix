@@ -39,24 +39,6 @@ in
   home.file."${kicadThemeDir}/${kicadPcbNewTheme}/${kicadPcbNewTheme}.json".source = kicadTheme + "/${kicadPcbNewTheme}/${kicadPcbNewTheme}.json";
   home.file."${kicadThemeDir}/${kicadSymbolEditorTheme}/${kicadSymbolEditorTheme}.json".source = kicadTheme + "/${kicadSymbolEditorTheme}/${kicadSymbolEditorTheme}.json";
 
-  home.activation.kicadConfig = lib.getExe (pkgs.writeShellApplication {
-    name = "kicad-config";
-    runtimeInputs = with pkgs; [ jq moreutils ];
-    text = ''
-      # schematic theme
-      eeschema_conf="${config.xdg.configHome}/kicad/${kicadVersion}/eeschema.json"
-      jq '.appearance.color_theme = "${config.home.homeDirectory}/${kicadThemeDir}/${kicadSchematicTheme}/${kicadSchematicTheme}.json"' $eeschema_conf | sponge $eeschema_conf
-
-      # pcb layout theme
-      pcbnew_conf="${config.xdg.configHome}/kicad/${kicadVersion}/pcbnew.json"
-      jq '.appearance.color_theme = "${config.home.homeDirectory}/${kicadThemeDir}/${kicadPcbNewTheme}/${kicadPcbNewTheme}.json"' $pcbnew_conf | sponge $pcbnew_conf
-
-      # symbol editor theme
-      symbol_editor_conf="${config.xdg.configHome}/kicad/${kicadVersion}/symbol_editor.json"
-      jq '.appearance.color_theme = "${config.home.homeDirectory}/${kicadThemeDir}/${kicadSymbolEditorTheme}/${kicadSymbolEditorTheme}.json"' $symbol_editor_conf | sponge $symbol_editor_conf
-    '';
-  });
-
   home.packages = [
     myKicad
   ];
