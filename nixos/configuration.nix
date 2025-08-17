@@ -142,6 +142,7 @@ in
   nixpkgs.config = {
     permittedInsecurePackages = [
       "electron-25.9.0" # for obsidian
+      "ventoy-qt5-1.1.05"
     ];
     allowUnfree = true;
   };
@@ -167,6 +168,7 @@ in
     powertop
     uefisettings
     efivar
+    ventoy-full-qt
   ];
   programs.appimage = {
     enable = true;
