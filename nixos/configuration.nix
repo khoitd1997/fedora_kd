@@ -31,6 +31,7 @@ in
       enable = true;
       device = "nodev";
       useOSProber = true;
+      configurationLimit = 5;
       efiSupport = true;
     };
   };
