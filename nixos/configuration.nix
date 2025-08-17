@@ -155,6 +155,8 @@ in
     git
     git-lfs
 
+    tree
+
     # Java
     jdk
 
@@ -168,6 +170,7 @@ in
     powertop
     uefisettings
     efivar
+    os-prober
   ];
   programs.appimage = {
     enable = true;
